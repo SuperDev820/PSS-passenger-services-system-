@@ -1,0 +1,10 @@
+{
+    "/js/app.js": "/js/app.js",
+    "/js/extra.js": "/js/extra.js",
+    "/js/dashboard.js": "/js/dashboard.js",
+    "/js/components.js": "/js/components.js",
+    "/js/forms.js": "/js/forms.js",
+    "/js/pages.js": "/js/pages.js",
+    "/js/tables.js": "/js/tables.js",
+    "/css/app.css": "/css/app.css"
+}
