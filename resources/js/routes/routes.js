@@ -251,6 +251,17 @@ const routes = [
       }
     ]
   },
+  {
+    path: '/admin',
+    redirect: '/admin/users',
+    children: [
+      {
+        path: 'users',
+        name: 'AdminUsers',
+        component: () => import('../contain/admin/users/users.vue')
+      },
+    ]
+  },
   authPages,
 ];
 
