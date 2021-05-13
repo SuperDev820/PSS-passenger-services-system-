@@ -3,14 +3,13 @@
     <base-header class="pb-6">
       <b-row align-v="center" class="py-4">
         <b-col cols="7" lg="6">
-          <h6 class="h2 text-white d-inline-block mb-0">Paginated tables</h6>
+          <h6 class="h2 text-white d-inline-block mb-0">Users table</h6>
           <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
             <route-bread-crumb></route-bread-crumb>
           </nav>
         </b-col>
         <b-col lg="6" cols="5" class="text-right">
-          <base-button size="sm" type="neutral">New</base-button>
-          <base-button size="sm" type="neutral">Filters</base-button>
+          <base-button size="sm" type="neutral"><i class="fas fa-plus"></i>Add User</base-button>
         </b-col>
       </b-row>
     </base-header>
@@ -18,10 +17,7 @@
       <div>
         <card class="no-border-card" body-classes="px-0 pb-1" footer-classes="pb-2">
           <template slot="header">
-            <h3 class="mb-0">Paginated tables</h3>
-            <p class="text-sm mb-0">
-              This is a client side example of paginated tables using element-ui tables.
-            </p>
+            <h3 class="mb-0">Users table</h3>
           </template>
           <div>
             <b-col cols="12" class="d-flex justify-content-center justify-content-sm-between flex-wrap"
