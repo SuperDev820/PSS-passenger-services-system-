@@ -1,8 +1,8 @@
 // import DashboardLayout from '@/views/Layout/DashboardLayout.vue';
-// import AuthLayout from '@/views/Pages/AuthLayout.vue';
+import AuthLayout from '@/contain/auth/AuthLayout.vue';
 import AdminLayout from '@/contain/admin/Layout/Layout.vue';
 // GeneralViews
-// import NotFound from '@/views/GeneralViews/NotFoundPage.vue';
+import NotFound from '@/contain/404/NotFoundPage.vue';
 
 // Calendar
 // const Calendar = () => import(/* webpackChunkName: "extra" */ '@/views/Calendar/Calendar.vue');
@@ -31,14 +31,11 @@ import AdminLayout from '@/contain/admin/Layout/Layout.vue';
 // const GoogleMaps = () => import(/* webpackChunkName: "extra" */ '@/views/Maps/GoogleMaps.vue');
 // const VectorMaps = () => import(/* webpackChunkName: "extra" */ '@/views/Maps/VectorMaps.vue');
 
-// // Pages
-// const User = () => import(/* webpackChunkName: "pages" */ '@/views/Pages/UserProfile.vue');
-// const Pricing = () => import(/* webpackChunkName: "pages" */ '@/views/Pages/Pricing.vue');
-// const TimeLine = () => import(/* webpackChunkName: "pages" */ '@/views/Pages/TimeLinePage.vue');
-// const Login = () => import(/* webpackChunkName: "pages" */ '@/views/Pages/Login.vue');
+// Pages
+const Login = () => import(/* webpackChunkName: "pages" */ '@/contain/auth/Login.vue');
 // const Home = () => import(/* webpackChunkName: "pages" */ '@/views/Pages/Home.vue');
-// const Register = () => import(/* webpackChunkName: "pages" */ '@/views/Pages/Register.vue');
-// const Lock = () => import(/* webpackChunkName: "pages" */ '@/views/Pages/Lock.vue');
+const Register = () => import(/* webpackChunkName: "pages" */ '@/contain/auth/Register.vue');
+const Lock = () => import(/* webpackChunkName: "pages" */ '@/contain/auth/Lock.vue');
 
 // // TableList pages
 // const RegularTables = () => import(/* webpackChunkName: "tables" */ '@/views/Tables/RegularTables.vue');
@@ -168,42 +165,37 @@ import AdminLayout from '@/contain/admin/Layout/Layout.vue';
 //   ]
 // };
 
-// let authPages = {
-//   path: '/',
-//   component: AuthLayout,
-//   name: 'Authentication',
-//   children: [
-//     {
-//       path: '/home',
-//       name: 'Home',
-//       component: Home,
-//       meta: {
-//         noBodyBackground: true
-//       }
-//     },
-//     {
-//       path: '/login',
-//       name: 'Login',
-//       component: Login
-//     },
-//     {
-//       path: '/register',
-//       name: 'Register',
-//       component: Register
-//     },
-//     {
-//       path: '/pricing',
-//       name: 'Pricing',
-//       component: Pricing
-//     },
-//     {
-//       path: '/lock',
-//       name: 'Lock',
-//       component: Lock
-//     },
-//     { path: '*', component: NotFound }
-//   ]
-// };
+let authPages = {
+  path: '/',
+  component: AuthLayout,
+  name: 'Authentication',
+  children: [
+    // {
+    //   path: '/home',
+    //   name: 'Home',
+    //   component: Home,
+    //   meta: {
+    //     noBodyBackground: true
+    //   }
+    // },
+    {
+      path: '/login',
+      name: 'Login',
+      component: Login
+    },
+    {
+      path: '/register',
+      name: 'Register',
+      component: Register
+    },
+    {
+      path: '/lock',
+      name: 'Lock',
+      component: Lock
+    },
+    { path: '*', component: NotFound }
+  ]
+};
 
 const routes = [
   // {
@@ -264,7 +256,7 @@ const routes = [
       },
     ]
   },
-  // authPages,
+  authPages,
 ];
 
 export default routes;

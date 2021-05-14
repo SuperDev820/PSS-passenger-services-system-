@@ -15,16 +15,6 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
         $this->call([
-            ModalitySeeder::class,
-            StatusSeeder::class,
-            CompetitionTypeSeeder::class,
-            LycraSeeder::class,
-            SexSeeder::class,
-            CategorySeeder::class,
-            ClubSeeder::class,
-            RankingSeeder::class,
-            RankingPositionPointSeeder::class,
-            HeatConfigurationSeeder::class,
             RoleSeeder::class,
         ]);
     }

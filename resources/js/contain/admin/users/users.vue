@@ -58,18 +58,9 @@
               <el-table-column min-width="180px" align="right" label="Actions">
                 <div slot-scope="{$index, row}" class="d-flex">
                   <base-button
-                    @click.native="handleLike($index, row)"
-                    class="like btn-link"
-                    type="info"
-                    size="sm"
-                    icon
-                  >
-                    <i class="text-white ni ni-like-2"></i>
-                  </base-button>
-                  <base-button
                     @click.native="handleEdit($index, row)"
                     class="edit"
-                    type="warning"
+                    type="info"
                     size="sm"
                     icon
                   >
@@ -122,7 +113,6 @@ import RouteBreadCrumb from '@/components/Breadcrumb/RouteBreadcrumb'
 import { BasePagination } from '@/components';
 import clientPaginationMixin from '@/common/PaginatedTables/clientPaginationMixin'
 import swal from 'sweetalert2';
-import users from './users2';
 
 export default {
   mixins: [clientPaginationMixin],
@@ -138,9 +128,9 @@ export default {
     return {
       propsToSearch: ['name', 'email', 'age'],
       tableColumns: [
-        {
-          type: 'selection'
-        },
+        // {
+        //   type: 'selection'
+        // },
         {
           prop: 'name',
           label: 'Name',
@@ -148,51 +138,25 @@ export default {
           sortable: true
         },
         {
-          prop: 'position',
-          label: 'Position',
-          minWidth: 220,
-          sortable: true
-        },
-        {
-          prop: 'city',
-          label: 'Office',
-          minWidth: 135,
-          sortable: true
-        },
-        {
-          prop: 'age',
-          label: 'Age',
-          minWidth: 100,
-          sortable: true
-        },
-        {
-          prop: 'createdAt',
-          label: 'Start Date',
-          minWidth: 150,
-          sortable: true
-        },
-        {
-          prop: 'salary',
-          label: 'Salary',
+          prop: 'eamil',
+          label: 'Email',
           minWidth: 120,
-          sortable: true
+          sortable: false
+        },
+        {
+          prop: 'role',
+          label: 'Role',
+          minWidth: 120,
+          sortable: false
         }
       ],
-      tableData: users,
+      tableData: [],
       selectedRows: []
     };
   },
   methods: {
     paginationChanged(page) {
       this.pagination.currentPage = page
-    },
-    handleLike(index, row) {
-      swal({
-        title: `You liked ${row.name}`,
-        buttonsStyling: false,
-        type: 'success',
-        confirmButtonClass: 'btn btn-success btn-fill'
-      });
     },
     handleEdit(index, row) {
       swal({
