@@ -13,10 +13,8 @@ const actions = {
                     data.user.roles.forEach(function(currentRole) {
                         if (currentRole.name == 'Admin') {
                             role = 'Admin';
-                        } else if (currentRole.name == 'Judge') {
-                            role = 'Judge';
-                        } else {
-                            role = 'User';
+                        } else if (currentRole.name == 'Passenger') {
+                            role = 'Passenger';
                         }
                     });
                     context.commit(
@@ -26,7 +24,7 @@ const actions = {
                 })
                 .catch((error) => {
                     context.commit(
-                        type.AUTH_SET_USER,
+                        type.AUTH_SET_ERROR,
                         {target: 'login', message: error}
                     );
                     reject(response);
@@ -55,11 +53,10 @@ const actions = {
         return new Promise((resolve, reject) => {
             ApiService.post("api/v1/user/register", credentials)
                 .then((data) => {
-                    // context.commit(type.AUTH_SET_USER, {userId: data.user_id, token: data.access_token});
                     resolve(data);
                 })
                 .catch(({response, status}) => {
-                console.log(response);
+                    // console.log(response);
                     if(status === 422) {
                         context.commit(
                             type.AUTH_SET_ERROR,

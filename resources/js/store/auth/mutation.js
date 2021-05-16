@@ -28,16 +28,11 @@ const mutations = {
   [type.AUTH_LOGOUT] (state, payload) {
       JwtService.unsetToken();
       JwtService.unsetRole();
-
-      JwtService.unsetCurrentCompetition();
-      JwtService.unsetCurrentCategory();
-      JwtService.unsetCurrentModality();
-      JwtService.unsetCurrentRound();
-      JwtService.unsetCurrentHeat();
   },
   [type.AUTH_RESET_STATE] (state, payload) {
     state.isAuthenticated = false;
     state.userId = null;
+    state.userRole = null;
     state.token = null;
     state.errors = {
         login: [],

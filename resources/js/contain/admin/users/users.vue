@@ -49,11 +49,24 @@
                       header-row-class-name="thead-light"
                       @sort-change="sortChange"
                       @selection-change="selectionChange">
-              <el-table-column
-                v-for="column in tableColumns"
-                :key="column.label"
-                v-bind="column"
-              >
+              <el-table-column label="Name"
+                             prop="name"
+                             min-width="120px"
+                             sortable>
+              </el-table-column>
+              <el-table-column label="Email"
+                             prop="email"
+                             min-width="160px">
+              </el-table-column>
+              <el-table-column prop="role" label="Role" min-width="120px">
+                <div slot-scope="{row}">
+                  <badge class="" type="warning" v-if="row.roles[0].name=='Admin'">
+                    <span>{{row.roles[0].name}}</span>
+                  </badge>
+                  <badge class="" type="info" v-else>
+                    <span>{{row.roles[0].name}}</span>
+                  </badge>
+                </div>
               </el-table-column>
               <el-table-column min-width="180px" align="right" label="Actions">
                 <div slot-scope="{$index, row}" class="d-flex">
@@ -84,7 +97,7 @@
             class="col-12 d-flex justify-content-center justify-content-sm-between flex-wrap"
           >
             <div class="">
-              <p class="card-category">
+              <p class="card-category" v-if="total != 0">
                 Showing {{ from + 1 }} to {{ to }} of {{ total }} entries
 
                 <span v-if="selectedRows.length">
@@ -114,7 +127,13 @@ import { BasePagination } from '@/components';
 import clientPaginationMixin from '@/common/PaginatedTables/clientPaginationMixin'
 import swal from 'sweetalert2';
 
+import {mapActions, mapGetters} from 'vuex'
+
 export default {
+  page: {
+    title: "Users",
+    meta: [{ name: "description", content: "" }]
+  },
   mixins: [clientPaginationMixin],
   components: {
     BasePagination,
@@ -126,44 +145,38 @@ export default {
   },
   data() {
     return {
-      propsToSearch: ['name', 'email', 'age'],
+      propsToSearch: ['name', 'email'],
       tableColumns: [
-        // {
-        //   type: 'selection'
-        // },
-        {
-          prop: 'name',
-          label: 'Name',
-          minWidth: 160,
-          sortable: true
-        },
-        {
-          prop: 'eamil',
-          label: 'Email',
-          minWidth: 120,
-          sortable: false
-        },
-        {
-          prop: 'role',
-          label: 'Role',
-          minWidth: 120,
-          sortable: false
-        }
       ],
       tableData: [],
       selectedRows: []
     };
   },
+  watch: {
+    users: function () {
+      this.tableData = this.users;
+    },
+  },
+  computed: {
+    ...mapGetters([
+      'users',
+    ]),
+  },
+  mounted() {
+    this.initUsers();
+  },
   methods: {
+    ...mapActions([
+      'initUsers',
+      'deleteUser',
+    ]),
+
     paginationChanged(page) {
       this.pagination.currentPage = page
     },
     handleEdit(index, row) {
-      swal({
-        title: `You want to edit ${row.name}`,
-        buttonsStyling: false,
-        confirmButtonClass: 'btn btn-info btn-fill'
-      });
+      console.log(index)
+      console.log(row)
     },
     handleDelete(index, row) {
       swal.SweetAlert({

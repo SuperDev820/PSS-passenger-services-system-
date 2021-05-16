@@ -20,11 +20,11 @@
         </div>
       </li>
       <!-- This item dont have <b-nav-item> because item have data-action/data-target on tag <a>, wich we cant add -->
-      <li class="nav-item d-sm-none">
+      <!-- <li class="nav-item d-sm-none">
         <a class="nav-link" href="#" data-action="search-show" data-target="#navbar-search-main">
           <i class="ni ni-zoom-split-in"></i>
         </a>
-      </li>
+      </li> -->
     </b-navbar-nav>
     <b-navbar-nav class="align-items-center ml-auto ml-md-0">
       <base-dropdown menu-on-right
@@ -53,7 +53,7 @@
             <span>My profile</span>
           </b-dropdown-item>
           <div class="dropdown-divider"></div>
-          <b-dropdown-item href="#">
+          <b-dropdown-item href="/logout">
             <i class="ni ni-user-run"></i>
             <span>Logout</span>
           </b-dropdown-item>

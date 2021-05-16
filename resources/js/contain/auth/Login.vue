@@ -40,6 +40,9 @@
               <div class="text-center text-muted mb-4">
                 <small>Or sign in with credentials</small>
               </div>
+              <base-alert v-if="isAuthError" dismissible type="danger">
+                <strong>Failed!</strong> {{authError}}
+              </base-alert>
               <validation-observer v-slot="{handleSubmit}" ref="formValidator">
                 <b-form role="form" @submit.prevent="handleSubmit(onSubmit)">
                   <base-input alternative
@@ -63,7 +66,7 @@
 
                   <b-form-checkbox v-model="model.rememberMe">Remember me</b-form-checkbox>
                   <div class="text-center">
-                    <base-button type="primary" native-type="submit" class="my-4">Sign in</base-button>
+                    <b-button type="submit" variant="primary" class="mt-4">Sign in</b-button>
                   </div>
                 </b-form>
               </validation-observer>
@@ -83,19 +86,54 @@
   </div>
 </template>
 <script>
+  import {mapActions, mapGetters} from 'vuex'
+
   export default {
+    page: {
+      title: "Login",
+      meta: [{ name: "description", content: "" }]
+    },
     data() {
       return {
         model: {
           email: '',
           password: '',
           rememberMe: false
-        }
+        },
+        authError: null,
+        isAuthError: false
       };
+    },
+    computed: {
+      ...mapGetters([
+        'currentRole',
+      ]),
     },
     methods: {
       onSubmit() {
         // this will be called only after form is valid. You can do api call here to login
+        // Reset the authError if it existed.
+        this.authError = null;
+        return (
+          this.$store
+            .dispatch("login", {
+              email: this.model.email,
+              password: this.model.password
+            })
+            .then((res) => {
+              // console.log(this.currentRole)
+              if (this.currentRole == 'Admin') {
+                this.$router.push({name: "AdminUsers"});
+              } else if (this.currentRole == 'Passenger') {
+                this.$router.push({name: "Passenger"});
+              }
+              this.isAuthError = false;
+            })
+            .catch(error => {
+              this.authError = error ? error : "";
+              this.isAuthError = true;
+            })
+        );
       }
     }
   };

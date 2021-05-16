@@ -61,7 +61,7 @@ export default {
     },
     logo: {
       type: String,
-      default: 'https://demos.creative-tim.com/vue-argon-dashboard-pro/img/brand/green.png',
+      default: '/img/brand/green.png',
       description: 'Sidebar app logo'
     },
     backgroundColor: {

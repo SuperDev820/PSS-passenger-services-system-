@@ -65,7 +65,7 @@ export default {
   mounted() {
     // Fuse search initialization.
     this.fuseSearch = new Fuse(this.tableData, {
-      keys: ['name', 'email'],
+      keys: this.propsToSearch,
       threshold: 0.3
     });
   },
@@ -81,6 +81,7 @@ export default {
         result = this.fuseSearch.search(this.searchQuery);
       }
       this.searchedData = result;
+      console.log(result)
     }
   }
 }

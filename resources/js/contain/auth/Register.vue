@@ -41,6 +41,9 @@
               <div class="text-center text-muted mb-4">
                 <small>Or sign up with credentials</small>
               </div>
+              <base-alert v-if="isRegisterError" dismissible type="danger">
+                <strong>Failed!</strong> {{regError}}
+              </base-alert>
               <validation-observer v-slot="{handleSubmit}" ref="formValidator">
                 <b-form role="form" @submit.prevent="handleSubmit(onSubmit)">
                   <base-input alternative
@@ -74,7 +77,7 @@
                     class="text-success font-weight-700">strong</span></small></div>
                   <b-row class=" my-4">
                     <b-col cols="12">
-                      <base-input :rules="{ required: { allowFalse: false } }" name=Privacy Policy>
+                      <base-input :rules="{ required: { allowFalse: false } }" name="Privacy Policy">
                         <b-form-checkbox v-model="model.agree">
                           <span class="text-muted">I agree with the <a href="#">Privacy Policy</a></span>
                         </b-form-checkbox>
@@ -96,7 +99,10 @@
 <script>
 
   export default {
-    name: 'register',
+    page: {
+      title: "Register",
+      meta: [{ name: "description", content: "" }]
+    },
     data() {
       return {
         model: {
@@ -104,12 +110,39 @@
           email: '',
           password: '',
           agree: false
-        }
+        },
+        regError: null,
+        isRegisterError: false,
+        registerSuccess: false
       }
     },
     methods: {
       onSubmit() {
         // this will be called only after form is valid. You can do an api call here to register users
+        // Reset the regError if it existed.
+        this.regError = null;
+        return (
+          this.$store
+            .dispatch("register", {
+                name: this.model.name,
+                email: this.model.email,
+                password: this.model.password,
+                password_confirmation: this.model.password
+            })
+            .then((res, status) => {
+              this.isRegisterError = false;
+              this.registerSuccess = true;
+              if (this.registerSuccess) {
+                this.$router.push(
+                  { name: "Login" }
+                );
+              }
+            })
+            .catch((error) => {
+              this.regError = error ? error : "";
+              this.isRegisterError = true;
+            })
+        );
       }
     }
 

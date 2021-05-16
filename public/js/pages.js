@@ -86,6 +86,9 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/objectSpread2 */ "./node_modules/@babel/runtime/helpers/esm/objectSpread2.js");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.mjs");
+
 //
 //
 //
@@ -170,18 +173,57 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+
 /* harmony default export */ __webpack_exports__["default"] = ({
+  page: {
+    title: "Login",
+    meta: [{
+      name: "description",
+      content: ""
+    }]
+  },
   data: function data() {
     return {
       model: {
         email: '',
         password: '',
         rememberMe: false
-      }
+      },
+      authError: null,
+      isAuthError: false
     };
   },
+  computed: (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)({}, (0,vuex__WEBPACK_IMPORTED_MODULE_1__.mapGetters)(['currentRole'])),
   methods: {
-    onSubmit: function onSubmit() {// this will be called only after form is valid. You can do api call here to login
+    onSubmit: function onSubmit() {
+      var _this = this;
+
+      // this will be called only after form is valid. You can do api call here to login
+      // Reset the authError if it existed.
+      this.authError = null;
+      return this.$store.dispatch("login", {
+        email: this.model.email,
+        password: this.model.password
+      }).then(function (res) {
+        // console.log(this.currentRole)
+        if (_this.currentRole == 'Admin') {
+          _this.$router.push({
+            name: "AdminUsers"
+          });
+        } else if (_this.currentRole == 'Passenger') {
+          _this.$router.push({
+            name: "Passenger"
+          });
+        }
+
+        _this.isAuthError = false;
+      })["catch"](function (error) {
+        _this.authError = error ? error : "";
+        _this.isAuthError = true;
+      });
     }
   }
 });
@@ -196,6 +238,12 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es.function.name.js */ "./node_modules/core-js/modules/es.function.name.js");
+/* harmony import */ var core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_0__);
+
+//
+//
+//
 //
 //
 //
@@ -292,7 +340,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'register',
+  page: {
+    title: "Register",
+    meta: [{
+      name: "description",
+      content: ""
+    }]
+  },
   data: function data() {
     return {
       model: {
@@ -300,11 +354,37 @@ __webpack_require__.r(__webpack_exports__);
         email: '',
         password: '',
         agree: false
-      }
+      },
+      regError: null,
+      isRegisterError: false,
+      registerSuccess: false
     };
   },
   methods: {
-    onSubmit: function onSubmit() {// this will be called only after form is valid. You can do an api call here to register users
+    onSubmit: function onSubmit() {
+      var _this = this;
+
+      // this will be called only after form is valid. You can do an api call here to register users
+      // Reset the regError if it existed.
+      this.regError = null;
+      return this.$store.dispatch("register", {
+        name: this.model.name,
+        email: this.model.email,
+        password: this.model.password,
+        password_confirmation: this.model.password
+      }).then(function (res, status) {
+        _this.isRegisterError = false;
+        _this.registerSuccess = true;
+
+        if (_this.registerSuccess) {
+          _this.$router.push({
+            name: "Login"
+          });
+        }
+      })["catch"](function (error) {
+        _this.regError = error ? error : "";
+        _this.isRegisterError = true;
+      });
     }
   }
 });
@@ -905,6 +985,21 @@ var render = function() {
                             ]
                           ),
                           _vm._v(" "),
+                          _vm.isAuthError
+                            ? _c(
+                                "base-alert",
+                                { attrs: { dismissible: "", type: "danger" } },
+                                [
+                                  _c("strong", [_vm._v("Failed!")]),
+                                  _vm._v(
+                                    " " +
+                                      _vm._s(_vm.authError) +
+                                      "\n            "
+                                  )
+                                ]
+                              )
+                            : _vm._e(),
+                          _vm._v(" "),
                           _c("validation-observer", {
                             ref: "formValidator",
                             scopedSlots: _vm._u([
@@ -993,12 +1088,12 @@ var render = function() {
                                           { staticClass: "text-center" },
                                           [
                                             _c(
-                                              "base-button",
+                                              "b-button",
                                               {
-                                                staticClass: "my-4",
+                                                staticClass: "mt-4",
                                                 attrs: {
-                                                  type: "primary",
-                                                  "native-type": "submit"
+                                                  type: "submit",
+                                                  variant: "primary"
                                                 }
                                               },
                                               [_vm._v("Sign in")]
@@ -1249,6 +1344,21 @@ var render = function() {
                             ]
                           ),
                           _vm._v(" "),
+                          _vm.isRegisterError
+                            ? _c(
+                                "base-alert",
+                                { attrs: { dismissible: "", type: "danger" } },
+                                [
+                                  _c("strong", [_vm._v("Failed!")]),
+                                  _vm._v(
+                                    " " +
+                                      _vm._s(_vm.regError) +
+                                      "\n            "
+                                  )
+                                ]
+                              )
+                            : _vm._e(),
+                          _vm._v(" "),
                           _c("validation-observer", {
                             ref: "formValidator",
                             scopedSlots: _vm._u([
@@ -1370,8 +1480,7 @@ var render = function() {
                                                           allowFalse: false
                                                         }
                                                       },
-                                                      name: "Privacy",
-                                                      Policy: ""
+                                                      name: "Privacy Policy"
                                                     }
                                                   },
                                                   [
@@ -1479,6 +1588,46 @@ var render = function() {
 }
 var staticRenderFns = []
 render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vuex/dist/vuex.mjs":
+/*!*****************************************!*\
+  !*** ./node_modules/vuex/dist/vuex.mjs ***!
+  \*****************************************/
+/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* reexport default export from named module */ _dist_vuex_common_js__WEBPACK_IMPORTED_MODULE_0__; },
+/* harmony export */   "Store": function() { return /* binding */ Store; },
+/* harmony export */   "install": function() { return /* binding */ install; },
+/* harmony export */   "version": function() { return /* binding */ version; },
+/* harmony export */   "mapState": function() { return /* binding */ mapState; },
+/* harmony export */   "mapMutations": function() { return /* binding */ mapMutations; },
+/* harmony export */   "mapGetters": function() { return /* binding */ mapGetters; },
+/* harmony export */   "mapActions": function() { return /* binding */ mapActions; },
+/* harmony export */   "createNamespacedHelpers": function() { return /* binding */ createNamespacedHelpers; },
+/* harmony export */   "createLogger": function() { return /* binding */ createLogger; }
+/* harmony export */ });
+/* harmony import */ var _dist_vuex_common_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../dist/vuex.common.js */ "./node_modules/vuex/dist/vuex.common.js");
+
+
+const {
+  Store,
+  install,
+  version,
+  mapState,
+  mapMutations,
+  mapGetters,
+  mapActions,
+  createNamespacedHelpers,
+  createLogger
+} = _dist_vuex_common_js__WEBPACK_IMPORTED_MODULE_0__
+
 
 
 

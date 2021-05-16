@@ -1,8 +1,8 @@
 const getters = {
-    getUsers(state) {
+    users(state) {
         return state.users;
     },
-    getUser(state) {
+    user(state) {
         return state.user;
     },
   };
