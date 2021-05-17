@@ -9,7 +9,7 @@
           </nav>
         </b-col>
         <b-col lg="6" cols="5" class="text-right">
-          <base-button size="sm" type="neutral"><i class="fas fa-plus"></i>Add User</base-button>
+          <router-link :to="{name: 'AdminUserCreate'}" class="btn btn-neutral btn-sm"><i class="fas fa-plus"></i>Add User</router-link>
         </b-col>
       </b-row>
     </base-header>
@@ -47,12 +47,14 @@
             <el-table :data="queriedData"
                       row-key="id"
                       header-row-class-name="thead-light"
-                      @sort-change="sortChange"
-                      @selection-change="selectionChange">
+                      @sort-change="sortChange">
               <el-table-column label="Name"
                              prop="name"
                              min-width="120px"
                              sortable>
+                  <div slot-scope="{row}">
+                    {{row.first_name +' '+ row.last_name}}
+                  </div>
               </el-table-column>
               <el-table-column label="Email"
                              prop="email"
@@ -60,18 +62,25 @@
               </el-table-column>
               <el-table-column prop="role" label="Role" min-width="120px">
                 <div slot-scope="{row}">
-                  <badge class="" type="warning" v-if="row.roles[0].name=='Admin'">
-                    <span>{{row.roles[0].name}}</span>
+                  <badge class="" type="danger">
+                    <span>Admin</span>
                   </badge>
-                  <badge class="" type="info" v-else>
-                    <span>{{row.roles[0].name}}</span>
+                </div>
+              </el-table-column>
+              <el-table-column prop="status" label="Status" min-width="120px">
+                <div slot-scope="{row}">
+                  <badge class="" v-if="row.status == 1" type="success">
+                    <span>Active</span>
+                  </badge>
+                  <badge class="" v-else type="warning">
+                    <span>Deactive</span>
                   </badge>
                 </div>
               </el-table-column>
               <el-table-column min-width="180px" align="right" label="Actions">
                 <div slot-scope="{$index, row}" class="d-flex">
                   <base-button
-                    @click.native="handleEdit($index, row)"
+                    @click.native="handleEdit(row)"
                     class="edit"
                     type="info"
                     size="sm"
@@ -174,44 +183,31 @@ export default {
     paginationChanged(page) {
       this.pagination.currentPage = page
     },
-    handleEdit(index, row) {
-      console.log(index)
-      console.log(row)
+    handleEdit(row) {
+      this.$router.push({ name: 'AdminUserEdit', params: { userId: row.id }})
     },
     handleDelete(index, row) {
-      swal.SweetAlert({
-        title: 'Are you sure?',
-        text: `You won't be able to revert this!`,
+      swal.fire({
+        title: `Are you sure?`,
+        text: "You won't be able to revert this!",
         type: 'warning',
         showCancelButton: true,
-        confirmButtonClass: 'btn btn-success btn-fill',
-        cancelButtonClass: 'btn btn-danger btn-fill',
-        confirmButtonText: 'Yes, delete it!',
-        buttonsStyling: false
+        buttonsStyling: false,
+        confirmButtonClass: 'btn btn-warning',
+        cancelButtonClass: 'btn btn-secondary btn-fill',
+        icon: 'warning'
       }).then(result => {
         if (result.value) {
-          this.deleteRow(row);
-          swal({
-            title: 'Deleted!',
-            text: `You deleted ${row.name}`,
-            type: 'success',
-            confirmButtonClass: 'btn btn-success btn-fill',
-            buttonsStyling: false
+          this.deleteUser(row.id);
+          this.$notify({
+            message: 'Successfully Deleted',
+            timeout: 5000,
+            icon: 'ni ni-bell-55',
+            type: 'success'
           });
         }
       });
     },
-    deleteRow(row) {
-      let indexToDelete = this.tableData.findIndex(
-        tableRow => tableRow.id === row.id
-      );
-      if (indexToDelete >= 0) {
-        this.tableData.splice(indexToDelete, 1);
-      }
-    },
-    selectionChange(selectedRows) {
-      this.selectedRows = selectedRows
-    }
   }
 };
 </script>

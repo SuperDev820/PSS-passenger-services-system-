@@ -81,7 +81,7 @@ export default {
         result = this.fuseSearch.search(this.searchQuery);
       }
       this.searchedData = result;
-      console.log(result)
+      // console.log(result)
     }
   }
 }

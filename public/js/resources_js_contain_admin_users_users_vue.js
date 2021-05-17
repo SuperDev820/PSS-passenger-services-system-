@@ -25,16 +25,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var element_ui_lib_select__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(element_ui_lib_select__WEBPACK_IMPORTED_MODULE_10__);
 /* harmony import */ var core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! core-js/modules/es.function.name.js */ "./node_modules/core-js/modules/es.function.name.js");
 /* harmony import */ var core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_11__);
-/* harmony import */ var core_js_modules_es_array_find_index_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! core-js/modules/es.array.find-index.js */ "./node_modules/core-js/modules/es.array.find-index.js");
-/* harmony import */ var core_js_modules_es_array_find_index_js__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_find_index_js__WEBPACK_IMPORTED_MODULE_12__);
-/* harmony import */ var core_js_modules_es_array_splice_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! core-js/modules/es.array.splice.js */ "./node_modules/core-js/modules/es.array.splice.js");
-/* harmony import */ var core_js_modules_es_array_splice_js__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_splice_js__WEBPACK_IMPORTED_MODULE_13__);
-/* harmony import */ var _components_Breadcrumb_RouteBreadcrumb__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @/components/Breadcrumb/RouteBreadcrumb */ "./resources/js/components/Breadcrumb/RouteBreadcrumb.vue");
-/* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @/components */ "./resources/js/components/index.js");
-/* harmony import */ var _common_PaginatedTables_clientPaginationMixin__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @/common/PaginatedTables/clientPaginationMixin */ "./resources/js/common/PaginatedTables/clientPaginationMixin.js");
-/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! sweetalert2 */ "./node_modules/sweetalert2/dist/sweetalert2.all.js");
-/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_17___default = /*#__PURE__*/__webpack_require__.n(sweetalert2__WEBPACK_IMPORTED_MODULE_17__);
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.mjs");
+/* harmony import */ var _components_Breadcrumb_RouteBreadcrumb__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @/components/Breadcrumb/RouteBreadcrumb */ "./resources/js/components/Breadcrumb/RouteBreadcrumb.vue");
+/* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @/components */ "./resources/js/components/index.js");
+/* harmony import */ var _common_PaginatedTables_clientPaginationMixin__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @/common/PaginatedTables/clientPaginationMixin */ "./resources/js/common/PaginatedTables/clientPaginationMixin.js");
+/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! sweetalert2 */ "./node_modules/sweetalert2/dist/sweetalert2.all.js");
+/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(sweetalert2__WEBPACK_IMPORTED_MODULE_15__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.mjs");
 
 
 
@@ -53,8 +49,15 @@ __webpack_require__.r(__webpack_exports__);
 var _components;
 
 
-
-
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -190,10 +193,10 @@ var _components;
       content: ""
     }]
   },
-  mixins: [_common_PaginatedTables_clientPaginationMixin__WEBPACK_IMPORTED_MODULE_16__.default],
+  mixins: [_common_PaginatedTables_clientPaginationMixin__WEBPACK_IMPORTED_MODULE_14__.default],
   components: (_components = {
-    BasePagination: _components__WEBPACK_IMPORTED_MODULE_15__.BasePagination,
-    RouteBreadCrumb: _components_Breadcrumb_RouteBreadcrumb__WEBPACK_IMPORTED_MODULE_14__.default
+    BasePagination: _components__WEBPACK_IMPORTED_MODULE_13__.BasePagination,
+    RouteBreadCrumb: _components_Breadcrumb_RouteBreadcrumb__WEBPACK_IMPORTED_MODULE_12__.default
   }, (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_components, (element_ui_lib_select__WEBPACK_IMPORTED_MODULE_10___default().name), (element_ui_lib_select__WEBPACK_IMPORTED_MODULE_10___default())), (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_components, (element_ui_lib_option__WEBPACK_IMPORTED_MODULE_8___default().name), (element_ui_lib_option__WEBPACK_IMPORTED_MODULE_8___default())), (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_components, (element_ui_lib_table__WEBPACK_IMPORTED_MODULE_6___default().name), (element_ui_lib_table__WEBPACK_IMPORTED_MODULE_6___default())), (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_components, (element_ui_lib_table_column__WEBPACK_IMPORTED_MODULE_4___default().name), (element_ui_lib_table_column__WEBPACK_IMPORTED_MODULE_4___default())), _components),
   data: function data() {
     return {
@@ -208,55 +211,46 @@ var _components;
       this.tableData = this.users;
     }
   },
-  computed: (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)({}, (0,vuex__WEBPACK_IMPORTED_MODULE_18__.mapGetters)(['users'])),
+  computed: (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)({}, (0,vuex__WEBPACK_IMPORTED_MODULE_16__.mapGetters)(['users'])),
   mounted: function mounted() {
     this.initUsers();
   },
-  methods: (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)((0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)({}, (0,vuex__WEBPACK_IMPORTED_MODULE_18__.mapActions)(['initUsers', 'deleteUser'])), {}, {
+  methods: (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)((0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)({}, (0,vuex__WEBPACK_IMPORTED_MODULE_16__.mapActions)(['initUsers', 'deleteUser'])), {}, {
     paginationChanged: function paginationChanged(page) {
       this.pagination.currentPage = page;
     },
-    handleEdit: function handleEdit(index, row) {
-      console.log(index);
-      console.log(row);
+    handleEdit: function handleEdit(row) {
+      this.$router.push({
+        name: 'AdminUserEdit',
+        params: {
+          userId: row.id
+        }
+      });
     },
     handleDelete: function handleDelete(index, row) {
       var _this = this;
 
-      sweetalert2__WEBPACK_IMPORTED_MODULE_17___default().SweetAlert({
-        title: 'Are you sure?',
+      sweetalert2__WEBPACK_IMPORTED_MODULE_15___default().fire({
+        title: "Are you sure?",
         text: "You won't be able to revert this!",
         type: 'warning',
         showCancelButton: true,
-        confirmButtonClass: 'btn btn-success btn-fill',
-        cancelButtonClass: 'btn btn-danger btn-fill',
-        confirmButtonText: 'Yes, delete it!',
-        buttonsStyling: false
+        buttonsStyling: false,
+        confirmButtonClass: 'btn btn-warning',
+        cancelButtonClass: 'btn btn-secondary btn-fill',
+        icon: 'warning'
       }).then(function (result) {
         if (result.value) {
-          _this.deleteRow(row);
+          _this.deleteUser(row.id);
 
-          sweetalert2__WEBPACK_IMPORTED_MODULE_17___default()({
-            title: 'Deleted!',
-            text: "You deleted ".concat(row.name),
-            type: 'success',
-            confirmButtonClass: 'btn btn-success btn-fill',
-            buttonsStyling: false
+          _this.$notify({
+            message: 'Successfully Deleted',
+            timeout: 5000,
+            icon: 'ni ni-bell-55',
+            type: 'success'
           });
         }
       });
-    },
-    deleteRow: function deleteRow(row) {
-      var indexToDelete = this.tableData.findIndex(function (tableRow) {
-        return tableRow.id === row.id;
-      });
-
-      if (indexToDelete >= 0) {
-        this.tableData.splice(indexToDelete, 1);
-      }
-    },
-    selectionChange: function selectionChange(selectedRows) {
-      this.selectedRows = selectedRows;
     }
   })
 });
@@ -373,8 +367,7 @@ __webpack_require__.r(__webpack_exports__);
         result = this.fuseSearch.search(this.searchQuery);
       }
 
-      this.searchedData = result;
-      console.log(result);
+      this.searchedData = result; // console.log(result)
     }
   }
 });
@@ -13874,8 +13867,11 @@ var render = function() {
                 { staticClass: "text-right", attrs: { lg: "6", cols: "5" } },
                 [
                   _c(
-                    "base-button",
-                    { attrs: { size: "sm", type: "neutral" } },
+                    "router-link",
+                    {
+                      staticClass: "btn btn-neutral btn-sm",
+                      attrs: { to: { name: "AdminUserCreate" } }
+                    },
                     [
                       _c("i", { staticClass: "fas fa-plus" }),
                       _vm._v("Add User")
@@ -13971,10 +13967,7 @@ var render = function() {
                           "row-key": "id",
                           "header-row-class-name": "thead-light"
                         },
-                        on: {
-                          "sort-change": _vm.sortChange,
-                          "selection-change": _vm.selectionChange
-                        }
+                        on: { "sort-change": _vm.sortChange }
                       },
                       [
                         _c("el-table-column", {
@@ -13983,7 +13976,24 @@ var render = function() {
                             prop: "name",
                             "min-width": "120px",
                             sortable: ""
-                          }
+                          },
+                          scopedSlots: _vm._u([
+                            {
+                              key: "default",
+                              fn: function(ref) {
+                                var row = ref.row
+                                return _c("div", {}, [
+                                  _vm._v(
+                                    "\n                  " +
+                                      _vm._s(
+                                        row.first_name + " " + row.last_name
+                                      ) +
+                                      "\n                "
+                                  )
+                                ])
+                              }
+                            }
+                          ])
                         }),
                         _vm._v(" "),
                         _c("el-table-column", {
@@ -14009,24 +14019,42 @@ var render = function() {
                                   "div",
                                   {},
                                   [
-                                    row.roles[0].name == "Admin"
+                                    _c("badge", { attrs: { type: "danger" } }, [
+                                      _c("span", [_vm._v("Admin")])
+                                    ])
+                                  ],
+                                  1
+                                )
+                              }
+                            }
+                          ])
+                        }),
+                        _vm._v(" "),
+                        _c("el-table-column", {
+                          attrs: {
+                            prop: "status",
+                            label: "Status",
+                            "min-width": "120px"
+                          },
+                          scopedSlots: _vm._u([
+                            {
+                              key: "default",
+                              fn: function(ref) {
+                                var row = ref.row
+                                return _c(
+                                  "div",
+                                  {},
+                                  [
+                                    row.status == 1
                                       ? _c(
                                           "badge",
-                                          { attrs: { type: "warning" } },
-                                          [
-                                            _c("span", [
-                                              _vm._v(_vm._s(row.roles[0].name))
-                                            ])
-                                          ]
+                                          { attrs: { type: "success" } },
+                                          [_c("span", [_vm._v("Active")])]
                                         )
                                       : _c(
                                           "badge",
-                                          { attrs: { type: "info" } },
-                                          [
-                                            _c("span", [
-                                              _vm._v(_vm._s(row.roles[0].name))
-                                            ])
-                                          ]
+                                          { attrs: { type: "warning" } },
+                                          [_c("span", [_vm._v("Deactive")])]
                                         )
                                   ],
                                   1
@@ -14063,7 +14091,7 @@ var render = function() {
                                         },
                                         nativeOn: {
                                           click: function($event) {
-                                            return _vm.handleEdit($index, row)
+                                            return _vm.handleEdit(row)
                                           }
                                         }
                                       },

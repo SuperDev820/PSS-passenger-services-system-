@@ -1,3 +1,4 @@
+import Vue from 'vue';
 import type from './type'
 import JwtService from '@/common/jwt.service'
 

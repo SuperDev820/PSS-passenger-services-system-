@@ -22,10 +22,11 @@ const actions = {
                     );
                     resolve(data);
                 })
-                .catch((error) => {
+                .catch((response) => {
+                    console.log(response)
                     context.commit(
                         type.AUTH_SET_ERROR,
-                        {target: 'login', message: error}
+                        {target: 'login', message: response.data}
                     );
                     reject(response);
                 });
@@ -40,10 +41,10 @@ const actions = {
                     context.commit(type.AUTH_LOGOUT);
                     resolve(data);
                 })
-                .catch((error) => {
+                .catch((response) => {
                     context.commit(
                         type.AUTH_SET_ERROR,
-                        {target: 'logout', message: error}
+                        {target: 'logout', message: response.data}
                     );
                     reject(response);
                 });
@@ -60,7 +61,7 @@ const actions = {
                     if(status === 422) {
                         context.commit(
                             type.AUTH_SET_ERROR,
-                            {target: 'register', errors: response.data.errors}
+                            {target: 'register', errors: response.data}
                         );
                     }
                     reject(response);

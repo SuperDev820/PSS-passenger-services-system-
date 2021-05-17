@@ -24,7 +24,7 @@
       <b-row class="justify-content-center">
         <b-col lg="6" md="8" >
           <b-card no-body class="bg-secondary border-0">
-            <b-card-header class="bg-transparent pb-5">
+            <!-- <b-card-header class="bg-transparent pb-5">
               <div class="text-muted text-center mt-2 mb-4"><small>Sign up with</small></div>
               <div class="text-center">
                 <a href="#" class="btn btn-neutral btn-icon mr-4">
@@ -36,7 +36,7 @@
                   <span class="btn-inner--text">Google</span>
                 </a>
               </div>
-            </b-card-header>
+            </b-card-header> -->
             <b-card-body class="px-lg-5 py-lg-5">
               <div class="text-center text-muted mb-4">
                 <small>Or sign up with credentials</small>
@@ -49,11 +49,53 @@
                   <base-input alternative
                               class="mb-3"
                               prepend-icon="ni ni-hat-3"
-                              placeholder="Name"
-                              name="Name"
+                              placeholder="First Name"
+                              name="FistName"
                               :rules="{required: true}"
-                              v-model="model.name">
+                              v-model="model.first_name">
                   </base-input>
+
+                  <base-input alternative
+                              class="mb-3"
+                              prepend-icon="ni ni-hat-3"
+                              placeholder="Last Name"
+                              name="LastName"
+                              :rules="{required: true}"
+                              v-model="model.last_name">
+                  </base-input>
+
+                  <base-input prepend-icon="fas fa-calendar" name="Birthday" :rules="{required: true}">
+                    <flat-picker slot-scope="{focus, blur}"
+                                  @on-open="focus"
+                                  @on-close="blur"
+                                  class="form-control datepicker"
+                                  v-model="model.birthday">
+                    </flat-picker>
+                  </base-input>
+
+                  <base-input prepend-icon="fas fa-phone"
+                              placeholder="Phone"
+                              name="Phone"
+                              :rules="{required: true}"
+                              v-model="model.phone">
+                  </base-input>
+
+                  <base-input alternative
+                              class="mb-3"
+                              prepend-icon="fas fa-globe-americas"
+                              placeholder="Company"
+                              name="Company"
+                              :rules="{required: true}"
+                              v-model="model.company">
+                  </base-input>
+
+                  <!-- <base-input alternative
+                              class="mb-3"
+                              prepend-icon="ni ni-hat-3"
+                              placeholder="Roster"
+                              name="Roster"
+                              v-model="model.roster">
+                  </base-input> -->
 
                   <base-input alternative
                               class="mb-3"
@@ -97,16 +139,25 @@
   </div>
 </template>
 <script>
+  import flatPicker from "vue-flatpickr-component";
+  import "flatpickr/dist/flatpickr.css";
 
   export default {
     page: {
       title: "Register",
       meta: [{ name: "description", content: "" }]
     },
+    components: {
+      flatPicker,
+    },
     data() {
       return {
         model: {
-          name: '',
+          first_name: '',
+          last_name: '',
+          phone: '',
+          company: '',
+          birthday: '',
           email: '',
           password: '',
           agree: false
@@ -124,7 +175,11 @@
         return (
           this.$store
             .dispatch("register", {
-                name: this.model.name,
+                first_name: this.model.first_name,
+                last_name: this.model.last_name,
+                phone: this.model.phone,
+                company: this.model.company,
+                birthday: this.model.birthday,
                 email: this.model.email,
                 password: this.model.password,
                 password_confirmation: this.model.password

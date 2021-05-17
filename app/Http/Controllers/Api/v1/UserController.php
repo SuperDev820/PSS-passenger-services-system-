@@ -21,13 +21,19 @@ class UserController extends Controller
      */
     public function getAll()
     {
+        $admin_users=[];
         $users = User::all();
         foreach ($users as $user) {
             $user->roles;
+            foreach ($user->roles as $role) {
+                if ($role->name == "Admin") {
+                    array_push($admin_users, $user);
+                }
+            }
         }
         return response()->json([
             'message' => 'success',
-            'users' => $users
+            'users' => $admin_users
         ], 200);
     }
 
@@ -46,7 +52,7 @@ class UserController extends Controller
         }
         $user->roleNames = $roleNames;
         return response()->json([
-            'message' => 'success',    
+            'message' => 'success',
             'user' => $user,
         ], 200);
     }
@@ -58,10 +64,11 @@ class UserController extends Controller
      */
     public function create(Request $request) {
         $validator = Validator::make($request->all(), [
-            'name' => 'required|string|between:2,100',
+            'first_name' => 'required|string|between:1,100',
+            'last_name' => 'required|string|between:1,100',
             'email' => 'required|string|email|max:100|unique:users',
             'password' => 'required|string|confirmed|min:6',
-            'roles' => 'required',
+            // 'roles' => 'required',
         ]);
 
         if($validator->fails()){
@@ -73,11 +80,11 @@ class UserController extends Controller
                     ['password' => bcrypt($request->password)]
                 ));
         
-        $roles = Role::whereIn('name', $request->roles)->get();
-        $roleIds = [];
-        foreach ($roles as $role) {
-            array_push($roleIds, $role->id);
-        }
+        // $roles = Role::whereIn('name', $request->roles)->get();
+        $roleIds = [1];
+        // foreach ($roles as $role) {
+        //     array_push($roleIds, $role->id);
+        // }
         $user->roles()->attach($roleIds);
 
         return response()->json([
@@ -96,8 +103,10 @@ class UserController extends Controller
     {
         // Update user
         $request->validate([
-            'name' => 'required|string|between:2,100',
+            'first_name' => 'required|string|between:1,100',
+            'last_name' => 'required|string|between:1,100',
             'email' => 'required|string|email|max:100',
+            'status' => 'required',
             'password' => 'confirmed',
         ]);
         $user = User::find($request->id);
@@ -106,20 +115,22 @@ class UserController extends Controller
                 'password' => bcrypt($request->password),
                 'name' => $request->name,
                 'email' => $request->email,
+                'status' => $request->status,
             ]);
         } else {
             $user -> update([
                 'name' => $request->name,
                 'email' => $request->email,
+                'status' => $request->status,
             ]);
         }
 
-        $roles = Role::whereIn('name', $request->roles)->get();
-        $roleIds = [];
-        foreach ($roles as $role) {
-            array_push($roleIds, $role->id);
-        }
-        $user->roles()->sync($roleIds);
+        // $roles = Role::whereIn('name', $request->roles)->get();
+        // $roleIds = [];
+        // foreach ($roles as $role) {
+        //     array_push($roleIds, $role->id);
+        // }
+        // $user->roles()->sync($roleIds);
 
         return response()->json([
             'message' => 'User successfully updated',
@@ -138,13 +149,19 @@ class UserController extends Controller
         //delete User
         $user = User::find($userId);
         $user -> delete();
+        $admin_users=[];
         $users = User::all();
         foreach ($users as $user) {
             $user->roles;
+            foreach ($user->roles as $role) {
+                if ($role->name == "Admin") {
+                    array_push($admin_users, $user);
+                }
+            }
         }
         return response()->json([
             'message' => 'successfully deleted',
-            'users' => $users
+            'users' => $admin_users
         ], 200);
     }
 }
