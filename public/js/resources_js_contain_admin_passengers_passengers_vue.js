@@ -170,6 +170,31 @@ var _components;
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -197,15 +222,15 @@ var _components;
     };
   },
   watch: {
-    users: function users() {
-      this.tableData = this.users;
+    passengers: function passengers() {
+      this.tableData = this.passengers;
     }
   },
-  computed: (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)({}, (0,vuex__WEBPACK_IMPORTED_MODULE_16__.mapGetters)(['users'])),
+  computed: (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)({}, (0,vuex__WEBPACK_IMPORTED_MODULE_16__.mapGetters)(['passengers'])),
   mounted: function mounted() {
-    this.initUsers();
+    this.initPassengers();
   },
-  methods: (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)((0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)({}, (0,vuex__WEBPACK_IMPORTED_MODULE_16__.mapActions)(['initUsers', 'deleteUser'])), {}, {
+  methods: (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)((0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)({}, (0,vuex__WEBPACK_IMPORTED_MODULE_16__.mapActions)(['initPassengers', 'deletePassenger'])), {}, {
     paginationChanged: function paginationChanged(page) {
       this.pagination.currentPage = page;
     },
@@ -13860,11 +13885,11 @@ var render = function() {
                     "router-link",
                     {
                       staticClass: "btn btn-neutral btn-sm",
-                      attrs: { to: { name: "AdminUserCreate" } }
+                      attrs: { to: { name: "PassengerCreate" } }
                     },
                     [
                       _c("i", { staticClass: "fas fa-plus" }),
-                      _vm._v("Add User")
+                      _vm._v("Add Passenger\n        ")
                     ]
                   )
                 ],
@@ -13966,9 +13991,26 @@ var render = function() {
                           attrs: {
                             label: "Name",
                             prop: "name",
-                            "min-width": "120px",
+                            "min-width": "160px",
                             sortable: ""
-                          }
+                          },
+                          scopedSlots: _vm._u([
+                            {
+                              key: "default",
+                              fn: function(ref) {
+                                var row = ref.row
+                                return _c("div", {}, [
+                                  _vm._v(
+                                    "\n                " +
+                                      _vm._s(
+                                        row.first_name + " " + row.last_name
+                                      ) +
+                                      "\n              "
+                                  )
+                                ])
+                              }
+                            }
+                          ])
                         }),
                         _vm._v(" "),
                         _c("el-table-column", {
@@ -13981,9 +14023,34 @@ var render = function() {
                         _vm._v(" "),
                         _c("el-table-column", {
                           attrs: {
+                            label: "Birthday",
+                            prop: "birthday",
+                            "min-width": "120px",
+                            sortable: ""
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("el-table-column", {
+                          attrs: {
+                            label: "Phone",
+                            prop: "phone",
+                            "min-width": "120px"
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("el-table-column", {
+                          attrs: {
+                            label: "Company",
+                            prop: "company",
+                            "min-width": "120px"
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("el-table-column", {
+                          attrs: {
                             prop: "role",
                             label: "Role",
-                            "min-width": "120px"
+                            "min-width": "100px"
                           },
                           scopedSlots: _vm._u([
                             {
@@ -13994,24 +14061,42 @@ var render = function() {
                                   "div",
                                   {},
                                   [
-                                    row.roles[0].name == "Admin"
+                                    _c("badge", { attrs: { type: "info" } }, [
+                                      _c("span", [_vm._v("Passenger")])
+                                    ])
+                                  ],
+                                  1
+                                )
+                              }
+                            }
+                          ])
+                        }),
+                        _vm._v(" "),
+                        _c("el-table-column", {
+                          attrs: {
+                            prop: "status",
+                            label: "Status",
+                            "min-width": "100px"
+                          },
+                          scopedSlots: _vm._u([
+                            {
+                              key: "default",
+                              fn: function(ref) {
+                                var row = ref.row
+                                return _c(
+                                  "div",
+                                  {},
+                                  [
+                                    row.status == 1
                                       ? _c(
                                           "badge",
-                                          { attrs: { type: "warning" } },
-                                          [
-                                            _c("span", [
-                                              _vm._v(_vm._s(row.roles[0].name))
-                                            ])
-                                          ]
+                                          { attrs: { type: "success" } },
+                                          [_c("span", [_vm._v("Active")])]
                                         )
                                       : _c(
                                           "badge",
-                                          { attrs: { type: "info" } },
-                                          [
-                                            _c("span", [
-                                              _vm._v(_vm._s(row.roles[0].name))
-                                            ])
-                                          ]
+                                          { attrs: { type: "warning" } },
+                                          [_c("span", [_vm._v("Deactive")])]
                                         )
                                   ],
                                   1
@@ -14023,7 +14108,7 @@ var render = function() {
                         _vm._v(" "),
                         _c("el-table-column", {
                           attrs: {
-                            "min-width": "180px",
+                            "min-width": "120px",
                             align: "right",
                             label: "Actions"
                           },

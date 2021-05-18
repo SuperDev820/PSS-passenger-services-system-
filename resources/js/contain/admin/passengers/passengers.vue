@@ -9,7 +9,9 @@
           </nav>
         </b-col>
         <b-col lg="6" cols="5" class="text-right">
-          <router-link :to="{name: 'AdminUserCreate'}" class="btn btn-neutral btn-sm"><i class="fas fa-plus"></i>Add User</router-link>
+          <router-link :to="{name: 'PassengerCreate'}" class="btn btn-neutral btn-sm">
+            <i class="fas fa-plus"></i>Add Passenger
+          </router-link>
         </b-col>
       </b-row>
     </base-header>
@@ -50,24 +52,47 @@
                       @sort-change="sortChange">
               <el-table-column label="Name"
                              prop="name"
-                             min-width="120px"
+                             min-width="160px"
                              sortable>
+                <div slot-scope="{row}">
+                  {{row.first_name +' '+ row.last_name}}
+                </div>
               </el-table-column>
               <el-table-column label="Email"
                              prop="email"
                              min-width="160px">
               </el-table-column>
-              <el-table-column prop="role" label="Role" min-width="120px">
+              <el-table-column label="Birthday"
+                             prop="birthday"
+                             min-width="120px"
+                             sortable>
+              </el-table-column>
+              <el-table-column label="Phone"
+                             prop="phone"
+                             min-width="120px">
+              </el-table-column>
+              <el-table-column label="Company"
+                             prop="company"
+                             min-width="120px">
+              </el-table-column>
+              <el-table-column prop="role" label="Role" min-width="100px">
                 <div slot-scope="{row}">
-                  <badge class="" type="warning" v-if="row.roles[0].name=='Admin'">
-                    <span>{{row.roles[0].name}}</span>
-                  </badge>
-                  <badge class="" type="info" v-else>
-                    <span>{{row.roles[0].name}}</span>
+                  <badge class="" type="info">
+                    <span>Passenger</span>
                   </badge>
                 </div>
               </el-table-column>
-              <el-table-column min-width="180px" align="right" label="Actions">
+              <el-table-column prop="status" label="Status" min-width="100px">
+                <div slot-scope="{row}">
+                  <badge class="" v-if="row.status == 1" type="success">
+                    <span>Active</span>
+                  </badge>
+                  <badge class="" v-else type="warning">
+                    <span>Deactive</span>
+                  </badge>
+                </div>
+              </el-table-column>
+              <el-table-column min-width="120px" align="right" label="Actions">
                 <div slot-scope="{$index, row}" class="d-flex">
                   <base-button
                     @click.native="handleEdit(row)"
@@ -152,22 +177,22 @@ export default {
     };
   },
   watch: {
-    users: function () {
-      this.tableData = this.users;
+    passengers: function () {
+      this.tableData = this.passengers;
     },
   },
   computed: {
     ...mapGetters([
-      'users',
+      'passengers',
     ]),
   },
   mounted() {
-    this.initUsers();
+    this.initPassengers();
   },
   methods: {
     ...mapActions([
-      'initUsers',
-      'deleteUser',
+      'initPassengers',
+      'deletePassenger',
     ]),
 
     paginationChanged(page) {

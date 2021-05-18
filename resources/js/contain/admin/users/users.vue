@@ -50,7 +50,7 @@
                       @sort-change="sortChange">
               <el-table-column label="Name"
                              prop="name"
-                             min-width="120px"
+                             min-width="160px"
                              sortable>
                   <div slot-scope="{row}">
                     {{row.first_name +' '+ row.last_name}}
@@ -58,16 +58,16 @@
               </el-table-column>
               <el-table-column label="Email"
                              prop="email"
-                             min-width="160px">
+                             min-width="180px">
               </el-table-column>
-              <el-table-column prop="role" label="Role" min-width="120px">
+              <el-table-column prop="role" label="Role" min-width="100px">
                 <div slot-scope="{row}">
                   <badge class="" type="danger">
                     <span>Admin</span>
                   </badge>
                 </div>
               </el-table-column>
-              <el-table-column prop="status" label="Status" min-width="120px">
+              <el-table-column prop="status" label="Status" min-width="100px">
                 <div slot-scope="{row}">
                   <badge class="" v-if="row.status == 1" type="success">
                     <span>Active</span>
@@ -77,7 +77,7 @@
                   </badge>
                 </div>
               </el-table-column>
-              <el-table-column min-width="180px" align="right" label="Actions">
+              <el-table-column min-width="120px" align="right" label="Actions">
                 <div slot-scope="{$index, row}" class="d-flex">
                   <base-button
                     @click.native="handleEdit(row)"

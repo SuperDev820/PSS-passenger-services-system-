@@ -2,36 +2,36 @@ import ApiService from "@/api/api.service";
 import type from './type';
 
 const actions = {
-    initUsers(context) {
+    initPassengers(context) {
         ApiService.setHeader();
         return new Promise((resolve) =>{
-            ApiService.get("api/v1/admin/users")
+            ApiService.get("api/v1/admin/passengers")
                 .then(({data}) => {
                     console.log(data);
-                    context.commit(type.SET_ALL_USERS, data)
+                    context.commit(type.SET_ALL_PASSENGERS, data)
                 })
                 .catch(({ response }) => {
                     // context.commit(type.AUTH_LOGOUT);
                 });
         });
     },
-    getUserById(context, userId) {
+    getPassengerById(context, passengerId) {
         ApiService.setHeader();
         return new Promise((resolve) =>{
-            ApiService.get("api/v1/admin/user/" + userId)
+            ApiService.get("api/v1/admin/passenger/" + passengerId)
                 .then(({data}) => {
                     console.log(data);
-                    context.commit(type.SET_USER, data)
+                    context.commit(type.SET_PASSENGER, data)
                 })
                 .catch(({ response }) => {
                     // context.commit(type.AUTH_LOGOUT);
                 });
         });
     },
-    createUser(context, userInfo) {
+    createPassenger(context, passengerInfo) {
         ApiService.setHeader();
         return new Promise((resolve, reject) => {
-            ApiService.post("api/v1/admin/user/create", userInfo)
+            ApiService.post("api/v1/admin/passenger/create", passengerInfo)
                 .then((data) => {
                     resolve(data);
                 })
@@ -41,10 +41,10 @@ const actions = {
                 });
         });
     },
-    updateUser(context, userInfo) {
+    updatePassenger(context, passengerInfo) {
         ApiService.setHeader();
         return new Promise((resolve, reject) => {
-            ApiService.put("api/v1/admin/user/update", userInfo)
+            ApiService.put("api/v1/admin/passenger/update", passengerInfo)
                 .then((data) => {
                     resolve(data);
                 })
@@ -54,12 +54,12 @@ const actions = {
                 });
         });
     },
-    deleteUser(context, userId) {
+    deletePassenger(context, passengerId) {
         ApiService.setHeader();
         return new Promise((resolve) =>{
-            ApiService.delete("api/v1/admin/user/delete/" + userId)
+            ApiService.delete("api/v1/admin/passenger/delete/" + passengerId)
                 .then(({data}) => {
-                    context.commit(type.SET_ALL_USERS, data)
+                    context.commit(type.SET_ALL_PASSENGERS, data)
                 })
                 .catch(({ response }) => {
                     // context.commit(type.AUTH_LOGOUT);

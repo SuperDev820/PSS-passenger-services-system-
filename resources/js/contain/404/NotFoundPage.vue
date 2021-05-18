@@ -25,7 +25,7 @@
       <b-container >
         <b-row align-v="center" class="row-grid">
           <b-col md="6">
-            <b-img src="img/theme/landing-2.png" fluid />
+            <b-img src="/img/theme/landing-2.png" fluid />
           </b-col>
           <b-col md="6">
             <div class="pr-md-5">

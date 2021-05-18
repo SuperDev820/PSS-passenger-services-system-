@@ -35,7 +35,7 @@
           :link="{
             name: 'Fleet',
             icon: 'ni ni-spaceship text-info',
-            path: '/admin/fleet'
+            path: '/admin/aircrafts'
           }">
         </sidebar-item>
         <sidebar-item

@@ -13974,7 +13974,7 @@ var render = function() {
                           attrs: {
                             label: "Name",
                             prop: "name",
-                            "min-width": "120px",
+                            "min-width": "160px",
                             sortable: ""
                           },
                           scopedSlots: _vm._u([
@@ -14000,7 +14000,7 @@ var render = function() {
                           attrs: {
                             label: "Email",
                             prop: "email",
-                            "min-width": "160px"
+                            "min-width": "180px"
                           }
                         }),
                         _vm._v(" "),
@@ -14008,7 +14008,7 @@ var render = function() {
                           attrs: {
                             prop: "role",
                             label: "Role",
-                            "min-width": "120px"
+                            "min-width": "100px"
                           },
                           scopedSlots: _vm._u([
                             {
@@ -14034,7 +14034,7 @@ var render = function() {
                           attrs: {
                             prop: "status",
                             label: "Status",
-                            "min-width": "120px"
+                            "min-width": "100px"
                           },
                           scopedSlots: _vm._u([
                             {
@@ -14066,7 +14066,7 @@ var render = function() {
                         _vm._v(" "),
                         _c("el-table-column", {
                           attrs: {
-                            "min-width": "180px",
+                            "min-width": "120px",
                             align: "right",
                             label: "Actions"
                           },

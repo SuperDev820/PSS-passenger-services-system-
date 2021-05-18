@@ -1,12 +1,11 @@
 import type from './type'
-import JwtService from '@/common/jwt.service'
 
 const mutations = {
-  [type.SET_ALL_USERS] (state, data) {
-    state.users = data.users;
+  [type.SET_ALL_PASSENGERS] (state, data) {
+    state.passengers = data.passengers;
   },
-  [type.SET_USER] (state, data) {
-    state.user = data.user;
+  [type.SET_PASSENGER] (state, data) {
+    state.passenger = data.passenger;
   },
 };
 export default mutations;

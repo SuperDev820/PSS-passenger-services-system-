@@ -1,9 +1,9 @@
 const getters = {
-    users(state) {
-        return state.users;
+    passengers(state) {
+        return state.passengers;
     },
-    user(state) {
-        return state.user;
+    passenger(state) {
+        return state.passenger;
     },
   };
   

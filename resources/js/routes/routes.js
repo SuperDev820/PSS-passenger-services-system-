@@ -177,6 +177,32 @@ const routes = [
         name: 'Passengers',
         component: () => import('../contain/admin/passengers/passengers.vue'),
       },
+      {
+        path: 'passenger/create',
+        name: 'PassengerCreate',
+        component: () => import('../contain/admin/passengers/passenger-create.vue'),
+      },
+      {
+        path: 'passenger/:passengerId/edit',
+        name: 'PassengerEdit',
+        component: () => import('../contain/admin/passengers/passenger-edit.vue'),
+      },
+
+      {
+        path: 'aircrafts',
+        name: 'Aircrafts',
+        component: () => import('../contain/admin/fleet/aircrafts.vue'),
+      },
+      {
+        path: 'aircraft/create',
+        name: 'AircraftCreate',
+        component: () => import('../contain/admin/fleet/aircraft-create.vue'),
+      },
+      {
+        path: 'aircraft/:aircraftId/edit',
+        name: 'AircraftEdit',
+        component: () => import('../contain/admin/fleet/aircraft-edit.vue'),
+      },
     ]
   },
   authPages,

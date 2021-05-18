@@ -10,7 +10,7 @@
     >
       <div slot="brand" class="navbar-wrapper">
         <b-navbar-brand to="/">
-          <img src="img/brand/white.png">
+          <img src="/img/brand/white.png">
         </b-navbar-brand>
       </div>
 
@@ -19,7 +19,7 @@
          <b-row>
            <b-col cols="6" class="collapse-brand">
              <router-link to="/">
-               <img src="img/brand/green.png">
+               <img src="/img/brand/green.png">
              </router-link>
            </b-col>
            <b-col cols="6" class="collapse-close">

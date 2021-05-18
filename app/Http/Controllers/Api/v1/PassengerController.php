@@ -21,19 +21,19 @@ class PassengerController extends Controller
      */
     public function getAll()
     {
-        $admin_users=[];
-        $users = User::all();
-        foreach ($users as $user) {
-            $user->roles;
-            foreach ($user->roles as $role) {
-                if ($role->name == "Admin") {
-                    array_push($admin_users, $user);
+        $admin_passengers=[];
+        $passengers = User::all();
+        foreach ($passengers as $passenger) {
+            $passenger->roles;
+            foreach ($passenger->roles as $role) {
+                if ($role->name == "Passenger") {
+                    array_push($admin_passengers, $passenger);
                 }
             }
         }
         return response()->json([
             'message' => 'success',
-            'users' => $admin_users
+            'passengers' => $admin_passengers
         ], 200);
     }
 
@@ -43,17 +43,17 @@ class PassengerController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function getById(Request $request, $userId)
+    public function getById(Request $request, $passengerId)
     {
-        $user = User::find($userId);
+        $passenger = User::find($passengerId);
         $roleNames = [];
-        foreach ($user->roles as $role) {
+        foreach ($passenger->roles as $role) {
             array_push($roleNames, $role->name);
         }
-        $user->roleNames = $roleNames;
+        $passenger->roleNames = $roleNames;
         return response()->json([
             'message' => 'success',
-            'user' => $user,
+            'passenger' => $passenger,
         ], 200);
     }
 
@@ -64,7 +64,11 @@ class PassengerController extends Controller
      */
     public function create(Request $request) {
         $validator = Validator::make($request->all(), [
-            'name' => 'required|string|between:1,100',
+            'first_name' => 'required|string|between:1,100',
+            'last_name' => 'required|string|between:1,100',
+            'phone' => 'required',
+            'birthday' => 'required',
+            'company' => 'required',
             'email' => 'required|string|email|max:100|unique:users',
             'password' => 'required|string|confirmed|min:6',
             // 'roles' => 'required',
@@ -74,21 +78,21 @@ class PassengerController extends Controller
             return response()->json($validator->errors()->toJson(), 400);
         }
 
-        $user = User::create(array_merge(
+        $passenger = User::create(array_merge(
                     $validator->validated(),
                     ['password' => bcrypt($request->password)]
                 ));
         
         // $roles = Role::whereIn('name', $request->roles)->get();
-        $roleIds = [1];
+        $roleIds = [2];
         // foreach ($roles as $role) {
         //     array_push($roleIds, $role->id);
         // }
-        $user->roles()->attach($roleIds);
+        $passenger->roles()->attach($roleIds);
 
         return response()->json([
-            'message' => 'User successfully registered',
-            'user' => $user
+            'message' => 'passenger successfully registered',
+            'passenger' => $passenger
         ], 201);
     }
 
@@ -100,22 +104,37 @@ class PassengerController extends Controller
      */
     public function update(Request $request)
     {
-        // Update user
+        // Update passenger
         $request->validate([
-            'name' => 'required|string|between:2,100',
+            'first_name' => 'required|string|between:1,100',
+            'last_name' => 'required|string|between:1,100',
+            'phone' => 'required',
+            'birthday' => 'required',
+            'company' => 'required',
+            'status' => 'required',
             'email' => 'required|string|email|max:100',
             'password' => 'confirmed',
         ]);
-        $user = User::find($request->id);
+        $passenger = User::find($request->id);
         if ($request->password) {
-            $user -> update([
+            $passenger -> update([
                 'password' => bcrypt($request->password),
-                'name' => $request->name,
+                'first_name' => $request->first_name,
+                'last_name' => $request->last_name,
+                'phone' => $request->phone,
+                'birthday' => $request->birthday,
+                'company' => $request->company,
+                'status' => $request->status,
                 'email' => $request->email,
             ]);
         } else {
-            $user -> update([
-                'name' => $request->name,
+            $passenger -> update([
+                'first_name' => $request->first_name,
+                'last_name' => $request->last_name,
+                'phone' => $request->phone,
+                'birthday' => $request->birthday,
+                'company' => $request->company,
+                'status' => $request->status,
                 'email' => $request->email,
             ]);
         }
@@ -125,11 +144,11 @@ class PassengerController extends Controller
         // foreach ($roles as $role) {
         //     array_push($roleIds, $role->id);
         // }
-        // $user->roles()->sync($roleIds);
+        // $passenger->roles()->sync($roleIds);
 
         return response()->json([
-            'message' => 'User successfully updated',
-            'user' => $user
+            'message' => 'passenger successfully updated',
+            'passenger' => $passenger
         ], 201);
     }
 
@@ -139,24 +158,24 @@ class PassengerController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function delete(Request $request, $userId)
+    public function delete(Request $request, $passengerId)
     {
-        //delete User
-        $user = User::find($userId);
-        $user -> delete();
-        $admin_users=[];
-        $users = User::all();
-        foreach ($users as $user) {
-            $user->roles;
-            foreach ($user->roles as $role) {
-                if ($role->name == "Admin") {
-                    array_push($admin_users, $user);
+        //delete passenger
+        $passenger = User::find($passengerId);
+        $passenger -> delete();
+        $admin_passengers=[];
+        $passengers = User::all();
+        foreach ($passengers as $passenger) {
+            $passenger->roles;
+            foreach ($passenger->roles as $role) {
+                if ($role->name == "Passenger") {
+                    array_push($admin_passengers, $passenger);
                 }
             }
         }
         return response()->json([
             'message' => 'successfully deleted',
-            'users' => $admin_users
+            'passengers' => $admin_passengers
         ], 200);
     }
 }
