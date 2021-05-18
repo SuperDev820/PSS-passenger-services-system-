@@ -203,6 +203,27 @@ const routes = [
         name: 'AircraftEdit',
         component: () => import('../contain/admin/fleet/aircraft-edit.vue'),
       },
+      {
+        path: 'aircraft/:aircraftId/seat-map',
+        name: 'AircraftSeatMap',
+        component: () => import('../contain/admin/fleet/aircraft-seat-map.vue'),
+      },
+
+      {
+        path: 'flights',
+        name: 'Flights',
+        component: () => import('../contain/admin/flights/flights.vue'),
+      },
+      {
+        path: 'flight/create',
+        name: 'FlightCreate',
+        component: () => import('../contain/admin/flights/flight-create.vue'),
+      },
+      {
+        path: 'flight/:flightId/edit',
+        name: 'FlightEdit',
+        component: () => import('../contain/admin/flights/flight-edit.vue'),
+      },
     ]
   },
   authPages,

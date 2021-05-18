@@ -46,7 +46,7 @@
                                 v-model="model.last_name">
                     </base-input>
 
-                    <base-input prepend-icon="fas fa-calendar" name="Birthday" :rules="{required: true}">
+                    <base-input prepend-icon="fas fa-calendar" label="Birthday" name="Birthday" :rules="{required: true}">
                       <flat-picker slot-scope="{focus, blur}"
                                     @on-open="focus"
                                     @on-close="blur"
@@ -56,8 +56,10 @@
                     </base-input>
 
                     <base-input prepend-icon="fas fa-phone"
+                                label="Phone Number"
                                 placeholder="Phone"
                                 name="Phone"
+                                type="tel"
                                 :rules="{required: true}"
                                 v-model="model.phone">
                     </base-input>
@@ -65,6 +67,7 @@
                     <base-input alternative
                                 class="mb-3"
                                 prepend-icon="fas fa-globe-americas"
+                                label="Company"
                                 placeholder="Company"
                                 name="Company"
                                 :rules="{required: true}"
@@ -159,14 +162,14 @@
         this.error = null;
         return (
           this.createPassenger({
-                first_name: this.model.first_name,
-                last_name: this.model.last_name,
-                phone: this.model.phone,
-                company: this.model.company,
-                birthday: this.model.birthday,
-                email: this.model.email,
-                password: this.model.password,
-                password_confirmation: this.model.password
+              first_name: this.model.first_name,
+              last_name: this.model.last_name,
+              phone: this.model.phone,
+              company: this.model.company,
+              birthday: this.model.birthday,
+              email: this.model.email,
+              password: this.model.password,
+              password_confirmation: this.model.password
             })
             .then((res) => {
               this.isError = false;

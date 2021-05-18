@@ -54,14 +54,10 @@ class FleetController extends Controller
      */
     public function create(Request $request) {
         $validator = Validator::make($request->all(), [
-            'first_name' => 'required|string|between:1,100',
-            'last_name' => 'required|string|between:1,100',
-            'phone' => 'required',
-            'birthday' => 'required',
-            'company' => 'required',
-            'email' => 'required|string|email|max:100|unique:users',
-            'password' => 'required|string|confirmed|min:6',
-            // 'roles' => 'required',
+            'registration' => 'required|string|between:1,100',
+            'model' => 'required|string|between:1,100',
+            'seat_config' => 'required|numeric',
+            'total_seat' => 'required|numeric',
         ]);
 
         if($validator->fails()){
@@ -70,15 +66,7 @@ class FleetController extends Controller
 
         $aircraft = Aircraft::create(array_merge(
                     $validator->validated(),
-                    ['password' => bcrypt($request->password)]
                 ));
-        
-        // $roles = Role::whereIn('name', $request->roles)->get();
-        $roleIds = [2];
-        // foreach ($roles as $role) {
-        //     array_push($roleIds, $role->id);
-        // }
-        $aircraft->roles()->attach($roleIds);
 
         return response()->json([
             'message' => 'aircraft successfully registered',
@@ -96,38 +84,18 @@ class FleetController extends Controller
     {
         // Update aircraft
         $request->validate([
-            'first_name' => 'required|string|between:1,100',
-            'last_name' => 'required|string|between:1,100',
-            'phone' => 'required',
-            'birthday' => 'required',
-            'company' => 'required',
-            'status' => 'required',
-            'email' => 'required|string|email|max:100',
-            'password' => 'confirmed',
+            'registration' => 'required|string|between:1,100',
+            'model' => 'required|string|between:1,100',
+            'seat_config' => 'required|numeric',
+            'total_seat' => 'required|numeric',
         ]);
         $aircraft = Aircraft::find($request->id);
-        if ($request->password) {
-            $aircraft -> update([
-                'password' => bcrypt($request->password),
-                'first_name' => $request->first_name,
-                'last_name' => $request->last_name,
-                'phone' => $request->phone,
-                'birthday' => $request->birthday,
-                'company' => $request->company,
-                'status' => $request->status,
-                'email' => $request->email,
-            ]);
-        } else {
-            $aircraft -> update([
-                'first_name' => $request->first_name,
-                'last_name' => $request->last_name,
-                'phone' => $request->phone,
-                'birthday' => $request->birthday,
-                'company' => $request->company,
-                'status' => $request->status,
-                'email' => $request->email,
-            ]);
-        }
+        $aircraft -> update([
+            'registration' => $request->registration,
+            'model' => $request->model,
+            'seat_config' => $request->seat_config,
+            'total_seat' => $request->total_seat,
+        ]);
 
         return response()->json([
             'message' => 'aircraft successfully updated',

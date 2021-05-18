@@ -68,6 +68,17 @@ Route::group([ 'prefix' => 'v1', 'middleware' => 'api'], function(){
         Route::get('aircraft/{aircraftId}', 'App\Http\Controllers\Api\v1\FleetController@getById');
         /* delete aircraft by id */
         Route::delete('aircraft/delete/{aircraftId}', 'App\Http\Controllers\Api\v1\FleetController@delete');
+
+        /* Get all flights details*/
+        Route::get('flights', 'App\Http\Controllers\Api\v1\FlightController@getAll');
+        // /* Add a flight */
+        Route::post('flight/create', 'App\Http\Controllers\Api\v1\FlightController@create');
+        // /* Update a flight */
+        Route::put('flight/update', 'App\Http\Controllers\Api\v1\FlightController@update');
+        /* Get flight detail by id */
+        Route::get('flight/{flightId}', 'App\Http\Controllers\Api\v1\FlightController@getById');
+        /* delete flight by id */
+        Route::delete('flight/delete/{flightId}', 'App\Http\Controllers\Api\v1\FlightController@delete');
     });
 
     Route::group(['middleware' => ['jwt.auth']], function() {

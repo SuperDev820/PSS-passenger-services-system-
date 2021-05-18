@@ -180,21 +180,6 @@ var _components;
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -237,6 +222,14 @@ var _components;
     handleEdit: function handleEdit(row) {
       this.$router.push({
         name: 'AircraftEdit',
+        params: {
+          aircraftId: row.id
+        }
+      });
+    },
+    handleSeat: function handleSeat(row) {
+      this.$router.push({
+        name: 'AircraftSeatMap',
         params: {
           aircraftId: row.id
         }
@@ -13987,121 +13980,37 @@ var render = function() {
                       [
                         _c("el-table-column", {
                           attrs: {
-                            label: "Name",
-                            prop: "name",
+                            label: "Registration",
+                            prop: "registration",
                             "min-width": "160px",
                             sortable: ""
-                          },
-                          scopedSlots: _vm._u([
-                            {
-                              key: "default",
-                              fn: function(ref) {
-                                var row = ref.row
-                                return _c("div", {}, [
-                                  _vm._v(
-                                    "\n                " +
-                                      _vm._s(
-                                        row.first_name + " " + row.last_name
-                                      ) +
-                                      "\n              "
-                                  )
-                                ])
-                              }
-                            }
-                          ])
-                        }),
-                        _vm._v(" "),
-                        _c("el-table-column", {
-                          attrs: {
-                            label: "Email",
-                            prop: "email",
-                            "min-width": "160px"
                           }
                         }),
                         _vm._v(" "),
                         _c("el-table-column", {
                           attrs: {
-                            label: "Birthday",
-                            prop: "birthday",
+                            label: "Model",
+                            prop: "model",
+                            "min-width": "160px",
+                            sortable: ""
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("el-table-column", {
+                          attrs: {
+                            label: "Seat Configuration",
+                            prop: "seat_config",
+                            "min-width": "120px"
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("el-table-column", {
+                          attrs: {
+                            label: "Total Seat",
+                            prop: "total_seat",
                             "min-width": "120px",
                             sortable: ""
                           }
-                        }),
-                        _vm._v(" "),
-                        _c("el-table-column", {
-                          attrs: {
-                            label: "Phone",
-                            prop: "phone",
-                            "min-width": "120px"
-                          }
-                        }),
-                        _vm._v(" "),
-                        _c("el-table-column", {
-                          attrs: {
-                            label: "Company",
-                            prop: "company",
-                            "min-width": "120px"
-                          }
-                        }),
-                        _vm._v(" "),
-                        _c("el-table-column", {
-                          attrs: {
-                            prop: "role",
-                            label: "Role",
-                            "min-width": "100px"
-                          },
-                          scopedSlots: _vm._u([
-                            {
-                              key: "default",
-                              fn: function(ref) {
-                                var row = ref.row
-                                return _c(
-                                  "div",
-                                  {},
-                                  [
-                                    _c("badge", { attrs: { type: "info" } }, [
-                                      _c("span", [_vm._v("Passenger")])
-                                    ])
-                                  ],
-                                  1
-                                )
-                              }
-                            }
-                          ])
-                        }),
-                        _vm._v(" "),
-                        _c("el-table-column", {
-                          attrs: {
-                            prop: "status",
-                            label: "Status",
-                            "min-width": "100px"
-                          },
-                          scopedSlots: _vm._u([
-                            {
-                              key: "default",
-                              fn: function(ref) {
-                                var row = ref.row
-                                return _c(
-                                  "div",
-                                  {},
-                                  [
-                                    row.status == 1
-                                      ? _c(
-                                          "badge",
-                                          { attrs: { type: "success" } },
-                                          [_c("span", [_vm._v("Active")])]
-                                        )
-                                      : _c(
-                                          "badge",
-                                          { attrs: { type: "warning" } },
-                                          [_c("span", [_vm._v("Deactive")])]
-                                        )
-                                  ],
-                                  1
-                                )
-                              }
-                            }
-                          ])
                         }),
                         _vm._v(" "),
                         _c("el-table-column", {
@@ -14139,6 +14048,28 @@ var render = function() {
                                         _c("i", {
                                           staticClass:
                                             "text-white ni ni-ruler-pencil"
+                                        })
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "base-button",
+                                      {
+                                        attrs: {
+                                          type: "primary",
+                                          size: "sm",
+                                          icon: ""
+                                        },
+                                        nativeOn: {
+                                          click: function($event) {
+                                            return _vm.handleSeat(row)
+                                          }
+                                        }
+                                      },
+                                      [
+                                        _c("i", {
+                                          staticClass:
+                                            "text-white ni ni-curved-next"
                                         })
                                       ]
                                     ),

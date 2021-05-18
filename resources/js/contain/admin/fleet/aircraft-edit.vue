@@ -28,80 +28,42 @@
                   <div class="col-8 offset-2">
                     <base-input alternative
                                 class="mb-3"
-                                prepend-icon="ni ni-hat-3"
-                                label="First Name"
-                                placeholder="First Name"
-                                name="FirstName"
+                                prepend-icon="ni ni-spaceship"
+                                label="Aircraft Registration"
+                                placeholder="Aircraft Registration"
+                                name="Registration"
                                 :rules="{required: true}"
-                                v-model="model.first_name">
+                                v-model="model.registration">
                     </base-input>
 
                     <base-input alternative
                                 class="mb-3"
                                 prepend-icon="ni ni-hat-3"
-                                label="Last Name"
-                                placeholder="Last Name"
-                                name="LastName"
+                                label="Aircraft Model"
+                                placeholder="Aircraft Model"
+                                name="Model"
                                 :rules="{required: true}"
-                                v-model="model.last_name">
-                    </base-input>
-
-                    <base-input prepend-icon="fas fa-calendar" name="Birthday" :rules="{required: true}">
-                      <flat-picker slot-scope="{focus, blur}"
-                                    @on-open="focus"
-                                    @on-close="blur"
-                                    class="form-control datepicker"
-                                    v-model="model.birthday">
-                      </flat-picker>
-                    </base-input>
-
-                    <base-input prepend-icon="fas fa-phone"
-                                placeholder="Phone"
-                                name="Phone"
-                                :rules="{required: true}"
-                                v-model="model.phone">
+                                v-model="model.model">
                     </base-input>
 
                     <base-input alternative
                                 class="mb-3"
                                 prepend-icon="fas fa-globe-americas"
-                                placeholder="Company"
-                                name="Company"
-                                :rules="{required: true}"
-                                v-model="model.company">
+                                label="Seat Configuration"
+                                placeholder="Seat Configuration"
+                                name="SeatConfiguration"
+                                :rules="{required: true, numeric: true, min: 1}"
+                                v-model="model.seat_config">
                     </base-input>
 
                     <base-input alternative
                                 class="mb-3"
-                                prepend-icon="ni ni-email-83"
-                                label="Email"
-                                placeholder="Email"
-                                name="Email"
-                                :rules="{required: true, email: true}"
-                                v-model="model.email">
-                    </base-input>
-
-                    <base-input alternative
-                                class="mb-3"
-                                prepend-icon="ni ni-lock-circle-open"
-                                label="Password"
-                                placeholder="password"
-                                type="password"
-                                name="Password"
-                                v-model="model.password">
-                    </base-input>
-
-                    <base-input label="Status">
-                      <el-select v-model="model.status"
-                                 filterable
-                                 placeholder="Status"
-                                 :rules="{required: true}">
-                        <el-option v-for="option in statusOptions"
-                                   :key="option.label"
-                                   :label="option.label"
-                                   :value="option.value">
-                        </el-option>
-                      </el-select>
+                                prepend-icon="fas fa-globe-americas"
+                                label="Total Seat"
+                                placeholder="Total Seat"
+                                name="TotalSeat"
+                                :rules="{required: true, numeric: true, min: 1}"
+                                v-model="model.total_seat">
                     </base-input>
                   </div>
                   <div class="d-flex justify-content-between col-12 mt-4">
@@ -137,25 +99,11 @@
     },
     data() {
       return {
-        statusOptions: [
-          {
-            label: 'Active',
-            value: 1
-          },
-          {
-            label: 'Deactive',
-            value: 0
-          },
-        ],
         model: {
-          first_name: '',
-          last_name: '',
-          phone: '',
-          company: '',
-          birthday: '',
-          email: '',
-          password: '',
-          status: 0,
+          registration: '',
+          model: '',
+          seat_config: 0,
+          total_seat: 0,
         },
         error: null,
         isError: false,
@@ -166,13 +114,10 @@
     },
     watch: {
       aircraft: function () {
-        this.model.first_name = this.aircraft.first_name;
-        this.model.last_name = this.aircraft.last_name;
-        this.model.phone = this.aircraft.phone;
-        this.model.company = this.aircraft.company;
-        this.model.birthday = this.aircraft.birthday;
-        this.model.email = this.aircraft.email;
-        this.model.status = this.aircraft.status;
+        this.model.registration = this.aircraft.registration;
+        this.model.model = this.aircraft.model;
+        this.model.seat_config = this.aircraft.seat_config;
+        this.model.total_seat = this.aircraft.total_seat;
       },
     },
     computed: {
@@ -194,15 +139,10 @@
         return (
           this.updateAircraft({
               id: this.$route.params.aircraftId,
-              first_name: this.model.first_name,
-              last_name: this.model.last_name,
-              phone: this.model.phone,
-              company: this.model.company,
-              birthday: this.model.birthday,
-              email: this.model.email,
-              password: this.model.password,
-              password_confirmation: this.model.password,
-              status: this.model.status,
+              registration: this.model.registration,
+              model: this.model.model,
+              seat_config: this.model.seat_config,
+              total_seat: this.model.total_seat,
             })
             .then((res) => {
               this.isError = false;

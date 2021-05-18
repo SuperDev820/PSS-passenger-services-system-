@@ -155,6 +155,9 @@ var _components;
 //
 //
 //
+//
+//
+//
 
 
 
@@ -7030,6 +7033,7 @@ var render = function() {
                                           _c("base-input", {
                                             attrs: {
                                               "prepend-icon": "fas fa-calendar",
+                                              label: "Birthday",
                                               name: "Birthday",
                                               rules: { required: true }
                                             },
@@ -7075,7 +7079,9 @@ var render = function() {
                                             attrs: {
                                               "prepend-icon": "fas fa-phone",
                                               placeholder: "Phone",
+                                              label: "Phone Number",
                                               name: "Phone",
+                                              type: "tel",
                                               rules: { required: true }
                                             },
                                             model: {
@@ -7097,6 +7103,7 @@ var render = function() {
                                               alternative: "",
                                               "prepend-icon":
                                                 "fas fa-globe-americas",
+                                              label: "Company",
                                               placeholder: "Company",
                                               name: "Company",
                                               rules: { required: true }

@@ -50,47 +50,24 @@
                       row-key="id"
                       header-row-class-name="thead-light"
                       @sort-change="sortChange">
-              <el-table-column label="Name"
-                             prop="name"
+              <el-table-column label="Registration"
+                             prop="registration"
                              min-width="160px"
                              sortable>
-                <div slot-scope="{row}">
-                  {{row.first_name +' '+ row.last_name}}
-                </div>
               </el-table-column>
-              <el-table-column label="Email"
-                             prop="email"
-                             min-width="160px">
-              </el-table-column>
-              <el-table-column label="Birthday"
-                             prop="birthday"
-                             min-width="120px"
+              <el-table-column label="Model"
+                             prop="model"
+                             min-width="160px"
                              sortable>
               </el-table-column>
-              <el-table-column label="Phone"
-                             prop="phone"
+              <el-table-column label="Seat Configuration"
+                             prop="seat_config"
                              min-width="120px">
               </el-table-column>
-              <el-table-column label="Company"
-                             prop="company"
-                             min-width="120px">
-              </el-table-column>
-              <el-table-column prop="role" label="Role" min-width="100px">
-                <div slot-scope="{row}">
-                  <badge class="" type="info">
-                    <span>Passenger</span>
-                  </badge>
-                </div>
-              </el-table-column>
-              <el-table-column prop="status" label="Status" min-width="100px">
-                <div slot-scope="{row}">
-                  <badge class="" v-if="row.status == 1" type="success">
-                    <span>Active</span>
-                  </badge>
-                  <badge class="" v-else type="warning">
-                    <span>Deactive</span>
-                  </badge>
-                </div>
+              <el-table-column label="Total Seat"
+                             prop="total_seat"
+                             min-width="120px"
+                             sortable>
               </el-table-column>
               <el-table-column min-width="120px" align="right" label="Actions">
                 <div slot-scope="{$index, row}" class="d-flex">
@@ -102,6 +79,14 @@
                     icon
                   >
                     <i class="text-white ni ni-ruler-pencil"></i>
+                  </base-button>
+                  <base-button
+                    @click.native="handleSeat(row)"
+                    type="primary"
+                    size="sm"
+                    icon
+                  >
+                    <i class="text-white ni ni-curved-next"></i>
                   </base-button>
                   <base-button
                     @click.native="handleDelete($index, row)"
@@ -200,6 +185,9 @@ export default {
     },
     handleEdit(row) {
       this.$router.push({ name: 'AircraftEdit', params: { aircraftId: row.id }})
+    },
+    handleSeat(row) {
+      this.$router.push({ name: 'AircraftSeatMap', params: { aircraftId: row.id }})
     },
     handleDelete(index, row) {
       swal.fire({

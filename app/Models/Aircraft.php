@@ -9,10 +9,17 @@ class Aircraft extends Model
 {
     use HasFactory;
 
+    public $table = "aircrafts";
+
     protected $fillable = [
         'registration',
         'model',
         'seat_config',
         'total_seat',
     ];
+
+    public function flights()
+    {
+        return $this->hasMany(Flight::class);
+    }
 }

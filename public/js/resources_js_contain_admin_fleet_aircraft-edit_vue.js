@@ -117,44 +117,6 @@ var _components;
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -169,22 +131,11 @@ var _components;
   components: (_components = {}, (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_components, (element_ui_lib_select__WEBPACK_IMPORTED_MODULE_6___default().name), (element_ui_lib_select__WEBPACK_IMPORTED_MODULE_6___default())), (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_components, (element_ui_lib_option__WEBPACK_IMPORTED_MODULE_4___default().name), (element_ui_lib_option__WEBPACK_IMPORTED_MODULE_4___default())), (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_components, "flatPicker", (vue_flatpickr_component__WEBPACK_IMPORTED_MODULE_8___default())), _components),
   data: function data() {
     return {
-      statusOptions: [{
-        label: 'Active',
-        value: 1
-      }, {
-        label: 'Deactive',
-        value: 0
-      }],
       model: {
-        first_name: '',
-        last_name: '',
-        phone: '',
-        company: '',
-        birthday: '',
-        email: '',
-        password: '',
-        status: 0
+        registration: '',
+        model: '',
+        seat_config: 0,
+        total_seat: 0
       },
       error: null,
       isError: false
@@ -195,13 +146,10 @@ var _components;
   },
   watch: {
     aircraft: function aircraft() {
-      this.model.first_name = this.aircraft.first_name;
-      this.model.last_name = this.aircraft.last_name;
-      this.model.phone = this.aircraft.phone;
-      this.model.company = this.aircraft.company;
-      this.model.birthday = this.aircraft.birthday;
-      this.model.email = this.aircraft.email;
-      this.model.status = this.aircraft.status;
+      this.model.registration = this.aircraft.registration;
+      this.model.model = this.aircraft.model;
+      this.model.seat_config = this.aircraft.seat_config;
+      this.model.total_seat = this.aircraft.total_seat;
     }
   },
   computed: (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)({}, (0,vuex__WEBPACK_IMPORTED_MODULE_10__.mapGetters)(['aircraft'])),
@@ -215,15 +163,10 @@ var _components;
       this.error = null;
       return this.updateAircraft({
         id: this.$route.params.aircraftId,
-        first_name: this.model.first_name,
-        last_name: this.model.last_name,
-        phone: this.model.phone,
-        company: this.model.company,
-        birthday: this.model.birthday,
-        email: this.model.email,
-        password: this.model.password,
-        password_confirmation: this.model.password,
-        status: this.model.status
+        registration: this.model.registration,
+        model: this.model.model,
+        seat_config: this.model.seat_config,
+        total_seat: this.model.total_seat
       }).then(function (res) {
         _this.isError = false;
 
@@ -6985,22 +6928,23 @@ var render = function() {
                                             staticClass: "mb-3",
                                             attrs: {
                                               alternative: "",
-                                              "prepend-icon": "ni ni-hat-3",
-                                              label: "First Name",
-                                              placeholder: "First Name",
-                                              name: "FirstName",
+                                              "prepend-icon": "ni ni-spaceship",
+                                              label: "Aircraft Registration",
+                                              placeholder:
+                                                "Aircraft Registration",
+                                              name: "Registration",
                                               rules: { required: true }
                                             },
                                             model: {
-                                              value: _vm.model.first_name,
+                                              value: _vm.model.registration,
                                               callback: function($$v) {
                                                 _vm.$set(
                                                   _vm.model,
-                                                  "first_name",
+                                                  "registration",
                                                   $$v
                                                 )
                                               },
-                                              expression: "model.first_name"
+                                              expression: "model.registration"
                                             }
                                           }),
                                           _vm._v(" "),
@@ -7009,85 +6953,21 @@ var render = function() {
                                             attrs: {
                                               alternative: "",
                                               "prepend-icon": "ni ni-hat-3",
-                                              label: "Last Name",
-                                              placeholder: "Last Name",
-                                              name: "LastName",
+                                              label: "Aircraft Model",
+                                              placeholder: "Aircraft Model",
+                                              name: "Model",
                                               rules: { required: true }
                                             },
                                             model: {
-                                              value: _vm.model.last_name,
+                                              value: _vm.model.model,
                                               callback: function($$v) {
                                                 _vm.$set(
                                                   _vm.model,
-                                                  "last_name",
+                                                  "model",
                                                   $$v
                                                 )
                                               },
-                                              expression: "model.last_name"
-                                            }
-                                          }),
-                                          _vm._v(" "),
-                                          _c("base-input", {
-                                            attrs: {
-                                              "prepend-icon": "fas fa-calendar",
-                                              name: "Birthday",
-                                              rules: { required: true }
-                                            },
-                                            scopedSlots: _vm._u(
-                                              [
-                                                {
-                                                  key: "default",
-                                                  fn: function(ref) {
-                                                    var focus = ref.focus
-                                                    var blur = ref.blur
-                                                    return _c("flat-picker", {
-                                                      staticClass:
-                                                        "form-control datepicker",
-                                                      on: {
-                                                        "on-open": focus,
-                                                        "on-close": blur
-                                                      },
-                                                      model: {
-                                                        value:
-                                                          _vm.model.birthday,
-                                                        callback: function(
-                                                          $$v
-                                                        ) {
-                                                          _vm.$set(
-                                                            _vm.model,
-                                                            "birthday",
-                                                            $$v
-                                                          )
-                                                        },
-                                                        expression:
-                                                          "model.birthday"
-                                                      }
-                                                    })
-                                                  }
-                                                }
-                                              ],
-                                              null,
-                                              true
-                                            )
-                                          }),
-                                          _vm._v(" "),
-                                          _c("base-input", {
-                                            attrs: {
-                                              "prepend-icon": "fas fa-phone",
-                                              placeholder: "Phone",
-                                              name: "Phone",
-                                              rules: { required: true }
-                                            },
-                                            model: {
-                                              value: _vm.model.phone,
-                                              callback: function($$v) {
-                                                _vm.$set(
-                                                  _vm.model,
-                                                  "phone",
-                                                  $$v
-                                                )
-                                              },
-                                              expression: "model.phone"
+                                              expression: "model.model"
                                             }
                                           }),
                                           _vm._v(" "),
@@ -7097,46 +6977,25 @@ var render = function() {
                                               alternative: "",
                                               "prepend-icon":
                                                 "fas fa-globe-americas",
-                                              placeholder: "Company",
-                                              name: "Company",
-                                              rules: { required: true }
-                                            },
-                                            model: {
-                                              value: _vm.model.company,
-                                              callback: function($$v) {
-                                                _vm.$set(
-                                                  _vm.model,
-                                                  "company",
-                                                  $$v
-                                                )
-                                              },
-                                              expression: "model.company"
-                                            }
-                                          }),
-                                          _vm._v(" "),
-                                          _c("base-input", {
-                                            staticClass: "mb-3",
-                                            attrs: {
-                                              alternative: "",
-                                              "prepend-icon": "ni ni-email-83",
-                                              label: "Email",
-                                              placeholder: "Email",
-                                              name: "Email",
+                                              label: "Seat Configuration",
+                                              placeholder: "Seat Configuration",
+                                              name: "SeatConfiguration",
                                               rules: {
                                                 required: true,
-                                                email: true
+                                                numeric: true,
+                                                min: 1
                                               }
                                             },
                                             model: {
-                                              value: _vm.model.email,
+                                              value: _vm.model.seat_config,
                                               callback: function($$v) {
                                                 _vm.$set(
                                                   _vm.model,
-                                                  "email",
+                                                  "seat_config",
                                                   $$v
                                                 )
                                               },
-                                              expression: "model.email"
+                                              expression: "model.seat_config"
                                             }
                                           }),
                                           _vm._v(" "),
@@ -7145,66 +7004,28 @@ var render = function() {
                                             attrs: {
                                               alternative: "",
                                               "prepend-icon":
-                                                "ni ni-lock-circle-open",
-                                              label: "Password",
-                                              placeholder: "password",
-                                              type: "password",
-                                              name: "Password"
+                                                "fas fa-globe-americas",
+                                              label: "Total Seat",
+                                              placeholder: "Total Seat",
+                                              name: "TotalSeat",
+                                              rules: {
+                                                required: true,
+                                                numeric: true,
+                                                min: 1
+                                              }
                                             },
                                             model: {
-                                              value: _vm.model.password,
+                                              value: _vm.model.total_seat,
                                               callback: function($$v) {
                                                 _vm.$set(
                                                   _vm.model,
-                                                  "password",
+                                                  "total_seat",
                                                   $$v
                                                 )
                                               },
-                                              expression: "model.password"
+                                              expression: "model.total_seat"
                                             }
-                                          }),
-                                          _vm._v(" "),
-                                          _c(
-                                            "base-input",
-                                            { attrs: { label: "Status" } },
-                                            [
-                                              _c(
-                                                "el-select",
-                                                {
-                                                  attrs: {
-                                                    filterable: "",
-                                                    placeholder: "Status",
-                                                    rules: { required: true }
-                                                  },
-                                                  model: {
-                                                    value: _vm.model.status,
-                                                    callback: function($$v) {
-                                                      _vm.$set(
-                                                        _vm.model,
-                                                        "status",
-                                                        $$v
-                                                      )
-                                                    },
-                                                    expression: "model.status"
-                                                  }
-                                                },
-                                                _vm._l(
-                                                  _vm.statusOptions,
-                                                  function(option) {
-                                                    return _c("el-option", {
-                                                      key: option.label,
-                                                      attrs: {
-                                                        label: option.label,
-                                                        value: option.value
-                                                      }
-                                                    })
-                                                  }
-                                                ),
-                                                1
-                                              )
-                                            ],
-                                            1
-                                          )
+                                          })
                                         ],
                                         1
                                       ),
