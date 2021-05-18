@@ -45,6 +45,13 @@
             path: '/admin/flights'
           }">
         </sidebar-item>
+        <sidebar-item
+          :link="{
+            name: 'Schedule',
+            icon: 'ni ni-calendar-grid-58 text-red',
+            path: '/admin/schedule'
+          }">
+        </sidebar-item>
       </template>
     </side-bar>
     <div class="main-content">

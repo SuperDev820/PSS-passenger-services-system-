@@ -224,6 +224,12 @@ const routes = [
         name: 'FlightEdit',
         component: () => import('../contain/admin/flights/flight-edit.vue'),
       },
+
+      {
+        path: 'schedule',
+        name: 'Calendar',
+        component: () => import('../contain/admin/schedule/calendar.vue'),
+      },
     ]
   },
   authPages,

@@ -5,6 +5,9 @@ const getters = {
     aircraft(state) {
         return state.aircraft;
     },
+    aircraftOptions(state) {
+        return state.aircraft_options;
+    },
   };
   
   export default getters;

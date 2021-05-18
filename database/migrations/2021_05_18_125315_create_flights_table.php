@@ -16,7 +16,7 @@ class CreateFlightsTable extends Migration
         Schema::create('flights', function (Blueprint $table) {
             $table->id();
             $table->foreignId('aircraft_id')->constrained('aircrafts')->onUpdate('cascade')->onDelete('cascade');
-            $table->string('airline_code');
+            $table->string('airline');
             $table->string('origin_airport_name');
             $table->string('origin_airport_code');
             $table->string('destination_airport_name');

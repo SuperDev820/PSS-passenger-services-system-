@@ -89,6 +89,7 @@ class FleetController extends Controller
             'seat_config' => 'required|numeric',
             'total_seat' => 'required|numeric',
         ]);
+        
         $aircraft = Aircraft::find($request->id);
         $aircraft -> update([
             'registration' => $request->registration,
@@ -121,6 +122,19 @@ class FleetController extends Controller
         return response()->json([
             'message' => 'successfully deleted',
             'aircrafts' => $aircrafts
+        ], 200);
+    }
+
+    public function getAircraftOptions()
+    {
+        $aircraftOptions = [];
+        $aircrafts = Aircraft::orderBy('id')->get();
+        foreach ($aircrafts as $aircraft) {
+            array_push($aircraftOptions, $aircraft->registration);
+        }
+        return response()->json([
+            'message' => 'success',
+            'aircraftOptions' => $aircraftOptions,
         ], 200);
     }
 }

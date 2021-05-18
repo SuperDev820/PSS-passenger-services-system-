@@ -3,14 +3,14 @@
     <base-header class="pb-6">
       <b-row align-v="center" class="py-4">
         <b-col cols="7" lg="6">
-          <h6 class="h2 text-white d-inline-block mb-0">Passengers table</h6>
+          <h6 class="h2 text-white d-inline-block mb-0">Flights table</h6>
           <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
             <route-bread-crumb></route-bread-crumb>
           </nav>
         </b-col>
         <b-col lg="6" cols="5" class="text-right">
-          <router-link :to="{name: 'PassengerCreate'}" class="btn btn-neutral btn-sm">
-            <i class="fas fa-plus"></i>Add Passenger
+          <router-link :to="{name: 'FlightCreate'}" class="btn btn-neutral btn-sm">
+            <i class="fas fa-plus"></i>Add Flight
           </router-link>
         </b-col>
       </b-row>
@@ -19,7 +19,7 @@
       <div>
         <card class="no-border-card" body-classes="px-0 pb-1" footer-classes="pb-2">
           <template slot="header">
-            <h3 class="mb-0">Passengers table</h3>
+            <h3 class="mb-0">Flights table</h3>
           </template>
           <div>
             <b-col cols="12" class="d-flex justify-content-center justify-content-sm-between flex-wrap"
@@ -50,37 +50,41 @@
                       row-key="id"
                       header-row-class-name="thead-light"
                       @sort-change="sortChange">
-              <el-table-column label="Name"
-                             prop="name"
-                             min-width="160px"
-                             sortable>
-                <div slot-scope="{row}">
-                  {{row.first_name +' '+ row.last_name}}
-                </div>
-              </el-table-column>
-              <el-table-column label="Email"
-                             prop="email"
-                             min-width="160px">
-              </el-table-column>
-              <el-table-column label="Birthday"
-                             prop="birthday"
+              <el-table-column label="Airline"
+                             prop="airline"
                              min-width="120px"
                              sortable>
               </el-table-column>
-              <el-table-column label="Phone"
-                             prop="phone"
-                             min-width="120px">
-              </el-table-column>
-              <el-table-column label="Company"
-                             prop="company"
-                             min-width="120px">
-              </el-table-column>
-              <el-table-column prop="role" label="Role" min-width="100px">
+              <el-table-column label="Aircraft Model"
+                             prop="aircraft"
+                             min-width="140px">
                 <div slot-scope="{row}">
-                  <badge class="" type="info">
-                    <span>Passenger</span>
-                  </badge>
+                  {{row.aircraft.model}}
                 </div>
+              </el-table-column>
+              <el-table-column label="Origin"
+                             prop="origin_airport_name"
+                             min-width="120px"
+                             sortable>
+              </el-table-column>
+              <el-table-column label="Destination"
+                             prop="destination_airport_name"
+                             min-width="140px"
+                             sortable>
+              </el-table-column>
+              <el-table-column label="Departure"
+                             prop="departure_time"
+                             min-width="120px"
+                             sortable>
+              </el-table-column>
+              <el-table-column label="Arrival"
+                             prop="arrival_time"
+                             min-width="120px"
+                             sortable>
+              </el-table-column>
+              <el-table-column label="Duration"
+                             prop="flight_time"
+                             min-width="120px">
               </el-table-column>
               <el-table-column prop="status" label="Status" min-width="100px">
                 <div slot-scope="{row}">
@@ -92,7 +96,7 @@
                   </badge>
                 </div>
               </el-table-column>
-              <el-table-column min-width="120px" align="right" label="Actions">
+              <el-table-column min-width="140px" align="right" label="Actions">
                 <div slot-scope="{$index, row}" class="d-flex">
                   <base-button
                     @click.native="handleEdit(row)"
@@ -155,7 +159,7 @@ import {mapActions, mapGetters} from 'vuex'
 
 export default {
   page: {
-    title: "Passengers",
+    title: "Flights",
     meta: [{ name: "description", content: "" }]
   },
   mixins: [clientPaginationMixin],
@@ -177,29 +181,29 @@ export default {
     };
   },
   watch: {
-    passengers: function () {
-      this.tableData = this.passengers;
+    flights: function () {
+      this.tableData = this.flights;
     },
   },
   computed: {
     ...mapGetters([
-      'passengers',
+      'flights',
     ]),
   },
   mounted() {
-    this.initPassengers();
+    this.initFlights();
   },
   methods: {
     ...mapActions([
-      'initPassengers',
-      'deletePassenger',
+      'initFlights',
+      'deleteFlight',
     ]),
 
     paginationChanged(page) {
       this.pagination.currentPage = page
     },
     handleEdit(row) {
-      this.$router.push({ name: 'PassengerEdit', params: { passengerId: row.id }})
+      this.$router.push({ name: 'FlightEdit', params: { flightId: row.id }})
     },
     handleDelete(index, row) {
       swal.fire({
@@ -213,7 +217,7 @@ export default {
         icon: 'warning'
       }).then(result => {
         if (result.value) {
-          this.deletePassenger(row.id);
+          this.deleteFlight(row.id);
           this.$notify({
             message: 'Successfully Deleted',
             timeout: 5000,

@@ -66,6 +66,19 @@ const actions = {
                 });
         });
     },
+    getAircraftOptions(context) {
+        ApiService.setHeader();
+        return new Promise((resolve) =>{
+            ApiService.get("api/v1/admin/aircraft/options")
+                .then(({data}) => {
+                    console.log(data);
+                    context.commit(type.SET_AIRCRAFT_OPTIONS, data)
+                })
+                .catch(({ response }) => {
+                    // context.commit(type.AUTH_LOGOUT);
+                });
+        });
+    },
 };
 
 export default actions;

@@ -3,7 +3,7 @@
     <base-header class="pb-6">
       <b-row class="align-items-center py-4">
         <b-col lg="6" cols="7">
-          <h6 class="h2 text-white d-inline-block mb-0">Add Passenger</h6>
+          <h6 class="h2 text-white d-inline-block mb-0">Add Flight</h6>
           <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
             <route-breadcrumb/>
           </nav>
@@ -18,7 +18,7 @@
             <!-- Input groups -->
             <card>
               <!-- Card header -->
-              <h3 slot="header" class="mb-0">Add Passenger</h3>
+              <h3 slot="header" class="mb-0">Add Flight</h3>
               <!-- Card body -->
               <base-alert v-if="isError" dismissible type="danger">
                 <strong>Failed!</strong> {{error}}
@@ -29,74 +29,101 @@
                     <base-input alternative
                                 class="mb-3"
                                 prepend-icon="ni ni-hat-3"
-                                label="First Name"
-                                placeholder="First Name"
-                                name="FirstName"
+                                label="Airline"
+                                placeholder="Airline"
+                                name="Airline"
                                 :rules="{required: true}"
-                                v-model="model.first_name">
+                                v-model="model.airline">
+                    </base-input>
+
+                    <base-input label="Aircraft Registration">
+                      <el-select v-model="model.aircraft"
+                                 filterable
+                                 placeholder="Aircraft Registration"
+                                 :rules="{required: true}">
+                        <el-option v-for="option in aircraftOptions"
+                                   :key="option"
+                                   :label="option"
+                                   :value="option">
+                        </el-option>
+                      </el-select>
                     </base-input>
 
                     <base-input alternative
                                 class="mb-3"
                                 prepend-icon="ni ni-hat-3"
-                                label="Last Name"
-                                placeholder="Last Name"
-                                name="LastName"
+                                label="Origin Airport"
+                                placeholder="Origin Airport"
+                                name="OriginAirport"
                                 :rules="{required: true}"
-                                v-model="model.last_name">
+                                v-model="model.origin_airport_name">
                     </base-input>
 
-                    <base-input prepend-icon="fas fa-calendar" label="Birthday" name="Birthday" :rules="{required: true}">
+                    <base-input alternative
+                                class="mb-3"
+                                prepend-icon="ni ni-hat-3"
+                                label="Origin Airport IATA Code"
+                                placeholder="Origin Airport IATA Code"
+                                name="OriginAirportIATACode"
+                                :rules="{required: true}"
+                                v-model="model.origin_airport_code">
+                    </base-input>
+
+                    <base-input alternative
+                                class="mb-3"
+                                prepend-icon="ni ni-hat-3"
+                                label="Destination Airport"
+                                placeholder="Destination Airport"
+                                name="DestinationAirport"
+                                :rules="{required: true}"
+                                v-model="model.destination_airport_name">
+                    </base-input>
+
+                    <base-input alternative
+                                class="mb-3"
+                                prepend-icon="ni ni-hat-3"
+                                label="Destination Airport IATA Code"
+                                placeholder="Destination Airport IATA Code"
+                                name="DestinationAirportIATACode"
+                                :rules="{required: true}"
+                                v-model="model.destination_airport_code">
+                    </base-input>
+
+                    <base-input prepend-icon="fas fa-calendar" label="Departure Time" name="DepartureTime" :rules="{required: true}">
                       <flat-picker slot-scope="{focus, blur}"
                                     @on-open="focus"
                                     @on-close="blur"
+                                    :config="configs.dateTimePicker"
                                     class="form-control datepicker"
-                                    v-model="model.birthday">
+                                    v-model="model.departure_time">
                       </flat-picker>
                     </base-input>
 
-                    <base-input prepend-icon="fas fa-phone"
-                                label="Phone Number"
-                                placeholder="Phone"
-                                name="Phone"
-                                type="tel"
-                                :rules="{required: true}"
-                                v-model="model.phone">
+                    <base-input prepend-icon="fas fa-calendar" label="Arrival Time" name="ArrivalTime" :rules="{required: true}">
+                      <flat-picker slot-scope="{focus, blur}"
+                                    @on-open="focus"
+                                    @on-close="blur"
+                                    :config="configs.dateTimePicker"
+                                    class="form-control datepicker"
+                                    v-model="model.arrival_time">
+                      </flat-picker>
                     </base-input>
 
                     <base-input alternative
                                 class="mb-3"
                                 prepend-icon="fas fa-globe-americas"
-                                label="Company"
-                                placeholder="Company"
-                                name="Company"
+                                label="Flight Time"
+                                placeholder="Flight Time"
+                                name="FlightTime"
+                                type="number"
+                                step="0.1"
+                                min="0"
                                 :rules="{required: true}"
-                                v-model="model.company">
-                    </base-input>
-
-                    <base-input alternative
-                                class="mb-3"
-                                prepend-icon="ni ni-email-83"
-                                label="Email"
-                                placeholder="Email"
-                                name="Email"
-                                :rules="{required: true, email: true}"
-                                v-model="model.email">
-                    </base-input>
-
-                    <base-input alternative
-                                class="mb-3"
-                                prepend-icon="ni ni-lock-circle-open"
-                                label="Password"
-                                placeholder="password"
-                                type="password"
-                                name="Password"
-                                :rules="{required: true, min: 6}"
-                                v-model="model.password">
+                                v-model="model.flight_time">
                     </base-input>
                   </div>
                   <div class="d-flex justify-content-between col-12 mt-4">
-                    <router-link :to="{name: 'Passengers'}" class="btn btn-secondary">Cancel</router-link>
+                    <router-link :to="{name: 'Flights'}" class="btn btn-secondary">Cancel</router-link>
                     <b-button type="submit" variant="primary">Create</b-button>
                   </div>
                 </b-form>
@@ -118,7 +145,7 @@
 
   export default {
     page: {
-      title: "Create Passenger",
+      title: "Create Flight",
       meta: [{ name: "description", content: "" }]
     },
     components: {
@@ -128,48 +155,57 @@
     },
     data() {
       return {
-        roleOptions: [
-          {
-            label: 'Admin',
-            value: 'Admin'
+        configs: {
+          dateTimePicker: {
+            enableTime: true,
+            dateFormat: 'Y-m-d H:i'
           },
-          {
-            label: 'Passenger',
-            value: 'Passenger'
-          },
-        ],
+        },
         model: {
-          first_name: '',
-          last_name: '',
-          phone: '',
-          company: '',
-          birthday: '',
-          email: '',
-          password: '',
+          airline: '',
+          aircraft: '',
+          origin_airport_name: '',
+          origin_airport_code: '',
+          destination_airport_name: '',
+          destination_airport_code: '',
+          departure_time: '',
+          arrival_time: '',
+          flight_time: '',
         },
         error: null,
         isError: false,
       }
     },
+    mounted() {
+      this.getAircraftOptions();
+    },
+    computed: {
+      ...mapGetters([
+        'aircraftOptions',
+      ]),
+    },
     methods: {
       ...mapActions([
-        'createPassenger',
+        'createFlight',
+        'getAircraftOptions',
       ]),
 
       onSubmit() {
-        // this will be called only after form is valid. You can do an api call here to register passengers
+        console.log(this.model.departure_time)
+        // this will be called only after form is valid. You can do an api call here to register Flights
         // Reset the error if it existed.
         this.error = null;
         return (
-          this.createPassenger({
-              first_name: this.model.first_name,
-              last_name: this.model.last_name,
-              phone: this.model.phone,
-              company: this.model.company,
-              birthday: this.model.birthday,
-              email: this.model.email,
-              password: this.model.password,
-              password_confirmation: this.model.password
+          this.createFlight({
+              airline: this.model.airline,
+              aircraft: this.model.aircraft,
+              origin_airport_name: this.model.origin_airport_name,
+              origin_airport_code: this.model.origin_airport_code,
+              destination_airport_name: this.model.destination_airport_name,
+              destination_airport_code: this.model.destination_airport_code,
+              departure_time: this.model.departure_time,
+              arrival_time: this.model.arrival_time,
+              flight_time: this.model.flight_time,
             })
             .then((res) => {
               this.isError = false;
@@ -180,7 +216,7 @@
                 type: 'success'
               });
               this.$router.push(
-                { name: "Passengers" }
+                { name: "Flights" }
               );
             })
             .catch((error) => {

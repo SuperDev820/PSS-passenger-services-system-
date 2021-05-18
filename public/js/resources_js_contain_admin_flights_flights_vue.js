@@ -195,6 +195,10 @@ var _components;
 //
 //
 //
+//
+//
+//
+//
 
 
 
@@ -202,7 +206,7 @@ var _components;
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   page: {
-    title: "Passengers",
+    title: "Flights",
     meta: [{
       name: "description",
       content: ""
@@ -222,23 +226,23 @@ var _components;
     };
   },
   watch: {
-    passengers: function passengers() {
-      this.tableData = this.passengers;
+    flights: function flights() {
+      this.tableData = this.flights;
     }
   },
-  computed: (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)({}, (0,vuex__WEBPACK_IMPORTED_MODULE_16__.mapGetters)(['passengers'])),
+  computed: (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)({}, (0,vuex__WEBPACK_IMPORTED_MODULE_16__.mapGetters)(['flights'])),
   mounted: function mounted() {
-    this.initPassengers();
+    this.initFlights();
   },
-  methods: (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)((0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)({}, (0,vuex__WEBPACK_IMPORTED_MODULE_16__.mapActions)(['initPassengers', 'deletePassenger'])), {}, {
+  methods: (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)((0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)({}, (0,vuex__WEBPACK_IMPORTED_MODULE_16__.mapActions)(['initFlights', 'deleteFlight'])), {}, {
     paginationChanged: function paginationChanged(page) {
       this.pagination.currentPage = page;
     },
     handleEdit: function handleEdit(row) {
       this.$router.push({
-        name: 'PassengerEdit',
+        name: 'FlightEdit',
         params: {
-          passengerId: row.id
+          flightId: row.id
         }
       });
     },
@@ -256,7 +260,7 @@ var _components;
         icon: 'warning'
       }).then(function (result) {
         if (result.value) {
-          _this.deletePassenger(row.id);
+          _this.deleteFlight(row.id);
 
           _this.$notify({
             message: 'Successfully Deleted',
@@ -13863,7 +13867,7 @@ var render = function() {
             [
               _c("b-col", { attrs: { cols: "7", lg: "6" } }, [
                 _c("h6", { staticClass: "h2 text-white d-inline-block mb-0" }, [
-                  _vm._v("Passengers table")
+                  _vm._v("Flights table")
                 ]),
                 _vm._v(" "),
                 _c(
@@ -13885,11 +13889,11 @@ var render = function() {
                     "router-link",
                     {
                       staticClass: "btn btn-neutral btn-sm",
-                      attrs: { to: { name: "PassengerCreate" } }
+                      attrs: { to: { name: "FlightCreate" } }
                     },
                     [
                       _c("i", { staticClass: "fas fa-plus" }),
-                      _vm._v("Add Passenger\n        ")
+                      _vm._v("Add Flight\n        ")
                     ]
                   )
                 ],
@@ -13914,9 +13918,7 @@ var render = function() {
               },
               [
                 _c("template", { slot: "header" }, [
-                  _c("h3", { staticClass: "mb-0" }, [
-                    _vm._v("Passengers table")
-                  ])
+                  _c("h3", { staticClass: "mb-0" }, [_vm._v("Flights table")])
                 ]),
                 _vm._v(" "),
                 _c(
@@ -13989,10 +13991,18 @@ var render = function() {
                       [
                         _c("el-table-column", {
                           attrs: {
-                            label: "Name",
-                            prop: "name",
-                            "min-width": "160px",
+                            label: "Airline",
+                            prop: "airline",
+                            "min-width": "120px",
                             sortable: ""
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("el-table-column", {
+                          attrs: {
+                            label: "Aircraft Model",
+                            prop: "aircraft",
+                            "min-width": "140px"
                           },
                           scopedSlots: _vm._u([
                             {
@@ -14002,9 +14012,7 @@ var render = function() {
                                 return _c("div", {}, [
                                   _vm._v(
                                     "\n                " +
-                                      _vm._s(
-                                        row.first_name + " " + row.last_name
-                                      ) +
+                                      _vm._s(row.aircraft.model) +
                                       "\n              "
                                   )
                                 ])
@@ -14015,16 +14023,8 @@ var render = function() {
                         _vm._v(" "),
                         _c("el-table-column", {
                           attrs: {
-                            label: "Email",
-                            prop: "email",
-                            "min-width": "160px"
-                          }
-                        }),
-                        _vm._v(" "),
-                        _c("el-table-column", {
-                          attrs: {
-                            label: "Birthday",
-                            prop: "birthday",
+                            label: "Origin",
+                            prop: "origin_airport_name",
                             "min-width": "120px",
                             sortable: ""
                           }
@@ -14032,44 +14032,37 @@ var render = function() {
                         _vm._v(" "),
                         _c("el-table-column", {
                           attrs: {
-                            label: "Phone",
-                            prop: "phone",
-                            "min-width": "120px"
+                            label: "Destination",
+                            prop: "destination_airport_name",
+                            "min-width": "140px",
+                            sortable: ""
                           }
                         }),
                         _vm._v(" "),
                         _c("el-table-column", {
                           attrs: {
-                            label: "Company",
-                            prop: "company",
-                            "min-width": "120px"
+                            label: "Departure",
+                            prop: "departure_time",
+                            "min-width": "120px",
+                            sortable: ""
                           }
                         }),
                         _vm._v(" "),
                         _c("el-table-column", {
                           attrs: {
-                            prop: "role",
-                            label: "Role",
-                            "min-width": "100px"
-                          },
-                          scopedSlots: _vm._u([
-                            {
-                              key: "default",
-                              fn: function(ref) {
-                                var row = ref.row
-                                return _c(
-                                  "div",
-                                  {},
-                                  [
-                                    _c("badge", { attrs: { type: "info" } }, [
-                                      _c("span", [_vm._v("Passenger")])
-                                    ])
-                                  ],
-                                  1
-                                )
-                              }
-                            }
-                          ])
+                            label: "Arrival",
+                            prop: "arrival_time",
+                            "min-width": "120px",
+                            sortable: ""
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("el-table-column", {
+                          attrs: {
+                            label: "Duration",
+                            prop: "flight_time",
+                            "min-width": "120px"
+                          }
                         }),
                         _vm._v(" "),
                         _c("el-table-column", {
@@ -14108,7 +14101,7 @@ var render = function() {
                         _vm._v(" "),
                         _c("el-table-column", {
                           attrs: {
-                            "min-width": "120px",
+                            "min-width": "140px",
                             align: "right",
                             label: "Actions"
                           },

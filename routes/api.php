@@ -60,6 +60,8 @@ Route::group([ 'prefix' => 'v1', 'middleware' => 'api'], function(){
 
         /* Get all aircrafts details*/
         Route::get('aircrafts', 'App\Http\Controllers\Api\v1\FleetController@getAll');
+        /* Get all aircraft registrations*/
+        Route::get('aircraft/options', 'App\Http\Controllers\Api\v1\FleetController@getAircraftOptions');
         // /* Add a aircraft */
         Route::post('aircraft/create', 'App\Http\Controllers\Api\v1\FleetController@create');
         // /* Update a aircraft */
@@ -68,7 +70,7 @@ Route::group([ 'prefix' => 'v1', 'middleware' => 'api'], function(){
         Route::get('aircraft/{aircraftId}', 'App\Http\Controllers\Api\v1\FleetController@getById');
         /* delete aircraft by id */
         Route::delete('aircraft/delete/{aircraftId}', 'App\Http\Controllers\Api\v1\FleetController@delete');
-
+        
         /* Get all flights details*/
         Route::get('flights', 'App\Http\Controllers\Api\v1\FlightController@getAll');
         // /* Add a flight */

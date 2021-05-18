@@ -115,6 +115,7 @@ class PassengerController extends Controller
             'email' => 'required|string|email|max:100',
             'password' => 'confirmed',
         ]);
+        
         $passenger = User::find($request->id);
         if ($request->password) {
             $passenger -> update([

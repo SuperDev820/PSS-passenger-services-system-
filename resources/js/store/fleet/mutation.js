@@ -7,5 +7,8 @@ const mutations = {
   [type.SET_AIRCRAFT] (state, data) {
     state.aircraft = data.aircraft;
   },
+  [type.SET_AIRCRAFT_OPTIONS] (state, data) {
+    state.aircraft_options = data.aircraftOptions;
+  },
 };
 export default mutations;

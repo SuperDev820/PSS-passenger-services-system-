@@ -158,12 +158,40 @@ var _components;
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   page: {
-    title: "Edit Passenger",
+    title: "Edit Flight",
     meta: [{
       name: "description",
       content: ""
@@ -179,14 +207,22 @@ var _components;
         label: 'Deactive',
         value: 0
       }],
+      configs: {
+        dateTimePicker: {
+          enableTime: true,
+          dateFormat: 'Y-m-d H:i'
+        }
+      },
       model: {
-        first_name: '',
-        last_name: '',
-        phone: '',
-        company: '',
-        birthday: '',
-        email: '',
-        password: '',
+        airline: '',
+        aircraft: '',
+        origin_airport_name: '',
+        origin_airport_code: '',
+        destination_airport_name: '',
+        destination_airport_code: '',
+        departure_time: '',
+        arrival_time: '',
+        flight_time: '',
         status: 0
       },
       error: null,
@@ -194,38 +230,43 @@ var _components;
     };
   },
   mounted: function mounted() {
-    this.getPassengerById(this.$route.params.passengerId);
+    this.getFlightById(this.$route.params.flightId);
+    this.getAircraftOptions();
   },
   watch: {
-    passenger: function passenger() {
-      this.model.first_name = this.passenger.first_name;
-      this.model.last_name = this.passenger.last_name;
-      this.model.phone = this.passenger.phone;
-      this.model.company = this.passenger.company;
-      this.model.birthday = this.passenger.birthday;
-      this.model.email = this.passenger.email;
-      this.model.status = this.passenger.status;
+    flight: function flight() {
+      this.model.airline = this.flight.airline;
+      this.model.aircraft = this.flight.aircraft.registration;
+      this.model.origin_airport_name = this.flight.origin_airport_name;
+      this.model.origin_airport_code = this.flight.origin_airport_code;
+      this.model.destination_airport_name = this.flight.destination_airport_name;
+      this.model.destination_airport_code = this.flight.destination_airport_code;
+      this.model.departure_time = this.flight.departure_time;
+      this.model.arrival_time = this.flight.arrival_time;
+      this.model.flight_time = this.flight.flight_time;
+      this.model.status = this.flight.status;
     }
   },
-  computed: (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)({}, (0,vuex__WEBPACK_IMPORTED_MODULE_10__.mapGetters)(['passenger'])),
-  methods: (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)((0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)({}, (0,vuex__WEBPACK_IMPORTED_MODULE_10__.mapActions)(['getPassengerById', 'updatePassenger'])), {}, {
+  computed: (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)({}, (0,vuex__WEBPACK_IMPORTED_MODULE_10__.mapGetters)(['flight', 'aircraftOptions'])),
+  methods: (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)((0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)({}, (0,vuex__WEBPACK_IMPORTED_MODULE_10__.mapActions)(['getFlightById', 'updateFlight', 'getAircraftOptions'])), {}, {
     onSubmit: function onSubmit() {
       var _this = this;
 
-      console.log(this.model.name); // this will be called only after form is valid. You can do an api call here to register passengers
+      console.log(this.model.name); // this will be called only after form is valid. You can do an api call here to register flights
       // Reset the error if it existed.
 
       this.error = null;
-      return this.updatePassenger({
-        id: this.$route.params.passengerId,
-        first_name: this.model.first_name,
-        last_name: this.model.last_name,
-        phone: this.model.phone,
-        company: this.model.company,
-        birthday: this.model.birthday,
-        email: this.model.email,
-        password: this.model.password,
-        password_confirmation: this.model.password,
+      return this.updateFlight({
+        id: this.$route.params.flightId,
+        airline: this.model.airline,
+        aircraft: this.model.aircraft,
+        origin_airport_name: this.model.origin_airport_name,
+        origin_airport_code: this.model.origin_airport_code,
+        destination_airport_name: this.model.destination_airport_name,
+        destination_airport_code: this.model.destination_airport_code,
+        departure_time: this.model.departure_time,
+        arrival_time: this.model.arrival_time,
+        flight_time: this.model.flight_time,
         status: this.model.status
       }).then(function (res) {
         _this.isError = false;
@@ -238,7 +279,7 @@ var _components;
         });
 
         _this.$router.push({
-          name: "Passengers"
+          name: "Flights"
         });
       })["catch"](function (error) {
         _this.error = error ? error : "";
@@ -6901,7 +6942,7 @@ var render = function() {
             [
               _c("b-col", { attrs: { lg: "6", cols: "7" } }, [
                 _c("h6", { staticClass: "h2 text-white d-inline-block mb-0" }, [
-                  _vm._v("Edit Passenger")
+                  _vm._v("Edit Flight")
                 ]),
                 _vm._v(" "),
                 _c(
@@ -6943,7 +6984,7 @@ var render = function() {
                             attrs: { slot: "header" },
                             slot: "header"
                           },
-                          [_vm._v("Edit Passenger")]
+                          [_vm._v("Edit Flight")]
                         ),
                         _vm._v(" "),
                         _vm.isError
@@ -6989,21 +7030,93 @@ var render = function() {
                                             attrs: {
                                               alternative: "",
                                               "prepend-icon": "ni ni-hat-3",
-                                              label: "First Name",
-                                              placeholder: "First Name",
-                                              name: "FirstName",
+                                              label: "Airline",
+                                              placeholder: "Airline",
+                                              name: "Airline",
                                               rules: { required: true }
                                             },
                                             model: {
-                                              value: _vm.model.first_name,
+                                              value: _vm.model.airline,
                                               callback: function($$v) {
                                                 _vm.$set(
                                                   _vm.model,
-                                                  "first_name",
+                                                  "airline",
                                                   $$v
                                                 )
                                               },
-                                              expression: "model.first_name"
+                                              expression: "model.airline"
+                                            }
+                                          }),
+                                          _vm._v(" "),
+                                          _c(
+                                            "base-input",
+                                            {
+                                              attrs: {
+                                                label: "Aircraft Registration"
+                                              }
+                                            },
+                                            [
+                                              _c(
+                                                "el-select",
+                                                {
+                                                  attrs: {
+                                                    filterable: "",
+                                                    placeholder:
+                                                      "Aircraft Registration",
+                                                    rules: { required: true }
+                                                  },
+                                                  model: {
+                                                    value: _vm.model.aircraft,
+                                                    callback: function($$v) {
+                                                      _vm.$set(
+                                                        _vm.model,
+                                                        "aircraft",
+                                                        $$v
+                                                      )
+                                                    },
+                                                    expression: "model.aircraft"
+                                                  }
+                                                },
+                                                _vm._l(
+                                                  _vm.aircraftOptions,
+                                                  function(option) {
+                                                    return _c("el-option", {
+                                                      key: option,
+                                                      attrs: {
+                                                        label: option,
+                                                        value: option
+                                                      }
+                                                    })
+                                                  }
+                                                ),
+                                                1
+                                              )
+                                            ],
+                                            1
+                                          ),
+                                          _vm._v(" "),
+                                          _c("base-input", {
+                                            staticClass: "mb-3",
+                                            attrs: {
+                                              alternative: "",
+                                              "prepend-icon": "ni ni-hat-3",
+                                              label: "Origin Airport",
+                                              placeholder: "Origin Airport",
+                                              name: "OriginAirport",
+                                              rules: { required: true }
+                                            },
+                                            model: {
+                                              value:
+                                                _vm.model.origin_airport_name,
+                                              callback: function($$v) {
+                                                _vm.$set(
+                                                  _vm.model,
+                                                  "origin_airport_name",
+                                                  $$v
+                                                )
+                                              },
+                                              expression:
+                                                "model.origin_airport_name"
                                             }
                                           }),
                                           _vm._v(" "),
@@ -7012,29 +7125,88 @@ var render = function() {
                                             attrs: {
                                               alternative: "",
                                               "prepend-icon": "ni ni-hat-3",
-                                              label: "Last Name",
-                                              placeholder: "Last Name",
-                                              name: "LastName",
+                                              label: "Origin Airport IATA Code",
+                                              placeholder:
+                                                "Origin Airport IATA Code",
+                                              name: "OriginAirportIATACode",
                                               rules: { required: true }
                                             },
                                             model: {
-                                              value: _vm.model.last_name,
+                                              value:
+                                                _vm.model.origin_airport_code,
                                               callback: function($$v) {
                                                 _vm.$set(
                                                   _vm.model,
-                                                  "last_name",
+                                                  "origin_airport_code",
                                                   $$v
                                                 )
                                               },
-                                              expression: "model.last_name"
+                                              expression:
+                                                "model.origin_airport_code"
+                                            }
+                                          }),
+                                          _vm._v(" "),
+                                          _c("base-input", {
+                                            staticClass: "mb-3",
+                                            attrs: {
+                                              alternative: "",
+                                              "prepend-icon": "ni ni-hat-3",
+                                              label: "Destination Airport",
+                                              placeholder:
+                                                "Destination Airport",
+                                              name: "DestinationAirport",
+                                              rules: { required: true }
+                                            },
+                                            model: {
+                                              value:
+                                                _vm.model
+                                                  .destination_airport_name,
+                                              callback: function($$v) {
+                                                _vm.$set(
+                                                  _vm.model,
+                                                  "destination_airport_name",
+                                                  $$v
+                                                )
+                                              },
+                                              expression:
+                                                "model.destination_airport_name"
+                                            }
+                                          }),
+                                          _vm._v(" "),
+                                          _c("base-input", {
+                                            staticClass: "mb-3",
+                                            attrs: {
+                                              alternative: "",
+                                              "prepend-icon": "ni ni-hat-3",
+                                              label:
+                                                "Destination Airport IATA Code",
+                                              placeholder:
+                                                "Destination Airport IATA Code",
+                                              name:
+                                                "DestinationAirportIATACode",
+                                              rules: { required: true }
+                                            },
+                                            model: {
+                                              value:
+                                                _vm.model
+                                                  .destination_airport_code,
+                                              callback: function($$v) {
+                                                _vm.$set(
+                                                  _vm.model,
+                                                  "destination_airport_code",
+                                                  $$v
+                                                )
+                                              },
+                                              expression:
+                                                "model.destination_airport_code"
                                             }
                                           }),
                                           _vm._v(" "),
                                           _c("base-input", {
                                             attrs: {
                                               "prepend-icon": "fas fa-calendar",
-                                              label: "Birthday",
-                                              name: "Birthday",
+                                              label: "Departure Time",
+                                              name: "DepartureTime",
                                               rules: { required: true }
                                             },
                                             scopedSlots: _vm._u(
@@ -7047,24 +7219,30 @@ var render = function() {
                                                     return _c("flat-picker", {
                                                       staticClass:
                                                         "form-control datepicker",
+                                                      attrs: {
+                                                        config:
+                                                          _vm.configs
+                                                            .dateTimePicker
+                                                      },
                                                       on: {
                                                         "on-open": focus,
                                                         "on-close": blur
                                                       },
                                                       model: {
                                                         value:
-                                                          _vm.model.birthday,
+                                                          _vm.model
+                                                            .departure_time,
                                                         callback: function(
                                                           $$v
                                                         ) {
                                                           _vm.$set(
                                                             _vm.model,
-                                                            "birthday",
+                                                            "departure_time",
                                                             $$v
                                                           )
                                                         },
                                                         expression:
-                                                          "model.birthday"
+                                                          "model.departure_time"
                                                       }
                                                     })
                                                   }
@@ -7077,24 +7255,53 @@ var render = function() {
                                           _vm._v(" "),
                                           _c("base-input", {
                                             attrs: {
-                                              "prepend-icon": "fas fa-phone",
-                                              placeholder: "Phone",
-                                              label: "Phone Number",
-                                              name: "Phone",
-                                              type: "tel",
+                                              "prepend-icon": "fas fa-calendar",
+                                              label: "Arrival Time",
+                                              name: "ArrivalTime",
                                               rules: { required: true }
                                             },
-                                            model: {
-                                              value: _vm.model.phone,
-                                              callback: function($$v) {
-                                                _vm.$set(
-                                                  _vm.model,
-                                                  "phone",
-                                                  $$v
-                                                )
-                                              },
-                                              expression: "model.phone"
-                                            }
+                                            scopedSlots: _vm._u(
+                                              [
+                                                {
+                                                  key: "default",
+                                                  fn: function(ref) {
+                                                    var focus = ref.focus
+                                                    var blur = ref.blur
+                                                    return _c("flat-picker", {
+                                                      staticClass:
+                                                        "form-control datepicker",
+                                                      attrs: {
+                                                        config:
+                                                          _vm.configs
+                                                            .dateTimePicker
+                                                      },
+                                                      on: {
+                                                        "on-open": focus,
+                                                        "on-close": blur
+                                                      },
+                                                      model: {
+                                                        value:
+                                                          _vm.model
+                                                            .arrival_time,
+                                                        callback: function(
+                                                          $$v
+                                                        ) {
+                                                          _vm.$set(
+                                                            _vm.model,
+                                                            "arrival_time",
+                                                            $$v
+                                                          )
+                                                        },
+                                                        expression:
+                                                          "model.arrival_time"
+                                                      }
+                                                    })
+                                                  }
+                                                }
+                                              ],
+                                              null,
+                                              true
+                                            )
                                           }),
                                           _vm._v(" "),
                                           _c("base-input", {
@@ -7103,71 +7310,24 @@ var render = function() {
                                               alternative: "",
                                               "prepend-icon":
                                                 "fas fa-globe-americas",
-                                              label: "Company",
-                                              placeholder: "Company",
-                                              name: "Company",
+                                              label: "Flight Time",
+                                              placeholder: "Flight Time",
+                                              name: "FlightTime",
+                                              type: "number",
+                                              step: "0.1",
+                                              min: "0",
                                               rules: { required: true }
                                             },
                                             model: {
-                                              value: _vm.model.company,
+                                              value: _vm.model.flight_time,
                                               callback: function($$v) {
                                                 _vm.$set(
                                                   _vm.model,
-                                                  "company",
+                                                  "flight_time",
                                                   $$v
                                                 )
                                               },
-                                              expression: "model.company"
-                                            }
-                                          }),
-                                          _vm._v(" "),
-                                          _c("base-input", {
-                                            staticClass: "mb-3",
-                                            attrs: {
-                                              alternative: "",
-                                              "prepend-icon": "ni ni-email-83",
-                                              label: "Email",
-                                              placeholder: "Email",
-                                              name: "Email",
-                                              rules: {
-                                                required: true,
-                                                email: true
-                                              }
-                                            },
-                                            model: {
-                                              value: _vm.model.email,
-                                              callback: function($$v) {
-                                                _vm.$set(
-                                                  _vm.model,
-                                                  "email",
-                                                  $$v
-                                                )
-                                              },
-                                              expression: "model.email"
-                                            }
-                                          }),
-                                          _vm._v(" "),
-                                          _c("base-input", {
-                                            staticClass: "mb-3",
-                                            attrs: {
-                                              alternative: "",
-                                              "prepend-icon":
-                                                "ni ni-lock-circle-open",
-                                              label: "Password",
-                                              placeholder: "password",
-                                              type: "password",
-                                              name: "Password"
-                                            },
-                                            model: {
-                                              value: _vm.model.password,
-                                              callback: function($$v) {
-                                                _vm.$set(
-                                                  _vm.model,
-                                                  "password",
-                                                  $$v
-                                                )
-                                              },
-                                              expression: "model.password"
+                                              expression: "model.flight_time"
                                             }
                                           }),
                                           _vm._v(" "),
@@ -7227,9 +7387,7 @@ var render = function() {
                                             "router-link",
                                             {
                                               staticClass: "btn btn-secondary",
-                                              attrs: {
-                                                to: { name: "Passengers" }
-                                              }
+                                              attrs: { to: { name: "Flights" } }
                                             },
                                             [_vm._v("Cancel")]
                                           ),
