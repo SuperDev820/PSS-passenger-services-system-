@@ -29,60 +29,34 @@
                   <h1>Seat Selection</h1>
                 </div>
                 <div class="exit exit--front fuselage">
-                  
                 </div>
                 <ol class="cabin fuselage">
-                  <li class="row row--1">
+                  <li class="row" v-for="i in 20" :key="i">
                     <ol class="seats" type="A">
                       <li class="seat">
-                        <input type="checkbox" id="1A" />
-                        <label for="1A">1A</label>
+                        <input type="checkbox" :id="i+'A'" v-model="seat" @change="handleSeat" />
+                        <label :for="i+'A'">{{i}}A</label>
                       </li>
                       <li class="seat">
-                        <input type="checkbox" id="1B" />
-                        <label for="1B">1B</label>
+                        <input type="checkbox" :id="i+'B'" />
+                        <label :for="i+'B'">{{i}}B</label>
                       </li>
                       <li class="seat">
-                        <input type="checkbox" id="1C" />
-                        <label for="1C">1C</label>
+                        <input type="checkbox" :id="i+'C'" />
+                        <label :for="i+'C'">{{i}}C</label>
                       </li>
                       <li class="seat">
-                        <input type="checkbox" disabled id="1D" />
-                        <label for="1D">1D</label>
+                        <input type="checkbox" disabled :id="i+'D'" />
+                        <label :for="i+'D'">{{i}}D</label>
                       </li>
                       <li class="seat">
-                        <input type="checkbox" id="1E" />
-                        <label for="1E">1E</label>
-                      </li>
-                    </ol>
-                  </li>
-                  <li class="row row--2">
-                    <ol class="seats" type="A">
-                      <li class="seat">
-                        <input type="checkbox" id="2A" />
-                        <label for="2A">2A</label>
-                      </li>
-                      <li class="seat">
-                        <input type="checkbox" id="2B" />
-                        <label for="2B">2B</label>
-                      </li>
-                      <li class="seat">
-                        <input type="checkbox" id="2C" />
-                        <label for="2C">2C</label>
-                      </li>
-                      <li class="seat">
-                        <input type="checkbox" id="2D" />
-                        <label for="2D">2D</label>
-                      </li>
-                      <li class="seat">
-                        <input type="checkbox" id="2E" />
-                        <label for="2E">2E</label>
+                        <input type="checkbox" :id="i+'E'" />
+                        <label :for="i+'E'">{{i}}E</label>
                       </li>
                     </ol>
                   </li>
                 </ol>
                 <div class="exit exit--back fuselage">
-                  
                 </div>
               </div>   
             </b-col>
@@ -117,62 +91,24 @@ export default {
   },
   data() {
     return {
-      propsToSearch: ['name', 'email'],
-      tableColumns: [
-      ],
-      tableData: [],
-      selectedRows: []
+      // seats: [[]],
+      seat: "disabled",
+      a: ""
     };
   },
   watch: {
-    aircrafts: function () {
-      this.tableData = this.aircrafts;
-    },
   },
   computed: {
     ...mapGetters([
-      'aircrafts',
     ]),
   },
   mounted() {
-    this.initAircrafts();
   },
   methods: {
     ...mapActions([
-      'initAircrafts',
-      'deleteAircraft',
     ]),
-
-    paginationChanged(page) {
-      this.pagination.currentPage = page
-    },
-    handleEdit(row) {
-      this.$router.push({ name: 'AircraftEdit', params: { aircraftId: row.id }})
-    },
-    handleSeat(row) {
-      this.$router.push({ name: 'AircraftSeatMap', params: { aircraftId: row.id }})
-    },
-    handleDelete(index, row) {
-      swal.fire({
-        title: `Are you sure?`,
-        text: "You won't be able to revert this!",
-        type: 'warning',
-        showCancelButton: true,
-        buttonsStyling: false,
-        confirmButtonClass: 'btn btn-warning',
-        cancelButtonClass: 'btn btn-secondary btn-fill',
-        icon: 'warning'
-      }).then(result => {
-        if (result.value) {
-          this.deleteAircraft(row.id);
-          this.$notify({
-            message: 'Successfully Deleted',
-            timeout: 5000,
-            icon: 'ni ni-bell-55',
-            type: 'success'
-          });
-        }
-      });
+    handleSeat() {
+      console.log(this.seat)
     },
   }
 };

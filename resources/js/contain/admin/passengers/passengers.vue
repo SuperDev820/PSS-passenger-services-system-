@@ -50,13 +50,15 @@
                       row-key="id"
                       header-row-class-name="thead-light"
                       @sort-change="sortChange">
-              <el-table-column label="Name"
-                             prop="name"
+              <el-table-column label="First Name"
+                             prop="first_name"
                              min-width="160px"
                              sortable>
-                <div slot-scope="{row}">
-                  {{row.first_name +' '+ row.last_name}}
-                </div>
+              </el-table-column>
+              <el-table-column label="Last Name"
+                             prop="last_name"
+                             min-width="160px"
+                             sortable>
               </el-table-column>
               <el-table-column label="Email"
                              prop="email"
@@ -93,7 +95,7 @@
                 </div>
               </el-table-column>
               <el-table-column min-width="120px" align="right" label="Actions">
-                <div slot-scope="{$index, row}" class="d-flex">
+                <div slot-scope="{$index, row}" class="d-flex justify-content-center">
                   <base-button
                     @click.native="handleEdit(row)"
                     class="edit"
@@ -229,5 +231,12 @@ export default {
 <style>
   .no-border-card .card-footer{
     border-top: 0;
+  }
+  .el-table .el-table__header-wrapper thead th .cell {
+    justify-content: center;
+  }
+  .card .table td, .card .table th, .card .el-table td, .card .el-table th {
+    padding: 10px;
+    text-align: center;
   }
 </style>

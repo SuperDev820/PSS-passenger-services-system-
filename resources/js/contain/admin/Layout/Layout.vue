@@ -20,28 +20,28 @@
         <sidebar-item
           :link="{
             name: 'Users',
-            icon: 'ni ni-archive-2 text-orange',
+            icon: 'ni ni-circle-08 text-orange',
             path: '/admin/users'
           }">
         </sidebar-item>
         <sidebar-item
           :link="{
             name: 'Passengers',
-            icon: 'ni ni-chart-pie-35 text-pink',
+            icon: 'ni ni-single-02 text-pink',
             path: '/admin/passengers'
           }">
         </sidebar-item>
         <sidebar-item
           :link="{
             name: 'Fleet',
-            icon: 'ni ni-spaceship text-info',
+            icon: 'fas fa-fighter-jet text-info',
             path: '/admin/aircrafts'
           }">
         </sidebar-item>
         <sidebar-item
           :link="{
             name: 'Flights',
-            icon: 'ni ni-calendar-grid-58 text-red',
+            icon: 'ni ni-spaceship text-success',
             path: '/admin/flights'
           }">
         </sidebar-item>

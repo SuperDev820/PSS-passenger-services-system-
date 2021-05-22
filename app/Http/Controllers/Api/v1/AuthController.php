@@ -127,6 +127,6 @@ class AuthController extends Controller
      */
     public function auth() {
         // return response()->json('date');
-        // return response()->json(auth()->user());
+        return response()->json(auth()->user());
     }
 }

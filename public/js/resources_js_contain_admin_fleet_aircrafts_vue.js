@@ -14027,7 +14027,9 @@ var render = function() {
                                 var row = ref.row
                                 return _c(
                                   "div",
-                                  { staticClass: "d-flex" },
+                                  {
+                                    staticClass: "d-flex justify-content-center"
+                                  },
                                   [
                                     _c(
                                       "base-button",

@@ -160,19 +160,6 @@ var _components;
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -6991,7 +6978,7 @@ var render = function() {
                                             staticClass: "mb-3",
                                             attrs: {
                                               alternative: "",
-                                              "prepend-icon": "ni ni-hat-3",
+                                              "prepend-icon": "fas fa-plane",
                                               label: "Airline",
                                               placeholder: "Airline",
                                               name: "Airline",
@@ -7061,7 +7048,8 @@ var render = function() {
                                             staticClass: "mb-3",
                                             attrs: {
                                               alternative: "",
-                                              "prepend-icon": "ni ni-hat-3",
+                                              "prepend-icon":
+                                                "fas fa-plane-departure",
                                               label: "Origin Airport",
                                               placeholder: "Origin Airport",
                                               name: "OriginAirport",
@@ -7086,7 +7074,8 @@ var render = function() {
                                             staticClass: "mb-3",
                                             attrs: {
                                               alternative: "",
-                                              "prepend-icon": "ni ni-hat-3",
+                                              "prepend-icon":
+                                                "ni ni-caps-small",
                                               label: "Origin Airport IATA Code",
                                               placeholder:
                                                 "Origin Airport IATA Code",
@@ -7112,7 +7101,8 @@ var render = function() {
                                             staticClass: "mb-3",
                                             attrs: {
                                               alternative: "",
-                                              "prepend-icon": "ni ni-hat-3",
+                                              "prepend-icon":
+                                                "fas fa-plane-arrival",
                                               label: "Destination Airport",
                                               placeholder:
                                                 "Destination Airport",
@@ -7139,7 +7129,8 @@ var render = function() {
                                             staticClass: "mb-3",
                                             attrs: {
                                               alternative: "",
-                                              "prepend-icon": "ni ni-hat-3",
+                                              "prepend-icon":
+                                                "ni ni-caps-small",
                                               label:
                                                 "Destination Airport IATA Code",
                                               placeholder:
@@ -7166,7 +7157,8 @@ var render = function() {
                                           _vm._v(" "),
                                           _c("base-input", {
                                             attrs: {
-                                              "prepend-icon": "fas fa-calendar",
+                                              "prepend-icon":
+                                                "fas fa-plane-departure",
                                               label: "Departure Time",
                                               name: "DepartureTime",
                                               rules: { required: true }
@@ -7217,7 +7209,8 @@ var render = function() {
                                           _vm._v(" "),
                                           _c("base-input", {
                                             attrs: {
-                                              "prepend-icon": "fas fa-calendar",
+                                              "prepend-icon":
+                                                "fas fa-plane-arrival",
                                               label: "Arrival Time",
                                               name: "ArrivalTime",
                                               rules: { required: true }
@@ -7264,33 +7257,6 @@ var render = function() {
                                               null,
                                               true
                                             )
-                                          }),
-                                          _vm._v(" "),
-                                          _c("base-input", {
-                                            staticClass: "mb-3",
-                                            attrs: {
-                                              alternative: "",
-                                              "prepend-icon":
-                                                "fas fa-globe-americas",
-                                              label: "Flight Time",
-                                              placeholder: "Flight Time",
-                                              name: "FlightTime",
-                                              type: "number",
-                                              step: "0.1",
-                                              min: "0",
-                                              rules: { required: true }
-                                            },
-                                            model: {
-                                              value: _vm.model.flight_time,
-                                              callback: function($$v) {
-                                                _vm.$set(
-                                                  _vm.model,
-                                                  "flight_time",
-                                                  $$v
-                                                )
-                                              },
-                                              expression: "model.flight_time"
-                                            }
                                           })
                                         ],
                                         1

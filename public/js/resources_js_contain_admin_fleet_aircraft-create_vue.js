@@ -6915,7 +6915,8 @@ var render = function() {
                                             staticClass: "mb-3",
                                             attrs: {
                                               alternative: "",
-                                              "prepend-icon": "ni ni-spaceship",
+                                              "prepend-icon":
+                                                "fas fa-fighter-jet",
                                               label: "Aircraft Registration",
                                               placeholder:
                                                 "Aircraft Registration",
@@ -6939,7 +6940,8 @@ var render = function() {
                                             staticClass: "mb-3",
                                             attrs: {
                                               alternative: "",
-                                              "prepend-icon": "ni ni-hat-3",
+                                              "prepend-icon":
+                                                "fas fa-fighter-jet",
                                               label: "Aircraft Model",
                                               placeholder: "Aircraft Model",
                                               name: "Model",
@@ -6962,8 +6964,7 @@ var render = function() {
                                             staticClass: "mb-3",
                                             attrs: {
                                               alternative: "",
-                                              "prepend-icon":
-                                                "fas fa-globe-americas",
+                                              "prepend-icon": "fas fa-chair",
                                               label: "Seat Configuration",
                                               placeholder: "Seat Configuration",
                                               name: "SeatConfiguration",
@@ -6990,8 +6991,7 @@ var render = function() {
                                             staticClass: "mb-3",
                                             attrs: {
                                               alternative: "",
-                                              "prepend-icon":
-                                                "fas fa-globe-americas",
+                                              "prepend-icon": "fas fa-chair",
                                               label: "Total Seat",
                                               placeholder: "Total Seat",
                                               name: "TotalSeat",

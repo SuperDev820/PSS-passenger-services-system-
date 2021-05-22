@@ -117,32 +117,6 @@ var _components;
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -163,65 +137,17 @@ var _components;
   }, (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_components, (element_ui_lib_select__WEBPACK_IMPORTED_MODULE_10___default().name), (element_ui_lib_select__WEBPACK_IMPORTED_MODULE_10___default())), (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_components, (element_ui_lib_option__WEBPACK_IMPORTED_MODULE_8___default().name), (element_ui_lib_option__WEBPACK_IMPORTED_MODULE_8___default())), (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_components, (element_ui_lib_table__WEBPACK_IMPORTED_MODULE_6___default().name), (element_ui_lib_table__WEBPACK_IMPORTED_MODULE_6___default())), (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_components, (element_ui_lib_table_column__WEBPACK_IMPORTED_MODULE_4___default().name), (element_ui_lib_table_column__WEBPACK_IMPORTED_MODULE_4___default())), _components),
   data: function data() {
     return {
-      propsToSearch: ['name', 'email'],
-      tableColumns: [],
-      tableData: [],
-      selectedRows: []
+      // seats: [[]],
+      seat: "disabled",
+      a: ""
     };
   },
-  watch: {
-    aircrafts: function aircrafts() {
-      this.tableData = this.aircrafts;
-    }
-  },
-  computed: (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)({}, (0,vuex__WEBPACK_IMPORTED_MODULE_16__.mapGetters)(['aircrafts'])),
-  mounted: function mounted() {
-    this.initAircrafts();
-  },
-  methods: (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)((0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)({}, (0,vuex__WEBPACK_IMPORTED_MODULE_16__.mapActions)(['initAircrafts', 'deleteAircraft'])), {}, {
-    paginationChanged: function paginationChanged(page) {
-      this.pagination.currentPage = page;
-    },
-    handleEdit: function handleEdit(row) {
-      this.$router.push({
-        name: 'AircraftEdit',
-        params: {
-          aircraftId: row.id
-        }
-      });
-    },
-    handleSeat: function handleSeat(row) {
-      this.$router.push({
-        name: 'AircraftSeatMap',
-        params: {
-          aircraftId: row.id
-        }
-      });
-    },
-    handleDelete: function handleDelete(index, row) {
-      var _this = this;
-
-      sweetalert2__WEBPACK_IMPORTED_MODULE_15___default().fire({
-        title: "Are you sure?",
-        text: "You won't be able to revert this!",
-        type: 'warning',
-        showCancelButton: true,
-        buttonsStyling: false,
-        confirmButtonClass: 'btn btn-warning',
-        cancelButtonClass: 'btn btn-secondary btn-fill',
-        icon: 'warning'
-      }).then(function (result) {
-        if (result.value) {
-          _this.deleteAircraft(row.id);
-
-          _this.$notify({
-            message: 'Successfully Deleted',
-            timeout: 5000,
-            icon: 'ni ni-bell-55',
-            type: 'success'
-          });
-        }
-      });
+  watch: {},
+  computed: (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)({}, (0,vuex__WEBPACK_IMPORTED_MODULE_16__.mapGetters)([])),
+  mounted: function mounted() {},
+  methods: (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)((0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)({}, (0,vuex__WEBPACK_IMPORTED_MODULE_16__.mapActions)([])), {}, {
+    handleSeat: function handleSeat() {
+      console.log(this.seat);
     }
   })
 });
@@ -13881,127 +13807,112 @@ var render = function() {
                         _vm._v(" "),
                         _c("div", { staticClass: "exit exit--front fuselage" }),
                         _vm._v(" "),
-                        _c("ol", { staticClass: "cabin fuselage" }, [
-                          _c("li", { staticClass: "row row--1" }, [
-                            _c(
-                              "ol",
-                              { staticClass: "seats", attrs: { type: "A" } },
-                              [
-                                _c("li", { staticClass: "seat" }, [
-                                  _c("input", {
-                                    attrs: { type: "checkbox", id: "1A" }
-                                  }),
+                        _c(
+                          "ol",
+                          { staticClass: "cabin fuselage" },
+                          _vm._l(20, function(i) {
+                            return _c("li", { key: i, staticClass: "row" }, [
+                              _c(
+                                "ol",
+                                { staticClass: "seats", attrs: { type: "A" } },
+                                [
+                                  _c("li", { staticClass: "seat" }, [
+                                    _c("input", {
+                                      directives: [
+                                        {
+                                          name: "model",
+                                          rawName: "v-model",
+                                          value: _vm.seat,
+                                          expression: "seat"
+                                        }
+                                      ],
+                                      attrs: { type: "checkbox", id: i + "A" },
+                                      domProps: {
+                                        checked: Array.isArray(_vm.seat)
+                                          ? _vm._i(_vm.seat, null) > -1
+                                          : _vm.seat
+                                      },
+                                      on: {
+                                        change: [
+                                          function($event) {
+                                            var $$a = _vm.seat,
+                                              $$el = $event.target,
+                                              $$c = $$el.checked ? true : false
+                                            if (Array.isArray($$a)) {
+                                              var $$v = null,
+                                                $$i = _vm._i($$a, $$v)
+                                              if ($$el.checked) {
+                                                $$i < 0 &&
+                                                  (_vm.seat = $$a.concat([$$v]))
+                                              } else {
+                                                $$i > -1 &&
+                                                  (_vm.seat = $$a
+                                                    .slice(0, $$i)
+                                                    .concat($$a.slice($$i + 1)))
+                                              }
+                                            } else {
+                                              _vm.seat = $$c
+                                            }
+                                          },
+                                          _vm.handleSeat
+                                        ]
+                                      }
+                                    }),
+                                    _vm._v(" "),
+                                    _c("label", { attrs: { for: i + "A" } }, [
+                                      _vm._v(_vm._s(i) + "A")
+                                    ])
+                                  ]),
                                   _vm._v(" "),
-                                  _c("label", { attrs: { for: "1A" } }, [
-                                    _vm._v("1A")
-                                  ])
-                                ]),
-                                _vm._v(" "),
-                                _c("li", { staticClass: "seat" }, [
-                                  _c("input", {
-                                    attrs: { type: "checkbox", id: "1B" }
-                                  }),
+                                  _c("li", { staticClass: "seat" }, [
+                                    _c("input", {
+                                      attrs: { type: "checkbox", id: i + "B" }
+                                    }),
+                                    _vm._v(" "),
+                                    _c("label", { attrs: { for: i + "B" } }, [
+                                      _vm._v(_vm._s(i) + "B")
+                                    ])
+                                  ]),
                                   _vm._v(" "),
-                                  _c("label", { attrs: { for: "1B" } }, [
-                                    _vm._v("1B")
-                                  ])
-                                ]),
-                                _vm._v(" "),
-                                _c("li", { staticClass: "seat" }, [
-                                  _c("input", {
-                                    attrs: { type: "checkbox", id: "1C" }
-                                  }),
+                                  _c("li", { staticClass: "seat" }, [
+                                    _c("input", {
+                                      attrs: { type: "checkbox", id: i + "C" }
+                                    }),
+                                    _vm._v(" "),
+                                    _c("label", { attrs: { for: i + "C" } }, [
+                                      _vm._v(_vm._s(i) + "C")
+                                    ])
+                                  ]),
                                   _vm._v(" "),
-                                  _c("label", { attrs: { for: "1C" } }, [
-                                    _vm._v("1C")
-                                  ])
-                                ]),
-                                _vm._v(" "),
-                                _c("li", { staticClass: "seat" }, [
-                                  _c("input", {
-                                    attrs: {
-                                      type: "checkbox",
-                                      disabled: "",
-                                      id: "1D"
-                                    }
-                                  }),
+                                  _c("li", { staticClass: "seat" }, [
+                                    _c("input", {
+                                      attrs: {
+                                        type: "checkbox",
+                                        disabled: "",
+                                        id: i + "D"
+                                      }
+                                    }),
+                                    _vm._v(" "),
+                                    _c("label", { attrs: { for: i + "D" } }, [
+                                      _vm._v(_vm._s(i) + "D")
+                                    ])
+                                  ]),
                                   _vm._v(" "),
-                                  _c("label", { attrs: { for: "1D" } }, [
-                                    _vm._v("1D")
+                                  _c("li", { staticClass: "seat" }, [
+                                    _c("input", {
+                                      attrs: { type: "checkbox", id: i + "E" }
+                                    }),
+                                    _vm._v(" "),
+                                    _c("label", { attrs: { for: i + "E" } }, [
+                                      _vm._v(_vm._s(i) + "E")
+                                    ])
                                   ])
-                                ]),
-                                _vm._v(" "),
-                                _c("li", { staticClass: "seat" }, [
-                                  _c("input", {
-                                    attrs: { type: "checkbox", id: "1E" }
-                                  }),
-                                  _vm._v(" "),
-                                  _c("label", { attrs: { for: "1E" } }, [
-                                    _vm._v("1E")
-                                  ])
-                                ])
-                              ]
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("li", { staticClass: "row row--2" }, [
-                            _c(
-                              "ol",
-                              { staticClass: "seats", attrs: { type: "A" } },
-                              [
-                                _c("li", { staticClass: "seat" }, [
-                                  _c("input", {
-                                    attrs: { type: "checkbox", id: "2A" }
-                                  }),
-                                  _vm._v(" "),
-                                  _c("label", { attrs: { for: "2A" } }, [
-                                    _vm._v("2A")
-                                  ])
-                                ]),
-                                _vm._v(" "),
-                                _c("li", { staticClass: "seat" }, [
-                                  _c("input", {
-                                    attrs: { type: "checkbox", id: "2B" }
-                                  }),
-                                  _vm._v(" "),
-                                  _c("label", { attrs: { for: "2B" } }, [
-                                    _vm._v("2B")
-                                  ])
-                                ]),
-                                _vm._v(" "),
-                                _c("li", { staticClass: "seat" }, [
-                                  _c("input", {
-                                    attrs: { type: "checkbox", id: "2C" }
-                                  }),
-                                  _vm._v(" "),
-                                  _c("label", { attrs: { for: "2C" } }, [
-                                    _vm._v("2C")
-                                  ])
-                                ]),
-                                _vm._v(" "),
-                                _c("li", { staticClass: "seat" }, [
-                                  _c("input", {
-                                    attrs: { type: "checkbox", id: "2D" }
-                                  }),
-                                  _vm._v(" "),
-                                  _c("label", { attrs: { for: "2D" } }, [
-                                    _vm._v("2D")
-                                  ])
-                                ]),
-                                _vm._v(" "),
-                                _c("li", { staticClass: "seat" }, [
-                                  _c("input", {
-                                    attrs: { type: "checkbox", id: "2E" }
-                                  }),
-                                  _vm._v(" "),
-                                  _c("label", { attrs: { for: "2E" } }, [
-                                    _vm._v("2E")
-                                  ])
-                                ])
-                              ]
-                            )
-                          ])
-                        ]),
+                                ]
+                              )
+                            ])
+                          }),
+                          0
+                        ),
                         _vm._v(" "),
                         _c("div", { staticClass: "exit exit--back fuselage" })
                       ])

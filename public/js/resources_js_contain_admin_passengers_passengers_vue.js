@@ -195,6 +195,8 @@ var _components;
 //
 //
 //
+//
+//
 
 
 
@@ -548,7 +550,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.no-border-card .card-footer{\n  border-top: 0;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.no-border-card .card-footer{\n  border-top: 0;\n}\n.el-table .el-table__header-wrapper thead th .cell {\n  justify-content: center;\n}\n.card .table td, .card .table th, .card .el-table td, .card .el-table th {\n  padding: 10px;\n  text-align: center;\n}\n", ""]);
 // Exports
 /* harmony default export */ __webpack_exports__["default"] = (___CSS_LOADER_EXPORT___);
 
@@ -13989,28 +13991,20 @@ var render = function() {
                       [
                         _c("el-table-column", {
                           attrs: {
-                            label: "Name",
-                            prop: "name",
+                            label: "First Name",
+                            prop: "first_name",
                             "min-width": "160px",
                             sortable: ""
-                          },
-                          scopedSlots: _vm._u([
-                            {
-                              key: "default",
-                              fn: function(ref) {
-                                var row = ref.row
-                                return _c("div", {}, [
-                                  _vm._v(
-                                    "\n                " +
-                                      _vm._s(
-                                        row.first_name + " " + row.last_name
-                                      ) +
-                                      "\n              "
-                                  )
-                                ])
-                              }
-                            }
-                          ])
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("el-table-column", {
+                          attrs: {
+                            label: "Last Name",
+                            prop: "last_name",
+                            "min-width": "160px",
+                            sortable: ""
+                          }
                         }),
                         _vm._v(" "),
                         _c("el-table-column", {
@@ -14120,7 +14114,9 @@ var render = function() {
                                 var row = ref.row
                                 return _c(
                                   "div",
-                                  { staticClass: "d-flex" },
+                                  {
+                                    staticClass: "d-flex justify-content-center"
+                                  },
                                   [
                                     _c(
                                       "base-button",

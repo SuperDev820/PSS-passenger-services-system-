@@ -28,7 +28,7 @@
                   <div class="col-8 offset-2">
                     <base-input alternative
                                 class="mb-3"
-                                prepend-icon="ni ni-hat-3"
+                                prepend-icon="fas fa-plane"
                                 label="Airline"
                                 placeholder="Airline"
                                 name="Airline"
@@ -51,7 +51,7 @@
 
                     <base-input alternative
                                 class="mb-3"
-                                prepend-icon="ni ni-hat-3"
+                                prepend-icon="fas fa-plane-departure"
                                 label="Origin Airport"
                                 placeholder="Origin Airport"
                                 name="OriginAirport"
@@ -61,7 +61,7 @@
 
                     <base-input alternative
                                 class="mb-3"
-                                prepend-icon="ni ni-hat-3"
+                                prepend-icon="ni ni-caps-small"
                                 label="Origin Airport IATA Code"
                                 placeholder="Origin Airport IATA Code"
                                 name="OriginAirportIATACode"
@@ -71,7 +71,7 @@
 
                     <base-input alternative
                                 class="mb-3"
-                                prepend-icon="ni ni-hat-3"
+                                prepend-icon="fas fa-plane-arrival"
                                 label="Destination Airport"
                                 placeholder="Destination Airport"
                                 name="DestinationAirport"
@@ -81,7 +81,7 @@
 
                     <base-input alternative
                                 class="mb-3"
-                                prepend-icon="ni ni-hat-3"
+                                prepend-icon="ni ni-caps-small"
                                 label="Destination Airport IATA Code"
                                 placeholder="Destination Airport IATA Code"
                                 name="DestinationAirportIATACode"
@@ -89,7 +89,7 @@
                                 v-model="model.destination_airport_code">
                     </base-input>
 
-                    <base-input prepend-icon="fas fa-calendar" label="Departure Time" name="DepartureTime" :rules="{required: true}">
+                    <base-input prepend-icon="fas fa-plane-departure" label="Departure Time" name="DepartureTime" :rules="{required: true}">
                       <flat-picker slot-scope="{focus, blur}"
                                     @on-open="focus"
                                     @on-close="blur"
@@ -99,7 +99,7 @@
                       </flat-picker>
                     </base-input>
 
-                    <base-input prepend-icon="fas fa-calendar" label="Arrival Time" name="ArrivalTime" :rules="{required: true}">
+                    <base-input prepend-icon="fas fa-plane-arrival" label="Arrival Time" name="ArrivalTime" :rules="{required: true}">
                       <flat-picker slot-scope="{focus, blur}"
                                     @on-open="focus"
                                     @on-close="blur"
@@ -107,19 +107,6 @@
                                     class="form-control datepicker"
                                     v-model="model.arrival_time">
                       </flat-picker>
-                    </base-input>
-
-                    <base-input alternative
-                                class="mb-3"
-                                prepend-icon="fas fa-globe-americas"
-                                label="Flight Time"
-                                placeholder="Flight Time"
-                                name="FlightTime"
-                                type="number"
-                                step="0.1"
-                                min="0"
-                                :rules="{required: true}"
-                                v-model="model.flight_time">
                     </base-input>
                   </div>
                   <div class="d-flex justify-content-between col-12 mt-4">
