@@ -29,11 +29,21 @@
                     <base-input alternative
                                 class="mb-3"
                                 prepend-icon="fas fa-plane"
-                                label="Airline"
-                                placeholder="Airline"
-                                name="Airline"
+                                label="Airline Code"
+                                placeholder="Airline Code"
+                                name="AirlineCode"
                                 :rules="{required: true}"
-                                v-model="model.airline">
+                                v-model="model.airline_code">
+                    </base-input>
+
+                    <base-input alternative
+                                class="mb-3"
+                                prepend-icon="fas fa-plane"
+                                label="Flight Number"
+                                placeholder="Flight Number"
+                                name="FlightNumber"
+                                :rules="{required: true}"
+                                v-model="model.flight_number">
                     </base-input>
 
                     <base-input label="Aircraft Registration">
@@ -93,7 +103,7 @@
                       <flat-picker slot-scope="{focus, blur}"
                                     @on-open="focus"
                                     @on-close="blur"
-                                    :config="configs.dateTimePicker"
+                                    :config="configs.timePicker"
                                     class="form-control datepicker"
                                     v-model="model.departure_time">
                       </flat-picker>
@@ -103,10 +113,36 @@
                       <flat-picker slot-scope="{focus, blur}"
                                     @on-open="focus"
                                     @on-close="blur"
-                                    :config="configs.dateTimePicker"
+                                    :config="configs.timePicker"
                                     class="form-control datepicker"
                                     v-model="model.arrival_time">
                       </flat-picker>
+                    </base-input>
+
+                    <base-input label="Type">
+                      <el-select v-model="model.type"
+                                 filterable
+                                 placeholder="Scheduled Type"
+                                 :rules="{required: true}">
+                        <el-option v-for="option in typeOptions"
+                                   :key="option.label"
+                                   :label="option.label"
+                                   :value="option.value">
+                        </el-option>
+                      </el-select>
+                    </base-input>
+
+                    <base-input label="Days Of Operation">
+                      <el-select v-model="model.operation_days"
+                                 filterable
+                                 placeholder="Days Of Operation"
+                                 :rules="{required: true}">
+                        <el-option v-for="option in daysOptions"
+                                   :key="option.label"
+                                   :label="option.label"
+                                   :value="option.value">
+                        </el-option>
+                      </el-select>
                     </base-input>
 
                     <base-input label="Status">
@@ -165,14 +201,61 @@
             value: 0
           },
         ],
+        typeOptions: [
+          {
+            label: 'Regular',
+            value: 1
+          },
+          {
+            label: 'Charter',
+            value: 0
+          },
+        ],
+        daysOptions: [
+          {
+            label: '1',
+            value: 1
+          },
+          {
+            label: '2',
+            value: 2
+          },
+          {
+            label: '3',
+            value: 3
+          },
+          {
+            label: '4',
+            value: 4
+          },
+          {
+            label: '5',
+            value: 5
+          },
+          {
+            label: '6',
+            value: 6
+          },
+          {
+            label: '7',
+            value: 7
+          },
+        ],
         configs: {
           dateTimePicker: {
             enableTime: true,
             dateFormat: 'Y-m-d H:i'
           },
+          timePicker: {
+            enableTime: true,
+            noCalendar: true,
+            dateFormat: "H:i",
+            time_24hr: true
+          },
         },
         model: {
-          airline: '',
+          airline_code: '',
+          flight_number: '',
           aircraft: '',
           origin_airport_name: '',
           origin_airport_code: '',
@@ -180,7 +263,8 @@
           destination_airport_code: '',
           departure_time: '',
           arrival_time: '',
-          flight_time: '',
+          type: '',
+          operation_days: null,
           status: 0,
         },
         error: null,
@@ -193,7 +277,8 @@
     },
     watch: {
       flight: function () {
-        this.model.airline = this.flight.airline;
+        this.model.airline_code = this.flight.airline_code;
+        this.model.flight_number = this.flight.flight_number;
         this.model.aircraft = this.flight.aircraft.registration;
         this.model.origin_airport_name = this.flight.origin_airport_name;
         this.model.origin_airport_code = this.flight.origin_airport_code;
@@ -201,7 +286,8 @@
         this.model.destination_airport_code = this.flight.destination_airport_code;
         this.model.departure_time = this.flight.departure_time;
         this.model.arrival_time = this.flight.arrival_time;
-        this.model.flight_time = this.flight.flight_time;
+        this.model.type = this.flight.type;
+        this.model.operation_days = this.flight.operation_days;
         this.model.status = this.flight.status;
       },
     },
@@ -226,7 +312,8 @@
         return (
           this.updateFlight({
               id: this.$route.params.flightId,
-              airline: this.model.airline,
+              airline_code: this.model.airline_code,
+              flight_number: this.model.flight_number,
               aircraft: this.model.aircraft,
               origin_airport_name: this.model.origin_airport_name,
               origin_airport_code: this.model.origin_airport_code,
@@ -234,7 +321,8 @@
               destination_airport_code: this.model.destination_airport_code,
               departure_time: this.model.departure_time,
               arrival_time: this.model.arrival_time,
-              flight_time: this.model.flight_time,
+              type: this.model.type,
+              operation_days: this.model.operation_days,
               status: this.model.status,
             })
             .then((res) => {

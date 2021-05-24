@@ -66,6 +66,16 @@
 
                     <base-input alternative
                                 class="mb-3"
+                                prepend-icon="ni ni-email-83"
+                                label="Email"
+                                placeholder="Email"
+                                name="Email"
+                                :rules="{required: true, email: true}"
+                                v-model="model.email">
+                    </base-input>
+
+                    <base-input alternative
+                                class="mb-3"
                                 prepend-icon="fas fa-globe-americas"
                                 label="Company"
                                 placeholder="Company"
@@ -76,12 +86,11 @@
 
                     <base-input alternative
                                 class="mb-3"
-                                prepend-icon="ni ni-email-83"
-                                label="Email"
-                                placeholder="Email"
-                                name="Email"
-                                :rules="{required: true, email: true}"
-                                v-model="model.email">
+                                prepend-icon="fas fa-clone"
+                                label="Roster"
+                                placeholder="Roster"
+                                name="Roster"
+                                v-model="model.roster">
                     </base-input>
 
                     <base-input alternative
@@ -144,6 +153,7 @@
           phone: '',
           company: '',
           birthday: '',
+          roster: '',
           email: '',
           password: '',
         },
@@ -157,6 +167,7 @@
       ]),
 
       onSubmit() {
+        console.log(this.model.range)
         // this will be called only after form is valid. You can do an api call here to register passengers
         // Reset the error if it existed.
         this.error = null;
@@ -167,6 +178,7 @@
               phone: this.model.phone,
               company: this.model.company,
               birthday: this.model.birthday,
+              roster: this.model.roster,
               email: this.model.email,
               password: this.model.password,
               password_confirmation: this.model.password

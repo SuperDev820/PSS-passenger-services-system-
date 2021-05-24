@@ -50,24 +50,20 @@
                       row-key="id"
                       header-row-class-name="thead-light"
                       @sort-change="sortChange">
-              <el-table-column label="Airline"
+              <el-table-column label="Flight No."
                              prop="airline"
-                             min-width="120px"
+                             min-width="140px"
                              sortable>
-              </el-table-column>
-              <el-table-column label="Aircraft Model"
-                             prop="aircraft"
-                             min-width="140px">
                 <div slot-scope="{row}">
-                  {{row.aircraft.model}}
+                  {{row.airline_code + ' ' + row.flight_number}}
                 </div>
               </el-table-column>
-              <el-table-column label="Origin"
+              <el-table-column label="From"
                              prop="origin_airport_name"
                              min-width="120px"
                              sortable>
               </el-table-column>
-              <el-table-column label="Destination"
+              <el-table-column label="To"
                              prop="destination_airport_name"
                              min-width="140px"
                              sortable>
@@ -84,7 +80,19 @@
               </el-table-column>
               <el-table-column label="Duration"
                              prop="flight_time"
+                             min-width="100px">
+              </el-table-column>
+              <el-table-column label="Days Of Ope"
+                             prop="operation_days"
                              min-width="120px">
+              </el-table-column>
+              <el-table-column label="Type"
+                             prop="type"
+                             min-width="100px">
+                <div slot-scope="{row}">
+                    <span class="text-primary" v-if="row.type == 1">REGULAR</span>
+                    <span class="text-warning" v-else>CHARTER</span>
+                </div>
               </el-table-column>
               <el-table-column prop="status" label="Status" min-width="100px">
                 <div slot-scope="{row}">
@@ -96,8 +104,8 @@
                   </badge>
                 </div>
               </el-table-column>
-              <el-table-column min-width="140px" align="right" label="Actions">
-                <div slot-scope="{$index, row}" class="d-flex">
+              <el-table-column min-width="120px" align="right" label="Actions">
+                <div slot-scope="{$index, row}" class="d-flex justify-content-center">
                   <base-button
                     @click.native="handleEdit(row)"
                     class="edit"

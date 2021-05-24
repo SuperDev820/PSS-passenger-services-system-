@@ -199,6 +199,14 @@ var _components;
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -13991,18 +13999,10 @@ var render = function() {
                       [
                         _c("el-table-column", {
                           attrs: {
-                            label: "Airline",
+                            label: "Flight No.",
                             prop: "airline",
-                            "min-width": "120px",
+                            "min-width": "140px",
                             sortable: ""
-                          }
-                        }),
-                        _vm._v(" "),
-                        _c("el-table-column", {
-                          attrs: {
-                            label: "Aircraft Model",
-                            prop: "aircraft",
-                            "min-width": "140px"
                           },
                           scopedSlots: _vm._u([
                             {
@@ -14012,7 +14012,11 @@ var render = function() {
                                 return _c("div", {}, [
                                   _vm._v(
                                     "\n                " +
-                                      _vm._s(row.aircraft.model) +
+                                      _vm._s(
+                                        row.airline_code +
+                                          " " +
+                                          row.flight_number
+                                      ) +
                                       "\n              "
                                   )
                                 ])
@@ -14023,7 +14027,7 @@ var render = function() {
                         _vm._v(" "),
                         _c("el-table-column", {
                           attrs: {
-                            label: "Origin",
+                            label: "From",
                             prop: "origin_airport_name",
                             "min-width": "120px",
                             sortable: ""
@@ -14032,7 +14036,7 @@ var render = function() {
                         _vm._v(" "),
                         _c("el-table-column", {
                           attrs: {
-                            label: "Destination",
+                            label: "To",
                             prop: "destination_airport_name",
                             "min-width": "140px",
                             sortable: ""
@@ -14061,8 +14065,45 @@ var render = function() {
                           attrs: {
                             label: "Duration",
                             prop: "flight_time",
+                            "min-width": "100px"
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("el-table-column", {
+                          attrs: {
+                            label: "Days Of Ope",
+                            prop: "operation_days",
                             "min-width": "120px"
                           }
+                        }),
+                        _vm._v(" "),
+                        _c("el-table-column", {
+                          attrs: {
+                            label: "Type",
+                            prop: "type",
+                            "min-width": "100px"
+                          },
+                          scopedSlots: _vm._u([
+                            {
+                              key: "default",
+                              fn: function(ref) {
+                                var row = ref.row
+                                return _c("div", {}, [
+                                  row.type == 1
+                                    ? _c(
+                                        "span",
+                                        { staticClass: "text-primary" },
+                                        [_vm._v("REGULAR")]
+                                      )
+                                    : _c(
+                                        "span",
+                                        { staticClass: "text-warning" },
+                                        [_vm._v("CHARTER")]
+                                      )
+                                ])
+                              }
+                            }
+                          ])
                         }),
                         _vm._v(" "),
                         _c("el-table-column", {
@@ -14101,7 +14142,7 @@ var render = function() {
                         _vm._v(" "),
                         _c("el-table-column", {
                           attrs: {
-                            "min-width": "140px",
+                            "min-width": "120px",
                             align: "right",
                             label: "Actions"
                           },
@@ -14113,7 +14154,9 @@ var render = function() {
                                 var row = ref.row
                                 return _c(
                                   "div",
-                                  { staticClass: "d-flex" },
+                                  {
+                                    staticClass: "d-flex justify-content-center"
+                                  },
                                   [
                                     _c(
                                       "base-button",

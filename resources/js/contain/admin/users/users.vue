@@ -78,7 +78,7 @@
                 </div>
               </el-table-column>
               <el-table-column min-width="120px" align="right" label="Actions">
-                <div slot-scope="{$index, row}" class="d-flex">
+                <div slot-scope="{$index, row}" class="d-flex justify-content-center">
                   <base-button
                     @click.native="handleEdit(row)"
                     class="edit"

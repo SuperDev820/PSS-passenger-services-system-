@@ -80,7 +80,7 @@ class PassengerController extends Controller
 
         $passenger = User::create(array_merge(
                     $validator->validated(),
-                    ['password' => bcrypt($request->password)]
+                    ['password' => bcrypt($request->password), 'roster' => $request->roster]
                 ));
         
         // $roles = Role::whereIn('name', $request->roles)->get();
@@ -125,6 +125,7 @@ class PassengerController extends Controller
                 'phone' => $request->phone,
                 'birthday' => $request->birthday,
                 'company' => $request->company,
+                'roster' => $request->roster,
                 'status' => $request->status,
                 'email' => $request->email,
             ]);
@@ -135,6 +136,7 @@ class PassengerController extends Controller
                 'phone' => $request->phone,
                 'birthday' => $request->birthday,
                 'company' => $request->company,
+                'roster' => $request->roster,
                 'status' => $request->status,
                 'email' => $request->email,
             ]);

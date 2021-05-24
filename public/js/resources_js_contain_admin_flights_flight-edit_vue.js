@@ -173,6 +173,42 @@ var _components;
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -194,14 +230,50 @@ var _components;
         label: 'Deactive',
         value: 0
       }],
+      typeOptions: [{
+        label: 'Regular',
+        value: 1
+      }, {
+        label: 'Charter',
+        value: 0
+      }],
+      daysOptions: [{
+        label: '1',
+        value: 1
+      }, {
+        label: '2',
+        value: 2
+      }, {
+        label: '3',
+        value: 3
+      }, {
+        label: '4',
+        value: 4
+      }, {
+        label: '5',
+        value: 5
+      }, {
+        label: '6',
+        value: 6
+      }, {
+        label: '7',
+        value: 7
+      }],
       configs: {
         dateTimePicker: {
           enableTime: true,
           dateFormat: 'Y-m-d H:i'
+        },
+        timePicker: {
+          enableTime: true,
+          noCalendar: true,
+          dateFormat: "H:i",
+          time_24hr: true
         }
       },
       model: {
-        airline: '',
+        airline_code: '',
+        flight_number: '',
         aircraft: '',
         origin_airport_name: '',
         origin_airport_code: '',
@@ -209,7 +281,8 @@ var _components;
         destination_airport_code: '',
         departure_time: '',
         arrival_time: '',
-        flight_time: '',
+        type: '',
+        operation_days: null,
         status: 0
       },
       error: null,
@@ -222,7 +295,8 @@ var _components;
   },
   watch: {
     flight: function flight() {
-      this.model.airline = this.flight.airline;
+      this.model.airline_code = this.flight.airline_code;
+      this.model.flight_number = this.flight.flight_number;
       this.model.aircraft = this.flight.aircraft.registration;
       this.model.origin_airport_name = this.flight.origin_airport_name;
       this.model.origin_airport_code = this.flight.origin_airport_code;
@@ -230,7 +304,8 @@ var _components;
       this.model.destination_airport_code = this.flight.destination_airport_code;
       this.model.departure_time = this.flight.departure_time;
       this.model.arrival_time = this.flight.arrival_time;
-      this.model.flight_time = this.flight.flight_time;
+      this.model.type = this.flight.type;
+      this.model.operation_days = this.flight.operation_days;
       this.model.status = this.flight.status;
     }
   },
@@ -245,7 +320,8 @@ var _components;
       this.error = null;
       return this.updateFlight({
         id: this.$route.params.flightId,
-        airline: this.model.airline,
+        airline_code: this.model.airline_code,
+        flight_number: this.model.flight_number,
         aircraft: this.model.aircraft,
         origin_airport_name: this.model.origin_airport_name,
         origin_airport_code: this.model.origin_airport_code,
@@ -253,7 +329,8 @@ var _components;
         destination_airport_code: this.model.destination_airport_code,
         departure_time: this.model.departure_time,
         arrival_time: this.model.arrival_time,
-        flight_time: this.model.flight_time,
+        type: this.model.type,
+        operation_days: this.model.operation_days,
         status: this.model.status
       }).then(function (res) {
         _this.isError = false;
@@ -7017,21 +7094,44 @@ var render = function() {
                                             attrs: {
                                               alternative: "",
                                               "prepend-icon": "fas fa-plane",
-                                              label: "Airline",
-                                              placeholder: "Airline",
-                                              name: "Airline",
+                                              label: "Airline Code",
+                                              placeholder: "Airline Code",
+                                              name: "AirlineCode",
                                               rules: { required: true }
                                             },
                                             model: {
-                                              value: _vm.model.airline,
+                                              value: _vm.model.airline_code,
                                               callback: function($$v) {
                                                 _vm.$set(
                                                   _vm.model,
-                                                  "airline",
+                                                  "airline_code",
                                                   $$v
                                                 )
                                               },
-                                              expression: "model.airline"
+                                              expression: "model.airline_code"
+                                            }
+                                          }),
+                                          _vm._v(" "),
+                                          _c("base-input", {
+                                            staticClass: "mb-3",
+                                            attrs: {
+                                              alternative: "",
+                                              "prepend-icon": "fas fa-plane",
+                                              label: "Flight Number",
+                                              placeholder: "Flight Number",
+                                              name: "FlightNumber",
+                                              rules: { required: true }
+                                            },
+                                            model: {
+                                              value: _vm.model.flight_number,
+                                              callback: function($$v) {
+                                                _vm.$set(
+                                                  _vm.model,
+                                                  "flight_number",
+                                                  $$v
+                                                )
+                                              },
+                                              expression: "model.flight_number"
                                             }
                                           }),
                                           _vm._v(" "),
@@ -7213,8 +7313,7 @@ var render = function() {
                                                         "form-control datepicker",
                                                       attrs: {
                                                         config:
-                                                          _vm.configs
-                                                            .dateTimePicker
+                                                          _vm.configs.timePicker
                                                       },
                                                       on: {
                                                         "on-open": focus,
@@ -7265,8 +7364,7 @@ var render = function() {
                                                         "form-control datepicker",
                                                       attrs: {
                                                         config:
-                                                          _vm.configs
-                                                            .dateTimePicker
+                                                          _vm.configs.timePicker
                                                       },
                                                       on: {
                                                         "on-open": focus,
@@ -7296,6 +7394,98 @@ var render = function() {
                                               true
                                             )
                                           }),
+                                          _vm._v(" "),
+                                          _c(
+                                            "base-input",
+                                            { attrs: { label: "Type" } },
+                                            [
+                                              _c(
+                                                "el-select",
+                                                {
+                                                  attrs: {
+                                                    filterable: "",
+                                                    placeholder:
+                                                      "Scheduled Type",
+                                                    rules: { required: true }
+                                                  },
+                                                  model: {
+                                                    value: _vm.model.type,
+                                                    callback: function($$v) {
+                                                      _vm.$set(
+                                                        _vm.model,
+                                                        "type",
+                                                        $$v
+                                                      )
+                                                    },
+                                                    expression: "model.type"
+                                                  }
+                                                },
+                                                _vm._l(
+                                                  _vm.typeOptions,
+                                                  function(option) {
+                                                    return _c("el-option", {
+                                                      key: option.label,
+                                                      attrs: {
+                                                        label: option.label,
+                                                        value: option.value
+                                                      }
+                                                    })
+                                                  }
+                                                ),
+                                                1
+                                              )
+                                            ],
+                                            1
+                                          ),
+                                          _vm._v(" "),
+                                          _c(
+                                            "base-input",
+                                            {
+                                              attrs: {
+                                                label: "Days Of Operation"
+                                              }
+                                            },
+                                            [
+                                              _c(
+                                                "el-select",
+                                                {
+                                                  attrs: {
+                                                    filterable: "",
+                                                    placeholder:
+                                                      "Days Of Operation",
+                                                    rules: { required: true }
+                                                  },
+                                                  model: {
+                                                    value:
+                                                      _vm.model.operation_days,
+                                                    callback: function($$v) {
+                                                      _vm.$set(
+                                                        _vm.model,
+                                                        "operation_days",
+                                                        $$v
+                                                      )
+                                                    },
+                                                    expression:
+                                                      "model.operation_days"
+                                                  }
+                                                },
+                                                _vm._l(
+                                                  _vm.daysOptions,
+                                                  function(option) {
+                                                    return _c("el-option", {
+                                                      key: option.label,
+                                                      attrs: {
+                                                        label: option.label,
+                                                        value: option.value
+                                                      }
+                                                    })
+                                                  }
+                                                ),
+                                                1
+                                              )
+                                            ],
+                                            1
+                                          ),
                                           _vm._v(" "),
                                           _c(
                                             "base-input",

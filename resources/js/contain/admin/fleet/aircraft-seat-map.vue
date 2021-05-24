@@ -34,7 +34,7 @@
                   <li class="row" v-for="i in 20" :key="i">
                     <ol class="seats" type="A">
                       <li class="seat">
-                        <input type="checkbox" :id="i+'A'" v-model="seat" @change="handleSeat" />
+                        <input type="checkbox" :id="i+'A'" @change="handleSeat" />
                         <label :for="i+'A'">{{i}}A</label>
                       </li>
                       <li class="seat">
@@ -92,8 +92,7 @@ export default {
   data() {
     return {
       // seats: [[]],
-      seat: "disabled",
-      a: ""
+      seat: "",
     };
   },
   watch: {

@@ -146,6 +146,15 @@ var _components;
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -173,6 +182,7 @@ var _components;
         phone: '',
         company: '',
         birthday: '',
+        roster: '',
         email: '',
         password: ''
       },
@@ -184,8 +194,9 @@ var _components;
     onSubmit: function onSubmit() {
       var _this = this;
 
-      // this will be called only after form is valid. You can do an api call here to register passengers
+      console.log(this.model.range); // this will be called only after form is valid. You can do an api call here to register passengers
       // Reset the error if it existed.
+
       this.error = null;
       return this.createPassenger({
         first_name: this.model.first_name,
@@ -193,6 +204,7 @@ var _components;
         phone: this.model.phone,
         company: this.model.company,
         birthday: this.model.birthday,
+        roster: this.model.roster,
         email: this.model.email,
         password: this.model.password,
         password_confirmation: this.model.password
@@ -7070,6 +7082,32 @@ var render = function() {
                                             staticClass: "mb-3",
                                             attrs: {
                                               alternative: "",
+                                              "prepend-icon": "ni ni-email-83",
+                                              label: "Email",
+                                              placeholder: "Email",
+                                              name: "Email",
+                                              rules: {
+                                                required: true,
+                                                email: true
+                                              }
+                                            },
+                                            model: {
+                                              value: _vm.model.email,
+                                              callback: function($$v) {
+                                                _vm.$set(
+                                                  _vm.model,
+                                                  "email",
+                                                  $$v
+                                                )
+                                              },
+                                              expression: "model.email"
+                                            }
+                                          }),
+                                          _vm._v(" "),
+                                          _c("base-input", {
+                                            staticClass: "mb-3",
+                                            attrs: {
+                                              alternative: "",
                                               "prepend-icon":
                                                 "fas fa-globe-americas",
                                               label: "Company",
@@ -7094,25 +7132,21 @@ var render = function() {
                                             staticClass: "mb-3",
                                             attrs: {
                                               alternative: "",
-                                              "prepend-icon": "ni ni-email-83",
-                                              label: "Email",
-                                              placeholder: "Email",
-                                              name: "Email",
-                                              rules: {
-                                                required: true,
-                                                email: true
-                                              }
+                                              "prepend-icon": "fas fa-clone",
+                                              label: "Roster",
+                                              placeholder: "Roster",
+                                              name: "Roster"
                                             },
                                             model: {
-                                              value: _vm.model.email,
+                                              value: _vm.model.roster,
                                               callback: function($$v) {
                                                 _vm.$set(
                                                   _vm.model,
-                                                  "email",
+                                                  "roster",
                                                   $$v
                                                 )
                                               },
-                                              expression: "model.email"
+                                              expression: "model.roster"
                                             }
                                           }),
                                           _vm._v(" "),

@@ -550,7 +550,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.no-border-card .card-footer{\n  border-top: 0;\n}\n.el-table .el-table__header-wrapper thead th .cell {\n  justify-content: center;\n}\n.card .table td, .card .table th, .card .el-table td, .card .el-table th {\n  padding: 10px;\n  text-align: center;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.no-border-card .card-footer{\n  border-top: 0;\n}\n", ""]);
 // Exports
 /* harmony default export */ __webpack_exports__["default"] = (___CSS_LOADER_EXPORT___);
 

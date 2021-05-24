@@ -16,14 +16,17 @@ class CreateFlightsTable extends Migration
         Schema::create('flights', function (Blueprint $table) {
             $table->id();
             $table->foreignId('aircraft_id')->constrained('aircrafts')->onUpdate('cascade')->onDelete('cascade');
-            $table->string('airline');
+            $table->string('airline_code');
+            $table->string('flight_number');
             $table->string('origin_airport_name');
             $table->string('origin_airport_code');
             $table->string('destination_airport_name');
             $table->string('destination_airport_code');
-            $table->datetime('departure_time');
-            $table->datetime('arrival_time');
-            $table->float('flight_time');
+            $table->time('departure_time');
+            $table->time('arrival_time');
+            $table->string('flight_time');
+            $table->integer('operation_days');
+            $table->boolean('type');
             $table->boolean('status')->default(1);
             $table->timestamps();
         });

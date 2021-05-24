@@ -66,6 +66,16 @@
 
                     <base-input alternative
                                 class="mb-3"
+                                prepend-icon="ni ni-email-83"
+                                label="Email"
+                                placeholder="Email"
+                                name="Email"
+                                :rules="{required: true, email: true}"
+                                v-model="model.email">
+                    </base-input>
+
+                    <base-input alternative
+                                class="mb-3"
                                 prepend-icon="fas fa-globe-americas"
                                 label="Company"
                                 placeholder="Company"
@@ -76,12 +86,11 @@
 
                     <base-input alternative
                                 class="mb-3"
-                                prepend-icon="ni ni-email-83"
-                                label="Email"
-                                placeholder="Email"
-                                name="Email"
-                                :rules="{required: true, email: true}"
-                                v-model="model.email">
+                                prepend-icon="fas fa-clone"
+                                label="Roster"
+                                placeholder="Roster"
+                                name="Roster"
+                                v-model="model.roster">
                     </base-input>
 
                     <base-input alternative
@@ -155,6 +164,7 @@
           last_name: '',
           phone: '',
           company: '',
+          roster: '',
           birthday: '',
           email: '',
           password: '',
@@ -173,6 +183,7 @@
         this.model.last_name = this.passenger.last_name;
         this.model.phone = this.passenger.phone;
         this.model.company = this.passenger.company;
+        this.model.roster = this.passenger.roster;
         this.model.birthday = this.passenger.birthday;
         this.model.email = this.passenger.email;
         this.model.status = this.passenger.status;
@@ -202,6 +213,7 @@
               phone: this.model.phone,
               company: this.model.company,
               birthday: this.model.birthday,
+              roster: this.model.roster,
               email: this.model.email,
               password: this.model.password,
               password_confirmation: this.model.password,

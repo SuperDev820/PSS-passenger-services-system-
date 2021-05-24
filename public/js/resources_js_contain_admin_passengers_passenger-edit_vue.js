@@ -158,6 +158,15 @@ var _components;
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -184,6 +193,7 @@ var _components;
         last_name: '',
         phone: '',
         company: '',
+        roster: '',
         birthday: '',
         email: '',
         password: '',
@@ -202,6 +212,7 @@ var _components;
       this.model.last_name = this.passenger.last_name;
       this.model.phone = this.passenger.phone;
       this.model.company = this.passenger.company;
+      this.model.roster = this.passenger.roster;
       this.model.birthday = this.passenger.birthday;
       this.model.email = this.passenger.email;
       this.model.status = this.passenger.status;
@@ -223,6 +234,7 @@ var _components;
         phone: this.model.phone,
         company: this.model.company,
         birthday: this.model.birthday,
+        roster: this.model.roster,
         email: this.model.email,
         password: this.model.password,
         password_confirmation: this.model.password,
@@ -7101,6 +7113,32 @@ var render = function() {
                                             staticClass: "mb-3",
                                             attrs: {
                                               alternative: "",
+                                              "prepend-icon": "ni ni-email-83",
+                                              label: "Email",
+                                              placeholder: "Email",
+                                              name: "Email",
+                                              rules: {
+                                                required: true,
+                                                email: true
+                                              }
+                                            },
+                                            model: {
+                                              value: _vm.model.email,
+                                              callback: function($$v) {
+                                                _vm.$set(
+                                                  _vm.model,
+                                                  "email",
+                                                  $$v
+                                                )
+                                              },
+                                              expression: "model.email"
+                                            }
+                                          }),
+                                          _vm._v(" "),
+                                          _c("base-input", {
+                                            staticClass: "mb-3",
+                                            attrs: {
+                                              alternative: "",
                                               "prepend-icon":
                                                 "fas fa-globe-americas",
                                               label: "Company",
@@ -7125,25 +7163,21 @@ var render = function() {
                                             staticClass: "mb-3",
                                             attrs: {
                                               alternative: "",
-                                              "prepend-icon": "ni ni-email-83",
-                                              label: "Email",
-                                              placeholder: "Email",
-                                              name: "Email",
-                                              rules: {
-                                                required: true,
-                                                email: true
-                                              }
+                                              "prepend-icon": "fas fa-clone",
+                                              label: "Roster",
+                                              placeholder: "Roster",
+                                              name: "Roster"
                                             },
                                             model: {
-                                              value: _vm.model.email,
+                                              value: _vm.model.roster,
                                               callback: function($$v) {
                                                 _vm.$set(
                                                   _vm.model,
-                                                  "email",
+                                                  "roster",
                                                   $$v
                                                 )
                                               },
-                                              expression: "model.email"
+                                              expression: "model.roster"
                                             }
                                           }),
                                           _vm._v(" "),

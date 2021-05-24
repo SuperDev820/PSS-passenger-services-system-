@@ -25,8 +25,8 @@ class Flight extends Model
     ];
 
     protected $casts = [
-        'departure_time' => 'datetime:Y-m-d H:m', // Change your format
-        'arrival_time' => 'datetime:Y-m-d H:m',
+        'departure_time' => 'datetime:H:i', // Change your format
+        'arrival_time' => 'datetime:H:i',
     ];
 
     public function aircraft()

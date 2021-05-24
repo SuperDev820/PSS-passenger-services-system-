@@ -138,8 +138,7 @@ var _components;
   data: function data() {
     return {
       // seats: [[]],
-      seat: "disabled",
-      a: ""
+      seat: ""
     };
   },
   watch: {},
@@ -13818,45 +13817,8 @@ var render = function() {
                                 [
                                   _c("li", { staticClass: "seat" }, [
                                     _c("input", {
-                                      directives: [
-                                        {
-                                          name: "model",
-                                          rawName: "v-model",
-                                          value: _vm.seat,
-                                          expression: "seat"
-                                        }
-                                      ],
                                       attrs: { type: "checkbox", id: i + "A" },
-                                      domProps: {
-                                        checked: Array.isArray(_vm.seat)
-                                          ? _vm._i(_vm.seat, null) > -1
-                                          : _vm.seat
-                                      },
-                                      on: {
-                                        change: [
-                                          function($event) {
-                                            var $$a = _vm.seat,
-                                              $$el = $event.target,
-                                              $$c = $$el.checked ? true : false
-                                            if (Array.isArray($$a)) {
-                                              var $$v = null,
-                                                $$i = _vm._i($$a, $$v)
-                                              if ($$el.checked) {
-                                                $$i < 0 &&
-                                                  (_vm.seat = $$a.concat([$$v]))
-                                              } else {
-                                                $$i > -1 &&
-                                                  (_vm.seat = $$a
-                                                    .slice(0, $$i)
-                                                    .concat($$a.slice($$i + 1)))
-                                              }
-                                            } else {
-                                              _vm.seat = $$c
-                                            }
-                                          },
-                                          _vm.handleSeat
-                                        ]
-                                      }
+                                      on: { change: _vm.handleSeat }
                                     }),
                                     _vm._v(" "),
                                     _c("label", { attrs: { for: i + "A" } }, [

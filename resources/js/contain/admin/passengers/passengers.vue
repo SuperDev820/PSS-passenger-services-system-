@@ -232,11 +232,4 @@ export default {
   .no-border-card .card-footer{
     border-top: 0;
   }
-  .el-table .el-table__header-wrapper thead th .cell {
-    justify-content: center;
-  }
-  .card .table td, .card .table th, .card .el-table td, .card .el-table th {
-    padding: 10px;
-    text-align: center;
-  }
 </style>
