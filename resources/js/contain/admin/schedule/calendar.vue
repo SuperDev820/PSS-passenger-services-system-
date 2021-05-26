@@ -49,7 +49,7 @@
                              :plugins="calendarPlugins"
                              :editable="true"
                              contentHeight="auto"
-                             :theme="false"
+                             :theme="true"
                              :selectable="true"
                              :selectHelper="true"
                              ref="fullCalendar"
@@ -127,7 +127,7 @@
       <template slot="footer">
         <base-button native-type="submit" type="primary" class="new-event--add" @click="editEvent">Update</base-button>
         <base-button type="danger" @click="deleteEvent">Delete</base-button>
-        <base-button type="link" class="ml-auto" @click="showAddModal = false">Close</base-button>
+        <base-button type="link" class="ml-auto" @click="showEditModal = false">Close</base-button>
       </template>
     </modal>
   </div>
@@ -138,6 +138,7 @@
   import dayGridPlugin from '@fullcalendar/daygrid'
   import timeGridPlugin from '@fullcalendar/timegrid'
   import interactionPlugin from '@fullcalendar/interaction'
+  import resourceTimelinePlugin from '@fullcalendar/resource-timeline'
 
   const today = new Date();
   const y = today.getFullYear();
@@ -152,7 +153,7 @@
     data() {
       let yearAndMonth = `${y}-${m + 1}`
       return {
-        calendarPlugins: [dayGridPlugin, timeGridPlugin, interactionPlugin],
+        calendarPlugins: [resourceTimelinePlugin],
         defaultView: 'dayGridMonth',
         events: [
           {
