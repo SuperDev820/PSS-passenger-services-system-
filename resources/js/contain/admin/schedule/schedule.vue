@@ -9,7 +9,7 @@
           </nav>
         </b-col>
         <b-col lg="6" class="mt-3 mt-lg-0 text-lg-right" >
-          <base-button class="btn btn-neutral btn-sm">
+          <base-button class="btn btn-neutral btn-sm" @click="onDateClick">
             <i class="fas fa-plus"></i>Add Reservation
           </base-button>
         </b-col>
@@ -102,14 +102,21 @@
 <script>
   import Modal from '@/components/Modal'
   import FullCalendar from '@fullcalendar/vue'
-  import interactionPlugin from '@fullcalendar/interaction';
+  // import interactionPlugin from '@fullcalendar/interaction';
   import resourceTimelinePlugin from '@fullcalendar/resource-timeline'
   import BaseButton from '../../../components/BaseButton.vue';
+
+  import {mapActions, mapGetters} from 'vuex'
 
   const today = new Date();
   const y = today.getFullYear();
   const m = today.getMonth();
   const d = today.getDate();
+  const w = today.getDay();
+  const yearAndMonthAndDate = `${y}-0${m + 1}-${d}`;
+  if (m > 9) {
+    yearAndMonthAndDate = `${y}-${m + 1}-${d}`;
+  }
   export default {
     name: 'calendar',
     components: {
@@ -118,12 +125,11 @@
       BaseButton
     },
     data() {
-      let yearAndMonth = `${y}-${m + 1}`
       return {
         calendarOptions: {
-          // eventClick: function(info) {
-          //     console.log(info)
-          // },
+          eventClick: function(info) {
+              console.log(info)
+          },
           height: 1000,
           plugins: [ resourceTimelinePlugin ],
           headerToolbar: {
@@ -133,32 +139,26 @@
           },
           initialView: 'resourceTimelineDay',
           scrollTime: '07:00',
-          aspectRatio: 1,
+          aspectRatio: 1.5,
+          slotDuration: '00:15',
           editable: true,
           filterResourcesWithEvents: false,
           resourceAreaWidth: "15%",
           // droppable: true,
           resourceAreaColumns: [
-              {
-                  field: 'title',
-                  headerContent: 'Resource'
-              }
+            {
+              field: 'title',
+              headerContent: 'Resource'
+            }
           ],
-          resources: [
-              {
-                  "id": "worker_a",
-                  "title": "Worker A"
-              }, {
-                  "id": "worker_b",
-                  "title": "Worker B",
-                  "eventColor": "green"
-              }, {
-                  "id": "worker_c",
-                  "title": "Worker C",
-                  "eventColor": "orange"
-              }
+          resources: [],
+          events: [{
+            resourceId: "1",
+            title: 'Event 1',
+            start: '2021-05-27T20:00:00',
+            end: '2021-05-28T02:00:00'
+          }
           ],
-          events: [],
         },
         showAddModal: false,
         showEditModal: false,
@@ -169,10 +169,51 @@
           start: '',
           end: ''
         },
-        eventColors: ['bg-info', 'bg-orange', 'bg-red', 'bg-green', 'bg-default', 'bg-blue', 'bg-purple', 'bg-yellow']
+        eventColors: ['bg-info', 'bg-orange', 'bg-red', 'bg-green', 'bg-default', 'bg-blue', 'bg-purple', 'bg-yellow'],
       };
     },
+    watch: {
+      aircrafts: function () {
+        var that = this;
+        this.aircrafts.forEach(function(item, index) {
+          let temp = {}
+          temp.id = item.id
+          temp.title = item.registration + "\n" + item.model
+          that.calendarOptions.resources.push(temp)
+        })
+        this.initFlights();
+      },
+      flights: function() {
+        var that = this;
+        this.flights.forEach(function(item, index) {
+          console.log(w)
+          if ((w+1) == item.operation_days) {
+            let temp = {}
+            temp.resourceId = item.aircraft_id
+            temp.title = item.airline_code +" "+ item.flight_number +", "+ item.origin_airport_code +"-"+ item.destination_airport_code
+            temp.start = yearAndMonthAndDate +"T"+ item.departure_time
+            temp.end = yearAndMonthAndDate +"T"+ item.arrival_time
+            temp.className = that.eventColors[index%8]
+            that.calendarOptions.events.push(temp)
+          }
+        })
+      },
+    },
+    computed: {
+      ...mapGetters([
+        'aircrafts',
+        'flights',
+      ]),
+    },
+    mounted() {
+      this.initAircrafts();
+    },
     methods: {
+      ...mapActions([
+        'initAircrafts',
+        'initFlights'
+      ]),
+
       calendarApi() {
         return this.$refs.fullCalendar.getApi()
       },
