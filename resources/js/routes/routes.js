@@ -227,8 +227,8 @@ const routes = [
 
       {
         path: 'schedule',
-        name: 'Calendar',
-        component: () => import('../contain/admin/schedule/calendar.vue'),
+        name: 'Schedule',
+        component: () => import('../contain/admin/schedule/schedule.vue'),
       },
     ]
   },

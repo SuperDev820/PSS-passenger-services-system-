@@ -153,8 +153,6 @@
   }
 }
 
-
-
 @-webkit-keyframes rubberBand {
   0% {
     -webkit-transform: scale3d(1, 1, 1);
@@ -240,4 +238,21 @@
 .card .table td, .card .table th, .card .el-table td, .card .el-table th {
   padding: 10px;
   text-align: center;
+}
+
+.fc .fc-toolbar.fc-header-toolbar {
+  padding: 14px 14px 0 14px;
+}
+.fc .fc-button .fc-icon {
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+}
+.fc-event {
+  border-radius: 0 !important;
+  font-size: 14px !important;
+  padding: 10px 10px !important;
+}
+.fc-license-message {
+  display: none !important;
 }
