@@ -167,6 +167,9 @@ var _components;
 //
 //
 //
+//
+//
+//
 
 
 
@@ -6982,7 +6985,7 @@ var render = function() {
                                   _c(
                                     "b-form",
                                     {
-                                      staticClass: "row",
+                                      staticClass: "row mr-0 ml-0",
                                       attrs: { role: "form" },
                                       on: {
                                         submit: function($event) {
@@ -6994,7 +6997,7 @@ var render = function() {
                                     [
                                       _c(
                                         "div",
-                                        { staticClass: "col-8 offset-2" },
+                                        { staticClass: "col-md-6 col-sm-12" },
                                         [
                                           _c("base-input", {
                                             staticClass: "mb-3",
@@ -7107,8 +7110,15 @@ var render = function() {
                                               },
                                               expression: "model.phone"
                                             }
-                                          }),
-                                          _vm._v(" "),
+                                          })
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "div",
+                                        { staticClass: "col-md-6 col-sm-12" },
+                                        [
                                           _c("base-input", {
                                             staticClass: "mb-3",
                                             attrs: {

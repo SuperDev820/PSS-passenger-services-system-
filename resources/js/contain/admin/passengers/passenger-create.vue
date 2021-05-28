@@ -24,8 +24,8 @@
                 <strong>Failed!</strong> {{error}}
               </base-alert>
               <validation-observer v-slot="{handleSubmit}" ref="formValidator">
-                <b-form role="form" class="row" @submit.prevent="handleSubmit(onSubmit)">
-                  <div class="col-8 offset-2">
+                <b-form role="form" class="row mr-0 ml-0" @submit.prevent="handleSubmit(onSubmit)">
+                  <div class="col-md-6 col-sm-12">
                     <base-input alternative
                                 class="mb-3"
                                 prepend-icon="ni ni-hat-3"
@@ -63,7 +63,9 @@
                                 :rules="{required: true}"
                                 v-model="model.phone">
                     </base-input>
+                  </div>
 
+                  <div class="col-md-6 col-sm-12">
                     <base-input alternative
                                 class="mb-3"
                                 prepend-icon="ni ni-email-83"

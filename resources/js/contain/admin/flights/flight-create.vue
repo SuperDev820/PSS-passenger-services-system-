@@ -134,6 +134,7 @@
 
                     <base-input label="Days Of Operation">
                       <el-select v-model="model.operation_days"
+                                 multiple
                                  filterable
                                  placeholder="Days Of Operation"
                                  :rules="{required: true}">
@@ -241,7 +242,7 @@
           departure_time: '',
           arrival_time: '',
           type: '',
-          operation_days: null,
+          operation_days: [],
         },
         error: null,
         isError: false,

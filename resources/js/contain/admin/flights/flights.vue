@@ -181,7 +181,7 @@ export default {
   },
   data() {
     return {
-      propsToSearch: ['name', 'email'],
+      propsToSearch: [],
       tableColumns: [
       ],
       tableData: [],

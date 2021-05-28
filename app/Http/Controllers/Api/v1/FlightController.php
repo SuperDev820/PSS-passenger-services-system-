@@ -89,6 +89,8 @@ class FlightController extends Controller
         } else {
             $flight_time = $flight_time_object->i." minutes";
         }
+        $operation_days = $request->operation_days;
+        sort($operation_days);
 
         $flight = new Flight;
         $flight->airline_code = $request->airline_code;
@@ -102,7 +104,7 @@ class FlightController extends Controller
         $flight->arrival_time = $request->arrival_time;
         $flight->flight_time = $flight_time;
         $flight->type = $request->type;
-        $flight->operation_days = $request->operation_days;
+        $flight->operation_days = $operation_days;
         $flight->save();
 
         return response()->json([
@@ -151,6 +153,9 @@ class FlightController extends Controller
         } else {
             $flight_time = $flight_time_object->i." minutes";
         }
+        $operation_days = $request->operation_days;
+        sort($operation_days);
+
         $flight = Flight::find($request->id);
         $flight -> update([
             'airline_code' => $request->airline_code,
@@ -164,7 +169,7 @@ class FlightController extends Controller
             'arrival_time' => $request->arrival_time,
             'flight_time' => $flight_time,
             'type' => $request->type,
-            'operation_days' => $request->operation_days,
+            'operation_days' => $operation_days,
             'status' => $request->status,
         ]);
 

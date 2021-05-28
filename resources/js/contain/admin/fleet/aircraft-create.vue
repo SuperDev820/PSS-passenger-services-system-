@@ -50,10 +50,11 @@
                                 class="mb-3"
                                 prepend-icon="fas fa-chair"
                                 label="Seat Configuration"
-                                placeholder="Seat Configuration"
+                                placeholder="e.g x-x"
                                 name="SeatConfiguration"
-                                :rules="{required: true, numeric: true, min: 1}"
-                                v-model="model.seat_config">
+                                :rules="{required: true}"
+                                v-model="model.seat_config"
+                                v-mask="'#-#'">
                     </base-input>
 
                     <base-input alternative
@@ -103,8 +104,8 @@
         model: {
           registration: '',
           model: '',
-          seat_config: 0,
-          total_seat: 0,
+          seat_config: null,
+          total_seat: null,
         },
         error: null,
         isError: false,

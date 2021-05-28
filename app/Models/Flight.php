@@ -14,6 +14,7 @@ class Flight extends Model
     protected $fillable = [
         'aircraft_id',
         'airline_code',
+        'flight_number',
         'origin_airport_name',
         'origin_airport_code',
         'destination_airport_name',
@@ -21,12 +22,15 @@ class Flight extends Model
         'departure_time',
         'arrival_time',
         'flight_time',
+        'operation_days',
+        'type',
         'status',
     ];
 
     protected $casts = [
         'departure_time' => 'datetime:H:i', // Change your format
         'arrival_time' => 'datetime:H:i',
+        'operation_days' => 'array',
     ];
 
     public function aircraft()

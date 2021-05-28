@@ -17,7 +17,7 @@ class CreateAircraftsTable extends Migration
             $table->id();
             $table->string('registration');
             $table->string('model');
-            $table->integer('seat_config');
+            $table->string('seat_config');
             $table->integer('total_seat');
             $table->timestamps();
         });

@@ -16,6 +16,7 @@
 */
 import Vue from 'vue';
 import DashboardPlugin from './plugins/dashboard-plugin';
+import VueMask from 'v-mask'
 import App from './App.vue';
 import store from './store'
 
@@ -23,6 +24,7 @@ import store from './store'
 import router from './routes/router';
 // plugin setup
 Vue.use(DashboardPlugin);
+Vue.use(VueMask)
 
 /* eslint-disable no-new */
 new Vue({

@@ -209,6 +209,7 @@ var _components;
 //
 //
 //
+//
 
 
 
@@ -282,7 +283,7 @@ var _components;
         departure_time: '',
         arrival_time: '',
         type: '',
-        operation_days: null,
+        operation_days: [],
         status: 0
       },
       error: null,
@@ -7450,6 +7451,7 @@ var render = function() {
                                                 "el-select",
                                                 {
                                                   attrs: {
+                                                    multiple: "",
                                                     filterable: "",
                                                     placeholder:
                                                       "Days Of Operation",

@@ -227,7 +227,7 @@ var _components;
   }, (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_components, (element_ui_lib_select__WEBPACK_IMPORTED_MODULE_10___default().name), (element_ui_lib_select__WEBPACK_IMPORTED_MODULE_10___default())), (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_components, (element_ui_lib_option__WEBPACK_IMPORTED_MODULE_8___default().name), (element_ui_lib_option__WEBPACK_IMPORTED_MODULE_8___default())), (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_components, (element_ui_lib_table__WEBPACK_IMPORTED_MODULE_6___default().name), (element_ui_lib_table__WEBPACK_IMPORTED_MODULE_6___default())), (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_components, (element_ui_lib_table_column__WEBPACK_IMPORTED_MODULE_4___default().name), (element_ui_lib_table_column__WEBPACK_IMPORTED_MODULE_4___default())), _components),
   data: function data() {
     return {
-      propsToSearch: ['name', 'email'],
+      propsToSearch: [],
       tableColumns: [],
       tableData: [],
       selectedRows: []

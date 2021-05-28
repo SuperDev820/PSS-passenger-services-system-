@@ -117,6 +117,7 @@ var _components;
 //
 //
 //
+//
 
 
 
@@ -6974,18 +6975,22 @@ var render = function() {
                                           }),
                                           _vm._v(" "),
                                           _c("base-input", {
+                                            directives: [
+                                              {
+                                                name: "mask",
+                                                rawName: "v-mask",
+                                                value: "#-#",
+                                                expression: "'#-#'"
+                                              }
+                                            ],
                                             staticClass: "mb-3",
                                             attrs: {
                                               alternative: "",
                                               "prepend-icon": "fas fa-chair",
                                               label: "Seat Configuration",
-                                              placeholder: "Seat Configuration",
+                                              placeholder: "e.g x-x",
                                               name: "SeatConfiguration",
-                                              rules: {
-                                                required: true,
-                                                numeric: true,
-                                                min: 1
-                                              }
+                                              rules: { required: true }
                                             },
                                             model: {
                                               value: _vm.model.seat_config,

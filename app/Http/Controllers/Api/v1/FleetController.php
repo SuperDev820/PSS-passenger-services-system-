@@ -56,7 +56,7 @@ class FleetController extends Controller
         $validator = Validator::make($request->all(), [
             'registration' => 'required|string|between:1,100',
             'model' => 'required|string|between:1,100',
-            'seat_config' => 'required|numeric',
+            'seat_config' => 'required',
             'total_seat' => 'required|numeric',
         ]);
 
@@ -86,7 +86,7 @@ class FleetController extends Controller
         $request->validate([
             'registration' => 'required|string|between:1,100',
             'model' => 'required|string|between:1,100',
-            'seat_config' => 'required|numeric',
+            'seat_config' => 'required',
             'total_seat' => 'required|numeric',
         ]);
         

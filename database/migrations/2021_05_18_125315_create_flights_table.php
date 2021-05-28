@@ -25,7 +25,7 @@ class CreateFlightsTable extends Migration
             $table->time('departure_time');
             $table->time('arrival_time');
             $table->string('flight_time');
-            $table->integer('operation_days');
+            $table->json('operation_days');
             $table->boolean('type');
             $table->boolean('status')->default(1);
             $table->timestamps();
