@@ -19,6 +19,7 @@ class CreateAircraftsTable extends Migration
             $table->string('model');
             $table->string('seat_config');
             $table->integer('total_seat');
+            $table->boolean('status')->default(1);
             $table->timestamps();
         });
     }

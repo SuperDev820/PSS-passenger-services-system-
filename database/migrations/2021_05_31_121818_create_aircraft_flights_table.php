@@ -1,0 +1,39 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class CreateAircraftFlightsTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('aircraft_flights', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('aircraft_id')->constrained('aircrafts')->nullable()->onUpdate('cascade');
+            $table->foreignId('flight_id')->constrained('flights')->nullable()->onUpdate('cascade');
+            $table->date('date')->nullable();
+            $table->time('departure_time');
+            $table->time('arrival_time');
+            $table->string('flight_time');
+            $table->string('status')->default('PLANNED');
+            $table->string('phase')->default('CLOSED');
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('aircraft_flights');
+    }
+}

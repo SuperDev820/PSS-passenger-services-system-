@@ -62,11 +62,8 @@ class FlightController extends Controller
         $validator = Validator::make($request->all(), [
             'airline_code' => 'required',
             'flight_number' => 'required',
-            'aircraft' => 'required',
             'origin_airport_name' => 'required',
-            'origin_airport_code' => 'required',
             'destination_airport_name' => 'required',
-            'destination_airport_code' => 'required',
             'departure_time' => 'required',
             'arrival_time' => 'required',
             'type' => 'required',
@@ -77,7 +74,6 @@ class FlightController extends Controller
             return response()->json($validator->errors()->toJson(), 400);
         }
 
-        $aircraft = Aircraft::where('registration', $request->aircraft)->get();
         $departure_time = new DateTime($request->departure_time);
         $flight_time_object = $departure_time->diff(new DateTime($request->arrival_time));
         if ($flight_time_object->h > 0) {
@@ -95,7 +91,6 @@ class FlightController extends Controller
         $flight = new Flight;
         $flight->airline_code = $request->airline_code;
         $flight->flight_number = $request->flight_number;
-        $flight->aircraft_id = $aircraft[0]->id;
         $flight->origin_airport_name = $request->origin_airport_name;
         $flight->origin_airport_code = $request->origin_airport_code;
         $flight->destination_airport_name = $request->destination_airport_name;
@@ -125,23 +120,18 @@ class FlightController extends Controller
         $validator = Validator::make($request->all(), [
             'airline_code' => 'required',
             'flight_number' => 'required',
-            'aircraft' => 'required',
             'origin_airport_name' => 'required',
-            'origin_airport_code' => 'required',
             'destination_airport_name' => 'required',
-            'destination_airport_code' => 'required',
             'departure_time' => 'required',
             'arrival_time' => 'required',
             'type' => 'required',
             'operation_days' => 'required',
-            'status' => 'required',
         ]);
 
         if($validator->fails()){
             return response()->json($validator->errors()->toJson(), 400);
         }
 
-        $aircraft = Aircraft::where('registration', $request->aircraft)->get();
         $departure_time = new DateTime($request->departure_time);
         $flight_time_object = $departure_time->diff(new DateTime($request->arrival_time));
         if ($flight_time_object->h > 0) {
@@ -160,7 +150,6 @@ class FlightController extends Controller
         $flight -> update([
             'airline_code' => $request->airline_code,
             'flight_number' => $request->flight_number,
-            'aircraft_id' => $aircraft[0]->id,
             'origin_airport_name' => $request->origin_airport_name,
             'origin_airport_code' => $request->origin_airport_code,
             'destination_airport_name' => $request->destination_airport_name,
@@ -170,7 +159,6 @@ class FlightController extends Controller
             'flight_time' => $flight_time,
             'type' => $request->type,
             'operation_days' => $operation_days,
-            'status' => $request->status,
         ]);
 
         return response()->json([

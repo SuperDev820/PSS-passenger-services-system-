@@ -90,11 +90,11 @@
                              prop="type"
                              min-width="100px">
                 <div slot-scope="{row}">
-                    <span class="text-primary" v-if="row.type == 1">REGULAR</span>
-                    <span class="text-warning" v-else>CHARTER</span>
+                  <span class="text-primary" v-if="row.type == 'REGULAR'">REGULAR</span>
+                  <span class="text-warning" v-else>CHARTER</span>
                 </div>
               </el-table-column>
-              <el-table-column prop="status" label="Status" min-width="100px">
+              <!-- <el-table-column prop="status" label="Status" min-width="100px">
                 <div slot-scope="{row}">
                   <badge class="" v-if="row.status == 1" type="success">
                     <span>Active</span>
@@ -103,7 +103,7 @@
                     <span>Deactive</span>
                   </badge>
                 </div>
-              </el-table-column>
+              </el-table-column> -->
               <el-table-column min-width="120px" align="right" label="Actions">
                 <div slot-scope="{$index, row}" class="d-flex justify-content-center">
                   <base-button

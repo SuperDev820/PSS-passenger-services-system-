@@ -184,19 +184,6 @@ var _components;
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -212,11 +199,11 @@ var _components;
   data: function data() {
     return {
       typeOptions: [{
-        label: 'Regular',
-        value: 1
+        label: 'REGULAR',
+        value: 'REGULAR'
       }, {
-        label: 'Charter',
-        value: 0
+        label: 'CHARTER',
+        value: 'CHARTER'
       }],
       daysOptions: [{
         label: '1',
@@ -255,7 +242,6 @@ var _components;
       model: {
         airline_code: '',
         flight_number: '',
-        aircraft: '',
         origin_airport_name: '',
         origin_airport_code: '',
         destination_airport_name: '',
@@ -284,7 +270,6 @@ var _components;
       return this.createFlight({
         airline_code: this.model.airline_code,
         flight_number: this.model.flight_number,
-        aircraft: this.model.aircraft,
         origin_airport_name: this.model.origin_airport_name,
         origin_airport_code: this.model.origin_airport_code,
         destination_airport_name: this.model.destination_airport_name,
@@ -7095,53 +7080,6 @@ var render = function() {
                                               expression: "model.flight_number"
                                             }
                                           }),
-                                          _vm._v(" "),
-                                          _c(
-                                            "base-input",
-                                            {
-                                              attrs: {
-                                                label: "Aircraft Registration"
-                                              }
-                                            },
-                                            [
-                                              _c(
-                                                "el-select",
-                                                {
-                                                  attrs: {
-                                                    filterable: "",
-                                                    placeholder:
-                                                      "Aircraft Registration",
-                                                    rules: { required: true }
-                                                  },
-                                                  model: {
-                                                    value: _vm.model.aircraft,
-                                                    callback: function($$v) {
-                                                      _vm.$set(
-                                                        _vm.model,
-                                                        "aircraft",
-                                                        $$v
-                                                      )
-                                                    },
-                                                    expression: "model.aircraft"
-                                                  }
-                                                },
-                                                _vm._l(
-                                                  _vm.aircraftOptions,
-                                                  function(option) {
-                                                    return _c("el-option", {
-                                                      key: option,
-                                                      attrs: {
-                                                        label: option,
-                                                        value: option
-                                                      }
-                                                    })
-                                                  }
-                                                ),
-                                                1
-                                              )
-                                            ],
-                                            1
-                                          ),
                                           _vm._v(" "),
                                           _c("base-input", {
                                             staticClass: "mb-3",

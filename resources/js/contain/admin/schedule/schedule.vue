@@ -72,6 +72,14 @@
                   {{row.airline_code + row.flight_number}}
                 </div>
               </el-table-column>
+              <el-table-column label="Aircraft"
+                             prop="aircraft"
+                             min-width="120px"
+                             sortable>
+                <div slot-scope="{row}">
+                  {{row.aircraft.registration}}
+                </div>
+              </el-table-column>
               <el-table-column label="From"
                              prop="origin_airport_name"
                              min-width="120px"
@@ -104,11 +112,21 @@
                              prop="type"
                              min-width="100px">
                 <div slot-scope="{row}">
-                    <span class="text-primary" v-if="row.type == 1">REGULAR</span>
-                    <span class="text-warning" v-else>CHARTER</span>
+                  <span class="text-primary" v-if="row.type == 'REGULAR'">REGULAR</span>
+                  <span class="text-warning" v-else>CHARTER</span>
                 </div>
               </el-table-column>
               <el-table-column prop="status" label="Status" min-width="100px">
+                <div slot-scope="{row}">
+                  <badge class="" v-if="row.status == 1" type="success">
+                    <span>Active</span>
+                  </badge>
+                  <badge class="" v-else type="warning">
+                    <span>Deactive</span>
+                  </badge>
+                </div>
+              </el-table-column>
+              <el-table-column prop="phase" label="Phase" min-width="100px">
                 <div slot-scope="{row}">
                   <badge class="" v-if="row.status == 1" type="success">
                     <span>Active</span>
@@ -324,30 +342,30 @@
           temp.title = item.registration + "\n" + item.model
           that.calendarOptions.resources.push(temp)
         })
-        this.initFlights();
+        this.getAircraftFlights();
       },
-      flights: function() {
-        this.tableData = this.flights;
+      aircraftFlights: function() {
+        this.tableData = this.aircraftFlights;
 
         var that = this;
-        this.flights.forEach(function(item, index) {
-          console.log(w)
-          if (item.operation_days.includes(w)) {
-            let temp = {}
-            temp.resourceId = item.aircraft_id
-            temp.title = item.airline_code + item.flight_number +", "+ item.origin_airport_code +"-"+ item.destination_airport_code
-            temp.start = yearAndMonthAndDate +"T"+ item.departure_time
-            temp.end = yearAndMonthAndDate +"T"+ item.arrival_time
-            temp.className = that.eventColors[index%8]
-            that.calendarOptions.events.push(temp)
-          }
-        })
+        // this.aircraftFlights.forEach(function(item, index) {
+        //   console.log(w)
+        //   if (item.operation_days.includes(w)) {
+        //     let temp = {}
+        //     temp.resourceId = item.aircraft_id
+        //     temp.title = item.airline_code + item.flight_number +", "+ item.origin_airport_code +"-"+ item.destination_airport_code
+        //     temp.start = yearAndMonthAndDate +"T"+ item.departure_time
+        //     temp.end = yearAndMonthAndDate +"T"+ item.arrival_time
+        //     temp.className = that.eventColors[index%8]
+        //     that.calendarOptions.events.push(temp)
+        //   }
+        // })
       },
     },
     computed: {
       ...mapGetters([
         'aircrafts',
-        'flights',
+        'aircraftFlights',
       ]),
     },
     mounted() {
@@ -356,7 +374,7 @@
     methods: {
       ...mapActions([
         'initAircrafts',
-        'initFlights'
+        'getAircraftFlights'
       ]),
 
       paginationChanged(page) {

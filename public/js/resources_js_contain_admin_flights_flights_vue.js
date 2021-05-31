@@ -14087,7 +14087,7 @@ var render = function() {
                               fn: function(ref) {
                                 var row = ref.row
                                 return _c("div", {}, [
-                                  row.type == 1
+                                  row.type == "REGULAR"
                                     ? _c(
                                         "span",
                                         { staticClass: "text-primary" },
@@ -14099,40 +14099,6 @@ var render = function() {
                                         [_vm._v("CHARTER")]
                                       )
                                 ])
-                              }
-                            }
-                          ])
-                        }),
-                        _vm._v(" "),
-                        _c("el-table-column", {
-                          attrs: {
-                            prop: "status",
-                            label: "Status",
-                            "min-width": "100px"
-                          },
-                          scopedSlots: _vm._u([
-                            {
-                              key: "default",
-                              fn: function(ref) {
-                                var row = ref.row
-                                return _c(
-                                  "div",
-                                  {},
-                                  [
-                                    row.status == 1
-                                      ? _c(
-                                          "badge",
-                                          { attrs: { type: "success" } },
-                                          [_c("span", [_vm._v("Active")])]
-                                        )
-                                      : _c(
-                                          "badge",
-                                          { attrs: { type: "warning" } },
-                                          [_c("span", [_vm._v("Deactive")])]
-                                        )
-                                  ],
-                                  1
-                                )
                               }
                             }
                           ])

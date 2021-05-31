@@ -46,19 +46,6 @@
                                 v-model="model.flight_number">
                     </base-input>
 
-                    <base-input label="Aircraft Registration">
-                      <el-select v-model="model.aircraft"
-                                 filterable
-                                 placeholder="Aircraft Registration"
-                                 :rules="{required: true}">
-                        <el-option v-for="option in aircraftOptions"
-                                   :key="option"
-                                   :label="option"
-                                   :value="option">
-                        </el-option>
-                      </el-select>
-                    </base-input>
-
                     <base-input alternative
                                 class="mb-3"
                                 prepend-icon="fas fa-plane-departure"
@@ -181,12 +168,12 @@
       return {
         typeOptions: [
           {
-            label: 'Regular',
-            value: 1
+            label: 'REGULAR',
+            value: 'REGULAR'
           },
           {
-            label: 'Charter',
-            value: 0
+            label: 'CHARTER',
+            value: 'CHARTER'
           },
         ],
         daysOptions: [
@@ -234,7 +221,6 @@
         model: {
           airline_code: '',
           flight_number: '',
-          aircraft: '',
           origin_airport_name: '',
           origin_airport_code: '',
           destination_airport_name: '',
@@ -271,7 +257,6 @@
           this.createFlight({
               airline_code: this.model.airline_code,
               flight_number: this.model.flight_number,
-              aircraft: this.model.aircraft,
               origin_airport_name: this.model.origin_airport_name,
               origin_airport_code: this.model.origin_airport_code,
               destination_airport_name: this.model.destination_airport_name,

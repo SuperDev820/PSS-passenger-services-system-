@@ -17709,26 +17709,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_13__);
 /* harmony import */ var core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! core-js/modules/web.dom-collections.for-each.js */ "./node_modules/core-js/modules/web.dom-collections.for-each.js");
 /* harmony import */ var core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_14__);
-/* harmony import */ var core_js_modules_es_array_includes_js__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! core-js/modules/es.array.includes.js */ "./node_modules/core-js/modules/es.array.includes.js");
-/* harmony import */ var core_js_modules_es_array_includes_js__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_includes_js__WEBPACK_IMPORTED_MODULE_15__);
-/* harmony import */ var core_js_modules_es_string_includes_js__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! core-js/modules/es.string.includes.js */ "./node_modules/core-js/modules/es.string.includes.js");
-/* harmony import */ var core_js_modules_es_string_includes_js__WEBPACK_IMPORTED_MODULE_16___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_string_includes_js__WEBPACK_IMPORTED_MODULE_16__);
-/* harmony import */ var core_js_modules_es_array_join_js__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! core-js/modules/es.array.join.js */ "./node_modules/core-js/modules/es.array.join.js");
-/* harmony import */ var core_js_modules_es_array_join_js__WEBPACK_IMPORTED_MODULE_17___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_join_js__WEBPACK_IMPORTED_MODULE_17__);
-/* harmony import */ var core_js_modules_es_array_find_index_js__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! core-js/modules/es.array.find-index.js */ "./node_modules/core-js/modules/es.array.find-index.js");
-/* harmony import */ var core_js_modules_es_array_find_index_js__WEBPACK_IMPORTED_MODULE_18___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_find_index_js__WEBPACK_IMPORTED_MODULE_18__);
-/* harmony import */ var core_js_modules_es_array_splice_js__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! core-js/modules/es.array.splice.js */ "./node_modules/core-js/modules/es.array.splice.js");
-/* harmony import */ var core_js_modules_es_array_splice_js__WEBPACK_IMPORTED_MODULE_19___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_splice_js__WEBPACK_IMPORTED_MODULE_19__);
-/* harmony import */ var _components_Breadcrumb_RouteBreadcrumb__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @/components/Breadcrumb/RouteBreadcrumb */ "./resources/js/components/Breadcrumb/RouteBreadcrumb.vue");
-/* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @/components */ "./resources/js/components/index.js");
-/* harmony import */ var _common_PaginatedTables_clientPaginationMixin__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @/common/PaginatedTables/clientPaginationMixin */ "./resources/js/common/PaginatedTables/clientPaginationMixin.js");
-/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! sweetalert2 */ "./node_modules/sweetalert2/dist/sweetalert2.all.js");
-/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_23___default = /*#__PURE__*/__webpack_require__.n(sweetalert2__WEBPACK_IMPORTED_MODULE_23__);
-/* harmony import */ var _components_Modal__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @/components/Modal */ "./resources/js/components/Modal.vue");
-/* harmony import */ var _fullcalendar_vue__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! @fullcalendar/vue */ "./node_modules/@fullcalendar/vue/dist/main.js");
-/* harmony import */ var _fullcalendar_resource_timeline__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! @fullcalendar/resource-timeline */ "./node_modules/@fullcalendar/resource-timeline/main.js");
-/* harmony import */ var _components_BaseButton_vue__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ../../../components/BaseButton.vue */ "./resources/js/components/BaseButton.vue");
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.mjs");
+/* harmony import */ var core_js_modules_es_array_join_js__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! core-js/modules/es.array.join.js */ "./node_modules/core-js/modules/es.array.join.js");
+/* harmony import */ var core_js_modules_es_array_join_js__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_join_js__WEBPACK_IMPORTED_MODULE_15__);
+/* harmony import */ var core_js_modules_es_array_find_index_js__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! core-js/modules/es.array.find-index.js */ "./node_modules/core-js/modules/es.array.find-index.js");
+/* harmony import */ var core_js_modules_es_array_find_index_js__WEBPACK_IMPORTED_MODULE_16___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_find_index_js__WEBPACK_IMPORTED_MODULE_16__);
+/* harmony import */ var core_js_modules_es_array_splice_js__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! core-js/modules/es.array.splice.js */ "./node_modules/core-js/modules/es.array.splice.js");
+/* harmony import */ var core_js_modules_es_array_splice_js__WEBPACK_IMPORTED_MODULE_17___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_splice_js__WEBPACK_IMPORTED_MODULE_17__);
+/* harmony import */ var _components_Breadcrumb_RouteBreadcrumb__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @/components/Breadcrumb/RouteBreadcrumb */ "./resources/js/components/Breadcrumb/RouteBreadcrumb.vue");
+/* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @/components */ "./resources/js/components/index.js");
+/* harmony import */ var _common_PaginatedTables_clientPaginationMixin__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @/common/PaginatedTables/clientPaginationMixin */ "./resources/js/common/PaginatedTables/clientPaginationMixin.js");
+/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! sweetalert2 */ "./node_modules/sweetalert2/dist/sweetalert2.all.js");
+/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_21___default = /*#__PURE__*/__webpack_require__.n(sweetalert2__WEBPACK_IMPORTED_MODULE_21__);
+/* harmony import */ var _components_Modal__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @/components/Modal */ "./resources/js/components/Modal.vue");
+/* harmony import */ var _fullcalendar_vue__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @fullcalendar/vue */ "./node_modules/@fullcalendar/vue/dist/main.js");
+/* harmony import */ var _fullcalendar_resource_timeline__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @fullcalendar/resource-timeline */ "./node_modules/@fullcalendar/resource-timeline/main.js");
+/* harmony import */ var _components_BaseButton_vue__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ../../../components/BaseButton.vue */ "./resources/js/components/BaseButton.vue");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.mjs");
 
 
 
@@ -17746,8 +17742,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var _components;
-
-
 
 
 
@@ -17788,11 +17782,11 @@ if (w == 0) {
       content: ""
     }]
   },
-  mixins: [_common_PaginatedTables_clientPaginationMixin__WEBPACK_IMPORTED_MODULE_22__.default],
+  mixins: [_common_PaginatedTables_clientPaginationMixin__WEBPACK_IMPORTED_MODULE_20__.default],
   components: (_components = {
-    BasePagination: _components__WEBPACK_IMPORTED_MODULE_21__.BasePagination,
-    RouteBreadCrumb: _components_Breadcrumb_RouteBreadcrumb__WEBPACK_IMPORTED_MODULE_20__.default
-  }, (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_components, (element_ui_lib_select__WEBPACK_IMPORTED_MODULE_10___default().name), (element_ui_lib_select__WEBPACK_IMPORTED_MODULE_10___default())), (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_components, (element_ui_lib_option__WEBPACK_IMPORTED_MODULE_8___default().name), (element_ui_lib_option__WEBPACK_IMPORTED_MODULE_8___default())), (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_components, (element_ui_lib_table__WEBPACK_IMPORTED_MODULE_6___default().name), (element_ui_lib_table__WEBPACK_IMPORTED_MODULE_6___default())), (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_components, (element_ui_lib_table_column__WEBPACK_IMPORTED_MODULE_4___default().name), (element_ui_lib_table_column__WEBPACK_IMPORTED_MODULE_4___default())), (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_components, "Modal", _components_Modal__WEBPACK_IMPORTED_MODULE_24__.default), (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_components, "FullCalendar", _fullcalendar_vue__WEBPACK_IMPORTED_MODULE_25__.default), (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_components, "BaseButton", _components_BaseButton_vue__WEBPACK_IMPORTED_MODULE_27__.default), _components),
+    BasePagination: _components__WEBPACK_IMPORTED_MODULE_19__.BasePagination,
+    RouteBreadCrumb: _components_Breadcrumb_RouteBreadcrumb__WEBPACK_IMPORTED_MODULE_18__.default
+  }, (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_components, (element_ui_lib_select__WEBPACK_IMPORTED_MODULE_10___default().name), (element_ui_lib_select__WEBPACK_IMPORTED_MODULE_10___default())), (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_components, (element_ui_lib_option__WEBPACK_IMPORTED_MODULE_8___default().name), (element_ui_lib_option__WEBPACK_IMPORTED_MODULE_8___default())), (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_components, (element_ui_lib_table__WEBPACK_IMPORTED_MODULE_6___default().name), (element_ui_lib_table__WEBPACK_IMPORTED_MODULE_6___default())), (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_components, (element_ui_lib_table_column__WEBPACK_IMPORTED_MODULE_4___default().name), (element_ui_lib_table_column__WEBPACK_IMPORTED_MODULE_4___default())), (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_components, "Modal", _components_Modal__WEBPACK_IMPORTED_MODULE_22__.default), (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_components, "FullCalendar", _fullcalendar_vue__WEBPACK_IMPORTED_MODULE_23__.default), (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_components, "BaseButton", _components_BaseButton_vue__WEBPACK_IMPORTED_MODULE_25__.default), _components),
   data: function data() {
     return {
       propsToSearch: [],
@@ -17804,7 +17798,7 @@ if (w == 0) {
           console.log(info);
         },
         height: 500,
-        plugins: [_fullcalendar_resource_timeline__WEBPACK_IMPORTED_MODULE_26__.default],
+        plugins: [_fullcalendar_resource_timeline__WEBPACK_IMPORTED_MODULE_24__.default],
         headerToolbar: {
           left: 'today',
           center: 'title',
@@ -17846,31 +17840,29 @@ if (w == 0) {
         temp.title = item.registration + "\n" + item.model;
         that.calendarOptions.resources.push(temp);
       });
-      this.initFlights();
+      this.getAircraftFlights();
     },
-    flights: function flights() {
-      this.tableData = this.flights;
-      var that = this;
-      this.flights.forEach(function (item, index) {
-        console.log(w);
-
-        if (item.operation_days.includes(w)) {
-          var temp = {};
-          temp.resourceId = item.aircraft_id;
-          temp.title = item.airline_code + item.flight_number + ", " + item.origin_airport_code + "-" + item.destination_airport_code;
-          temp.start = yearAndMonthAndDate + "T" + item.departure_time;
-          temp.end = yearAndMonthAndDate + "T" + item.arrival_time;
-          temp.className = that.eventColors[index % 8];
-          that.calendarOptions.events.push(temp);
-        }
-      });
+    aircraftFlights: function aircraftFlights() {
+      this.tableData = this.aircraftFlights;
+      var that = this; // this.aircraftFlights.forEach(function(item, index) {
+      //   console.log(w)
+      //   if (item.operation_days.includes(w)) {
+      //     let temp = {}
+      //     temp.resourceId = item.aircraft_id
+      //     temp.title = item.airline_code + item.flight_number +", "+ item.origin_airport_code +"-"+ item.destination_airport_code
+      //     temp.start = yearAndMonthAndDate +"T"+ item.departure_time
+      //     temp.end = yearAndMonthAndDate +"T"+ item.arrival_time
+      //     temp.className = that.eventColors[index%8]
+      //     that.calendarOptions.events.push(temp)
+      //   }
+      // })
     }
   },
-  computed: (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)({}, (0,vuex__WEBPACK_IMPORTED_MODULE_28__.mapGetters)(['aircrafts', 'flights'])),
+  computed: (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)({}, (0,vuex__WEBPACK_IMPORTED_MODULE_26__.mapGetters)(['aircrafts', 'aircraftFlights'])),
   mounted: function mounted() {
     this.initAircrafts();
   },
-  methods: (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)((0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)({}, (0,vuex__WEBPACK_IMPORTED_MODULE_28__.mapActions)(['initAircrafts', 'initFlights'])), {}, {
+  methods: (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)((0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)({}, (0,vuex__WEBPACK_IMPORTED_MODULE_26__.mapActions)(['initAircrafts', 'getAircraftFlights'])), {}, {
     paginationChanged: function paginationChanged(page) {
       this.pagination.currentPage = page;
     },
@@ -17893,7 +17885,7 @@ if (w == 0) {
     handleDelete: function handleDelete(index, row) {
       var _this = this;
 
-      sweetalert2__WEBPACK_IMPORTED_MODULE_23___default().fire({
+      sweetalert2__WEBPACK_IMPORTED_MODULE_21___default().fire({
         title: "Are you sure?",
         text: "You won't be able to revert this!",
         type: 'warning',
@@ -32083,6 +32075,30 @@ var render = function() {
                           _vm._v(" "),
                           _c("el-table-column", {
                             attrs: {
+                              label: "Aircraft",
+                              prop: "aircraft",
+                              "min-width": "120px",
+                              sortable: ""
+                            },
+                            scopedSlots: _vm._u([
+                              {
+                                key: "default",
+                                fn: function(ref) {
+                                  var row = ref.row
+                                  return _c("div", {}, [
+                                    _vm._v(
+                                      "\n                " +
+                                        _vm._s(row.aircraft.registration) +
+                                        "\n              "
+                                    )
+                                  ])
+                                }
+                              }
+                            ])
+                          }),
+                          _vm._v(" "),
+                          _c("el-table-column", {
+                            attrs: {
                               label: "From",
                               prop: "origin_airport_name",
                               "min-width": "120px",
@@ -32145,7 +32161,7 @@ var render = function() {
                                 fn: function(ref) {
                                   var row = ref.row
                                   return _c("div", {}, [
-                                    row.type == 1
+                                    row.type == "REGULAR"
                                       ? _c(
                                           "span",
                                           { staticClass: "text-primary" },
@@ -32166,6 +32182,40 @@ var render = function() {
                             attrs: {
                               prop: "status",
                               label: "Status",
+                              "min-width": "100px"
+                            },
+                            scopedSlots: _vm._u([
+                              {
+                                key: "default",
+                                fn: function(ref) {
+                                  var row = ref.row
+                                  return _c(
+                                    "div",
+                                    {},
+                                    [
+                                      row.status == 1
+                                        ? _c(
+                                            "badge",
+                                            { attrs: { type: "success" } },
+                                            [_c("span", [_vm._v("Active")])]
+                                          )
+                                        : _c(
+                                            "badge",
+                                            { attrs: { type: "warning" } },
+                                            [_c("span", [_vm._v("Deactive")])]
+                                          )
+                                    ],
+                                    1
+                                  )
+                                }
+                              }
+                            ])
+                          }),
+                          _vm._v(" "),
+                          _c("el-table-column", {
+                            attrs: {
+                              prop: "phase",
+                              label: "Phase",
                               "min-width": "100px"
                             },
                             scopedSlots: _vm._u([

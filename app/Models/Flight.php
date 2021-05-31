@@ -33,8 +33,8 @@ class Flight extends Model
         'operation_days' => 'array',
     ];
 
-    public function aircraft()
+    public function aircrafts()
     {
-        return $this->belongsTo(Aircraft::class);
+        return $this->belongsToMany(Aircraft::class, 'aircraft_flights');
     }
 }

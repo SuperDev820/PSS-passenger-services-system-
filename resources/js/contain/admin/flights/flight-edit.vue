@@ -46,19 +46,6 @@
                                 v-model="model.flight_number">
                     </base-input>
 
-                    <base-input label="Aircraft Registration">
-                      <el-select v-model="model.aircraft"
-                                 filterable
-                                 placeholder="Aircraft Registration"
-                                 :rules="{required: true}">
-                        <el-option v-for="option in aircraftOptions"
-                                   :key="option"
-                                   :label="option"
-                                   :value="option">
-                        </el-option>
-                      </el-select>
-                    </base-input>
-
                     <base-input alternative
                                 class="mb-3"
                                 prepend-icon="fas fa-plane-departure"
@@ -145,19 +132,6 @@
                         </el-option>
                       </el-select>
                     </base-input>
-
-                    <base-input label="Status">
-                      <el-select v-model="model.status"
-                                 filterable
-                                 placeholder="Status"
-                                 :rules="{required: true}">
-                        <el-option v-for="option in statusOptions"
-                                   :key="option.label"
-                                   :label="option.label"
-                                   :value="option.value">
-                        </el-option>
-                      </el-select>
-                    </base-input>
                   </div>
                   <div class="d-flex justify-content-between col-12 mt-4">
                     <router-link :to="{name: 'Flights'}" class="btn btn-secondary">Cancel</router-link>
@@ -192,24 +166,14 @@
     },
     data() {
       return {
-        statusOptions: [
-          {
-            label: 'Active',
-            value: 1
-          },
-          {
-            label: 'Deactive',
-            value: 0
-          },
-        ],
         typeOptions: [
           {
-            label: 'Regular',
-            value: 1
+            label: 'REGULAR',
+            value: 'REGULAR'
           },
           {
-            label: 'Charter',
-            value: 0
+            label: 'CHARTER',
+            value: 'CHARTER'
           },
         ],
         daysOptions: [
@@ -257,7 +221,6 @@
         model: {
           airline_code: '',
           flight_number: '',
-          aircraft: '',
           origin_airport_name: '',
           origin_airport_code: '',
           destination_airport_name: '',
@@ -280,7 +243,6 @@
       flight: function () {
         this.model.airline_code = this.flight.airline_code;
         this.model.flight_number = this.flight.flight_number;
-        this.model.aircraft = this.flight.aircraft.registration;
         this.model.origin_airport_name = this.flight.origin_airport_name;
         this.model.origin_airport_code = this.flight.origin_airport_code;
         this.model.destination_airport_name = this.flight.destination_airport_name;
@@ -315,7 +277,6 @@
               id: this.$route.params.flightId,
               airline_code: this.model.airline_code,
               flight_number: this.model.flight_number,
-              aircraft: this.model.aircraft,
               origin_airport_name: this.model.origin_airport_name,
               origin_airport_code: this.model.origin_airport_code,
               destination_airport_name: this.model.destination_airport_name,

@@ -184,32 +184,6 @@ var _components;
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -224,19 +198,12 @@ var _components;
   components: (_components = {}, (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_components, (element_ui_lib_select__WEBPACK_IMPORTED_MODULE_6___default().name), (element_ui_lib_select__WEBPACK_IMPORTED_MODULE_6___default())), (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_components, (element_ui_lib_option__WEBPACK_IMPORTED_MODULE_4___default().name), (element_ui_lib_option__WEBPACK_IMPORTED_MODULE_4___default())), (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_components, "flatPicker", (vue_flatpickr_component__WEBPACK_IMPORTED_MODULE_8___default())), _components),
   data: function data() {
     return {
-      statusOptions: [{
-        label: 'Active',
-        value: 1
-      }, {
-        label: 'Deactive',
-        value: 0
-      }],
       typeOptions: [{
-        label: 'Regular',
-        value: 1
+        label: 'REGULAR',
+        value: 'REGULAR'
       }, {
-        label: 'Charter',
-        value: 0
+        label: 'CHARTER',
+        value: 'CHARTER'
       }],
       daysOptions: [{
         label: '1',
@@ -275,7 +242,6 @@ var _components;
       model: {
         airline_code: '',
         flight_number: '',
-        aircraft: '',
         origin_airport_name: '',
         origin_airport_code: '',
         destination_airport_name: '',
@@ -298,7 +264,6 @@ var _components;
     flight: function flight() {
       this.model.airline_code = this.flight.airline_code;
       this.model.flight_number = this.flight.flight_number;
-      this.model.aircraft = this.flight.aircraft.registration;
       this.model.origin_airport_name = this.flight.origin_airport_name;
       this.model.origin_airport_code = this.flight.origin_airport_code;
       this.model.destination_airport_name = this.flight.destination_airport_name;
@@ -323,7 +288,6 @@ var _components;
         id: this.$route.params.flightId,
         airline_code: this.model.airline_code,
         flight_number: this.model.flight_number,
-        aircraft: this.model.aircraft,
         origin_airport_name: this.model.origin_airport_name,
         origin_airport_code: this.model.origin_airport_code,
         destination_airport_name: this.model.destination_airport_name,
@@ -7136,53 +7100,6 @@ var render = function() {
                                             }
                                           }),
                                           _vm._v(" "),
-                                          _c(
-                                            "base-input",
-                                            {
-                                              attrs: {
-                                                label: "Aircraft Registration"
-                                              }
-                                            },
-                                            [
-                                              _c(
-                                                "el-select",
-                                                {
-                                                  attrs: {
-                                                    filterable: "",
-                                                    placeholder:
-                                                      "Aircraft Registration",
-                                                    rules: { required: true }
-                                                  },
-                                                  model: {
-                                                    value: _vm.model.aircraft,
-                                                    callback: function($$v) {
-                                                      _vm.$set(
-                                                        _vm.model,
-                                                        "aircraft",
-                                                        $$v
-                                                      )
-                                                    },
-                                                    expression: "model.aircraft"
-                                                  }
-                                                },
-                                                _vm._l(
-                                                  _vm.aircraftOptions,
-                                                  function(option) {
-                                                    return _c("el-option", {
-                                                      key: option,
-                                                      attrs: {
-                                                        label: option,
-                                                        value: option
-                                                      }
-                                                    })
-                                                  }
-                                                ),
-                                                1
-                                              )
-                                            ],
-                                            1
-                                          ),
-                                          _vm._v(" "),
                                           _c("base-input", {
                                             staticClass: "mb-3",
                                             attrs: {
@@ -7473,48 +7390,6 @@ var render = function() {
                                                 },
                                                 _vm._l(
                                                   _vm.daysOptions,
-                                                  function(option) {
-                                                    return _c("el-option", {
-                                                      key: option.label,
-                                                      attrs: {
-                                                        label: option.label,
-                                                        value: option.value
-                                                      }
-                                                    })
-                                                  }
-                                                ),
-                                                1
-                                              )
-                                            ],
-                                            1
-                                          ),
-                                          _vm._v(" "),
-                                          _c(
-                                            "base-input",
-                                            { attrs: { label: "Status" } },
-                                            [
-                                              _c(
-                                                "el-select",
-                                                {
-                                                  attrs: {
-                                                    filterable: "",
-                                                    placeholder: "Status",
-                                                    rules: { required: true }
-                                                  },
-                                                  model: {
-                                                    value: _vm.model.status,
-                                                    callback: function($$v) {
-                                                      _vm.$set(
-                                                        _vm.model,
-                                                        "status",
-                                                        $$v
-                                                      )
-                                                    },
-                                                    expression: "model.status"
-                                                  }
-                                                },
-                                                _vm._l(
-                                                  _vm.statusOptions,
                                                   function(option) {
                                                     return _c("el-option", {
                                                       key: option.label,
