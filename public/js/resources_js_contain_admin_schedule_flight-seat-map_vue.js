@@ -1,9 +1,9 @@
-(self["webpackChunk"] = self["webpackChunk"] || []).push([["resources_js_contain_admin_fleet_aircrafts_vue"],{
+(self["webpackChunk"] = self["webpackChunk"] || []).push([["resources_js_contain_admin_schedule_flight-seat-map_vue"],{
 
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/contain/admin/fleet/aircrafts.vue?vue&type=script&lang=js&":
-/*!*************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/contain/admin/fleet/aircrafts.vue?vue&type=script&lang=js& ***!
-  \*************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/contain/admin/schedule/flight-seat-map.vue?vue&type=script&lang=js&":
+/*!**********************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/contain/admin/schedule/flight-seat-map.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************************************************************************************************************************************************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -117,61 +117,6 @@ var _components;
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -192,57 +137,16 @@ var _components;
   }, (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_components, (element_ui_lib_select__WEBPACK_IMPORTED_MODULE_10___default().name), (element_ui_lib_select__WEBPACK_IMPORTED_MODULE_10___default())), (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_components, (element_ui_lib_option__WEBPACK_IMPORTED_MODULE_8___default().name), (element_ui_lib_option__WEBPACK_IMPORTED_MODULE_8___default())), (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_components, (element_ui_lib_table__WEBPACK_IMPORTED_MODULE_6___default().name), (element_ui_lib_table__WEBPACK_IMPORTED_MODULE_6___default())), (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_components, (element_ui_lib_table_column__WEBPACK_IMPORTED_MODULE_4___default().name), (element_ui_lib_table_column__WEBPACK_IMPORTED_MODULE_4___default())), _components),
   data: function data() {
     return {
-      propsToSearch: ['name', 'email'],
-      tableColumns: [],
-      tableData: [],
-      selectedRows: []
+      // seats: [[]],
+      seat: ""
     };
   },
-  watch: {
-    aircrafts: function aircrafts() {
-      this.tableData = this.aircrafts;
-    }
-  },
-  computed: (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)({}, (0,vuex__WEBPACK_IMPORTED_MODULE_16__.mapGetters)(['aircrafts'])),
-  mounted: function mounted() {
-    this.initAircrafts();
-  },
-  methods: (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)((0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)({}, (0,vuex__WEBPACK_IMPORTED_MODULE_16__.mapActions)(['initAircrafts', 'deleteAircraft'])), {}, {
-    paginationChanged: function paginationChanged(page) {
-      this.pagination.currentPage = page;
-    },
-    handleEdit: function handleEdit(row) {
-      this.$router.push({
-        name: 'AircraftEdit',
-        params: {
-          aircraftId: row.id
-        }
-      });
-    },
-    handleDelete: function handleDelete(index, row) {
-      var _this = this;
-
-      sweetalert2__WEBPACK_IMPORTED_MODULE_15___default().fire({
-        title: "Are you sure?",
-        text: "You won't be able to revert this!",
-        type: 'warning',
-        showCancelButton: true,
-        buttonsStyling: false,
-        confirmButtonClass: 'btn btn-warning',
-        cancelButtonClass: 'btn btn-secondary btn-fill',
-        icon: 'warning'
-      }).then(function (result) {
-        if (result.value) {
-          _this.deleteAircraft(row.id);
-
-          _this.$notify({
-            message: 'Successfully Deleted',
-            timeout: 5000,
-            icon: 'ni ni-bell-55',
-            type: 'success'
-          });
-        }
-      });
+  watch: {},
+  computed: (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)({}, (0,vuex__WEBPACK_IMPORTED_MODULE_16__.mapGetters)([])),
+  mounted: function mounted() {},
+  methods: (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)((0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)({}, (0,vuex__WEBPACK_IMPORTED_MODULE_16__.mapActions)([])), {}, {
+    handleSeat: function handleSeat() {
+      console.log(this.seat);
     }
   })
 });
@@ -511,10 +415,10 @@ ___CSS_LOADER_EXPORT___.push([module.id, "@charset \"UTF-8\";.el-checkbox,.el-ch
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/contain/admin/fleet/aircrafts.vue?vue&type=style&index=0&lang=css&":
-/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/contain/admin/fleet/aircrafts.vue?vue&type=style&index=0&lang=css& ***!
-  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/contain/admin/schedule/flight-seat-map.vue?vue&type=style&index=0&lang=css&":
+/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/contain/admin/schedule/flight-seat-map.vue?vue&type=style&index=0&lang=css& ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -10513,17 +10417,17 @@ var update = _style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMP
 
 /***/ }),
 
-/***/ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/contain/admin/fleet/aircrafts.vue?vue&type=style&index=0&lang=css&":
-/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/contain/admin/fleet/aircrafts.vue?vue&type=style&index=0&lang=css& ***!
-  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/contain/admin/schedule/flight-seat-map.vue?vue&type=style&index=0&lang=css&":
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/contain/admin/schedule/flight-seat-map.vue?vue&type=style&index=0&lang=css& ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
 /* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_aircrafts_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../node_modules/postcss-loader/src/index.js??clonedRuleSet-9[0].rules[0].use[2]!../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./aircrafts.vue?vue&type=style&index=0&lang=css& */ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/contain/admin/fleet/aircrafts.vue?vue&type=style&index=0&lang=css&");
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_flight_seat_map_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../node_modules/postcss-loader/src/index.js??clonedRuleSet-9[0].rules[0].use[2]!../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./flight-seat-map.vue?vue&type=style&index=0&lang=css& */ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/contain/admin/schedule/flight-seat-map.vue?vue&type=style&index=0&lang=css&");
 
             
 
@@ -10532,11 +10436,11 @@ var options = {};
 options.insert = "head";
 options.singleton = false;
 
-var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_aircrafts_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_1__.default, options);
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_flight_seat_map_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_1__.default, options);
 
 
 
-/* harmony default export */ __webpack_exports__["default"] = (_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_aircrafts_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_1__.default.locals || {});
+/* harmony default export */ __webpack_exports__["default"] = (_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_flight_seat_map_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_1__.default.locals || {});
 
 /***/ }),
 
@@ -13729,17 +13633,17 @@ if (typeof this !== 'undefined' && this.Sweetalert2){  this.swal = this.sweetAle
 
 /***/ }),
 
-/***/ "./resources/js/contain/admin/fleet/aircrafts.vue":
-/*!********************************************************!*\
-  !*** ./resources/js/contain/admin/fleet/aircrafts.vue ***!
-  \********************************************************/
+/***/ "./resources/js/contain/admin/schedule/flight-seat-map.vue":
+/*!*****************************************************************!*\
+  !*** ./resources/js/contain/admin/schedule/flight-seat-map.vue ***!
+  \*****************************************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _aircrafts_vue_vue_type_template_id_02d2a4d3___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./aircrafts.vue?vue&type=template&id=02d2a4d3& */ "./resources/js/contain/admin/fleet/aircrafts.vue?vue&type=template&id=02d2a4d3&");
-/* harmony import */ var _aircrafts_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./aircrafts.vue?vue&type=script&lang=js& */ "./resources/js/contain/admin/fleet/aircrafts.vue?vue&type=script&lang=js&");
-/* harmony import */ var _aircrafts_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./aircrafts.vue?vue&type=style&index=0&lang=css& */ "./resources/js/contain/admin/fleet/aircrafts.vue?vue&type=style&index=0&lang=css&");
+/* harmony import */ var _flight_seat_map_vue_vue_type_template_id_eeca1f9c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./flight-seat-map.vue?vue&type=template&id=eeca1f9c& */ "./resources/js/contain/admin/schedule/flight-seat-map.vue?vue&type=template&id=eeca1f9c&");
+/* harmony import */ var _flight_seat_map_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./flight-seat-map.vue?vue&type=script&lang=js& */ "./resources/js/contain/admin/schedule/flight-seat-map.vue?vue&type=script&lang=js&");
+/* harmony import */ var _flight_seat_map_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./flight-seat-map.vue?vue&type=style&index=0&lang=css& */ "./resources/js/contain/admin/schedule/flight-seat-map.vue?vue&type=style&index=0&lang=css&");
 /* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! !../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -13750,9 +13654,9 @@ __webpack_require__.r(__webpack_exports__);
 /* normalize component */
 
 var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__.default)(
-  _aircrafts_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__.default,
-  _aircrafts_vue_vue_type_template_id_02d2a4d3___WEBPACK_IMPORTED_MODULE_0__.render,
-  _aircrafts_vue_vue_type_template_id_02d2a4d3___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  _flight_seat_map_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__.default,
+  _flight_seat_map_vue_vue_type_template_id_eeca1f9c___WEBPACK_IMPORTED_MODULE_0__.render,
+  _flight_seat_map_vue_vue_type_template_id_eeca1f9c___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
   false,
   null,
   null,
@@ -13762,58 +13666,58 @@ var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/js/contain/admin/fleet/aircrafts.vue"
+component.options.__file = "resources/js/contain/admin/schedule/flight-seat-map.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
-/***/ "./resources/js/contain/admin/fleet/aircrafts.vue?vue&type=script&lang=js&":
-/*!*********************************************************************************!*\
-  !*** ./resources/js/contain/admin/fleet/aircrafts.vue?vue&type=script&lang=js& ***!
-  \*********************************************************************************/
+/***/ "./resources/js/contain/admin/schedule/flight-seat-map.vue?vue&type=script&lang=js&":
+/*!******************************************************************************************!*\
+  !*** ./resources/js/contain/admin/schedule/flight-seat-map.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_aircrafts_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./aircrafts.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/contain/admin/fleet/aircrafts.vue?vue&type=script&lang=js&");
- /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_aircrafts_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__.default); 
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_flight_seat_map_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./flight-seat-map.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/contain/admin/schedule/flight-seat-map.vue?vue&type=script&lang=js&");
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_flight_seat_map_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__.default); 
 
 /***/ }),
 
-/***/ "./resources/js/contain/admin/fleet/aircrafts.vue?vue&type=style&index=0&lang=css&":
-/*!*****************************************************************************************!*\
-  !*** ./resources/js/contain/admin/fleet/aircrafts.vue?vue&type=style&index=0&lang=css& ***!
-  \*****************************************************************************************/
+/***/ "./resources/js/contain/admin/schedule/flight-seat-map.vue?vue&type=style&index=0&lang=css&":
+/*!**************************************************************************************************!*\
+  !*** ./resources/js/contain/admin/schedule/flight-seat-map.vue?vue&type=style&index=0&lang=css& ***!
+  \**************************************************************************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_aircrafts_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/style-loader/dist/cjs.js!../../../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../node_modules/postcss-loader/src/index.js??clonedRuleSet-9[0].rules[0].use[2]!../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./aircrafts.vue?vue&type=style&index=0&lang=css& */ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/contain/admin/fleet/aircrafts.vue?vue&type=style&index=0&lang=css&");
+/* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_flight_seat_map_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/style-loader/dist/cjs.js!../../../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../node_modules/postcss-loader/src/index.js??clonedRuleSet-9[0].rules[0].use[2]!../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./flight-seat-map.vue?vue&type=style&index=0&lang=css& */ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/contain/admin/schedule/flight-seat-map.vue?vue&type=style&index=0&lang=css&");
 
 
 /***/ }),
 
-/***/ "./resources/js/contain/admin/fleet/aircrafts.vue?vue&type=template&id=02d2a4d3&":
-/*!***************************************************************************************!*\
-  !*** ./resources/js/contain/admin/fleet/aircrafts.vue?vue&type=template&id=02d2a4d3& ***!
-  \***************************************************************************************/
+/***/ "./resources/js/contain/admin/schedule/flight-seat-map.vue?vue&type=template&id=eeca1f9c&":
+/*!************************************************************************************************!*\
+  !*** ./resources/js/contain/admin/schedule/flight-seat-map.vue?vue&type=template&id=eeca1f9c& ***!
+  \************************************************************************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": function() { return /* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_aircrafts_vue_vue_type_template_id_02d2a4d3___WEBPACK_IMPORTED_MODULE_0__.render; },
-/* harmony export */   "staticRenderFns": function() { return /* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_aircrafts_vue_vue_type_template_id_02d2a4d3___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns; }
+/* harmony export */   "render": function() { return /* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_flight_seat_map_vue_vue_type_template_id_eeca1f9c___WEBPACK_IMPORTED_MODULE_0__.render; },
+/* harmony export */   "staticRenderFns": function() { return /* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_flight_seat_map_vue_vue_type_template_id_eeca1f9c___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns; }
 /* harmony export */ });
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_aircrafts_vue_vue_type_template_id_02d2a4d3___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./aircrafts.vue?vue&type=template&id=02d2a4d3& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/contain/admin/fleet/aircrafts.vue?vue&type=template&id=02d2a4d3&");
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_flight_seat_map_vue_vue_type_template_id_eeca1f9c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./flight-seat-map.vue?vue&type=template&id=eeca1f9c& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/contain/admin/schedule/flight-seat-map.vue?vue&type=template&id=eeca1f9c&");
 
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/contain/admin/fleet/aircrafts.vue?vue&type=template&id=02d2a4d3&":
-/*!******************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/contain/admin/fleet/aircrafts.vue?vue&type=template&id=02d2a4d3& ***!
-  \******************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/contain/admin/schedule/flight-seat-map.vue?vue&type=template&id=eeca1f9c&":
+/*!***************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/contain/admin/schedule/flight-seat-map.vue?vue&type=template&id=eeca1f9c& ***!
+  \***************************************************************************************************************************************************************************************************************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -13840,7 +13744,7 @@ var render = function() {
             [
               _c("b-col", { attrs: { cols: "7", lg: "6" } }, [
                 _c("h6", { staticClass: "h2 text-white d-inline-block mb-0" }, [
-                  _vm._v("Aircrafts table")
+                  _vm._v("Aircraft Seat Map")
                 ]),
                 _vm._v(" "),
                 _c(
@@ -13862,12 +13766,9 @@ var render = function() {
                     "router-link",
                     {
                       staticClass: "btn btn-neutral btn-sm",
-                      attrs: { to: { name: "AircraftCreate" } }
+                      attrs: { to: { name: "Aircrafts" } }
                     },
-                    [
-                      _c("i", { staticClass: "fas fa-plus" }),
-                      _vm._v("Add Aircraft\n        ")
-                    ]
+                    [_vm._v("\n          Go Back\n        ")]
                   )
                 ],
                 1
@@ -13891,236 +13792,93 @@ var render = function() {
               },
               [
                 _c("template", { slot: "header" }, [
-                  _c("h3", { staticClass: "mb-0" }, [_vm._v("Aircrafts table")])
+                  _c("h3", { staticClass: "mb-0" }, [_vm._v("Seat Map")])
                 ]),
                 _vm._v(" "),
                 _c(
                   "div",
                   [
-                    _c(
-                      "b-col",
-                      {
-                        staticClass:
-                          "d-flex justify-content-center justify-content-sm-between flex-wrap",
-                        attrs: { cols: "12" }
-                      },
-                      [
+                    _c("b-col", { attrs: { cols: "12" } }, [
+                      _c("div", { staticClass: "plane" }, [
+                        _c("div", { staticClass: "cockpit" }, [
+                          _c("h1", [_vm._v("Seat Selection")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "exit exit--front fuselage" }),
+                        _vm._v(" "),
                         _c(
-                          "el-select",
-                          {
-                            staticClass: "select-primary pagination-select",
-                            attrs: { placeholder: "Per page" },
-                            model: {
-                              value: _vm.pagination.perPage,
-                              callback: function($$v) {
-                                _vm.$set(_vm.pagination, "perPage", $$v)
-                              },
-                              expression: "pagination.perPage"
-                            }
-                          },
-                          _vm._l(_vm.pagination.perPageOptions, function(item) {
-                            return _c("el-option", {
-                              key: item,
-                              staticClass: "select-primary",
-                              attrs: { label: item, value: item }
-                            })
+                          "ol",
+                          { staticClass: "cabin fuselage" },
+                          _vm._l(20, function(i) {
+                            return _c("li", { key: i, staticClass: "row" }, [
+                              _c(
+                                "ol",
+                                { staticClass: "seats", attrs: { type: "A" } },
+                                [
+                                  _c("li", { staticClass: "seat" }, [
+                                    _c("input", {
+                                      attrs: { type: "checkbox", id: i + "A" },
+                                      on: { change: _vm.handleSeat }
+                                    }),
+                                    _vm._v(" "),
+                                    _c("label", { attrs: { for: i + "A" } }, [
+                                      _vm._v(_vm._s(i) + "A")
+                                    ])
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("li", { staticClass: "seat" }, [
+                                    _c("input", {
+                                      attrs: { type: "checkbox", id: i + "B" }
+                                    }),
+                                    _vm._v(" "),
+                                    _c("label", { attrs: { for: i + "B" } }, [
+                                      _vm._v(_vm._s(i) + "B")
+                                    ])
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("li", { staticClass: "seat" }, [
+                                    _c("input", {
+                                      attrs: { type: "checkbox", id: i + "C" }
+                                    }),
+                                    _vm._v(" "),
+                                    _c("label", { attrs: { for: i + "C" } }, [
+                                      _vm._v(_vm._s(i) + "C")
+                                    ])
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("li", { staticClass: "seat" }, [
+                                    _c("input", {
+                                      attrs: {
+                                        type: "checkbox",
+                                        disabled: "",
+                                        id: i + "D"
+                                      }
+                                    }),
+                                    _vm._v(" "),
+                                    _c("label", { attrs: { for: i + "D" } }, [
+                                      _vm._v(_vm._s(i) + "D")
+                                    ])
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("li", { staticClass: "seat" }, [
+                                    _c("input", {
+                                      attrs: { type: "checkbox", id: i + "E" }
+                                    }),
+                                    _vm._v(" "),
+                                    _c("label", { attrs: { for: i + "E" } }, [
+                                      _vm._v(_vm._s(i) + "E")
+                                    ])
+                                  ])
+                                ]
+                              )
+                            ])
                           }),
-                          1
+                          0
                         ),
                         _vm._v(" "),
-                        _c(
-                          "div",
-                          [
-                            _c("base-input", {
-                              attrs: {
-                                "prepend-icon": "fas fa-search",
-                                placeholder: "Search..."
-                              },
-                              model: {
-                                value: _vm.searchQuery,
-                                callback: function($$v) {
-                                  _vm.searchQuery = $$v
-                                },
-                                expression: "searchQuery"
-                              }
-                            })
-                          ],
-                          1
-                        )
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "el-table",
-                      {
-                        attrs: {
-                          data: _vm.queriedData,
-                          "row-key": "id",
-                          "header-row-class-name": "thead-light"
-                        },
-                        on: { "sort-change": _vm.sortChange }
-                      },
-                      [
-                        _c("el-table-column", {
-                          attrs: {
-                            label: "Registration",
-                            prop: "registration",
-                            "min-width": "160px",
-                            sortable: ""
-                          }
-                        }),
-                        _vm._v(" "),
-                        _c("el-table-column", {
-                          attrs: {
-                            label: "Model",
-                            prop: "model",
-                            "min-width": "160px",
-                            sortable: ""
-                          }
-                        }),
-                        _vm._v(" "),
-                        _c("el-table-column", {
-                          attrs: {
-                            label: "Seat Configuration",
-                            prop: "seat_config",
-                            "min-width": "120px"
-                          }
-                        }),
-                        _vm._v(" "),
-                        _c("el-table-column", {
-                          attrs: {
-                            label: "Total Seat",
-                            prop: "total_seat",
-                            "min-width": "120px",
-                            sortable: ""
-                          }
-                        }),
-                        _vm._v(" "),
-                        _c("el-table-column", {
-                          attrs: {
-                            "min-width": "120px",
-                            align: "right",
-                            label: "Actions"
-                          },
-                          scopedSlots: _vm._u([
-                            {
-                              key: "default",
-                              fn: function(ref) {
-                                var $index = ref.$index
-                                var row = ref.row
-                                return _c(
-                                  "div",
-                                  {
-                                    staticClass: "d-flex justify-content-center"
-                                  },
-                                  [
-                                    _c(
-                                      "base-button",
-                                      {
-                                        staticClass: "edit",
-                                        attrs: {
-                                          type: "info",
-                                          size: "sm",
-                                          icon: ""
-                                        },
-                                        nativeOn: {
-                                          click: function($event) {
-                                            return _vm.handleEdit(row)
-                                          }
-                                        }
-                                      },
-                                      [
-                                        _c("i", {
-                                          staticClass:
-                                            "text-white ni ni-ruler-pencil"
-                                        })
-                                      ]
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "base-button",
-                                      {
-                                        staticClass: "remove btn-link",
-                                        attrs: {
-                                          type: "danger",
-                                          size: "sm",
-                                          icon: ""
-                                        },
-                                        nativeOn: {
-                                          click: function($event) {
-                                            return _vm.handleDelete($index, row)
-                                          }
-                                        }
-                                      },
-                                      [
-                                        _c("i", {
-                                          staticClass:
-                                            "text-white ni ni-fat-remove"
-                                        })
-                                      ]
-                                    )
-                                  ],
-                                  1
-                                )
-                              }
-                            }
-                          ])
-                        })
-                      ],
-                      1
-                    )
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    staticClass:
-                      "col-12 d-flex justify-content-center justify-content-sm-between flex-wrap",
-                    attrs: { slot: "footer" },
-                    slot: "footer"
-                  },
-                  [
-                    _c("div", {}, [
-                      _vm.total != 0
-                        ? _c("p", { staticClass: "card-category" }, [
-                            _vm._v(
-                              "\n              Showing " +
-                                _vm._s(_vm.from + 1) +
-                                " to " +
-                                _vm._s(_vm.to) +
-                                " of " +
-                                _vm._s(_vm.total) +
-                                " entries\n\n              "
-                            ),
-                            _vm.selectedRows.length
-                              ? _c("span", [
-                                  _vm._v(
-                                    "\n                    " +
-                                      _vm._s(_vm.selectedRows.length) +
-                                      " rows selected\n              "
-                                  )
-                                ])
-                              : _vm._e()
-                          ])
-                        : _vm._e()
-                    ]),
-                    _vm._v(" "),
-                    _c("base-pagination", {
-                      staticClass: "pagination-no-border",
-                      attrs: {
-                        current: _vm.pagination.currentPage,
-                        "per-page": _vm.pagination.perPage,
-                        total: _vm.total
-                      },
-                      on: {
-                        change: function($event) {
-                          return _vm.paginationChanged($event)
-                        }
-                      }
-                    })
+                        _c("div", { staticClass: "exit exit--back fuselage" })
+                      ])
+                    ])
                   ],
                   1
                 )

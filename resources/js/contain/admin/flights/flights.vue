@@ -55,7 +55,7 @@
                              min-width="140px"
                              sortable>
                 <div slot-scope="{row}">
-                  {{row.airline_code + ' ' + row.flight_number}}
+                  {{row.airline_code + row.flight_number}}
                 </div>
               </el-table-column>
               <el-table-column label="From"

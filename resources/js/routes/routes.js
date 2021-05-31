@@ -203,11 +203,6 @@ const routes = [
         name: 'AircraftEdit',
         component: () => import('../contain/admin/fleet/aircraft-edit.vue'),
       },
-      {
-        path: 'aircraft/:aircraftId/seat-map',
-        name: 'AircraftSeatMap',
-        component: () => import('../contain/admin/fleet/aircraft-seat-map.vue'),
-      },
 
       {
         path: 'flights',
@@ -229,6 +224,11 @@ const routes = [
         path: 'schedule',
         name: 'Schedule',
         component: () => import('../contain/admin/schedule/schedule.vue'),
+      },
+      {
+        path: 'flight/:flightId/seat-map',
+        name: 'FlightSeatMap',
+        component: () => import('../contain/admin/schedule/flight-seat-map.vue'),
       },
     ]
   },

@@ -17777,7 +17777,7 @@ if (m > 9) {
 }
 
 if (w == 0) {
-  7, (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_readOnlyError__WEBPACK_IMPORTED_MODULE_11__.default)("w");
+  w = 7;
 }
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -17857,7 +17857,7 @@ if (w == 0) {
         if (item.operation_days.includes(w)) {
           var temp = {};
           temp.resourceId = item.aircraft_id;
-          temp.title = item.airline_code + " " + item.flight_number + ", " + item.origin_airport_code + "-" + item.destination_airport_code;
+          temp.title = item.airline_code + item.flight_number + ", " + item.origin_airport_code + "-" + item.destination_airport_code;
           temp.start = yearAndMonthAndDate + "T" + item.departure_time;
           temp.end = yearAndMonthAndDate + "T" + item.arrival_time;
           temp.className = that.eventColors[index % 8];
@@ -17873,6 +17873,14 @@ if (w == 0) {
   methods: (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)((0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)({}, (0,vuex__WEBPACK_IMPORTED_MODULE_28__.mapActions)(['initAircrafts', 'initFlights'])), {}, {
     paginationChanged: function paginationChanged(page) {
       this.pagination.currentPage = page;
+    },
+    goToSeatMap: function goToSeatMap(row) {
+      this.$router.push({
+        name: 'FlightSeatMap',
+        params: {
+          flightId: row.id
+        }
+      });
     },
     handleEdit: function handleEdit(row) {
       this.$router.push({
@@ -32063,9 +32071,7 @@ var render = function() {
                                     _vm._v(
                                       "\n                " +
                                         _vm._s(
-                                          row.airline_code +
-                                            " " +
-                                            row.flight_number
+                                          row.airline_code + row.flight_number
                                         ) +
                                         "\n              "
                                     )
@@ -32192,7 +32198,7 @@ var render = function() {
                           _vm._v(" "),
                           _c("el-table-column", {
                             attrs: {
-                              "min-width": "120px",
+                              "min-width": "100px",
                               align: "right",
                               label: "Actions"
                             },
@@ -32200,7 +32206,6 @@ var render = function() {
                               {
                                 key: "default",
                                 fn: function(ref) {
-                                  var $index = ref.$index
                                   var row = ref.row
                                   return _c(
                                     "div",
@@ -32212,48 +32217,21 @@ var render = function() {
                                       _c(
                                         "base-button",
                                         {
-                                          staticClass: "edit",
                                           attrs: {
-                                            type: "info",
+                                            type: "primary",
                                             size: "sm",
                                             icon: ""
                                           },
                                           nativeOn: {
                                             click: function($event) {
-                                              return _vm.handleEdit(row)
+                                              return _vm.goToSeatMap(row)
                                             }
                                           }
                                         },
                                         [
                                           _c("i", {
                                             staticClass:
-                                              "text-white ni ni-ruler-pencil"
-                                          })
-                                        ]
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "base-button",
-                                        {
-                                          staticClass: "remove btn-link",
-                                          attrs: {
-                                            type: "danger",
-                                            size: "sm",
-                                            icon: ""
-                                          },
-                                          nativeOn: {
-                                            click: function($event) {
-                                              return _vm.handleDelete(
-                                                $index,
-                                                row
-                                              )
-                                            }
-                                          }
-                                        },
-                                        [
-                                          _c("i", {
-                                            staticClass:
-                                              "text-white ni ni-fat-remove"
+                                              "text-white ni ni-curved-next"
                                           })
                                         ]
                                       )

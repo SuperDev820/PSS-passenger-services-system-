@@ -69,7 +69,7 @@
                              min-width="140px"
                              sortable>
                 <div slot-scope="{row}">
-                  {{row.airline_code + ' ' + row.flight_number}}
+                  {{row.airline_code + row.flight_number}}
                 </div>
               </el-table-column>
               <el-table-column label="From"
@@ -118,25 +118,15 @@
                   </badge>
                 </div>
               </el-table-column>
-              <el-table-column min-width="120px" align="right" label="Actions">
-                <div slot-scope="{$index, row}" class="d-flex justify-content-center">
+              <el-table-column min-width="100px" align="right" label="Actions">
+                <div slot-scope="{row}" class="d-flex justify-content-center">
                   <base-button
-                    @click.native="handleEdit(row)"
-                    class="edit"
-                    type="info"
+                    @click.native="goToSeatMap(row)"
+                    type="primary"
                     size="sm"
                     icon
                   >
-                    <i class="text-white ni ni-ruler-pencil"></i>
-                  </base-button>
-                  <base-button
-                    @click.native="handleDelete($index, row)"
-                    class="remove btn-link"
-                    type="danger"
-                    size="sm"
-                    icon
-                  >
-                    <i class="text-white ni ni-fat-remove"></i>
+                    <i class="text-white ni ni-curved-next"></i>
                   </base-button>
                 </div>
               </el-table-column>
@@ -254,7 +244,7 @@
   const y = today.getFullYear();
   const m = today.getMonth();
   const d = today.getDate();
-  const w = today.getDay();
+  var w = today.getDay();
   const yearAndMonthAndDate = `${y}-0${m + 1}-${d}`;
   if (m > 9) {
     yearAndMonthAndDate = `${y}-${m + 1}-${d}`;
@@ -345,7 +335,7 @@
           if (item.operation_days.includes(w)) {
             let temp = {}
             temp.resourceId = item.aircraft_id
-            temp.title = item.airline_code +" "+ item.flight_number +", "+ item.origin_airport_code +"-"+ item.destination_airport_code
+            temp.title = item.airline_code + item.flight_number +", "+ item.origin_airport_code +"-"+ item.destination_airport_code
             temp.start = yearAndMonthAndDate +"T"+ item.departure_time
             temp.end = yearAndMonthAndDate +"T"+ item.arrival_time
             temp.className = that.eventColors[index%8]
@@ -371,6 +361,9 @@
 
       paginationChanged(page) {
         this.pagination.currentPage = page
+      },
+      goToSeatMap(row) {
+        this.$router.push({ name: 'FlightSeatMap', params: { flightId: row.id }})
       },
       handleEdit(row) {
         this.$router.push({ name: 'FlightEdit', params: { flightId: row.id }})
@@ -455,7 +448,7 @@
           this.events.splice(index, 1)
         }
         this.showEditModal = false
-      }
+      },
     }
   };
 </script>

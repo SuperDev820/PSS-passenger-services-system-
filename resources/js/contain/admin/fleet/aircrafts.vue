@@ -81,14 +81,6 @@
                     <i class="text-white ni ni-ruler-pencil"></i>
                   </base-button>
                   <base-button
-                    @click.native="handleSeat(row)"
-                    type="primary"
-                    size="sm"
-                    icon
-                  >
-                    <i class="text-white ni ni-curved-next"></i>
-                  </base-button>
-                  <base-button
                     @click.native="handleDelete($index, row)"
                     class="remove btn-link"
                     type="danger"
@@ -185,9 +177,6 @@ export default {
     },
     handleEdit(row) {
       this.$router.push({ name: 'AircraftEdit', params: { aircraftId: row.id }})
-    },
-    handleSeat(row) {
-      this.$router.push({ name: 'AircraftSeatMap', params: { aircraftId: row.id }})
     },
     handleDelete(index, row) {
       swal.fire({

@@ -14013,9 +14013,7 @@ var render = function() {
                                   _vm._v(
                                     "\n                " +
                                       _vm._s(
-                                        row.airline_code +
-                                          " " +
-                                          row.flight_number
+                                        row.airline_code + row.flight_number
                                       ) +
                                       "\n              "
                                   )
