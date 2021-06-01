@@ -108,7 +108,7 @@
                   </div>
                   <div class="d-flex justify-content-between col-12 mt-4">
                     <router-link :to="{name: 'Passengers'}" class="btn btn-secondary">Cancel</router-link>
-                    <b-button type="submit" variant="primary">Create</b-button>
+                    <b-button type="submit" variant="primary" :disabled="isSubmitting">Create</b-button>
                   </div>
                 </b-form>
               </validation-observer>
@@ -161,6 +161,7 @@
         },
         error: null,
         isError: false,
+        isSubmitting: false,
       }
     },
     methods: {
@@ -169,10 +170,10 @@
       ]),
 
       onSubmit() {
-        console.log(this.model.range)
         // this will be called only after form is valid. You can do an api call here to register passengers
         // Reset the error if it existed.
         this.error = null;
+        this.isSubmitting = true;
         return (
           this.createPassenger({
               first_name: this.model.first_name,
@@ -187,6 +188,7 @@
             })
             .then((res) => {
               this.isError = false;
+              this.isSubmitting = false;
               this.$notify({
                 message: 'Successfully Created',
                 timeout: 5000,
@@ -200,6 +202,7 @@
             .catch((error) => {
               this.error = error ? error : "";
               this.isError = true;
+              this.isSubmitting = false;
             })
         );
       }

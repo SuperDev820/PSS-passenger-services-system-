@@ -78,6 +78,11 @@ Route::group([ 'prefix' => 'v1', 'middleware' => 'api'], function(){
         Route::get('/flight/{flightId}', 'App\Http\Controllers\Api\v1\FlightController@getById');
         /* delete flight by id */
         Route::delete('/flight/delete/{flightId}', 'App\Http\Controllers\Api\v1\FlightController@delete');
+
+        /* Get all aircraft_flights details*/
+        Route::get('/schedule/aircraft_flights', 'App\Http\Controllers\Api\v1\AircraftFlightController@getAircraftFlights');
+        // /* Add a flight */
+        Route::post('/schedule/save', 'App\Http\Controllers\Api\v1\AircraftFlightController@saveAircraftFlight');
     });
 
     Route::group(['middleware' => ['jwt.auth']], function() {

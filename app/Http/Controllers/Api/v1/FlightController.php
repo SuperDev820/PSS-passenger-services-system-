@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api\v1;
 use App\Models\User;
 use App\Models\Aircraft;
 use App\Models\Flight;
+use App\Models\AircraftFlight;
 use App\Models\Role;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -26,9 +27,9 @@ class FlightController extends Controller
     public function getAll()
     {
         $flights = Flight::all();
-        foreach ($flights as $flight) {
-            $flight->aircraft;
-        }
+        // foreach ($flights as $flight) {
+        //     $flight->aircraft;
+        // }
         return response()->json([
             'message' => 'success',
             'flights' => $flights
@@ -101,6 +102,18 @@ class FlightController extends Controller
         $flight->type = $request->type;
         $flight->operation_days = $operation_days;
         $flight->save();
+
+        $current_date = Carbon::now()->timezone('Australia/Sydney')->format('Y-m-d');
+        $current_day = Carbon::now()->timezone('Australia/Sydney')->dayOfWeek;
+        if (in_array($current_day, $flight->operation_days)) {
+            $aircraft_flight = new AircraftFlight;
+            $aircraft_flight->flight_id = $flight->id;
+            $aircraft_flight->date = $current_date;
+            $aircraft_flight->departure_time = $flight->departure_time;
+            $aircraft_flight->arrival_time = $flight->arrival_time;
+            $aircraft_flight->flight_time = $flight->flight_time;
+            $aircraft_flight->save();
+        }
 
         return response()->json([
             'message' => 'flight successfully registered',
@@ -179,9 +192,9 @@ class FlightController extends Controller
         $flight = Flight::find($flightId);
         $flight -> delete();
         $flights = Flight::all();
-        foreach ($flights as $flight) {
-            $flight->aircraft;
-        }
+        // foreach ($flights as $flight) {
+        //     $flight->aircraft;
+        // }
         return response()->json([
             'message' => 'successfully deleted',
             'flights' => $flights

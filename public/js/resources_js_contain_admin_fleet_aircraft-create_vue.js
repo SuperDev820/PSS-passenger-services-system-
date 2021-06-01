@@ -140,7 +140,8 @@ var _components;
         total_seat: null
       },
       error: null,
-      isError: false
+      isError: false,
+      isSubmitting: false
     };
   },
   methods: (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)((0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)({}, (0,vuex__WEBPACK_IMPORTED_MODULE_10__.mapActions)(['createAircraft'])), {}, {
@@ -150,6 +151,7 @@ var _components;
       // this will be called only after form is valid. You can do an api call here to register aircrafts
       // Reset the error if it existed.
       this.error = null;
+      this.isSubmitting = true;
       return this.createAircraft({
         registration: this.model.registration,
         model: this.model.model,
@@ -157,6 +159,7 @@ var _components;
         total_seat: this.model.total_seat
       }).then(function (res) {
         _this.isError = false;
+        _this.isSubmitting = false;
 
         _this.$notify({
           message: 'Successfully Created',
@@ -171,6 +174,7 @@ var _components;
       })["catch"](function (error) {
         _this.error = error ? error : "";
         _this.isError = true;
+        _this.isSubmitting = false;
       });
     }
   })
@@ -7045,6 +7049,7 @@ var render = function() {
                                             {
                                               attrs: {
                                                 type: "submit",
+                                                disabled: _vm.isSubmitting,
                                                 variant: "primary"
                                               }
                                             },

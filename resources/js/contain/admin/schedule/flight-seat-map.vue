@@ -9,7 +9,7 @@
           </nav>
         </b-col>
         <b-col lg="6" cols="5" class="text-right">
-          <router-link :to="{name: 'Aircrafts'}" class="btn btn-neutral btn-sm">
+          <router-link :to="{name: 'Schedule'}" class="btn btn-neutral btn-sm">
             Go Back
           </router-link>
         </b-col>

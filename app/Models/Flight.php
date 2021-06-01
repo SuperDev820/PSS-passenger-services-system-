@@ -12,7 +12,6 @@ class Flight extends Model
     public $table = "flights";
 
     protected $fillable = [
-        'aircraft_id',
         'airline_code',
         'flight_number',
         'origin_airport_name',
@@ -24,7 +23,6 @@ class Flight extends Model
         'flight_time',
         'operation_days',
         'type',
-        'status',
     ];
 
     protected $casts = [

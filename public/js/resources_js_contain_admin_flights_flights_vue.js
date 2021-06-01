@@ -14036,7 +14036,7 @@ var render = function() {
                           attrs: {
                             label: "To",
                             prop: "destination_airport_name",
-                            "min-width": "140px",
+                            "min-width": "120px",
                             sortable: ""
                           }
                         }),

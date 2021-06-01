@@ -13766,7 +13766,7 @@ var render = function() {
                     "router-link",
                     {
                       staticClass: "btn btn-neutral btn-sm",
-                      attrs: { to: { name: "Aircrafts" } }
+                      attrs: { to: { name: "Schedule" } }
                     },
                     [_vm._v("\n          Go Back\n        ")]
                   )

@@ -25,7 +25,7 @@
               </base-alert>
               <validation-observer v-slot="{handleSubmit}" ref="formValidator">
                 <b-form role="form" class="row" @submit.prevent="handleSubmit(onSubmit)">
-                  <div class="col-8 offset-2">
+                  <div class="col-md-6 col-sm-12">
                     <base-input alternative
                                 class="mb-3"
                                 prepend-icon="fas fa-plane"
@@ -35,7 +35,8 @@
                                 :rules="{required: true}"
                                 v-model="model.airline_code">
                     </base-input>
-
+                  </div>
+                  <div class="col-md-6 col-sm-12">
                     <base-input alternative
                                 class="mb-3"
                                 prepend-icon="fas fa-plane"
@@ -45,7 +46,8 @@
                                 :rules="{required: true}"
                                 v-model="model.flight_number">
                     </base-input>
-
+                  </div>
+                  <div class="col-md-6 col-sm-12">
                     <base-input alternative
                                 class="mb-3"
                                 prepend-icon="fas fa-plane-departure"
@@ -55,7 +57,8 @@
                                 :rules="{required: true}"
                                 v-model="model.origin_airport_name">
                     </base-input>
-
+                  </div>
+                  <div class="col-md-6 col-sm-12">
                     <base-input alternative
                                 class="mb-3"
                                 prepend-icon="ni ni-caps-small"
@@ -65,7 +68,8 @@
                                 :rules="{required: true}"
                                 v-model="model.origin_airport_code">
                     </base-input>
-
+                  </div>
+                  <div class="col-md-6 col-sm-12">
                     <base-input alternative
                                 class="mb-3"
                                 prepend-icon="fas fa-plane-arrival"
@@ -75,7 +79,8 @@
                                 :rules="{required: true}"
                                 v-model="model.destination_airport_name">
                     </base-input>
-
+                  </div>
+                  <div class="col-md-6 col-sm-12">
                     <base-input alternative
                                 class="mb-3"
                                 prepend-icon="ni ni-caps-small"
@@ -85,7 +90,8 @@
                                 :rules="{required: true}"
                                 v-model="model.destination_airport_code">
                     </base-input>
-
+                  </div>
+                  <div class="col-md-6 col-sm-12">
                     <base-input prepend-icon="fas fa-plane-departure" label="Departure Time" name="DepartureTime" :rules="{required: true}">
                       <flat-picker slot-scope="{focus, blur}"
                                     @on-open="focus"
@@ -95,7 +101,8 @@
                                     v-model="model.departure_time">
                       </flat-picker>
                     </base-input>
-
+                  </div>
+                  <div class="col-md-6 col-sm-12">
                     <base-input prepend-icon="fas fa-plane-arrival" label="Arrival Time" name="ArrivalTime" :rules="{required: true}">
                       <flat-picker slot-scope="{focus, blur}"
                                     @on-open="focus"
@@ -105,7 +112,8 @@
                                     v-model="model.arrival_time">
                       </flat-picker>
                     </base-input>
-
+                  </div>
+                  <div class="col-md-6 col-sm-12">
                     <base-input label="Type">
                       <el-select v-model="model.type"
                                  filterable
@@ -118,7 +126,8 @@
                         </el-option>
                       </el-select>
                     </base-input>
-
+                  </div>
+                  <div class="col-md-6 col-sm-12">
                     <base-input label="Days Of Operation">
                       <el-select v-model="model.operation_days"
                                  multiple
@@ -135,7 +144,7 @@
                   </div>
                   <div class="d-flex justify-content-between col-12 mt-4">
                     <router-link :to="{name: 'Flights'}" class="btn btn-secondary">Cancel</router-link>
-                    <b-button type="submit" variant="primary">Create</b-button>
+                    <b-button type="submit" :disabled="isSubmitting" variant="primary">Create</b-button>
                   </div>
                 </b-form>
               </validation-observer>
@@ -232,27 +241,25 @@
         },
         error: null,
         isError: false,
+        isSubmitting: false,
       }
     },
     mounted() {
-      this.getAircraftOptions();
     },
     computed: {
       ...mapGetters([
-        'aircraftOptions',
       ]),
     },
     methods: {
       ...mapActions([
         'createFlight',
-        'getAircraftOptions',
       ]),
 
       onSubmit() {
-        console.log(this.model.departure_time)
         // this will be called only after form is valid. You can do an api call here to register Flights
         // Reset the error if it existed.
         this.error = null;
+        this.isSubmitting = true;
         return (
           this.createFlight({
               airline_code: this.model.airline_code,
@@ -268,6 +275,7 @@
             })
             .then((res) => {
               this.isError = false;
+              this.isSubmitting = false;
               this.$notify({
                 message: 'Successfully Created',
                 timeout: 5000,
@@ -281,6 +289,7 @@
             .catch((error) => {
               this.error = error ? error : "";
               this.isError = true;
+              this.isSubmitting = false;
             })
         );
       }

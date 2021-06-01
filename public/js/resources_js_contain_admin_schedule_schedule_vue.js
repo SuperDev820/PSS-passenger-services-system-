@@ -1,22 +1,5 @@
 (self["webpackChunk"] = self["webpackChunk"] || []).push([["resources_js_contain_admin_schedule_schedule_vue"],{
 
-/***/ "./node_modules/@babel/runtime/helpers/esm/readOnlyError.js":
-/*!******************************************************************!*\
-  !*** ./node_modules/@babel/runtime/helpers/esm/readOnlyError.js ***!
-  \******************************************************************/
-/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": function() { return /* binding */ _readOnlyError; }
-/* harmony export */ });
-function _readOnlyError(name) {
-  throw new TypeError("\"" + name + "\" is read-only");
-}
-
-/***/ }),
-
 /***/ "./node_modules/@fullcalendar/common/main.js":
 /*!***************************************************!*\
   !*** ./node_modules/@fullcalendar/common/main.js ***!
@@ -17702,30 +17685,27 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var element_ui_lib_theme_chalk_select_css__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! element-ui/lib/theme-chalk/select.css */ "./node_modules/element-ui/lib/theme-chalk/select.css");
 /* harmony import */ var element_ui_lib_select__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! element-ui/lib/select */ "./node_modules/element-ui/lib/select.js");
 /* harmony import */ var element_ui_lib_select__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(element_ui_lib_select__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_readOnlyError__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/readOnlyError */ "./node_modules/@babel/runtime/helpers/esm/readOnlyError.js");
-/* harmony import */ var core_js_modules_es_array_concat_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! core-js/modules/es.array.concat.js */ "./node_modules/core-js/modules/es.array.concat.js");
-/* harmony import */ var core_js_modules_es_array_concat_js__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_concat_js__WEBPACK_IMPORTED_MODULE_12__);
-/* harmony import */ var core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! core-js/modules/es.function.name.js */ "./node_modules/core-js/modules/es.function.name.js");
-/* harmony import */ var core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_13__);
-/* harmony import */ var core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! core-js/modules/web.dom-collections.for-each.js */ "./node_modules/core-js/modules/web.dom-collections.for-each.js");
-/* harmony import */ var core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_14__);
-/* harmony import */ var core_js_modules_es_array_join_js__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! core-js/modules/es.array.join.js */ "./node_modules/core-js/modules/es.array.join.js");
-/* harmony import */ var core_js_modules_es_array_join_js__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_join_js__WEBPACK_IMPORTED_MODULE_15__);
-/* harmony import */ var core_js_modules_es_array_find_index_js__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! core-js/modules/es.array.find-index.js */ "./node_modules/core-js/modules/es.array.find-index.js");
-/* harmony import */ var core_js_modules_es_array_find_index_js__WEBPACK_IMPORTED_MODULE_16___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_find_index_js__WEBPACK_IMPORTED_MODULE_16__);
-/* harmony import */ var core_js_modules_es_array_splice_js__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! core-js/modules/es.array.splice.js */ "./node_modules/core-js/modules/es.array.splice.js");
-/* harmony import */ var core_js_modules_es_array_splice_js__WEBPACK_IMPORTED_MODULE_17___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_splice_js__WEBPACK_IMPORTED_MODULE_17__);
-/* harmony import */ var _components_Breadcrumb_RouteBreadcrumb__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @/components/Breadcrumb/RouteBreadcrumb */ "./resources/js/components/Breadcrumb/RouteBreadcrumb.vue");
-/* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @/components */ "./resources/js/components/index.js");
-/* harmony import */ var _common_PaginatedTables_clientPaginationMixin__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @/common/PaginatedTables/clientPaginationMixin */ "./resources/js/common/PaginatedTables/clientPaginationMixin.js");
-/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! sweetalert2 */ "./node_modules/sweetalert2/dist/sweetalert2.all.js");
-/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_21___default = /*#__PURE__*/__webpack_require__.n(sweetalert2__WEBPACK_IMPORTED_MODULE_21__);
-/* harmony import */ var _components_Modal__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @/components/Modal */ "./resources/js/components/Modal.vue");
-/* harmony import */ var _fullcalendar_vue__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @fullcalendar/vue */ "./node_modules/@fullcalendar/vue/dist/main.js");
-/* harmony import */ var _fullcalendar_resource_timeline__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @fullcalendar/resource-timeline */ "./node_modules/@fullcalendar/resource-timeline/main.js");
-/* harmony import */ var _components_BaseButton_vue__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ../../../components/BaseButton.vue */ "./resources/js/components/BaseButton.vue");
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.mjs");
-
+/* harmony import */ var core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! core-js/modules/es.function.name.js */ "./node_modules/core-js/modules/es.function.name.js");
+/* harmony import */ var core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! core-js/modules/web.dom-collections.for-each.js */ "./node_modules/core-js/modules/web.dom-collections.for-each.js");
+/* harmony import */ var core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var core_js_modules_es_array_find_index_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! core-js/modules/es.array.find-index.js */ "./node_modules/core-js/modules/es.array.find-index.js");
+/* harmony import */ var core_js_modules_es_array_find_index_js__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_find_index_js__WEBPACK_IMPORTED_MODULE_13__);
+/* harmony import */ var core_js_modules_es_array_splice_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! core-js/modules/es.array.splice.js */ "./node_modules/core-js/modules/es.array.splice.js");
+/* harmony import */ var core_js_modules_es_array_splice_js__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_splice_js__WEBPACK_IMPORTED_MODULE_14__);
+/* harmony import */ var _components_Breadcrumb_RouteBreadcrumb__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @/components/Breadcrumb/RouteBreadcrumb */ "./resources/js/components/Breadcrumb/RouteBreadcrumb.vue");
+/* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @/components */ "./resources/js/components/index.js");
+/* harmony import */ var _common_PaginatedTables_clientPaginationMixin__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @/common/PaginatedTables/clientPaginationMixin */ "./resources/js/common/PaginatedTables/clientPaginationMixin.js");
+/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! sweetalert2 */ "./node_modules/sweetalert2/dist/sweetalert2.all.js");
+/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_18___default = /*#__PURE__*/__webpack_require__.n(sweetalert2__WEBPACK_IMPORTED_MODULE_18__);
+/* harmony import */ var _components_Modal__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @/components/Modal */ "./resources/js/components/Modal.vue");
+/* harmony import */ var _fullcalendar_vue__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @fullcalendar/vue */ "./node_modules/@fullcalendar/vue/dist/main.js");
+/* harmony import */ var _fullcalendar_resource_timeline__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @fullcalendar/resource-timeline */ "./node_modules/@fullcalendar/resource-timeline/main.js");
+/* harmony import */ var _components_BaseButton_vue__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ../../../components/BaseButton.vue */ "./resources/js/components/BaseButton.vue");
+/* harmony import */ var vue_flatpickr_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! vue-flatpickr-component */ "./node_modules/vue-flatpickr-component/dist/vue-flatpickr.min.js");
+/* harmony import */ var vue_flatpickr_component__WEBPACK_IMPORTED_MODULE_23___default = /*#__PURE__*/__webpack_require__.n(vue_flatpickr_component__WEBPACK_IMPORTED_MODULE_23__);
+/* harmony import */ var flatpickr_dist_flatpickr_css__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! flatpickr/dist/flatpickr.css */ "./node_modules/flatpickr/dist/flatpickr.css");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.mjs");
 
 
 
@@ -17747,8 +17727,354 @@ var _components;
 
 
 
-
-
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -17759,20 +18085,7 @@ var _components;
 
 
 
-var today = new Date();
-var y = today.getFullYear();
-var m = today.getMonth();
-var d = today.getDate();
-var w = today.getDay();
-var yearAndMonthAndDate = "".concat(y, "-0").concat(m + 1, "-").concat(d);
 
-if (m > 9) {
-  "".concat(y, "-").concat(m + 1, "-").concat(d), (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_readOnlyError__WEBPACK_IMPORTED_MODULE_11__.default)("yearAndMonthAndDate");
-}
-
-if (w == 0) {
-  w = 7;
-}
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   page: {
@@ -17782,23 +18095,24 @@ if (w == 0) {
       content: ""
     }]
   },
-  mixins: [_common_PaginatedTables_clientPaginationMixin__WEBPACK_IMPORTED_MODULE_20__.default],
+  mixins: [_common_PaginatedTables_clientPaginationMixin__WEBPACK_IMPORTED_MODULE_17__.default],
   components: (_components = {
-    BasePagination: _components__WEBPACK_IMPORTED_MODULE_19__.BasePagination,
-    RouteBreadCrumb: _components_Breadcrumb_RouteBreadcrumb__WEBPACK_IMPORTED_MODULE_18__.default
-  }, (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_components, (element_ui_lib_select__WEBPACK_IMPORTED_MODULE_10___default().name), (element_ui_lib_select__WEBPACK_IMPORTED_MODULE_10___default())), (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_components, (element_ui_lib_option__WEBPACK_IMPORTED_MODULE_8___default().name), (element_ui_lib_option__WEBPACK_IMPORTED_MODULE_8___default())), (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_components, (element_ui_lib_table__WEBPACK_IMPORTED_MODULE_6___default().name), (element_ui_lib_table__WEBPACK_IMPORTED_MODULE_6___default())), (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_components, (element_ui_lib_table_column__WEBPACK_IMPORTED_MODULE_4___default().name), (element_ui_lib_table_column__WEBPACK_IMPORTED_MODULE_4___default())), (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_components, "Modal", _components_Modal__WEBPACK_IMPORTED_MODULE_22__.default), (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_components, "FullCalendar", _fullcalendar_vue__WEBPACK_IMPORTED_MODULE_23__.default), (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_components, "BaseButton", _components_BaseButton_vue__WEBPACK_IMPORTED_MODULE_25__.default), _components),
+    BasePagination: _components__WEBPACK_IMPORTED_MODULE_16__.BasePagination,
+    RouteBreadCrumb: _components_Breadcrumb_RouteBreadcrumb__WEBPACK_IMPORTED_MODULE_15__.default
+  }, (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_components, (element_ui_lib_select__WEBPACK_IMPORTED_MODULE_10___default().name), (element_ui_lib_select__WEBPACK_IMPORTED_MODULE_10___default())), (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_components, (element_ui_lib_option__WEBPACK_IMPORTED_MODULE_8___default().name), (element_ui_lib_option__WEBPACK_IMPORTED_MODULE_8___default())), (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_components, (element_ui_lib_table__WEBPACK_IMPORTED_MODULE_6___default().name), (element_ui_lib_table__WEBPACK_IMPORTED_MODULE_6___default())), (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_components, (element_ui_lib_table_column__WEBPACK_IMPORTED_MODULE_4___default().name), (element_ui_lib_table_column__WEBPACK_IMPORTED_MODULE_4___default())), (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_components, "Modal", _components_Modal__WEBPACK_IMPORTED_MODULE_19__.default), (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_components, "FullCalendar", _fullcalendar_vue__WEBPACK_IMPORTED_MODULE_20__.default), (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_components, "BaseButton", _components_BaseButton_vue__WEBPACK_IMPORTED_MODULE_22__.default), (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_components, "flatPicker", (vue_flatpickr_component__WEBPACK_IMPORTED_MODULE_23___default())), _components),
   data: function data() {
     return {
       propsToSearch: [],
       tableColumns: [],
       tableData: [],
       selectedRows: [],
+      today: '',
       calendarOptions: {
         eventClick: function eventClick(info) {
           console.log(info);
         },
         height: 500,
-        plugins: [_fullcalendar_resource_timeline__WEBPACK_IMPORTED_MODULE_24__.default],
+        plugins: [_fullcalendar_resource_timeline__WEBPACK_IMPORTED_MODULE_21__.default],
         headerToolbar: {
           left: 'today',
           center: 'title',
@@ -17809,9 +18123,7 @@ if (w == 0) {
         aspectRatio: 1.5,
         slotDuration: '00:15',
         editable: true,
-        filterResourcesWithEvents: false,
         resourceAreaWidth: "15%",
-        // droppable: true,
         resourceAreaColumns: [{
           field: 'title',
           headerContent: 'Resource'
@@ -17819,19 +18131,46 @@ if (w == 0) {
         resources: [],
         events: []
       },
+      typeOptions: [{
+        label: 'REGULAR',
+        value: 'REGULAR'
+      }, {
+        label: 'CHARTER',
+        value: 'CHARTER'
+      }],
+      configs: {
+        dateTimePicker: {
+          enableTime: true,
+          dateFormat: 'Y-m-d H:i'
+        },
+        timePicker: {
+          enableTime: true,
+          noCalendar: true,
+          dateFormat: "H:i",
+          time_24hr: true
+        }
+      },
       showAddModal: false,
       showEditModal: false,
       model: {
-        title: '',
-        className: 'bg-default',
-        description: 'Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
-        start: '',
-        end: ''
+        type: '',
+        aircraft: '',
+        flight: '',
+        origin: '',
+        destination: '',
+        departure: '',
+        arrival: '',
+        className: 'bg-default'
       },
-      eventColors: ['bg-info', 'bg-orange', 'bg-red', 'bg-green', 'bg-default', 'bg-blue', 'bg-purple', 'bg-yellow']
+      eventColors: ['bg-info', 'bg-orange', 'bg-red', 'bg-green', 'bg-default', 'bg-blue', 'bg-purple', 'bg-yellow'],
+      error: null,
+      isError: false
     };
   },
   watch: {
+    calendarOptions: function calendarOptions() {
+      console.log("asfd");
+    },
     aircrafts: function aircrafts() {
       var that = this;
       this.aircrafts.forEach(function (item, index) {
@@ -17844,25 +18183,27 @@ if (w == 0) {
     },
     aircraftFlights: function aircraftFlights() {
       this.tableData = this.aircraftFlights;
-      var that = this; // this.aircraftFlights.forEach(function(item, index) {
-      //   console.log(w)
-      //   if (item.operation_days.includes(w)) {
-      //     let temp = {}
-      //     temp.resourceId = item.aircraft_id
-      //     temp.title = item.airline_code + item.flight_number +", "+ item.origin_airport_code +"-"+ item.destination_airport_code
-      //     temp.start = yearAndMonthAndDate +"T"+ item.departure_time
-      //     temp.end = yearAndMonthAndDate +"T"+ item.arrival_time
-      //     temp.className = that.eventColors[index%8]
-      //     that.calendarOptions.events.push(temp)
-      //   }
-      // })
+      this.today = this.aircraftFlights[0].date;
+      var that = this;
+      this.aircraftFlights.forEach(function (item, index) {
+        if (item.aircraft_id != null) {
+          var temp = {};
+          temp.resourceId = item.aircraft_id;
+          temp.title = item.flight.airline_code + item.flight.flight_number + ", " + item.flight.origin_airport_code + "-" + item.flight.destination_airport_code;
+          temp.start = item.date + "T" + item.departure_time;
+          temp.end = item.date + "T" + item.arrival_time;
+          temp.className = that.eventColors[index % 8];
+          that.calendarOptions.events.push(temp);
+        }
+      });
     }
   },
-  computed: (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)({}, (0,vuex__WEBPACK_IMPORTED_MODULE_26__.mapGetters)(['aircrafts', 'aircraftFlights'])),
+  computed: (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)({}, (0,vuex__WEBPACK_IMPORTED_MODULE_25__.mapGetters)(['aircrafts', 'aircraftFlights', 'aircraftOptions'])),
   mounted: function mounted() {
     this.initAircrafts();
+    this.getAircraftOptions();
   },
-  methods: (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)((0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)({}, (0,vuex__WEBPACK_IMPORTED_MODULE_26__.mapActions)(['initAircrafts', 'getAircraftFlights'])), {}, {
+  methods: (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)((0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)({}, (0,vuex__WEBPACK_IMPORTED_MODULE_25__.mapActions)(['initAircrafts', 'getAircraftFlights', 'getAircraftOptions', 'saveAircraftFlight'])), {}, {
     paginationChanged: function paginationChanged(page) {
       this.pagination.currentPage = page;
     },
@@ -17874,18 +18215,78 @@ if (w == 0) {
         }
       });
     },
-    handleEdit: function handleEdit(row) {
-      this.$router.push({
-        name: 'FlightEdit',
-        params: {
-          flightId: row.id
-        }
-      });
-    },
-    handleDelete: function handleDelete(index, row) {
+    handleFlight: function handleFlight() {
       var _this = this;
 
-      sweetalert2__WEBPACK_IMPORTED_MODULE_21___default().fire({
+      var index = this.aircraftFlights.findIndex(function (e) {
+        return e.flight_id === _this.model.flight;
+      });
+
+      if (index !== -1) {
+        this.model.origin = this.aircraftFlights[index].flight.origin_airport_name;
+        this.model.destination = this.aircraftFlights[index].flight.destination_airport_name;
+        this.model.departure = this.aircraftFlights[index].flight.departure_time;
+        this.model.arrival = this.aircraftFlights[index].flight.arrival_time;
+      }
+    },
+    onEventClick: function onEventClick(_ref) {
+      var el = _ref.el,
+          event = _ref.event;
+      // this.model = {
+      //   title: event.title,
+      //   className: event.classNames ? event.classNames.join(' '): '',
+      //   start: event.start,
+      //   end: event.end,
+      // }
+      this.showEditModal = true;
+    },
+    saveEvent: function saveEvent() {
+      var _this2 = this;
+
+      this.error = null;
+      return this.saveAircraftFlight({
+        aircraft: this.model.aircraft,
+        flight: this.model.flight,
+        // origin_airport_name: this.model.origin,
+        // destination_airport_name: this.model.destination,
+        departure_time: this.model.departure,
+        arrival_time: this.model.arrival
+      }).then(function (res) {
+        _this2.isError = false;
+        _this2.showAddModal = false;
+
+        _this2.$store.commit('SET_ALL_AIRCRAFT_FLIGHTS', res.data);
+      })["catch"](function (error) {
+        _this2.error = error ? error : "";
+        _this2.isError = true;
+      });
+    },
+    editEvent: function editEvent() {
+      var _this3 = this;
+
+      var index = this.events.findIndex(function (e) {
+        return e.title === _this3.model.title;
+      });
+
+      if (index !== -1) {
+        this.events.splice(index, 1, this.model);
+      }
+
+      this.showEditModal = false;
+    },
+    deleteEvent: function deleteEvent() {
+      var _this4 = this;
+
+      var index = this.events.findIndex(function (e) {
+        return e.title === _this4.model.title;
+      });
+
+      if (index !== -1) {
+        this.events.splice(index, 1);
+      }
+
+      this.showEditModal = false;
+      sweetalert2__WEBPACK_IMPORTED_MODULE_18___default().fire({
         title: "Are you sure?",
         text: "You won't be able to revert this!",
         type: 'warning',
@@ -17896,9 +18297,9 @@ if (w == 0) {
         icon: 'warning'
       }).then(function (result) {
         if (result.value) {
-          _this.deleteFlight(row.id);
+          _this4.deleteFlight(row.id);
 
-          _this.$notify({
+          _this4.$notify({
             message: 'Successfully Deleted',
             timeout: 5000,
             icon: 'ni ni-bell-55',
@@ -17906,80 +18307,6 @@ if (w == 0) {
           });
         }
       });
-    },
-    calendarApi: function calendarApi() {
-      return this.$refs.fullCalendar.getApi();
-    },
-    changeView: function changeView(viewType) {
-      this.defaultView = viewType;
-      this.calendarApi().changeView(viewType);
-    },
-    next: function next() {
-      this.calendarApi().next();
-    },
-    prev: function prev() {
-      this.calendarApi().prev();
-    },
-    onDateClick: function onDateClick(_ref) {
-      var date = _ref.date;
-      this.showAddModal = true;
-      this.model.start = date;
-      this.model.end = date;
-    },
-    onEventClick: function onEventClick(_ref2) {
-      var el = _ref2.el,
-          event = _ref2.event;
-      this.model = {
-        title: event.title,
-        className: event.classNames ? event.classNames.join(' ') : '',
-        start: event.start,
-        end: event.end,
-        description: 'Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.'
-      };
-      this.showEditModal = true;
-    },
-    saveEvent: function saveEvent() {
-      if (this.model.title) {
-        var event = (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)((0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)({}, this.model), {}, {
-          allDay: true
-        });
-
-        this.events.push(JSON.parse(JSON.stringify(event)));
-        this.model = {
-          title: '',
-          eventColor: 'bg-danger',
-          start: '',
-          end: ''
-        };
-      }
-
-      this.showAddModal = false;
-    },
-    editEvent: function editEvent() {
-      var _this2 = this;
-
-      var index = this.events.findIndex(function (e) {
-        return e.title === _this2.model.title;
-      });
-
-      if (index !== -1) {
-        this.events.splice(index, 1, this.model);
-      }
-
-      this.showEditModal = false;
-    },
-    deleteEvent: function deleteEvent() {
-      var _this3 = this;
-
-      var index = this.events.findIndex(function (e) {
-        return e.title === _this3.model.title;
-      });
-
-      if (index !== -1) {
-        this.events.splice(index, 1);
-      }
-
-      this.showEditModal = false;
     }
   })
 });
@@ -18374,6 +18701,27 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, "@charset \"UTF-8\";.el-checkbox,.el-checkbox__input{display:inline-block;position:relative}.el-table td.is-hidden>*,.el-table th.is-hidden>*,.el-table--hidden{visibility:hidden}.el-checkbox{color:#606266;font-weight:500;font-size:14px;cursor:pointer;white-space:nowrap;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.el-checkbox-button__inner,.el-table th{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;white-space:nowrap}.el-checkbox.is-bordered{padding:9px 20px 9px 10px;border-radius:4px;border:1px solid #dcdfe6;-webkit-box-sizing:border-box;box-sizing:border-box;line-height:normal;height:40px}.el-checkbox.is-bordered.is-checked{border-color:#409EFF}.el-checkbox.is-bordered.is-disabled{border-color:#ebeef5;cursor:not-allowed}.el-checkbox.is-bordered+.el-checkbox.is-bordered{margin-left:10px}.el-checkbox.is-bordered.el-checkbox--medium{padding:7px 20px 7px 10px;border-radius:4px;height:36px}.el-checkbox.is-bordered.el-checkbox--medium .el-checkbox__label{line-height:17px;font-size:14px}.el-checkbox.is-bordered.el-checkbox--medium .el-checkbox__inner{height:14px;width:14px}.el-checkbox.is-bordered.el-checkbox--small{padding:5px 15px 5px 10px;border-radius:3px;height:32px}.el-checkbox.is-bordered.el-checkbox--small .el-checkbox__label{line-height:15px;font-size:12px}.el-checkbox.is-bordered.el-checkbox--small .el-checkbox__inner{height:12px;width:12px}.el-checkbox.is-bordered.el-checkbox--small .el-checkbox__inner::after{height:6px;width:2px}.el-checkbox.is-bordered.el-checkbox--mini{padding:3px 15px 3px 10px;border-radius:3px;height:28px}.el-checkbox.is-bordered.el-checkbox--mini .el-checkbox__label{line-height:12px;font-size:12px}.el-checkbox.is-bordered.el-checkbox--mini .el-checkbox__inner{height:12px;width:12px}.el-checkbox.is-bordered.el-checkbox--mini .el-checkbox__inner::after{height:6px;width:2px}.el-checkbox__input{white-space:nowrap;cursor:pointer;outline:0;line-height:1;vertical-align:middle}.el-checkbox__input.is-disabled .el-checkbox__inner{background-color:#edf2fc;border-color:#dcdfe6;cursor:not-allowed}.el-checkbox__input.is-disabled .el-checkbox__inner::after{cursor:not-allowed;border-color:#c0c4cc}.el-checkbox__input.is-disabled .el-checkbox__inner+.el-checkbox__label{cursor:not-allowed}.el-checkbox__input.is-disabled.is-checked .el-checkbox__inner{background-color:#f2f6fc;border-color:#dcdfe6}.el-checkbox__input.is-disabled.is-checked .el-checkbox__inner::after{border-color:#c0c4cc}.el-checkbox__input.is-disabled.is-indeterminate .el-checkbox__inner{background-color:#f2f6fc;border-color:#dcdfe6}.el-checkbox__input.is-disabled.is-indeterminate .el-checkbox__inner::before{background-color:#c0c4cc;border-color:#c0c4cc}.el-checkbox__input.is-checked .el-checkbox__inner,.el-checkbox__input.is-indeterminate .el-checkbox__inner{background-color:#409EFF;border-color:#409EFF}.el-checkbox__input.is-disabled+span.el-checkbox__label{color:#c0c4cc;cursor:not-allowed}.el-checkbox__input.is-checked .el-checkbox__inner::after{-webkit-transform:rotate(45deg) scaleY(1);transform:rotate(45deg) scaleY(1)}.el-checkbox__input.is-checked+.el-checkbox__label{color:#409EFF}.el-checkbox__input.is-focus .el-checkbox__inner{border-color:#409EFF}.el-checkbox__input.is-indeterminate .el-checkbox__inner::before{content:'';position:absolute;display:block;background-color:#fff;height:2px;-webkit-transform:scale(.5);transform:scale(.5);left:0;right:0;top:5px}.el-checkbox__input.is-indeterminate .el-checkbox__inner::after{display:none}.el-checkbox__inner{display:inline-block;position:relative;border:1px solid #dcdfe6;border-radius:2px;-webkit-box-sizing:border-box;box-sizing:border-box;width:14px;height:14px;background-color:#fff;z-index:1;-webkit-transition:border-color .25s cubic-bezier(.71,-.46,.29,1.46),background-color .25s cubic-bezier(.71,-.46,.29,1.46);transition:border-color .25s cubic-bezier(.71,-.46,.29,1.46),background-color .25s cubic-bezier(.71,-.46,.29,1.46)}.el-checkbox__inner:hover{border-color:#409EFF}.el-checkbox__inner::after{-webkit-box-sizing:content-box;box-sizing:content-box;content:\"\";border:1px solid #fff;border-left:0;border-top:0;height:7px;left:4px;position:absolute;top:1px;-webkit-transform:rotate(45deg) scaleY(0);transform:rotate(45deg) scaleY(0);width:3px;-webkit-transition:-webkit-transform .15s ease-in .05s;transition:-webkit-transform .15s ease-in .05s;transition:transform .15s ease-in .05s;transition:transform .15s ease-in .05s,-webkit-transform .15s ease-in .05s;-webkit-transform-origin:center;transform-origin:center}.el-checkbox__original{opacity:0;outline:0;position:absolute;margin:0;width:0;height:0;z-index:-1}.el-checkbox-button,.el-checkbox-button__inner{position:relative;display:inline-block}.el-checkbox__label{display:inline-block;padding-left:10px;line-height:19px;font-size:14px}.el-checkbox+.el-checkbox{margin-left:30px}.el-checkbox-button__inner{line-height:1;font-weight:500;vertical-align:middle;cursor:pointer;background:#fff;border:1px solid #dcdfe6;border-left:0;color:#606266;-webkit-appearance:none;text-align:center;-webkit-box-sizing:border-box;box-sizing:border-box;outline:0;margin:0;-webkit-transition:all .3s cubic-bezier(.645,.045,.355,1);transition:all .3s cubic-bezier(.645,.045,.355,1);padding:12px 20px;font-size:14px;border-radius:0}.el-table,.el-tag{-webkit-box-sizing:border-box}.el-checkbox-button__inner.is-round{padding:12px 20px}.el-checkbox-button__inner:hover{color:#409EFF}.el-checkbox-button__inner [class*=el-icon-]{line-height:.9}.el-checkbox-button__inner [class*=el-icon-]+span{margin-left:5px}.el-checkbox-button__original{opacity:0;outline:0;position:absolute;margin:0;z-index:-1}.el-checkbox-button.is-checked .el-checkbox-button__inner{color:#fff;background-color:#409EFF;border-color:#409EFF;-webkit-box-shadow:-1px 0 0 0 #8cc5ff;box-shadow:-1px 0 0 0 #8cc5ff}.el-checkbox-button.is-checked:first-child .el-checkbox-button__inner{border-left-color:#409EFF}.el-checkbox-button.is-disabled .el-checkbox-button__inner{color:#c0c4cc;cursor:not-allowed;background-image:none;background-color:#fff;border-color:#ebeef5;-webkit-box-shadow:none;box-shadow:none}.el-checkbox-button.is-disabled:first-child .el-checkbox-button__inner{border-left-color:#ebeef5}.el-checkbox-button:first-child .el-checkbox-button__inner{border-left:1px solid #dcdfe6;border-radius:4px 0 0 4px;-webkit-box-shadow:none!important;box-shadow:none!important}.el-checkbox-button.is-focus .el-checkbox-button__inner{border-color:#409EFF}.el-checkbox-button:last-child .el-checkbox-button__inner{border-radius:0 4px 4px 0}.el-checkbox-button--medium .el-checkbox-button__inner{padding:10px 20px;font-size:14px;border-radius:0}.el-checkbox-button--medium .el-checkbox-button__inner.is-round{padding:10px 20px}.el-checkbox-button--small .el-checkbox-button__inner{padding:9px 15px;font-size:12px;border-radius:0}.el-checkbox-button--small .el-checkbox-button__inner.is-round{padding:9px 15px}.el-checkbox-button--mini .el-checkbox-button__inner{padding:7px 15px;font-size:12px;border-radius:0}.el-checkbox-button--mini .el-checkbox-button__inner.is-round{padding:7px 15px}.el-checkbox-group{font-size:0}.el-tag{background-color:rgba(64,158,255,.1);display:inline-block;padding:0 10px;height:32px;line-height:30px;font-size:12px;color:#409EFF;border-radius:4px;box-sizing:border-box;border:1px solid rgba(64,158,255,.2);white-space:nowrap}.el-tag .el-icon-close{border-radius:50%;text-align:center;position:relative;cursor:pointer;font-size:12px;height:16px;width:16px;line-height:16px;vertical-align:middle;top:-1px;right:-5px;color:#409EFF}.el-tag .el-icon-close::before{display:block}.el-tag .el-icon-close:hover{background-color:#409EFF;color:#fff}.el-tag--info,.el-tag--info .el-tag__close{color:#909399}.el-tag--info{background-color:rgba(144,147,153,.1);border-color:rgba(144,147,153,.2)}.el-tag--info.is-hit{border-color:#909399}.el-tag--info .el-tag__close:hover{background-color:#909399;color:#fff}.el-tag--success{background-color:rgba(103,194,58,.1);border-color:rgba(103,194,58,.2);color:#67c23a}.el-tag--success.is-hit{border-color:#67c23a}.el-tag--success .el-tag__close{color:#67c23a}.el-tag--success .el-tag__close:hover{background-color:#67c23a;color:#fff}.el-tag--warning{background-color:rgba(230,162,60,.1);border-color:rgba(230,162,60,.2);color:#e6a23c}.el-tag--warning.is-hit{border-color:#e6a23c}.el-tag--warning .el-tag__close{color:#e6a23c}.el-tag--warning .el-tag__close:hover{background-color:#e6a23c;color:#fff}.el-tag--danger{background-color:rgba(245,108,108,.1);border-color:rgba(245,108,108,.2);color:#f56c6c}.el-tag--danger.is-hit{border-color:#f56c6c}.el-tag--danger .el-tag__close{color:#f56c6c}.el-tag--danger .el-tag__close:hover{background-color:#f56c6c;color:#fff}.el-tag--medium{height:28px;line-height:26px}.el-tag--medium .el-icon-close{-webkit-transform:scale(.8);transform:scale(.8)}.el-tag--small{height:24px;padding:0 8px;line-height:22px}.el-tag--small .el-icon-close{-webkit-transform:scale(.8);transform:scale(.8)}.el-tag--mini{height:20px;padding:0 5px;line-height:19px}.el-tag--mini .el-icon-close{margin-left:-3px;-webkit-transform:scale(.7);transform:scale(.7)}.el-tooltip:focus:hover,.el-tooltip:focus:not(.focusing){outline-width:0}.el-tooltip__popper{position:absolute;border-radius:4px;padding:10px;z-index:2000;font-size:12px;line-height:1.2;min-width:10px;word-wrap:break-word}.el-tooltip__popper .popper__arrow,.el-tooltip__popper .popper__arrow::after{position:absolute;display:block;width:0;height:0;border-color:transparent;border-style:solid}.el-tooltip__popper .popper__arrow{border-width:6px}.el-tooltip__popper .popper__arrow::after{content:\" \";border-width:5px}.el-tooltip__popper[x-placement^=top]{margin-bottom:12px}.el-tooltip__popper[x-placement^=top] .popper__arrow{bottom:-6px;border-top-color:#303133;border-bottom-width:0}.el-tooltip__popper[x-placement^=top] .popper__arrow::after{bottom:1px;margin-left:-5px;border-top-color:#303133;border-bottom-width:0}.el-tooltip__popper[x-placement^=bottom]{margin-top:12px}.el-tooltip__popper[x-placement^=bottom] .popper__arrow{top:-6px;border-top-width:0;border-bottom-color:#303133}.el-tooltip__popper[x-placement^=bottom] .popper__arrow::after{top:1px;margin-left:-5px;border-top-width:0;border-bottom-color:#303133}.el-tooltip__popper[x-placement^=right]{margin-left:12px}.el-tooltip__popper[x-placement^=right] .popper__arrow{left:-6px;border-right-color:#303133;border-left-width:0}.el-tooltip__popper[x-placement^=right] .popper__arrow::after{bottom:-5px;left:1px;border-right-color:#303133;border-left-width:0}.el-tooltip__popper[x-placement^=left]{margin-right:12px}.el-tooltip__popper[x-placement^=left] .popper__arrow{right:-6px;border-right-width:0;border-left-color:#303133}.el-tooltip__popper[x-placement^=left] .popper__arrow::after{right:1px;bottom:-5px;margin-left:-5px;border-right-width:0;border-left-color:#303133}.el-tooltip__popper.is-dark{background:#303133;color:#fff}.el-table,.el-table__expanded-cell{background-color:#fff}.el-tooltip__popper.is-light{background:#fff;border:1px solid #303133}.el-tooltip__popper.is-light[x-placement^=top] .popper__arrow{border-top-color:#303133}.el-tooltip__popper.is-light[x-placement^=top] .popper__arrow::after{border-top-color:#fff}.el-tooltip__popper.is-light[x-placement^=bottom] .popper__arrow{border-bottom-color:#303133}.el-tooltip__popper.is-light[x-placement^=bottom] .popper__arrow::after{border-bottom-color:#fff}.el-tooltip__popper.is-light[x-placement^=left] .popper__arrow{border-left-color:#303133}.el-tooltip__popper.is-light[x-placement^=left] .popper__arrow::after{border-left-color:#fff}.el-tooltip__popper.is-light[x-placement^=right] .popper__arrow{border-right-color:#303133}.el-tooltip__popper.is-light[x-placement^=right] .popper__arrow::after{border-right-color:#fff}.el-table{position:relative;overflow:hidden;box-sizing:border-box;-webkit-box-flex:1;-ms-flex:1;flex:1;width:100%;max-width:100%;font-size:14px;color:#606266}.el-table--mini,.el-table--small,.el-table__expand-icon{font-size:12px}.el-table__empty-block{min-height:60px;text-align:center;width:100%;height:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.el-table__empty-text{width:50%;color:#909399}.el-table__expand-column .cell{padding:0;text-align:center}.el-table__expand-icon{position:relative;cursor:pointer;color:#666;-webkit-transition:-webkit-transform .2s ease-in-out;transition:-webkit-transform .2s ease-in-out;transition:transform .2s ease-in-out;transition:transform .2s ease-in-out,-webkit-transform .2s ease-in-out;height:20px}.el-table__expand-icon--expanded{-webkit-transform:rotate(90deg);transform:rotate(90deg)}.el-table__expand-icon>.el-icon{position:absolute;left:50%;top:50%;margin-left:-5px;margin-top:-5px}.el-table__expanded-cell[class*=cell]{padding:20px 50px}.el-table__expanded-cell:hover{background-color:transparent!important}.el-table--fit{border-right:0;border-bottom:0}.el-table--fit td.gutter,.el-table--fit th.gutter{border-right-width:1px}.el-table--scrollable-x .el-table__body-wrapper{overflow-x:auto}.el-table--scrollable-y .el-table__body-wrapper{overflow-y:auto}.el-table thead{color:#909399;font-weight:500}.el-table thead.is-group th{background:#f5f7fa}.el-table th,.el-table tr{background-color:#fff}.el-table td,.el-table th{padding:12px 0;min-width:0;-webkit-box-sizing:border-box;box-sizing:border-box;text-overflow:ellipsis;vertical-align:middle;position:relative;text-align:left}.el-table td.is-center,.el-table th.is-center{text-align:center}.el-table td.is-right,.el-table th.is-right{text-align:right}.el-table td.gutter,.el-table th.gutter{width:15px;border-right-width:0;border-bottom-width:0;padding:0}.el-table--medium td,.el-table--medium th{padding:10px 0}.el-table--small td,.el-table--small th{padding:8px 0}.el-table--mini td,.el-table--mini th{padding:6px 0}.el-table .cell,.el-table th div{text-overflow:ellipsis;padding-right:10px;overflow:hidden}.el-table .cell,.el-table th div,.el-table--border td:first-child .cell,.el-table--border th:first-child .cell{padding-left:10px}.el-table tr input[type=checkbox]{margin:0}.el-table td,.el-table th.is-leaf{border-bottom:1px solid #ebeef5}.el-table th.is-sortable{cursor:pointer}.el-table th{overflow:hidden;user-select:none}.el-table th div{display:inline-block;line-height:40px;-webkit-box-sizing:border-box;box-sizing:border-box;white-space:nowrap}.el-table th>.cell{position:relative;word-wrap:normal;text-overflow:ellipsis;display:inline-block;vertical-align:middle;width:100%;-webkit-box-sizing:border-box;box-sizing:border-box}.el-table th>.cell.highlight{color:#409EFF}.el-table th.required>div::before{display:inline-block;content:\"\";width:8px;height:8px;border-radius:50%;background:#ff4d51;margin-right:5px;vertical-align:middle}.el-table td div{-webkit-box-sizing:border-box;box-sizing:border-box}.el-table td.gutter{width:0}.el-table .cell{-webkit-box-sizing:border-box;box-sizing:border-box;white-space:normal;word-break:break-all;line-height:23px}.el-table .cell.el-tooltip{white-space:nowrap;min-width:50px}.el-table--border,.el-table--group{border:1px solid #ebeef5}.el-table--border::after,.el-table--group::after,.el-table::before{content:'';position:absolute;background-color:#ebeef5;z-index:1}.el-table--border::after,.el-table--group::after{top:0;right:0;width:1px;height:100%}.el-table::before{left:0;bottom:0;width:100%;height:1px}.el-table--border{border-right:none;border-bottom:none}.el-table--border.el-loading-parent--relative{border-color:transparent}.el-table--border td,.el-table--border th,.el-table__body-wrapper .el-table--border.is-scrolling-left~.el-table__fixed{border-right:1px solid #ebeef5}.el-table--border th.gutter:last-of-type{border-bottom:1px solid #ebeef5;border-bottom-width:1px}.el-table--border th,.el-table__fixed-right-patch{border-bottom:1px solid #ebeef5}.el-table__fixed,.el-table__fixed-right{position:absolute;top:0;left:0;overflow-x:hidden;overflow-y:hidden;-webkit-box-shadow:0 0 10px rgba(0,0,0,.12);box-shadow:0 0 10px rgba(0,0,0,.12)}.el-table__fixed-right::before,.el-table__fixed::before{content:'';position:absolute;left:0;bottom:0;width:100%;height:1px;background-color:#ebeef5;z-index:4}.el-table__fixed-right-patch{position:absolute;top:-1px;right:0;background-color:#fff}.el-table__fixed-right{top:0;left:auto;right:0}.el-table__fixed-right .el-table__fixed-body-wrapper,.el-table__fixed-right .el-table__fixed-footer-wrapper,.el-table__fixed-right .el-table__fixed-header-wrapper{left:auto;right:0}.el-table__fixed-header-wrapper{position:absolute;left:0;top:0;z-index:3}.el-table__fixed-footer-wrapper{position:absolute;left:0;bottom:0;z-index:3}.el-table__fixed-footer-wrapper tbody td{border-top:1px solid #ebeef5;background-color:#f5f7fa;color:#606266}.el-table__fixed-body-wrapper{position:absolute;left:0;top:37px;overflow:hidden;z-index:3}.el-table__body-wrapper,.el-table__footer-wrapper,.el-table__header-wrapper{width:100%}.el-table__footer-wrapper{margin-top:-1px}.el-table__footer-wrapper td{border-top:1px solid #ebeef5}.el-table__body,.el-table__footer,.el-table__header{table-layout:fixed;border-collapse:separate}.el-table__footer-wrapper,.el-table__header-wrapper{overflow:hidden}.el-table__footer-wrapper tbody td,.el-table__header-wrapper tbody td{background-color:#f5f7fa;color:#606266}.el-table__body-wrapper{overflow:hidden;position:relative}.el-table__body-wrapper.is-scrolling-left~.el-table__fixed,.el-table__body-wrapper.is-scrolling-none~.el-table__fixed,.el-table__body-wrapper.is-scrolling-none~.el-table__fixed-right,.el-table__body-wrapper.is-scrolling-right~.el-table__fixed-right{-webkit-box-shadow:none;box-shadow:none}.el-table__body-wrapper .el-table--border.is-scrolling-right~.el-table__fixed-right{border-left:1px solid #ebeef5}.el-table .caret-wrapper{display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-align:center;-ms-flex-align:center;align-items:center;height:34px;width:24px;vertical-align:middle;cursor:pointer;overflow:initial;position:relative}.el-table .sort-caret{width:0;height:0;border:5px solid transparent;position:absolute;left:7px}.el-table .sort-caret.ascending{border-bottom-color:#c0c4cc;top:5px}.el-table .sort-caret.descending{border-top-color:#c0c4cc;bottom:7px}.el-table .ascending .sort-caret.ascending{border-bottom-color:#409EFF}.el-table .descending .sort-caret.descending{border-top-color:#409EFF}.el-table .hidden-columns{visibility:hidden;position:absolute;z-index:-1}.el-table--striped .el-table__body tr.el-table__row--striped td{background:#FAFAFA}.el-table--striped .el-table__body tr.el-table__row--striped.current-row td,.el-table__body tr.current-row>td,.el-table__body tr.hover-row.current-row>td,.el-table__body tr.hover-row.el-table__row--striped.current-row>td,.el-table__body tr.hover-row.el-table__row--striped>td,.el-table__body tr.hover-row>td{background-color:#ecf5ff}.el-table__column-resize-proxy{position:absolute;left:200px;top:0;bottom:0;width:0;border-left:1px solid #ebeef5;z-index:10}.el-table__column-filter-trigger{display:inline-block;line-height:34px;cursor:pointer}.el-table__column-filter-trigger i{color:#909399;font-size:12px;-webkit-transform:scale(.75);transform:scale(.75)}.el-table--enable-row-transition .el-table__body td{-webkit-transition:background-color .25s ease;transition:background-color .25s ease}.el-table--enable-row-hover .el-table__body tr:hover>td{background-color:#f5f7fa}.el-table--fluid-height .el-table__fixed,.el-table--fluid-height .el-table__fixed-right{bottom:0;overflow:hidden}", ""]);
+// Exports
+/* harmony default export */ __webpack_exports__["default"] = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/postcss-loader/src/index.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/flatpickr/dist/flatpickr.css":
+/*!************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/postcss-loader/src/index.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/flatpickr/dist/flatpickr.css ***!
+  \************************************************************************************************************************************************************************************************************/
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, ".flatpickr-calendar {\n  background: transparent;\n  opacity: 0;\n  display: none;\n  text-align: center;\n  visibility: hidden;\n  padding: 0;\n  -webkit-animation: none;\n          animation: none;\n  direction: ltr;\n  border: 0;\n  font-size: 14px;\n  line-height: 24px;\n  border-radius: 5px;\n  position: absolute;\n  width: 307.875px;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  -ms-touch-action: manipulation;\n      touch-action: manipulation;\n  background: #fff;\n  -webkit-box-shadow: 1px 0 0 #e6e6e6, -1px 0 0 #e6e6e6, 0 1px 0 #e6e6e6, 0 -1px 0 #e6e6e6, 0 3px 13px rgba(0,0,0,0.08);\n          box-shadow: 1px 0 0 #e6e6e6, -1px 0 0 #e6e6e6, 0 1px 0 #e6e6e6, 0 -1px 0 #e6e6e6, 0 3px 13px rgba(0,0,0,0.08);\n}\n.flatpickr-calendar.open,\n.flatpickr-calendar.inline {\n  opacity: 1;\n  max-height: 640px;\n  visibility: visible;\n}\n.flatpickr-calendar.open {\n  display: inline-block;\n  z-index: 99999;\n}\n.flatpickr-calendar.animate.open {\n  -webkit-animation: fpFadeInDown 300ms cubic-bezier(0.23, 1, 0.32, 1);\n          animation: fpFadeInDown 300ms cubic-bezier(0.23, 1, 0.32, 1);\n}\n.flatpickr-calendar.inline {\n  display: block;\n  position: relative;\n  top: 2px;\n}\n.flatpickr-calendar.static {\n  position: absolute;\n  top: calc(100% + 2px);\n}\n.flatpickr-calendar.static.open {\n  z-index: 999;\n  display: block;\n}\n.flatpickr-calendar.multiMonth .flatpickr-days .dayContainer:nth-child(n+1) .flatpickr-day.inRange:nth-child(7n+7) {\n  -webkit-box-shadow: none !important;\n          box-shadow: none !important;\n}\n.flatpickr-calendar.multiMonth .flatpickr-days .dayContainer:nth-child(n+2) .flatpickr-day.inRange:nth-child(7n+1) {\n  -webkit-box-shadow: -2px 0 0 #e6e6e6, 5px 0 0 #e6e6e6;\n          box-shadow: -2px 0 0 #e6e6e6, 5px 0 0 #e6e6e6;\n}\n.flatpickr-calendar .hasWeeks .dayContainer,\n.flatpickr-calendar .hasTime .dayContainer {\n  border-bottom: 0;\n  border-bottom-right-radius: 0;\n  border-bottom-left-radius: 0;\n}\n.flatpickr-calendar .hasWeeks .dayContainer {\n  border-left: 0;\n}\n.flatpickr-calendar.hasTime .flatpickr-time {\n  height: 40px;\n  border-top: 1px solid #e6e6e6;\n}\n.flatpickr-calendar.noCalendar.hasTime .flatpickr-time {\n  height: auto;\n}\n.flatpickr-calendar:before,\n.flatpickr-calendar:after {\n  position: absolute;\n  display: block;\n  pointer-events: none;\n  border: solid transparent;\n  content: '';\n  height: 0;\n  width: 0;\n  left: 22px;\n}\n.flatpickr-calendar.rightMost:before,\n.flatpickr-calendar.arrowRight:before,\n.flatpickr-calendar.rightMost:after,\n.flatpickr-calendar.arrowRight:after {\n  left: auto;\n  right: 22px;\n}\n.flatpickr-calendar.arrowCenter:before,\n.flatpickr-calendar.arrowCenter:after {\n  left: 50%;\n  right: 50%;\n}\n.flatpickr-calendar:before {\n  border-width: 5px;\n  margin: 0 -5px;\n}\n.flatpickr-calendar:after {\n  border-width: 4px;\n  margin: 0 -4px;\n}\n.flatpickr-calendar.arrowTop:before,\n.flatpickr-calendar.arrowTop:after {\n  bottom: 100%;\n}\n.flatpickr-calendar.arrowTop:before {\n  border-bottom-color: #e6e6e6;\n}\n.flatpickr-calendar.arrowTop:after {\n  border-bottom-color: #fff;\n}\n.flatpickr-calendar.arrowBottom:before,\n.flatpickr-calendar.arrowBottom:after {\n  top: 100%;\n}\n.flatpickr-calendar.arrowBottom:before {\n  border-top-color: #e6e6e6;\n}\n.flatpickr-calendar.arrowBottom:after {\n  border-top-color: #fff;\n}\n.flatpickr-calendar:focus {\n  outline: 0;\n}\n.flatpickr-wrapper {\n  position: relative;\n  display: inline-block;\n}\n.flatpickr-months {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n}\n.flatpickr-months .flatpickr-month {\n  background: transparent;\n  color: rgba(0,0,0,0.9);\n  fill: rgba(0,0,0,0.9);\n  height: 34px;\n  line-height: 1;\n  text-align: center;\n  position: relative;\n  -webkit-user-select: none;\n     -moz-user-select: none;\n      -ms-user-select: none;\n          user-select: none;\n  overflow: hidden;\n  -webkit-box-flex: 1;\n  -webkit-flex: 1;\n      -ms-flex: 1;\n          flex: 1;\n}\n.flatpickr-months .flatpickr-prev-month,\n.flatpickr-months .flatpickr-next-month {\n  text-decoration: none;\n  cursor: pointer;\n  position: absolute;\n  top: 0;\n  height: 34px;\n  padding: 10px;\n  z-index: 3;\n  color: rgba(0,0,0,0.9);\n  fill: rgba(0,0,0,0.9);\n}\n.flatpickr-months .flatpickr-prev-month.flatpickr-disabled,\n.flatpickr-months .flatpickr-next-month.flatpickr-disabled {\n  display: none;\n}\n.flatpickr-months .flatpickr-prev-month i,\n.flatpickr-months .flatpickr-next-month i {\n  position: relative;\n}\n.flatpickr-months .flatpickr-prev-month.flatpickr-prev-month,\n.flatpickr-months .flatpickr-next-month.flatpickr-prev-month {\n/*\n      /*rtl:begin:ignore*/\n/*\n      */\n  left: 0;\n/*\n      /*rtl:end:ignore*/\n/*\n      */\n}\n/*\n      /*rtl:begin:ignore*/\n/*\n      /*rtl:end:ignore*/\n.flatpickr-months .flatpickr-prev-month.flatpickr-next-month,\n.flatpickr-months .flatpickr-next-month.flatpickr-next-month {\n/*\n      /*rtl:begin:ignore*/\n/*\n      */\n  right: 0;\n/*\n      /*rtl:end:ignore*/\n/*\n      */\n}\n/*\n      /*rtl:begin:ignore*/\n/*\n      /*rtl:end:ignore*/\n.flatpickr-months .flatpickr-prev-month:hover,\n.flatpickr-months .flatpickr-next-month:hover {\n  color: #959ea9;\n}\n.flatpickr-months .flatpickr-prev-month:hover svg,\n.flatpickr-months .flatpickr-next-month:hover svg {\n  fill: #f64747;\n}\n.flatpickr-months .flatpickr-prev-month svg,\n.flatpickr-months .flatpickr-next-month svg {\n  width: 14px;\n  height: 14px;\n}\n.flatpickr-months .flatpickr-prev-month svg path,\n.flatpickr-months .flatpickr-next-month svg path {\n  -webkit-transition: fill 0.1s;\n  transition: fill 0.1s;\n  fill: inherit;\n}\n.numInputWrapper {\n  position: relative;\n  height: auto;\n}\n.numInputWrapper input,\n.numInputWrapper span {\n  display: inline-block;\n}\n.numInputWrapper input {\n  width: 100%;\n}\n.numInputWrapper input::-ms-clear {\n  display: none;\n}\n.numInputWrapper input::-webkit-outer-spin-button,\n.numInputWrapper input::-webkit-inner-spin-button {\n  margin: 0;\n  -webkit-appearance: none;\n}\n.numInputWrapper span {\n  position: absolute;\n  right: 0;\n  width: 14px;\n  padding: 0 4px 0 2px;\n  height: 50%;\n  line-height: 50%;\n  opacity: 0;\n  cursor: pointer;\n  border: 1px solid rgba(57,57,57,0.15);\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n}\n.numInputWrapper span:hover {\n  background: rgba(0,0,0,0.1);\n}\n.numInputWrapper span:active {\n  background: rgba(0,0,0,0.2);\n}\n.numInputWrapper span:after {\n  display: block;\n  content: \"\";\n  position: absolute;\n}\n.numInputWrapper span.arrowUp {\n  top: 0;\n  border-bottom: 0;\n}\n.numInputWrapper span.arrowUp:after {\n  border-left: 4px solid transparent;\n  border-right: 4px solid transparent;\n  border-bottom: 4px solid rgba(57,57,57,0.6);\n  top: 26%;\n}\n.numInputWrapper span.arrowDown {\n  top: 50%;\n}\n.numInputWrapper span.arrowDown:after {\n  border-left: 4px solid transparent;\n  border-right: 4px solid transparent;\n  border-top: 4px solid rgba(57,57,57,0.6);\n  top: 40%;\n}\n.numInputWrapper span svg {\n  width: inherit;\n  height: auto;\n}\n.numInputWrapper span svg path {\n  fill: rgba(0,0,0,0.5);\n}\n.numInputWrapper:hover {\n  background: rgba(0,0,0,0.05);\n}\n.numInputWrapper:hover span {\n  opacity: 1;\n}\n.flatpickr-current-month {\n  font-size: 135%;\n  line-height: inherit;\n  font-weight: 300;\n  color: inherit;\n  position: absolute;\n  width: 75%;\n  left: 12.5%;\n  padding: 7.48px 0 0 0;\n  line-height: 1;\n  height: 34px;\n  display: inline-block;\n  text-align: center;\n  -webkit-transform: translate3d(0px, 0px, 0px);\n          transform: translate3d(0px, 0px, 0px);\n}\n.flatpickr-current-month span.cur-month {\n  font-family: inherit;\n  font-weight: 700;\n  color: inherit;\n  display: inline-block;\n  margin-left: 0.5ch;\n  padding: 0;\n}\n.flatpickr-current-month span.cur-month:hover {\n  background: rgba(0,0,0,0.05);\n}\n.flatpickr-current-month .numInputWrapper {\n  width: 6ch;\n  width: 7ch\\0;\n  display: inline-block;\n}\n.flatpickr-current-month .numInputWrapper span.arrowUp:after {\n  border-bottom-color: rgba(0,0,0,0.9);\n}\n.flatpickr-current-month .numInputWrapper span.arrowDown:after {\n  border-top-color: rgba(0,0,0,0.9);\n}\n.flatpickr-current-month input.cur-year {\n  background: transparent;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  color: inherit;\n  cursor: text;\n  padding: 0 0 0 0.5ch;\n  margin: 0;\n  display: inline-block;\n  font-size: inherit;\n  font-family: inherit;\n  font-weight: 300;\n  line-height: inherit;\n  height: auto;\n  border: 0;\n  border-radius: 0;\n  vertical-align: initial;\n  -webkit-appearance: textfield;\n  -moz-appearance: textfield;\n  appearance: textfield;\n}\n.flatpickr-current-month input.cur-year:focus {\n  outline: 0;\n}\n.flatpickr-current-month input.cur-year[disabled],\n.flatpickr-current-month input.cur-year[disabled]:hover {\n  font-size: 100%;\n  color: rgba(0,0,0,0.5);\n  background: transparent;\n  pointer-events: none;\n}\n.flatpickr-current-month .flatpickr-monthDropdown-months {\n  appearance: menulist;\n  background: transparent;\n  border: none;\n  border-radius: 0;\n  box-sizing: border-box;\n  color: inherit;\n  cursor: pointer;\n  font-size: inherit;\n  font-family: inherit;\n  font-weight: 300;\n  height: auto;\n  line-height: inherit;\n  margin: -1px 0 0 0;\n  outline: none;\n  padding: 0 0 0 0.5ch;\n  position: relative;\n  vertical-align: initial;\n  -webkit-box-sizing: border-box;\n  -webkit-appearance: menulist;\n  -moz-appearance: menulist;\n  width: auto;\n}\n.flatpickr-current-month .flatpickr-monthDropdown-months:focus,\n.flatpickr-current-month .flatpickr-monthDropdown-months:active {\n  outline: none;\n}\n.flatpickr-current-month .flatpickr-monthDropdown-months:hover {\n  background: rgba(0,0,0,0.05);\n}\n.flatpickr-current-month .flatpickr-monthDropdown-months .flatpickr-monthDropdown-month {\n  background-color: transparent;\n  outline: none;\n  padding: 0;\n}\n.flatpickr-weekdays {\n  background: transparent;\n  text-align: center;\n  overflow: hidden;\n  width: 100%;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  height: 28px;\n}\n.flatpickr-weekdays .flatpickr-weekdaycontainer {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-flex: 1;\n  -webkit-flex: 1;\n      -ms-flex: 1;\n          flex: 1;\n}\nspan.flatpickr-weekday {\n  cursor: default;\n  font-size: 90%;\n  background: transparent;\n  color: rgba(0,0,0,0.54);\n  line-height: 1;\n  margin: 0;\n  text-align: center;\n  display: block;\n  -webkit-box-flex: 1;\n  -webkit-flex: 1;\n      -ms-flex: 1;\n          flex: 1;\n  font-weight: bolder;\n}\n.dayContainer,\n.flatpickr-weeks {\n  padding: 1px 0 0 0;\n}\n.flatpickr-days {\n  position: relative;\n  overflow: hidden;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: start;\n  -webkit-align-items: flex-start;\n      -ms-flex-align: start;\n          align-items: flex-start;\n  width: 307.875px;\n}\n.flatpickr-days:focus {\n  outline: 0;\n}\n.dayContainer {\n  padding: 0;\n  outline: 0;\n  text-align: left;\n  width: 307.875px;\n  min-width: 307.875px;\n  max-width: 307.875px;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  display: inline-block;\n  display: -ms-flexbox;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-flex-wrap: wrap;\n          flex-wrap: wrap;\n  -ms-flex-wrap: wrap;\n  -ms-flex-pack: justify;\n  -webkit-justify-content: space-around;\n          justify-content: space-around;\n  -webkit-transform: translate3d(0px, 0px, 0px);\n          transform: translate3d(0px, 0px, 0px);\n  opacity: 1;\n}\n.dayContainer + .dayContainer {\n  -webkit-box-shadow: -1px 0 0 #e6e6e6;\n          box-shadow: -1px 0 0 #e6e6e6;\n}\n.flatpickr-day {\n  background: none;\n  border: 1px solid transparent;\n  border-radius: 150px;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  color: #393939;\n  cursor: pointer;\n  font-weight: 400;\n  width: 14.2857143%;\n  -webkit-flex-basis: 14.2857143%;\n      -ms-flex-preferred-size: 14.2857143%;\n          flex-basis: 14.2857143%;\n  max-width: 39px;\n  height: 39px;\n  line-height: 39px;\n  margin: 0;\n  display: inline-block;\n  position: relative;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  text-align: center;\n}\n.flatpickr-day.inRange,\n.flatpickr-day.prevMonthDay.inRange,\n.flatpickr-day.nextMonthDay.inRange,\n.flatpickr-day.today.inRange,\n.flatpickr-day.prevMonthDay.today.inRange,\n.flatpickr-day.nextMonthDay.today.inRange,\n.flatpickr-day:hover,\n.flatpickr-day.prevMonthDay:hover,\n.flatpickr-day.nextMonthDay:hover,\n.flatpickr-day:focus,\n.flatpickr-day.prevMonthDay:focus,\n.flatpickr-day.nextMonthDay:focus {\n  cursor: pointer;\n  outline: 0;\n  background: #e6e6e6;\n  border-color: #e6e6e6;\n}\n.flatpickr-day.today {\n  border-color: #959ea9;\n}\n.flatpickr-day.today:hover,\n.flatpickr-day.today:focus {\n  border-color: #959ea9;\n  background: #959ea9;\n  color: #fff;\n}\n.flatpickr-day.selected,\n.flatpickr-day.startRange,\n.flatpickr-day.endRange,\n.flatpickr-day.selected.inRange,\n.flatpickr-day.startRange.inRange,\n.flatpickr-day.endRange.inRange,\n.flatpickr-day.selected:focus,\n.flatpickr-day.startRange:focus,\n.flatpickr-day.endRange:focus,\n.flatpickr-day.selected:hover,\n.flatpickr-day.startRange:hover,\n.flatpickr-day.endRange:hover,\n.flatpickr-day.selected.prevMonthDay,\n.flatpickr-day.startRange.prevMonthDay,\n.flatpickr-day.endRange.prevMonthDay,\n.flatpickr-day.selected.nextMonthDay,\n.flatpickr-day.startRange.nextMonthDay,\n.flatpickr-day.endRange.nextMonthDay {\n  background: #569ff7;\n  -webkit-box-shadow: none;\n          box-shadow: none;\n  color: #fff;\n  border-color: #569ff7;\n}\n.flatpickr-day.selected.startRange,\n.flatpickr-day.startRange.startRange,\n.flatpickr-day.endRange.startRange {\n  border-radius: 50px 0 0 50px;\n}\n.flatpickr-day.selected.endRange,\n.flatpickr-day.startRange.endRange,\n.flatpickr-day.endRange.endRange {\n  border-radius: 0 50px 50px 0;\n}\n.flatpickr-day.selected.startRange + .endRange:not(:nth-child(7n+1)),\n.flatpickr-day.startRange.startRange + .endRange:not(:nth-child(7n+1)),\n.flatpickr-day.endRange.startRange + .endRange:not(:nth-child(7n+1)) {\n  -webkit-box-shadow: -10px 0 0 #569ff7;\n          box-shadow: -10px 0 0 #569ff7;\n}\n.flatpickr-day.selected.startRange.endRange,\n.flatpickr-day.startRange.startRange.endRange,\n.flatpickr-day.endRange.startRange.endRange {\n  border-radius: 50px;\n}\n.flatpickr-day.inRange {\n  border-radius: 0;\n  -webkit-box-shadow: -5px 0 0 #e6e6e6, 5px 0 0 #e6e6e6;\n          box-shadow: -5px 0 0 #e6e6e6, 5px 0 0 #e6e6e6;\n}\n.flatpickr-day.flatpickr-disabled,\n.flatpickr-day.flatpickr-disabled:hover,\n.flatpickr-day.prevMonthDay,\n.flatpickr-day.nextMonthDay,\n.flatpickr-day.notAllowed,\n.flatpickr-day.notAllowed.prevMonthDay,\n.flatpickr-day.notAllowed.nextMonthDay {\n  color: rgba(57,57,57,0.3);\n  background: transparent;\n  border-color: transparent;\n  cursor: default;\n}\n.flatpickr-day.flatpickr-disabled,\n.flatpickr-day.flatpickr-disabled:hover {\n  cursor: not-allowed;\n  color: rgba(57,57,57,0.1);\n}\n.flatpickr-day.week.selected {\n  border-radius: 0;\n  -webkit-box-shadow: -5px 0 0 #569ff7, 5px 0 0 #569ff7;\n          box-shadow: -5px 0 0 #569ff7, 5px 0 0 #569ff7;\n}\n.flatpickr-day.hidden {\n  visibility: hidden;\n}\n.rangeMode .flatpickr-day {\n  margin-top: 1px;\n}\n.flatpickr-weekwrapper {\n  float: left;\n}\n.flatpickr-weekwrapper .flatpickr-weeks {\n  padding: 0 12px;\n  -webkit-box-shadow: 1px 0 0 #e6e6e6;\n          box-shadow: 1px 0 0 #e6e6e6;\n}\n.flatpickr-weekwrapper .flatpickr-weekday {\n  float: none;\n  width: 100%;\n  line-height: 28px;\n}\n.flatpickr-weekwrapper span.flatpickr-day,\n.flatpickr-weekwrapper span.flatpickr-day:hover {\n  display: block;\n  width: 100%;\n  max-width: none;\n  color: rgba(57,57,57,0.3);\n  background: transparent;\n  cursor: default;\n  border: none;\n}\n.flatpickr-innerContainer {\n  display: block;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  overflow: hidden;\n}\n.flatpickr-rContainer {\n  display: inline-block;\n  padding: 0;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n}\n.flatpickr-time {\n  text-align: center;\n  outline: 0;\n  display: block;\n  height: 0;\n  line-height: 40px;\n  max-height: 40px;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  overflow: hidden;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n}\n.flatpickr-time:after {\n  content: \"\";\n  display: table;\n  clear: both;\n}\n.flatpickr-time .numInputWrapper {\n  -webkit-box-flex: 1;\n  -webkit-flex: 1;\n      -ms-flex: 1;\n          flex: 1;\n  width: 40%;\n  height: 40px;\n  float: left;\n}\n.flatpickr-time .numInputWrapper span.arrowUp:after {\n  border-bottom-color: #393939;\n}\n.flatpickr-time .numInputWrapper span.arrowDown:after {\n  border-top-color: #393939;\n}\n.flatpickr-time.hasSeconds .numInputWrapper {\n  width: 26%;\n}\n.flatpickr-time.time24hr .numInputWrapper {\n  width: 49%;\n}\n.flatpickr-time input {\n  background: transparent;\n  -webkit-box-shadow: none;\n          box-shadow: none;\n  border: 0;\n  border-radius: 0;\n  text-align: center;\n  margin: 0;\n  padding: 0;\n  height: inherit;\n  line-height: inherit;\n  color: #393939;\n  font-size: 14px;\n  position: relative;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  -webkit-appearance: textfield;\n  -moz-appearance: textfield;\n  appearance: textfield;\n}\n.flatpickr-time input.flatpickr-hour {\n  font-weight: bold;\n}\n.flatpickr-time input.flatpickr-minute,\n.flatpickr-time input.flatpickr-second {\n  font-weight: 400;\n}\n.flatpickr-time input:focus {\n  outline: 0;\n  border: 0;\n}\n.flatpickr-time .flatpickr-time-separator,\n.flatpickr-time .flatpickr-am-pm {\n  height: inherit;\n  float: left;\n  line-height: inherit;\n  color: #393939;\n  font-weight: bold;\n  width: 2%;\n  -webkit-user-select: none;\n     -moz-user-select: none;\n      -ms-user-select: none;\n          user-select: none;\n  -webkit-align-self: center;\n      -ms-flex-item-align: center;\n          align-self: center;\n}\n.flatpickr-time .flatpickr-am-pm {\n  outline: 0;\n  width: 18%;\n  cursor: pointer;\n  text-align: center;\n  font-weight: 400;\n}\n.flatpickr-time input:hover,\n.flatpickr-time .flatpickr-am-pm:hover,\n.flatpickr-time input:focus,\n.flatpickr-time .flatpickr-am-pm:focus {\n  background: #eee;\n}\n.flatpickr-input[readonly] {\n  cursor: pointer;\n}\n@-webkit-keyframes fpFadeInDown {\n  from {\n    opacity: 0;\n    -webkit-transform: translate3d(0, -20px, 0);\n            transform: translate3d(0, -20px, 0);\n  }\n  to {\n    opacity: 1;\n    -webkit-transform: translate3d(0, 0, 0);\n            transform: translate3d(0, 0, 0);\n  }\n}\n@keyframes fpFadeInDown {\n  from {\n    opacity: 0;\n    -webkit-transform: translate3d(0, -20px, 0);\n            transform: translate3d(0, -20px, 0);\n  }\n  to {\n    opacity: 1;\n    -webkit-transform: translate3d(0, 0, 0);\n            transform: translate3d(0, 0, 0);\n  }\n}\n", ""]);
 // Exports
 /* harmony default export */ __webpack_exports__["default"] = (___CSS_LOADER_EXPORT___);
 
@@ -26672,6 +27020,2610 @@ function scrollIntoView(container, selected) {
 
 /***/ }),
 
+/***/ "./node_modules/flatpickr/dist/esm/index.js":
+/*!**************************************************!*\
+  !*** ./node_modules/flatpickr/dist/esm/index.js ***!
+  \**************************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _types_options__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./types/options */ "./node_modules/flatpickr/dist/esm/types/options.js");
+/* harmony import */ var _l10n_default__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./l10n/default */ "./node_modules/flatpickr/dist/esm/l10n/default.js");
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./utils */ "./node_modules/flatpickr/dist/esm/utils/index.js");
+/* harmony import */ var _utils_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./utils/dom */ "./node_modules/flatpickr/dist/esm/utils/dom.js");
+/* harmony import */ var _utils_dates__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./utils/dates */ "./node_modules/flatpickr/dist/esm/utils/dates.js");
+/* harmony import */ var _utils_formatting__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./utils/formatting */ "./node_modules/flatpickr/dist/esm/utils/formatting.js");
+/* harmony import */ var _utils_polyfills__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./utils/polyfills */ "./node_modules/flatpickr/dist/esm/utils/polyfills.js");
+/* harmony import */ var _utils_polyfills__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_utils_polyfills__WEBPACK_IMPORTED_MODULE_6__);
+
+
+
+
+
+
+
+const DEBOUNCED_CHANGE_MS = 300;
+function FlatpickrInstance(element, instanceConfig) {
+    const self = {
+        config: Object.assign(Object.assign({}, _types_options__WEBPACK_IMPORTED_MODULE_0__.defaults), flatpickr.defaultConfig),
+        l10n: _l10n_default__WEBPACK_IMPORTED_MODULE_1__.default,
+    };
+    self.parseDate = (0,_utils_dates__WEBPACK_IMPORTED_MODULE_4__.createDateParser)({ config: self.config, l10n: self.l10n });
+    self._handlers = [];
+    self.pluginElements = [];
+    self.loadedPlugins = [];
+    self._bind = bind;
+    self._setHoursFromDate = setHoursFromDate;
+    self._positionCalendar = positionCalendar;
+    self.changeMonth = changeMonth;
+    self.changeYear = changeYear;
+    self.clear = clear;
+    self.close = close;
+    self._createElement = _utils_dom__WEBPACK_IMPORTED_MODULE_3__.createElement;
+    self.destroy = destroy;
+    self.isEnabled = isEnabled;
+    self.jumpToDate = jumpToDate;
+    self.open = open;
+    self.redraw = redraw;
+    self.set = set;
+    self.setDate = setDate;
+    self.toggle = toggle;
+    function setupHelperFunctions() {
+        self.utils = {
+            getDaysInMonth(month = self.currentMonth, yr = self.currentYear) {
+                if (month === 1 && ((yr % 4 === 0 && yr % 100 !== 0) || yr % 400 === 0))
+                    return 29;
+                return self.l10n.daysInMonth[month];
+            },
+        };
+    }
+    function init() {
+        self.element = self.input = element;
+        self.isOpen = false;
+        parseConfig();
+        setupLocale();
+        setupInputs();
+        setupDates();
+        setupHelperFunctions();
+        if (!self.isMobile)
+            build();
+        bindEvents();
+        if (self.selectedDates.length || self.config.noCalendar) {
+            if (self.config.enableTime) {
+                setHoursFromDate(self.config.noCalendar ? self.latestSelectedDateObj : undefined);
+            }
+            updateValue(false);
+        }
+        setCalendarWidth();
+        const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+        if (!self.isMobile && isSafari) {
+            positionCalendar();
+        }
+        triggerEvent("onReady");
+    }
+    function bindToInstance(fn) {
+        return fn.bind(self);
+    }
+    function setCalendarWidth() {
+        const config = self.config;
+        if (config.weekNumbers === false && config.showMonths === 1) {
+            return;
+        }
+        else if (config.noCalendar !== true) {
+            window.requestAnimationFrame(function () {
+                if (self.calendarContainer !== undefined) {
+                    self.calendarContainer.style.visibility = "hidden";
+                    self.calendarContainer.style.display = "block";
+                }
+                if (self.daysContainer !== undefined) {
+                    const daysWidth = (self.days.offsetWidth + 1) * config.showMonths;
+                    self.daysContainer.style.width = daysWidth + "px";
+                    self.calendarContainer.style.width =
+                        daysWidth +
+                            (self.weekWrapper !== undefined
+                                ? self.weekWrapper.offsetWidth
+                                : 0) +
+                            "px";
+                    self.calendarContainer.style.removeProperty("visibility");
+                    self.calendarContainer.style.removeProperty("display");
+                }
+            });
+        }
+    }
+    function updateTime(e) {
+        if (self.selectedDates.length === 0) {
+            const defaultDate = self.config.minDate === undefined ||
+                (0,_utils_dates__WEBPACK_IMPORTED_MODULE_4__.compareDates)(new Date(), self.config.minDate) >= 0
+                ? new Date()
+                : new Date(self.config.minDate.getTime());
+            const defaults = (0,_utils_dates__WEBPACK_IMPORTED_MODULE_4__.getDefaultHours)(self.config);
+            defaultDate.setHours(defaults.hours, defaults.minutes, defaults.seconds, defaultDate.getMilliseconds());
+            self.selectedDates = [defaultDate];
+            self.latestSelectedDateObj = defaultDate;
+        }
+        if (e !== undefined && e.type !== "blur") {
+            timeWrapper(e);
+        }
+        const prevValue = self._input.value;
+        setHoursFromInputs();
+        updateValue();
+        if (self._input.value !== prevValue) {
+            self._debouncedChange();
+        }
+    }
+    function ampm2military(hour, amPM) {
+        return (hour % 12) + 12 * (0,_utils__WEBPACK_IMPORTED_MODULE_2__.int)(amPM === self.l10n.amPM[1]);
+    }
+    function military2ampm(hour) {
+        switch (hour % 24) {
+            case 0:
+            case 12:
+                return 12;
+            default:
+                return hour % 12;
+        }
+    }
+    function setHoursFromInputs() {
+        if (self.hourElement === undefined || self.minuteElement === undefined)
+            return;
+        let hours = (parseInt(self.hourElement.value.slice(-2), 10) || 0) % 24, minutes = (parseInt(self.minuteElement.value, 10) || 0) % 60, seconds = self.secondElement !== undefined
+            ? (parseInt(self.secondElement.value, 10) || 0) % 60
+            : 0;
+        if (self.amPM !== undefined) {
+            hours = ampm2military(hours, self.amPM.textContent);
+        }
+        const limitMinHours = self.config.minTime !== undefined ||
+            (self.config.minDate &&
+                self.minDateHasTime &&
+                self.latestSelectedDateObj &&
+                (0,_utils_dates__WEBPACK_IMPORTED_MODULE_4__.compareDates)(self.latestSelectedDateObj, self.config.minDate, true) ===
+                    0);
+        const limitMaxHours = self.config.maxTime !== undefined ||
+            (self.config.maxDate &&
+                self.maxDateHasTime &&
+                self.latestSelectedDateObj &&
+                (0,_utils_dates__WEBPACK_IMPORTED_MODULE_4__.compareDates)(self.latestSelectedDateObj, self.config.maxDate, true) ===
+                    0);
+        if (limitMaxHours) {
+            const maxTime = self.config.maxTime !== undefined
+                ? self.config.maxTime
+                : self.config.maxDate;
+            hours = Math.min(hours, maxTime.getHours());
+            if (hours === maxTime.getHours())
+                minutes = Math.min(minutes, maxTime.getMinutes());
+            if (minutes === maxTime.getMinutes())
+                seconds = Math.min(seconds, maxTime.getSeconds());
+        }
+        if (limitMinHours) {
+            const minTime = self.config.minTime !== undefined
+                ? self.config.minTime
+                : self.config.minDate;
+            hours = Math.max(hours, minTime.getHours());
+            if (hours === minTime.getHours() && minutes < minTime.getMinutes())
+                minutes = minTime.getMinutes();
+            if (minutes === minTime.getMinutes())
+                seconds = Math.max(seconds, minTime.getSeconds());
+        }
+        setHours(hours, minutes, seconds);
+    }
+    function setHoursFromDate(dateObj) {
+        const date = dateObj || self.latestSelectedDateObj;
+        if (date) {
+            setHours(date.getHours(), date.getMinutes(), date.getSeconds());
+        }
+    }
+    function setHours(hours, minutes, seconds) {
+        if (self.latestSelectedDateObj !== undefined) {
+            self.latestSelectedDateObj.setHours(hours % 24, minutes, seconds || 0, 0);
+        }
+        if (!self.hourElement || !self.minuteElement || self.isMobile)
+            return;
+        self.hourElement.value = (0,_utils__WEBPACK_IMPORTED_MODULE_2__.pad)(!self.config.time_24hr
+            ? ((12 + hours) % 12) + 12 * (0,_utils__WEBPACK_IMPORTED_MODULE_2__.int)(hours % 12 === 0)
+            : hours);
+        self.minuteElement.value = (0,_utils__WEBPACK_IMPORTED_MODULE_2__.pad)(minutes);
+        if (self.amPM !== undefined)
+            self.amPM.textContent = self.l10n.amPM[(0,_utils__WEBPACK_IMPORTED_MODULE_2__.int)(hours >= 12)];
+        if (self.secondElement !== undefined)
+            self.secondElement.value = (0,_utils__WEBPACK_IMPORTED_MODULE_2__.pad)(seconds);
+    }
+    function onYearInput(event) {
+        const eventTarget = (0,_utils_dom__WEBPACK_IMPORTED_MODULE_3__.getEventTarget)(event);
+        const year = parseInt(eventTarget.value) + (event.delta || 0);
+        if (year / 1000 > 1 ||
+            (event.key === "Enter" && !/[^\d]/.test(year.toString()))) {
+            changeYear(year);
+        }
+    }
+    function bind(element, event, handler, options) {
+        if (event instanceof Array)
+            return event.forEach((ev) => bind(element, ev, handler, options));
+        if (element instanceof Array)
+            return element.forEach((el) => bind(el, event, handler, options));
+        element.addEventListener(event, handler, options);
+        self._handlers.push({
+            remove: () => element.removeEventListener(event, handler),
+        });
+    }
+    function triggerChange() {
+        triggerEvent("onChange");
+    }
+    function bindEvents() {
+        if (self.config.wrap) {
+            ["open", "close", "toggle", "clear"].forEach((evt) => {
+                Array.prototype.forEach.call(self.element.querySelectorAll(`[data-${evt}]`), (el) => bind(el, "click", self[evt]));
+            });
+        }
+        if (self.isMobile) {
+            setupMobile();
+            return;
+        }
+        const debouncedResize = (0,_utils__WEBPACK_IMPORTED_MODULE_2__.debounce)(onResize, 50);
+        self._debouncedChange = (0,_utils__WEBPACK_IMPORTED_MODULE_2__.debounce)(triggerChange, DEBOUNCED_CHANGE_MS);
+        if (self.daysContainer && !/iPhone|iPad|iPod/i.test(navigator.userAgent))
+            bind(self.daysContainer, "mouseover", (e) => {
+                if (self.config.mode === "range")
+                    onMouseOver((0,_utils_dom__WEBPACK_IMPORTED_MODULE_3__.getEventTarget)(e));
+            });
+        bind(window.document.body, "keydown", onKeyDown);
+        if (!self.config.inline && !self.config.static)
+            bind(window, "resize", debouncedResize);
+        if (window.ontouchstart !== undefined)
+            bind(window.document, "touchstart", documentClick);
+        else
+            bind(window.document, "mousedown", documentClick);
+        bind(window.document, "focus", documentClick, { capture: true });
+        if (self.config.clickOpens === true) {
+            bind(self._input, "focus", self.open);
+            bind(self._input, "click", self.open);
+        }
+        if (self.daysContainer !== undefined) {
+            bind(self.monthNav, "click", onMonthNavClick);
+            bind(self.monthNav, ["keyup", "increment"], onYearInput);
+            bind(self.daysContainer, "click", selectDate);
+        }
+        if (self.timeContainer !== undefined &&
+            self.minuteElement !== undefined &&
+            self.hourElement !== undefined) {
+            const selText = (e) => (0,_utils_dom__WEBPACK_IMPORTED_MODULE_3__.getEventTarget)(e).select();
+            bind(self.timeContainer, ["increment"], updateTime);
+            bind(self.timeContainer, "blur", updateTime, { capture: true });
+            bind(self.timeContainer, "click", timeIncrement);
+            bind([self.hourElement, self.minuteElement], ["focus", "click"], selText);
+            if (self.secondElement !== undefined)
+                bind(self.secondElement, "focus", () => self.secondElement && self.secondElement.select());
+            if (self.amPM !== undefined) {
+                bind(self.amPM, "click", (e) => {
+                    updateTime(e);
+                    triggerChange();
+                });
+            }
+        }
+        if (self.config.allowInput) {
+            bind(self._input, "blur", onBlur);
+        }
+    }
+    function jumpToDate(jumpDate, triggerChange) {
+        const jumpTo = jumpDate !== undefined
+            ? self.parseDate(jumpDate)
+            : self.latestSelectedDateObj ||
+                (self.config.minDate && self.config.minDate > self.now
+                    ? self.config.minDate
+                    : self.config.maxDate && self.config.maxDate < self.now
+                        ? self.config.maxDate
+                        : self.now);
+        const oldYear = self.currentYear;
+        const oldMonth = self.currentMonth;
+        try {
+            if (jumpTo !== undefined) {
+                self.currentYear = jumpTo.getFullYear();
+                self.currentMonth = jumpTo.getMonth();
+            }
+        }
+        catch (e) {
+            e.message = "Invalid date supplied: " + jumpTo;
+            self.config.errorHandler(e);
+        }
+        if (triggerChange && self.currentYear !== oldYear) {
+            triggerEvent("onYearChange");
+            buildMonthSwitch();
+        }
+        if (triggerChange &&
+            (self.currentYear !== oldYear || self.currentMonth !== oldMonth)) {
+            triggerEvent("onMonthChange");
+        }
+        self.redraw();
+    }
+    function timeIncrement(e) {
+        const eventTarget = (0,_utils_dom__WEBPACK_IMPORTED_MODULE_3__.getEventTarget)(e);
+        if (~eventTarget.className.indexOf("arrow"))
+            incrementNumInput(e, eventTarget.classList.contains("arrowUp") ? 1 : -1);
+    }
+    function incrementNumInput(e, delta, inputElem) {
+        const target = e && (0,_utils_dom__WEBPACK_IMPORTED_MODULE_3__.getEventTarget)(e);
+        const input = inputElem ||
+            (target && target.parentNode && target.parentNode.firstChild);
+        const event = createEvent("increment");
+        event.delta = delta;
+        input && input.dispatchEvent(event);
+    }
+    function build() {
+        const fragment = window.document.createDocumentFragment();
+        self.calendarContainer = (0,_utils_dom__WEBPACK_IMPORTED_MODULE_3__.createElement)("div", "flatpickr-calendar");
+        self.calendarContainer.tabIndex = -1;
+        if (!self.config.noCalendar) {
+            fragment.appendChild(buildMonthNav());
+            self.innerContainer = (0,_utils_dom__WEBPACK_IMPORTED_MODULE_3__.createElement)("div", "flatpickr-innerContainer");
+            if (self.config.weekNumbers) {
+                const { weekWrapper, weekNumbers } = buildWeeks();
+                self.innerContainer.appendChild(weekWrapper);
+                self.weekNumbers = weekNumbers;
+                self.weekWrapper = weekWrapper;
+            }
+            self.rContainer = (0,_utils_dom__WEBPACK_IMPORTED_MODULE_3__.createElement)("div", "flatpickr-rContainer");
+            self.rContainer.appendChild(buildWeekdays());
+            if (!self.daysContainer) {
+                self.daysContainer = (0,_utils_dom__WEBPACK_IMPORTED_MODULE_3__.createElement)("div", "flatpickr-days");
+                self.daysContainer.tabIndex = -1;
+            }
+            buildDays();
+            self.rContainer.appendChild(self.daysContainer);
+            self.innerContainer.appendChild(self.rContainer);
+            fragment.appendChild(self.innerContainer);
+        }
+        if (self.config.enableTime) {
+            fragment.appendChild(buildTime());
+        }
+        (0,_utils_dom__WEBPACK_IMPORTED_MODULE_3__.toggleClass)(self.calendarContainer, "rangeMode", self.config.mode === "range");
+        (0,_utils_dom__WEBPACK_IMPORTED_MODULE_3__.toggleClass)(self.calendarContainer, "animate", self.config.animate === true);
+        (0,_utils_dom__WEBPACK_IMPORTED_MODULE_3__.toggleClass)(self.calendarContainer, "multiMonth", self.config.showMonths > 1);
+        self.calendarContainer.appendChild(fragment);
+        const customAppend = self.config.appendTo !== undefined &&
+            self.config.appendTo.nodeType !== undefined;
+        if (self.config.inline || self.config.static) {
+            self.calendarContainer.classList.add(self.config.inline ? "inline" : "static");
+            if (self.config.inline) {
+                if (!customAppend && self.element.parentNode)
+                    self.element.parentNode.insertBefore(self.calendarContainer, self._input.nextSibling);
+                else if (self.config.appendTo !== undefined)
+                    self.config.appendTo.appendChild(self.calendarContainer);
+            }
+            if (self.config.static) {
+                const wrapper = (0,_utils_dom__WEBPACK_IMPORTED_MODULE_3__.createElement)("div", "flatpickr-wrapper");
+                if (self.element.parentNode)
+                    self.element.parentNode.insertBefore(wrapper, self.element);
+                wrapper.appendChild(self.element);
+                if (self.altInput)
+                    wrapper.appendChild(self.altInput);
+                wrapper.appendChild(self.calendarContainer);
+            }
+        }
+        if (!self.config.static && !self.config.inline)
+            (self.config.appendTo !== undefined
+                ? self.config.appendTo
+                : window.document.body).appendChild(self.calendarContainer);
+    }
+    function createDay(className, date, dayNumber, i) {
+        const dateIsEnabled = isEnabled(date, true), dayElement = (0,_utils_dom__WEBPACK_IMPORTED_MODULE_3__.createElement)("span", "flatpickr-day " + className, date.getDate().toString());
+        dayElement.dateObj = date;
+        dayElement.$i = i;
+        dayElement.setAttribute("aria-label", self.formatDate(date, self.config.ariaDateFormat));
+        if (className.indexOf("hidden") === -1 &&
+            (0,_utils_dates__WEBPACK_IMPORTED_MODULE_4__.compareDates)(date, self.now) === 0) {
+            self.todayDateElem = dayElement;
+            dayElement.classList.add("today");
+            dayElement.setAttribute("aria-current", "date");
+        }
+        if (dateIsEnabled) {
+            dayElement.tabIndex = -1;
+            if (isDateSelected(date)) {
+                dayElement.classList.add("selected");
+                self.selectedDateElem = dayElement;
+                if (self.config.mode === "range") {
+                    (0,_utils_dom__WEBPACK_IMPORTED_MODULE_3__.toggleClass)(dayElement, "startRange", self.selectedDates[0] &&
+                        (0,_utils_dates__WEBPACK_IMPORTED_MODULE_4__.compareDates)(date, self.selectedDates[0], true) === 0);
+                    (0,_utils_dom__WEBPACK_IMPORTED_MODULE_3__.toggleClass)(dayElement, "endRange", self.selectedDates[1] &&
+                        (0,_utils_dates__WEBPACK_IMPORTED_MODULE_4__.compareDates)(date, self.selectedDates[1], true) === 0);
+                    if (className === "nextMonthDay")
+                        dayElement.classList.add("inRange");
+                }
+            }
+        }
+        else {
+            dayElement.classList.add("flatpickr-disabled");
+        }
+        if (self.config.mode === "range") {
+            if (isDateInRange(date) && !isDateSelected(date))
+                dayElement.classList.add("inRange");
+        }
+        if (self.weekNumbers &&
+            self.config.showMonths === 1 &&
+            className !== "prevMonthDay" &&
+            dayNumber % 7 === 1) {
+            self.weekNumbers.insertAdjacentHTML("beforeend", "<span class='flatpickr-day'>" + self.config.getWeek(date) + "</span>");
+        }
+        triggerEvent("onDayCreate", dayElement);
+        return dayElement;
+    }
+    function focusOnDayElem(targetNode) {
+        targetNode.focus();
+        if (self.config.mode === "range")
+            onMouseOver(targetNode);
+    }
+    function getFirstAvailableDay(delta) {
+        const startMonth = delta > 0 ? 0 : self.config.showMonths - 1;
+        const endMonth = delta > 0 ? self.config.showMonths : -1;
+        for (let m = startMonth; m != endMonth; m += delta) {
+            const month = self.daysContainer.children[m];
+            const startIndex = delta > 0 ? 0 : month.children.length - 1;
+            const endIndex = delta > 0 ? month.children.length : -1;
+            for (let i = startIndex; i != endIndex; i += delta) {
+                const c = month.children[i];
+                if (c.className.indexOf("hidden") === -1 && isEnabled(c.dateObj))
+                    return c;
+            }
+        }
+        return undefined;
+    }
+    function getNextAvailableDay(current, delta) {
+        const givenMonth = current.className.indexOf("Month") === -1
+            ? current.dateObj.getMonth()
+            : self.currentMonth;
+        const endMonth = delta > 0 ? self.config.showMonths : -1;
+        const loopDelta = delta > 0 ? 1 : -1;
+        for (let m = givenMonth - self.currentMonth; m != endMonth; m += loopDelta) {
+            const month = self.daysContainer.children[m];
+            const startIndex = givenMonth - self.currentMonth === m
+                ? current.$i + delta
+                : delta < 0
+                    ? month.children.length - 1
+                    : 0;
+            const numMonthDays = month.children.length;
+            for (let i = startIndex; i >= 0 && i < numMonthDays && i != (delta > 0 ? numMonthDays : -1); i += loopDelta) {
+                const c = month.children[i];
+                if (c.className.indexOf("hidden") === -1 &&
+                    isEnabled(c.dateObj) &&
+                    Math.abs(current.$i - i) >= Math.abs(delta))
+                    return focusOnDayElem(c);
+            }
+        }
+        self.changeMonth(loopDelta);
+        focusOnDay(getFirstAvailableDay(loopDelta), 0);
+        return undefined;
+    }
+    function focusOnDay(current, offset) {
+        const dayFocused = isInView(document.activeElement || document.body);
+        const startElem = current !== undefined
+            ? current
+            : dayFocused
+                ? document.activeElement
+                : self.selectedDateElem !== undefined && isInView(self.selectedDateElem)
+                    ? self.selectedDateElem
+                    : self.todayDateElem !== undefined && isInView(self.todayDateElem)
+                        ? self.todayDateElem
+                        : getFirstAvailableDay(offset > 0 ? 1 : -1);
+        if (startElem === undefined) {
+            self._input.focus();
+        }
+        else if (!dayFocused) {
+            focusOnDayElem(startElem);
+        }
+        else {
+            getNextAvailableDay(startElem, offset);
+        }
+    }
+    function buildMonthDays(year, month) {
+        const firstOfMonth = (new Date(year, month, 1).getDay() - self.l10n.firstDayOfWeek + 7) % 7;
+        const prevMonthDays = self.utils.getDaysInMonth((month - 1 + 12) % 12, year);
+        const daysInMonth = self.utils.getDaysInMonth(month, year), days = window.document.createDocumentFragment(), isMultiMonth = self.config.showMonths > 1, prevMonthDayClass = isMultiMonth ? "prevMonthDay hidden" : "prevMonthDay", nextMonthDayClass = isMultiMonth ? "nextMonthDay hidden" : "nextMonthDay";
+        let dayNumber = prevMonthDays + 1 - firstOfMonth, dayIndex = 0;
+        for (; dayNumber <= prevMonthDays; dayNumber++, dayIndex++) {
+            days.appendChild(createDay(prevMonthDayClass, new Date(year, month - 1, dayNumber), dayNumber, dayIndex));
+        }
+        for (dayNumber = 1; dayNumber <= daysInMonth; dayNumber++, dayIndex++) {
+            days.appendChild(createDay("", new Date(year, month, dayNumber), dayNumber, dayIndex));
+        }
+        for (let dayNum = daysInMonth + 1; dayNum <= 42 - firstOfMonth &&
+            (self.config.showMonths === 1 || dayIndex % 7 !== 0); dayNum++, dayIndex++) {
+            days.appendChild(createDay(nextMonthDayClass, new Date(year, month + 1, dayNum % daysInMonth), dayNum, dayIndex));
+        }
+        const dayContainer = (0,_utils_dom__WEBPACK_IMPORTED_MODULE_3__.createElement)("div", "dayContainer");
+        dayContainer.appendChild(days);
+        return dayContainer;
+    }
+    function buildDays() {
+        if (self.daysContainer === undefined) {
+            return;
+        }
+        (0,_utils_dom__WEBPACK_IMPORTED_MODULE_3__.clearNode)(self.daysContainer);
+        if (self.weekNumbers)
+            (0,_utils_dom__WEBPACK_IMPORTED_MODULE_3__.clearNode)(self.weekNumbers);
+        const frag = document.createDocumentFragment();
+        for (let i = 0; i < self.config.showMonths; i++) {
+            const d = new Date(self.currentYear, self.currentMonth, 1);
+            d.setMonth(self.currentMonth + i);
+            frag.appendChild(buildMonthDays(d.getFullYear(), d.getMonth()));
+        }
+        self.daysContainer.appendChild(frag);
+        self.days = self.daysContainer.firstChild;
+        if (self.config.mode === "range" && self.selectedDates.length === 1) {
+            onMouseOver();
+        }
+    }
+    function buildMonthSwitch() {
+        if (self.config.showMonths > 1 ||
+            self.config.monthSelectorType !== "dropdown")
+            return;
+        const shouldBuildMonth = function (month) {
+            if (self.config.minDate !== undefined &&
+                self.currentYear === self.config.minDate.getFullYear() &&
+                month < self.config.minDate.getMonth()) {
+                return false;
+            }
+            return !(self.config.maxDate !== undefined &&
+                self.currentYear === self.config.maxDate.getFullYear() &&
+                month > self.config.maxDate.getMonth());
+        };
+        self.monthsDropdownContainer.tabIndex = -1;
+        self.monthsDropdownContainer.innerHTML = "";
+        for (let i = 0; i < 12; i++) {
+            if (!shouldBuildMonth(i))
+                continue;
+            const month = (0,_utils_dom__WEBPACK_IMPORTED_MODULE_3__.createElement)("option", "flatpickr-monthDropdown-month");
+            month.value = new Date(self.currentYear, i).getMonth().toString();
+            month.textContent = (0,_utils_formatting__WEBPACK_IMPORTED_MODULE_5__.monthToStr)(i, self.config.shorthandCurrentMonth, self.l10n);
+            month.tabIndex = -1;
+            if (self.currentMonth === i) {
+                month.selected = true;
+            }
+            self.monthsDropdownContainer.appendChild(month);
+        }
+    }
+    function buildMonth() {
+        const container = (0,_utils_dom__WEBPACK_IMPORTED_MODULE_3__.createElement)("div", "flatpickr-month");
+        const monthNavFragment = window.document.createDocumentFragment();
+        let monthElement;
+        if (self.config.showMonths > 1 ||
+            self.config.monthSelectorType === "static") {
+            monthElement = (0,_utils_dom__WEBPACK_IMPORTED_MODULE_3__.createElement)("span", "cur-month");
+        }
+        else {
+            self.monthsDropdownContainer = (0,_utils_dom__WEBPACK_IMPORTED_MODULE_3__.createElement)("select", "flatpickr-monthDropdown-months");
+            self.monthsDropdownContainer.setAttribute("aria-label", self.l10n.monthAriaLabel);
+            bind(self.monthsDropdownContainer, "change", (e) => {
+                const target = (0,_utils_dom__WEBPACK_IMPORTED_MODULE_3__.getEventTarget)(e);
+                const selectedMonth = parseInt(target.value, 10);
+                self.changeMonth(selectedMonth - self.currentMonth);
+                triggerEvent("onMonthChange");
+            });
+            buildMonthSwitch();
+            monthElement = self.monthsDropdownContainer;
+        }
+        const yearInput = (0,_utils_dom__WEBPACK_IMPORTED_MODULE_3__.createNumberInput)("cur-year", { tabindex: "-1" });
+        const yearElement = yearInput.getElementsByTagName("input")[0];
+        yearElement.setAttribute("aria-label", self.l10n.yearAriaLabel);
+        if (self.config.minDate) {
+            yearElement.setAttribute("min", self.config.minDate.getFullYear().toString());
+        }
+        if (self.config.maxDate) {
+            yearElement.setAttribute("max", self.config.maxDate.getFullYear().toString());
+            yearElement.disabled =
+                !!self.config.minDate &&
+                    self.config.minDate.getFullYear() === self.config.maxDate.getFullYear();
+        }
+        const currentMonth = (0,_utils_dom__WEBPACK_IMPORTED_MODULE_3__.createElement)("div", "flatpickr-current-month");
+        currentMonth.appendChild(monthElement);
+        currentMonth.appendChild(yearInput);
+        monthNavFragment.appendChild(currentMonth);
+        container.appendChild(monthNavFragment);
+        return {
+            container,
+            yearElement,
+            monthElement,
+        };
+    }
+    function buildMonths() {
+        (0,_utils_dom__WEBPACK_IMPORTED_MODULE_3__.clearNode)(self.monthNav);
+        self.monthNav.appendChild(self.prevMonthNav);
+        if (self.config.showMonths) {
+            self.yearElements = [];
+            self.monthElements = [];
+        }
+        for (let m = self.config.showMonths; m--;) {
+            const month = buildMonth();
+            self.yearElements.push(month.yearElement);
+            self.monthElements.push(month.monthElement);
+            self.monthNav.appendChild(month.container);
+        }
+        self.monthNav.appendChild(self.nextMonthNav);
+    }
+    function buildMonthNav() {
+        self.monthNav = (0,_utils_dom__WEBPACK_IMPORTED_MODULE_3__.createElement)("div", "flatpickr-months");
+        self.yearElements = [];
+        self.monthElements = [];
+        self.prevMonthNav = (0,_utils_dom__WEBPACK_IMPORTED_MODULE_3__.createElement)("span", "flatpickr-prev-month");
+        self.prevMonthNav.innerHTML = self.config.prevArrow;
+        self.nextMonthNav = (0,_utils_dom__WEBPACK_IMPORTED_MODULE_3__.createElement)("span", "flatpickr-next-month");
+        self.nextMonthNav.innerHTML = self.config.nextArrow;
+        buildMonths();
+        Object.defineProperty(self, "_hidePrevMonthArrow", {
+            get: () => self.__hidePrevMonthArrow,
+            set(bool) {
+                if (self.__hidePrevMonthArrow !== bool) {
+                    (0,_utils_dom__WEBPACK_IMPORTED_MODULE_3__.toggleClass)(self.prevMonthNav, "flatpickr-disabled", bool);
+                    self.__hidePrevMonthArrow = bool;
+                }
+            },
+        });
+        Object.defineProperty(self, "_hideNextMonthArrow", {
+            get: () => self.__hideNextMonthArrow,
+            set(bool) {
+                if (self.__hideNextMonthArrow !== bool) {
+                    (0,_utils_dom__WEBPACK_IMPORTED_MODULE_3__.toggleClass)(self.nextMonthNav, "flatpickr-disabled", bool);
+                    self.__hideNextMonthArrow = bool;
+                }
+            },
+        });
+        self.currentYearElement = self.yearElements[0];
+        updateNavigationCurrentMonth();
+        return self.monthNav;
+    }
+    function buildTime() {
+        self.calendarContainer.classList.add("hasTime");
+        if (self.config.noCalendar)
+            self.calendarContainer.classList.add("noCalendar");
+        const defaults = (0,_utils_dates__WEBPACK_IMPORTED_MODULE_4__.getDefaultHours)(self.config);
+        self.timeContainer = (0,_utils_dom__WEBPACK_IMPORTED_MODULE_3__.createElement)("div", "flatpickr-time");
+        self.timeContainer.tabIndex = -1;
+        const separator = (0,_utils_dom__WEBPACK_IMPORTED_MODULE_3__.createElement)("span", "flatpickr-time-separator", ":");
+        const hourInput = (0,_utils_dom__WEBPACK_IMPORTED_MODULE_3__.createNumberInput)("flatpickr-hour", {
+            "aria-label": self.l10n.hourAriaLabel,
+        });
+        self.hourElement = hourInput.getElementsByTagName("input")[0];
+        const minuteInput = (0,_utils_dom__WEBPACK_IMPORTED_MODULE_3__.createNumberInput)("flatpickr-minute", {
+            "aria-label": self.l10n.minuteAriaLabel,
+        });
+        self.minuteElement = minuteInput.getElementsByTagName("input")[0];
+        self.hourElement.tabIndex = self.minuteElement.tabIndex = -1;
+        self.hourElement.value = (0,_utils__WEBPACK_IMPORTED_MODULE_2__.pad)(self.latestSelectedDateObj
+            ? self.latestSelectedDateObj.getHours()
+            : self.config.time_24hr
+                ? defaults.hours
+                : military2ampm(defaults.hours));
+        self.minuteElement.value = (0,_utils__WEBPACK_IMPORTED_MODULE_2__.pad)(self.latestSelectedDateObj
+            ? self.latestSelectedDateObj.getMinutes()
+            : defaults.minutes);
+        self.hourElement.setAttribute("step", self.config.hourIncrement.toString());
+        self.minuteElement.setAttribute("step", self.config.minuteIncrement.toString());
+        self.hourElement.setAttribute("min", self.config.time_24hr ? "0" : "1");
+        self.hourElement.setAttribute("max", self.config.time_24hr ? "23" : "12");
+        self.hourElement.setAttribute("maxlength", "2");
+        self.minuteElement.setAttribute("min", "0");
+        self.minuteElement.setAttribute("max", "59");
+        self.minuteElement.setAttribute("maxlength", "2");
+        self.timeContainer.appendChild(hourInput);
+        self.timeContainer.appendChild(separator);
+        self.timeContainer.appendChild(minuteInput);
+        if (self.config.time_24hr)
+            self.timeContainer.classList.add("time24hr");
+        if (self.config.enableSeconds) {
+            self.timeContainer.classList.add("hasSeconds");
+            const secondInput = (0,_utils_dom__WEBPACK_IMPORTED_MODULE_3__.createNumberInput)("flatpickr-second");
+            self.secondElement = secondInput.getElementsByTagName("input")[0];
+            self.secondElement.value = (0,_utils__WEBPACK_IMPORTED_MODULE_2__.pad)(self.latestSelectedDateObj
+                ? self.latestSelectedDateObj.getSeconds()
+                : defaults.seconds);
+            self.secondElement.setAttribute("step", self.minuteElement.getAttribute("step"));
+            self.secondElement.setAttribute("min", "0");
+            self.secondElement.setAttribute("max", "59");
+            self.secondElement.setAttribute("maxlength", "2");
+            self.timeContainer.appendChild((0,_utils_dom__WEBPACK_IMPORTED_MODULE_3__.createElement)("span", "flatpickr-time-separator", ":"));
+            self.timeContainer.appendChild(secondInput);
+        }
+        if (!self.config.time_24hr) {
+            self.amPM = (0,_utils_dom__WEBPACK_IMPORTED_MODULE_3__.createElement)("span", "flatpickr-am-pm", self.l10n.amPM[(0,_utils__WEBPACK_IMPORTED_MODULE_2__.int)((self.latestSelectedDateObj
+                ? self.hourElement.value
+                : self.config.defaultHour) > 11)]);
+            self.amPM.title = self.l10n.toggleTitle;
+            self.amPM.tabIndex = -1;
+            self.timeContainer.appendChild(self.amPM);
+        }
+        return self.timeContainer;
+    }
+    function buildWeekdays() {
+        if (!self.weekdayContainer)
+            self.weekdayContainer = (0,_utils_dom__WEBPACK_IMPORTED_MODULE_3__.createElement)("div", "flatpickr-weekdays");
+        else
+            (0,_utils_dom__WEBPACK_IMPORTED_MODULE_3__.clearNode)(self.weekdayContainer);
+        for (let i = self.config.showMonths; i--;) {
+            const container = (0,_utils_dom__WEBPACK_IMPORTED_MODULE_3__.createElement)("div", "flatpickr-weekdaycontainer");
+            self.weekdayContainer.appendChild(container);
+        }
+        updateWeekdays();
+        return self.weekdayContainer;
+    }
+    function updateWeekdays() {
+        if (!self.weekdayContainer) {
+            return;
+        }
+        const firstDayOfWeek = self.l10n.firstDayOfWeek;
+        let weekdays = [...self.l10n.weekdays.shorthand];
+        if (firstDayOfWeek > 0 && firstDayOfWeek < weekdays.length) {
+            weekdays = [
+                ...weekdays.splice(firstDayOfWeek, weekdays.length),
+                ...weekdays.splice(0, firstDayOfWeek),
+            ];
+        }
+        for (let i = self.config.showMonths; i--;) {
+            self.weekdayContainer.children[i].innerHTML = `
+      <span class='flatpickr-weekday'>
+        ${weekdays.join("</span><span class='flatpickr-weekday'>")}
+      </span>
+      `;
+        }
+    }
+    function buildWeeks() {
+        self.calendarContainer.classList.add("hasWeeks");
+        const weekWrapper = (0,_utils_dom__WEBPACK_IMPORTED_MODULE_3__.createElement)("div", "flatpickr-weekwrapper");
+        weekWrapper.appendChild((0,_utils_dom__WEBPACK_IMPORTED_MODULE_3__.createElement)("span", "flatpickr-weekday", self.l10n.weekAbbreviation));
+        const weekNumbers = (0,_utils_dom__WEBPACK_IMPORTED_MODULE_3__.createElement)("div", "flatpickr-weeks");
+        weekWrapper.appendChild(weekNumbers);
+        return {
+            weekWrapper,
+            weekNumbers,
+        };
+    }
+    function changeMonth(value, isOffset = true) {
+        const delta = isOffset ? value : value - self.currentMonth;
+        if ((delta < 0 && self._hidePrevMonthArrow === true) ||
+            (delta > 0 && self._hideNextMonthArrow === true))
+            return;
+        self.currentMonth += delta;
+        if (self.currentMonth < 0 || self.currentMonth > 11) {
+            self.currentYear += self.currentMonth > 11 ? 1 : -1;
+            self.currentMonth = (self.currentMonth + 12) % 12;
+            triggerEvent("onYearChange");
+            buildMonthSwitch();
+        }
+        buildDays();
+        triggerEvent("onMonthChange");
+        updateNavigationCurrentMonth();
+    }
+    function clear(triggerChangeEvent = true, toInitial = true) {
+        self.input.value = "";
+        if (self.altInput !== undefined)
+            self.altInput.value = "";
+        if (self.mobileInput !== undefined)
+            self.mobileInput.value = "";
+        self.selectedDates = [];
+        self.latestSelectedDateObj = undefined;
+        if (toInitial === true) {
+            self.currentYear = self._initialDate.getFullYear();
+            self.currentMonth = self._initialDate.getMonth();
+        }
+        if (self.config.enableTime === true) {
+            const { hours, minutes, seconds } = (0,_utils_dates__WEBPACK_IMPORTED_MODULE_4__.getDefaultHours)(self.config);
+            setHours(hours, minutes, seconds);
+        }
+        self.redraw();
+        if (triggerChangeEvent)
+            triggerEvent("onChange");
+    }
+    function close() {
+        self.isOpen = false;
+        if (!self.isMobile) {
+            if (self.calendarContainer !== undefined) {
+                self.calendarContainer.classList.remove("open");
+            }
+            if (self._input !== undefined) {
+                self._input.classList.remove("active");
+            }
+        }
+        triggerEvent("onClose");
+    }
+    function destroy() {
+        if (self.config !== undefined)
+            triggerEvent("onDestroy");
+        for (let i = self._handlers.length; i--;) {
+            self._handlers[i].remove();
+        }
+        self._handlers = [];
+        if (self.mobileInput) {
+            if (self.mobileInput.parentNode)
+                self.mobileInput.parentNode.removeChild(self.mobileInput);
+            self.mobileInput = undefined;
+        }
+        else if (self.calendarContainer && self.calendarContainer.parentNode) {
+            if (self.config.static && self.calendarContainer.parentNode) {
+                const wrapper = self.calendarContainer.parentNode;
+                wrapper.lastChild && wrapper.removeChild(wrapper.lastChild);
+                if (wrapper.parentNode) {
+                    while (wrapper.firstChild)
+                        wrapper.parentNode.insertBefore(wrapper.firstChild, wrapper);
+                    wrapper.parentNode.removeChild(wrapper);
+                }
+            }
+            else
+                self.calendarContainer.parentNode.removeChild(self.calendarContainer);
+        }
+        if (self.altInput) {
+            self.input.type = "text";
+            if (self.altInput.parentNode)
+                self.altInput.parentNode.removeChild(self.altInput);
+            delete self.altInput;
+        }
+        if (self.input) {
+            self.input.type = self.input._type;
+            self.input.classList.remove("flatpickr-input");
+            self.input.removeAttribute("readonly");
+        }
+        [
+            "_showTimeInput",
+            "latestSelectedDateObj",
+            "_hideNextMonthArrow",
+            "_hidePrevMonthArrow",
+            "__hideNextMonthArrow",
+            "__hidePrevMonthArrow",
+            "isMobile",
+            "isOpen",
+            "selectedDateElem",
+            "minDateHasTime",
+            "maxDateHasTime",
+            "days",
+            "daysContainer",
+            "_input",
+            "_positionElement",
+            "innerContainer",
+            "rContainer",
+            "monthNav",
+            "todayDateElem",
+            "calendarContainer",
+            "weekdayContainer",
+            "prevMonthNav",
+            "nextMonthNav",
+            "monthsDropdownContainer",
+            "currentMonthElement",
+            "currentYearElement",
+            "navigationCurrentMonth",
+            "selectedDateElem",
+            "config",
+        ].forEach((k) => {
+            try {
+                delete self[k];
+            }
+            catch (_) { }
+        });
+    }
+    function isCalendarElem(elem) {
+        if (self.config.appendTo && self.config.appendTo.contains(elem))
+            return true;
+        return self.calendarContainer.contains(elem);
+    }
+    function documentClick(e) {
+        if (self.isOpen && !self.config.inline) {
+            const eventTarget = (0,_utils_dom__WEBPACK_IMPORTED_MODULE_3__.getEventTarget)(e);
+            const isCalendarElement = isCalendarElem(eventTarget);
+            const isInput = eventTarget === self.input ||
+                eventTarget === self.altInput ||
+                self.element.contains(eventTarget) ||
+                (e.path &&
+                    e.path.indexOf &&
+                    (~e.path.indexOf(self.input) ||
+                        ~e.path.indexOf(self.altInput)));
+            const lostFocus = e.type === "blur"
+                ? isInput &&
+                    e.relatedTarget &&
+                    !isCalendarElem(e.relatedTarget)
+                : !isInput &&
+                    !isCalendarElement &&
+                    !isCalendarElem(e.relatedTarget);
+            const isIgnored = !self.config.ignoredFocusElements.some((elem) => elem.contains(eventTarget));
+            if (lostFocus && isIgnored) {
+                if (self.timeContainer !== undefined &&
+                    self.minuteElement !== undefined &&
+                    self.hourElement !== undefined &&
+                    self.input.value !== "" &&
+                    self.input.value !== undefined) {
+                    updateTime();
+                }
+                self.close();
+                if (self.config &&
+                    self.config.mode === "range" &&
+                    self.selectedDates.length === 1) {
+                    self.clear(false);
+                    self.redraw();
+                }
+            }
+        }
+    }
+    function changeYear(newYear) {
+        if (!newYear ||
+            (self.config.minDate && newYear < self.config.minDate.getFullYear()) ||
+            (self.config.maxDate && newYear > self.config.maxDate.getFullYear()))
+            return;
+        const newYearNum = newYear, isNewYear = self.currentYear !== newYearNum;
+        self.currentYear = newYearNum || self.currentYear;
+        if (self.config.maxDate &&
+            self.currentYear === self.config.maxDate.getFullYear()) {
+            self.currentMonth = Math.min(self.config.maxDate.getMonth(), self.currentMonth);
+        }
+        else if (self.config.minDate &&
+            self.currentYear === self.config.minDate.getFullYear()) {
+            self.currentMonth = Math.max(self.config.minDate.getMonth(), self.currentMonth);
+        }
+        if (isNewYear) {
+            self.redraw();
+            triggerEvent("onYearChange");
+            buildMonthSwitch();
+        }
+    }
+    function isEnabled(date, timeless = true) {
+        var _a;
+        const dateToCheck = self.parseDate(date, undefined, timeless);
+        if ((self.config.minDate &&
+            dateToCheck &&
+            (0,_utils_dates__WEBPACK_IMPORTED_MODULE_4__.compareDates)(dateToCheck, self.config.minDate, timeless !== undefined ? timeless : !self.minDateHasTime) < 0) ||
+            (self.config.maxDate &&
+                dateToCheck &&
+                (0,_utils_dates__WEBPACK_IMPORTED_MODULE_4__.compareDates)(dateToCheck, self.config.maxDate, timeless !== undefined ? timeless : !self.maxDateHasTime) > 0))
+            return false;
+        if (!self.config.enable && self.config.disable.length === 0)
+            return true;
+        if (dateToCheck === undefined)
+            return false;
+        const bool = !!self.config.enable, array = (_a = self.config.enable) !== null && _a !== void 0 ? _a : self.config.disable;
+        for (let i = 0, d; i < array.length; i++) {
+            d = array[i];
+            if (typeof d === "function" &&
+                d(dateToCheck))
+                return bool;
+            else if (d instanceof Date &&
+                dateToCheck !== undefined &&
+                d.getTime() === dateToCheck.getTime())
+                return bool;
+            else if (typeof d === "string") {
+                const parsed = self.parseDate(d, undefined, true);
+                return parsed && parsed.getTime() === dateToCheck.getTime()
+                    ? bool
+                    : !bool;
+            }
+            else if (typeof d === "object" &&
+                dateToCheck !== undefined &&
+                d.from &&
+                d.to &&
+                dateToCheck.getTime() >= d.from.getTime() &&
+                dateToCheck.getTime() <= d.to.getTime())
+                return bool;
+        }
+        return !bool;
+    }
+    function isInView(elem) {
+        if (self.daysContainer !== undefined)
+            return (elem.className.indexOf("hidden") === -1 &&
+                elem.className.indexOf("flatpickr-disabled") === -1 &&
+                self.daysContainer.contains(elem));
+        return false;
+    }
+    function onBlur(e) {
+        const isInput = e.target === self._input;
+        if (isInput &&
+            (self.selectedDates.length > 0 || self._input.value.length > 0) &&
+            !(e.relatedTarget && isCalendarElem(e.relatedTarget))) {
+            self.setDate(self._input.value, true, e.target === self.altInput
+                ? self.config.altFormat
+                : self.config.dateFormat);
+        }
+    }
+    function onKeyDown(e) {
+        const eventTarget = (0,_utils_dom__WEBPACK_IMPORTED_MODULE_3__.getEventTarget)(e);
+        const isInput = self.config.wrap
+            ? element.contains(eventTarget)
+            : eventTarget === self._input;
+        const allowInput = self.config.allowInput;
+        const allowKeydown = self.isOpen && (!allowInput || !isInput);
+        const allowInlineKeydown = self.config.inline && isInput && !allowInput;
+        if (e.keyCode === 13 && isInput) {
+            if (allowInput) {
+                self.setDate(self._input.value, true, eventTarget === self.altInput
+                    ? self.config.altFormat
+                    : self.config.dateFormat);
+                return eventTarget.blur();
+            }
+            else {
+                self.open();
+            }
+        }
+        else if (isCalendarElem(eventTarget) ||
+            allowKeydown ||
+            allowInlineKeydown) {
+            const isTimeObj = !!self.timeContainer &&
+                self.timeContainer.contains(eventTarget);
+            switch (e.keyCode) {
+                case 13:
+                    if (isTimeObj) {
+                        e.preventDefault();
+                        updateTime();
+                        focusAndClose();
+                    }
+                    else
+                        selectDate(e);
+                    break;
+                case 27:
+                    e.preventDefault();
+                    focusAndClose();
+                    break;
+                case 8:
+                case 46:
+                    if (isInput && !self.config.allowInput) {
+                        e.preventDefault();
+                        self.clear();
+                    }
+                    break;
+                case 37:
+                case 39:
+                    if (!isTimeObj && !isInput) {
+                        e.preventDefault();
+                        if (self.daysContainer !== undefined &&
+                            (allowInput === false ||
+                                (document.activeElement && isInView(document.activeElement)))) {
+                            const delta = e.keyCode === 39 ? 1 : -1;
+                            if (!e.ctrlKey)
+                                focusOnDay(undefined, delta);
+                            else {
+                                e.stopPropagation();
+                                changeMonth(delta);
+                                focusOnDay(getFirstAvailableDay(1), 0);
+                            }
+                        }
+                    }
+                    else if (self.hourElement)
+                        self.hourElement.focus();
+                    break;
+                case 38:
+                case 40:
+                    e.preventDefault();
+                    const delta = e.keyCode === 40 ? 1 : -1;
+                    if ((self.daysContainer &&
+                        eventTarget.$i !== undefined) ||
+                        eventTarget === self.input ||
+                        eventTarget === self.altInput) {
+                        if (e.ctrlKey) {
+                            e.stopPropagation();
+                            changeYear(self.currentYear - delta);
+                            focusOnDay(getFirstAvailableDay(1), 0);
+                        }
+                        else if (!isTimeObj)
+                            focusOnDay(undefined, delta * 7);
+                    }
+                    else if (eventTarget === self.currentYearElement) {
+                        changeYear(self.currentYear - delta);
+                    }
+                    else if (self.config.enableTime) {
+                        if (!isTimeObj && self.hourElement)
+                            self.hourElement.focus();
+                        updateTime(e);
+                        self._debouncedChange();
+                    }
+                    break;
+                case 9:
+                    if (isTimeObj) {
+                        const elems = [
+                            self.hourElement,
+                            self.minuteElement,
+                            self.secondElement,
+                            self.amPM,
+                        ]
+                            .concat(self.pluginElements)
+                            .filter((x) => x);
+                        const i = elems.indexOf(eventTarget);
+                        if (i !== -1) {
+                            const target = elems[i + (e.shiftKey ? -1 : 1)];
+                            e.preventDefault();
+                            (target || self._input).focus();
+                        }
+                    }
+                    else if (!self.config.noCalendar &&
+                        self.daysContainer &&
+                        self.daysContainer.contains(eventTarget) &&
+                        e.shiftKey) {
+                        e.preventDefault();
+                        self._input.focus();
+                    }
+                    break;
+                default:
+                    break;
+            }
+        }
+        if (self.amPM !== undefined && eventTarget === self.amPM) {
+            switch (e.key) {
+                case self.l10n.amPM[0].charAt(0):
+                case self.l10n.amPM[0].charAt(0).toLowerCase():
+                    self.amPM.textContent = self.l10n.amPM[0];
+                    setHoursFromInputs();
+                    updateValue();
+                    break;
+                case self.l10n.amPM[1].charAt(0):
+                case self.l10n.amPM[1].charAt(0).toLowerCase():
+                    self.amPM.textContent = self.l10n.amPM[1];
+                    setHoursFromInputs();
+                    updateValue();
+                    break;
+            }
+        }
+        if (isInput || isCalendarElem(eventTarget)) {
+            triggerEvent("onKeyDown", e);
+        }
+    }
+    function onMouseOver(elem) {
+        if (self.selectedDates.length !== 1 ||
+            (elem &&
+                (!elem.classList.contains("flatpickr-day") ||
+                    elem.classList.contains("flatpickr-disabled"))))
+            return;
+        const hoverDate = elem
+            ? elem.dateObj.getTime()
+            : self.days.firstElementChild.dateObj.getTime(), initialDate = self.parseDate(self.selectedDates[0], undefined, true).getTime(), rangeStartDate = Math.min(hoverDate, self.selectedDates[0].getTime()), rangeEndDate = Math.max(hoverDate, self.selectedDates[0].getTime());
+        let containsDisabled = false;
+        let minRange = 0, maxRange = 0;
+        for (let t = rangeStartDate; t < rangeEndDate; t += _utils_dates__WEBPACK_IMPORTED_MODULE_4__.duration.DAY) {
+            if (!isEnabled(new Date(t), true)) {
+                containsDisabled =
+                    containsDisabled || (t > rangeStartDate && t < rangeEndDate);
+                if (t < initialDate && (!minRange || t > minRange))
+                    minRange = t;
+                else if (t > initialDate && (!maxRange || t < maxRange))
+                    maxRange = t;
+            }
+        }
+        for (let m = 0; m < self.config.showMonths; m++) {
+            const month = self.daysContainer.children[m];
+            for (let i = 0, l = month.children.length; i < l; i++) {
+                const dayElem = month.children[i], date = dayElem.dateObj;
+                const timestamp = date.getTime();
+                const outOfRange = (minRange > 0 && timestamp < minRange) ||
+                    (maxRange > 0 && timestamp > maxRange);
+                if (outOfRange) {
+                    dayElem.classList.add("notAllowed");
+                    ["inRange", "startRange", "endRange"].forEach((c) => {
+                        dayElem.classList.remove(c);
+                    });
+                    continue;
+                }
+                else if (containsDisabled && !outOfRange)
+                    continue;
+                ["startRange", "inRange", "endRange", "notAllowed"].forEach((c) => {
+                    dayElem.classList.remove(c);
+                });
+                if (elem !== undefined) {
+                    elem.classList.add(hoverDate <= self.selectedDates[0].getTime()
+                        ? "startRange"
+                        : "endRange");
+                    if (initialDate < hoverDate && timestamp === initialDate)
+                        dayElem.classList.add("startRange");
+                    else if (initialDate > hoverDate && timestamp === initialDate)
+                        dayElem.classList.add("endRange");
+                    if (timestamp >= minRange &&
+                        (maxRange === 0 || timestamp <= maxRange) &&
+                        (0,_utils_dates__WEBPACK_IMPORTED_MODULE_4__.isBetween)(timestamp, initialDate, hoverDate))
+                        dayElem.classList.add("inRange");
+                }
+            }
+        }
+    }
+    function onResize() {
+        if (self.isOpen && !self.config.static && !self.config.inline)
+            positionCalendar();
+    }
+    function open(e, positionElement = self._positionElement) {
+        if (self.isMobile === true) {
+            if (e) {
+                e.preventDefault();
+                const eventTarget = (0,_utils_dom__WEBPACK_IMPORTED_MODULE_3__.getEventTarget)(e);
+                if (eventTarget) {
+                    eventTarget.blur();
+                }
+            }
+            if (self.mobileInput !== undefined) {
+                self.mobileInput.focus();
+                self.mobileInput.click();
+            }
+            triggerEvent("onOpen");
+            return;
+        }
+        else if (self._input.disabled || self.config.inline) {
+            return;
+        }
+        const wasOpen = self.isOpen;
+        self.isOpen = true;
+        if (!wasOpen) {
+            self.calendarContainer.classList.add("open");
+            self._input.classList.add("active");
+            triggerEvent("onOpen");
+            positionCalendar(positionElement);
+        }
+        if (self.config.enableTime === true && self.config.noCalendar === true) {
+            if (self.config.allowInput === false &&
+                (e === undefined ||
+                    !self.timeContainer.contains(e.relatedTarget))) {
+                setTimeout(() => self.hourElement.select(), 50);
+            }
+        }
+    }
+    function minMaxDateSetter(type) {
+        return (date) => {
+            const dateObj = (self.config[`_${type}Date`] = self.parseDate(date, self.config.dateFormat));
+            const inverseDateObj = self.config[`_${type === "min" ? "max" : "min"}Date`];
+            if (dateObj !== undefined) {
+                self[type === "min" ? "minDateHasTime" : "maxDateHasTime"] =
+                    dateObj.getHours() > 0 ||
+                        dateObj.getMinutes() > 0 ||
+                        dateObj.getSeconds() > 0;
+            }
+            if (self.selectedDates) {
+                self.selectedDates = self.selectedDates.filter((d) => isEnabled(d));
+                if (!self.selectedDates.length && type === "min")
+                    setHoursFromDate(dateObj);
+                updateValue();
+            }
+            if (self.daysContainer) {
+                redraw();
+                if (dateObj !== undefined)
+                    self.currentYearElement[type] = dateObj.getFullYear().toString();
+                else
+                    self.currentYearElement.removeAttribute(type);
+                self.currentYearElement.disabled =
+                    !!inverseDateObj &&
+                        dateObj !== undefined &&
+                        inverseDateObj.getFullYear() === dateObj.getFullYear();
+            }
+        };
+    }
+    function parseConfig() {
+        const boolOpts = [
+            "wrap",
+            "weekNumbers",
+            "allowInput",
+            "allowInvalidPreload",
+            "clickOpens",
+            "time_24hr",
+            "enableTime",
+            "noCalendar",
+            "altInput",
+            "shorthandCurrentMonth",
+            "inline",
+            "static",
+            "enableSeconds",
+            "disableMobile",
+        ];
+        const userConfig = Object.assign(Object.assign({}, JSON.parse(JSON.stringify(element.dataset || {}))), instanceConfig);
+        const formats = {};
+        self.config.parseDate = userConfig.parseDate;
+        self.config.formatDate = userConfig.formatDate;
+        Object.defineProperty(self.config, "enable", {
+            get: () => self.config._enable,
+            set: (dates) => {
+                self.config._enable = parseDateRules(dates);
+            },
+        });
+        Object.defineProperty(self.config, "disable", {
+            get: () => self.config._disable,
+            set: (dates) => {
+                self.config._disable = parseDateRules(dates);
+            },
+        });
+        const timeMode = userConfig.mode === "time";
+        if (!userConfig.dateFormat && (userConfig.enableTime || timeMode)) {
+            const defaultDateFormat = flatpickr.defaultConfig.dateFormat || _types_options__WEBPACK_IMPORTED_MODULE_0__.defaults.dateFormat;
+            formats.dateFormat =
+                userConfig.noCalendar || timeMode
+                    ? "H:i" + (userConfig.enableSeconds ? ":S" : "")
+                    : defaultDateFormat + " H:i" + (userConfig.enableSeconds ? ":S" : "");
+        }
+        if (userConfig.altInput &&
+            (userConfig.enableTime || timeMode) &&
+            !userConfig.altFormat) {
+            const defaultAltFormat = flatpickr.defaultConfig.altFormat || _types_options__WEBPACK_IMPORTED_MODULE_0__.defaults.altFormat;
+            formats.altFormat =
+                userConfig.noCalendar || timeMode
+                    ? "h:i" + (userConfig.enableSeconds ? ":S K" : " K")
+                    : defaultAltFormat + ` h:i${userConfig.enableSeconds ? ":S" : ""} K`;
+        }
+        Object.defineProperty(self.config, "minDate", {
+            get: () => self.config._minDate,
+            set: minMaxDateSetter("min"),
+        });
+        Object.defineProperty(self.config, "maxDate", {
+            get: () => self.config._maxDate,
+            set: minMaxDateSetter("max"),
+        });
+        const minMaxTimeSetter = (type) => (val) => {
+            self.config[type === "min" ? "_minTime" : "_maxTime"] = self.parseDate(val, "H:i:S");
+        };
+        Object.defineProperty(self.config, "minTime", {
+            get: () => self.config._minTime,
+            set: minMaxTimeSetter("min"),
+        });
+        Object.defineProperty(self.config, "maxTime", {
+            get: () => self.config._maxTime,
+            set: minMaxTimeSetter("max"),
+        });
+        if (userConfig.mode === "time") {
+            self.config.noCalendar = true;
+            self.config.enableTime = true;
+        }
+        Object.assign(self.config, formats, userConfig);
+        for (let i = 0; i < boolOpts.length; i++)
+            self.config[boolOpts[i]] =
+                self.config[boolOpts[i]] === true ||
+                    self.config[boolOpts[i]] === "true";
+        _types_options__WEBPACK_IMPORTED_MODULE_0__.HOOKS.filter((hook) => self.config[hook] !== undefined).forEach((hook) => {
+            self.config[hook] = (0,_utils__WEBPACK_IMPORTED_MODULE_2__.arrayify)(self.config[hook] || []).map(bindToInstance);
+        });
+        self.isMobile =
+            !self.config.disableMobile &&
+                !self.config.inline &&
+                self.config.mode === "single" &&
+                !self.config.disable.length &&
+                !self.config.enable &&
+                !self.config.weekNumbers &&
+                /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        for (let i = 0; i < self.config.plugins.length; i++) {
+            const pluginConf = self.config.plugins[i](self) || {};
+            for (const key in pluginConf) {
+                if (_types_options__WEBPACK_IMPORTED_MODULE_0__.HOOKS.indexOf(key) > -1) {
+                    self.config[key] = (0,_utils__WEBPACK_IMPORTED_MODULE_2__.arrayify)(pluginConf[key])
+                        .map(bindToInstance)
+                        .concat(self.config[key]);
+                }
+                else if (typeof userConfig[key] === "undefined")
+                    self.config[key] = pluginConf[key];
+            }
+        }
+        if (!userConfig.altInputClass) {
+            self.config.altInputClass =
+                getInputElem().className + " " + self.config.altInputClass;
+        }
+        triggerEvent("onParseConfig");
+    }
+    function getInputElem() {
+        return self.config.wrap
+            ? element.querySelector("[data-input]")
+            : element;
+    }
+    function setupLocale() {
+        if (typeof self.config.locale !== "object" &&
+            typeof flatpickr.l10ns[self.config.locale] === "undefined")
+            self.config.errorHandler(new Error(`flatpickr: invalid locale ${self.config.locale}`));
+        self.l10n = Object.assign(Object.assign({}, flatpickr.l10ns.default), (typeof self.config.locale === "object"
+            ? self.config.locale
+            : self.config.locale !== "default"
+                ? flatpickr.l10ns[self.config.locale]
+                : undefined));
+        _utils_formatting__WEBPACK_IMPORTED_MODULE_5__.tokenRegex.K = `(${self.l10n.amPM[0]}|${self.l10n.amPM[1]}|${self.l10n.amPM[0].toLowerCase()}|${self.l10n.amPM[1].toLowerCase()})`;
+        const userConfig = Object.assign(Object.assign({}, instanceConfig), JSON.parse(JSON.stringify(element.dataset || {})));
+        if (userConfig.time_24hr === undefined &&
+            flatpickr.defaultConfig.time_24hr === undefined) {
+            self.config.time_24hr = self.l10n.time_24hr;
+        }
+        self.formatDate = (0,_utils_dates__WEBPACK_IMPORTED_MODULE_4__.createDateFormatter)(self);
+        self.parseDate = (0,_utils_dates__WEBPACK_IMPORTED_MODULE_4__.createDateParser)({ config: self.config, l10n: self.l10n });
+    }
+    function positionCalendar(customPositionElement) {
+        if (typeof self.config.position === "function") {
+            return void self.config.position(self, customPositionElement);
+        }
+        if (self.calendarContainer === undefined)
+            return;
+        triggerEvent("onPreCalendarPosition");
+        const positionElement = customPositionElement || self._positionElement;
+        const calendarHeight = Array.prototype.reduce.call(self.calendarContainer.children, ((acc, child) => acc + child.offsetHeight), 0), calendarWidth = self.calendarContainer.offsetWidth, configPos = self.config.position.split(" "), configPosVertical = configPos[0], configPosHorizontal = configPos.length > 1 ? configPos[1] : null, inputBounds = positionElement.getBoundingClientRect(), distanceFromBottom = window.innerHeight - inputBounds.bottom, showOnTop = configPosVertical === "above" ||
+            (configPosVertical !== "below" &&
+                distanceFromBottom < calendarHeight &&
+                inputBounds.top > calendarHeight);
+        const top = window.pageYOffset +
+            inputBounds.top +
+            (!showOnTop ? positionElement.offsetHeight + 2 : -calendarHeight - 2);
+        (0,_utils_dom__WEBPACK_IMPORTED_MODULE_3__.toggleClass)(self.calendarContainer, "arrowTop", !showOnTop);
+        (0,_utils_dom__WEBPACK_IMPORTED_MODULE_3__.toggleClass)(self.calendarContainer, "arrowBottom", showOnTop);
+        if (self.config.inline)
+            return;
+        let left = window.pageXOffset + inputBounds.left;
+        let isCenter = false;
+        let isRight = false;
+        if (configPosHorizontal === "center") {
+            left -= (calendarWidth - inputBounds.width) / 2;
+            isCenter = true;
+        }
+        else if (configPosHorizontal === "right") {
+            left -= calendarWidth - inputBounds.width;
+            isRight = true;
+        }
+        (0,_utils_dom__WEBPACK_IMPORTED_MODULE_3__.toggleClass)(self.calendarContainer, "arrowLeft", !isCenter && !isRight);
+        (0,_utils_dom__WEBPACK_IMPORTED_MODULE_3__.toggleClass)(self.calendarContainer, "arrowCenter", isCenter);
+        (0,_utils_dom__WEBPACK_IMPORTED_MODULE_3__.toggleClass)(self.calendarContainer, "arrowRight", isRight);
+        const right = window.document.body.offsetWidth -
+            (window.pageXOffset + inputBounds.right);
+        const rightMost = left + calendarWidth > window.document.body.offsetWidth;
+        const centerMost = right + calendarWidth > window.document.body.offsetWidth;
+        (0,_utils_dom__WEBPACK_IMPORTED_MODULE_3__.toggleClass)(self.calendarContainer, "rightMost", rightMost);
+        if (self.config.static)
+            return;
+        self.calendarContainer.style.top = `${top}px`;
+        if (!rightMost) {
+            self.calendarContainer.style.left = `${left}px`;
+            self.calendarContainer.style.right = "auto";
+        }
+        else if (!centerMost) {
+            self.calendarContainer.style.left = "auto";
+            self.calendarContainer.style.right = `${right}px`;
+        }
+        else {
+            const doc = getDocumentStyleSheet();
+            if (doc === undefined)
+                return;
+            const bodyWidth = window.document.body.offsetWidth;
+            const centerLeft = Math.max(0, bodyWidth / 2 - calendarWidth / 2);
+            const centerBefore = ".flatpickr-calendar.centerMost:before";
+            const centerAfter = ".flatpickr-calendar.centerMost:after";
+            const centerIndex = doc.cssRules.length;
+            const centerStyle = `{left:${inputBounds.left}px;right:auto;}`;
+            (0,_utils_dom__WEBPACK_IMPORTED_MODULE_3__.toggleClass)(self.calendarContainer, "rightMost", false);
+            (0,_utils_dom__WEBPACK_IMPORTED_MODULE_3__.toggleClass)(self.calendarContainer, "centerMost", true);
+            doc.insertRule(`${centerBefore},${centerAfter}${centerStyle}`, centerIndex);
+            self.calendarContainer.style.left = `${centerLeft}px`;
+            self.calendarContainer.style.right = "auto";
+        }
+    }
+    function getDocumentStyleSheet() {
+        let editableSheet = null;
+        for (let i = 0; i < document.styleSheets.length; i++) {
+            const sheet = document.styleSheets[i];
+            try {
+                sheet.cssRules;
+            }
+            catch (err) {
+                continue;
+            }
+            editableSheet = sheet;
+            break;
+        }
+        return editableSheet != null ? editableSheet : createStyleSheet();
+    }
+    function createStyleSheet() {
+        const style = document.createElement("style");
+        document.head.appendChild(style);
+        return style.sheet;
+    }
+    function redraw() {
+        if (self.config.noCalendar || self.isMobile)
+            return;
+        buildMonthSwitch();
+        updateNavigationCurrentMonth();
+        buildDays();
+    }
+    function focusAndClose() {
+        self._input.focus();
+        if (window.navigator.userAgent.indexOf("MSIE") !== -1 ||
+            navigator.msMaxTouchPoints !== undefined) {
+            setTimeout(self.close, 0);
+        }
+        else {
+            self.close();
+        }
+    }
+    function selectDate(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        const isSelectable = (day) => day.classList &&
+            day.classList.contains("flatpickr-day") &&
+            !day.classList.contains("flatpickr-disabled") &&
+            !day.classList.contains("notAllowed");
+        const t = (0,_utils_dom__WEBPACK_IMPORTED_MODULE_3__.findParent)((0,_utils_dom__WEBPACK_IMPORTED_MODULE_3__.getEventTarget)(e), isSelectable);
+        if (t === undefined)
+            return;
+        const target = t;
+        const selectedDate = (self.latestSelectedDateObj = new Date(target.dateObj.getTime()));
+        const shouldChangeMonth = (selectedDate.getMonth() < self.currentMonth ||
+            selectedDate.getMonth() >
+                self.currentMonth + self.config.showMonths - 1) &&
+            self.config.mode !== "range";
+        self.selectedDateElem = target;
+        if (self.config.mode === "single")
+            self.selectedDates = [selectedDate];
+        else if (self.config.mode === "multiple") {
+            const selectedIndex = isDateSelected(selectedDate);
+            if (selectedIndex)
+                self.selectedDates.splice(parseInt(selectedIndex), 1);
+            else
+                self.selectedDates.push(selectedDate);
+        }
+        else if (self.config.mode === "range") {
+            if (self.selectedDates.length === 2) {
+                self.clear(false, false);
+            }
+            self.latestSelectedDateObj = selectedDate;
+            self.selectedDates.push(selectedDate);
+            if ((0,_utils_dates__WEBPACK_IMPORTED_MODULE_4__.compareDates)(selectedDate, self.selectedDates[0], true) !== 0)
+                self.selectedDates.sort((a, b) => a.getTime() - b.getTime());
+        }
+        setHoursFromInputs();
+        if (shouldChangeMonth) {
+            const isNewYear = self.currentYear !== selectedDate.getFullYear();
+            self.currentYear = selectedDate.getFullYear();
+            self.currentMonth = selectedDate.getMonth();
+            if (isNewYear) {
+                triggerEvent("onYearChange");
+                buildMonthSwitch();
+            }
+            triggerEvent("onMonthChange");
+        }
+        updateNavigationCurrentMonth();
+        buildDays();
+        updateValue();
+        if (!shouldChangeMonth &&
+            self.config.mode !== "range" &&
+            self.config.showMonths === 1)
+            focusOnDayElem(target);
+        else if (self.selectedDateElem !== undefined &&
+            self.hourElement === undefined) {
+            self.selectedDateElem && self.selectedDateElem.focus();
+        }
+        if (self.hourElement !== undefined)
+            self.hourElement !== undefined && self.hourElement.focus();
+        if (self.config.closeOnSelect) {
+            const single = self.config.mode === "single" && !self.config.enableTime;
+            const range = self.config.mode === "range" &&
+                self.selectedDates.length === 2 &&
+                !self.config.enableTime;
+            if (single || range) {
+                focusAndClose();
+            }
+        }
+        triggerChange();
+    }
+    const CALLBACKS = {
+        locale: [setupLocale, updateWeekdays],
+        showMonths: [buildMonths, setCalendarWidth, buildWeekdays],
+        minDate: [jumpToDate],
+        maxDate: [jumpToDate],
+        clickOpens: [
+            () => {
+                if (self.config.clickOpens === true) {
+                    bind(self._input, "focus", self.open);
+                    bind(self._input, "click", self.open);
+                }
+                else {
+                    self._input.removeEventListener("focus", self.open);
+                    self._input.removeEventListener("click", self.open);
+                }
+            },
+        ],
+    };
+    function set(option, value) {
+        if (option !== null && typeof option === "object") {
+            Object.assign(self.config, option);
+            for (const key in option) {
+                if (CALLBACKS[key] !== undefined)
+                    CALLBACKS[key].forEach((x) => x());
+            }
+        }
+        else {
+            self.config[option] = value;
+            if (CALLBACKS[option] !== undefined)
+                CALLBACKS[option].forEach((x) => x());
+            else if (_types_options__WEBPACK_IMPORTED_MODULE_0__.HOOKS.indexOf(option) > -1)
+                self.config[option] = (0,_utils__WEBPACK_IMPORTED_MODULE_2__.arrayify)(value);
+        }
+        self.redraw();
+        updateValue(true);
+    }
+    function setSelectedDate(inputDate, format) {
+        let dates = [];
+        if (inputDate instanceof Array)
+            dates = inputDate.map((d) => self.parseDate(d, format));
+        else if (inputDate instanceof Date || typeof inputDate === "number")
+            dates = [self.parseDate(inputDate, format)];
+        else if (typeof inputDate === "string") {
+            switch (self.config.mode) {
+                case "single":
+                case "time":
+                    dates = [self.parseDate(inputDate, format)];
+                    break;
+                case "multiple":
+                    dates = inputDate
+                        .split(self.config.conjunction)
+                        .map((date) => self.parseDate(date, format));
+                    break;
+                case "range":
+                    dates = inputDate
+                        .split(self.l10n.rangeSeparator)
+                        .map((date) => self.parseDate(date, format));
+                    break;
+                default:
+                    break;
+            }
+        }
+        else
+            self.config.errorHandler(new Error(`Invalid date supplied: ${JSON.stringify(inputDate)}`));
+        self.selectedDates = (self.config.allowInvalidPreload
+            ? dates
+            : dates.filter((d) => d instanceof Date && isEnabled(d, false)));
+        if (self.config.mode === "range")
+            self.selectedDates.sort((a, b) => a.getTime() - b.getTime());
+    }
+    function setDate(date, triggerChange = false, format = self.config.dateFormat) {
+        if ((date !== 0 && !date) || (date instanceof Array && date.length === 0))
+            return self.clear(triggerChange);
+        setSelectedDate(date, format);
+        self.latestSelectedDateObj =
+            self.selectedDates[self.selectedDates.length - 1];
+        self.redraw();
+        jumpToDate(undefined, triggerChange);
+        setHoursFromDate();
+        if (self.selectedDates.length === 0) {
+            self.clear(false);
+        }
+        updateValue(triggerChange);
+        if (triggerChange)
+            triggerEvent("onChange");
+    }
+    function parseDateRules(arr) {
+        return arr
+            .slice()
+            .map((rule) => {
+            if (typeof rule === "string" ||
+                typeof rule === "number" ||
+                rule instanceof Date) {
+                return self.parseDate(rule, undefined, true);
+            }
+            else if (rule &&
+                typeof rule === "object" &&
+                rule.from &&
+                rule.to)
+                return {
+                    from: self.parseDate(rule.from, undefined),
+                    to: self.parseDate(rule.to, undefined),
+                };
+            return rule;
+        })
+            .filter((x) => x);
+    }
+    function setupDates() {
+        self.selectedDates = [];
+        self.now = self.parseDate(self.config.now) || new Date();
+        const preloadedDate = self.config.defaultDate ||
+            ((self.input.nodeName === "INPUT" ||
+                self.input.nodeName === "TEXTAREA") &&
+                self.input.placeholder &&
+                self.input.value === self.input.placeholder
+                ? null
+                : self.input.value);
+        if (preloadedDate)
+            setSelectedDate(preloadedDate, self.config.dateFormat);
+        self._initialDate =
+            self.selectedDates.length > 0
+                ? self.selectedDates[0]
+                : self.config.minDate &&
+                    self.config.minDate.getTime() > self.now.getTime()
+                    ? self.config.minDate
+                    : self.config.maxDate &&
+                        self.config.maxDate.getTime() < self.now.getTime()
+                        ? self.config.maxDate
+                        : self.now;
+        self.currentYear = self._initialDate.getFullYear();
+        self.currentMonth = self._initialDate.getMonth();
+        if (self.selectedDates.length > 0)
+            self.latestSelectedDateObj = self.selectedDates[0];
+        if (self.config.minTime !== undefined)
+            self.config.minTime = self.parseDate(self.config.minTime, "H:i");
+        if (self.config.maxTime !== undefined)
+            self.config.maxTime = self.parseDate(self.config.maxTime, "H:i");
+        self.minDateHasTime =
+            !!self.config.minDate &&
+                (self.config.minDate.getHours() > 0 ||
+                    self.config.minDate.getMinutes() > 0 ||
+                    self.config.minDate.getSeconds() > 0);
+        self.maxDateHasTime =
+            !!self.config.maxDate &&
+                (self.config.maxDate.getHours() > 0 ||
+                    self.config.maxDate.getMinutes() > 0 ||
+                    self.config.maxDate.getSeconds() > 0);
+    }
+    function setupInputs() {
+        self.input = getInputElem();
+        if (!self.input) {
+            self.config.errorHandler(new Error("Invalid input element specified"));
+            return;
+        }
+        self.input._type = self.input.type;
+        self.input.type = "text";
+        self.input.classList.add("flatpickr-input");
+        self._input = self.input;
+        if (self.config.altInput) {
+            self.altInput = (0,_utils_dom__WEBPACK_IMPORTED_MODULE_3__.createElement)(self.input.nodeName, self.config.altInputClass);
+            self._input = self.altInput;
+            self.altInput.placeholder = self.input.placeholder;
+            self.altInput.disabled = self.input.disabled;
+            self.altInput.required = self.input.required;
+            self.altInput.tabIndex = self.input.tabIndex;
+            self.altInput.type = "text";
+            self.input.setAttribute("type", "hidden");
+            if (!self.config.static && self.input.parentNode)
+                self.input.parentNode.insertBefore(self.altInput, self.input.nextSibling);
+        }
+        if (!self.config.allowInput)
+            self._input.setAttribute("readonly", "readonly");
+        self._positionElement = self.config.positionElement || self._input;
+    }
+    function setupMobile() {
+        const inputType = self.config.enableTime
+            ? self.config.noCalendar
+                ? "time"
+                : "datetime-local"
+            : "date";
+        self.mobileInput = (0,_utils_dom__WEBPACK_IMPORTED_MODULE_3__.createElement)("input", self.input.className + " flatpickr-mobile");
+        self.mobileInput.tabIndex = 1;
+        self.mobileInput.type = inputType;
+        self.mobileInput.disabled = self.input.disabled;
+        self.mobileInput.required = self.input.required;
+        self.mobileInput.placeholder = self.input.placeholder;
+        self.mobileFormatStr =
+            inputType === "datetime-local"
+                ? "Y-m-d\\TH:i:S"
+                : inputType === "date"
+                    ? "Y-m-d"
+                    : "H:i:S";
+        if (self.selectedDates.length > 0) {
+            self.mobileInput.defaultValue = self.mobileInput.value = self.formatDate(self.selectedDates[0], self.mobileFormatStr);
+        }
+        if (self.config.minDate)
+            self.mobileInput.min = self.formatDate(self.config.minDate, "Y-m-d");
+        if (self.config.maxDate)
+            self.mobileInput.max = self.formatDate(self.config.maxDate, "Y-m-d");
+        if (self.input.getAttribute("step"))
+            self.mobileInput.step = String(self.input.getAttribute("step"));
+        self.input.type = "hidden";
+        if (self.altInput !== undefined)
+            self.altInput.type = "hidden";
+        try {
+            if (self.input.parentNode)
+                self.input.parentNode.insertBefore(self.mobileInput, self.input.nextSibling);
+        }
+        catch (_a) { }
+        bind(self.mobileInput, "change", (e) => {
+            self.setDate((0,_utils_dom__WEBPACK_IMPORTED_MODULE_3__.getEventTarget)(e).value, false, self.mobileFormatStr);
+            triggerEvent("onChange");
+            triggerEvent("onClose");
+        });
+    }
+    function toggle(e) {
+        if (self.isOpen === true)
+            return self.close();
+        self.open(e);
+    }
+    function triggerEvent(event, data) {
+        if (self.config === undefined)
+            return;
+        const hooks = self.config[event];
+        if (hooks !== undefined && hooks.length > 0) {
+            for (let i = 0; hooks[i] && i < hooks.length; i++)
+                hooks[i](self.selectedDates, self.input.value, self, data);
+        }
+        if (event === "onChange") {
+            self.input.dispatchEvent(createEvent("change"));
+            self.input.dispatchEvent(createEvent("input"));
+        }
+    }
+    function createEvent(name) {
+        const e = document.createEvent("Event");
+        e.initEvent(name, true, true);
+        return e;
+    }
+    function isDateSelected(date) {
+        for (let i = 0; i < self.selectedDates.length; i++) {
+            if ((0,_utils_dates__WEBPACK_IMPORTED_MODULE_4__.compareDates)(self.selectedDates[i], date) === 0)
+                return "" + i;
+        }
+        return false;
+    }
+    function isDateInRange(date) {
+        if (self.config.mode !== "range" || self.selectedDates.length < 2)
+            return false;
+        return ((0,_utils_dates__WEBPACK_IMPORTED_MODULE_4__.compareDates)(date, self.selectedDates[0]) >= 0 &&
+            (0,_utils_dates__WEBPACK_IMPORTED_MODULE_4__.compareDates)(date, self.selectedDates[1]) <= 0);
+    }
+    function updateNavigationCurrentMonth() {
+        if (self.config.noCalendar || self.isMobile || !self.monthNav)
+            return;
+        self.yearElements.forEach((yearElement, i) => {
+            const d = new Date(self.currentYear, self.currentMonth, 1);
+            d.setMonth(self.currentMonth + i);
+            if (self.config.showMonths > 1 ||
+                self.config.monthSelectorType === "static") {
+                self.monthElements[i].textContent =
+                    (0,_utils_formatting__WEBPACK_IMPORTED_MODULE_5__.monthToStr)(d.getMonth(), self.config.shorthandCurrentMonth, self.l10n) + " ";
+            }
+            else {
+                self.monthsDropdownContainer.value = d.getMonth().toString();
+            }
+            yearElement.value = d.getFullYear().toString();
+        });
+        self._hidePrevMonthArrow =
+            self.config.minDate !== undefined &&
+                (self.currentYear === self.config.minDate.getFullYear()
+                    ? self.currentMonth <= self.config.minDate.getMonth()
+                    : self.currentYear < self.config.minDate.getFullYear());
+        self._hideNextMonthArrow =
+            self.config.maxDate !== undefined &&
+                (self.currentYear === self.config.maxDate.getFullYear()
+                    ? self.currentMonth + 1 > self.config.maxDate.getMonth()
+                    : self.currentYear > self.config.maxDate.getFullYear());
+    }
+    function getDateStr(format) {
+        return self.selectedDates
+            .map((dObj) => self.formatDate(dObj, format))
+            .filter((d, i, arr) => self.config.mode !== "range" ||
+            self.config.enableTime ||
+            arr.indexOf(d) === i)
+            .join(self.config.mode !== "range"
+            ? self.config.conjunction
+            : self.l10n.rangeSeparator);
+    }
+    function updateValue(triggerChange = true) {
+        if (self.mobileInput !== undefined && self.mobileFormatStr) {
+            self.mobileInput.value =
+                self.latestSelectedDateObj !== undefined
+                    ? self.formatDate(self.latestSelectedDateObj, self.mobileFormatStr)
+                    : "";
+        }
+        self.input.value = getDateStr(self.config.dateFormat);
+        if (self.altInput !== undefined) {
+            self.altInput.value = getDateStr(self.config.altFormat);
+        }
+        if (triggerChange !== false)
+            triggerEvent("onValueUpdate");
+    }
+    function onMonthNavClick(e) {
+        const eventTarget = (0,_utils_dom__WEBPACK_IMPORTED_MODULE_3__.getEventTarget)(e);
+        const isPrevMonth = self.prevMonthNav.contains(eventTarget);
+        const isNextMonth = self.nextMonthNav.contains(eventTarget);
+        if (isPrevMonth || isNextMonth) {
+            changeMonth(isPrevMonth ? -1 : 1);
+        }
+        else if (self.yearElements.indexOf(eventTarget) >= 0) {
+            eventTarget.select();
+        }
+        else if (eventTarget.classList.contains("arrowUp")) {
+            self.changeYear(self.currentYear + 1);
+        }
+        else if (eventTarget.classList.contains("arrowDown")) {
+            self.changeYear(self.currentYear - 1);
+        }
+    }
+    function timeWrapper(e) {
+        e.preventDefault();
+        const isKeyDown = e.type === "keydown", eventTarget = (0,_utils_dom__WEBPACK_IMPORTED_MODULE_3__.getEventTarget)(e), input = eventTarget;
+        if (self.amPM !== undefined && eventTarget === self.amPM) {
+            self.amPM.textContent =
+                self.l10n.amPM[(0,_utils__WEBPACK_IMPORTED_MODULE_2__.int)(self.amPM.textContent === self.l10n.amPM[0])];
+        }
+        const min = parseFloat(input.getAttribute("min")), max = parseFloat(input.getAttribute("max")), step = parseFloat(input.getAttribute("step")), curValue = parseInt(input.value, 10), delta = e.delta ||
+            (isKeyDown ? (e.which === 38 ? 1 : -1) : 0);
+        let newValue = curValue + step * delta;
+        if (typeof input.value !== "undefined" && input.value.length === 2) {
+            const isHourElem = input === self.hourElement, isMinuteElem = input === self.minuteElement;
+            if (newValue < min) {
+                newValue =
+                    max +
+                        newValue +
+                        (0,_utils__WEBPACK_IMPORTED_MODULE_2__.int)(!isHourElem) +
+                        ((0,_utils__WEBPACK_IMPORTED_MODULE_2__.int)(isHourElem) && (0,_utils__WEBPACK_IMPORTED_MODULE_2__.int)(!self.amPM));
+                if (isMinuteElem)
+                    incrementNumInput(undefined, -1, self.hourElement);
+            }
+            else if (newValue > max) {
+                newValue =
+                    input === self.hourElement ? newValue - max - (0,_utils__WEBPACK_IMPORTED_MODULE_2__.int)(!self.amPM) : min;
+                if (isMinuteElem)
+                    incrementNumInput(undefined, 1, self.hourElement);
+            }
+            if (self.amPM &&
+                isHourElem &&
+                (step === 1
+                    ? newValue + curValue === 23
+                    : Math.abs(newValue - curValue) > step)) {
+                self.amPM.textContent =
+                    self.l10n.amPM[(0,_utils__WEBPACK_IMPORTED_MODULE_2__.int)(self.amPM.textContent === self.l10n.amPM[0])];
+            }
+            input.value = (0,_utils__WEBPACK_IMPORTED_MODULE_2__.pad)(newValue);
+        }
+    }
+    init();
+    return self;
+}
+function _flatpickr(nodeList, config) {
+    const nodes = Array.prototype.slice
+        .call(nodeList)
+        .filter((x) => x instanceof HTMLElement);
+    const instances = [];
+    for (let i = 0; i < nodes.length; i++) {
+        const node = nodes[i];
+        try {
+            if (node.getAttribute("data-fp-omit") !== null)
+                continue;
+            if (node._flatpickr !== undefined) {
+                node._flatpickr.destroy();
+                node._flatpickr = undefined;
+            }
+            node._flatpickr = FlatpickrInstance(node, config || {});
+            instances.push(node._flatpickr);
+        }
+        catch (e) {
+            console.error(e);
+        }
+    }
+    return instances.length === 1 ? instances[0] : instances;
+}
+if (typeof HTMLElement !== "undefined" &&
+    typeof HTMLCollection !== "undefined" &&
+    typeof NodeList !== "undefined") {
+    HTMLCollection.prototype.flatpickr = NodeList.prototype.flatpickr = function (config) {
+        return _flatpickr(this, config);
+    };
+    HTMLElement.prototype.flatpickr = function (config) {
+        return _flatpickr([this], config);
+    };
+}
+var flatpickr = function (selector, config) {
+    if (typeof selector === "string") {
+        return _flatpickr(window.document.querySelectorAll(selector), config);
+    }
+    else if (selector instanceof Node) {
+        return _flatpickr([selector], config);
+    }
+    else {
+        return _flatpickr(selector, config);
+    }
+};
+flatpickr.defaultConfig = {};
+flatpickr.l10ns = {
+    en: Object.assign({}, _l10n_default__WEBPACK_IMPORTED_MODULE_1__.default),
+    default: Object.assign({}, _l10n_default__WEBPACK_IMPORTED_MODULE_1__.default),
+};
+flatpickr.localize = (l10n) => {
+    flatpickr.l10ns.default = Object.assign(Object.assign({}, flatpickr.l10ns.default), l10n);
+};
+flatpickr.setDefaults = (config) => {
+    flatpickr.defaultConfig = Object.assign(Object.assign({}, flatpickr.defaultConfig), config);
+};
+flatpickr.parseDate = (0,_utils_dates__WEBPACK_IMPORTED_MODULE_4__.createDateParser)({});
+flatpickr.formatDate = (0,_utils_dates__WEBPACK_IMPORTED_MODULE_4__.createDateFormatter)({});
+flatpickr.compareDates = _utils_dates__WEBPACK_IMPORTED_MODULE_4__.compareDates;
+if (typeof jQuery !== "undefined" && typeof jQuery.fn !== "undefined") {
+    jQuery.fn.flatpickr = function (config) {
+        return _flatpickr(this, config);
+    };
+}
+Date.prototype.fp_incr = function (days) {
+    return new Date(this.getFullYear(), this.getMonth(), this.getDate() + (typeof days === "string" ? parseInt(days, 10) : days));
+};
+if (typeof window !== "undefined") {
+    window.flatpickr = flatpickr;
+}
+/* harmony default export */ __webpack_exports__["default"] = (flatpickr);
+
+
+/***/ }),
+
+/***/ "./node_modules/flatpickr/dist/esm/l10n/default.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/flatpickr/dist/esm/l10n/default.js ***!
+  \*********************************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "english": function() { return /* binding */ english; }
+/* harmony export */ });
+const english = {
+    weekdays: {
+        shorthand: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+        longhand: [
+            "Sunday",
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+        ],
+    },
+    months: {
+        shorthand: [
+            "Jan",
+            "Feb",
+            "Mar",
+            "Apr",
+            "May",
+            "Jun",
+            "Jul",
+            "Aug",
+            "Sep",
+            "Oct",
+            "Nov",
+            "Dec",
+        ],
+        longhand: [
+            "January",
+            "February",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "December",
+        ],
+    },
+    daysInMonth: [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31],
+    firstDayOfWeek: 0,
+    ordinal: (nth) => {
+        const s = nth % 100;
+        if (s > 3 && s < 21)
+            return "th";
+        switch (s % 10) {
+            case 1:
+                return "st";
+            case 2:
+                return "nd";
+            case 3:
+                return "rd";
+            default:
+                return "th";
+        }
+    },
+    rangeSeparator: " to ",
+    weekAbbreviation: "Wk",
+    scrollTitle: "Scroll to increment",
+    toggleTitle: "Click to toggle",
+    amPM: ["AM", "PM"],
+    yearAriaLabel: "Year",
+    monthAriaLabel: "Month",
+    hourAriaLabel: "Hour",
+    minuteAriaLabel: "Minute",
+    time_24hr: false,
+};
+/* harmony default export */ __webpack_exports__["default"] = (english);
+
+
+/***/ }),
+
+/***/ "./node_modules/flatpickr/dist/esm/types/options.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/flatpickr/dist/esm/types/options.js ***!
+  \**********************************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "HOOKS": function() { return /* binding */ HOOKS; },
+/* harmony export */   "defaults": function() { return /* binding */ defaults; }
+/* harmony export */ });
+const HOOKS = [
+    "onChange",
+    "onClose",
+    "onDayCreate",
+    "onDestroy",
+    "onKeyDown",
+    "onMonthChange",
+    "onOpen",
+    "onParseConfig",
+    "onReady",
+    "onValueUpdate",
+    "onYearChange",
+    "onPreCalendarPosition",
+];
+const defaults = {
+    _disable: [],
+    allowInput: false,
+    allowInvalidPreload: false,
+    altFormat: "F j, Y",
+    altInput: false,
+    altInputClass: "form-control input",
+    animate: typeof window === "object" &&
+        window.navigator.userAgent.indexOf("MSIE") === -1,
+    ariaDateFormat: "F j, Y",
+    autoFillDefaultTime: true,
+    clickOpens: true,
+    closeOnSelect: true,
+    conjunction: ", ",
+    dateFormat: "Y-m-d",
+    defaultHour: 12,
+    defaultMinute: 0,
+    defaultSeconds: 0,
+    disable: [],
+    disableMobile: false,
+    enableSeconds: false,
+    enableTime: false,
+    errorHandler: (err) => typeof console !== "undefined" && console.warn(err),
+    getWeek: (givenDate) => {
+        const date = new Date(givenDate.getTime());
+        date.setHours(0, 0, 0, 0);
+        date.setDate(date.getDate() + 3 - ((date.getDay() + 6) % 7));
+        var week1 = new Date(date.getFullYear(), 0, 4);
+        return (1 +
+            Math.round(((date.getTime() - week1.getTime()) / 86400000 -
+                3 +
+                ((week1.getDay() + 6) % 7)) /
+                7));
+    },
+    hourIncrement: 1,
+    ignoredFocusElements: [],
+    inline: false,
+    locale: "default",
+    minuteIncrement: 5,
+    mode: "single",
+    monthSelectorType: "dropdown",
+    nextArrow: "<svg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 17 17'><g></g><path d='M13.207 8.472l-7.854 7.854-0.707-0.707 7.146-7.146-7.146-7.148 0.707-0.707 7.854 7.854z' /></svg>",
+    noCalendar: false,
+    now: new Date(),
+    onChange: [],
+    onClose: [],
+    onDayCreate: [],
+    onDestroy: [],
+    onKeyDown: [],
+    onMonthChange: [],
+    onOpen: [],
+    onParseConfig: [],
+    onReady: [],
+    onValueUpdate: [],
+    onYearChange: [],
+    onPreCalendarPosition: [],
+    plugins: [],
+    position: "auto",
+    positionElement: undefined,
+    prevArrow: "<svg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 17 17'><g></g><path d='M5.207 8.471l7.146 7.147-0.707 0.707-7.853-7.854 7.854-7.853 0.707 0.707-7.147 7.146z' /></svg>",
+    shorthandCurrentMonth: false,
+    showMonths: 1,
+    static: false,
+    time_24hr: false,
+    weekNumbers: false,
+    wrap: false,
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/flatpickr/dist/esm/utils/dates.js":
+/*!********************************************************!*\
+  !*** ./node_modules/flatpickr/dist/esm/utils/dates.js ***!
+  \********************************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "createDateFormatter": function() { return /* binding */ createDateFormatter; },
+/* harmony export */   "createDateParser": function() { return /* binding */ createDateParser; },
+/* harmony export */   "compareDates": function() { return /* binding */ compareDates; },
+/* harmony export */   "compareTimes": function() { return /* binding */ compareTimes; },
+/* harmony export */   "isBetween": function() { return /* binding */ isBetween; },
+/* harmony export */   "duration": function() { return /* binding */ duration; },
+/* harmony export */   "getDefaultHours": function() { return /* binding */ getDefaultHours; }
+/* harmony export */ });
+/* harmony import */ var _formatting__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./formatting */ "./node_modules/flatpickr/dist/esm/utils/formatting.js");
+/* harmony import */ var _types_options__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../types/options */ "./node_modules/flatpickr/dist/esm/types/options.js");
+/* harmony import */ var _l10n_default__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../l10n/default */ "./node_modules/flatpickr/dist/esm/l10n/default.js");
+
+
+
+const createDateFormatter = ({ config = _types_options__WEBPACK_IMPORTED_MODULE_1__.defaults, l10n = _l10n_default__WEBPACK_IMPORTED_MODULE_2__.english, isMobile = false, }) => (dateObj, frmt, overrideLocale) => {
+    const locale = overrideLocale || l10n;
+    if (config.formatDate !== undefined && !isMobile) {
+        return config.formatDate(dateObj, frmt, locale);
+    }
+    return frmt
+        .split("")
+        .map((c, i, arr) => _formatting__WEBPACK_IMPORTED_MODULE_0__.formats[c] && arr[i - 1] !== "\\"
+        ? _formatting__WEBPACK_IMPORTED_MODULE_0__.formats[c](dateObj, locale, config)
+        : c !== "\\"
+            ? c
+            : "")
+        .join("");
+};
+const createDateParser = ({ config = _types_options__WEBPACK_IMPORTED_MODULE_1__.defaults, l10n = _l10n_default__WEBPACK_IMPORTED_MODULE_2__.english }) => (date, givenFormat, timeless, customLocale) => {
+    if (date !== 0 && !date)
+        return undefined;
+    const locale = customLocale || l10n;
+    let parsedDate;
+    const dateOrig = date;
+    if (date instanceof Date)
+        parsedDate = new Date(date.getTime());
+    else if (typeof date !== "string" &&
+        date.toFixed !== undefined)
+        parsedDate = new Date(date);
+    else if (typeof date === "string") {
+        const format = givenFormat || (config || _types_options__WEBPACK_IMPORTED_MODULE_1__.defaults).dateFormat;
+        const datestr = String(date).trim();
+        if (datestr === "today") {
+            parsedDate = new Date();
+            timeless = true;
+        }
+        else if (/Z$/.test(datestr) ||
+            /GMT$/.test(datestr))
+            parsedDate = new Date(date);
+        else if (config && config.parseDate)
+            parsedDate = config.parseDate(date, format);
+        else {
+            parsedDate =
+                !config || !config.noCalendar
+                    ? new Date(new Date().getFullYear(), 0, 1, 0, 0, 0, 0)
+                    : new Date(new Date().setHours(0, 0, 0, 0));
+            let matched, ops = [];
+            for (let i = 0, matchIndex = 0, regexStr = ""; i < format.length; i++) {
+                const token = format[i];
+                const isBackSlash = token === "\\";
+                const escaped = format[i - 1] === "\\" || isBackSlash;
+                if (_formatting__WEBPACK_IMPORTED_MODULE_0__.tokenRegex[token] && !escaped) {
+                    regexStr += _formatting__WEBPACK_IMPORTED_MODULE_0__.tokenRegex[token];
+                    const match = new RegExp(regexStr).exec(date);
+                    if (match && (matched = true)) {
+                        ops[token !== "Y" ? "push" : "unshift"]({
+                            fn: _formatting__WEBPACK_IMPORTED_MODULE_0__.revFormat[token],
+                            val: match[++matchIndex],
+                        });
+                    }
+                }
+                else if (!isBackSlash)
+                    regexStr += ".";
+                ops.forEach(({ fn, val }) => (parsedDate = fn(parsedDate, val, locale) || parsedDate));
+            }
+            parsedDate = matched ? parsedDate : undefined;
+        }
+    }
+    if (!(parsedDate instanceof Date && !isNaN(parsedDate.getTime()))) {
+        config.errorHandler(new Error(`Invalid date provided: ${dateOrig}`));
+        return undefined;
+    }
+    if (timeless === true)
+        parsedDate.setHours(0, 0, 0, 0);
+    return parsedDate;
+};
+function compareDates(date1, date2, timeless = true) {
+    if (timeless !== false) {
+        return (new Date(date1.getTime()).setHours(0, 0, 0, 0) -
+            new Date(date2.getTime()).setHours(0, 0, 0, 0));
+    }
+    return date1.getTime() - date2.getTime();
+}
+function compareTimes(date1, date2) {
+    return (3600 * (date1.getHours() - date2.getHours()) +
+        60 * (date1.getMinutes() - date2.getMinutes()) +
+        date1.getSeconds() -
+        date2.getSeconds());
+}
+const isBetween = (ts, ts1, ts2) => {
+    return ts > Math.min(ts1, ts2) && ts < Math.max(ts1, ts2);
+};
+const duration = {
+    DAY: 86400000,
+};
+function getDefaultHours(config) {
+    let hours = config.defaultHour;
+    let minutes = config.defaultMinute;
+    let seconds = config.defaultSeconds;
+    if (config.minDate !== undefined) {
+        const minHour = config.minDate.getHours();
+        const minMinutes = config.minDate.getMinutes();
+        const minSeconds = config.minDate.getSeconds();
+        if (hours < minHour) {
+            hours = minHour;
+        }
+        if (hours === minHour && minutes < minMinutes) {
+            minutes = minMinutes;
+        }
+        if (hours === minHour && minutes === minMinutes && seconds < minSeconds)
+            seconds = config.minDate.getSeconds();
+    }
+    if (config.maxDate !== undefined) {
+        const maxHr = config.maxDate.getHours();
+        const maxMinutes = config.maxDate.getMinutes();
+        hours = Math.min(hours, maxHr);
+        if (hours === maxHr)
+            minutes = Math.min(maxMinutes, minutes);
+        if (hours === maxHr && minutes === maxMinutes)
+            seconds = config.maxDate.getSeconds();
+    }
+    return { hours, minutes, seconds };
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/flatpickr/dist/esm/utils/dom.js":
+/*!******************************************************!*\
+  !*** ./node_modules/flatpickr/dist/esm/utils/dom.js ***!
+  \******************************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "toggleClass": function() { return /* binding */ toggleClass; },
+/* harmony export */   "createElement": function() { return /* binding */ createElement; },
+/* harmony export */   "clearNode": function() { return /* binding */ clearNode; },
+/* harmony export */   "findParent": function() { return /* binding */ findParent; },
+/* harmony export */   "createNumberInput": function() { return /* binding */ createNumberInput; },
+/* harmony export */   "getEventTarget": function() { return /* binding */ getEventTarget; }
+/* harmony export */ });
+function toggleClass(elem, className, bool) {
+    if (bool === true)
+        return elem.classList.add(className);
+    elem.classList.remove(className);
+}
+function createElement(tag, className, content) {
+    const e = window.document.createElement(tag);
+    className = className || "";
+    content = content || "";
+    e.className = className;
+    if (content !== undefined)
+        e.textContent = content;
+    return e;
+}
+function clearNode(node) {
+    while (node.firstChild)
+        node.removeChild(node.firstChild);
+}
+function findParent(node, condition) {
+    if (condition(node))
+        return node;
+    else if (node.parentNode)
+        return findParent(node.parentNode, condition);
+    return undefined;
+}
+function createNumberInput(inputClassName, opts) {
+    const wrapper = createElement("div", "numInputWrapper"), numInput = createElement("input", "numInput " + inputClassName), arrowUp = createElement("span", "arrowUp"), arrowDown = createElement("span", "arrowDown");
+    if (navigator.userAgent.indexOf("MSIE 9.0") === -1) {
+        numInput.type = "number";
+    }
+    else {
+        numInput.type = "text";
+        numInput.pattern = "\\d*";
+    }
+    if (opts !== undefined)
+        for (const key in opts)
+            numInput.setAttribute(key, opts[key]);
+    wrapper.appendChild(numInput);
+    wrapper.appendChild(arrowUp);
+    wrapper.appendChild(arrowDown);
+    return wrapper;
+}
+function getEventTarget(event) {
+    try {
+        if (typeof event.composedPath === "function") {
+            const path = event.composedPath();
+            return path[0];
+        }
+        return event.target;
+    }
+    catch (error) {
+        return event.target;
+    }
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/flatpickr/dist/esm/utils/formatting.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/flatpickr/dist/esm/utils/formatting.js ***!
+  \*************************************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "monthToStr": function() { return /* binding */ monthToStr; },
+/* harmony export */   "revFormat": function() { return /* binding */ revFormat; },
+/* harmony export */   "tokenRegex": function() { return /* binding */ tokenRegex; },
+/* harmony export */   "formats": function() { return /* binding */ formats; }
+/* harmony export */ });
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils */ "./node_modules/flatpickr/dist/esm/utils/index.js");
+
+const doNothing = () => undefined;
+const monthToStr = (monthNumber, shorthand, locale) => locale.months[shorthand ? "shorthand" : "longhand"][monthNumber];
+const revFormat = {
+    D: doNothing,
+    F: function (dateObj, monthName, locale) {
+        dateObj.setMonth(locale.months.longhand.indexOf(monthName));
+    },
+    G: (dateObj, hour) => {
+        dateObj.setHours(parseFloat(hour));
+    },
+    H: (dateObj, hour) => {
+        dateObj.setHours(parseFloat(hour));
+    },
+    J: (dateObj, day) => {
+        dateObj.setDate(parseFloat(day));
+    },
+    K: (dateObj, amPM, locale) => {
+        dateObj.setHours((dateObj.getHours() % 12) +
+            12 * (0,_utils__WEBPACK_IMPORTED_MODULE_0__.int)(new RegExp(locale.amPM[1], "i").test(amPM)));
+    },
+    M: function (dateObj, shortMonth, locale) {
+        dateObj.setMonth(locale.months.shorthand.indexOf(shortMonth));
+    },
+    S: (dateObj, seconds) => {
+        dateObj.setSeconds(parseFloat(seconds));
+    },
+    U: (_, unixSeconds) => new Date(parseFloat(unixSeconds) * 1000),
+    W: function (dateObj, weekNum, locale) {
+        const weekNumber = parseInt(weekNum);
+        const date = new Date(dateObj.getFullYear(), 0, 2 + (weekNumber - 1) * 7, 0, 0, 0, 0);
+        date.setDate(date.getDate() - date.getDay() + locale.firstDayOfWeek);
+        return date;
+    },
+    Y: (dateObj, year) => {
+        dateObj.setFullYear(parseFloat(year));
+    },
+    Z: (_, ISODate) => new Date(ISODate),
+    d: (dateObj, day) => {
+        dateObj.setDate(parseFloat(day));
+    },
+    h: (dateObj, hour) => {
+        dateObj.setHours(parseFloat(hour));
+    },
+    i: (dateObj, minutes) => {
+        dateObj.setMinutes(parseFloat(minutes));
+    },
+    j: (dateObj, day) => {
+        dateObj.setDate(parseFloat(day));
+    },
+    l: doNothing,
+    m: (dateObj, month) => {
+        dateObj.setMonth(parseFloat(month) - 1);
+    },
+    n: (dateObj, month) => {
+        dateObj.setMonth(parseFloat(month) - 1);
+    },
+    s: (dateObj, seconds) => {
+        dateObj.setSeconds(parseFloat(seconds));
+    },
+    u: (_, unixMillSeconds) => new Date(parseFloat(unixMillSeconds)),
+    w: doNothing,
+    y: (dateObj, year) => {
+        dateObj.setFullYear(2000 + parseFloat(year));
+    },
+};
+const tokenRegex = {
+    D: "(\\w+)",
+    F: "(\\w+)",
+    G: "(\\d\\d|\\d)",
+    H: "(\\d\\d|\\d)",
+    J: "(\\d\\d|\\d)\\w+",
+    K: "",
+    M: "(\\w+)",
+    S: "(\\d\\d|\\d)",
+    U: "(.+)",
+    W: "(\\d\\d|\\d)",
+    Y: "(\\d{4})",
+    Z: "(.+)",
+    d: "(\\d\\d|\\d)",
+    h: "(\\d\\d|\\d)",
+    i: "(\\d\\d|\\d)",
+    j: "(\\d\\d|\\d)",
+    l: "(\\w+)",
+    m: "(\\d\\d|\\d)",
+    n: "(\\d\\d|\\d)",
+    s: "(\\d\\d|\\d)",
+    u: "(.+)",
+    w: "(\\d\\d|\\d)",
+    y: "(\\d{2})",
+};
+const formats = {
+    Z: (date) => date.toISOString(),
+    D: function (date, locale, options) {
+        return locale.weekdays.shorthand[formats.w(date, locale, options)];
+    },
+    F: function (date, locale, options) {
+        return monthToStr(formats.n(date, locale, options) - 1, false, locale);
+    },
+    G: function (date, locale, options) {
+        return (0,_utils__WEBPACK_IMPORTED_MODULE_0__.pad)(formats.h(date, locale, options));
+    },
+    H: (date) => (0,_utils__WEBPACK_IMPORTED_MODULE_0__.pad)(date.getHours()),
+    J: function (date, locale) {
+        return locale.ordinal !== undefined
+            ? date.getDate() + locale.ordinal(date.getDate())
+            : date.getDate();
+    },
+    K: (date, locale) => locale.amPM[(0,_utils__WEBPACK_IMPORTED_MODULE_0__.int)(date.getHours() > 11)],
+    M: function (date, locale) {
+        return monthToStr(date.getMonth(), true, locale);
+    },
+    S: (date) => (0,_utils__WEBPACK_IMPORTED_MODULE_0__.pad)(date.getSeconds()),
+    U: (date) => date.getTime() / 1000,
+    W: function (date, _, options) {
+        return options.getWeek(date);
+    },
+    Y: (date) => (0,_utils__WEBPACK_IMPORTED_MODULE_0__.pad)(date.getFullYear(), 4),
+    d: (date) => (0,_utils__WEBPACK_IMPORTED_MODULE_0__.pad)(date.getDate()),
+    h: (date) => (date.getHours() % 12 ? date.getHours() % 12 : 12),
+    i: (date) => (0,_utils__WEBPACK_IMPORTED_MODULE_0__.pad)(date.getMinutes()),
+    j: (date) => date.getDate(),
+    l: function (date, locale) {
+        return locale.weekdays.longhand[date.getDay()];
+    },
+    m: (date) => (0,_utils__WEBPACK_IMPORTED_MODULE_0__.pad)(date.getMonth() + 1),
+    n: (date) => date.getMonth() + 1,
+    s: (date) => date.getSeconds(),
+    u: (date) => date.getTime(),
+    w: (date) => date.getDay(),
+    y: (date) => String(date.getFullYear()).substring(2),
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/flatpickr/dist/esm/utils/index.js":
+/*!********************************************************!*\
+  !*** ./node_modules/flatpickr/dist/esm/utils/index.js ***!
+  \********************************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "pad": function() { return /* binding */ pad; },
+/* harmony export */   "int": function() { return /* binding */ int; },
+/* harmony export */   "debounce": function() { return /* binding */ debounce; },
+/* harmony export */   "arrayify": function() { return /* binding */ arrayify; }
+/* harmony export */ });
+const pad = (number, length = 2) => `000${number}`.slice(length * -1);
+const int = (bool) => (bool === true ? 1 : 0);
+function debounce(fn, wait) {
+    let t;
+    return function () {
+        clearTimeout(t);
+        t = setTimeout(() => fn.apply(this, arguments), wait);
+    };
+}
+const arrayify = (obj) => obj instanceof Array ? obj : [obj];
+
+
+/***/ }),
+
+/***/ "./node_modules/flatpickr/dist/esm/utils/polyfills.js":
+/*!************************************************************!*\
+  !*** ./node_modules/flatpickr/dist/esm/utils/polyfills.js ***!
+  \************************************************************/
+/***/ (function() {
+
+"use strict";
+
+if (typeof Object.assign !== "function") {
+    Object.assign = function (target, ...args) {
+        if (!target) {
+            throw TypeError("Cannot convert undefined or null to object");
+        }
+        for (const source of args) {
+            if (source) {
+                Object.keys(source).forEach((key) => (target[key] = source[key]));
+            }
+        }
+        return target;
+    };
+}
+
+
+/***/ }),
+
 /***/ "./node_modules/fuse.js/dist/fuse.js":
 /*!*******************************************!*\
   !*** ./node_modules/fuse.js/dist/fuse.js ***!
@@ -28582,6 +31534,33 @@ var update = _style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMP
 
 
 /* harmony default export */ __webpack_exports__["default"] = (_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_postcss_loader_src_index_js_clonedRuleSet_9_0_rules_0_use_2_table_css__WEBPACK_IMPORTED_MODULE_1__.default.locals || {});
+
+/***/ }),
+
+/***/ "./node_modules/flatpickr/dist/flatpickr.css":
+/*!***************************************************!*\
+  !*** ./node_modules/flatpickr/dist/flatpickr.css ***!
+  \***************************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_postcss_loader_src_index_js_clonedRuleSet_9_0_rules_0_use_2_flatpickr_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!../../postcss-loader/src/index.js??clonedRuleSet-9[0].rules[0].use[2]!./flatpickr.css */ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/postcss-loader/src/index.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/flatpickr/dist/flatpickr.css");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_postcss_loader_src_index_js_clonedRuleSet_9_0_rules_0_use_2_flatpickr_css__WEBPACK_IMPORTED_MODULE_1__.default, options);
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = (_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_postcss_loader_src_index_js_clonedRuleSet_9_0_rules_0_use_2_flatpickr_css__WEBPACK_IMPORTED_MODULE_1__.default.locals || {});
 
 /***/ }),
 
@@ -31774,6 +34753,16 @@ if (typeof this !== 'undefined' && this.Sweetalert2){  this.swal = this.sweetAle
 
 /***/ }),
 
+/***/ "./node_modules/vue-flatpickr-component/dist/vue-flatpickr.min.js":
+/*!************************************************************************!*\
+  !*** ./node_modules/vue-flatpickr-component/dist/vue-flatpickr.min.js ***!
+  \************************************************************************/
+/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+
+!function(t,e){ true?module.exports=e(__webpack_require__(/*! flatpickr */ "./node_modules/flatpickr/dist/esm/index.js")):0}("undefined"!=typeof self?self:this,(function(t){return function(t){var e={};function n(r){if(e[r])return e[r].exports;var o=e[r]={i:r,l:!1,exports:{}};return t[r].call(o.exports,o,o.exports,n),o.l=!0,o.exports}return n.m=t,n.c=e,n.d=function(t,e,r){n.o(t,e)||Object.defineProperty(t,e,{enumerable:!0,get:r})},n.r=function(t){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(t,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(t,"__esModule",{value:!0})},n.t=function(t,e){if(1&e&&(t=n(t)),8&e)return t;if(4&e&&"object"==typeof t&&t&&t.__esModule)return t;var r=Object.create(null);if(n.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:t}),2&e&&"string"!=typeof t)for(var o in t)n.d(r,o,function(e){return t[e]}.bind(null,o));return r},n.n=function(t){var e=t&&t.__esModule?function(){return t.default}:function(){return t};return n.d(e,"a",e),e},n.o=function(t,e){return Object.prototype.hasOwnProperty.call(t,e)},n.p="",n(n.s=1)}([function(e,n){e.exports=t},function(t,e,n){"use strict";n.r(e),n.d(e,"Component",(function(){return c})),n.d(e,"Plugin",(function(){return p}));var r=n(0),o=n.n(r),i=["onChange","onClose","onDestroy","onMonthChange","onOpen","onYearChange"];function u(){return(u=Object.assign||function(t){for(var e=1;e<arguments.length;e++){var n=arguments[e];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(t[r]=n[r])}return t}).apply(this,arguments)}var a=function(t){return t.replace(/([a-z])([A-Z])/g,"$1-$2").toLowerCase()},f=function(t){return u({},t)},l=i.concat(["onValueUpdate","onDayCreate","onParseConfig","onReady","onPreCalendarPosition","onKeyDown"]),s=["locale","showMonths"],c={name:"flat-pickr",render:function(t){return t("input",{attrs:{type:"text","data-input":!0},props:{disabled:this.disabled},on:{input:this.onInput}})},props:{value:{default:null,required:!0,validator:function(t){return null===t||t instanceof Date||"string"==typeof t||t instanceof String||t instanceof Array||"number"==typeof t}},config:{type:Object,default:function(){return{wrap:!1,defaultDate:null}}},events:{type:Array,default:function(){return i}},disabled:{type:Boolean,default:!1}},data:function(){return{fp:null}},mounted:function(){var t=this;if(!this.fp){var e=f(this.config);this.events.forEach((function(n){var r,i=o.a.defaultConfig[n]||[];e[n]=(r=e[n]||[],r instanceof Array?r:[r]).concat(i,(function(){for(var e=arguments.length,r=new Array(e),o=0;o<e;o++)r[o]=arguments[o];t.$emit.apply(t,[a(n)].concat(r))}))})),e.defaultDate=this.value||e.defaultDate,this.fp=new o.a(this.getElem(),e),this.fpInput().addEventListener("blur",this.onBlur),this.$on("on-close",this.onClose),this.$watch("disabled",this.watchDisabled,{immediate:!0})}},methods:{getElem:function(){return this.config.wrap?this.$el.parentNode:this.$el},onInput:function(t){var e=this,n=t.target;this.$nextTick((function(){e.$emit("input",n.value)}))},fpInput:function(){return this.fp.altInput||this.fp.input},onBlur:function(t){this.$emit("blur",t.target.value)},onClose:function(t,e){this.$emit("input",e)},watchDisabled:function(t){t?this.fpInput().setAttribute("disabled",t):this.fpInput().removeAttribute("disabled")}},watch:{config:{deep:!0,handler:function(t){var e=this,n=f(t);l.forEach((function(t){delete n[t]})),this.fp.set(n),s.forEach((function(t){void 0!==n[t]&&e.fp.set(t,n[t])}))}},value:function(t){t!==this.$el.value&&this.fp&&this.fp.setDate(t,!0)}},beforeDestroy:function(){this.fp&&(this.fpInput().removeEventListener("blur",this.onBlur),this.fp.destroy(),this.fp=null)}},p=function(t,e){var n="flat-pickr";"string"==typeof e&&(n=e),t.component(n,c)};c.install=p;e.default=c}]).default}));
+
+/***/ }),
+
 /***/ "./resources/js/contain/admin/schedule/schedule.vue":
 /*!**********************************************************!*\
   !*** ./resources/js/contain/admin/schedule/schedule.vue ***!
@@ -31900,16 +34889,17 @@ var render = function() {
               _vm._v(" "),
               _c(
                 "b-col",
-                {
-                  staticClass: "mt-3 mt-lg-0 text-lg-right",
-                  attrs: { lg: "6" }
-                },
+                { staticClass: "text-right", attrs: { cols: "5", lg: "6" } },
                 [
                   _c(
                     "base-button",
                     {
                       staticClass: "btn btn-neutral btn-sm",
-                      on: { click: _vm.onDateClick }
+                      on: {
+                        click: function($event) {
+                          _vm.showAddModal = true
+                        }
+                      }
                     },
                     [
                       _c("i", { staticClass: "fas fa-plus" }),
@@ -31974,7 +34964,35 @@ var render = function() {
                 },
                 [
                   _c("template", { slot: "header" }, [
-                    _c("h3", { staticClass: "mb-0" }, [_vm._v("Flights table")])
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "d-flex justify-content-between align-items-center"
+                      },
+                      [
+                        _c("h3", { staticClass: "mb-0" }, [
+                          _vm._v("Flights table")
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "base-button",
+                          {
+                            staticClass: "btn btn-neutral btn-sm",
+                            on: {
+                              click: function($event) {
+                                _vm.showAddModal = true
+                              }
+                            }
+                          },
+                          [
+                            _c("i", { staticClass: "fas fa-plus" }),
+                            _vm._v("Add Reservation\n            ")
+                          ]
+                        )
+                      ],
+                      1
+                    )
                   ]),
                   _vm._v(" "),
                   _c(
@@ -32063,7 +35081,8 @@ var render = function() {
                                     _vm._v(
                                       "\n                " +
                                         _vm._s(
-                                          row.airline_code + row.flight_number
+                                          row.flight.airline_code +
+                                            row.flight.flight_number
                                         ) +
                                         "\n              "
                                     )
@@ -32086,11 +35105,13 @@ var render = function() {
                                 fn: function(ref) {
                                   var row = ref.row
                                   return _c("div", {}, [
-                                    _vm._v(
-                                      "\n                " +
-                                        _vm._s(row.aircraft.registration) +
-                                        "\n              "
-                                    )
+                                    row.aircraft != null
+                                      ? _c("span", [
+                                          _vm._v(
+                                            _vm._s(row.aircraft.registration)
+                                          )
+                                        ])
+                                      : _c("span", [_vm._v("Not assigned")])
                                   ])
                                 }
                               }
@@ -32103,16 +35124,48 @@ var render = function() {
                               prop: "origin_airport_name",
                               "min-width": "120px",
                               sortable: ""
-                            }
+                            },
+                            scopedSlots: _vm._u([
+                              {
+                                key: "default",
+                                fn: function(ref) {
+                                  var row = ref.row
+                                  return _c("div", {}, [
+                                    _c("span", [
+                                      _vm._v(
+                                        _vm._s(row.flight.origin_airport_name)
+                                      )
+                                    ])
+                                  ])
+                                }
+                              }
+                            ])
                           }),
                           _vm._v(" "),
                           _c("el-table-column", {
                             attrs: {
                               label: "To",
                               prop: "destination_airport_name",
-                              "min-width": "140px",
+                              "min-width": "120px",
                               sortable: ""
-                            }
+                            },
+                            scopedSlots: _vm._u([
+                              {
+                                key: "default",
+                                fn: function(ref) {
+                                  var row = ref.row
+                                  return _c("div", {}, [
+                                    _c("span", [
+                                      _vm._v(
+                                        _vm._s(
+                                          row.flight.destination_airport_name
+                                        )
+                                      )
+                                    ])
+                                  ])
+                                }
+                              }
+                            ])
                           }),
                           _vm._v(" "),
                           _c("el-table-column", {
@@ -32135,22 +35188,6 @@ var render = function() {
                           _vm._v(" "),
                           _c("el-table-column", {
                             attrs: {
-                              label: "Duration",
-                              prop: "flight_time",
-                              "min-width": "100px"
-                            }
-                          }),
-                          _vm._v(" "),
-                          _c("el-table-column", {
-                            attrs: {
-                              label: "Days Of Ope",
-                              prop: "operation_days",
-                              "min-width": "120px"
-                            }
-                          }),
-                          _vm._v(" "),
-                          _c("el-table-column", {
-                            attrs: {
                               label: "Type",
                               prop: "type",
                               "min-width": "100px"
@@ -32161,7 +35198,7 @@ var render = function() {
                                 fn: function(ref) {
                                   var row = ref.row
                                   return _c("div", {}, [
-                                    row.type == "REGULAR"
+                                    row.flight.type == "REGULAR"
                                       ? _c(
                                           "span",
                                           { staticClass: "text-primary" },
@@ -32193,16 +35230,28 @@ var render = function() {
                                     "div",
                                     {},
                                     [
-                                      row.status == 1
+                                      row.status == "PLANNED"
+                                        ? _c(
+                                            "badge",
+                                            { attrs: { type: "primary" } },
+                                            [_c("span", [_vm._v("PLANNED")])]
+                                          )
+                                        : row.status == "CONFIRMED"
                                         ? _c(
                                             "badge",
                                             { attrs: { type: "success" } },
-                                            [_c("span", [_vm._v("Active")])]
+                                            [_c("span", [_vm._v("CONFIRMED")])]
+                                          )
+                                        : row.status == "DELAYED"
+                                        ? _c(
+                                            "badge",
+                                            { attrs: { type: "warning" } },
+                                            [_c("span", [_vm._v("DELAYED")])]
                                           )
                                         : _c(
                                             "badge",
-                                            { attrs: { type: "warning" } },
-                                            [_c("span", [_vm._v("Deactive")])]
+                                            { attrs: { type: "danger" } },
+                                            [_c("span", [_vm._v("CANCELLED")])]
                                           )
                                     ],
                                     1
@@ -32223,24 +35272,37 @@ var render = function() {
                                 key: "default",
                                 fn: function(ref) {
                                   var row = ref.row
-                                  return _c(
-                                    "div",
-                                    {},
-                                    [
-                                      row.status == 1
-                                        ? _c(
-                                            "badge",
-                                            { attrs: { type: "success" } },
-                                            [_c("span", [_vm._v("Active")])]
-                                          )
-                                        : _c(
-                                            "badge",
-                                            { attrs: { type: "warning" } },
-                                            [_c("span", [_vm._v("Deactive")])]
-                                          )
-                                    ],
-                                    1
-                                  )
+                                  return _c("div", {}, [
+                                    row.phase == "OPEN"
+                                      ? _c(
+                                          "span",
+                                          { staticClass: "text-primary" },
+                                          [_vm._v("OPEN")]
+                                        )
+                                      : row.phase == "BOARDING"
+                                      ? _c(
+                                          "span",
+                                          { staticClass: "text-orange" },
+                                          [_vm._v("BOARDING")]
+                                        )
+                                      : row.phase == "DEPARTED"
+                                      ? _c(
+                                          "span",
+                                          { staticClass: "text-success" },
+                                          [_vm._v("DEPARTED")]
+                                        )
+                                      : row.phase == "LANDED"
+                                      ? _c(
+                                          "span",
+                                          { staticClass: "text-info" },
+                                          [_vm._v("LANDED")]
+                                        )
+                                      : _c(
+                                          "span",
+                                          { staticClass: "text-danger" },
+                                          [_vm._v("CLOSED")]
+                                        )
+                                  ])
                                 }
                               }
                             ])
@@ -32270,7 +35332,8 @@ var render = function() {
                                           attrs: {
                                             type: "primary",
                                             size: "sm",
-                                            icon: ""
+                                            icon: "",
+                                            disabled: row.aircraft == null
                                           },
                                           nativeOn: {
                                             click: function($event) {
@@ -32370,134 +35433,443 @@ var render = function() {
           }
         },
         [
-          _c(
-            "form",
-            {
-              staticClass: "new-event--form",
-              on: {
-                submit: function($event) {
-                  $event.preventDefault()
-                  return _vm.saveEvent($event)
-                }
-              }
-            },
-            [
-              _c("base-input", {
-                attrs: {
-                  label: "Event title",
-                  placeholder: "Event Title",
-                  "input-classes": "form-control-alternative new-event--title"
-                },
-                model: {
-                  value: _vm.model.title,
-                  callback: function($$v) {
-                    _vm.$set(_vm.model, "title", $$v)
-                  },
-                  expression: "model.title"
-                }
-              }),
-              _vm._v(" "),
-              _c("div", { staticClass: "form-group" }, [
-                _c(
-                  "label",
-                  { staticClass: "form-control-label d-block mb-3" },
-                  [_vm._v("Status color")]
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    staticClass:
-                      "btn-group btn-group-toggle btn-group-colors event-tag"
-                  },
-                  _vm._l(_vm.eventColors, function(color) {
-                    return _c(
-                      "label",
+          _vm.isError
+            ? _c("base-alert", { attrs: { dismissible: "", type: "danger" } }, [
+                _c("strong", [_vm._v("Failed!")]),
+                _vm._v(" " + _vm._s(_vm.error) + "\n    ")
+              ])
+            : _vm._e(),
+          _vm._v(" "),
+          _c("validation-observer", {
+            ref: "formValidator",
+            scopedSlots: _vm._u([
+              {
+                key: "default",
+                fn: function(ref) {
+                  var handleSubmit = ref.handleSubmit
+                  return [
+                    _c(
+                      "b-form",
                       {
-                        key: color,
-                        staticClass: "btn",
-                        class: [
-                          color,
-                          { "active focused": _vm.model.className === color }
-                        ]
+                        staticClass: "new-event--form row",
+                        attrs: { role: "form" },
+                        on: {
+                          submit: function($event) {
+                            $event.preventDefault()
+                            return handleSubmit(_vm.saveEvent)
+                          }
+                        }
                       },
                       [
-                        _c("input", {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: _vm.model.className,
-                              expression: "model.className"
-                            }
+                        _c(
+                          "div",
+                          { staticClass: "col-12" },
+                          [
+                            _c("base-input", {
+                              attrs: {
+                                label: "Date",
+                                disabled: "",
+                                "input-classes":
+                                  "form-control-alternative new-event--title"
+                              },
+                              model: {
+                                value: _vm.today,
+                                callback: function($$v) {
+                                  _vm.today = $$v
+                                },
+                                expression: "today"
+                              }
+                            })
                           ],
-                          attrs: {
-                            type: "radio",
-                            name: "event-tag",
-                            autocomplete: "off"
+                          1
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          { staticClass: "col-12" },
+                          [
+                            _c(
+                              "base-input",
+                              { attrs: { label: "Type" } },
+                              [
+                                _c(
+                                  "el-select",
+                                  {
+                                    attrs: {
+                                      filterable: "",
+                                      placeholder: "Scheduled Type",
+                                      rules: { required: true }
+                                    },
+                                    model: {
+                                      value: _vm.model.type,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.model, "type", $$v)
+                                      },
+                                      expression: "model.type"
+                                    }
+                                  },
+                                  _vm._l(_vm.typeOptions, function(option) {
+                                    return _c("el-option", {
+                                      key: option.label,
+                                      attrs: {
+                                        label: option.label,
+                                        value: option.value
+                                      }
+                                    })
+                                  }),
+                                  1
+                                )
+                              ],
+                              1
+                            )
+                          ],
+                          1
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          { staticClass: "col-12" },
+                          [
+                            _c(
+                              "base-input",
+                              { attrs: { label: "Aircraft" } },
+                              [
+                                _c(
+                                  "el-select",
+                                  {
+                                    attrs: {
+                                      filterable: "",
+                                      placeholder: "Aircraft Registration",
+                                      rules: { required: true }
+                                    },
+                                    model: {
+                                      value: _vm.model.aircraft,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.model, "aircraft", $$v)
+                                      },
+                                      expression: "model.aircraft"
+                                    }
+                                  },
+                                  _vm._l(_vm.aircraftOptions, function(option) {
+                                    return _c("el-option", {
+                                      key: option.label,
+                                      attrs: {
+                                        label: option.label,
+                                        value: option.value
+                                      }
+                                    })
+                                  }),
+                                  1
+                                )
+                              ],
+                              1
+                            )
+                          ],
+                          1
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          { staticClass: "col-12" },
+                          [
+                            _c(
+                              "base-input",
+                              { attrs: { label: "Flight No." } },
+                              [
+                                _c(
+                                  "el-select",
+                                  {
+                                    attrs: {
+                                      filterable: "",
+                                      placeholder: "Flight",
+                                      rules: { required: true }
+                                    },
+                                    on: {
+                                      change: function($event) {
+                                        return _vm.handleFlight()
+                                      }
+                                    },
+                                    model: {
+                                      value: _vm.model.flight,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.model, "flight", $$v)
+                                      },
+                                      expression: "model.flight"
+                                    }
+                                  },
+                                  _vm._l(_vm.aircraftFlights, function(option) {
+                                    return option.status == "PLANNED"
+                                      ? _c("el-option", {
+                                          key: option.flight_id,
+                                          attrs: {
+                                            label:
+                                              option.flight.airline_code +
+                                              option.flight.flight_number,
+                                            value: option.flight_id
+                                          }
+                                        })
+                                      : _vm._e()
+                                  }),
+                                  1
+                                )
+                              ],
+                              1
+                            )
+                          ],
+                          1
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          { staticClass: "col-6" },
+                          [
+                            _c("base-input", {
+                              attrs: {
+                                alternative: "",
+                                label: "Origin",
+                                placeholder: "Origin Airport",
+                                name: "Origin",
+                                disabled: ""
+                              },
+                              model: {
+                                value: _vm.model.origin,
+                                callback: function($$v) {
+                                  _vm.$set(_vm.model, "origin", $$v)
+                                },
+                                expression: "model.origin"
+                              }
+                            })
+                          ],
+                          1
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          { staticClass: "col-6" },
+                          [
+                            _c("base-input", {
+                              attrs: {
+                                alternative: "",
+                                label: "Destination",
+                                placeholder: "Destination Airport",
+                                name: "Destination",
+                                disabled: ""
+                              },
+                              model: {
+                                value: _vm.model.destination,
+                                callback: function($$v) {
+                                  _vm.$set(_vm.model, "destination", $$v)
+                                },
+                                expression: "model.destination"
+                              }
+                            })
+                          ],
+                          1
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          { staticClass: "col-6" },
+                          [
+                            _c("base-input", {
+                              attrs: {
+                                "append-icon": "fas fa-plane-departure",
+                                label: "Departure",
+                                name: "Departure",
+                                rules: { required: true }
+                              },
+                              scopedSlots: _vm._u(
+                                [
+                                  {
+                                    key: "default",
+                                    fn: function(ref) {
+                                      var focus = ref.focus
+                                      var blur = ref.blur
+                                      return _c("flat-picker", {
+                                        staticClass: "form-control datepicker",
+                                        attrs: {
+                                          config: _vm.configs.timePicker
+                                        },
+                                        on: {
+                                          "on-open": focus,
+                                          "on-close": blur
+                                        },
+                                        model: {
+                                          value: _vm.model.departure,
+                                          callback: function($$v) {
+                                            _vm.$set(
+                                              _vm.model,
+                                              "departure",
+                                              $$v
+                                            )
+                                          },
+                                          expression: "model.departure"
+                                        }
+                                      })
+                                    }
+                                  }
+                                ],
+                                null,
+                                true
+                              )
+                            })
+                          ],
+                          1
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          { staticClass: "col-6" },
+                          [
+                            _c("base-input", {
+                              attrs: {
+                                "append-icon": "fas fa-plane-arrival",
+                                label: "Arrival",
+                                name: "Arrival",
+                                rules: { required: true }
+                              },
+                              scopedSlots: _vm._u(
+                                [
+                                  {
+                                    key: "default",
+                                    fn: function(ref) {
+                                      var focus = ref.focus
+                                      var blur = ref.blur
+                                      return _c("flat-picker", {
+                                        staticClass: "form-control datepicker",
+                                        attrs: {
+                                          config: _vm.configs.timePicker
+                                        },
+                                        on: {
+                                          "on-open": focus,
+                                          "on-close": blur
+                                        },
+                                        model: {
+                                          value: _vm.model.arrival,
+                                          callback: function($$v) {
+                                            _vm.$set(_vm.model, "arrival", $$v)
+                                          },
+                                          expression: "model.arrival"
+                                        }
+                                      })
+                                    }
+                                  }
+                                ],
+                                null,
+                                true
+                              )
+                            })
+                          ],
+                          1
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "form-group col-12" }, [
+                          _c(
+                            "label",
+                            { staticClass: "form-control-label d-block mb-3" },
+                            [_vm._v("Status color")]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            {
+                              staticClass:
+                                "btn-group btn-group-toggle btn-group-colors event-tag"
+                            },
+                            _vm._l(_vm.eventColors, function(color) {
+                              return _c(
+                                "label",
+                                {
+                                  key: color,
+                                  staticClass: "btn",
+                                  class: [
+                                    color,
+                                    {
+                                      "active focused":
+                                        _vm.model.className === color
+                                    }
+                                  ]
+                                },
+                                [
+                                  _c("input", {
+                                    directives: [
+                                      {
+                                        name: "model",
+                                        rawName: "v-model",
+                                        value: _vm.model.className,
+                                        expression: "model.className"
+                                      }
+                                    ],
+                                    attrs: {
+                                      type: "radio",
+                                      name: "event-tag",
+                                      autocomplete: "off"
+                                    },
+                                    domProps: {
+                                      value: color,
+                                      checked: _vm._q(
+                                        _vm.model.className,
+                                        color
+                                      )
+                                    },
+                                    on: {
+                                      change: function($event) {
+                                        return _vm.$set(
+                                          _vm.model,
+                                          "className",
+                                          color
+                                        )
+                                      }
+                                    }
+                                  })
+                                ]
+                              )
+                            }),
+                            0
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          {
+                            staticClass:
+                              "col-12 d-flex justify-content-between mt-4"
                           },
-                          domProps: {
-                            value: color,
-                            checked: _vm._q(_vm.model.className, color)
-                          },
-                          on: {
-                            change: function($event) {
-                              return _vm.$set(_vm.model, "className", color)
-                            }
-                          }
-                        })
+                          [
+                            _c(
+                              "b-button",
+                              {
+                                staticClass: "new-event--add",
+                                attrs: { type: "submit", variant: "primary" }
+                              },
+                              [_vm._v("Add event")]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "b-button",
+                              {
+                                staticClass: "ml-auto",
+                                attrs: { type: "button", variant: "link" },
+                                on: {
+                                  click: function($event) {
+                                    _vm.showAddModal = false
+                                  }
+                                }
+                              },
+                              [_vm._v("Close")]
+                            )
+                          ],
+                          1
+                        )
                       ]
                     )
-                  }),
-                  0
-                )
-              ]),
-              _vm._v(" "),
-              _c("input", {
-                staticClass: "new-event--start",
-                attrs: { type: "hidden" }
-              }),
-              _vm._v(" "),
-              _c("input", {
-                staticClass: "new-event--end",
-                attrs: { type: "hidden" }
-              })
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "template",
-            { slot: "footer" },
-            [
-              _c(
-                "b-button",
-                {
-                  staticClass: "new-event--add",
-                  attrs: { type: "submit", variant: "primary" },
-                  on: { click: _vm.saveEvent }
-                },
-                [_vm._v("Add event")]
-              ),
-              _vm._v(" "),
-              _c(
-                "b-button",
-                {
-                  staticClass: "ml-auto",
-                  attrs: { type: "button", variant: "link" },
-                  on: {
-                    click: function($event) {
-                      _vm.showAddModal = false
-                    }
-                  }
-                },
-                [_vm._v("Close")]
-              )
-            ],
-            1
-          )
+                  ]
+                }
+              }
+            ])
+          })
         ],
-        2
+        1
       ),
       _vm._v(" "),
       _c(

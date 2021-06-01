@@ -203,7 +203,8 @@ var _components;
         status: 0
       },
       error: null,
-      isError: false
+      isError: false,
+      isSubmitting: false
     };
   },
   mounted: function mounted() {
@@ -226,10 +227,10 @@ var _components;
     onSubmit: function onSubmit() {
       var _this = this;
 
-      console.log(this.model.name); // this will be called only after form is valid. You can do an api call here to register passengers
+      // this will be called only after form is valid. You can do an api call here to register passengers
       // Reset the error if it existed.
-
       this.error = null;
+      this.isSubmitting = true;
       return this.updatePassenger({
         id: this.$route.params.passengerId,
         first_name: this.model.first_name,
@@ -244,6 +245,7 @@ var _components;
         status: this.model.status
       }).then(function (res) {
         _this.isError = false;
+        _this.isSubmitting = false;
 
         _this.$notify({
           message: 'Successfully Updated',
@@ -258,6 +260,7 @@ var _components;
       })["catch"](function (error) {
         _this.error = error ? error : "";
         _this.isError = true;
+        _this.isSubmitting = false;
       });
     }
   })
@@ -7283,7 +7286,8 @@ var render = function() {
                                             {
                                               attrs: {
                                                 type: "submit",
-                                                variant: "primary"
+                                                variant: "primary",
+                                                disabled: _vm.isSubmitting
                                               }
                                             },
                                             [_vm._v("Update")]

@@ -8,8 +8,8 @@
             <route-breadcrumb />
           </nav>
         </b-col>
-        <b-col lg="6" class="mt-3 mt-lg-0 text-lg-right" >
-          <base-button class="btn btn-neutral btn-sm" @click="onDateClick">
+        <b-col cols="5" lg="6" class="text-right" >
+          <base-button class="btn btn-neutral btn-sm" @click="showAddModal = true">
             <i class="fas fa-plus"></i>Add Reservation
           </base-button>
         </b-col>
@@ -23,7 +23,8 @@
             <!-- Card header -->
             <!-- Card body -->
             <b-card-body class="p-0 card-calendar-body">
-              <full-calendar :options="calendarOptions"
+              <full-calendar 
+                :options="calendarOptions"
               >
               </full-calendar>
             </b-card-body>
@@ -33,7 +34,12 @@
       <div>
         <card class="no-border-card" body-classes="px-0 pb-1" footer-classes="pb-2">
           <template slot="header">
-            <h3 class="mb-0">Flights table</h3>
+            <div class="d-flex justify-content-between align-items-center">
+              <h3 class="mb-0">Flights table</h3>
+              <base-button class="btn btn-neutral btn-sm" @click="showAddModal = true">
+                <i class="fas fa-plus"></i>Add Reservation
+              </base-button>
+            </div>
           </template>
           <div>
             <b-col cols="12" class="d-flex justify-content-center justify-content-sm-between flex-wrap"
@@ -69,7 +75,7 @@
                              min-width="140px"
                              sortable>
                 <div slot-scope="{row}">
-                  {{row.airline_code + row.flight_number}}
+                  {{row.flight.airline_code + row.flight.flight_number}}
                 </div>
               </el-table-column>
               <el-table-column label="Aircraft"
@@ -77,18 +83,25 @@
                              min-width="120px"
                              sortable>
                 <div slot-scope="{row}">
-                  {{row.aircraft.registration}}
+                  <span v-if="row.aircraft != null">{{row.aircraft.registration}}</span>
+                  <span v-else>Not assigned</span>
                 </div>
               </el-table-column>
               <el-table-column label="From"
                              prop="origin_airport_name"
                              min-width="120px"
                              sortable>
+                <div slot-scope="{row}">
+                  <span>{{row.flight.origin_airport_name}}</span>
+                </div>
               </el-table-column>
               <el-table-column label="To"
                              prop="destination_airport_name"
-                             min-width="140px"
+                             min-width="120px"
                              sortable>
+                <div slot-scope="{row}">
+                  <span>{{row.flight.destination_airport_name}}</span>
+                </div>
               </el-table-column>
               <el-table-column label="Departure"
                              prop="departure_time"
@@ -100,40 +113,41 @@
                              min-width="120px"
                              sortable>
               </el-table-column>
-              <el-table-column label="Duration"
+              <!-- <el-table-column label="Duration"
                              prop="flight_time"
                              min-width="100px">
-              </el-table-column>
-              <el-table-column label="Days Of Ope"
-                             prop="operation_days"
-                             min-width="120px">
-              </el-table-column>
+              </el-table-column> -->
               <el-table-column label="Type"
                              prop="type"
                              min-width="100px">
                 <div slot-scope="{row}">
-                  <span class="text-primary" v-if="row.type == 'REGULAR'">REGULAR</span>
+                  <span class="text-primary" v-if="row.flight.type == 'REGULAR'">REGULAR</span>
                   <span class="text-warning" v-else>CHARTER</span>
                 </div>
               </el-table-column>
               <el-table-column prop="status" label="Status" min-width="100px">
                 <div slot-scope="{row}">
-                  <badge class="" v-if="row.status == 1" type="success">
-                    <span>Active</span>
+                  <badge v-if="row.status == 'PLANNED'" type="primary">
+                    <span>PLANNED</span>
                   </badge>
-                  <badge class="" v-else type="warning">
-                    <span>Deactive</span>
+                  <badge v-else-if="row.status == 'CONFIRMED'" type="success">
+                    <span>CONFIRMED</span>
+                  </badge>
+                  <badge v-else-if="row.status == 'DELAYED'" type="warning">
+                    <span>DELAYED</span>
+                  </badge>
+                  <badge v-else type="danger">
+                    <span>CANCELLED</span>
                   </badge>
                 </div>
               </el-table-column>
               <el-table-column prop="phase" label="Phase" min-width="100px">
                 <div slot-scope="{row}">
-                  <badge class="" v-if="row.status == 1" type="success">
-                    <span>Active</span>
-                  </badge>
-                  <badge class="" v-else type="warning">
-                    <span>Deactive</span>
-                  </badge>
+                  <span class="text-primary" v-if="row.phase == 'OPEN'">OPEN</span>
+                  <span class="text-orange" v-else-if="row.phase == 'BOARDING'">BOARDING</span>
+                  <span class="text-success" v-else-if="row.phase == 'DEPARTED'">DEPARTED</span>
+                  <span class="text-info" v-else-if="row.phase == 'LANDED'">LANDED</span>
+                  <span class="text-danger" v-else>CLOSED</span>
                 </div>
               </el-table-column>
               <el-table-column min-width="100px" align="right" label="Actions">
@@ -143,6 +157,7 @@
                     type="primary"
                     size="sm"
                     icon
+                    :disabled="row.aircraft == null"
                   >
                     <i class="text-white ni ni-curved-next"></i>
                   </base-button>
@@ -178,32 +193,119 @@
     </b-container>
     
     <modal :show.sync="showAddModal" modal-classes="modal-secondary">
-      <form class="new-event--form" @submit.prevent="saveEvent">
-        <base-input label="Event title"
-                    placeholder="Event Title"
-                    v-model="model.title"
-                    input-classes="form-control-alternative new-event--title">
-        </base-input>
-        <div class="form-group">
-          <label class="form-control-label d-block mb-3">Status color</label>
-          <div class="btn-group btn-group-toggle btn-group-colors event-tag">
-
-            <label v-for="color in eventColors"
-                   :key="color"
-                   class="btn"
-                   :class="[color, {'active focused': model.className === color}]">
-              <input v-model="model.className" type="radio" name="event-tag" :value="color" autocomplete="off">
-            </label>
+      <base-alert v-if="isError" dismissible type="danger">
+        <strong>Failed!</strong> {{error}}
+      </base-alert>
+      <validation-observer v-slot="{handleSubmit}" ref="formValidator">
+        <b-form role="form" class="new-event--form row" @submit.prevent="handleSubmit(saveEvent)">
+          <div class="col-12">
+            <base-input label="Date"
+                        v-model="today"
+                        disabled
+                        input-classes="form-control-alternative new-event--title">
+            </base-input>
           </div>
-        </div>
-        <input type="hidden" class="new-event--start"/>
-        <input type="hidden" class="new-event--end"/>
-      </form>
-
-      <template slot="footer">
-        <b-button type="submit" variant="primary" class="new-event--add" @click="saveEvent">Add event</b-button>
-        <b-button type="button" variant="link" class="ml-auto" @click="showAddModal = false">Close</b-button>
-      </template>
+          <div class="col-12">
+            <base-input label="Type">
+              <el-select v-model="model.type"
+                          filterable
+                          placeholder="Scheduled Type"
+                          :rules="{required: true}">
+                <el-option v-for="option in typeOptions"
+                            :key="option.label"
+                            :label="option.label"
+                            :value="option.value">
+                </el-option>
+              </el-select>
+            </base-input>
+          </div>
+          <div class="col-12">
+            <base-input label="Aircraft">
+              <el-select v-model="model.aircraft"
+                          filterable
+                          placeholder="Aircraft Registration"
+                          :rules="{required: true}">
+                <el-option v-for="option in aircraftOptions"
+                            :key="option.label"
+                            :label="option.label"
+                            :value="option.value">
+                </el-option>
+              </el-select>
+            </base-input>
+          </div>
+          <div class="col-12">
+            <base-input label="Flight No.">
+              <el-select v-model="model.flight"
+                          filterable
+                          placeholder="Flight"
+                          :rules="{required: true}"
+                          @change="handleFlight()">
+                <el-option v-for="option in aircraftFlights" 
+                            v-if="option.status == 'PLANNED'"
+                            :key="option.flight_id"
+                            :label="option.flight.airline_code+option.flight.flight_number"
+                            :value="option.flight_id">
+                </el-option>
+              </el-select>
+            </base-input>
+          </div>
+          <div class="col-6">
+            <base-input alternative
+                        label="Origin"
+                        placeholder="Origin Airport"
+                        name="Origin"
+                        disabled
+                        v-model="model.origin">
+            </base-input>
+          </div>
+          <div class="col-6">
+            <base-input alternative
+                        label="Destination"
+                        placeholder="Destination Airport"
+                        name="Destination"
+                        disabled
+                        v-model="model.destination">
+            </base-input>
+          </div>
+          <div class="col-6">
+            <base-input append-icon="fas fa-plane-departure" label="Departure" name="Departure" :rules="{required: true}">
+              <flat-picker slot-scope="{focus, blur}"
+                            @on-open="focus"
+                            @on-close="blur"
+                            :config="configs.timePicker"
+                            class="form-control datepicker"
+                            v-model="model.departure">
+              </flat-picker>
+            </base-input>
+          </div>
+          <div class="col-6">
+            <base-input append-icon="fas fa-plane-arrival" label="Arrival" name="Arrival" :rules="{required: true}">
+              <flat-picker slot-scope="{focus, blur}"
+                            @on-open="focus"
+                            @on-close="blur"
+                            :config="configs.timePicker"
+                            class="form-control datepicker"
+                            v-model="model.arrival">
+              </flat-picker>
+            </base-input>
+          </div>
+          <div class="form-group col-12">
+            <label class="form-control-label d-block mb-3">Status color</label>
+            <div class="btn-group btn-group-toggle btn-group-colors event-tag">
+              <label v-for="color in eventColors"
+                    :key="color"
+                    class="btn"
+                    :class="[color, {'active focused': model.className === color}]">
+                <input v-model="model.className" type="radio" name="event-tag" :value="color" autocomplete="off">
+              </label>
+            </div>
+          </div>
+          <div class="col-12 d-flex justify-content-between mt-4">
+            <b-button type="submit" variant="primary" class="new-event--add">Add event</b-button>
+            <b-button type="button" variant="link" class="ml-auto" @click="showAddModal = false">Close</b-button>
+          </div>
+        </b-form>
+      </validation-observer>
     </modal>
 
     <modal :show.sync="showEditModal" modal-classes="modal-secondary">
@@ -255,21 +357,11 @@
   // import interactionPlugin from '@fullcalendar/interaction';
   import resourceTimelinePlugin from '@fullcalendar/resource-timeline'
   import BaseButton from '../../../components/BaseButton.vue';
+  import flatPicker from "vue-flatpickr-component";
+  import "flatpickr/dist/flatpickr.css";
 
   import {mapActions, mapGetters} from 'vuex'
 
-  const today = new Date();
-  const y = today.getFullYear();
-  const m = today.getMonth();
-  const d = today.getDate();
-  var w = today.getDay();
-  const yearAndMonthAndDate = `${y}-0${m + 1}-${d}`;
-  if (m > 9) {
-    yearAndMonthAndDate = `${y}-${m + 1}-${d}`;
-  }
-  if (w == 0) {
-    w = 7;
-  }
   export default {
     page: {
       title: "Schedule",
@@ -285,7 +377,8 @@
       [TableColumn.name]: TableColumn,
       Modal,
       FullCalendar,
-      BaseButton
+      BaseButton,
+      flatPicker,
     },
     data() {
       return {
@@ -293,9 +386,10 @@
         tableColumns: [],
         tableData: [],
         selectedRows: [],
+        today: '',
         calendarOptions: {
           eventClick: function(info) {
-              console.log(info)
+            console.log(info)
           },
           height: 500,
           plugins: [ resourceTimelinePlugin ],
@@ -309,9 +403,7 @@
           aspectRatio: 1.5,
           slotDuration: '00:15',
           editable: true,
-          filterResourcesWithEvents: false,
           resourceAreaWidth: "15%",
-          // droppable: true,
           resourceAreaColumns: [
             {
               field: 'title',
@@ -321,19 +413,49 @@
           resources: [],
           events: [],
         },
+        typeOptions: [
+          {
+            label: 'REGULAR',
+            value: 'REGULAR'
+          },
+          {
+            label: 'CHARTER',
+            value: 'CHARTER'
+          },
+        ],
+        configs: {
+          dateTimePicker: {
+            enableTime: true,
+            dateFormat: 'Y-m-d H:i'
+          },
+          timePicker: {
+            enableTime: true,
+            noCalendar: true,
+            dateFormat: "H:i",
+            time_24hr: true
+          }
+        },
         showAddModal: false,
         showEditModal: false,
         model: {
-          title: '',
+          type: '',
+          aircraft: '',
+          flight: '',
+          origin: '',
+          destination: '',
+          departure: '',
+          arrival: '',
           className: 'bg-default',
-          description: 'Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
-          start: '',
-          end: ''
         },
         eventColors: ['bg-info', 'bg-orange', 'bg-red', 'bg-green', 'bg-default', 'bg-blue', 'bg-purple', 'bg-yellow'],
+        error: null,
+        isError: false,
       };
     },
     watch: {
+      calendarOptions: function () {
+        console.log("asfd")
+      },
       aircrafts: function () {
         var that = this;
         this.aircrafts.forEach(function(item, index) {
@@ -346,35 +468,39 @@
       },
       aircraftFlights: function() {
         this.tableData = this.aircraftFlights;
+        this.today = this.aircraftFlights[0].date;
 
         var that = this;
-        // this.aircraftFlights.forEach(function(item, index) {
-        //   console.log(w)
-        //   if (item.operation_days.includes(w)) {
-        //     let temp = {}
-        //     temp.resourceId = item.aircraft_id
-        //     temp.title = item.airline_code + item.flight_number +", "+ item.origin_airport_code +"-"+ item.destination_airport_code
-        //     temp.start = yearAndMonthAndDate +"T"+ item.departure_time
-        //     temp.end = yearAndMonthAndDate +"T"+ item.arrival_time
-        //     temp.className = that.eventColors[index%8]
-        //     that.calendarOptions.events.push(temp)
-        //   }
-        // })
+        this.aircraftFlights.forEach(function(item, index) {
+          if (item.aircraft_id != null) {
+            let temp = {}
+            temp.resourceId = item.aircraft_id
+            temp.title = item.flight.airline_code + item.flight.flight_number +", "+ item.flight.origin_airport_code +"-"+ item.flight.destination_airport_code
+            temp.start = item.date +"T"+ item.departure_time
+            temp.end = item.date +"T"+ item.arrival_time
+            temp.className = that.eventColors[index%8]
+            that.calendarOptions.events.push(temp)
+          }
+        })
       },
     },
     computed: {
       ...mapGetters([
         'aircrafts',
         'aircraftFlights',
+        'aircraftOptions',
       ]),
     },
     mounted() {
       this.initAircrafts();
+      this.getAircraftOptions();
     },
     methods: {
       ...mapActions([
         'initAircrafts',
-        'getAircraftFlights'
+        'getAircraftFlights',
+        'getAircraftOptions',
+        'saveAircraftFlight',
       ]),
 
       paginationChanged(page) {
@@ -383,10 +509,59 @@
       goToSeatMap(row) {
         this.$router.push({ name: 'FlightSeatMap', params: { flightId: row.id }})
       },
-      handleEdit(row) {
-        this.$router.push({ name: 'FlightEdit', params: { flightId: row.id }})
+      handleFlight() {
+        let index = this.aircraftFlights.findIndex(e => e.flight_id === this.model.flight)
+        if (index !== -1) {
+          this.model.origin = this.aircraftFlights[index].flight.origin_airport_name
+          this.model.destination = this.aircraftFlights[index].flight.destination_airport_name
+          this.model.departure = this.aircraftFlights[index].flight.departure_time
+          this.model.arrival = this.aircraftFlights[index].flight.arrival_time
+        }
       },
-      handleDelete(index, row) {
+      onEventClick({ el, event }) {
+        // this.model = {
+        //   title: event.title,
+        //   className: event.classNames ? event.classNames.join(' '): '',
+        //   start: event.start,
+        //   end: event.end,
+        // }
+        this.showEditModal = true
+      },
+      saveEvent() {
+        this.error = null;
+        return (
+          this.saveAircraftFlight({
+              aircraft: this.model.aircraft,
+              flight: this.model.flight,
+              // origin_airport_name: this.model.origin,
+              // destination_airport_name: this.model.destination,
+              departure_time: this.model.departure,
+              arrival_time: this.model.arrival,
+            })
+            .then((res) => {
+              this.isError = false;
+              this.showAddModal = false;
+              this.$store.commit('SET_ALL_AIRCRAFT_FLIGHTS', res.data)
+            })
+            .catch((error) => {
+              this.error = error ? error : "";
+              this.isError = true;
+            })
+        );
+      },
+      editEvent() {
+        let index = this.events.findIndex(e => e.title === this.model.title)
+        if (index !== -1) {
+          this.events.splice(index, 1, this.model)
+        }
+        this.showEditModal = false
+      },
+      deleteEvent() {
+        let index = this.events.findIndex(e => e.title === this.model.title)
+        if (index !== -1) {
+          this.events.splice(index, 1)
+        }
+        this.showEditModal = false
         swal.fire({
           title: `Are you sure?`,
           text: "You won't be able to revert this!",
@@ -407,65 +582,6 @@
             });
           }
         });
-      },
-      calendarApi() {
-        return this.$refs.fullCalendar.getApi()
-      },
-      changeView(viewType) {
-        this.defaultView = viewType
-        this.calendarApi().changeView(viewType)
-      },
-      next() {
-        this.calendarApi().next()
-      },
-      prev() {
-        this.calendarApi().prev()
-      },
-      onDateClick({ date }) {
-        this.showAddModal = true
-        this.model.start = date
-        this.model.end = date
-      },
-      onEventClick({ el, event }) {
-        this.model = {
-          title: event.title,
-          className: event.classNames ? event.classNames.join(' '): '',
-          start: event.start,
-          end: event.end,
-          description: 'Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.'
-        }
-        this.showEditModal = true
-      },
-      saveEvent() {
-        if (this.model.title) {
-          let event = {
-            ...this.model,
-            allDay: true
-          }
-          this.events.push(JSON.parse(JSON.stringify(event)))
-
-          this.model = {
-            title: '',
-            eventColor: 'bg-danger',
-            start: '',
-            end: ''
-          }
-        }
-        this.showAddModal = false
-      },
-      editEvent() {
-        let index = this.events.findIndex(e => e.title === this.model.title)
-        if (index !== -1) {
-          this.events.splice(index, 1, this.model)
-        }
-        this.showEditModal = false
-      },
-      deleteEvent() {
-        let index = this.events.findIndex(e => e.title === this.model.title)
-        if (index !== -1) {
-          this.events.splice(index, 1)
-        }
-        this.showEditModal = false
       },
     }
   };

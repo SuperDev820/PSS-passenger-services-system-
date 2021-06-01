@@ -189,17 +189,18 @@ var _components;
         password: ''
       },
       error: null,
-      isError: false
+      isError: false,
+      isSubmitting: false
     };
   },
   methods: (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)((0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)({}, (0,vuex__WEBPACK_IMPORTED_MODULE_10__.mapActions)(['createPassenger'])), {}, {
     onSubmit: function onSubmit() {
       var _this = this;
 
-      console.log(this.model.range); // this will be called only after form is valid. You can do an api call here to register passengers
+      // this will be called only after form is valid. You can do an api call here to register passengers
       // Reset the error if it existed.
-
       this.error = null;
+      this.isSubmitting = true;
       return this.createPassenger({
         first_name: this.model.first_name,
         last_name: this.model.last_name,
@@ -212,6 +213,7 @@ var _components;
         password_confirmation: this.model.password
       }).then(function (res) {
         _this.isError = false;
+        _this.isSubmitting = false;
 
         _this.$notify({
           message: 'Successfully Created',
@@ -226,6 +228,7 @@ var _components;
       })["catch"](function (error) {
         _this.error = error ? error : "";
         _this.isError = true;
+        _this.isSubmitting = false;
       });
     }
   })
@@ -7210,7 +7213,8 @@ var render = function() {
                                             {
                                               attrs: {
                                                 type: "submit",
-                                                variant: "primary"
+                                                variant: "primary",
+                                                disabled: _vm.isSubmitting
                                               }
                                             },
                                             [_vm._v("Create")]

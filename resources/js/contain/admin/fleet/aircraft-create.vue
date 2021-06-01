@@ -70,7 +70,7 @@
                   </div>
                   <div class="d-flex justify-content-between col-12 mt-4">
                     <router-link :to="{name: 'Aircrafts'}" class="btn btn-secondary">Cancel</router-link>
-                    <b-button type="submit" variant="primary">Create</b-button>
+                    <b-button type="submit" :disabled="isSubmitting" variant="primary">Create</b-button>
                   </div>
                 </b-form>
               </validation-observer>
@@ -109,6 +109,7 @@
         },
         error: null,
         isError: false,
+        isSubmitting: false,
       }
     },
     methods: {
@@ -120,6 +121,7 @@
         // this will be called only after form is valid. You can do an api call here to register aircrafts
         // Reset the error if it existed.
         this.error = null;
+        this.isSubmitting = true;
         return (
           this.createAircraft({
               registration: this.model.registration,
@@ -129,6 +131,7 @@
             })
             .then((res) => {
               this.isError = false;
+              this.isSubmitting = false;
               this.$notify({
                 message: 'Successfully Created',
                 timeout: 5000,
@@ -142,6 +145,7 @@
             .catch((error) => {
               this.error = error ? error : "";
               this.isError = true;
+              this.isSubmitting = false;
             })
         );
       }

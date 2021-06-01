@@ -184,6 +184,15 @@ var _components;
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -253,12 +262,12 @@ var _components;
         status: 0
       },
       error: null,
-      isError: false
+      isError: false,
+      isSubmitting: false
     };
   },
   mounted: function mounted() {
     this.getFlightById(this.$route.params.flightId);
-    this.getAircraftOptions();
   },
   watch: {
     flight: function flight() {
@@ -275,15 +284,15 @@ var _components;
       this.model.status = this.flight.status;
     }
   },
-  computed: (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)({}, (0,vuex__WEBPACK_IMPORTED_MODULE_10__.mapGetters)(['flight', 'aircraftOptions'])),
-  methods: (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)((0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)({}, (0,vuex__WEBPACK_IMPORTED_MODULE_10__.mapActions)(['getFlightById', 'updateFlight', 'getAircraftOptions'])), {}, {
+  computed: (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)({}, (0,vuex__WEBPACK_IMPORTED_MODULE_10__.mapGetters)(['flight'])),
+  methods: (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)((0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)({}, (0,vuex__WEBPACK_IMPORTED_MODULE_10__.mapActions)(['getFlightById', 'updateFlight'])), {}, {
     onSubmit: function onSubmit() {
       var _this = this;
 
-      console.log(this.model.name); // this will be called only after form is valid. You can do an api call here to register flights
+      // this will be called only after form is valid. You can do an api call here to register flights
       // Reset the error if it existed.
-
       this.error = null;
+      this.isSubmitting = true;
       return this.updateFlight({
         id: this.$route.params.flightId,
         airline_code: this.model.airline_code,
@@ -299,6 +308,7 @@ var _components;
         status: this.model.status
       }).then(function (res) {
         _this.isError = false;
+        _this.isSubmitting = false;
 
         _this.$notify({
           message: 'Successfully Updated',
@@ -313,6 +323,7 @@ var _components;
       })["catch"](function (error) {
         _this.error = error ? error : "";
         _this.isError = true;
+        _this.isSubmitting = false;
       });
     }
   })
@@ -7052,7 +7063,7 @@ var render = function() {
                                     [
                                       _c(
                                         "div",
-                                        { staticClass: "col-8 offset-2" },
+                                        { staticClass: "col-md-6 col-sm-12" },
                                         [
                                           _c("base-input", {
                                             staticClass: "mb-3",
@@ -7075,8 +7086,15 @@ var render = function() {
                                               },
                                               expression: "model.airline_code"
                                             }
-                                          }),
-                                          _vm._v(" "),
+                                          })
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "div",
+                                        { staticClass: "col-md-6 col-sm-12" },
+                                        [
                                           _c("base-input", {
                                             staticClass: "mb-3",
                                             attrs: {
@@ -7098,8 +7116,15 @@ var render = function() {
                                               },
                                               expression: "model.flight_number"
                                             }
-                                          }),
-                                          _vm._v(" "),
+                                          })
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "div",
+                                        { staticClass: "col-md-6 col-sm-12" },
+                                        [
                                           _c("base-input", {
                                             staticClass: "mb-3",
                                             attrs: {
@@ -7124,8 +7149,15 @@ var render = function() {
                                               expression:
                                                 "model.origin_airport_name"
                                             }
-                                          }),
-                                          _vm._v(" "),
+                                          })
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "div",
+                                        { staticClass: "col-md-6 col-sm-12" },
+                                        [
                                           _c("base-input", {
                                             staticClass: "mb-3",
                                             attrs: {
@@ -7151,8 +7183,15 @@ var render = function() {
                                               expression:
                                                 "model.origin_airport_code"
                                             }
-                                          }),
-                                          _vm._v(" "),
+                                          })
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "div",
+                                        { staticClass: "col-md-6 col-sm-12" },
+                                        [
                                           _c("base-input", {
                                             staticClass: "mb-3",
                                             attrs: {
@@ -7179,8 +7218,15 @@ var render = function() {
                                               expression:
                                                 "model.destination_airport_name"
                                             }
-                                          }),
-                                          _vm._v(" "),
+                                          })
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "div",
+                                        { staticClass: "col-md-6 col-sm-12" },
+                                        [
                                           _c("base-input", {
                                             staticClass: "mb-3",
                                             attrs: {
@@ -7209,8 +7255,15 @@ var render = function() {
                                               expression:
                                                 "model.destination_airport_code"
                                             }
-                                          }),
-                                          _vm._v(" "),
+                                          })
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "div",
+                                        { staticClass: "col-md-6 col-sm-12" },
+                                        [
                                           _c("base-input", {
                                             attrs: {
                                               "prepend-icon":
@@ -7260,8 +7313,15 @@ var render = function() {
                                               null,
                                               true
                                             )
-                                          }),
-                                          _vm._v(" "),
+                                          })
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "div",
+                                        { staticClass: "col-md-6 col-sm-12" },
+                                        [
                                           _c("base-input", {
                                             attrs: {
                                               "prepend-icon":
@@ -7311,8 +7371,15 @@ var render = function() {
                                               null,
                                               true
                                             )
-                                          }),
-                                          _vm._v(" "),
+                                          })
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "div",
+                                        { staticClass: "col-md-6 col-sm-12" },
+                                        [
                                           _c(
                                             "base-input",
                                             { attrs: { label: "Type" } },
@@ -7354,8 +7421,15 @@ var render = function() {
                                               )
                                             ],
                                             1
-                                          ),
-                                          _vm._v(" "),
+                                          )
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "div",
+                                        { staticClass: "col-md-6 col-sm-12" },
+                                        [
                                           _c(
                                             "base-input",
                                             {
@@ -7430,6 +7504,7 @@ var render = function() {
                                             {
                                               attrs: {
                                                 type: "submit",
+                                                disabled: _vm.isSubmitting,
                                                 variant: "primary"
                                               }
                                             },

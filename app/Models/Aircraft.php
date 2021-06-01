@@ -16,6 +16,7 @@ class Aircraft extends Model
         'model',
         'seat_config',
         'total_seat',
+        'status',
     ];
 
     public function flights()

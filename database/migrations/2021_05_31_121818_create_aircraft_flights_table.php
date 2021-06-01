@@ -15,8 +15,8 @@ class CreateAircraftFlightsTable extends Migration
     {
         Schema::create('aircraft_flights', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('aircraft_id')->constrained('aircrafts')->nullable()->onUpdate('cascade');
-            $table->foreignId('flight_id')->constrained('flights')->nullable()->onUpdate('cascade');
+            $table->foreignId('aircraft_id')->nullable()->constrained('aircrafts');
+            $table->foreignId('flight_id')->nullable()->constrained('flights');
             $table->date('date')->nullable();
             $table->time('departure_time');
             $table->time('arrival_time');

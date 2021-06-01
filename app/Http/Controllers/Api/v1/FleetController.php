@@ -129,8 +129,14 @@ class FleetController extends Controller
     {
         $aircraftOptions = [];
         $aircrafts = Aircraft::orderBy('id')->get();
+        $temp = [
+            'label' => '',
+            'value' => '',
+        ];
         foreach ($aircrafts as $aircraft) {
-            array_push($aircraftOptions, $aircraft->registration);
+            $temp['label'] = $aircraft->registration;
+            $temp['value'] = $aircraft->id;
+            array_push($aircraftOptions, $temp);
         }
         return response()->json([
             'message' => 'success',
