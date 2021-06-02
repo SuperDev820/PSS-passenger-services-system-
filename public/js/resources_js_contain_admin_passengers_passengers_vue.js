@@ -196,7 +196,6 @@ var _components;
 //
 //
 //
-//
 
 
 
@@ -218,7 +217,6 @@ var _components;
   data: function data() {
     return {
       propsToSearch: ['name', 'email'],
-      tableColumns: [],
       tableData: [],
       selectedRows: []
     };
@@ -13993,7 +13991,7 @@ var render = function() {
                           attrs: {
                             label: "First Name",
                             prop: "first_name",
-                            "min-width": "160px",
+                            "min-width": "140px",
                             sortable: ""
                           }
                         }),
@@ -14002,7 +14000,7 @@ var render = function() {
                           attrs: {
                             label: "Last Name",
                             prop: "last_name",
-                            "min-width": "160px",
+                            "min-width": "140px",
                             sortable: ""
                           }
                         }),

@@ -18184,6 +18184,7 @@ var _components;
     aircraftFlights: function aircraftFlights() {
       this.tableData = this.aircraftFlights;
       this.today = this.aircraftFlights[0].date;
+      this.calendarOptions.events = [];
       var that = this;
       this.aircraftFlights.forEach(function (item, index) {
         if (item.aircraft_id != null) {
@@ -34972,7 +34973,7 @@ var render = function() {
                       },
                       [
                         _c("h3", { staticClass: "mb-0" }, [
-                          _vm._v("Flights table")
+                          _vm._v("Flights Table")
                         ]),
                         _vm._v(" "),
                         _c(

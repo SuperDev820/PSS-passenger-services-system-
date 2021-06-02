@@ -6,6 +6,7 @@ use App\Models\User;
 use App\Models\Aircraft;
 use App\Models\Flight;
 use App\Models\AircraftFlight;
+use App\Models\FlightPassenger;
 use App\Models\Role;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -95,5 +96,25 @@ class AircraftFlightController extends Controller
                 'aircraft_flights' => $aircraft_flights
             ], 200);
         }
+    }
+    public function getFlightPassengers(Request $request, $flightId)
+    {
+        $aircraft_flight = [];
+        $temp = AircraftFlight::find($flightId);
+        $temp->flight;
+        $temp->aircraft;
+        array_push($aircraft_flight, $temp);
+        
+        $flight_passengers = FlightPassenger::where('aircraft_flight_id', $flightId)->get();
+        foreach ($flight_passengers as $flight_passenger) {
+            $flight_passenger->passenger;
+            $flight_passenger->aircraftFlight->flight;
+            $flight_passenger->aircraftFlight->aircraft;
+        }
+        return response()->json([
+            'message' => 'success',
+            'aircraft_flight' => $aircraft_flight,
+            'flight_passengers' => $flight_passengers,
+        ], 200);
     }
 }

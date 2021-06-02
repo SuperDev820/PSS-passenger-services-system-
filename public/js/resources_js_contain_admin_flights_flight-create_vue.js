@@ -7410,55 +7410,62 @@ var render = function() {
                                         "div",
                                         { staticClass: "col-md-6 col-sm-12" },
                                         [
-                                          _c(
-                                            "base-input",
-                                            {
-                                              attrs: {
-                                                label: "Days Of Operation"
-                                              }
-                                            },
-                                            [
-                                              _c(
-                                                "el-select",
+                                          _vm.model.type != "CHARTER"
+                                            ? _c(
+                                                "base-input",
                                                 {
                                                   attrs: {
-                                                    multiple: "",
-                                                    filterable: "",
-                                                    placeholder:
-                                                      "Days Of Operation",
-                                                    rules: { required: true }
-                                                  },
-                                                  model: {
-                                                    value:
-                                                      _vm.model.operation_days,
-                                                    callback: function($$v) {
-                                                      _vm.$set(
-                                                        _vm.model,
-                                                        "operation_days",
-                                                        $$v
-                                                      )
-                                                    },
-                                                    expression:
-                                                      "model.operation_days"
+                                                    label: "Days Of Operation"
                                                   }
                                                 },
-                                                _vm._l(
-                                                  _vm.daysOptions,
-                                                  function(option) {
-                                                    return _c("el-option", {
-                                                      key: option.label,
+                                                [
+                                                  _c(
+                                                    "el-select",
+                                                    {
                                                       attrs: {
-                                                        label: option.label,
-                                                        value: option.value
+                                                        multiple: "",
+                                                        filterable: "",
+                                                        placeholder:
+                                                          "Days Of Operation",
+                                                        rules: {
+                                                          required: true
+                                                        }
+                                                      },
+                                                      model: {
+                                                        value:
+                                                          _vm.model
+                                                            .operation_days,
+                                                        callback: function(
+                                                          $$v
+                                                        ) {
+                                                          _vm.$set(
+                                                            _vm.model,
+                                                            "operation_days",
+                                                            $$v
+                                                          )
+                                                        },
+                                                        expression:
+                                                          "model.operation_days"
                                                       }
-                                                    })
-                                                  }
-                                                ),
+                                                    },
+                                                    _vm._l(
+                                                      _vm.daysOptions,
+                                                      function(option) {
+                                                        return _c("el-option", {
+                                                          key: option.label,
+                                                          attrs: {
+                                                            label: option.label,
+                                                            value: option.value
+                                                          }
+                                                        })
+                                                      }
+                                                    ),
+                                                    1
+                                                  )
+                                                ],
                                                 1
                                               )
-                                            ],
-                                            1
-                                          )
+                                            : _vm._e()
                                         ],
                                         1
                                       ),

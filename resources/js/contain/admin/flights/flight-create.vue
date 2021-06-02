@@ -128,7 +128,7 @@
                     </base-input>
                   </div>
                   <div class="col-md-6 col-sm-12">
-                    <base-input label="Days Of Operation">
+                    <base-input label="Days Of Operation" v-if="model.type != 'CHARTER'">
                       <el-select v-model="model.operation_days"
                                  multiple
                                  filterable

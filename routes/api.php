@@ -83,6 +83,8 @@ Route::group([ 'prefix' => 'v1', 'middleware' => 'api'], function(){
         Route::get('/schedule/aircraft_flights', 'App\Http\Controllers\Api\v1\AircraftFlightController@getAircraftFlights');
         // /* Add a flight */
         Route::post('/schedule/save', 'App\Http\Controllers\Api\v1\AircraftFlightController@saveAircraftFlight');
+        /* Get all flight_passengers*/
+        Route::get('/schedule/flight_seat_map/{flightId}', 'App\Http\Controllers\Api\v1\AircraftFlightController@getFlightPassengers');
     });
 
     Route::group(['middleware' => ['jwt.auth']], function() {

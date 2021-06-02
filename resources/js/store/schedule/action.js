@@ -28,6 +28,19 @@ const actions = {
                 });
         });
     },
+    getFlightPassengers(context, flightId) {
+        ApiService.setHeader();
+        return new Promise((resolve) =>{
+            ApiService.get("api/v1/admin/schedule/flight_seat_map/" + flightId)
+                .then(({data}) => {
+                    console.log(data);
+                    context.commit(type.SET_FLIGHT_PASSENGERS, data)
+                })
+                .catch(({ response }) => {
+                    // context.commit(type.AUTH_LOGOUT);
+                });
+        });
+    }
 };
 
 export default actions;

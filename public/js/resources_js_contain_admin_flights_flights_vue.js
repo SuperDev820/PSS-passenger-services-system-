@@ -13875,7 +13875,7 @@ var render = function() {
             [
               _c("b-col", { attrs: { cols: "7", lg: "6" } }, [
                 _c("h6", { staticClass: "h2 text-white d-inline-block mb-0" }, [
-                  _vm._v("Flights table")
+                  _vm._v("Flights Table")
                 ]),
                 _vm._v(" "),
                 _c(

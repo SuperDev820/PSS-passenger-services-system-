@@ -25,12 +25,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var element_ui_lib_select__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(element_ui_lib_select__WEBPACK_IMPORTED_MODULE_10__);
 /* harmony import */ var core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! core-js/modules/es.function.name.js */ "./node_modules/core-js/modules/es.function.name.js");
 /* harmony import */ var core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_11__);
-/* harmony import */ var _components_Breadcrumb_RouteBreadcrumb__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @/components/Breadcrumb/RouteBreadcrumb */ "./resources/js/components/Breadcrumb/RouteBreadcrumb.vue");
-/* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @/components */ "./resources/js/components/index.js");
-/* harmony import */ var _common_PaginatedTables_clientPaginationMixin__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @/common/PaginatedTables/clientPaginationMixin */ "./resources/js/common/PaginatedTables/clientPaginationMixin.js");
-/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! sweetalert2 */ "./node_modules/sweetalert2/dist/sweetalert2.all.js");
-/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(sweetalert2__WEBPACK_IMPORTED_MODULE_15__);
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.mjs");
+/* harmony import */ var core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! core-js/modules/web.dom-collections.for-each.js */ "./node_modules/core-js/modules/web.dom-collections.for-each.js");
+/* harmony import */ var core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var _components_Breadcrumb_RouteBreadcrumb__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @/components/Breadcrumb/RouteBreadcrumb */ "./resources/js/components/Breadcrumb/RouteBreadcrumb.vue");
+/* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @/components */ "./resources/js/components/index.js");
+/* harmony import */ var _common_PaginatedTables_clientPaginationMixin__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @/common/PaginatedTables/clientPaginationMixin */ "./resources/js/common/PaginatedTables/clientPaginationMixin.js");
+/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! sweetalert2 */ "./node_modules/sweetalert2/dist/sweetalert2.all.js");
+/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_16___default = /*#__PURE__*/__webpack_require__.n(sweetalert2__WEBPACK_IMPORTED_MODULE_16__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.mjs");
 
 
 
@@ -49,6 +51,148 @@ __webpack_require__.r(__webpack_exports__);
 var _components;
 
 
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -124,27 +268,45 @@ var _components;
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   page: {
-    title: "Aircrafts",
+    title: "Seat Map",
     meta: [{
       name: "description",
       content: ""
     }]
   },
-  mixins: [_common_PaginatedTables_clientPaginationMixin__WEBPACK_IMPORTED_MODULE_14__.default],
+  mixins: [_common_PaginatedTables_clientPaginationMixin__WEBPACK_IMPORTED_MODULE_15__.default],
   components: (_components = {
-    BasePagination: _components__WEBPACK_IMPORTED_MODULE_13__.BasePagination,
-    RouteBreadCrumb: _components_Breadcrumb_RouteBreadcrumb__WEBPACK_IMPORTED_MODULE_12__.default
+    BasePagination: _components__WEBPACK_IMPORTED_MODULE_14__.BasePagination,
+    RouteBreadCrumb: _components_Breadcrumb_RouteBreadcrumb__WEBPACK_IMPORTED_MODULE_13__.default
   }, (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_components, (element_ui_lib_select__WEBPACK_IMPORTED_MODULE_10___default().name), (element_ui_lib_select__WEBPACK_IMPORTED_MODULE_10___default())), (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_components, (element_ui_lib_option__WEBPACK_IMPORTED_MODULE_8___default().name), (element_ui_lib_option__WEBPACK_IMPORTED_MODULE_8___default())), (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_components, (element_ui_lib_table__WEBPACK_IMPORTED_MODULE_6___default().name), (element_ui_lib_table__WEBPACK_IMPORTED_MODULE_6___default())), (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_components, (element_ui_lib_table_column__WEBPACK_IMPORTED_MODULE_4___default().name), (element_ui_lib_table_column__WEBPACK_IMPORTED_MODULE_4___default())), _components),
   data: function data() {
     return {
-      // seats: [[]],
-      seat: ""
+      seat: [],
+      propsToSearch: ['first_name', 'last_name'],
+      tableData: [],
+      flightTableData: [],
+      selectedRows: []
     };
   },
-  watch: {},
-  computed: (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)({}, (0,vuex__WEBPACK_IMPORTED_MODULE_16__.mapGetters)([])),
-  mounted: function mounted() {},
-  methods: (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)((0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)({}, (0,vuex__WEBPACK_IMPORTED_MODULE_16__.mapActions)([])), {}, {
+  watch: {
+    flightPassengers: function flightPassengers() {
+      this.tableData = this.flightPassengers;
+      this.flightPassengers.forEach(function (item, index) {
+        document.getElementById(item.seat).disabled = true;
+      });
+    },
+    aircraftFlight: function aircraftFlight() {
+      this.flightTableData = this.aircraftFlight;
+    }
+  },
+  computed: (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)({}, (0,vuex__WEBPACK_IMPORTED_MODULE_17__.mapGetters)(['flightPassengers', 'aircraftFlight'])),
+  mounted: function mounted() {
+    this.getFlightPassengers(this.$route.params.flightId);
+  },
+  methods: (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)((0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)({}, (0,vuex__WEBPACK_IMPORTED_MODULE_17__.mapActions)(['getFlightPassengers'])), {}, {
+    paginationChanged: function paginationChanged(page) {
+      this.pagination.currentPage = page;
+    },
     handleSeat: function handleSeat() {
       console.log(this.seat);
     }
@@ -13768,7 +13930,10 @@ var render = function() {
                       staticClass: "btn btn-neutral btn-sm",
                       attrs: { to: { name: "Schedule" } }
                     },
-                    [_vm._v("\n          Go Back\n        ")]
+                    [
+                      _c("i", { staticClass: "ni ni-curved-prev" }),
+                      _vm._v("Go Back\n        ")
+                    ]
                   )
                 ],
                 1
@@ -13797,8 +13962,431 @@ var render = function() {
                 _vm._v(" "),
                 _c(
                   "div",
+                  { staticClass: "row" },
                   [
-                    _c("b-col", { attrs: { cols: "12" } }, [
+                    _c(
+                      "b-col",
+                      { staticClass: "mb-5", attrs: { cols: "12" } },
+                      [
+                        _c("h4", { staticClass: "px-4 mb-3" }, [
+                          _vm._v("Flight Info")
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "el-table",
+                          {
+                            staticClass:
+                              "table-responsive align-items-center table-flush",
+                            attrs: {
+                              "header-row-class-name": "thead-light",
+                              data: _vm.flightTableData
+                            }
+                          },
+                          [
+                            _c("el-table-column", {
+                              attrs: {
+                                label: "Flight No.",
+                                prop: "airline",
+                                "min-width": "140px"
+                              },
+                              scopedSlots: _vm._u([
+                                {
+                                  key: "default",
+                                  fn: function(ref) {
+                                    var row = ref.row
+                                    return _c("div", {}, [
+                                      _vm._v(
+                                        "\n                  " +
+                                          _vm._s(
+                                            row.flight.airline_code +
+                                              row.flight.flight_number
+                                          ) +
+                                          "\n                "
+                                      )
+                                    ])
+                                  }
+                                }
+                              ])
+                            }),
+                            _vm._v(" "),
+                            _c("el-table-column", {
+                              attrs: {
+                                label: "Aircraft",
+                                prop: "aircraft",
+                                "min-width": "120px"
+                              },
+                              scopedSlots: _vm._u([
+                                {
+                                  key: "default",
+                                  fn: function(ref) {
+                                    var row = ref.row
+                                    return _c("div", {}, [
+                                      _vm._v(
+                                        "\n                  " +
+                                          _vm._s(row.aircraft.registration) +
+                                          "\n                "
+                                      )
+                                    ])
+                                  }
+                                }
+                              ])
+                            }),
+                            _vm._v(" "),
+                            _c("el-table-column", {
+                              attrs: {
+                                label: "From",
+                                prop: "origin_airport_name",
+                                "min-width": "120px"
+                              },
+                              scopedSlots: _vm._u([
+                                {
+                                  key: "default",
+                                  fn: function(ref) {
+                                    var row = ref.row
+                                    return _c("div", {}, [
+                                      _vm._v(
+                                        "\n                  " +
+                                          _vm._s(
+                                            row.flight.origin_airport_name
+                                          ) +
+                                          "\n                "
+                                      )
+                                    ])
+                                  }
+                                }
+                              ])
+                            }),
+                            _vm._v(" "),
+                            _c("el-table-column", {
+                              attrs: {
+                                label: "To",
+                                prop: "destination_airport_name",
+                                "min-width": "120px"
+                              },
+                              scopedSlots: _vm._u([
+                                {
+                                  key: "default",
+                                  fn: function(ref) {
+                                    var row = ref.row
+                                    return _c("div", {}, [
+                                      _vm._v(
+                                        "\n                  " +
+                                          _vm._s(
+                                            row.flight.destination_airport_name
+                                          ) +
+                                          "\n                "
+                                      )
+                                    ])
+                                  }
+                                }
+                              ])
+                            }),
+                            _vm._v(" "),
+                            _c("el-table-column", {
+                              attrs: {
+                                label: "Departure",
+                                prop: "departure_time",
+                                "min-width": "120px"
+                              },
+                              scopedSlots: _vm._u([
+                                {
+                                  key: "default",
+                                  fn: function(ref) {
+                                    var row = ref.row
+                                    return _c("div", {}, [
+                                      _vm._v(
+                                        "\n                  " +
+                                          _vm._s(
+                                            row.date + "T" + row.departure_time
+                                          ) +
+                                          "\n                "
+                                      )
+                                    ])
+                                  }
+                                }
+                              ])
+                            }),
+                            _vm._v(" "),
+                            _c("el-table-column", {
+                              attrs: {
+                                label: "Arrival",
+                                prop: "arrival_time",
+                                "min-width": "120px"
+                              },
+                              scopedSlots: _vm._u([
+                                {
+                                  key: "default",
+                                  fn: function(ref) {
+                                    var row = ref.row
+                                    return _c("div", {}, [
+                                      _vm._v(
+                                        "\n                  " +
+                                          _vm._s(
+                                            row.date + "T" + row.arrival_time
+                                          ) +
+                                          "\n                "
+                                      )
+                                    ])
+                                  }
+                                }
+                              ])
+                            }),
+                            _vm._v(" "),
+                            _c("el-table-column", {
+                              attrs: {
+                                label: "Duration",
+                                prop: "flight_time",
+                                "min-width": "100px"
+                              },
+                              scopedSlots: _vm._u([
+                                {
+                                  key: "default",
+                                  fn: function(ref) {
+                                    var row = ref.row
+                                    return _c("div", {}, [
+                                      _vm._v(
+                                        "\n                  " +
+                                          _vm._s(row.flight_time) +
+                                          "\n                "
+                                      )
+                                    ])
+                                  }
+                                }
+                              ])
+                            }),
+                            _vm._v(" "),
+                            _c("el-table-column", {
+                              attrs: {
+                                label: "Type",
+                                prop: "type",
+                                "min-width": "100px"
+                              },
+                              scopedSlots: _vm._u([
+                                {
+                                  key: "default",
+                                  fn: function(ref) {
+                                    var row = ref.row
+                                    return _c("div", {}, [
+                                      row.flight.type == "REGULAR"
+                                        ? _c(
+                                            "span",
+                                            { staticClass: "text-primary" },
+                                            [_vm._v("REGULAR")]
+                                          )
+                                        : _c(
+                                            "span",
+                                            { staticClass: "text-warning" },
+                                            [_vm._v("CHARTER")]
+                                          )
+                                    ])
+                                  }
+                                }
+                              ])
+                            })
+                          ],
+                          1
+                        )
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "b-col",
+                      { attrs: { cols: "6" } },
+                      [
+                        _c("h4", { staticClass: "px-4 mb-3" }, [
+                          _vm._v("Passenger Table")
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "b-col",
+                          {
+                            staticClass:
+                              "d-flex justify-content-center justify-content-sm-between flex-wrap",
+                            attrs: { cols: "12" }
+                          },
+                          [
+                            _c(
+                              "el-select",
+                              {
+                                staticClass: "select-primary pagination-select",
+                                attrs: { placeholder: "Per page" },
+                                model: {
+                                  value: _vm.pagination.perPage,
+                                  callback: function($$v) {
+                                    _vm.$set(_vm.pagination, "perPage", $$v)
+                                  },
+                                  expression: "pagination.perPage"
+                                }
+                              },
+                              _vm._l(_vm.pagination.perPageOptions, function(
+                                item
+                              ) {
+                                return _c("el-option", {
+                                  key: item,
+                                  staticClass: "select-primary",
+                                  attrs: { label: item, value: item }
+                                })
+                              }),
+                              1
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              [
+                                _c("base-input", {
+                                  attrs: {
+                                    "prepend-icon": "fas fa-search",
+                                    placeholder: "Search..."
+                                  },
+                                  model: {
+                                    value: _vm.searchQuery,
+                                    callback: function($$v) {
+                                      _vm.searchQuery = $$v
+                                    },
+                                    expression: "searchQuery"
+                                  }
+                                })
+                              ],
+                              1
+                            )
+                          ],
+                          1
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "el-table",
+                          {
+                            attrs: {
+                              data: _vm.queriedData,
+                              "row-key": "id",
+                              "header-row-class-name": "thead-light"
+                            },
+                            on: { "sort-change": _vm.sortChange }
+                          },
+                          [
+                            _c("el-table-column", {
+                              attrs: {
+                                label: "First Name",
+                                prop: "first_name",
+                                "min-width": "140px",
+                                sortable: ""
+                              },
+                              scopedSlots: _vm._u([
+                                {
+                                  key: "default",
+                                  fn: function(ref) {
+                                    var row = ref.row
+                                    return _c("div", {}, [
+                                      _vm._v(
+                                        "\n                  " +
+                                          _vm._s(row.passenger.first_name) +
+                                          "\n                "
+                                      )
+                                    ])
+                                  }
+                                }
+                              ])
+                            }),
+                            _vm._v(" "),
+                            _c("el-table-column", {
+                              attrs: {
+                                label: "Last Name",
+                                prop: "last_name",
+                                "min-width": "140px",
+                                sortable: ""
+                              },
+                              scopedSlots: _vm._u([
+                                {
+                                  key: "default",
+                                  fn: function(ref) {
+                                    var row = ref.row
+                                    return _c("div", {}, [
+                                      _vm._v(
+                                        "\n                  " +
+                                          _vm._s(row.passenger.last_name) +
+                                          "\n                "
+                                      )
+                                    ])
+                                  }
+                                }
+                              ])
+                            }),
+                            _vm._v(" "),
+                            _c("el-table-column", {
+                              attrs: {
+                                label: "Seat",
+                                prop: "seat",
+                                "min-width": "120px",
+                                sortable: ""
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c("el-table-column", {
+                              attrs: {
+                                label: "Reference",
+                                prop: "book_reference",
+                                "min-width": "140px"
+                              }
+                            })
+                          ],
+                          1
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "b-col",
+                          {
+                            staticClass:
+                              "d-flex justify-content-center justify-content-sm-between flex-wrap",
+                            attrs: { cols: "12" }
+                          },
+                          [
+                            _c("div", {}, [
+                              _vm.total != 0
+                                ? _c("p", { staticClass: "card-category" }, [
+                                    _vm._v(
+                                      "\n                  Showing " +
+                                        _vm._s(_vm.from + 1) +
+                                        " to " +
+                                        _vm._s(_vm.to) +
+                                        " of " +
+                                        _vm._s(_vm.total) +
+                                        " entries\n\n                  "
+                                    ),
+                                    _vm.selectedRows.length
+                                      ? _c("span", [
+                                          _vm._v(
+                                            "\n                        " +
+                                              _vm._s(_vm.selectedRows.length) +
+                                              " rows selected\n                  "
+                                          )
+                                        ])
+                                      : _vm._e()
+                                  ])
+                                : _vm._e()
+                            ]),
+                            _vm._v(" "),
+                            _c("base-pagination", {
+                              staticClass: "pagination-no-border",
+                              attrs: {
+                                current: _vm.pagination.currentPage,
+                                "per-page": _vm.pagination.perPage,
+                                total: _vm.total
+                              },
+                              on: {
+                                change: function($event) {
+                                  return _vm.paginationChanged($event)
+                                }
+                              }
+                            })
+                          ],
+                          1
+                        )
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c("b-col", { attrs: { cols: "6" } }, [
                       _c("div", { staticClass: "plane" }, [
                         _c("div", { staticClass: "cockpit" }, [
                           _c("h1", [_vm._v("Seat Selection")])
@@ -13817,8 +14405,52 @@ var render = function() {
                                 [
                                   _c("li", { staticClass: "seat" }, [
                                     _c("input", {
+                                      directives: [
+                                        {
+                                          name: "model",
+                                          rawName: "v-model",
+                                          value: _vm.seat[i + "A"],
+                                          expression: "seat[i+'A']"
+                                        }
+                                      ],
                                       attrs: { type: "checkbox", id: i + "A" },
-                                      on: { change: _vm.handleSeat }
+                                      domProps: {
+                                        checked: Array.isArray(
+                                          _vm.seat[i + "A"]
+                                        )
+                                          ? _vm._i(_vm.seat[i + "A"], null) > -1
+                                          : _vm.seat[i + "A"]
+                                      },
+                                      on: {
+                                        change: function($event) {
+                                          var $$a = _vm.seat[i + "A"],
+                                            $$el = $event.target,
+                                            $$c = $$el.checked ? true : false
+                                          if (Array.isArray($$a)) {
+                                            var $$v = null,
+                                              $$i = _vm._i($$a, $$v)
+                                            if ($$el.checked) {
+                                              $$i < 0 &&
+                                                _vm.$set(
+                                                  _vm.seat,
+                                                  i + "A",
+                                                  $$a.concat([$$v])
+                                                )
+                                            } else {
+                                              $$i > -1 &&
+                                                _vm.$set(
+                                                  _vm.seat,
+                                                  i + "A",
+                                                  $$a
+                                                    .slice(0, $$i)
+                                                    .concat($$a.slice($$i + 1))
+                                                )
+                                            }
+                                          } else {
+                                            _vm.$set(_vm.seat, i + "A", $$c)
+                                          }
+                                        }
+                                      }
                                     }),
                                     _vm._v(" "),
                                     _c("label", { attrs: { for: i + "A" } }, [
@@ -13828,7 +14460,57 @@ var render = function() {
                                   _vm._v(" "),
                                   _c("li", { staticClass: "seat" }, [
                                     _c("input", {
-                                      attrs: { type: "checkbox", id: i + "B" }
+                                      directives: [
+                                        {
+                                          name: "model",
+                                          rawName: "v-model",
+                                          value: _vm.seat[i + "B"],
+                                          expression: "seat[i+'B']"
+                                        }
+                                      ],
+                                      attrs: { type: "checkbox", id: i + "B" },
+                                      domProps: {
+                                        checked: Array.isArray(
+                                          _vm.seat[i + "B"]
+                                        )
+                                          ? _vm._i(_vm.seat[i + "B"], null) > -1
+                                          : _vm.seat[i + "B"]
+                                      },
+                                      on: {
+                                        change: [
+                                          function($event) {
+                                            var $$a = _vm.seat[i + "B"],
+                                              $$el = $event.target,
+                                              $$c = $$el.checked ? true : false
+                                            if (Array.isArray($$a)) {
+                                              var $$v = null,
+                                                $$i = _vm._i($$a, $$v)
+                                              if ($$el.checked) {
+                                                $$i < 0 &&
+                                                  _vm.$set(
+                                                    _vm.seat,
+                                                    i + "B",
+                                                    $$a.concat([$$v])
+                                                  )
+                                              } else {
+                                                $$i > -1 &&
+                                                  _vm.$set(
+                                                    _vm.seat,
+                                                    i + "B",
+                                                    $$a
+                                                      .slice(0, $$i)
+                                                      .concat(
+                                                        $$a.slice($$i + 1)
+                                                      )
+                                                  )
+                                              }
+                                            } else {
+                                              _vm.$set(_vm.seat, i + "B", $$c)
+                                            }
+                                          },
+                                          _vm.handleSeat
+                                        ]
+                                      }
                                     }),
                                     _vm._v(" "),
                                     _c("label", { attrs: { for: i + "B" } }, [
@@ -13838,7 +14520,52 @@ var render = function() {
                                   _vm._v(" "),
                                   _c("li", { staticClass: "seat" }, [
                                     _c("input", {
-                                      attrs: { type: "checkbox", id: i + "C" }
+                                      directives: [
+                                        {
+                                          name: "model",
+                                          rawName: "v-model",
+                                          value: _vm.seat[i + "C"],
+                                          expression: "seat[i+'C']"
+                                        }
+                                      ],
+                                      attrs: { type: "checkbox", id: i + "C" },
+                                      domProps: {
+                                        checked: Array.isArray(
+                                          _vm.seat[i + "C"]
+                                        )
+                                          ? _vm._i(_vm.seat[i + "C"], null) > -1
+                                          : _vm.seat[i + "C"]
+                                      },
+                                      on: {
+                                        change: function($event) {
+                                          var $$a = _vm.seat[i + "C"],
+                                            $$el = $event.target,
+                                            $$c = $$el.checked ? true : false
+                                          if (Array.isArray($$a)) {
+                                            var $$v = null,
+                                              $$i = _vm._i($$a, $$v)
+                                            if ($$el.checked) {
+                                              $$i < 0 &&
+                                                _vm.$set(
+                                                  _vm.seat,
+                                                  i + "C",
+                                                  $$a.concat([$$v])
+                                                )
+                                            } else {
+                                              $$i > -1 &&
+                                                _vm.$set(
+                                                  _vm.seat,
+                                                  i + "C",
+                                                  $$a
+                                                    .slice(0, $$i)
+                                                    .concat($$a.slice($$i + 1))
+                                                )
+                                            }
+                                          } else {
+                                            _vm.$set(_vm.seat, i + "C", $$c)
+                                          }
+                                        }
+                                      }
                                     }),
                                     _vm._v(" "),
                                     _c("label", { attrs: { for: i + "C" } }, [
@@ -13848,10 +14575,51 @@ var render = function() {
                                   _vm._v(" "),
                                   _c("li", { staticClass: "seat" }, [
                                     _c("input", {
-                                      attrs: {
-                                        type: "checkbox",
-                                        disabled: "",
-                                        id: i + "D"
+                                      directives: [
+                                        {
+                                          name: "model",
+                                          rawName: "v-model",
+                                          value: _vm.seat[i + "D"],
+                                          expression: "seat[i+'D']"
+                                        }
+                                      ],
+                                      attrs: { type: "checkbox", id: i + "D" },
+                                      domProps: {
+                                        checked: Array.isArray(
+                                          _vm.seat[i + "D"]
+                                        )
+                                          ? _vm._i(_vm.seat[i + "D"], null) > -1
+                                          : _vm.seat[i + "D"]
+                                      },
+                                      on: {
+                                        change: function($event) {
+                                          var $$a = _vm.seat[i + "D"],
+                                            $$el = $event.target,
+                                            $$c = $$el.checked ? true : false
+                                          if (Array.isArray($$a)) {
+                                            var $$v = null,
+                                              $$i = _vm._i($$a, $$v)
+                                            if ($$el.checked) {
+                                              $$i < 0 &&
+                                                _vm.$set(
+                                                  _vm.seat,
+                                                  i + "D",
+                                                  $$a.concat([$$v])
+                                                )
+                                            } else {
+                                              $$i > -1 &&
+                                                _vm.$set(
+                                                  _vm.seat,
+                                                  i + "D",
+                                                  $$a
+                                                    .slice(0, $$i)
+                                                    .concat($$a.slice($$i + 1))
+                                                )
+                                            }
+                                          } else {
+                                            _vm.$set(_vm.seat, i + "D", $$c)
+                                          }
+                                        }
                                       }
                                     }),
                                     _vm._v(" "),
@@ -13862,7 +14630,52 @@ var render = function() {
                                   _vm._v(" "),
                                   _c("li", { staticClass: "seat" }, [
                                     _c("input", {
-                                      attrs: { type: "checkbox", id: i + "E" }
+                                      directives: [
+                                        {
+                                          name: "model",
+                                          rawName: "v-model",
+                                          value: _vm.seat[i + "E"],
+                                          expression: "seat[i+'E']"
+                                        }
+                                      ],
+                                      attrs: { type: "checkbox", id: i + "E" },
+                                      domProps: {
+                                        checked: Array.isArray(
+                                          _vm.seat[i + "E"]
+                                        )
+                                          ? _vm._i(_vm.seat[i + "E"], null) > -1
+                                          : _vm.seat[i + "E"]
+                                      },
+                                      on: {
+                                        change: function($event) {
+                                          var $$a = _vm.seat[i + "E"],
+                                            $$el = $event.target,
+                                            $$c = $$el.checked ? true : false
+                                          if (Array.isArray($$a)) {
+                                            var $$v = null,
+                                              $$i = _vm._i($$a, $$v)
+                                            if ($$el.checked) {
+                                              $$i < 0 &&
+                                                _vm.$set(
+                                                  _vm.seat,
+                                                  i + "E",
+                                                  $$a.concat([$$v])
+                                                )
+                                            } else {
+                                              $$i > -1 &&
+                                                _vm.$set(
+                                                  _vm.seat,
+                                                  i + "E",
+                                                  $$a
+                                                    .slice(0, $$i)
+                                                    .concat($$a.slice($$i + 1))
+                                                )
+                                            }
+                                          } else {
+                                            _vm.$set(_vm.seat, i + "E", $$c)
+                                          }
+                                        }
+                                      }
                                     }),
                                     _vm._v(" "),
                                     _c("label", { attrs: { for: i + "E" } }, [

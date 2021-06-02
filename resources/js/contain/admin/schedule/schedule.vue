@@ -35,7 +35,7 @@
         <card class="no-border-card" body-classes="px-0 pb-1" footer-classes="pb-2">
           <template slot="header">
             <div class="d-flex justify-content-between align-items-center">
-              <h3 class="mb-0">Flights table</h3>
+              <h3 class="mb-0">Flights Table</h3>
               <base-button class="btn btn-neutral btn-sm" @click="showAddModal = true">
                 <i class="fas fa-plus"></i>Add Reservation
               </base-button>
@@ -470,6 +470,7 @@
         this.tableData = this.aircraftFlights;
         this.today = this.aircraftFlights[0].date;
 
+        this.calendarOptions.events = [];
         var that = this;
         this.aircraftFlights.forEach(function(item, index) {
           if (item.aircraft_id != null) {

@@ -5,6 +5,8 @@ import JwtService from "@/common/jwt.service"
 
 const defaultState = {
   aircraft_flights: [],
+  flight_passengers: [],
+  aircraft_flight: {},
 };
 
 export default {

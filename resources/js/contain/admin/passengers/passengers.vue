@@ -52,12 +52,12 @@
                       @sort-change="sortChange">
               <el-table-column label="First Name"
                              prop="first_name"
-                             min-width="160px"
+                             min-width="140px"
                              sortable>
               </el-table-column>
               <el-table-column label="Last Name"
                              prop="last_name"
-                             min-width="160px"
+                             min-width="140px"
                              sortable>
               </el-table-column>
               <el-table-column label="Email"
@@ -130,7 +130,6 @@
                   &nbsp; &nbsp; {{selectedRows.length}} rows selected
                 </span>
               </p>
-
             </div>
             <base-pagination
               class="pagination-no-border"
@@ -172,8 +171,6 @@ export default {
   data() {
     return {
       propsToSearch: ['name', 'email'],
-      tableColumns: [
-      ],
       tableData: [],
       selectedRows: []
     };
