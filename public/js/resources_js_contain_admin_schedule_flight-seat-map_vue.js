@@ -13931,8 +13931,8 @@ var render = function() {
                       attrs: { to: { name: "Schedule" } }
                     },
                     [
-                      _c("i", { staticClass: "ni ni-curved-prev" }),
-                      _vm._v("Go Back\n        ")
+                      _c("i", { staticClass: "far fa-hand-point-left" }),
+                      _vm._v(" Go Back\n        ")
                     ]
                   )
                 ],

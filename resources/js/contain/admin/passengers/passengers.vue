@@ -94,7 +94,7 @@
                   </badge>
                 </div>
               </el-table-column>
-              <el-table-column min-width="120px" align="right" label="Actions">
+              <el-table-column min-width="160px" align="right" label="Actions">
                 <div slot-scope="{$index, row}" class="d-flex justify-content-center">
                   <base-button
                     @click.native="handleEdit(row)"
@@ -104,6 +104,15 @@
                     icon
                   >
                     <i class="text-white ni ni-ruler-pencil"></i>
+                  </base-button>
+                  <base-button
+                    @click.native="goToPassengerFlights(row)"
+                    type="primary"
+                    size="sm"
+                    icon
+                    :disabled="row.status == 0"
+                  >
+                    <i class="text-white ni ni-curved-next"></i>
                   </base-button>
                   <base-button
                     @click.native="handleDelete($index, row)"
@@ -199,6 +208,9 @@ export default {
     },
     handleEdit(row) {
       this.$router.push({ name: 'PassengerEdit', params: { passengerId: row.id }})
+    },
+    goToPassengerFlights(row) {
+      this.$router.push({ name: 'PassengerFlights', params: { passengerId: row.id }})
     },
     handleDelete(index, row) {
       swal.fire({

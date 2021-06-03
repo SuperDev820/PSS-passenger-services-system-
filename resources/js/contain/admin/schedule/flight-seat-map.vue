@@ -10,7 +10,7 @@
         </b-col>
         <b-col lg="6" cols="5" class="text-right">
           <router-link :to="{name: 'Schedule'}" class="btn btn-neutral btn-sm">
-            <i class="ni ni-curved-prev"></i>Go Back
+            <i class="far fa-hand-point-left"></i> Go Back
           </router-link>
         </b-col>
       </b-row>

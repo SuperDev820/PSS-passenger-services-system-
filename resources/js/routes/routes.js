@@ -187,6 +187,16 @@ const routes = [
         name: 'PassengerEdit',
         component: () => import('../contain/admin/passengers/passenger-edit.vue'),
       },
+      {
+        path: 'passenger/:passengerId/flights',
+        name: 'PassengerFlights',
+        component: () => import('../contain/admin/passengers/passenger-flights.vue'),
+      },
+      {
+        path: 'passenger/:passengerId/flight/:flightId/seat',
+        name: 'PassengerSeat',
+        component: () => import('../contain/admin/passengers/passenger-seat.vue'),
+      },
 
       {
         path: 'aircrafts',

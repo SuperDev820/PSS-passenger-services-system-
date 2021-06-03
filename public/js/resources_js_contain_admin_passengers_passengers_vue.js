@@ -196,6 +196,15 @@ var _components;
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -237,6 +246,14 @@ var _components;
     handleEdit: function handleEdit(row) {
       this.$router.push({
         name: 'PassengerEdit',
+        params: {
+          passengerId: row.id
+        }
+      });
+    },
+    goToPassengerFlights: function goToPassengerFlights(row) {
+      this.$router.push({
+        name: 'PassengerFlights',
         params: {
           passengerId: row.id
         }
@@ -14100,7 +14117,7 @@ var render = function() {
                         _vm._v(" "),
                         _c("el-table-column", {
                           attrs: {
-                            "min-width": "120px",
+                            "min-width": "160px",
                             align: "right",
                             label: "Actions"
                           },
@@ -14135,6 +14152,29 @@ var render = function() {
                                         _c("i", {
                                           staticClass:
                                             "text-white ni ni-ruler-pencil"
+                                        })
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "base-button",
+                                      {
+                                        attrs: {
+                                          type: "primary",
+                                          size: "sm",
+                                          icon: "",
+                                          disabled: row.status == 0
+                                        },
+                                        nativeOn: {
+                                          click: function($event) {
+                                            return _vm.goToPassengerFlights(row)
+                                          }
+                                        }
+                                      },
+                                      [
+                                        _c("i", {
+                                          staticClass:
+                                            "text-white ni ni-curved-next"
                                         })
                                       ]
                                     ),
