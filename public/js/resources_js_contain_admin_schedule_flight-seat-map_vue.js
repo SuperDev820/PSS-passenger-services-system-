@@ -281,7 +281,7 @@ var _components;
   }, (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_components, (element_ui_lib_select__WEBPACK_IMPORTED_MODULE_10___default().name), (element_ui_lib_select__WEBPACK_IMPORTED_MODULE_10___default())), (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_components, (element_ui_lib_option__WEBPACK_IMPORTED_MODULE_8___default().name), (element_ui_lib_option__WEBPACK_IMPORTED_MODULE_8___default())), (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_components, (element_ui_lib_table__WEBPACK_IMPORTED_MODULE_6___default().name), (element_ui_lib_table__WEBPACK_IMPORTED_MODULE_6___default())), (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_components, (element_ui_lib_table_column__WEBPACK_IMPORTED_MODULE_4___default().name), (element_ui_lib_table_column__WEBPACK_IMPORTED_MODULE_4___default())), _components),
   data: function data() {
     return {
-      seat: [],
+      seats: [],
       propsToSearch: ['first_name', 'last_name'],
       tableData: [],
       flightTableData: [],
@@ -292,11 +292,13 @@ var _components;
     flightPassengers: function flightPassengers() {
       this.tableData = this.flightPassengers;
       this.flightPassengers.forEach(function (item, index) {
-        document.getElementById(item.seat).disabled = true;
+        if (item.seat != null) {
+          document.getElementById(item.seat).disabled = true;
+        }
       });
     },
     aircraftFlight: function aircraftFlight() {
-      this.flightTableData = this.aircraftFlight;
+      this.flightTableData.push(this.aircraftFlight);
     }
   },
   computed: (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)({}, (0,vuex__WEBPACK_IMPORTED_MODULE_17__.mapGetters)(['flightPassengers', 'aircraftFlight'])),
@@ -306,9 +308,6 @@ var _components;
   methods: (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)((0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)({}, (0,vuex__WEBPACK_IMPORTED_MODULE_17__.mapActions)(['getFlightPassengers'])), {}, {
     paginationChanged: function paginationChanged(page) {
       this.pagination.currentPage = page;
-    },
-    handleSeat: function handleSeat() {
-      console.log(this.seat);
     }
   })
 });
@@ -14409,21 +14408,22 @@ var render = function() {
                                         {
                                           name: "model",
                                           rawName: "v-model",
-                                          value: _vm.seat[i + "A"],
-                                          expression: "seat[i+'A']"
+                                          value: _vm.seats[i + "A"],
+                                          expression: "seats[i+'A']"
                                         }
                                       ],
                                       attrs: { type: "checkbox", id: i + "A" },
                                       domProps: {
                                         checked: Array.isArray(
-                                          _vm.seat[i + "A"]
+                                          _vm.seats[i + "A"]
                                         )
-                                          ? _vm._i(_vm.seat[i + "A"], null) > -1
-                                          : _vm.seat[i + "A"]
+                                          ? _vm._i(_vm.seats[i + "A"], null) >
+                                            -1
+                                          : _vm.seats[i + "A"]
                                       },
                                       on: {
                                         change: function($event) {
-                                          var $$a = _vm.seat[i + "A"],
+                                          var $$a = _vm.seats[i + "A"],
                                             $$el = $event.target,
                                             $$c = $$el.checked ? true : false
                                           if (Array.isArray($$a)) {
@@ -14432,14 +14432,14 @@ var render = function() {
                                             if ($$el.checked) {
                                               $$i < 0 &&
                                                 _vm.$set(
-                                                  _vm.seat,
+                                                  _vm.seats,
                                                   i + "A",
                                                   $$a.concat([$$v])
                                                 )
                                             } else {
                                               $$i > -1 &&
                                                 _vm.$set(
-                                                  _vm.seat,
+                                                  _vm.seats,
                                                   i + "A",
                                                   $$a
                                                     .slice(0, $$i)
@@ -14447,7 +14447,7 @@ var render = function() {
                                                 )
                                             }
                                           } else {
-                                            _vm.$set(_vm.seat, i + "A", $$c)
+                                            _vm.$set(_vm.seats, i + "A", $$c)
                                           }
                                         }
                                       }
@@ -14464,52 +14464,48 @@ var render = function() {
                                         {
                                           name: "model",
                                           rawName: "v-model",
-                                          value: _vm.seat[i + "B"],
-                                          expression: "seat[i+'B']"
+                                          value: _vm.seats[i + "B"],
+                                          expression: "seats[i+'B']"
                                         }
                                       ],
                                       attrs: { type: "checkbox", id: i + "B" },
                                       domProps: {
                                         checked: Array.isArray(
-                                          _vm.seat[i + "B"]
+                                          _vm.seats[i + "B"]
                                         )
-                                          ? _vm._i(_vm.seat[i + "B"], null) > -1
-                                          : _vm.seat[i + "B"]
+                                          ? _vm._i(_vm.seats[i + "B"], null) >
+                                            -1
+                                          : _vm.seats[i + "B"]
                                       },
                                       on: {
-                                        change: [
-                                          function($event) {
-                                            var $$a = _vm.seat[i + "B"],
-                                              $$el = $event.target,
-                                              $$c = $$el.checked ? true : false
-                                            if (Array.isArray($$a)) {
-                                              var $$v = null,
-                                                $$i = _vm._i($$a, $$v)
-                                              if ($$el.checked) {
-                                                $$i < 0 &&
-                                                  _vm.$set(
-                                                    _vm.seat,
-                                                    i + "B",
-                                                    $$a.concat([$$v])
-                                                  )
-                                              } else {
-                                                $$i > -1 &&
-                                                  _vm.$set(
-                                                    _vm.seat,
-                                                    i + "B",
-                                                    $$a
-                                                      .slice(0, $$i)
-                                                      .concat(
-                                                        $$a.slice($$i + 1)
-                                                      )
-                                                  )
-                                              }
+                                        change: function($event) {
+                                          var $$a = _vm.seats[i + "B"],
+                                            $$el = $event.target,
+                                            $$c = $$el.checked ? true : false
+                                          if (Array.isArray($$a)) {
+                                            var $$v = null,
+                                              $$i = _vm._i($$a, $$v)
+                                            if ($$el.checked) {
+                                              $$i < 0 &&
+                                                _vm.$set(
+                                                  _vm.seats,
+                                                  i + "B",
+                                                  $$a.concat([$$v])
+                                                )
                                             } else {
-                                              _vm.$set(_vm.seat, i + "B", $$c)
+                                              $$i > -1 &&
+                                                _vm.$set(
+                                                  _vm.seats,
+                                                  i + "B",
+                                                  $$a
+                                                    .slice(0, $$i)
+                                                    .concat($$a.slice($$i + 1))
+                                                )
                                             }
-                                          },
-                                          _vm.handleSeat
-                                        ]
+                                          } else {
+                                            _vm.$set(_vm.seats, i + "B", $$c)
+                                          }
+                                        }
                                       }
                                     }),
                                     _vm._v(" "),
@@ -14524,21 +14520,22 @@ var render = function() {
                                         {
                                           name: "model",
                                           rawName: "v-model",
-                                          value: _vm.seat[i + "C"],
-                                          expression: "seat[i+'C']"
+                                          value: _vm.seats[i + "C"],
+                                          expression: "seats[i+'C']"
                                         }
                                       ],
                                       attrs: { type: "checkbox", id: i + "C" },
                                       domProps: {
                                         checked: Array.isArray(
-                                          _vm.seat[i + "C"]
+                                          _vm.seats[i + "C"]
                                         )
-                                          ? _vm._i(_vm.seat[i + "C"], null) > -1
-                                          : _vm.seat[i + "C"]
+                                          ? _vm._i(_vm.seats[i + "C"], null) >
+                                            -1
+                                          : _vm.seats[i + "C"]
                                       },
                                       on: {
                                         change: function($event) {
-                                          var $$a = _vm.seat[i + "C"],
+                                          var $$a = _vm.seats[i + "C"],
                                             $$el = $event.target,
                                             $$c = $$el.checked ? true : false
                                           if (Array.isArray($$a)) {
@@ -14547,14 +14544,14 @@ var render = function() {
                                             if ($$el.checked) {
                                               $$i < 0 &&
                                                 _vm.$set(
-                                                  _vm.seat,
+                                                  _vm.seats,
                                                   i + "C",
                                                   $$a.concat([$$v])
                                                 )
                                             } else {
                                               $$i > -1 &&
                                                 _vm.$set(
-                                                  _vm.seat,
+                                                  _vm.seats,
                                                   i + "C",
                                                   $$a
                                                     .slice(0, $$i)
@@ -14562,7 +14559,7 @@ var render = function() {
                                                 )
                                             }
                                           } else {
-                                            _vm.$set(_vm.seat, i + "C", $$c)
+                                            _vm.$set(_vm.seats, i + "C", $$c)
                                           }
                                         }
                                       }
@@ -14579,21 +14576,22 @@ var render = function() {
                                         {
                                           name: "model",
                                           rawName: "v-model",
-                                          value: _vm.seat[i + "D"],
-                                          expression: "seat[i+'D']"
+                                          value: _vm.seats[i + "D"],
+                                          expression: "seats[i+'D']"
                                         }
                                       ],
                                       attrs: { type: "checkbox", id: i + "D" },
                                       domProps: {
                                         checked: Array.isArray(
-                                          _vm.seat[i + "D"]
+                                          _vm.seats[i + "D"]
                                         )
-                                          ? _vm._i(_vm.seat[i + "D"], null) > -1
-                                          : _vm.seat[i + "D"]
+                                          ? _vm._i(_vm.seats[i + "D"], null) >
+                                            -1
+                                          : _vm.seats[i + "D"]
                                       },
                                       on: {
                                         change: function($event) {
-                                          var $$a = _vm.seat[i + "D"],
+                                          var $$a = _vm.seats[i + "D"],
                                             $$el = $event.target,
                                             $$c = $$el.checked ? true : false
                                           if (Array.isArray($$a)) {
@@ -14602,14 +14600,14 @@ var render = function() {
                                             if ($$el.checked) {
                                               $$i < 0 &&
                                                 _vm.$set(
-                                                  _vm.seat,
+                                                  _vm.seats,
                                                   i + "D",
                                                   $$a.concat([$$v])
                                                 )
                                             } else {
                                               $$i > -1 &&
                                                 _vm.$set(
-                                                  _vm.seat,
+                                                  _vm.seats,
                                                   i + "D",
                                                   $$a
                                                     .slice(0, $$i)
@@ -14617,7 +14615,7 @@ var render = function() {
                                                 )
                                             }
                                           } else {
-                                            _vm.$set(_vm.seat, i + "D", $$c)
+                                            _vm.$set(_vm.seats, i + "D", $$c)
                                           }
                                         }
                                       }
@@ -14634,21 +14632,22 @@ var render = function() {
                                         {
                                           name: "model",
                                           rawName: "v-model",
-                                          value: _vm.seat[i + "E"],
-                                          expression: "seat[i+'E']"
+                                          value: _vm.seats[i + "E"],
+                                          expression: "seats[i+'E']"
                                         }
                                       ],
                                       attrs: { type: "checkbox", id: i + "E" },
                                       domProps: {
                                         checked: Array.isArray(
-                                          _vm.seat[i + "E"]
+                                          _vm.seats[i + "E"]
                                         )
-                                          ? _vm._i(_vm.seat[i + "E"], null) > -1
-                                          : _vm.seat[i + "E"]
+                                          ? _vm._i(_vm.seats[i + "E"], null) >
+                                            -1
+                                          : _vm.seats[i + "E"]
                                       },
                                       on: {
                                         change: function($event) {
-                                          var $$a = _vm.seat[i + "E"],
+                                          var $$a = _vm.seats[i + "E"],
                                             $$el = $event.target,
                                             $$c = $$el.checked ? true : false
                                           if (Array.isArray($$a)) {
@@ -14657,14 +14656,14 @@ var render = function() {
                                             if ($$el.checked) {
                                               $$i < 0 &&
                                                 _vm.$set(
-                                                  _vm.seat,
+                                                  _vm.seats,
                                                   i + "E",
                                                   $$a.concat([$$v])
                                                 )
                                             } else {
                                               $$i > -1 &&
                                                 _vm.$set(
-                                                  _vm.seat,
+                                                  _vm.seats,
                                                   i + "E",
                                                   $$a
                                                     .slice(0, $$i)
@@ -14672,7 +14671,7 @@ var render = function() {
                                                 )
                                             }
                                           } else {
-                                            _vm.$set(_vm.seat, i + "E", $$c)
+                                            _vm.$set(_vm.seats, i + "E", $$c)
                                           }
                                         }
                                       }

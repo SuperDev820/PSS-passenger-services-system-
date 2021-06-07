@@ -69,6 +69,16 @@
                              min-width="120px"
                              sortable>
               </el-table-column>
+              <el-table-column prop="status" label="Status" min-width="100px">
+                <div slot-scope="{row}">
+                  <badge class="" v-if="row.status == 1" type="success">
+                    <span>Active</span>
+                  </badge>
+                  <badge class="" v-else type="warning">
+                    <span>Deactive</span>
+                  </badge>
+                </div>
+              </el-table-column>
               <el-table-column min-width="120px" align="right" label="Actions">
                 <div slot-scope="{$index, row}" class="d-flex justify-content-center">
                   <base-button

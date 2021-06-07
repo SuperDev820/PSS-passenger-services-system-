@@ -3,166 +3,64 @@
     <base-header class="pb-6">
       <b-row align-v="center" class="py-4">
         <b-col cols="7" lg="6">
-          <h6 class="h2 text-white d-inline-block mb-0">Aircraft Seat Map</h6>
+          <h6 class="h2 text-white d-inline-block mb-0">Select Seat</h6>
           <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
             <route-bread-crumb></route-bread-crumb>
           </nav>
         </b-col>
         <b-col lg="6" cols="5" class="text-right">
-          <router-link :to="{name: 'Schedule'}" class="btn btn-neutral btn-sm">
+          <router-link :to="{name: 'Passengers'}" class="btn btn-neutral btn-sm">
             <i class="far fa-hand-point-left"></i> Go Back
           </router-link>
+          <base-button class="btn btn-neutral btn-sm" :disabled="isBooking" @click="book">
+            <i class="fas fa-feather"></i> Book
+          </base-button>
         </b-col>
       </b-row>
     </base-header>
     <b-container fluid class="mt--6">
       <div>
         <card class="no-border-card" body-classes="px-0 pb-1" footer-classes="pb-2">
-          <template slot="header">
-            <h3 class="mb-0">Seat Map</h3>
-          </template>
           <div class="row">
-            <b-col cols="12" class="mb-5">
-              <h4 class="px-4 mb-3">Flight Info</h4>
-              <el-table class="table-responsive align-items-center table-flush"
-                        header-row-class-name="thead-light"
-                        :data="flightTableData">
-                <el-table-column label="Flight No."
-                             prop="airline"
-                             min-width="140px">
-                  <div slot-scope="{row}">
-                    {{row.flight.airline_code + row.flight.flight_number}}
-                  </div>
-                </el-table-column>
-                <el-table-column label="Aircraft"
-                              prop="aircraft"
-                              min-width="120px">
-                  <div slot-scope="{row}">
-                    {{row.aircraft.registration}}
-                  </div>
-                </el-table-column>
-                <el-table-column label="From"
-                              prop="origin_airport_name"
-                              min-width="120px">
-                  <div slot-scope="{row}">
-                    {{row.flight.origin_airport_name}}
-                  </div>
-                </el-table-column>
-                <el-table-column label="To"
-                              prop="destination_airport_name"
-                              min-width="120px">
-                  <div slot-scope="{row}">
-                    {{row.flight.destination_airport_name}}
-                  </div>
-                </el-table-column>
-                <el-table-column label="Departure"
-                              prop="departure_time"
-                              min-width="120px">
-                  <div slot-scope="{row}">
-                    {{row.date + 'T' + row.departure_time}}
-                  </div>
-                </el-table-column>
-                <el-table-column label="Arrival"
-                              prop="arrival_time"
-                              min-width="120px">
-                  <div slot-scope="{row}">
-                    {{row.date + 'T' + row.arrival_time}}
-                  </div>
-                </el-table-column>
-                <el-table-column label="Duration"
-                              prop="flight_time"
-                              min-width="100px">
-                  <div slot-scope="{row}">
-                    {{row.flight_time}}
-                  </div>
-                </el-table-column>
-                <el-table-column label="Type"
-                              prop="type"
-                              min-width="100px">
-                  <div slot-scope="{row}">
-                    <span class="text-primary" v-if="row.flight.type == 'REGULAR'">REGULAR</span>
-                    <span class="text-warning" v-else>CHARTER</span>
-                  </div>
-                </el-table-column>
-              </el-table>
+            <b-col cols="12" class="">
+              
             </b-col>
-            <b-col cols="6" class="">
-              <h4 class="px-4 mb-3">Passenger Table</h4>
-              <b-col cols="12" class="d-flex justify-content-center justify-content-sm-between flex-wrap"
-              >
-                <el-select
-                  class="select-primary pagination-select"
-                  v-model="pagination.perPage"
-                  placeholder="Per page"
-                >
-                  <el-option
-                    class="select-primary"
-                    v-for="item in pagination.perPageOptions"
-                    :key="item"
-                    :label="item"
-                    :value="item"
-                  >
-                  </el-option>
-                </el-select>
-
-                <div>
-                  <base-input v-model="searchQuery"
-                              prepend-icon="fas fa-search"
-                              placeholder="Search...">
-                  </base-input>
-                </div>
-              </b-col>
-              <el-table :data="queriedData"
-                        row-key="id"
+            <b-col cols="6" class="px-5 pt-5">
+              <h2 class="mb-5">Passenger</h2>
+              <el-table class="table-responsive align-items-center table-flush mb-5"
                         header-row-class-name="thead-light"
-                        @sort-change="sortChange">
-                <el-table-column label="First Name"
-                              prop="first_name"
-                              min-width="140px"
-                              sortable>
+                        :data="tableData">
+                <el-table-column label="Passenger"
+                             prop="passenger"
+                             min-width="160px">
                   <div slot-scope="{row}">
-                    {{row.passenger.first_name}}
-                  </div>
-                </el-table-column>
-                <el-table-column label="Last Name"
-                              prop="last_name"
-                              min-width="140px"
-                              sortable>
-                  <div slot-scope="{row}">
-                    {{row.passenger.last_name}}
+                    {{row.passenger.first_name +' '+ row.passenger.last_name}}
                   </div>
                 </el-table-column>
                 <el-table-column label="Seat"
                               prop="seat"
-                              min-width="120px"
-                              sortable>
-                </el-table-column>
-                <el-table-column label="Reference"
-                              prop="book_reference"
-                              min-width="140px">
+                              min-width="120px">
+                  <div slot-scope="{row}">
+                    {{row.seat}}
+                  </div>
                 </el-table-column>
               </el-table>
-              <b-col cols="12"
-                class="d-flex justify-content-center justify-content-sm-between flex-wrap"
-              >
-                <div class="">
-                  <p class="card-category" v-if="total != 0">
-                    Showing {{ from + 1 }} to {{ to }} of {{ total }} entries
-
-                    <span v-if="selectedRows.length">
-                      &nbsp; &nbsp; {{selectedRows.length}} rows selected
-                    </span>
-                  </p>
-                </div>
-                <base-pagination
-                  class="pagination-no-border"
-                  :current="pagination.currentPage"
-                  :per-page="pagination.perPage"
-                  :total="total"
-                  @change="paginationChanged($event)"
-                >
-                </base-pagination>
-              </b-col>
+              <div>
+                <ul class="seat-config">
+                  <li>
+                    <span class="seat available-seat"></span>
+                    <span class="description">Seat Available</span>
+                  </li>
+                  <li>
+                    <span class="seat reserved-seat"></span>
+                    <span class="description">Current Passenger's Seat</span>
+                  </li>
+                  <li>
+                    <span class="seat disabled-seat"></span>
+                    <span class="description">Seat Not Available for Selection</span>
+                  </li>
+                </ul>
+              </div>
             </b-col>
             <b-col cols="6" class="">
               <div class="plane">
@@ -175,23 +73,23 @@
                   <li class="row" v-for="i in 20" :key="i">
                     <ol class="seats" type="A">
                       <li class="seat">
-                        <input type="checkbox" v-model="seat[i+'A']" :id="i+'A'" />
+                        <input type="checkbox" v-model="seats[i+'A']" :id="i+'A'" />
                         <label :for="i+'A'">{{i}}A</label>
                       </li>
                       <li class="seat">
-                        <input type="checkbox" v-model="seat[i+'B']" :id="i+'B'" @change="handleSeat" />
+                        <input type="checkbox" v-model="seats[i+'B']" :id="i+'B'" />
                         <label :for="i+'B'">{{i}}B</label>
                       </li>
                       <li class="seat">
-                        <input type="checkbox" v-model="seat[i+'C']" :id="i+'C'" />
+                        <input type="checkbox" v-model="seats[i+'C']" :id="i+'C'" />
                         <label :for="i+'C'">{{i}}C</label>
                       </li>
                       <li class="seat">
-                        <input type="checkbox" v-model="seat[i+'D']" :id="i+'D'" />
+                        <input type="checkbox" v-model="seats[i+'D']" :id="i+'D'" />
                         <label :for="i+'D'">{{i}}D</label>
                       </li>
                       <li class="seat">
-                        <input type="checkbox" v-model="seat[i+'E']" :id="i+'E'" />
+                        <input type="checkbox" v-model="seats[i+'E']" :id="i+'E'" />
                         <label :for="i+'E'">{{i}}E</label>
                       </li>
                     </ol>
@@ -215,6 +113,7 @@ import clientPaginationMixin from '@/common/PaginatedTables/clientPaginationMixi
 import swal from 'sweetalert2';
 
 import {mapActions, mapGetters} from 'vuex'
+import BaseButton from '../../../components/BaseButton.vue';
 
 export default {
   page: {
@@ -225,6 +124,7 @@ export default {
   components: {
     BasePagination,
     RouteBreadCrumb,
+    BaseButton,
     [Select.name]: Select,
     [Option.name]: Option,
     [Table.name]: Table,
@@ -232,49 +132,131 @@ export default {
   },
   data() {
     return {
-      seat: [],
-      propsToSearch: ['first_name', 'last_name'],
+      seats: [],
       tableData: [],
-      flightTableData: [],
-      selectedRows: []
+      isBooking: false,
     };
   },
   watch: {
-    flightPassengers: function() {
-      this.tableData = this.flightPassengers;
-      this.flightPassengers.forEach(function(item, index) {
-        document.getElementById(item.seat).disabled = true
-      });
+    flightPassenger: function() {
+      this.tableData.push(this.flightPassenger);
+      if (this.flightPassenger.seat != null) {
+        document.getElementById(this.flightPassenger.seat).disabled = false
+        this.seats[this.flightPassenger.seat] = true
+      }
     },
-    aircraftFlight: function() {
-      this.flightTableData = this.aircraftFlight;
+    flightPassengers: function() {
+      this.flightPassengers.forEach(function(item, index) {
+        if (item.seat != null) {
+          document.getElementById(item.seat).disabled = true
+        }
+      });
+      this.getFlightPassengerById({passengerId: this.$route.params.passengerId, flightId: this.$route.params.flightId});
     },
   },
   computed: {
     ...mapGetters([
+      // 'passenger',
+      'flightPassenger',
       'flightPassengers',
-      'aircraftFlight',
     ]),
   },
   mounted() {
+    // this.getPassengerById(this.$route.params.passengerId);
     this.getFlightPassengers(this.$route.params.flightId);
   },
   methods: {
     ...mapActions([
+      // 'getPassengerById',
+      'getFlightPassengerById',
       'getFlightPassengers',
+      'passengerSeatBook',
     ]),
 
-    paginationChanged(page) {
-      this.pagination.currentPage = page
+    book() {
+      this.isBooking = true;
+      let passenger_seats = [];
+      for (const [key, value] of Object.entries(this.seats)) {
+        if (value == true) {
+          passenger_seats.push(key)
+        }
+      }
+      if (passenger_seats.length == 1) {
+        console.log(passenger_seats[0]);
+        this.passengerSeatBook({
+            passengerId: this.$route.params.passengerId,
+            flightId: this.$route.params.flightId,
+            seat: passenger_seats[0]
+          })
+          .then((res) => {
+            this.isBooking = false;
+            this.flightPassenger.seat = passenger_seats[0]
+            this.$notify({
+                message: 'Successfully Booked',
+                timeout: 5000,
+                icon: 'ni ni-bell-55',
+                type: 'success'
+              });
+          })
+          .catch((error) => {
+            this.isBooking = false;
+          })
+      } else {
+        this.isBooking = false;
+        this.$notify({
+            message: 'You can select only one seat.',
+            timeout: 5000,
+            icon: 'ni ni-bell-55',
+            type: 'warning'
+          });
+      }
     },
-    handleSeat() {
-      console.log(this.seat)
-    }
   }
 };
 </script>
 <style>
   .no-border-card .card-footer{
     border-top: 0;
+  }
+  .seat-config {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .seat-config li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  .seat-config .seat {
+    display: block;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    padding: 4px 0;
+    border-radius: 5px;
+  }
+  .seat-config .seat.available-seat {
+    background: #6acc6a;
+  }
+  .seat-config .seat.reserved-seat {
+    background: #ff844a;
+  }
+  .seat-config .seat.disabled-seat {
+    background: #dddddd;
+  }
+  .seat-config .seat:before {
+    content: "";
+    position: absolute;
+    width: 75%;
+    height: 80%;
+    top: 1px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 3px;
+  }
+  .seat-config .description {
+    padding-left: 15px;
   }
 </style>

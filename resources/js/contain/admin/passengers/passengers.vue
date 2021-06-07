@@ -3,7 +3,7 @@
     <base-header class="pb-6">
       <b-row align-v="center" class="py-4">
         <b-col cols="7" lg="6">
-          <h6 class="h2 text-white d-inline-block mb-0">Passengers table</h6>
+          <h6 class="h2 text-white d-inline-block mb-0">Passengers Table</h6>
           <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
             <route-bread-crumb></route-bread-crumb>
           </nav>
@@ -75,6 +75,10 @@
               </el-table-column>
               <el-table-column label="Company"
                              prop="company"
+                             min-width="120px">
+              </el-table-column>
+              <el-table-column label="Roster"
+                             prop="roster"
                              min-width="120px">
               </el-table-column>
               <el-table-column prop="role" label="Role" min-width="100px">

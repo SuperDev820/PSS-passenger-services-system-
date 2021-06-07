@@ -90,9 +90,10 @@
                                 class="mb-3"
                                 prepend-icon="fas fa-clone"
                                 label="Roster"
-                                placeholder="Roster"
+                                placeholder="e.g x-x-x-x"
                                 name="Roster"
-                                v-model="model.roster">
+                                v-model="model.roster"
+                                v-mask="'#-#-#-#'">
                     </base-input>
 
                     <base-input alternative

@@ -18074,7 +18074,6 @@ var _components;
 //
 //
 //
-//
 
 
 
@@ -18245,6 +18244,11 @@ var _components;
       var _this2 = this;
 
       this.error = null;
+
+      if (this.model.aircraft == '' || this.model.flight == '') {
+        return;
+      }
+
       return this.saveAircraftFlight({
         aircraft: this.model.aircraft,
         flight: this.model.flight,
@@ -35498,8 +35502,7 @@ var render = function() {
                                   {
                                     attrs: {
                                       filterable: "",
-                                      placeholder: "Scheduled Type",
-                                      rules: { required: true }
+                                      placeholder: "Scheduled Type"
                                     },
                                     model: {
                                       value: _vm.model.type,
@@ -35540,8 +35543,7 @@ var render = function() {
                                   {
                                     attrs: {
                                       filterable: "",
-                                      placeholder: "Aircraft Registration",
-                                      rules: { required: true }
+                                      placeholder: "Aircraft Registration"
                                     },
                                     model: {
                                       value: _vm.model.aircraft,
@@ -35551,14 +35553,16 @@ var render = function() {
                                       expression: "model.aircraft"
                                     }
                                   },
-                                  _vm._l(_vm.aircraftOptions, function(option) {
-                                    return _c("el-option", {
-                                      key: option.label,
-                                      attrs: {
-                                        label: option.label,
-                                        value: option.value
-                                      }
-                                    })
+                                  _vm._l(_vm.aircrafts, function(option) {
+                                    return option.status == 1
+                                      ? _c("el-option", {
+                                          key: option.id,
+                                          attrs: {
+                                            label: option.registration,
+                                            value: option.id
+                                          }
+                                        })
+                                      : _vm._e()
                                   }),
                                   1
                                 )
@@ -35582,8 +35586,7 @@ var render = function() {
                                   {
                                     attrs: {
                                       filterable: "",
-                                      placeholder: "Flight",
-                                      rules: { required: true }
+                                      placeholder: "Flight"
                                     },
                                     on: {
                                       change: function($event) {
@@ -35599,7 +35602,8 @@ var render = function() {
                                     }
                                   },
                                   _vm._l(_vm.aircraftFlights, function(option) {
-                                    return option.status == "PLANNED"
+                                    return option.status == "PLANNED" &&
+                                      option.flight.type == _vm.model.type
                                       ? _c("el-option", {
                                           key: option.flight_id,
                                           attrs: {

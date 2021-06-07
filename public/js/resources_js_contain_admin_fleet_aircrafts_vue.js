@@ -172,6 +172,16 @@ var _components;
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -13995,6 +14005,40 @@ var render = function() {
                             "min-width": "120px",
                             sortable: ""
                           }
+                        }),
+                        _vm._v(" "),
+                        _c("el-table-column", {
+                          attrs: {
+                            prop: "status",
+                            label: "Status",
+                            "min-width": "100px"
+                          },
+                          scopedSlots: _vm._u([
+                            {
+                              key: "default",
+                              fn: function(ref) {
+                                var row = ref.row
+                                return _c(
+                                  "div",
+                                  {},
+                                  [
+                                    row.status == 1
+                                      ? _c(
+                                          "badge",
+                                          { attrs: { type: "success" } },
+                                          [_c("span", [_vm._v("Active")])]
+                                        )
+                                      : _c(
+                                          "badge",
+                                          { attrs: { type: "warning" } },
+                                          [_c("span", [_vm._v("Deactive")])]
+                                        )
+                                  ],
+                                  1
+                                )
+                              }
+                            }
+                          ])
                         }),
                         _vm._v(" "),
                         _c("el-table-column", {

@@ -96,6 +96,7 @@ class FleetController extends Controller
             'model' => $request->model,
             'seat_config' => $request->seat_config,
             'total_seat' => $request->total_seat,
+            'status' => $request->status,
         ]);
 
         return response()->json([

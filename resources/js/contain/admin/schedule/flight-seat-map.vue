@@ -175,23 +175,23 @@
                   <li class="row" v-for="i in 20" :key="i">
                     <ol class="seats" type="A">
                       <li class="seat">
-                        <input type="checkbox" v-model="seat[i+'A']" :id="i+'A'" />
+                        <input type="checkbox" v-model="seats[i+'A']" :id="i+'A'" />
                         <label :for="i+'A'">{{i}}A</label>
                       </li>
                       <li class="seat">
-                        <input type="checkbox" v-model="seat[i+'B']" :id="i+'B'" @change="handleSeat" />
+                        <input type="checkbox" v-model="seats[i+'B']" :id="i+'B'" />
                         <label :for="i+'B'">{{i}}B</label>
                       </li>
                       <li class="seat">
-                        <input type="checkbox" v-model="seat[i+'C']" :id="i+'C'" />
+                        <input type="checkbox" v-model="seats[i+'C']" :id="i+'C'" />
                         <label :for="i+'C'">{{i}}C</label>
                       </li>
                       <li class="seat">
-                        <input type="checkbox" v-model="seat[i+'D']" :id="i+'D'" />
+                        <input type="checkbox" v-model="seats[i+'D']" :id="i+'D'" />
                         <label :for="i+'D'">{{i}}D</label>
                       </li>
                       <li class="seat">
-                        <input type="checkbox" v-model="seat[i+'E']" :id="i+'E'" />
+                        <input type="checkbox" v-model="seats[i+'E']" :id="i+'E'" />
                         <label :for="i+'E'">{{i}}E</label>
                       </li>
                     </ol>
@@ -232,7 +232,7 @@ export default {
   },
   data() {
     return {
-      seat: [],
+      seats: [],
       propsToSearch: ['first_name', 'last_name'],
       tableData: [],
       flightTableData: [],
@@ -243,11 +243,13 @@ export default {
     flightPassengers: function() {
       this.tableData = this.flightPassengers;
       this.flightPassengers.forEach(function(item, index) {
-        document.getElementById(item.seat).disabled = true
+        if (item.seat != null) {
+          document.getElementById(item.seat).disabled = true
+        }
       });
     },
     aircraftFlight: function() {
-      this.flightTableData = this.aircraftFlight;
+      this.flightTableData.push(this.aircraftFlight);
     },
   },
   computed: {
@@ -267,9 +269,6 @@ export default {
     paginationChanged(page) {
       this.pagination.currentPage = page
     },
-    handleSeat() {
-      console.log(this.seat)
-    }
   }
 };
 </script>

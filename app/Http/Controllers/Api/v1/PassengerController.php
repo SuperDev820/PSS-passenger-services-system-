@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api\v1;
 
 use App\Models\User;
 use App\Models\Role;
+use App\Models\FlightPassenger;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Validator;
@@ -179,6 +180,42 @@ class PassengerController extends Controller
         return response()->json([
             'message' => 'successfully deleted',
             'passengers' => $admin_passengers
+        ], 200);
+    }
+
+    public function getFlightPassengerById(Request $request, $passengerId, $flightId)
+    {        
+        $flight_passengers = FlightPassenger::where('aircraft_flight_id', $flightId)
+                                            ->where('passenger_id', $passengerId)->get();
+        if (count($flight_passengers) > 0) {
+            $flight_passenger = $flight_passengers[0];
+            $flight_passenger->passenger;
+        } else {
+            $flight_passenger = null;
+        }
+        return response()->json([
+            'message' => 'success',
+            'flight_passenger' => $flight_passenger,
+        ], 200);
+    }
+
+    public function passengerSeatBook(Request $request)
+    {
+        $flight_passengers = FlightPassenger::where('aircraft_flight_id', $request->flightId)
+                                            ->where('passenger_id', $request->passengerId)->get();
+        if (count($flight_passengers) > 0) {
+            $flight_passenger = $flight_passengers[0];
+            $flight_passenger -> update([
+                'seat' => $request->seat,
+            ]);;
+        } else {
+            return response()->json([
+                'message' => 'do not exist such passenger',
+            ], 200);
+        }
+        return response()->json([
+            'message' => 'success',
+            'flight_passenger' => $flight_passenger,
         ], 200);
     }
 }

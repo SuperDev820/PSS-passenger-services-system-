@@ -118,6 +118,19 @@ var _components;
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -132,11 +145,19 @@ var _components;
   components: (_components = {}, (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_components, (element_ui_lib_select__WEBPACK_IMPORTED_MODULE_6___default().name), (element_ui_lib_select__WEBPACK_IMPORTED_MODULE_6___default())), (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_components, (element_ui_lib_option__WEBPACK_IMPORTED_MODULE_4___default().name), (element_ui_lib_option__WEBPACK_IMPORTED_MODULE_4___default())), (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_components, "flatPicker", (vue_flatpickr_component__WEBPACK_IMPORTED_MODULE_8___default())), _components),
   data: function data() {
     return {
+      statusOptions: [{
+        label: 'Active',
+        value: 1
+      }, {
+        label: 'Deactive',
+        value: 0
+      }],
       model: {
         registration: '',
         model: '',
         seat_config: 0,
-        total_seat: 0
+        total_seat: 0,
+        status: 1
       },
       error: null,
       isError: false,
@@ -152,6 +173,7 @@ var _components;
       this.model.model = this.aircraft.model;
       this.model.seat_config = this.aircraft.seat_config;
       this.model.total_seat = this.aircraft.total_seat;
+      this.model.status = this.aircraft.status;
     }
   },
   computed: (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)({}, (0,vuex__WEBPACK_IMPORTED_MODULE_10__.mapGetters)(['aircraft'])),
@@ -169,7 +191,8 @@ var _components;
         registration: this.model.registration,
         model: this.model.model,
         seat_config: this.model.seat_config,
-        total_seat: this.model.total_seat
+        total_seat: this.model.total_seat,
+        status: this.model.status
       }).then(function (res) {
         _this.isError = false;
         _this.isSubmitting = false;
@@ -7034,7 +7057,49 @@ var render = function() {
                                               },
                                               expression: "model.total_seat"
                                             }
-                                          })
+                                          }),
+                                          _vm._v(" "),
+                                          _c(
+                                            "base-input",
+                                            { attrs: { label: "Status" } },
+                                            [
+                                              _c(
+                                                "el-select",
+                                                {
+                                                  attrs: {
+                                                    filterable: "",
+                                                    placeholder: "Status",
+                                                    rules: { required: true }
+                                                  },
+                                                  model: {
+                                                    value: _vm.model.status,
+                                                    callback: function($$v) {
+                                                      _vm.$set(
+                                                        _vm.model,
+                                                        "status",
+                                                        $$v
+                                                      )
+                                                    },
+                                                    expression: "model.status"
+                                                  }
+                                                },
+                                                _vm._l(
+                                                  _vm.statusOptions,
+                                                  function(option) {
+                                                    return _c("el-option", {
+                                                      key: option.label,
+                                                      attrs: {
+                                                        label: option.label,
+                                                        value: option.value
+                                                      }
+                                                    })
+                                                  }
+                                                ),
+                                                1
+                                              )
+                                            ],
+                                            1
+                                          )
                                         ],
                                         1
                                       ),

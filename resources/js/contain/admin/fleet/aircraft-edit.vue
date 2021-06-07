@@ -66,6 +66,19 @@
                                 :rules="{required: true, numeric: true, min: 1}"
                                 v-model="model.total_seat">
                     </base-input>
+
+                    <base-input label="Status">
+                      <el-select v-model="model.status"
+                                 filterable
+                                 placeholder="Status"
+                                 :rules="{required: true}">
+                        <el-option v-for="option in statusOptions"
+                                   :key="option.label"
+                                   :label="option.label"
+                                   :value="option.value">
+                        </el-option>
+                      </el-select>
+                    </base-input>
                   </div>
                   <div class="d-flex justify-content-between col-12 mt-4">
                     <router-link :to="{name: 'Aircrafts'}" class="btn btn-secondary">Cancel</router-link>
@@ -100,11 +113,22 @@
     },
     data() {
       return {
+        statusOptions: [
+          {
+            label: 'Active',
+            value: 1
+          },
+          {
+            label: 'Deactive',
+            value: 0
+          },
+        ],
         model: {
           registration: '',
           model: '',
           seat_config: 0,
           total_seat: 0,
+          status: 1,
         },
         error: null,
         isError: false,
@@ -120,6 +144,7 @@
         this.model.model = this.aircraft.model;
         this.model.seat_config = this.aircraft.seat_config;
         this.model.total_seat = this.aircraft.total_seat;
+        this.model.status = this.aircraft.status;
       },
     },
     computed: {
@@ -146,6 +171,7 @@
               model: this.model.model,
               seat_config: this.model.seat_config,
               total_seat: this.model.total_seat,
+              status: this.model.status,
             })
             .then((res) => {
               this.isError = false;

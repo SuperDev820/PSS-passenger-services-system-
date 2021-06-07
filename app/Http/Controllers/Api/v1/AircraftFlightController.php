@@ -30,6 +30,9 @@ class AircraftFlightController extends Controller
         $current_date = Carbon::now()->timezone('Australia/Sydney')->format('Y-m-d');
         $current_day = Carbon::now()->timezone('Australia/Sydney')->dayOfWeek;
         // $current_day = Carbon::now()->format('l');
+        if ($current_day == 0) {
+            $current_day = 7;
+        }
         $aircraft_flights = AircraftFlight::where('date', $current_date)->get();
         if (count($aircraft_flights) > 0) {
             foreach ($aircraft_flights as $aircraft_flight) {
@@ -99,11 +102,9 @@ class AircraftFlightController extends Controller
     }
     public function getFlightPassengers(Request $request, $flightId)
     {
-        $aircraft_flight = [];
-        $temp = AircraftFlight::find($flightId);
-        $temp->flight;
-        $temp->aircraft;
-        array_push($aircraft_flight, $temp);
+        $aircraft_flight = AircraftFlight::find($flightId);
+        $aircraft_flight->flight;
+        $aircraft_flight->aircraft;
         
         $flight_passengers = FlightPassenger::where('aircraft_flight_id', $flightId)->get();
         foreach ($flight_passengers as $flight_passenger) {

@@ -170,6 +170,7 @@ var _components;
 //
 //
 //
+//
 
 
 
@@ -7173,12 +7174,20 @@ var render = function() {
                                           }),
                                           _vm._v(" "),
                                           _c("base-input", {
+                                            directives: [
+                                              {
+                                                name: "mask",
+                                                rawName: "v-mask",
+                                                value: "#-#-#-#",
+                                                expression: "'#-#-#-#'"
+                                              }
+                                            ],
                                             staticClass: "mb-3",
                                             attrs: {
                                               alternative: "",
                                               "prepend-icon": "fas fa-clone",
                                               label: "Roster",
-                                              placeholder: "Roster",
+                                              placeholder: "e.g x-x-x-x",
                                               name: "Roster"
                                             },
                                             model: {

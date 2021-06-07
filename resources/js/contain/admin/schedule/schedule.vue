@@ -210,7 +210,7 @@
               <el-select v-model="model.type"
                           filterable
                           placeholder="Scheduled Type"
-                          :rules="{required: true}">
+                          >
                 <el-option v-for="option in typeOptions"
                             :key="option.label"
                             :label="option.label"
@@ -224,11 +224,11 @@
               <el-select v-model="model.aircraft"
                           filterable
                           placeholder="Aircraft Registration"
-                          :rules="{required: true}">
-                <el-option v-for="option in aircraftOptions"
-                            :key="option.label"
-                            :label="option.label"
-                            :value="option.value">
+                          >
+                <el-option v-for="option in aircrafts" v-if="option.status == 1"
+                            :key="option.id"
+                            :label="option.registration"
+                            :value="option.id">
                 </el-option>
               </el-select>
             </base-input>
@@ -238,10 +238,9 @@
               <el-select v-model="model.flight"
                           filterable
                           placeholder="Flight"
-                          :rules="{required: true}"
                           @change="handleFlight()">
                 <el-option v-for="option in aircraftFlights" 
-                            v-if="option.status == 'PLANNED'"
+                            v-if="option.status == 'PLANNED' && option.flight.type == model.type"
                             :key="option.flight_id"
                             :label="option.flight.airline_code+option.flight.flight_number"
                             :value="option.flight_id">
@@ -530,6 +529,9 @@
       },
       saveEvent() {
         this.error = null;
+        if ((this.model.aircraft == '') || (this.model.flight == '')) {
+          return ;
+        }
         return (
           this.saveAircraftFlight({
               aircraft: this.model.aircraft,

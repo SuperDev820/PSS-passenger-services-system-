@@ -52,6 +52,10 @@ Route::group([ 'prefix' => 'v1', 'middleware' => 'api'], function(){
         Route::put('/passenger/update', 'App\Http\Controllers\Api\v1\PassengerController@update');
         /* Get passenger detail by id */
         Route::get('/passenger/{passengerId}', 'App\Http\Controllers\Api\v1\PassengerController@getById');
+        /* Get flight_passenger detail by id */
+        Route::get('/passenger/{passengerId}/flight/{flightId}', 'App\Http\Controllers\Api\v1\PassengerController@getFlightPassengerById');
+        /* Book passenger's seat */
+        Route::put('/passenger/seat/book', 'App\Http\Controllers\Api\v1\PassengerController@passengerSeatBook');
         /* delete passenger by id */
         Route::delete('/passenger/delete/{passengerId}', 'App\Http\Controllers\Api\v1\PassengerController@delete');
 

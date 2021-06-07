@@ -28,6 +28,19 @@ const actions = {
                 });
         });
     },
+    getFlightPassengerById(context, data) {
+        ApiService.setHeader();
+        return new Promise((resolve) =>{
+            ApiService.get("api/v1/admin/passenger/" + data.passengerId + "/flight/" + data.flightId)
+                .then(({data}) => {
+                    console.log(data);
+                    context.commit(type.SET_FLIGHT_PASSENGER, data)
+                })
+                .catch(({ response }) => {
+                    // context.commit(type.AUTH_LOGOUT);
+                });
+        });
+    },
     createPassenger(context, passengerInfo) {
         ApiService.setHeader();
         return new Promise((resolve, reject) => {
@@ -63,6 +76,19 @@ const actions = {
                 })
                 .catch(({ response }) => {
                     // context.commit(type.AUTH_LOGOUT);
+                });
+        });
+    },
+    passengerSeatBook(context, data) {
+        ApiService.setHeader();
+        return new Promise((resolve, reject) => {
+            ApiService.put("api/v1/admin/passenger/seat/book", data)
+                .then((data) => {
+                    resolve(data);
+                })
+                .catch(({response, status}) => {
+                    console.log(response);
+                    reject(response);
                 });
         });
     },

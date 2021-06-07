@@ -205,6 +205,10 @@ var _components;
 //
 //
 //
+//
+//
+//
+//
 
 
 
@@ -13880,7 +13884,7 @@ var render = function() {
             [
               _c("b-col", { attrs: { cols: "7", lg: "6" } }, [
                 _c("h6", { staticClass: "h2 text-white d-inline-block mb-0" }, [
-                  _vm._v("Passengers table")
+                  _vm._v("Passengers Table")
                 ]),
                 _vm._v(" "),
                 _c(
@@ -14051,6 +14055,14 @@ var render = function() {
                           attrs: {
                             label: "Company",
                             prop: "company",
+                            "min-width": "120px"
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("el-table-column", {
+                          attrs: {
+                            label: "Roster",
+                            prop: "roster",
                             "min-width": "120px"
                           }
                         }),

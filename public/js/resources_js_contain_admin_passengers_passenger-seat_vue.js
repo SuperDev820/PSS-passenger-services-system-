@@ -1,5 +1,107 @@
 (self["webpackChunk"] = self["webpackChunk"] || []).push([["resources_js_contain_admin_passengers_passenger-seat_vue"],{
 
+/***/ "./node_modules/@babel/runtime/helpers/esm/arrayWithHoles.js":
+/*!*******************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/arrayWithHoles.js ***!
+  \*******************************************************************/
+/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ _arrayWithHoles; }
+/* harmony export */ });
+function _arrayWithHoles(arr) {
+  if (Array.isArray(arr)) return arr;
+}
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/esm/iterableToArrayLimit.js":
+/*!*************************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/iterableToArrayLimit.js ***!
+  \*************************************************************************/
+/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ _iterableToArrayLimit; }
+/* harmony export */ });
+function _iterableToArrayLimit(arr, i) {
+  var _i = arr && (typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]);
+
+  if (_i == null) return;
+  var _arr = [];
+  var _n = true;
+  var _d = false;
+
+  var _s, _e;
+
+  try {
+    for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) {
+      _arr.push(_s.value);
+
+      if (i && _arr.length === i) break;
+    }
+  } catch (err) {
+    _d = true;
+    _e = err;
+  } finally {
+    try {
+      if (!_n && _i["return"] != null) _i["return"]();
+    } finally {
+      if (_d) throw _e;
+    }
+  }
+
+  return _arr;
+}
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/esm/nonIterableRest.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/nonIterableRest.js ***!
+  \********************************************************************/
+/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ _nonIterableRest; }
+/* harmony export */ });
+function _nonIterableRest() {
+  throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+}
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/esm/slicedToArray.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/slicedToArray.js ***!
+  \******************************************************************/
+/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ _slicedToArray; }
+/* harmony export */ });
+/* harmony import */ var _arrayWithHoles_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./arrayWithHoles.js */ "./node_modules/@babel/runtime/helpers/esm/arrayWithHoles.js");
+/* harmony import */ var _iterableToArrayLimit_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./iterableToArrayLimit.js */ "./node_modules/@babel/runtime/helpers/esm/iterableToArrayLimit.js");
+/* harmony import */ var _unsupportedIterableToArray_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./unsupportedIterableToArray.js */ "./node_modules/@babel/runtime/helpers/esm/unsupportedIterableToArray.js");
+/* harmony import */ var _nonIterableRest_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./nonIterableRest.js */ "./node_modules/@babel/runtime/helpers/esm/nonIterableRest.js");
+
+
+
+
+function _slicedToArray(arr, i) {
+  return (0,_arrayWithHoles_js__WEBPACK_IMPORTED_MODULE_0__.default)(arr) || (0,_iterableToArrayLimit_js__WEBPACK_IMPORTED_MODULE_1__.default)(arr, i) || (0,_unsupportedIterableToArray_js__WEBPACK_IMPORTED_MODULE_2__.default)(arr, i) || (0,_nonIterableRest_js__WEBPACK_IMPORTED_MODULE_3__.default)();
+}
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/contain/admin/passengers/passenger-seat.vue?vue&type=script&lang=js&":
 /*!***********************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/contain/admin/passengers/passenger-seat.vue?vue&type=script&lang=js& ***!
@@ -8,31 +110,36 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/objectSpread2 */ "./node_modules/@babel/runtime/helpers/esm/objectSpread2.js");
-/* harmony import */ var E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/defineProperty */ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js");
-/* harmony import */ var element_ui_lib_theme_chalk_table_column_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! element-ui/lib/theme-chalk/table-column.css */ "./node_modules/element-ui/lib/theme-chalk/table-column.css");
-/* harmony import */ var element_ui_lib_theme_chalk_base_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! element-ui/lib/theme-chalk/base.css */ "./node_modules/element-ui/lib/theme-chalk/base.css");
-/* harmony import */ var element_ui_lib_table_column__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! element-ui/lib/table-column */ "./node_modules/element-ui/lib/table-column.js");
-/* harmony import */ var element_ui_lib_table_column__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(element_ui_lib_table_column__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var element_ui_lib_theme_chalk_table_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! element-ui/lib/theme-chalk/table.css */ "./node_modules/element-ui/lib/theme-chalk/table.css");
-/* harmony import */ var element_ui_lib_table__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! element-ui/lib/table */ "./node_modules/element-ui/lib/table.js");
-/* harmony import */ var element_ui_lib_table__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(element_ui_lib_table__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var element_ui_lib_theme_chalk_option_css__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! element-ui/lib/theme-chalk/option.css */ "./node_modules/element-ui/lib/theme-chalk/option.css");
-/* harmony import */ var element_ui_lib_option__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! element-ui/lib/option */ "./node_modules/element-ui/lib/option.js");
-/* harmony import */ var element_ui_lib_option__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(element_ui_lib_option__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var element_ui_lib_theme_chalk_select_css__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! element-ui/lib/theme-chalk/select.css */ "./node_modules/element-ui/lib/theme-chalk/select.css");
-/* harmony import */ var element_ui_lib_select__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! element-ui/lib/select */ "./node_modules/element-ui/lib/select.js");
-/* harmony import */ var element_ui_lib_select__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(element_ui_lib_select__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! core-js/modules/es.function.name.js */ "./node_modules/core-js/modules/es.function.name.js");
-/* harmony import */ var core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_11__);
-/* harmony import */ var core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! core-js/modules/web.dom-collections.for-each.js */ "./node_modules/core-js/modules/web.dom-collections.for-each.js");
-/* harmony import */ var core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_12__);
-/* harmony import */ var _components_Breadcrumb_RouteBreadcrumb__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @/components/Breadcrumb/RouteBreadcrumb */ "./resources/js/components/Breadcrumb/RouteBreadcrumb.vue");
-/* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @/components */ "./resources/js/components/index.js");
-/* harmony import */ var _common_PaginatedTables_clientPaginationMixin__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @/common/PaginatedTables/clientPaginationMixin */ "./resources/js/common/PaginatedTables/clientPaginationMixin.js");
-/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! sweetalert2 */ "./node_modules/sweetalert2/dist/sweetalert2.all.js");
-/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_16___default = /*#__PURE__*/__webpack_require__.n(sweetalert2__WEBPACK_IMPORTED_MODULE_16__);
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.mjs");
+/* harmony import */ var E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/slicedToArray */ "./node_modules/@babel/runtime/helpers/esm/slicedToArray.js");
+/* harmony import */ var E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/objectSpread2 */ "./node_modules/@babel/runtime/helpers/esm/objectSpread2.js");
+/* harmony import */ var E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/defineProperty */ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js");
+/* harmony import */ var element_ui_lib_theme_chalk_table_column_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! element-ui/lib/theme-chalk/table-column.css */ "./node_modules/element-ui/lib/theme-chalk/table-column.css");
+/* harmony import */ var element_ui_lib_theme_chalk_base_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! element-ui/lib/theme-chalk/base.css */ "./node_modules/element-ui/lib/theme-chalk/base.css");
+/* harmony import */ var element_ui_lib_table_column__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! element-ui/lib/table-column */ "./node_modules/element-ui/lib/table-column.js");
+/* harmony import */ var element_ui_lib_table_column__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(element_ui_lib_table_column__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var element_ui_lib_theme_chalk_table_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! element-ui/lib/theme-chalk/table.css */ "./node_modules/element-ui/lib/theme-chalk/table.css");
+/* harmony import */ var element_ui_lib_table__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! element-ui/lib/table */ "./node_modules/element-ui/lib/table.js");
+/* harmony import */ var element_ui_lib_table__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(element_ui_lib_table__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var element_ui_lib_theme_chalk_option_css__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! element-ui/lib/theme-chalk/option.css */ "./node_modules/element-ui/lib/theme-chalk/option.css");
+/* harmony import */ var element_ui_lib_option__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! element-ui/lib/option */ "./node_modules/element-ui/lib/option.js");
+/* harmony import */ var element_ui_lib_option__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(element_ui_lib_option__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var element_ui_lib_theme_chalk_select_css__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! element-ui/lib/theme-chalk/select.css */ "./node_modules/element-ui/lib/theme-chalk/select.css");
+/* harmony import */ var element_ui_lib_select__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! element-ui/lib/select */ "./node_modules/element-ui/lib/select.js");
+/* harmony import */ var element_ui_lib_select__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(element_ui_lib_select__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! core-js/modules/es.function.name.js */ "./node_modules/core-js/modules/es.function.name.js");
+/* harmony import */ var core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! core-js/modules/web.dom-collections.for-each.js */ "./node_modules/core-js/modules/web.dom-collections.for-each.js");
+/* harmony import */ var core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_13__);
+/* harmony import */ var core_js_modules_es_object_entries_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! core-js/modules/es.object.entries.js */ "./node_modules/core-js/modules/es.object.entries.js");
+/* harmony import */ var core_js_modules_es_object_entries_js__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_object_entries_js__WEBPACK_IMPORTED_MODULE_14__);
+/* harmony import */ var _components_Breadcrumb_RouteBreadcrumb__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @/components/Breadcrumb/RouteBreadcrumb */ "./resources/js/components/Breadcrumb/RouteBreadcrumb.vue");
+/* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @/components */ "./resources/js/components/index.js");
+/* harmony import */ var _common_PaginatedTables_clientPaginationMixin__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @/common/PaginatedTables/clientPaginationMixin */ "./resources/js/common/PaginatedTables/clientPaginationMixin.js");
+/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! sweetalert2 */ "./node_modules/sweetalert2/dist/sweetalert2.all.js");
+/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_18___default = /*#__PURE__*/__webpack_require__.n(sweetalert2__WEBPACK_IMPORTED_MODULE_18__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.mjs");
+/* harmony import */ var _components_BaseButton_vue__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../../../components/BaseButton.vue */ "./resources/js/components/BaseButton.vue");
+
 
 
 
@@ -52,6 +159,7 @@ var _components;
 
 
 
+
 //
 //
 //
@@ -159,108 +267,7 @@ var _components;
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+
 
 
 
@@ -274,41 +281,92 @@ var _components;
       content: ""
     }]
   },
-  mixins: [_common_PaginatedTables_clientPaginationMixin__WEBPACK_IMPORTED_MODULE_15__.default],
+  mixins: [_common_PaginatedTables_clientPaginationMixin__WEBPACK_IMPORTED_MODULE_17__.default],
   components: (_components = {
-    BasePagination: _components__WEBPACK_IMPORTED_MODULE_14__.BasePagination,
-    RouteBreadCrumb: _components_Breadcrumb_RouteBreadcrumb__WEBPACK_IMPORTED_MODULE_13__.default
-  }, (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_components, (element_ui_lib_select__WEBPACK_IMPORTED_MODULE_10___default().name), (element_ui_lib_select__WEBPACK_IMPORTED_MODULE_10___default())), (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_components, (element_ui_lib_option__WEBPACK_IMPORTED_MODULE_8___default().name), (element_ui_lib_option__WEBPACK_IMPORTED_MODULE_8___default())), (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_components, (element_ui_lib_table__WEBPACK_IMPORTED_MODULE_6___default().name), (element_ui_lib_table__WEBPACK_IMPORTED_MODULE_6___default())), (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_components, (element_ui_lib_table_column__WEBPACK_IMPORTED_MODULE_4___default().name), (element_ui_lib_table_column__WEBPACK_IMPORTED_MODULE_4___default())), _components),
+    BasePagination: _components__WEBPACK_IMPORTED_MODULE_16__.BasePagination,
+    RouteBreadCrumb: _components_Breadcrumb_RouteBreadcrumb__WEBPACK_IMPORTED_MODULE_15__.default,
+    BaseButton: _components_BaseButton_vue__WEBPACK_IMPORTED_MODULE_19__.default
+  }, (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__.default)(_components, (element_ui_lib_select__WEBPACK_IMPORTED_MODULE_11___default().name), (element_ui_lib_select__WEBPACK_IMPORTED_MODULE_11___default())), (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__.default)(_components, (element_ui_lib_option__WEBPACK_IMPORTED_MODULE_9___default().name), (element_ui_lib_option__WEBPACK_IMPORTED_MODULE_9___default())), (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__.default)(_components, (element_ui_lib_table__WEBPACK_IMPORTED_MODULE_7___default().name), (element_ui_lib_table__WEBPACK_IMPORTED_MODULE_7___default())), (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__.default)(_components, (element_ui_lib_table_column__WEBPACK_IMPORTED_MODULE_5___default().name), (element_ui_lib_table_column__WEBPACK_IMPORTED_MODULE_5___default())), _components),
   data: function data() {
     return {
-      seat: [],
-      propsToSearch: ['first_name', 'last_name'],
+      seats: [],
       tableData: [],
-      flightTableData: [],
-      selectedRows: []
+      isBooking: false
     };
   },
   watch: {
-    flightPassengers: function flightPassengers() {
-      this.tableData = this.flightPassengers;
-      this.flightPassengers.forEach(function (item, index) {
-        document.getElementById(item.seat).disabled = true;
-      });
+    flightPassenger: function flightPassenger() {
+      this.tableData.push(this.flightPassenger);
+
+      if (this.flightPassenger.seat != null) {
+        document.getElementById(this.flightPassenger.seat).disabled = false;
+        this.seats[this.flightPassenger.seat] = true;
+      }
     },
-    aircraftFlight: function aircraftFlight() {
-      this.flightTableData = this.aircraftFlight;
+    flightPassengers: function flightPassengers() {
+      this.flightPassengers.forEach(function (item, index) {
+        if (item.seat != null) {
+          document.getElementById(item.seat).disabled = true;
+        }
+      });
+      this.getFlightPassengerById({
+        passengerId: this.$route.params.passengerId,
+        flightId: this.$route.params.flightId
+      });
     }
   },
-  computed: (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)({}, (0,vuex__WEBPACK_IMPORTED_MODULE_17__.mapGetters)(['flightPassengers', 'aircraftFlight'])),
+  computed: (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_1__.default)({}, (0,vuex__WEBPACK_IMPORTED_MODULE_20__.mapGetters)([// 'passenger',
+  'flightPassenger', 'flightPassengers'])),
   mounted: function mounted() {
+    // this.getPassengerById(this.$route.params.passengerId);
     this.getFlightPassengers(this.$route.params.flightId);
   },
-  methods: (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)((0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)({}, (0,vuex__WEBPACK_IMPORTED_MODULE_17__.mapActions)(['getFlightPassengers'])), {}, {
-    paginationChanged: function paginationChanged(page) {
-      this.pagination.currentPage = page;
-    },
-    handleSeat: function handleSeat() {
-      console.log(this.seat);
+  methods: (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_1__.default)((0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_1__.default)({}, (0,vuex__WEBPACK_IMPORTED_MODULE_20__.mapActions)([// 'getPassengerById',
+  'getFlightPassengerById', 'getFlightPassengers', 'passengerSeatBook'])), {}, {
+    book: function book() {
+      var _this = this;
+
+      this.isBooking = true;
+      var passenger_seats = [];
+
+      for (var _i = 0, _Object$entries = Object.entries(this.seats); _i < _Object$entries.length; _i++) {
+        var _Object$entries$_i = (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__.default)(_Object$entries[_i], 2),
+            key = _Object$entries$_i[0],
+            value = _Object$entries$_i[1];
+
+        if (value == true) {
+          passenger_seats.push(key);
+        }
+      }
+
+      if (passenger_seats.length == 1) {
+        console.log(passenger_seats[0]);
+        this.passengerSeatBook({
+          passengerId: this.$route.params.passengerId,
+          flightId: this.$route.params.flightId,
+          seat: passenger_seats[0]
+        }).then(function (res) {
+          _this.isBooking = false;
+          _this.flightPassenger.seat = passenger_seats[0];
+
+          _this.$notify({
+            message: 'Successfully Booked',
+            timeout: 5000,
+            icon: 'ni ni-bell-55',
+            type: 'success'
+          });
+        })["catch"](function (error) {
+          _this.isBooking = false;
+        });
+      } else {
+        this.isBooking = false;
+        this.$notify({
+          message: 'You can select only one seat.',
+          timeout: 5000,
+          icon: 'ni ni-bell-55',
+          type: 'warning'
+        });
+      }
     }
   })
 });
@@ -432,6 +490,48 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/core-js/internals/object-to-array.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/core-js/internals/object-to-array.js ***!
+  \***********************************************************/
+/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+
+var DESCRIPTORS = __webpack_require__(/*! ../internals/descriptors */ "./node_modules/core-js/internals/descriptors.js");
+var objectKeys = __webpack_require__(/*! ../internals/object-keys */ "./node_modules/core-js/internals/object-keys.js");
+var toIndexedObject = __webpack_require__(/*! ../internals/to-indexed-object */ "./node_modules/core-js/internals/to-indexed-object.js");
+var propertyIsEnumerable = __webpack_require__(/*! ../internals/object-property-is-enumerable */ "./node_modules/core-js/internals/object-property-is-enumerable.js").f;
+
+// `Object.{ entries, values }` methods implementation
+var createMethod = function (TO_ENTRIES) {
+  return function (it) {
+    var O = toIndexedObject(it);
+    var keys = objectKeys(O);
+    var length = keys.length;
+    var i = 0;
+    var result = [];
+    var key;
+    while (length > i) {
+      key = keys[i++];
+      if (!DESCRIPTORS || propertyIsEnumerable.call(O, key)) {
+        result.push(TO_ENTRIES ? [key, O[key]] : O[key]);
+      }
+    }
+    return result;
+  };
+};
+
+module.exports = {
+  // `Object.entries` method
+  // https://tc39.es/ecma262/#sec-object.entries
+  entries: createMethod(true),
+  // `Object.values` method
+  // https://tc39.es/ecma262/#sec-object.values
+  values: createMethod(false)
+};
+
+
+/***/ }),
+
 /***/ "./node_modules/core-js/internals/same-value.js":
 /*!******************************************************!*\
   !*** ./node_modules/core-js/internals/same-value.js ***!
@@ -444,6 +544,26 @@ module.exports = Object.is || function is(x, y) {
   // eslint-disable-next-line no-self-compare
   return x === y ? x !== 0 || 1 / x === 1 / y : x != x && y != y;
 };
+
+
+/***/ }),
+
+/***/ "./node_modules/core-js/modules/es.object.entries.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/core-js/modules/es.object.entries.js ***!
+  \***********************************************************/
+/***/ (function(__unused_webpack_module, __unused_webpack_exports, __webpack_require__) {
+
+var $ = __webpack_require__(/*! ../internals/export */ "./node_modules/core-js/internals/export.js");
+var $entries = __webpack_require__(/*! ../internals/object-to-array */ "./node_modules/core-js/internals/object-to-array.js").entries;
+
+// `Object.entries` method
+// https://tc39.es/ecma262/#sec-object.entries
+$({ target: 'Object', stat: true }, {
+  entries: function entries(O) {
+    return $entries(O);
+  }
+});
 
 
 /***/ }),
@@ -591,7 +711,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.no-border-card .card-footer{\n  border-top: 0;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.no-border-card .card-footer{\n  border-top: 0;\n}\n.seat-config {\n  list-style: none;\n  padding: 0;\n  margin: 0;\n}\n.seat-config li {\n  display: flex;\n  align-items: center;\n  margin-bottom: 20px;\n}\n.seat-config .seat {\n  display: block;\n  position: relative;\n  width: 40px;\n  height: 40px;\n  padding: 4px 0;\n  border-radius: 5px;\n}\n.seat-config .seat.available-seat {\n  background: #6acc6a;\n}\n.seat-config .seat.reserved-seat {\n  background: #ff844a;\n}\n.seat-config .seat.disabled-seat {\n  background: #dddddd;\n}\n.seat-config .seat:before {\n  content: \"\";\n  position: absolute;\n  width: 75%;\n  height: 80%;\n  top: 1px;\n  left: 50%;\n  transform: translate(-50%, 0%);\n  background: rgba(255, 255, 255, 0.4);\n  border-radius: 3px;\n}\n.seat-config .description {\n  padding-left: 15px;\n}\n", ""]);
 // Exports
 /* harmony default export */ __webpack_exports__["default"] = (___CSS_LOADER_EXPORT___);
 
@@ -13906,7 +14026,7 @@ var render = function() {
             [
               _c("b-col", { attrs: { cols: "7", lg: "6" } }, [
                 _c("h6", { staticClass: "h2 text-white d-inline-block mb-0" }, [
-                  _vm._v("Aircraft Seat Map")
+                  _vm._v("Select Seat")
                 ]),
                 _vm._v(" "),
                 _c(
@@ -13928,11 +14048,24 @@ var render = function() {
                     "router-link",
                     {
                       staticClass: "btn btn-neutral btn-sm",
-                      attrs: { to: { name: "Schedule" } }
+                      attrs: { to: { name: "Passengers" } }
                     },
                     [
                       _c("i", { staticClass: "far fa-hand-point-left" }),
                       _vm._v(" Go Back\n        ")
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "base-button",
+                    {
+                      staticClass: "btn btn-neutral btn-sm",
+                      attrs: { disabled: _vm.isBooking },
+                      on: { click: _vm.book }
+                    },
+                    [
+                      _c("i", { staticClass: "fas fa-feather" }),
+                      _vm._v(" Book\n        ")
                     ]
                   )
                 ],
@@ -13956,38 +14089,36 @@ var render = function() {
                 attrs: { "body-classes": "px-0 pb-1", "footer-classes": "pb-2" }
               },
               [
-                _c("template", { slot: "header" }, [
-                  _c("h3", { staticClass: "mb-0" }, [_vm._v("Seat Map")])
-                ]),
-                _vm._v(" "),
                 _c(
                   "div",
                   { staticClass: "row" },
                   [
+                    _c("b-col", { attrs: { cols: "12" } }),
+                    _vm._v(" "),
                     _c(
                       "b-col",
-                      { staticClass: "mb-5", attrs: { cols: "12" } },
+                      { staticClass: "px-5 pt-5", attrs: { cols: "6" } },
                       [
-                        _c("h4", { staticClass: "px-4 mb-3" }, [
-                          _vm._v("Flight Info")
+                        _c("h2", { staticClass: "mb-5" }, [
+                          _vm._v("Passenger")
                         ]),
                         _vm._v(" "),
                         _c(
                           "el-table",
                           {
                             staticClass:
-                              "table-responsive align-items-center table-flush",
+                              "table-responsive align-items-center table-flush mb-5",
                             attrs: {
                               "header-row-class-name": "thead-light",
-                              data: _vm.flightTableData
+                              data: _vm.tableData
                             }
                           },
                           [
                             _c("el-table-column", {
                               attrs: {
-                                label: "Flight No.",
-                                prop: "airline",
-                                "min-width": "140px"
+                                label: "Passenger",
+                                prop: "passenger",
+                                "min-width": "160px"
                               },
                               scopedSlots: _vm._u([
                                 {
@@ -13998,313 +14129,10 @@ var render = function() {
                                       _vm._v(
                                         "\n                  " +
                                           _vm._s(
-                                            row.flight.airline_code +
-                                              row.flight.flight_number
+                                            row.passenger.first_name +
+                                              " " +
+                                              row.passenger.last_name
                                           ) +
-                                          "\n                "
-                                      )
-                                    ])
-                                  }
-                                }
-                              ])
-                            }),
-                            _vm._v(" "),
-                            _c("el-table-column", {
-                              attrs: {
-                                label: "Aircraft",
-                                prop: "aircraft",
-                                "min-width": "120px"
-                              },
-                              scopedSlots: _vm._u([
-                                {
-                                  key: "default",
-                                  fn: function(ref) {
-                                    var row = ref.row
-                                    return _c("div", {}, [
-                                      _vm._v(
-                                        "\n                  " +
-                                          _vm._s(row.aircraft.registration) +
-                                          "\n                "
-                                      )
-                                    ])
-                                  }
-                                }
-                              ])
-                            }),
-                            _vm._v(" "),
-                            _c("el-table-column", {
-                              attrs: {
-                                label: "From",
-                                prop: "origin_airport_name",
-                                "min-width": "120px"
-                              },
-                              scopedSlots: _vm._u([
-                                {
-                                  key: "default",
-                                  fn: function(ref) {
-                                    var row = ref.row
-                                    return _c("div", {}, [
-                                      _vm._v(
-                                        "\n                  " +
-                                          _vm._s(
-                                            row.flight.origin_airport_name
-                                          ) +
-                                          "\n                "
-                                      )
-                                    ])
-                                  }
-                                }
-                              ])
-                            }),
-                            _vm._v(" "),
-                            _c("el-table-column", {
-                              attrs: {
-                                label: "To",
-                                prop: "destination_airport_name",
-                                "min-width": "120px"
-                              },
-                              scopedSlots: _vm._u([
-                                {
-                                  key: "default",
-                                  fn: function(ref) {
-                                    var row = ref.row
-                                    return _c("div", {}, [
-                                      _vm._v(
-                                        "\n                  " +
-                                          _vm._s(
-                                            row.flight.destination_airport_name
-                                          ) +
-                                          "\n                "
-                                      )
-                                    ])
-                                  }
-                                }
-                              ])
-                            }),
-                            _vm._v(" "),
-                            _c("el-table-column", {
-                              attrs: {
-                                label: "Departure",
-                                prop: "departure_time",
-                                "min-width": "120px"
-                              },
-                              scopedSlots: _vm._u([
-                                {
-                                  key: "default",
-                                  fn: function(ref) {
-                                    var row = ref.row
-                                    return _c("div", {}, [
-                                      _vm._v(
-                                        "\n                  " +
-                                          _vm._s(
-                                            row.date + "T" + row.departure_time
-                                          ) +
-                                          "\n                "
-                                      )
-                                    ])
-                                  }
-                                }
-                              ])
-                            }),
-                            _vm._v(" "),
-                            _c("el-table-column", {
-                              attrs: {
-                                label: "Arrival",
-                                prop: "arrival_time",
-                                "min-width": "120px"
-                              },
-                              scopedSlots: _vm._u([
-                                {
-                                  key: "default",
-                                  fn: function(ref) {
-                                    var row = ref.row
-                                    return _c("div", {}, [
-                                      _vm._v(
-                                        "\n                  " +
-                                          _vm._s(
-                                            row.date + "T" + row.arrival_time
-                                          ) +
-                                          "\n                "
-                                      )
-                                    ])
-                                  }
-                                }
-                              ])
-                            }),
-                            _vm._v(" "),
-                            _c("el-table-column", {
-                              attrs: {
-                                label: "Duration",
-                                prop: "flight_time",
-                                "min-width": "100px"
-                              },
-                              scopedSlots: _vm._u([
-                                {
-                                  key: "default",
-                                  fn: function(ref) {
-                                    var row = ref.row
-                                    return _c("div", {}, [
-                                      _vm._v(
-                                        "\n                  " +
-                                          _vm._s(row.flight_time) +
-                                          "\n                "
-                                      )
-                                    ])
-                                  }
-                                }
-                              ])
-                            }),
-                            _vm._v(" "),
-                            _c("el-table-column", {
-                              attrs: {
-                                label: "Type",
-                                prop: "type",
-                                "min-width": "100px"
-                              },
-                              scopedSlots: _vm._u([
-                                {
-                                  key: "default",
-                                  fn: function(ref) {
-                                    var row = ref.row
-                                    return _c("div", {}, [
-                                      row.flight.type == "REGULAR"
-                                        ? _c(
-                                            "span",
-                                            { staticClass: "text-primary" },
-                                            [_vm._v("REGULAR")]
-                                          )
-                                        : _c(
-                                            "span",
-                                            { staticClass: "text-warning" },
-                                            [_vm._v("CHARTER")]
-                                          )
-                                    ])
-                                  }
-                                }
-                              ])
-                            })
-                          ],
-                          1
-                        )
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "b-col",
-                      { attrs: { cols: "6" } },
-                      [
-                        _c("h4", { staticClass: "px-4 mb-3" }, [
-                          _vm._v("Passenger Table")
-                        ]),
-                        _vm._v(" "),
-                        _c(
-                          "b-col",
-                          {
-                            staticClass:
-                              "d-flex justify-content-center justify-content-sm-between flex-wrap",
-                            attrs: { cols: "12" }
-                          },
-                          [
-                            _c(
-                              "el-select",
-                              {
-                                staticClass: "select-primary pagination-select",
-                                attrs: { placeholder: "Per page" },
-                                model: {
-                                  value: _vm.pagination.perPage,
-                                  callback: function($$v) {
-                                    _vm.$set(_vm.pagination, "perPage", $$v)
-                                  },
-                                  expression: "pagination.perPage"
-                                }
-                              },
-                              _vm._l(_vm.pagination.perPageOptions, function(
-                                item
-                              ) {
-                                return _c("el-option", {
-                                  key: item,
-                                  staticClass: "select-primary",
-                                  attrs: { label: item, value: item }
-                                })
-                              }),
-                              1
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "div",
-                              [
-                                _c("base-input", {
-                                  attrs: {
-                                    "prepend-icon": "fas fa-search",
-                                    placeholder: "Search..."
-                                  },
-                                  model: {
-                                    value: _vm.searchQuery,
-                                    callback: function($$v) {
-                                      _vm.searchQuery = $$v
-                                    },
-                                    expression: "searchQuery"
-                                  }
-                                })
-                              ],
-                              1
-                            )
-                          ],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "el-table",
-                          {
-                            attrs: {
-                              data: _vm.queriedData,
-                              "row-key": "id",
-                              "header-row-class-name": "thead-light"
-                            },
-                            on: { "sort-change": _vm.sortChange }
-                          },
-                          [
-                            _c("el-table-column", {
-                              attrs: {
-                                label: "First Name",
-                                prop: "first_name",
-                                "min-width": "140px",
-                                sortable: ""
-                              },
-                              scopedSlots: _vm._u([
-                                {
-                                  key: "default",
-                                  fn: function(ref) {
-                                    var row = ref.row
-                                    return _c("div", {}, [
-                                      _vm._v(
-                                        "\n                  " +
-                                          _vm._s(row.passenger.first_name) +
-                                          "\n                "
-                                      )
-                                    ])
-                                  }
-                                }
-                              ])
-                            }),
-                            _vm._v(" "),
-                            _c("el-table-column", {
-                              attrs: {
-                                label: "Last Name",
-                                prop: "last_name",
-                                "min-width": "140px",
-                                sortable: ""
-                              },
-                              scopedSlots: _vm._u([
-                                {
-                                  key: "default",
-                                  fn: function(ref) {
-                                    var row = ref.row
-                                    return _c("div", {}, [
-                                      _vm._v(
-                                        "\n                  " +
-                                          _vm._s(row.passenger.last_name) +
                                           "\n                "
                                       )
                                     ])
@@ -14317,71 +14145,57 @@ var render = function() {
                               attrs: {
                                 label: "Seat",
                                 prop: "seat",
-                                "min-width": "120px",
-                                sortable: ""
-                              }
-                            }),
-                            _vm._v(" "),
-                            _c("el-table-column", {
-                              attrs: {
-                                label: "Reference",
-                                prop: "book_reference",
-                                "min-width": "140px"
-                              }
+                                "min-width": "120px"
+                              },
+                              scopedSlots: _vm._u([
+                                {
+                                  key: "default",
+                                  fn: function(ref) {
+                                    var row = ref.row
+                                    return _c("div", {}, [
+                                      _vm._v(
+                                        "\n                  " +
+                                          _vm._s(row.seat) +
+                                          "\n                "
+                                      )
+                                    ])
+                                  }
+                                }
+                              ])
                             })
                           ],
                           1
                         ),
                         _vm._v(" "),
-                        _c(
-                          "b-col",
-                          {
-                            staticClass:
-                              "d-flex justify-content-center justify-content-sm-between flex-wrap",
-                            attrs: { cols: "12" }
-                          },
-                          [
-                            _c("div", {}, [
-                              _vm.total != 0
-                                ? _c("p", { staticClass: "card-category" }, [
-                                    _vm._v(
-                                      "\n                  Showing " +
-                                        _vm._s(_vm.from + 1) +
-                                        " to " +
-                                        _vm._s(_vm.to) +
-                                        " of " +
-                                        _vm._s(_vm.total) +
-                                        " entries\n\n                  "
-                                    ),
-                                    _vm.selectedRows.length
-                                      ? _c("span", [
-                                          _vm._v(
-                                            "\n                        " +
-                                              _vm._s(_vm.selectedRows.length) +
-                                              " rows selected\n                  "
-                                          )
-                                        ])
-                                      : _vm._e()
-                                  ])
-                                : _vm._e()
+                        _c("div", [
+                          _c("ul", { staticClass: "seat-config" }, [
+                            _c("li", [
+                              _c("span", {
+                                staticClass: "seat available-seat"
+                              }),
+                              _vm._v(" "),
+                              _c("span", { staticClass: "description" }, [
+                                _vm._v("Seat Available")
+                              ])
                             ]),
                             _vm._v(" "),
-                            _c("base-pagination", {
-                              staticClass: "pagination-no-border",
-                              attrs: {
-                                current: _vm.pagination.currentPage,
-                                "per-page": _vm.pagination.perPage,
-                                total: _vm.total
-                              },
-                              on: {
-                                change: function($event) {
-                                  return _vm.paginationChanged($event)
-                                }
-                              }
-                            })
-                          ],
-                          1
-                        )
+                            _c("li", [
+                              _c("span", { staticClass: "seat reserved-seat" }),
+                              _vm._v(" "),
+                              _c("span", { staticClass: "description" }, [
+                                _vm._v("Current Passenger's Seat")
+                              ])
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c("span", { staticClass: "seat disabled-seat" }),
+                              _vm._v(" "),
+                              _c("span", { staticClass: "description" }, [
+                                _vm._v("Seat Not Available for Selection")
+                              ])
+                            ])
+                          ])
+                        ])
                       ],
                       1
                     ),
@@ -14409,21 +14223,22 @@ var render = function() {
                                         {
                                           name: "model",
                                           rawName: "v-model",
-                                          value: _vm.seat[i + "A"],
-                                          expression: "seat[i+'A']"
+                                          value: _vm.seats[i + "A"],
+                                          expression: "seats[i+'A']"
                                         }
                                       ],
                                       attrs: { type: "checkbox", id: i + "A" },
                                       domProps: {
                                         checked: Array.isArray(
-                                          _vm.seat[i + "A"]
+                                          _vm.seats[i + "A"]
                                         )
-                                          ? _vm._i(_vm.seat[i + "A"], null) > -1
-                                          : _vm.seat[i + "A"]
+                                          ? _vm._i(_vm.seats[i + "A"], null) >
+                                            -1
+                                          : _vm.seats[i + "A"]
                                       },
                                       on: {
                                         change: function($event) {
-                                          var $$a = _vm.seat[i + "A"],
+                                          var $$a = _vm.seats[i + "A"],
                                             $$el = $event.target,
                                             $$c = $$el.checked ? true : false
                                           if (Array.isArray($$a)) {
@@ -14432,14 +14247,14 @@ var render = function() {
                                             if ($$el.checked) {
                                               $$i < 0 &&
                                                 _vm.$set(
-                                                  _vm.seat,
+                                                  _vm.seats,
                                                   i + "A",
                                                   $$a.concat([$$v])
                                                 )
                                             } else {
                                               $$i > -1 &&
                                                 _vm.$set(
-                                                  _vm.seat,
+                                                  _vm.seats,
                                                   i + "A",
                                                   $$a
                                                     .slice(0, $$i)
@@ -14447,7 +14262,7 @@ var render = function() {
                                                 )
                                             }
                                           } else {
-                                            _vm.$set(_vm.seat, i + "A", $$c)
+                                            _vm.$set(_vm.seats, i + "A", $$c)
                                           }
                                         }
                                       }
@@ -14464,52 +14279,48 @@ var render = function() {
                                         {
                                           name: "model",
                                           rawName: "v-model",
-                                          value: _vm.seat[i + "B"],
-                                          expression: "seat[i+'B']"
+                                          value: _vm.seats[i + "B"],
+                                          expression: "seats[i+'B']"
                                         }
                                       ],
                                       attrs: { type: "checkbox", id: i + "B" },
                                       domProps: {
                                         checked: Array.isArray(
-                                          _vm.seat[i + "B"]
+                                          _vm.seats[i + "B"]
                                         )
-                                          ? _vm._i(_vm.seat[i + "B"], null) > -1
-                                          : _vm.seat[i + "B"]
+                                          ? _vm._i(_vm.seats[i + "B"], null) >
+                                            -1
+                                          : _vm.seats[i + "B"]
                                       },
                                       on: {
-                                        change: [
-                                          function($event) {
-                                            var $$a = _vm.seat[i + "B"],
-                                              $$el = $event.target,
-                                              $$c = $$el.checked ? true : false
-                                            if (Array.isArray($$a)) {
-                                              var $$v = null,
-                                                $$i = _vm._i($$a, $$v)
-                                              if ($$el.checked) {
-                                                $$i < 0 &&
-                                                  _vm.$set(
-                                                    _vm.seat,
-                                                    i + "B",
-                                                    $$a.concat([$$v])
-                                                  )
-                                              } else {
-                                                $$i > -1 &&
-                                                  _vm.$set(
-                                                    _vm.seat,
-                                                    i + "B",
-                                                    $$a
-                                                      .slice(0, $$i)
-                                                      .concat(
-                                                        $$a.slice($$i + 1)
-                                                      )
-                                                  )
-                                              }
+                                        change: function($event) {
+                                          var $$a = _vm.seats[i + "B"],
+                                            $$el = $event.target,
+                                            $$c = $$el.checked ? true : false
+                                          if (Array.isArray($$a)) {
+                                            var $$v = null,
+                                              $$i = _vm._i($$a, $$v)
+                                            if ($$el.checked) {
+                                              $$i < 0 &&
+                                                _vm.$set(
+                                                  _vm.seats,
+                                                  i + "B",
+                                                  $$a.concat([$$v])
+                                                )
                                             } else {
-                                              _vm.$set(_vm.seat, i + "B", $$c)
+                                              $$i > -1 &&
+                                                _vm.$set(
+                                                  _vm.seats,
+                                                  i + "B",
+                                                  $$a
+                                                    .slice(0, $$i)
+                                                    .concat($$a.slice($$i + 1))
+                                                )
                                             }
-                                          },
-                                          _vm.handleSeat
-                                        ]
+                                          } else {
+                                            _vm.$set(_vm.seats, i + "B", $$c)
+                                          }
+                                        }
                                       }
                                     }),
                                     _vm._v(" "),
@@ -14524,21 +14335,22 @@ var render = function() {
                                         {
                                           name: "model",
                                           rawName: "v-model",
-                                          value: _vm.seat[i + "C"],
-                                          expression: "seat[i+'C']"
+                                          value: _vm.seats[i + "C"],
+                                          expression: "seats[i+'C']"
                                         }
                                       ],
                                       attrs: { type: "checkbox", id: i + "C" },
                                       domProps: {
                                         checked: Array.isArray(
-                                          _vm.seat[i + "C"]
+                                          _vm.seats[i + "C"]
                                         )
-                                          ? _vm._i(_vm.seat[i + "C"], null) > -1
-                                          : _vm.seat[i + "C"]
+                                          ? _vm._i(_vm.seats[i + "C"], null) >
+                                            -1
+                                          : _vm.seats[i + "C"]
                                       },
                                       on: {
                                         change: function($event) {
-                                          var $$a = _vm.seat[i + "C"],
+                                          var $$a = _vm.seats[i + "C"],
                                             $$el = $event.target,
                                             $$c = $$el.checked ? true : false
                                           if (Array.isArray($$a)) {
@@ -14547,14 +14359,14 @@ var render = function() {
                                             if ($$el.checked) {
                                               $$i < 0 &&
                                                 _vm.$set(
-                                                  _vm.seat,
+                                                  _vm.seats,
                                                   i + "C",
                                                   $$a.concat([$$v])
                                                 )
                                             } else {
                                               $$i > -1 &&
                                                 _vm.$set(
-                                                  _vm.seat,
+                                                  _vm.seats,
                                                   i + "C",
                                                   $$a
                                                     .slice(0, $$i)
@@ -14562,7 +14374,7 @@ var render = function() {
                                                 )
                                             }
                                           } else {
-                                            _vm.$set(_vm.seat, i + "C", $$c)
+                                            _vm.$set(_vm.seats, i + "C", $$c)
                                           }
                                         }
                                       }
@@ -14579,21 +14391,22 @@ var render = function() {
                                         {
                                           name: "model",
                                           rawName: "v-model",
-                                          value: _vm.seat[i + "D"],
-                                          expression: "seat[i+'D']"
+                                          value: _vm.seats[i + "D"],
+                                          expression: "seats[i+'D']"
                                         }
                                       ],
                                       attrs: { type: "checkbox", id: i + "D" },
                                       domProps: {
                                         checked: Array.isArray(
-                                          _vm.seat[i + "D"]
+                                          _vm.seats[i + "D"]
                                         )
-                                          ? _vm._i(_vm.seat[i + "D"], null) > -1
-                                          : _vm.seat[i + "D"]
+                                          ? _vm._i(_vm.seats[i + "D"], null) >
+                                            -1
+                                          : _vm.seats[i + "D"]
                                       },
                                       on: {
                                         change: function($event) {
-                                          var $$a = _vm.seat[i + "D"],
+                                          var $$a = _vm.seats[i + "D"],
                                             $$el = $event.target,
                                             $$c = $$el.checked ? true : false
                                           if (Array.isArray($$a)) {
@@ -14602,14 +14415,14 @@ var render = function() {
                                             if ($$el.checked) {
                                               $$i < 0 &&
                                                 _vm.$set(
-                                                  _vm.seat,
+                                                  _vm.seats,
                                                   i + "D",
                                                   $$a.concat([$$v])
                                                 )
                                             } else {
                                               $$i > -1 &&
                                                 _vm.$set(
-                                                  _vm.seat,
+                                                  _vm.seats,
                                                   i + "D",
                                                   $$a
                                                     .slice(0, $$i)
@@ -14617,7 +14430,7 @@ var render = function() {
                                                 )
                                             }
                                           } else {
-                                            _vm.$set(_vm.seat, i + "D", $$c)
+                                            _vm.$set(_vm.seats, i + "D", $$c)
                                           }
                                         }
                                       }
@@ -14634,21 +14447,22 @@ var render = function() {
                                         {
                                           name: "model",
                                           rawName: "v-model",
-                                          value: _vm.seat[i + "E"],
-                                          expression: "seat[i+'E']"
+                                          value: _vm.seats[i + "E"],
+                                          expression: "seats[i+'E']"
                                         }
                                       ],
                                       attrs: { type: "checkbox", id: i + "E" },
                                       domProps: {
                                         checked: Array.isArray(
-                                          _vm.seat[i + "E"]
+                                          _vm.seats[i + "E"]
                                         )
-                                          ? _vm._i(_vm.seat[i + "E"], null) > -1
-                                          : _vm.seat[i + "E"]
+                                          ? _vm._i(_vm.seats[i + "E"], null) >
+                                            -1
+                                          : _vm.seats[i + "E"]
                                       },
                                       on: {
                                         change: function($event) {
-                                          var $$a = _vm.seat[i + "E"],
+                                          var $$a = _vm.seats[i + "E"],
                                             $$el = $event.target,
                                             $$c = $$el.checked ? true : false
                                           if (Array.isArray($$a)) {
@@ -14657,14 +14471,14 @@ var render = function() {
                                             if ($$el.checked) {
                                               $$i < 0 &&
                                                 _vm.$set(
-                                                  _vm.seat,
+                                                  _vm.seats,
                                                   i + "E",
                                                   $$a.concat([$$v])
                                                 )
                                             } else {
                                               $$i > -1 &&
                                                 _vm.$set(
-                                                  _vm.seat,
+                                                  _vm.seats,
                                                   i + "E",
                                                   $$a
                                                     .slice(0, $$i)
@@ -14672,7 +14486,7 @@ var render = function() {
                                                 )
                                             }
                                           } else {
-                                            _vm.$set(_vm.seat, i + "E", $$c)
+                                            _vm.$set(_vm.seats, i + "E", $$c)
                                           }
                                         }
                                       }
@@ -14695,8 +14509,7 @@ var render = function() {
                   ],
                   1
                 )
-              ],
-              2
+              ]
             )
           ],
           1
