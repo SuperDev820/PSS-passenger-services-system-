@@ -19,10 +19,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var element_ui_lib_select__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(element_ui_lib_select__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! core-js/modules/es.function.name.js */ "./node_modules/core-js/modules/es.function.name.js");
 /* harmony import */ var core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var vue_flatpickr_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! vue-flatpickr-component */ "./node_modules/vue-flatpickr-component/dist/vue-flatpickr.min.js");
-/* harmony import */ var vue_flatpickr_component__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(vue_flatpickr_component__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var flatpickr_dist_flatpickr_css__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! flatpickr/dist/flatpickr.css */ "./node_modules/flatpickr/dist/flatpickr.css");
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.mjs");
+/* harmony import */ var core_js_modules_es_regexp_exec_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! core-js/modules/es.regexp.exec.js */ "./node_modules/core-js/modules/es.regexp.exec.js");
+/* harmony import */ var core_js_modules_es_regexp_exec_js__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_regexp_exec_js__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var core_js_modules_es_string_split_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! core-js/modules/es.string.split.js */ "./node_modules/core-js/modules/es.string.split.js");
+/* harmony import */ var core_js_modules_es_string_split_js__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_string_split_js__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var core_js_modules_es_array_find_index_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! core-js/modules/es.array.find-index.js */ "./node_modules/core-js/modules/es.array.find-index.js");
+/* harmony import */ var core_js_modules_es_array_find_index_js__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_find_index_js__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var vue_flatpickr_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! vue-flatpickr-component */ "./node_modules/vue-flatpickr-component/dist/vue-flatpickr.min.js");
+/* harmony import */ var vue_flatpickr_component__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(vue_flatpickr_component__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var flatpickr_dist_flatpickr_css__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! flatpickr/dist/flatpickr.css */ "./node_modules/flatpickr/dist/flatpickr.css");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.mjs");
 
 
 
@@ -35,6 +41,46 @@ __webpack_require__.r(__webpack_exports__);
 var _components;
 
 
+
+
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -182,7 +228,7 @@ var _components;
       content: ""
     }]
   },
-  components: (_components = {}, (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_components, (element_ui_lib_select__WEBPACK_IMPORTED_MODULE_6___default().name), (element_ui_lib_select__WEBPACK_IMPORTED_MODULE_6___default())), (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_components, (element_ui_lib_option__WEBPACK_IMPORTED_MODULE_4___default().name), (element_ui_lib_option__WEBPACK_IMPORTED_MODULE_4___default())), (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_components, "flatPicker", (vue_flatpickr_component__WEBPACK_IMPORTED_MODULE_8___default())), _components),
+  components: (_components = {}, (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_components, (element_ui_lib_select__WEBPACK_IMPORTED_MODULE_6___default().name), (element_ui_lib_select__WEBPACK_IMPORTED_MODULE_6___default())), (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_components, (element_ui_lib_option__WEBPACK_IMPORTED_MODULE_4___default().name), (element_ui_lib_option__WEBPACK_IMPORTED_MODULE_4___default())), (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_components, "flatPicker", (vue_flatpickr_component__WEBPACK_IMPORTED_MODULE_11___default())), _components),
   data: function data() {
     return {
       statusOptions: [{
@@ -201,7 +247,10 @@ var _components;
         birthday: '',
         email: '',
         password: '',
-        status: 0
+        status: 0,
+        departed_flight: '',
+        landed_flight: '',
+        start_date: ''
       },
       error: null,
       isError: false,
@@ -210,6 +259,7 @@ var _components;
   },
   mounted: function mounted() {
     this.getPassengerById(this.$route.params.passengerId);
+    this.initFlights();
   },
   watch: {
     passenger: function passenger() {
@@ -218,13 +268,16 @@ var _components;
       this.model.phone = this.passenger.phone;
       this.model.company = this.passenger.company;
       this.model.roster = this.passenger.roster;
+      this.model.departed_flight = this.passenger.departed_flight;
+      this.model.landed_flight = this.passenger.landed_flight;
+      this.model.start_date = this.passenger.start_date;
       this.model.birthday = this.passenger.birthday;
       this.model.email = this.passenger.email;
       this.model.status = this.passenger.status;
     }
   },
-  computed: (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)({}, (0,vuex__WEBPACK_IMPORTED_MODULE_10__.mapGetters)(['passenger'])),
-  methods: (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)((0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)({}, (0,vuex__WEBPACK_IMPORTED_MODULE_10__.mapActions)(['getPassengerById', 'updatePassenger'])), {}, {
+  computed: (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)({}, (0,vuex__WEBPACK_IMPORTED_MODULE_13__.mapGetters)(['passenger', 'flights'])),
+  methods: (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)((0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)({}, (0,vuex__WEBPACK_IMPORTED_MODULE_13__.mapActions)(['initFlights', 'getPassengerById', 'updatePassenger'])), {}, {
     onSubmit: function onSubmit() {
       var _this = this;
 
@@ -232,6 +285,30 @@ var _components;
       // Reset the error if it existed.
       this.error = null;
       this.isSubmitting = true;
+
+      if (this.model.roster != '') {
+        var roster = this.model.roster.split("-");
+        var index = roster.findIndex(function (e) {
+          return e == "";
+        });
+        var roster_error = false; // console.log(index)
+
+        if (roster.length < 4 || index > -1) {
+          this.$notify({
+            message: 'Roster is not valid',
+            timeout: 5000,
+            icon: 'ni ni-bell-55',
+            type: 'warning'
+          });
+          roster_error = true;
+        }
+
+        if (roster_error || this.model.departed_flight == '' || this.model.landed_flight == '' || this.model.start_date == '') {
+          this.isSubmitting = false;
+          return;
+        }
+      }
+
       return this.updatePassenger({
         id: this.$route.params.passengerId,
         first_name: this.model.first_name,
@@ -240,6 +317,9 @@ var _components;
         company: this.model.company,
         birthday: this.model.birthday,
         roster: this.model.roster,
+        departed_flight: this.model.departed_flight,
+        landed_flight: this.model.landed_flight,
+        start_date: this.model.start_date,
         email: this.model.email,
         password: this.model.password,
         password_confirmation: this.model.password,
@@ -7114,6 +7194,30 @@ var render = function() {
                                               },
                                               expression: "model.phone"
                                             }
+                                          }),
+                                          _vm._v(" "),
+                                          _c("base-input", {
+                                            staticClass: "mb-3",
+                                            attrs: {
+                                              alternative: "",
+                                              "prepend-icon":
+                                                "fas fa-globe-americas",
+                                              label: "Company",
+                                              placeholder: "Company",
+                                              name: "Company",
+                                              rules: { required: true }
+                                            },
+                                            model: {
+                                              value: _vm.model.company,
+                                              callback: function($$v) {
+                                                _vm.$set(
+                                                  _vm.model,
+                                                  "company",
+                                                  $$v
+                                                )
+                                              },
+                                              expression: "model.company"
+                                            }
                                           })
                                         ],
                                         1
@@ -7154,22 +7258,22 @@ var render = function() {
                                             attrs: {
                                               alternative: "",
                                               "prepend-icon":
-                                                "fas fa-globe-americas",
-                                              label: "Company",
-                                              placeholder: "Company",
-                                              name: "Company",
-                                              rules: { required: true }
+                                                "ni ni-lock-circle-open",
+                                              label: "Password",
+                                              placeholder: "password",
+                                              type: "password",
+                                              name: "Password"
                                             },
                                             model: {
-                                              value: _vm.model.company,
+                                              value: _vm.model.password,
                                               callback: function($$v) {
                                                 _vm.$set(
                                                   _vm.model,
-                                                  "company",
+                                                  "password",
                                                   $$v
                                                 )
                                               },
-                                              expression: "model.company"
+                                              expression: "model.password"
                                             }
                                           }),
                                           _vm._v(" "),
@@ -7204,28 +7308,163 @@ var render = function() {
                                           }),
                                           _vm._v(" "),
                                           _c("base-input", {
-                                            staticClass: "mb-3",
                                             attrs: {
-                                              alternative: "",
-                                              "prepend-icon":
-                                                "ni ni-lock-circle-open",
-                                              label: "Password",
-                                              placeholder: "password",
-                                              type: "password",
-                                              name: "Password"
+                                              "prepend-icon": "fas fa-calendar",
+                                              label: "Start Date",
+                                              name: "StartDate"
                                             },
-                                            model: {
-                                              value: _vm.model.password,
-                                              callback: function($$v) {
-                                                _vm.$set(
-                                                  _vm.model,
-                                                  "password",
-                                                  $$v
-                                                )
-                                              },
-                                              expression: "model.password"
-                                            }
+                                            scopedSlots: _vm._u(
+                                              [
+                                                {
+                                                  key: "default",
+                                                  fn: function(ref) {
+                                                    var focus = ref.focus
+                                                    var blur = ref.blur
+                                                    return _c("flat-picker", {
+                                                      staticClass:
+                                                        "form-control datepicker",
+                                                      on: {
+                                                        "on-open": focus,
+                                                        "on-close": blur
+                                                      },
+                                                      model: {
+                                                        value:
+                                                          _vm.model.start_date,
+                                                        callback: function(
+                                                          $$v
+                                                        ) {
+                                                          _vm.$set(
+                                                            _vm.model,
+                                                            "start_date",
+                                                            $$v
+                                                          )
+                                                        },
+                                                        expression:
+                                                          "model.start_date"
+                                                      }
+                                                    })
+                                                  }
+                                                }
+                                              ],
+                                              null,
+                                              true
+                                            )
                                           }),
+                                          _vm._v(" "),
+                                          _c(
+                                            "div",
+                                            { staticClass: "row" },
+                                            [
+                                              _c(
+                                                "base-input",
+                                                {
+                                                  staticClass: "col-6",
+                                                  attrs: {
+                                                    label: "Departed Flight"
+                                                  }
+                                                },
+                                                [
+                                                  _c(
+                                                    "el-select",
+                                                    {
+                                                      attrs: {
+                                                        filterable: "",
+                                                        placeholder:
+                                                          "Departed Flight"
+                                                      },
+                                                      model: {
+                                                        value:
+                                                          _vm.model
+                                                            .departed_flight,
+                                                        callback: function(
+                                                          $$v
+                                                        ) {
+                                                          _vm.$set(
+                                                            _vm.model,
+                                                            "departed_flight",
+                                                            $$v
+                                                          )
+                                                        },
+                                                        expression:
+                                                          "model.departed_flight"
+                                                      }
+                                                    },
+                                                    _vm._l(
+                                                      _vm.flights,
+                                                      function(option) {
+                                                        return _c("el-option", {
+                                                          key: option.id,
+                                                          attrs: {
+                                                            label:
+                                                              option.airline_code +
+                                                              option.flight_number,
+                                                            value: option.id
+                                                          }
+                                                        })
+                                                      }
+                                                    ),
+                                                    1
+                                                  )
+                                                ],
+                                                1
+                                              ),
+                                              _vm._v(" "),
+                                              _c(
+                                                "base-input",
+                                                {
+                                                  staticClass: "col-6",
+                                                  attrs: {
+                                                    label: "Landed Flight"
+                                                  }
+                                                },
+                                                [
+                                                  _c(
+                                                    "el-select",
+                                                    {
+                                                      attrs: {
+                                                        filterable: "",
+                                                        placeholder:
+                                                          "Landed Flight"
+                                                      },
+                                                      model: {
+                                                        value:
+                                                          _vm.model
+                                                            .landed_flight,
+                                                        callback: function(
+                                                          $$v
+                                                        ) {
+                                                          _vm.$set(
+                                                            _vm.model,
+                                                            "landed_flight",
+                                                            $$v
+                                                          )
+                                                        },
+                                                        expression:
+                                                          "model.landed_flight"
+                                                      }
+                                                    },
+                                                    _vm._l(
+                                                      _vm.flights,
+                                                      function(option) {
+                                                        return _c("el-option", {
+                                                          key: option.id,
+                                                          attrs: {
+                                                            label:
+                                                              option.airline_code +
+                                                              option.flight_number,
+                                                            value: option.id
+                                                          }
+                                                        })
+                                                      }
+                                                    ),
+                                                    1
+                                                  )
+                                                ],
+                                                1
+                                              )
+                                            ],
+                                            1
+                                          ),
                                           _vm._v(" "),
                                           _c(
                                             "base-input",

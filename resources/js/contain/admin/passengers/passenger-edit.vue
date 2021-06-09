@@ -63,6 +63,16 @@
                                 :rules="{required: true}"
                                 v-model="model.phone">
                     </base-input>
+
+                    <base-input alternative
+                                class="mb-3"
+                                prepend-icon="fas fa-globe-americas"
+                                label="Company"
+                                placeholder="Company"
+                                name="Company"
+                                :rules="{required: true}"
+                                v-model="model.company">
+                    </base-input>
                   </div>
 
                   <div class="col-md-6 col-sm-12">
@@ -79,12 +89,12 @@
 
                     <base-input alternative
                                 class="mb-3"
-                                prepend-icon="fas fa-globe-americas"
-                                label="Company"
-                                placeholder="Company"
-                                name="Company"
-                                :rules="{required: true}"
-                                v-model="model.company">
+                                prepend-icon="ni ni-lock-circle-open"
+                                label="Password"
+                                placeholder="password"
+                                type="password"
+                                name="Password"
+                                v-model="model.password">
                     </base-input>
 
                     <base-input alternative
@@ -97,15 +107,42 @@
                                 v-mask="'#-#-#-#'">
                     </base-input>
 
-                    <base-input alternative
-                                class="mb-3"
-                                prepend-icon="ni ni-lock-circle-open"
-                                label="Password"
-                                placeholder="password"
-                                type="password"
-                                name="Password"
-                                v-model="model.password">
+                    <base-input prepend-icon="fas fa-calendar" label="Start Date" name="StartDate">
+                      <flat-picker slot-scope="{focus, blur}"
+                                    @on-open="focus"
+                                    @on-close="blur"
+                                    class="form-control datepicker"
+                                    v-model="model.start_date">
+                      </flat-picker>
                     </base-input>
+
+                    <div class="row">
+                      <base-input label="Departed Flight" class="col-6">
+                        <el-select v-model="model.departed_flight"
+                                    filterable
+                                    placeholder="Departed Flight"
+                                    >
+                          <el-option v-for="option in flights"
+                                      :key="option.id"
+                                      :label="option.airline_code + option.flight_number"
+                                      :value="option.id">
+                          </el-option>
+                        </el-select>
+                      </base-input>
+
+                      <base-input label="Landed Flight" class="col-6">
+                        <el-select v-model="model.landed_flight"
+                                    filterable
+                                    placeholder="Landed Flight"
+                                    >
+                          <el-option v-for="option in flights"
+                                      :key="option.id"
+                                      :label="option.airline_code + option.flight_number"
+                                      :value="option.id">
+                          </el-option>
+                        </el-select>
+                      </base-input>
+                    </div>
 
                     <base-input label="Status">
                       <el-select v-model="model.status"
@@ -173,6 +210,9 @@
           email: '',
           password: '',
           status: 0,
+          departed_flight: '',
+          landed_flight: '',
+          start_date: ''
         },
         error: null,
         isError: false,
@@ -181,6 +221,7 @@
     },
     mounted() {
       this.getPassengerById(this.$route.params.passengerId);
+      this.initFlights();
     },
     watch: {
       passenger: function () {
@@ -189,6 +230,9 @@
         this.model.phone = this.passenger.phone;
         this.model.company = this.passenger.company;
         this.model.roster = this.passenger.roster;
+        this.model.departed_flight = this.passenger.departed_flight;
+        this.model.landed_flight = this.passenger.landed_flight;
+        this.model.start_date = this.passenger.start_date;
         this.model.birthday = this.passenger.birthday;
         this.model.email = this.passenger.email;
         this.model.status = this.passenger.status;
@@ -196,11 +240,13 @@
     },
     computed: {
       ...mapGetters([
-        'passenger'
+        'passenger',
+        'flights',
       ]),
     },
     methods: {
       ...mapActions([
+        'initFlights',
         'getPassengerById',
         'updatePassenger',
       ]),
@@ -210,6 +256,26 @@
         // Reset the error if it existed.
         this.error = null;
         this.isSubmitting = true;
+        if (this.model.roster != '') {
+          let roster = this.model.roster.split("-");
+          let index = roster.findIndex(e => e == "")
+          var roster_error = false;
+          // console.log(index)
+          if ((roster.length < 4) || (index > -1)) {
+            this.$notify({
+                message: 'Roster is not valid',
+                timeout: 5000,
+                icon: 'ni ni-bell-55',
+                type: 'warning'
+              });
+            roster_error = true;
+          }
+          if ((roster_error) || (this.model.departed_flight == '') || (this.model.landed_flight == '') || (this.model.start_date == '')) {
+            this.isSubmitting = false;
+            return ;
+          }
+        }
+        
         return (
           this.updatePassenger({
               id: this.$route.params.passengerId,
@@ -219,6 +285,9 @@
               company: this.model.company,
               birthday: this.model.birthday,
               roster: this.model.roster,
+              departed_flight: this.model.departed_flight,
+              landed_flight: this.model.landed_flight,
+              start_date: this.model.start_date,
               email: this.model.email,
               password: this.model.password,
               password_confirmation: this.model.password,

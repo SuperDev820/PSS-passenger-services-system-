@@ -18,10 +18,13 @@ class CreateUsersTable extends Migration
             $table->string('first_name');
             $table->string('last_name');
             $table->date('birthday')->nullable();
-            $table->string('phone')->unique();
-            $table->string('email')->unique();
+            $table->string('phone');
+            $table->string('email');
             $table->string('company')->nullable();
             $table->string('roster')->nullable();
+            $table->integer('departed_flight')->nullable();
+            $table->integer('landed_flight')->nullable();
+            $table->date('start_date')->nullable();
             $table->boolean('status')->default(1)->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

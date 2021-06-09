@@ -63,6 +63,16 @@
                                 :rules="{required: true}"
                                 v-model="model.phone">
                     </base-input>
+
+                    <base-input alternative
+                                class="mb-3"
+                                prepend-icon="fas fa-globe-americas"
+                                label="Company"
+                                placeholder="Company"
+                                name="Company"
+                                :rules="{required: true}"
+                                v-model="model.company">
+                    </base-input>
                   </div>
 
                   <div class="col-md-6 col-sm-12">
@@ -78,12 +88,13 @@
 
                     <base-input alternative
                                 class="mb-3"
-                                prepend-icon="fas fa-globe-americas"
-                                label="Company"
-                                placeholder="Company"
-                                name="Company"
-                                :rules="{required: true}"
-                                v-model="model.company">
+                                prepend-icon="ni ni-lock-circle-open"
+                                label="Password"
+                                placeholder="password"
+                                type="password"
+                                name="Password"
+                                :rules="{required: true, min: 6}"
+                                v-model="model.password">
                     </base-input>
 
                     <base-input alternative
@@ -96,16 +107,42 @@
                                 v-mask="'#-#-#-#'">
                     </base-input>
 
-                    <base-input alternative
-                                class="mb-3"
-                                prepend-icon="ni ni-lock-circle-open"
-                                label="Password"
-                                placeholder="password"
-                                type="password"
-                                name="Password"
-                                :rules="{required: true, min: 6}"
-                                v-model="model.password">
+                    <base-input prepend-icon="fas fa-calendar" label="Start Date" name="StartDate">
+                      <flat-picker slot-scope="{focus, blur}"
+                                    @on-open="focus"
+                                    @on-close="blur"
+                                    class="form-control datepicker"
+                                    v-model="model.start_date">
+                      </flat-picker>
                     </base-input>
+
+                    <div class="row">
+                      <base-input label="Departed Flight" class="col-6">
+                        <el-select v-model="model.departed_flight"
+                                    filterable
+                                    placeholder="Departed Flight"
+                                    >
+                          <el-option v-for="option in flights"
+                                      :key="option.id"
+                                      :label="option.airline_code + option.flight_number"
+                                      :value="option.id">
+                          </el-option>
+                        </el-select>
+                      </base-input>
+
+                      <base-input label="Landed Flight" class="col-6">
+                        <el-select v-model="model.landed_flight"
+                                    filterable
+                                    placeholder="Landed Flight"
+                                    >
+                          <el-option v-for="option in flights"
+                                      :key="option.id"
+                                      :label="option.airline_code + option.flight_number"
+                                      :value="option.id">
+                          </el-option>
+                        </el-select>
+                      </base-input>
+                    </div>
                   </div>
                   <div class="d-flex justify-content-between col-12 mt-4">
                     <router-link :to="{name: 'Passengers'}" class="btn btn-secondary">Cancel</router-link>
@@ -159,14 +196,26 @@
           roster: '',
           email: '',
           password: '',
+          departed_flight: '',
+          landed_flight: '',
+          start_date: ''
         },
         error: null,
         isError: false,
         isSubmitting: false,
       }
     },
+    computed: {
+      ...mapGetters([
+        'flights',
+      ]),
+    },
+    mounted() {
+      this.initFlights();
+    },
     methods: {
       ...mapActions([
+        'initFlights',
         'createPassenger',
       ]),
 
@@ -175,6 +224,26 @@
         // Reset the error if it existed.
         this.error = null;
         this.isSubmitting = true;
+        if (this.model.roster != '') {
+          let roster = this.model.roster.split("-");
+          let index = roster.findIndex(e => e == "")
+          var roster_error = false;
+          // console.log(index)
+          if ((roster.length < 4) || (index > -1)) {
+            this.$notify({
+                message: 'Roster is not valid',
+                timeout: 5000,
+                icon: 'ni ni-bell-55',
+                type: 'warning'
+              });
+            roster_error = true;
+          }
+          if ((roster_error) || (this.model.departed_flight == '') || (this.model.landed_flight == '') || (this.model.start_date == '')) {
+            this.isSubmitting = false;
+            return ;
+          }
+        }
+        
         return (
           this.createPassenger({
               first_name: this.model.first_name,
@@ -183,19 +252,31 @@
               company: this.model.company,
               birthday: this.model.birthday,
               roster: this.model.roster,
+              departed_flight: this.model.departed_flight,
+              landed_flight: this.model.landed_flight,
+              start_date: this.model.start_date,
               email: this.model.email,
               password: this.model.password,
-              password_confirmation: this.model.password
+              password_confirmation: this.model.password,
             })
             .then((res) => {
               this.isError = false;
               this.isSubmitting = false;
-              this.$notify({
-                message: 'Successfully Created',
-                timeout: 5000,
-                icon: 'ni ni-bell-55',
-                type: 'success'
-              });
+              if (res.data.message == 'success') {
+                this.$notify({
+                  message: 'Successfully Created',
+                  timeout: 5000,
+                  icon: 'ni ni-bell-55',
+                  type: 'success'
+                });
+              } else {
+                this.$notify({
+                  message: res.data.message,
+                  timeout: 5000,
+                  icon: 'ni ni-bell-55',
+                  type: 'warning'
+                });
+              }
               this.$router.push(
                 { name: "Passengers" }
               );

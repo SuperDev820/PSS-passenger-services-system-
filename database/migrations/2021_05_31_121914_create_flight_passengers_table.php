@@ -15,8 +15,8 @@ class CreateFlightPassengersTable extends Migration
     {
         Schema::create('flight_passengers', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('passenger_id')->constrained('users')->nullable();
-            $table->foreignId('aircraft_flight_id')->constrained('aircraft_flights')->nullable();
+            $table->foreignId('passenger_id')->nullable()->constrained('users')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('aircraft_flight_id')->nullable()->constrained('aircraft_flights')->onUpdate('cascade')->onDelete('cascade');
             $table->string('seat')->nullable();
             $table->string('book_reference')->unique()->nullable();
             $table->string('status')->nullable();

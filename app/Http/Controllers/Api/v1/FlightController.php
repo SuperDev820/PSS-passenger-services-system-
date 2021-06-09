@@ -68,7 +68,6 @@ class FlightController extends Controller
             'departure_time' => 'required',
             'arrival_time' => 'required',
             'type' => 'required',
-            'operation_days' => 'required',
         ]);
 
         if($validator->fails()){
@@ -103,21 +102,30 @@ class FlightController extends Controller
         $flight->operation_days = $operation_days;
         $flight->save();
 
-        $current_date = Carbon::now()->timezone('Australia/Sydney')->format('Y-m-d');
-        $current_day = Carbon::now()->timezone('Australia/Sydney')->dayOfWeek;
-        if (in_array($current_day, $flight->operation_days)) {
-            $aircraft_flight = new AircraftFlight;
-            $aircraft_flight->flight_id = $flight->id;
-            $aircraft_flight->date = $current_date;
-            $aircraft_flight->departure_time = $flight->departure_time;
-            $aircraft_flight->arrival_time = $flight->arrival_time;
-            $aircraft_flight->flight_time = $flight->flight_time;
-            $aircraft_flight->save();
+        if ($flight->type == "REGULAR") {
+            $current_date = Carbon::now()->timezone('Australia/Sydney');
+            $year = $current_date->year;
+            while($year == $current_date->year) {
+                $current_day = $current_date->dayOfWeek;
+                if ($current_day == 0) {
+                    $current_day = 7;
+                }
+                if (in_array($current_day, $flight->operation_days)) {
+                    $aircraft_flight = new AircraftFlight;
+                    $aircraft_flight->flight_id = $flight->id;
+                    $aircraft_flight->date = $current_date->format('Y-m-d');
+                    $aircraft_flight->departure_time = $flight->departure_time;
+                    $aircraft_flight->arrival_time = $flight->arrival_time;
+                    $aircraft_flight->flight_time = $flight->flight_time;
+                    $aircraft_flight->save();
+                }
+                $current_date = $current_date->addDays(1);
+            }
         }
 
         return response()->json([
             'message' => 'flight successfully registered',
-            'flight' => $flight
+            'flight' => $flight,
         ], 201);
     }
 
@@ -160,6 +168,9 @@ class FlightController extends Controller
         sort($operation_days);
 
         $flight = Flight::find($request->id);
+        $old_operation_days = $flight->operation_days;
+        $old_departure_time = $flight->departure_time;
+        $old_arrival_time = $flight->arrival_time;
         $flight -> update([
             'airline_code' => $request->airline_code,
             'flight_number' => $request->flight_number,
@@ -174,9 +185,32 @@ class FlightController extends Controller
             'operation_days' => $operation_days,
         ]);
 
+        if (($flight->type == "REGULAR") && (($old_operation_days != $flight->operation_days) || ($old_departure_time != $flight->departure_time) || ($old_arrival_time != $flight->arrival_time))) {
+            $current_date = Carbon::now()->timezone('Australia/Sydney');
+            $year = $current_date->year;
+            $aircraft_flights = AircraftFlight::where('flight_id', $flight->id)
+                                            ->where('date', '>=', $current_date)->delete();
+            while($year == $current_date->year) {
+                $current_day = $current_date->dayOfWeek;
+                if ($current_day == 0) {
+                    $current_day = 7;
+                }
+                if (in_array($current_day, $flight->operation_days)) {
+                    $aircraft_flight = new AircraftFlight;
+                    $aircraft_flight->flight_id = $flight->id;
+                    $aircraft_flight->date = $current_date->format('Y-m-d');
+                    $aircraft_flight->departure_time = $flight->departure_time;
+                    $aircraft_flight->arrival_time = $flight->arrival_time;
+                    $aircraft_flight->flight_time = $flight->flight_time;
+                    $aircraft_flight->save();
+                }
+                $current_date = $current_date->addDays(1);
+            }
+        }
+
         return response()->json([
             'message' => 'flight successfully updated',
-            'flight' => $flight_time
+            // 'aircraft_flights' => $aircraft_flights,
         ], 201);
     }
 
