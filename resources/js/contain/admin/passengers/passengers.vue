@@ -82,7 +82,7 @@
                              min-width="120px">
               </el-table-column>
               <el-table-column prop="role" label="Role" min-width="100px">
-                <div slot-scope="{row}">
+                <div slot-scope="{}">
                   <badge class="" type="info">
                     <span>Passenger</span>
                   </badge>

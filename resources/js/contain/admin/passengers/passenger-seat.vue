@@ -9,7 +9,7 @@
           </nav>
         </b-col>
         <b-col lg="6" cols="5" class="text-right">
-          <router-link :to="{name: 'Passengers'}" class="btn btn-neutral btn-sm">
+          <router-link :to="{name: 'PassengerFlights', params: { passengerId: this.$route.params.passengerId }}" class="btn btn-neutral btn-sm">
             <i class="far fa-hand-point-left"></i> Go Back
           </router-link>
           <base-button class="btn btn-neutral btn-sm" :disabled="isBooking" @click="book">

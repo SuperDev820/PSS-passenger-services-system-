@@ -17691,21 +17691,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_12__);
 /* harmony import */ var core_js_modules_es_array_find_index_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! core-js/modules/es.array.find-index.js */ "./node_modules/core-js/modules/es.array.find-index.js");
 /* harmony import */ var core_js_modules_es_array_find_index_js__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_find_index_js__WEBPACK_IMPORTED_MODULE_13__);
-/* harmony import */ var core_js_modules_es_array_splice_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! core-js/modules/es.array.splice.js */ "./node_modules/core-js/modules/es.array.splice.js");
-/* harmony import */ var core_js_modules_es_array_splice_js__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_splice_js__WEBPACK_IMPORTED_MODULE_14__);
-/* harmony import */ var _components_Breadcrumb_RouteBreadcrumb__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @/components/Breadcrumb/RouteBreadcrumb */ "./resources/js/components/Breadcrumb/RouteBreadcrumb.vue");
-/* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @/components */ "./resources/js/components/index.js");
-/* harmony import */ var _common_PaginatedTables_clientPaginationMixin__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @/common/PaginatedTables/clientPaginationMixin */ "./resources/js/common/PaginatedTables/clientPaginationMixin.js");
-/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! sweetalert2 */ "./node_modules/sweetalert2/dist/sweetalert2.all.js");
-/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_18___default = /*#__PURE__*/__webpack_require__.n(sweetalert2__WEBPACK_IMPORTED_MODULE_18__);
-/* harmony import */ var _components_Modal__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @/components/Modal */ "./resources/js/components/Modal.vue");
-/* harmony import */ var _fullcalendar_vue__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @fullcalendar/vue */ "./node_modules/@fullcalendar/vue/dist/main.js");
-/* harmony import */ var _fullcalendar_resource_timeline__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @fullcalendar/resource-timeline */ "./node_modules/@fullcalendar/resource-timeline/main.js");
-/* harmony import */ var _components_BaseButton_vue__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ../../../components/BaseButton.vue */ "./resources/js/components/BaseButton.vue");
-/* harmony import */ var vue_flatpickr_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! vue-flatpickr-component */ "./node_modules/vue-flatpickr-component/dist/vue-flatpickr.min.js");
-/* harmony import */ var vue_flatpickr_component__WEBPACK_IMPORTED_MODULE_23___default = /*#__PURE__*/__webpack_require__.n(vue_flatpickr_component__WEBPACK_IMPORTED_MODULE_23__);
-/* harmony import */ var flatpickr_dist_flatpickr_css__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! flatpickr/dist/flatpickr.css */ "./node_modules/flatpickr/dist/flatpickr.css");
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.mjs");
+/* harmony import */ var _components_Breadcrumb_RouteBreadcrumb__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @/components/Breadcrumb/RouteBreadcrumb */ "./resources/js/components/Breadcrumb/RouteBreadcrumb.vue");
+/* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @/components */ "./resources/js/components/index.js");
+/* harmony import */ var _common_PaginatedTables_clientPaginationMixin__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @/common/PaginatedTables/clientPaginationMixin */ "./resources/js/common/PaginatedTables/clientPaginationMixin.js");
+/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! sweetalert2 */ "./node_modules/sweetalert2/dist/sweetalert2.all.js");
+/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_17___default = /*#__PURE__*/__webpack_require__.n(sweetalert2__WEBPACK_IMPORTED_MODULE_17__);
+/* harmony import */ var _components_Modal__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @/components/Modal */ "./resources/js/components/Modal.vue");
+/* harmony import */ var _fullcalendar_vue__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @fullcalendar/vue */ "./node_modules/@fullcalendar/vue/dist/main.js");
+/* harmony import */ var _fullcalendar_resource_timeline__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @fullcalendar/resource-timeline */ "./node_modules/@fullcalendar/resource-timeline/main.js");
+/* harmony import */ var _components_BaseButton_vue__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ../../../components/BaseButton.vue */ "./resources/js/components/BaseButton.vue");
+/* harmony import */ var vue_flatpickr_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! vue-flatpickr-component */ "./node_modules/vue-flatpickr-component/dist/vue-flatpickr.min.js");
+/* harmony import */ var vue_flatpickr_component__WEBPACK_IMPORTED_MODULE_22___default = /*#__PURE__*/__webpack_require__.n(vue_flatpickr_component__WEBPACK_IMPORTED_MODULE_22__);
+/* harmony import */ var flatpickr_dist_flatpickr_css__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! flatpickr/dist/flatpickr.css */ "./node_modules/flatpickr/dist/flatpickr.css");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.mjs");
 
 
 
@@ -17726,21 +17724,6 @@ var _components;
 
 
 
-
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -18094,29 +18077,25 @@ var _components;
       content: ""
     }]
   },
-  mixins: [_common_PaginatedTables_clientPaginationMixin__WEBPACK_IMPORTED_MODULE_17__.default],
+  mixins: [_common_PaginatedTables_clientPaginationMixin__WEBPACK_IMPORTED_MODULE_16__.default],
   components: (_components = {
-    BasePagination: _components__WEBPACK_IMPORTED_MODULE_16__.BasePagination,
-    RouteBreadCrumb: _components_Breadcrumb_RouteBreadcrumb__WEBPACK_IMPORTED_MODULE_15__.default
-  }, (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_components, (element_ui_lib_select__WEBPACK_IMPORTED_MODULE_10___default().name), (element_ui_lib_select__WEBPACK_IMPORTED_MODULE_10___default())), (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_components, (element_ui_lib_option__WEBPACK_IMPORTED_MODULE_8___default().name), (element_ui_lib_option__WEBPACK_IMPORTED_MODULE_8___default())), (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_components, (element_ui_lib_table__WEBPACK_IMPORTED_MODULE_6___default().name), (element_ui_lib_table__WEBPACK_IMPORTED_MODULE_6___default())), (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_components, (element_ui_lib_table_column__WEBPACK_IMPORTED_MODULE_4___default().name), (element_ui_lib_table_column__WEBPACK_IMPORTED_MODULE_4___default())), (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_components, "Modal", _components_Modal__WEBPACK_IMPORTED_MODULE_19__.default), (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_components, "FullCalendar", _fullcalendar_vue__WEBPACK_IMPORTED_MODULE_20__.default), (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_components, "BaseButton", _components_BaseButton_vue__WEBPACK_IMPORTED_MODULE_22__.default), (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_components, "flatPicker", (vue_flatpickr_component__WEBPACK_IMPORTED_MODULE_23___default())), _components),
+    BasePagination: _components__WEBPACK_IMPORTED_MODULE_15__.BasePagination,
+    RouteBreadCrumb: _components_Breadcrumb_RouteBreadcrumb__WEBPACK_IMPORTED_MODULE_14__.default
+  }, (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_components, (element_ui_lib_select__WEBPACK_IMPORTED_MODULE_10___default().name), (element_ui_lib_select__WEBPACK_IMPORTED_MODULE_10___default())), (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_components, (element_ui_lib_option__WEBPACK_IMPORTED_MODULE_8___default().name), (element_ui_lib_option__WEBPACK_IMPORTED_MODULE_8___default())), (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_components, (element_ui_lib_table__WEBPACK_IMPORTED_MODULE_6___default().name), (element_ui_lib_table__WEBPACK_IMPORTED_MODULE_6___default())), (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_components, (element_ui_lib_table_column__WEBPACK_IMPORTED_MODULE_4___default().name), (element_ui_lib_table_column__WEBPACK_IMPORTED_MODULE_4___default())), (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_components, "Modal", _components_Modal__WEBPACK_IMPORTED_MODULE_18__.default), (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_components, "FullCalendar", _fullcalendar_vue__WEBPACK_IMPORTED_MODULE_19__.default), (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_components, "BaseButton", _components_BaseButton_vue__WEBPACK_IMPORTED_MODULE_21__.default), (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_components, "flatPicker", (vue_flatpickr_component__WEBPACK_IMPORTED_MODULE_22___default())), _components),
   data: function data() {
     return {
       propsToSearch: [],
-      tableColumns: [],
       tableData: [],
       selectedRows: [],
       today: '',
+      current_date: '',
       calendarOptions: {
         eventClick: function eventClick(info) {
           console.log(info);
         },
         height: 500,
-        plugins: [_fullcalendar_resource_timeline__WEBPACK_IMPORTED_MODULE_21__.default],
-        headerToolbar: {
-          left: 'today',
-          center: 'title',
-          right: 'prev,next'
-        },
+        plugins: [_fullcalendar_resource_timeline__WEBPACK_IMPORTED_MODULE_20__.default],
+        headerToolbar: false,
         initialView: 'resourceTimelineDay',
         scrollTime: '07:00',
         aspectRatio: 1.5,
@@ -18150,7 +18129,6 @@ var _components;
         }
       },
       showAddModal: false,
-      showEditModal: false,
       model: {
         type: '',
         aircraft: '',
@@ -18167,9 +18145,6 @@ var _components;
     };
   },
   watch: {
-    calendarOptions: function calendarOptions() {
-      console.log("asfd");
-    },
     aircrafts: function aircrafts() {
       var that = this;
       this.aircrafts.forEach(function (item, index) {
@@ -18198,14 +18173,25 @@ var _components;
       });
     }
   },
-  computed: (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)({}, (0,vuex__WEBPACK_IMPORTED_MODULE_25__.mapGetters)(['aircrafts', 'aircraftFlights', 'aircraftOptions'])),
+  computed: (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)({}, (0,vuex__WEBPACK_IMPORTED_MODULE_24__.mapGetters)(['aircrafts', 'aircraftFlights'])),
   mounted: function mounted() {
     this.initAircrafts();
-    this.getAircraftOptions();
   },
-  methods: (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)((0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)({}, (0,vuex__WEBPACK_IMPORTED_MODULE_25__.mapActions)(['initAircrafts', 'getAircraftFlights', 'getAircraftOptions', 'saveAircraftFlight'])), {}, {
+  methods: (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)((0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)({}, (0,vuex__WEBPACK_IMPORTED_MODULE_24__.mapActions)(['initAircrafts', 'getAircraftFlights', 'saveAircraftFlight'])), {}, {
     paginationChanged: function paginationChanged(page) {
       this.pagination.currentPage = page;
+    },
+    calendarApi: function calendarApi() {
+      return this.$refs.fullCalendar.getApi();
+    },
+    currentDate: function currentDate() {
+      return this.calendarApi.getDate();
+    },
+    next: function next() {
+      this.calendarApi().next();
+    },
+    prev: function prev() {
+      this.calendarApi().prev();
     },
     goToSeatMap: function goToSeatMap(row) {
       this.$router.push({
@@ -18229,17 +18215,6 @@ var _components;
         this.model.arrival = this.aircraftFlights[index].flight.arrival_time;
       }
     },
-    onEventClick: function onEventClick(_ref) {
-      var el = _ref.el,
-          event = _ref.event;
-      // this.model = {
-      //   title: event.title,
-      //   className: event.classNames ? event.classNames.join(' '): '',
-      //   start: event.start,
-      //   end: event.end,
-      // }
-      this.showEditModal = true;
-    },
     saveEvent: function saveEvent() {
       var _this2 = this;
 
@@ -18252,8 +18227,6 @@ var _components;
       return this.saveAircraftFlight({
         aircraft: this.model.aircraft,
         flight: this.model.flight,
-        // origin_airport_name: this.model.origin,
-        // destination_airport_name: this.model.destination,
         departure_time: this.model.departure,
         arrival_time: this.model.arrival
       }).then(function (res) {
@@ -18266,32 +18239,10 @@ var _components;
         _this2.isError = true;
       });
     },
-    editEvent: function editEvent() {
+    deleteEvent: function deleteEvent() {
       var _this3 = this;
 
-      var index = this.events.findIndex(function (e) {
-        return e.title === _this3.model.title;
-      });
-
-      if (index !== -1) {
-        this.events.splice(index, 1, this.model);
-      }
-
-      this.showEditModal = false;
-    },
-    deleteEvent: function deleteEvent() {
-      var _this4 = this;
-
-      var index = this.events.findIndex(function (e) {
-        return e.title === _this4.model.title;
-      });
-
-      if (index !== -1) {
-        this.events.splice(index, 1);
-      }
-
-      this.showEditModal = false;
-      sweetalert2__WEBPACK_IMPORTED_MODULE_18___default().fire({
+      sweetalert2__WEBPACK_IMPORTED_MODULE_17___default().fire({
         title: "Are you sure?",
         text: "You won't be able to revert this!",
         type: 'warning',
@@ -18302,9 +18253,7 @@ var _components;
         icon: 'warning'
       }).then(function (result) {
         if (result.value) {
-          _this4.deleteFlight(row.id);
-
-          _this4.$notify({
+          _this3.$notify({
             message: 'Successfully Deleted',
             timeout: 5000,
             icon: 'ni ni-bell-55',
@@ -34936,10 +34885,120 @@ var render = function() {
                     { staticClass: "card-calendar", attrs: { "no-body": "" } },
                     [
                       _c(
+                        "b-card-header",
+                        { staticClass: "card-calendar-header" },
+                        [
+                          _c(
+                            "b-row",
+                            {
+                              staticClass: "py-1",
+                              attrs: { "align-v": "center" }
+                            },
+                            [
+                              _c(
+                                "b-col",
+                                {
+                                  staticClass: "text-left",
+                                  attrs: { cols: "4" }
+                                },
+                                [
+                                  _c(
+                                    "base-button",
+                                    {
+                                      staticClass: "btn btn-sm btn-default",
+                                      class: { active: true },
+                                      on: {
+                                        click: function($event) {
+                                          return _vm.changeView("dayGridMonth")
+                                        }
+                                      }
+                                    },
+                                    [
+                                      _vm._v(
+                                        "\n                  today\n                "
+                                      )
+                                    ]
+                                  )
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "b-col",
+                                {
+                                  staticClass: "text-center",
+                                  attrs: { cols: "4" }
+                                },
+                                [
+                                  _vm._v(
+                                    "\n                " +
+                                      _vm._s(_vm.current_date) +
+                                      "\n              "
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "b-col",
+                                {
+                                  staticClass: "text-right",
+                                  attrs: { cols: "4" }
+                                },
+                                [
+                                  _c(
+                                    "a",
+                                    {
+                                      staticClass:
+                                        "fullcalendar-btn-prev btn btn-sm btn-default",
+                                      attrs: { href: "#" },
+                                      on: {
+                                        click: function($event) {
+                                          $event.preventDefault()
+                                          return _vm.prev($event)
+                                        }
+                                      }
+                                    },
+                                    [
+                                      _c("i", {
+                                        staticClass: "fas fa-angle-left"
+                                      })
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "a",
+                                    {
+                                      staticClass:
+                                        "fullcalendar-btn-next btn btn-sm btn-default",
+                                      attrs: { href: "#" },
+                                      on: {
+                                        click: function($event) {
+                                          $event.preventDefault()
+                                          return _vm.next($event)
+                                        }
+                                      }
+                                    },
+                                    [
+                                      _c("i", {
+                                        staticClass: "fas fa-angle-right"
+                                      })
+                                    ]
+                                  )
+                                ]
+                              )
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
                         "b-card-body",
                         { staticClass: "p-0 card-calendar-body" },
                         [
                           _c("full-calendar", {
+                            ref: "fullCalendar",
                             attrs: { options: _vm.calendarOptions }
                           })
                         ],
@@ -35074,7 +35133,7 @@ var render = function() {
                             attrs: {
                               label: "Flight No.",
                               prop: "airline",
-                              "min-width": "140px",
+                              "min-width": "120px",
                               sortable: ""
                             },
                             scopedSlots: _vm._u([
@@ -35875,183 +35934,6 @@ var render = function() {
           })
         ],
         1
-      ),
-      _vm._v(" "),
-      _c(
-        "modal",
-        {
-          attrs: {
-            show: _vm.showEditModal,
-            "modal-classes": "modal-secondary"
-          },
-          on: {
-            "update:show": function($event) {
-              _vm.showEditModal = $event
-            }
-          }
-        },
-        [
-          _c(
-            "form",
-            {
-              staticClass: "edit-event--form",
-              on: {
-                submit: function($event) {
-                  $event.preventDefault()
-                  return _vm.editEvent($event)
-                }
-              }
-            },
-            [
-              _c("base-input", {
-                attrs: {
-                  label: "Event title",
-                  placeholder: "Event Title",
-                  "input-classes": "form-control-alternative new-event--title"
-                },
-                model: {
-                  value: _vm.model.title,
-                  callback: function($$v) {
-                    _vm.$set(_vm.model, "title", $$v)
-                  },
-                  expression: "model.title"
-                }
-              }),
-              _vm._v(" "),
-              _c("div", { staticClass: "form-group" }, [
-                _c(
-                  "label",
-                  { staticClass: "form-control-label d-block mb-3" },
-                  [_vm._v("Status color")]
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    staticClass:
-                      "btn-group btn-group-toggle btn-group-colors event-tag"
-                  },
-                  _vm._l(_vm.eventColors, function(color) {
-                    return _c(
-                      "label",
-                      {
-                        key: color,
-                        staticClass: "btn",
-                        class: [
-                          color,
-                          { "active focused": _vm.model.className === color }
-                        ]
-                      },
-                      [
-                        _c("input", {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: _vm.model.className,
-                              expression: "model.className"
-                            }
-                          ],
-                          attrs: {
-                            type: "radio",
-                            name: "event-tag",
-                            autocomplete: "off"
-                          },
-                          domProps: {
-                            value: color,
-                            checked: _vm._q(_vm.model.className, color)
-                          },
-                          on: {
-                            change: function($event) {
-                              return _vm.$set(_vm.model, "className", color)
-                            }
-                          }
-                        })
-                      ]
-                    )
-                  }),
-                  0
-                )
-              ]),
-              _vm._v(" "),
-              _c("base-input", { attrs: { label: "Description" } }, [
-                _c("textarea", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.model.description,
-                      expression: "model.description"
-                    }
-                  ],
-                  staticClass:
-                    "form-control form-control-alternative edit-event--description textarea-autosize",
-                  attrs: { placeholder: "Event Desctiption" },
-                  domProps: { value: _vm.model.description },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.$set(_vm.model, "description", $event.target.value)
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _c("i", { staticClass: "form-group--bar" })
-              ]),
-              _vm._v(" "),
-              _c("input", {
-                staticClass: "new-event--start",
-                attrs: { type: "hidden" }
-              }),
-              _vm._v(" "),
-              _c("input", {
-                staticClass: "new-event--end",
-                attrs: { type: "hidden" }
-              })
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "template",
-            { slot: "footer" },
-            [
-              _c(
-                "base-button",
-                {
-                  staticClass: "new-event--add",
-                  attrs: { "native-type": "submit", type: "primary" },
-                  on: { click: _vm.editEvent }
-                },
-                [_vm._v("Update")]
-              ),
-              _vm._v(" "),
-              _c(
-                "base-button",
-                { attrs: { type: "danger" }, on: { click: _vm.deleteEvent } },
-                [_vm._v("Delete")]
-              ),
-              _vm._v(" "),
-              _c(
-                "base-button",
-                {
-                  staticClass: "ml-auto",
-                  attrs: { type: "link" },
-                  on: {
-                    click: function($event) {
-                      _vm.showEditModal = false
-                    }
-                  }
-                },
-                [_vm._v("Close")]
-              )
-            ],
-            1
-          )
-        ],
-        2
       )
     ],
     1

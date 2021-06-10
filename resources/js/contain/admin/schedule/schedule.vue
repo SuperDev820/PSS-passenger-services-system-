@@ -21,9 +21,32 @@
           <!-- Fullcalendar -->
           <b-card no-body class="card-calendar">
             <!-- Card header -->
+            <b-card-header class="card-calendar-header">
+              <b-row align-v="center" class="py-1">
+                <b-col cols="4" class="text-left">
+                  <base-button class="btn btn-sm btn-default"
+                              :class="{'active': true}"
+                              @click="changeView('dayGridMonth')">
+                    today
+                  </base-button>
+                </b-col>
+                <b-col cols="4" class="text-center">
+                  {{current_date}}
+                </b-col>
+                <b-col cols="4" class="text-right">
+                  <a href="#" @click.prevent="prev" class="fullcalendar-btn-prev btn btn-sm btn-default">
+                    <i class="fas fa-angle-left"></i>
+                  </a>
+                  <a href="#" @click.prevent="next" class="fullcalendar-btn-next btn btn-sm btn-default">
+                    <i class="fas fa-angle-right"></i>
+                  </a>
+                </b-col>
+              </b-row>
+            </b-card-header>
             <!-- Card body -->
             <b-card-body class="p-0 card-calendar-body">
               <full-calendar 
+                ref="fullCalendar"
                 :options="calendarOptions"
               >
               </full-calendar>
@@ -72,7 +95,7 @@
                       @sort-change="sortChange">
               <el-table-column label="Flight No."
                              prop="airline"
-                             min-width="140px"
+                             min-width="120px"
                              sortable>
                 <div slot-scope="{row}">
                   {{row.flight.airline_code + row.flight.flight_number}}
@@ -306,43 +329,6 @@
         </b-form>
       </validation-observer>
     </modal>
-
-    <modal :show.sync="showEditModal" modal-classes="modal-secondary">
-      <form class="edit-event--form" @submit.prevent="editEvent">
-        <base-input label="Event title"
-                    placeholder="Event Title"
-                    v-model="model.title"
-                    input-classes="form-control-alternative new-event--title">
-        </base-input>
-        <div class="form-group">
-          <label class="form-control-label d-block mb-3">Status color</label>
-          <div class="btn-group btn-group-toggle btn-group-colors event-tag">
-
-            <label v-for="color in eventColors"
-                   :key="color"
-                   class="btn"
-                   :class="[color, {'active focused': model.className === color}]">
-              <input v-model="model.className" type="radio" name="event-tag" :value="color" autocomplete="off">
-            </label>
-          </div>
-        </div>
-        <base-input label="Description">
-          <textarea v-model="model.description"
-                    class="form-control form-control-alternative edit-event--description textarea-autosize"
-                    placeholder="Event Desctiption">
-          </textarea>
-          <i class="form-group--bar"></i>
-        </base-input>
-        <input type="hidden" class="new-event--start"/>
-        <input type="hidden" class="new-event--end"/>
-      </form>
-
-      <template slot="footer">
-        <base-button native-type="submit" type="primary" class="new-event--add" @click="editEvent">Update</base-button>
-        <base-button type="danger" @click="deleteEvent">Delete</base-button>
-        <base-button type="link" class="ml-auto" @click="showEditModal = false">Close</base-button>
-      </template>
-    </modal>
   </div>
 </template>
 <script>
@@ -382,21 +368,17 @@
     data() {
       return {
         propsToSearch: [],
-        tableColumns: [],
         tableData: [],
         selectedRows: [],
         today: '',
+        current_date: '',
         calendarOptions: {
           eventClick: function(info) {
             console.log(info)
           },
           height: 500,
           plugins: [ resourceTimelinePlugin ],
-          headerToolbar: {
-              left: 'today',
-              center: 'title',
-              right: 'prev,next'
-          },
+          headerToolbar: false,
           initialView: 'resourceTimelineDay',
           scrollTime: '07:00',
           aspectRatio: 1.5,
@@ -435,7 +417,6 @@
           }
         },
         showAddModal: false,
-        showEditModal: false,
         model: {
           type: '',
           aircraft: '',
@@ -452,9 +433,6 @@
       };
     },
     watch: {
-      calendarOptions: function () {
-        console.log("asfd")
-      },
       aircrafts: function () {
         var that = this;
         this.aircrafts.forEach(function(item, index) {
@@ -488,23 +466,32 @@
       ...mapGetters([
         'aircrafts',
         'aircraftFlights',
-        'aircraftOptions',
       ]),
     },
     mounted() {
       this.initAircrafts();
-      this.getAircraftOptions();
     },
     methods: {
       ...mapActions([
         'initAircrafts',
         'getAircraftFlights',
-        'getAircraftOptions',
         'saveAircraftFlight',
       ]),
 
       paginationChanged(page) {
         this.pagination.currentPage = page
+      },
+      calendarApi() {
+        return this.$refs.fullCalendar.getApi()
+      },
+      currentDate() {
+        return this.calendarApi.getDate()
+      },
+      next() {
+        this.calendarApi().next()
+      },
+      prev() {
+        this.calendarApi().prev()
       },
       goToSeatMap(row) {
         this.$router.push({ name: 'FlightSeatMap', params: { flightId: row.id }})
@@ -518,15 +505,6 @@
           this.model.arrival = this.aircraftFlights[index].flight.arrival_time
         }
       },
-      onEventClick({ el, event }) {
-        // this.model = {
-        //   title: event.title,
-        //   className: event.classNames ? event.classNames.join(' '): '',
-        //   start: event.start,
-        //   end: event.end,
-        // }
-        this.showEditModal = true
-      },
       saveEvent() {
         this.error = null;
         if ((this.model.aircraft == '') || (this.model.flight == '')) {
@@ -536,8 +514,6 @@
           this.saveAircraftFlight({
               aircraft: this.model.aircraft,
               flight: this.model.flight,
-              // origin_airport_name: this.model.origin,
-              // destination_airport_name: this.model.destination,
               departure_time: this.model.departure,
               arrival_time: this.model.arrival,
             })
@@ -552,19 +528,7 @@
             })
         );
       },
-      editEvent() {
-        let index = this.events.findIndex(e => e.title === this.model.title)
-        if (index !== -1) {
-          this.events.splice(index, 1, this.model)
-        }
-        this.showEditModal = false
-      },
       deleteEvent() {
-        let index = this.events.findIndex(e => e.title === this.model.title)
-        if (index !== -1) {
-          this.events.splice(index, 1)
-        }
-        this.showEditModal = false
         swal.fire({
           title: `Are you sure?`,
           text: "You won't be able to revert this!",
@@ -576,7 +540,6 @@
           icon: 'warning'
         }).then(result => {
           if (result.value) {
-            this.deleteFlight(row.id);
             this.$notify({
               message: 'Successfully Deleted',
               timeout: 5000,

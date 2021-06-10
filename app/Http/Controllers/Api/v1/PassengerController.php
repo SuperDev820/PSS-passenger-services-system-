@@ -294,6 +294,36 @@ class PassengerController extends Controller
         ], 200);
     }
 
+    public function getPassengerFlights(Request $request, $passengerId)
+    {
+        $current_date = Carbon::now();
+        $current_date = new DateTime($current_date, new DateTimeZone('Australia/Sydney'));
+        $current_date = $current_date->format('Y-m-d');
+        $upcoming_flights = FlightPassenger::where('passenger_id', $passengerId)
+                                                ->whereHas('aircraftFlight', function ($query) use ($current_date)
+                                                {
+                                                    $query->where('date', '>=', $current_date);
+                                                })->get();
+        foreach ($upcoming_flights as $upcoming_flight) {
+            $upcoming_flight->aircraftFlight->aircraft;
+            $upcoming_flight->aircraftFlight->flight;
+        }
+        $previous_flights = FlightPassenger::where('passenger_id', $passengerId)
+                                                ->whereHas('aircraftFlight', function ($query) use ($current_date)
+                                                {
+                                                    $query->where('date', '<', $current_date);
+                                                })->get();
+        foreach ($previous_flights as $previous_flight) {
+            $previous_flights->aircraftFlight->aircraft;
+            $previous_flights->aircraftFlight->flight;
+        }
+        return response()->json([
+            'message' => 'success',
+            'upcoming_flights' => $upcoming_flights,
+            'previous_flights' => $previous_flights,
+        ], 200);
+    }
+
     public function passengerSeatBook(Request $request)
     {
         $flight_passengers = FlightPassenger::where('aircraft_flight_id', $request->flightId)
@@ -302,15 +332,26 @@ class PassengerController extends Controller
             $flight_passenger = $flight_passengers[0];
             $flight_passenger -> update([
                 'seat' => $request->seat,
-            ]);;
+            ]);
         } else {
             return response()->json([
                 'message' => 'do not exist such passenger',
             ], 200);
         }
+        $book_reference = $this->generateRandomString(6);
         return response()->json([
             'message' => 'success',
-            'flight_passenger' => $flight_passenger,
+            'book_reference' => $book_reference,
         ], 200);
+    }
+
+    public function generateRandomString($length) {
+        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $charactersLength = strlen($characters);
+        $randomString = '';
+        for ($i = 0; $i < $length; $i++) {
+            $randomString .= $characters[rand(0, $charactersLength - 1)];
+        }
+        return $randomString;
     }
 }

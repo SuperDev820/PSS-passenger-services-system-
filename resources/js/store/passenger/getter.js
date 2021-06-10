@@ -8,6 +8,12 @@ const getters = {
     flightPassenger(state) {
         return state.flight_passenger;
     },
+    upcomingFlights(state) {
+        return state.upcoming_flights;
+    },
+    previousFlights(state) {
+        return state.previous_flights;
+    },
   };
   
   export default getters;

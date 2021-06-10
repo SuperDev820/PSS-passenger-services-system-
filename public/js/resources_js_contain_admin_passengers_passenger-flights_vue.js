@@ -25,14 +25,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var element_ui_lib_select__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(element_ui_lib_select__WEBPACK_IMPORTED_MODULE_10__);
 /* harmony import */ var core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! core-js/modules/es.function.name.js */ "./node_modules/core-js/modules/es.function.name.js");
 /* harmony import */ var core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_11__);
-/* harmony import */ var core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! core-js/modules/web.dom-collections.for-each.js */ "./node_modules/core-js/modules/web.dom-collections.for-each.js");
-/* harmony import */ var core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_12__);
-/* harmony import */ var _components_Breadcrumb_RouteBreadcrumb__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @/components/Breadcrumb/RouteBreadcrumb */ "./resources/js/components/Breadcrumb/RouteBreadcrumb.vue");
-/* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @/components */ "./resources/js/components/index.js");
-/* harmony import */ var _common_PaginatedTables_clientPaginationMixin__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @/common/PaginatedTables/clientPaginationMixin */ "./resources/js/common/PaginatedTables/clientPaginationMixin.js");
-/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! sweetalert2 */ "./node_modules/sweetalert2/dist/sweetalert2.all.js");
-/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_16___default = /*#__PURE__*/__webpack_require__.n(sweetalert2__WEBPACK_IMPORTED_MODULE_16__);
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.mjs");
+/* harmony import */ var _components_Breadcrumb_RouteBreadcrumb__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @/components/Breadcrumb/RouteBreadcrumb */ "./resources/js/components/Breadcrumb/RouteBreadcrumb.vue");
+/* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @/components */ "./resources/js/components/index.js");
+/* harmony import */ var _common_PaginatedTables_clientPaginationMixin__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @/common/PaginatedTables/clientPaginationMixin */ "./resources/js/common/PaginatedTables/clientPaginationMixin.js");
+/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! sweetalert2 */ "./node_modules/sweetalert2/dist/sweetalert2.all.js");
+/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(sweetalert2__WEBPACK_IMPORTED_MODULE_15__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.mjs");
 
 
 
@@ -51,7 +49,123 @@ __webpack_require__.r(__webpack_exports__);
 var _components;
 
 
-
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -152,46 +266,49 @@ var _components;
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   page: {
-    title: "Seat Map",
+    title: "Passenger's Flights",
     meta: [{
       name: "description",
       content: ""
     }]
   },
-  mixins: [_common_PaginatedTables_clientPaginationMixin__WEBPACK_IMPORTED_MODULE_15__.default],
+  mixins: [_common_PaginatedTables_clientPaginationMixin__WEBPACK_IMPORTED_MODULE_14__.default],
   components: (_components = {
-    BasePagination: _components__WEBPACK_IMPORTED_MODULE_14__.BasePagination,
-    RouteBreadCrumb: _components_Breadcrumb_RouteBreadcrumb__WEBPACK_IMPORTED_MODULE_13__.default
+    BasePagination: _components__WEBPACK_IMPORTED_MODULE_13__.BasePagination,
+    RouteBreadCrumb: _components_Breadcrumb_RouteBreadcrumb__WEBPACK_IMPORTED_MODULE_12__.default
   }, (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_components, (element_ui_lib_select__WEBPACK_IMPORTED_MODULE_10___default().name), (element_ui_lib_select__WEBPACK_IMPORTED_MODULE_10___default())), (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_components, (element_ui_lib_option__WEBPACK_IMPORTED_MODULE_8___default().name), (element_ui_lib_option__WEBPACK_IMPORTED_MODULE_8___default())), (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_components, (element_ui_lib_table__WEBPACK_IMPORTED_MODULE_6___default().name), (element_ui_lib_table__WEBPACK_IMPORTED_MODULE_6___default())), (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_components, (element_ui_lib_table_column__WEBPACK_IMPORTED_MODULE_4___default().name), (element_ui_lib_table_column__WEBPACK_IMPORTED_MODULE_4___default())), _components),
   data: function data() {
     return {
-      seat: [],
       propsToSearch: [],
       tableData: [],
-      selectedRows: []
+      selectedRows: [],
+      previousTableData: []
     };
   },
   watch: {
-    flightPassengers: function flightPassengers() {
-      this.tableData = this.flightPassengers;
-      this.flightPassengers.forEach(function (item, index) {
-        document.getElementById(item.seat).disabled = true;
-      });
+    upcomingFlights: function upcomingFlights() {
+      this.tableData = this.upcomingFlights;
     },
-    aircraftFlight: function aircraftFlight() {
-      this.flightTableData = this.aircraftFlight;
+    previousFlights: function previousFlights() {
+      this.previousTableData = this.previousFlights;
     }
   },
-  computed: (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)({}, (0,vuex__WEBPACK_IMPORTED_MODULE_17__.mapGetters)(['flightPassengers', 'aircraftFlight'])),
+  computed: (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)({}, (0,vuex__WEBPACK_IMPORTED_MODULE_16__.mapGetters)(['upcomingFlights', 'previousFlights'])),
   mounted: function mounted() {
-    this.getFlightPassengers(this.$route.params.flightId);
+    this.getPassengerFlights(this.$route.params.passengerId);
   },
-  methods: (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)((0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)({}, (0,vuex__WEBPACK_IMPORTED_MODULE_17__.mapActions)(['getFlightPassengers'])), {}, {
+  methods: (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)((0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)({}, (0,vuex__WEBPACK_IMPORTED_MODULE_16__.mapActions)(['getPassengerFlights'])), {}, {
     paginationChanged: function paginationChanged(page) {
       this.pagination.currentPage = page;
     },
-    handleSeat: function handleSeat() {
-      console.log(this.seat);
+    goToPassengerSeat: function goToPassengerSeat(row) {
+      this.$router.push({
+        name: 'PassengerSeat',
+        params: {
+          passengerId: this.$route.params.passengerId,
+          flightId: row.aircraft_flight_id
+        }
+      });
     }
   })
 });
@@ -13840,7 +13957,375 @@ var render = function() {
               },
               [
                 _c("template", { slot: "header" }, [
-                  _c("h3", { staticClass: "mb-0" }, [_vm._v("Flights")])
+                  _c("h3", { staticClass: "mb-0" }, [
+                    _vm._v("Upcoming Flights")
+                  ])
+                ]),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  [
+                    _c(
+                      "b-col",
+                      {
+                        staticClass:
+                          "d-flex justify-content-center justify-content-sm-between flex-wrap",
+                        attrs: { cols: "12" }
+                      },
+                      [
+                        _c(
+                          "el-select",
+                          {
+                            staticClass: "select-primary pagination-select",
+                            attrs: { placeholder: "Per page" },
+                            model: {
+                              value: _vm.pagination.perPage,
+                              callback: function($$v) {
+                                _vm.$set(_vm.pagination, "perPage", $$v)
+                              },
+                              expression: "pagination.perPage"
+                            }
+                          },
+                          _vm._l(_vm.pagination.perPageOptions, function(item) {
+                            return _c("el-option", {
+                              key: item,
+                              staticClass: "select-primary",
+                              attrs: { label: item, value: item }
+                            })
+                          }),
+                          1
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          [
+                            _c("base-input", {
+                              attrs: {
+                                "prepend-icon": "fas fa-search",
+                                placeholder: "Search..."
+                              },
+                              model: {
+                                value: _vm.searchQuery,
+                                callback: function($$v) {
+                                  _vm.searchQuery = $$v
+                                },
+                                expression: "searchQuery"
+                              }
+                            })
+                          ],
+                          1
+                        )
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "el-table",
+                      {
+                        attrs: {
+                          data: _vm.queriedData,
+                          "row-key": "id",
+                          "header-row-class-name": "thead-light"
+                        },
+                        on: { "sort-change": _vm.sortChange }
+                      },
+                      [
+                        _c("el-table-column", {
+                          attrs: {
+                            label: "Flight No.",
+                            prop: "airline",
+                            "min-width": "120px"
+                          },
+                          scopedSlots: _vm._u([
+                            {
+                              key: "default",
+                              fn: function(ref) {
+                                var row = ref.row
+                                return _c("div", {}, [
+                                  _vm._v(
+                                    "\n                " +
+                                      _vm._s(
+                                        row.aircraft_flight.flight
+                                          .airline_code +
+                                          row.aircraft_flight.flight
+                                            .flight_number
+                                      ) +
+                                      "\n              "
+                                  )
+                                ])
+                              }
+                            }
+                          ])
+                        }),
+                        _vm._v(" "),
+                        _c("el-table-column", {
+                          attrs: {
+                            label: "Aircraft",
+                            prop: "aircraft",
+                            "min-width": "120px"
+                          },
+                          scopedSlots: _vm._u([
+                            {
+                              key: "default",
+                              fn: function(ref) {
+                                var row = ref.row
+                                return _c("div", {}, [
+                                  row.aircraft_flight.aircraft != null
+                                    ? _c("span", [
+                                        _vm._v(
+                                          _vm._s(
+                                            row.aircraft_flight.aircraft
+                                              .registration
+                                          )
+                                        )
+                                      ])
+                                    : _c("span", [_vm._v("Not assigned")])
+                                ])
+                              }
+                            }
+                          ])
+                        }),
+                        _vm._v(" "),
+                        _c("el-table-column", {
+                          attrs: {
+                            label: "From",
+                            prop: "origin_airport_name",
+                            "min-width": "120px"
+                          },
+                          scopedSlots: _vm._u([
+                            {
+                              key: "default",
+                              fn: function(ref) {
+                                var row = ref.row
+                                return _c("div", {}, [
+                                  _vm._v(
+                                    "\n                " +
+                                      _vm._s(
+                                        row.aircraft_flight.flight
+                                          .origin_airport_name
+                                      ) +
+                                      "\n              "
+                                  )
+                                ])
+                              }
+                            }
+                          ])
+                        }),
+                        _vm._v(" "),
+                        _c("el-table-column", {
+                          attrs: {
+                            label: "To",
+                            prop: "destination_airport_name",
+                            "min-width": "120px"
+                          },
+                          scopedSlots: _vm._u([
+                            {
+                              key: "default",
+                              fn: function(ref) {
+                                var row = ref.row
+                                return _c("div", {}, [
+                                  _vm._v(
+                                    "\n                " +
+                                      _vm._s(
+                                        row.aircraft_flight.flight
+                                          .destination_airport_name
+                                      ) +
+                                      "\n              "
+                                  )
+                                ])
+                              }
+                            }
+                          ])
+                        }),
+                        _vm._v(" "),
+                        _c("el-table-column", {
+                          attrs: {
+                            label: "Departure",
+                            prop: "departure_time",
+                            "min-width": "140px"
+                          },
+                          scopedSlots: _vm._u([
+                            {
+                              key: "default",
+                              fn: function(ref) {
+                                var row = ref.row
+                                return _c("div", {}, [
+                                  _vm._v(
+                                    "\n                " +
+                                      _vm._s(
+                                        row.aircraft_flight.date +
+                                          "T" +
+                                          row.aircraft_flight.departure_time
+                                      ) +
+                                      "\n              "
+                                  )
+                                ])
+                              }
+                            }
+                          ])
+                        }),
+                        _vm._v(" "),
+                        _c("el-table-column", {
+                          attrs: {
+                            label: "Arrival",
+                            prop: "arrival_time",
+                            "min-width": "140px"
+                          },
+                          scopedSlots: _vm._u([
+                            {
+                              key: "default",
+                              fn: function(ref) {
+                                var row = ref.row
+                                return _c("div", {}, [
+                                  _vm._v(
+                                    "\n                " +
+                                      _vm._s(
+                                        row.aircraft_flight.date +
+                                          "T" +
+                                          row.aircraft_flight.arrival_time
+                                      ) +
+                                      "\n              "
+                                  )
+                                ])
+                              }
+                            }
+                          ])
+                        }),
+                        _vm._v(" "),
+                        _c("el-table-column", {
+                          attrs: {
+                            label: "Seat",
+                            prop: "seat",
+                            "min-width": "100px"
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("el-table-column", {
+                          attrs: {
+                            label: "Reference",
+                            prop: "book_reference",
+                            "min-width": "120px"
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("el-table-column", {
+                          attrs: {
+                            "min-width": "100px",
+                            align: "right",
+                            label: "Actions"
+                          },
+                          scopedSlots: _vm._u([
+                            {
+                              key: "default",
+                              fn: function(ref) {
+                                var row = ref.row
+                                return _c(
+                                  "div",
+                                  {
+                                    staticClass: "d-flex justify-content-center"
+                                  },
+                                  [
+                                    _c(
+                                      "base-button",
+                                      {
+                                        attrs: {
+                                          type: "primary",
+                                          size: "sm",
+                                          icon: "",
+                                          disabled: row.status == 0
+                                        },
+                                        nativeOn: {
+                                          click: function($event) {
+                                            return _vm.goToPassengerSeat(row)
+                                          }
+                                        }
+                                      },
+                                      [
+                                        _c("i", {
+                                          staticClass:
+                                            "text-white ni ni-curved-next"
+                                        })
+                                      ]
+                                    )
+                                  ],
+                                  1
+                                )
+                              }
+                            }
+                          ])
+                        })
+                      ],
+                      1
+                    )
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "col-12 d-flex justify-content-center justify-content-sm-between flex-wrap",
+                    attrs: { slot: "footer" },
+                    slot: "footer"
+                  },
+                  [
+                    _c("div", {}, [
+                      _vm.total != 0
+                        ? _c("p", { staticClass: "card-category" }, [
+                            _vm._v(
+                              "\n              Showing " +
+                                _vm._s(_vm.from + 1) +
+                                " to " +
+                                _vm._s(_vm.to) +
+                                " of " +
+                                _vm._s(_vm.total) +
+                                " entries\n\n              "
+                            ),
+                            _vm.selectedRows.length
+                              ? _c("span", [
+                                  _vm._v(
+                                    "\n                    " +
+                                      _vm._s(_vm.selectedRows.length) +
+                                      " rows selected\n              "
+                                  )
+                                ])
+                              : _vm._e()
+                          ])
+                        : _vm._e()
+                    ]),
+                    _vm._v(" "),
+                    _c("base-pagination", {
+                      staticClass: "pagination-no-border",
+                      attrs: {
+                        current: _vm.pagination.currentPage,
+                        "per-page": _vm.pagination.perPage,
+                        total: _vm.total
+                      },
+                      on: {
+                        change: function($event) {
+                          return _vm.paginationChanged($event)
+                        }
+                      }
+                    })
+                  ],
+                  1
+                )
+              ],
+              2
+            ),
+            _vm._v(" "),
+            _c(
+              "card",
+              {
+                staticClass: "no-border-card",
+                attrs: { "body-classes": "px-0 pb-1", "footer-classes": "pb-2" }
+              },
+              [
+                _c("template", { slot: "header" }, [
+                  _c("h3", { staticClass: "mb-0" }, [
+                    _vm._v("Previous Flights")
+                  ])
                 ]),
                 _vm._v(" "),
                 _c(
@@ -13858,7 +14343,7 @@ var render = function() {
                               "table-responsive align-items-center table-flush",
                             attrs: {
                               "header-row-class-name": "thead-light",
-                              data: _vm.tableData
+                              data: _vm.previousTableData
                             }
                           },
                           [
@@ -13866,7 +14351,7 @@ var render = function() {
                               attrs: {
                                 label: "Flight No.",
                                 prop: "airline",
-                                "min-width": "140px"
+                                "min-width": "120px"
                               },
                               scopedSlots: _vm._u([
                                 {
@@ -13877,8 +14362,10 @@ var render = function() {
                                       _vm._v(
                                         "\n                  " +
                                           _vm._s(
-                                            row.flight.airline_code +
-                                              row.flight.flight_number
+                                            row.aircraft_flight.flight
+                                              .airline_code +
+                                              row.aircraft_flight.flight
+                                                .flight_number
                                           ) +
                                           "\n                "
                                       )
@@ -13900,11 +14387,16 @@ var render = function() {
                                   fn: function(ref) {
                                     var row = ref.row
                                     return _c("div", {}, [
-                                      _vm._v(
-                                        "\n                  " +
-                                          _vm._s(row.aircraft.registration) +
-                                          "\n                "
-                                      )
+                                      row.aircraft_flight.aircraft != null
+                                        ? _c("span", [
+                                            _vm._v(
+                                              _vm._s(
+                                                row.aircraft_flight.aircraft
+                                                  .registration
+                                              )
+                                            )
+                                          ])
+                                        : _c("span", [_vm._v("Not assigned")])
                                     ])
                                   }
                                 }
@@ -13926,7 +14418,8 @@ var render = function() {
                                       _vm._v(
                                         "\n                  " +
                                           _vm._s(
-                                            row.flight.origin_airport_name
+                                            row.aircraft_flight.flight
+                                              .origin_airport_name
                                           ) +
                                           "\n                "
                                       )
@@ -13951,7 +14444,8 @@ var render = function() {
                                       _vm._v(
                                         "\n                  " +
                                           _vm._s(
-                                            row.flight.destination_airport_name
+                                            row.aircraft_flight.flight
+                                              .destination_airport_name
                                           ) +
                                           "\n                "
                                       )
@@ -13965,7 +14459,7 @@ var render = function() {
                               attrs: {
                                 label: "Departure",
                                 prop: "departure_time",
-                                "min-width": "120px"
+                                "min-width": "140px"
                               },
                               scopedSlots: _vm._u([
                                 {
@@ -13976,7 +14470,9 @@ var render = function() {
                                       _vm._v(
                                         "\n                  " +
                                           _vm._s(
-                                            row.date + "T" + row.departure_time
+                                            row.aircraft_flight.date +
+                                              "T" +
+                                              row.aircraft_flight.departure_time
                                           ) +
                                           "\n                "
                                       )
@@ -13990,7 +14486,7 @@ var render = function() {
                               attrs: {
                                 label: "Arrival",
                                 prop: "arrival_time",
-                                "min-width": "120px"
+                                "min-width": "140px"
                               },
                               scopedSlots: _vm._u([
                                 {
@@ -14001,7 +14497,9 @@ var render = function() {
                                       _vm._v(
                                         "\n                  " +
                                           _vm._s(
-                                            row.date + "T" + row.arrival_time
+                                            row.aircraft_flight.date +
+                                              "T" +
+                                              row.aircraft_flight.arrival_time
                                           ) +
                                           "\n                "
                                       )
@@ -14013,54 +14511,18 @@ var render = function() {
                             _vm._v(" "),
                             _c("el-table-column", {
                               attrs: {
-                                label: "Duration",
-                                prop: "flight_time",
+                                label: "Seat",
+                                prop: "seat",
                                 "min-width": "100px"
-                              },
-                              scopedSlots: _vm._u([
-                                {
-                                  key: "default",
-                                  fn: function(ref) {
-                                    var row = ref.row
-                                    return _c("div", {}, [
-                                      _vm._v(
-                                        "\n                  " +
-                                          _vm._s(row.flight_time) +
-                                          "\n                "
-                                      )
-                                    ])
-                                  }
-                                }
-                              ])
+                              }
                             }),
                             _vm._v(" "),
                             _c("el-table-column", {
                               attrs: {
-                                label: "Type",
-                                prop: "type",
-                                "min-width": "100px"
-                              },
-                              scopedSlots: _vm._u([
-                                {
-                                  key: "default",
-                                  fn: function(ref) {
-                                    var row = ref.row
-                                    return _c("div", {}, [
-                                      row.flight.type == "REGULAR"
-                                        ? _c(
-                                            "span",
-                                            { staticClass: "text-primary" },
-                                            [_vm._v("REGULAR")]
-                                          )
-                                        : _c(
-                                            "span",
-                                            { staticClass: "text-warning" },
-                                            [_vm._v("CHARTER")]
-                                          )
-                                    ])
-                                  }
-                                }
-                              ])
+                                label: "Reference",
+                                prop: "book_reference",
+                                "min-width": "120px"
+                              }
                             })
                           ],
                           1

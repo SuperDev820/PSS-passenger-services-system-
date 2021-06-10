@@ -14048,7 +14048,14 @@ var render = function() {
                     "router-link",
                     {
                       staticClass: "btn btn-neutral btn-sm",
-                      attrs: { to: { name: "Passengers" } }
+                      attrs: {
+                        to: {
+                          name: "PassengerFlights",
+                          params: {
+                            passengerId: this.$route.params.passengerId
+                          }
+                        }
+                      }
                     },
                     [
                       _c("i", { staticClass: "far fa-hand-point-left" }),

@@ -11,7 +11,8 @@ const actions = {
                     context.commit(type.SET_ALL_PASSENGERS, data)
                 })
                 .catch(({ response }) => {
-                    // context.commit(type.AUTH_LOGOUT);
+                    console.log(response);
+                    reject(response);
                 });
         });
     },
@@ -24,7 +25,8 @@ const actions = {
                     context.commit(type.SET_PASSENGER, data)
                 })
                 .catch(({ response }) => {
-                    // context.commit(type.AUTH_LOGOUT);
+                    console.log(response);
+                    reject(response);
                 });
         });
     },
@@ -37,7 +39,8 @@ const actions = {
                     context.commit(type.SET_FLIGHT_PASSENGER, data)
                 })
                 .catch(({ response }) => {
-                    // context.commit(type.AUTH_LOGOUT);
+                    console.log(response);
+                    reject(response);
                 });
         });
     },
@@ -75,7 +78,22 @@ const actions = {
                     context.commit(type.SET_ALL_PASSENGERS, data)
                 })
                 .catch(({ response }) => {
-                    // context.commit(type.AUTH_LOGOUT);
+                    console.log(response);
+                    reject(response);
+                });
+        });
+    },
+    getPassengerFlights(context, passengerId) {
+        ApiService.setHeader();
+        return new Promise((resolve) =>{
+            ApiService.get("api/v1/admin/passenger/" + passengerId + "/flights")
+                .then(({data}) => {
+                    console.log(data);
+                    context.commit(type.SET_PASSENGER_FLIGHTS, data)
+                })
+                .catch(({ response }) => {
+                    console.log(response);
+                    reject(response);
                 });
         });
     },

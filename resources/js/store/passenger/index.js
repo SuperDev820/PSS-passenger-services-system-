@@ -7,6 +7,8 @@ const defaultState = {
   passengers: [],
   passenger: {},
   flight_passenger: {},
+  previous_flights: [],
+  upcoming_flights: [],
 };
 
 export default {

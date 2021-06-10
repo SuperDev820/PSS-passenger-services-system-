@@ -14077,7 +14077,6 @@ var render = function() {
                             {
                               key: "default",
                               fn: function(ref) {
-                                var row = ref.row
                                 return _c(
                                   "div",
                                   {},
