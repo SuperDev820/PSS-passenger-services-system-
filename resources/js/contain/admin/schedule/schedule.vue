@@ -25,13 +25,12 @@
               <b-row align-v="center" class="py-1">
                 <b-col cols="4" class="text-left">
                   <base-button class="btn btn-sm btn-default"
-                              :class="{'active': true}"
-                              @click="changeView('dayGridMonth')">
+                              @click="goToToday()">
                     today
                   </base-button>
                 </b-col>
                 <b-col cols="4" class="text-center">
-                  {{current_date}}
+                  <h3 class="m-0">{{current_date}}</h3>
                 </b-col>
                 <b-col cols="4" class="text-right">
                   <a href="#" @click.prevent="prev" class="fullcalendar-btn-prev btn btn-sm btn-default">
@@ -223,7 +222,7 @@
         <b-form role="form" class="new-event--form row" @submit.prevent="handleSubmit(saveEvent)">
           <div class="col-12">
             <base-input label="Date"
-                        v-model="today"
+                        v-model="current_date"
                         disabled
                         input-classes="form-control-alternative new-event--title">
             </base-input>
@@ -347,6 +346,8 @@
 
   import {mapActions, mapGetters} from 'vuex'
 
+  const date = new Date();
+  const today = date.toDateString()
   export default {
     page: {
       title: "Schedule",
@@ -370,12 +371,12 @@
         propsToSearch: [],
         tableData: [],
         selectedRows: [],
-        today: '',
-        current_date: '',
+        current_date: today,
         calendarOptions: {
           eventClick: function(info) {
             console.log(info)
           },
+          timeZone: 'local',
           height: 500,
           plugins: [ resourceTimelinePlugin ],
           headerToolbar: false,
@@ -441,11 +442,10 @@
           temp.title = item.registration + "\n" + item.model
           that.calendarOptions.resources.push(temp)
         })
-        this.getAircraftFlights();
+        this.getAircraftFlightsByDate({date: this.current_date});
       },
       aircraftFlights: function() {
         this.tableData = this.aircraftFlights;
-        this.today = this.aircraftFlights[0].date;
 
         this.calendarOptions.events = [];
         var that = this;
@@ -474,24 +474,30 @@
     methods: {
       ...mapActions([
         'initAircrafts',
-        'getAircraftFlights',
+        'getAircraftFlightsByDate',
         'saveAircraftFlight',
       ]),
 
       paginationChanged(page) {
         this.pagination.currentPage = page
       },
-      calendarApi() {
-        return this.$refs.fullCalendar.getApi()
-      },
-      currentDate() {
-        return this.calendarApi.getDate()
+      goToToday() {
+        let calendarApi = this.$refs.fullCalendar.getApi()
+        calendarApi.today()
+        this.current_date = calendarApi.getDate().toDateString();
+        this.getAircraftFlightsByDate({date: this.current_date});
       },
       next() {
-        this.calendarApi().next()
+        let calendarApi = this.$refs.fullCalendar.getApi()
+        calendarApi.next()
+        this.current_date = calendarApi.getDate().toDateString();
+        this.getAircraftFlightsByDate({date: this.current_date});
       },
       prev() {
-        this.calendarApi().prev()
+        let calendarApi = this.$refs.fullCalendar.getApi()
+        calendarApi.prev()
+        this.current_date = calendarApi.getDate().toDateString();
+        this.getAircraftFlightsByDate({date: this.current_date});
       },
       goToSeatMap(row) {
         this.$router.push({ name: 'FlightSeatMap', params: { flightId: row.id }})
@@ -512,6 +518,7 @@
         }
         return (
           this.saveAircraftFlight({
+              date: this.current_date,
               aircraft: this.model.aircraft,
               flight: this.model.flight,
               departure_time: this.model.departure,

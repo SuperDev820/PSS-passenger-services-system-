@@ -26,33 +26,16 @@ class AircraftFlightController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function getAircraftFlights() {
+    public function getAircraftFlightsByDate(Request $request) {
         $current_date = Carbon::now()->timezone('Australia/Sydney')->format('Y-m-d');
-        $current_day = Carbon::now()->timezone('Australia/Sydney')->dayOfWeek;
+        // $current_day = Carbon::now()->timezone('Australia/Sydney')->dayOfWeek;
         // $current_day = Carbon::now()->format('l');
-        if ($current_day == 0) {
-            $current_day = 7;
-        }
-        $aircraft_flights = AircraftFlight::where('date', $current_date)->get();
+        // if ($current_day == 0) {
+        //     $current_day = 7;
+        // }
+        $date = Carbon::create($request->date)->format('Y-m-d');
+        $aircraft_flights = AircraftFlight::where('date', $date)->get();
         if (count($aircraft_flights) > 0) {
-            foreach ($aircraft_flights as $aircraft_flight) {
-                $aircraft_flight->aircraft;
-                $aircraft_flight->flight;
-            }
-        } else {
-            $flights = Flight::all();
-            foreach ($flights as $flight) {
-                if (in_array($current_day, $flight->operation_days)) {
-                    $aircraft_flight = new AircraftFlight;
-                    $aircraft_flight->flight_id = $flight->id;
-                    $aircraft_flight->date = $current_date;
-                    $aircraft_flight->departure_time = $flight->departure_time;
-                    $aircraft_flight->arrival_time = $flight->arrival_time;
-                    $aircraft_flight->flight_time = $flight->flight_time;
-                    $aircraft_flight->save();
-                }
-            }
-            $aircraft_flights = AircraftFlight::where('date', $current_date)->get();
             foreach ($aircraft_flights as $aircraft_flight) {
                 $aircraft_flight->aircraft;
                 $aircraft_flight->flight;
@@ -60,13 +43,14 @@ class AircraftFlightController extends Controller
         }
         return response()->json([
             'message' => 'success',
-            'aircraft_flights' => $aircraft_flights
+            'aircraft_flights' => $aircraft_flights,
         ], 200);
     }
 
     public function saveAircraftFlight(Request $request) {
         $current_date = Carbon::now()->timezone('Australia/Sydney')->format('Y-m-d');
-        $aircraft_flights = AircraftFlight::where('date', $current_date)
+        $date = Carbon::create($request->date)->format('Y-m-d');
+        $aircraft_flights = AircraftFlight::where('date', $date)
                                         ->where('flight_id', $request->flight)->get();
         if (count($aircraft_flights) > 0) {
             $aircraft_flight = $aircraft_flights[0];
@@ -89,7 +73,7 @@ class AircraftFlightController extends Controller
                 'status' => 'CONFIRMED',
                 'phase' => 'OPEN',
             ]);
-            $aircraft_flights = AircraftFlight::where('date', $current_date)->get();
+            $aircraft_flights = AircraftFlight::where('date', $date)->get();
             foreach ($aircraft_flights as $aircraft_flight) {
                 $aircraft_flight->aircraft;
                 $aircraft_flight->flight;

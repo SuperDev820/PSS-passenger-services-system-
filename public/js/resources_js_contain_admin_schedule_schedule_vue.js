@@ -18056,7 +18056,6 @@ var _components;
 //
 //
 //
-//
 
 
 
@@ -18069,6 +18068,8 @@ var _components;
 
 
 
+var date = new Date();
+var today = date.toDateString();
 /* harmony default export */ __webpack_exports__["default"] = ({
   page: {
     title: "Schedule",
@@ -18087,12 +18088,12 @@ var _components;
       propsToSearch: [],
       tableData: [],
       selectedRows: [],
-      today: '',
-      current_date: '',
+      current_date: today,
       calendarOptions: {
         eventClick: function eventClick(info) {
           console.log(info);
         },
+        timeZone: 'local',
         height: 500,
         plugins: [_fullcalendar_resource_timeline__WEBPACK_IMPORTED_MODULE_20__.default],
         headerToolbar: false,
@@ -18153,11 +18154,12 @@ var _components;
         temp.title = item.registration + "\n" + item.model;
         that.calendarOptions.resources.push(temp);
       });
-      this.getAircraftFlights();
+      this.getAircraftFlightsByDate({
+        date: this.current_date
+      });
     },
     aircraftFlights: function aircraftFlights() {
       this.tableData = this.aircraftFlights;
-      this.today = this.aircraftFlights[0].date;
       this.calendarOptions.events = [];
       var that = this;
       this.aircraftFlights.forEach(function (item, index) {
@@ -18177,21 +18179,33 @@ var _components;
   mounted: function mounted() {
     this.initAircrafts();
   },
-  methods: (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)((0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)({}, (0,vuex__WEBPACK_IMPORTED_MODULE_24__.mapActions)(['initAircrafts', 'getAircraftFlights', 'saveAircraftFlight'])), {}, {
+  methods: (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)((0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)({}, (0,vuex__WEBPACK_IMPORTED_MODULE_24__.mapActions)(['initAircrafts', 'getAircraftFlightsByDate', 'saveAircraftFlight'])), {}, {
     paginationChanged: function paginationChanged(page) {
       this.pagination.currentPage = page;
     },
-    calendarApi: function calendarApi() {
-      return this.$refs.fullCalendar.getApi();
-    },
-    currentDate: function currentDate() {
-      return this.calendarApi.getDate();
+    goToToday: function goToToday() {
+      var calendarApi = this.$refs.fullCalendar.getApi();
+      calendarApi.today();
+      this.current_date = calendarApi.getDate().toDateString();
+      this.getAircraftFlightsByDate({
+        date: this.current_date
+      });
     },
     next: function next() {
-      this.calendarApi().next();
+      var calendarApi = this.$refs.fullCalendar.getApi();
+      calendarApi.next();
+      this.current_date = calendarApi.getDate().toDateString();
+      this.getAircraftFlightsByDate({
+        date: this.current_date
+      });
     },
     prev: function prev() {
-      this.calendarApi().prev();
+      var calendarApi = this.$refs.fullCalendar.getApi();
+      calendarApi.prev();
+      this.current_date = calendarApi.getDate().toDateString();
+      this.getAircraftFlightsByDate({
+        date: this.current_date
+      });
     },
     goToSeatMap: function goToSeatMap(row) {
       this.$router.push({
@@ -18225,6 +18239,7 @@ var _components;
       }
 
       return this.saveAircraftFlight({
+        date: this.current_date,
         aircraft: this.model.aircraft,
         flight: this.model.flight,
         departure_time: this.model.departure,
@@ -34906,10 +34921,9 @@ var render = function() {
                                     "base-button",
                                     {
                                       staticClass: "btn btn-sm btn-default",
-                                      class: { active: true },
                                       on: {
                                         click: function($event) {
-                                          return _vm.changeView("dayGridMonth")
+                                          return _vm.goToToday()
                                         }
                                       }
                                     },
@@ -34930,11 +34944,9 @@ var render = function() {
                                   attrs: { cols: "4" }
                                 },
                                 [
-                                  _vm._v(
-                                    "\n                " +
-                                      _vm._s(_vm.current_date) +
-                                      "\n              "
-                                  )
+                                  _c("h3", { staticClass: "m-0" }, [
+                                    _vm._v(_vm._s(_vm.current_date))
+                                  ])
                                 ]
                               ),
                               _vm._v(" "),
@@ -35537,11 +35549,11 @@ var render = function() {
                                   "form-control-alternative new-event--title"
                               },
                               model: {
-                                value: _vm.today,
+                                value: _vm.current_date,
                                 callback: function($$v) {
-                                  _vm.today = $$v
+                                  _vm.current_date = $$v
                                 },
-                                expression: "today"
+                                expression: "current_date"
                               }
                             })
                           ],

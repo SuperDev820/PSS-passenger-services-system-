@@ -2,10 +2,10 @@ import ApiService from "@/api/api.service";
 import type from './type';
 
 const actions = {
-    getAircraftFlights(context) {
+    getAircraftFlightsByDate(context, data) {
         ApiService.setHeader();
         return new Promise((resolve) =>{
-            ApiService.get("api/v1/admin/schedule/aircraft_flights")
+            ApiService.post("api/v1/admin/schedule/aircraft_flights", data)
                 .then(({data}) => {
                     console.log(data);
                     context.commit(type.SET_ALL_AIRCRAFT_FLIGHTS, data)
