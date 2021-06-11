@@ -146,7 +146,9 @@
                   </div>
                   <div class="d-flex justify-content-between col-12 mt-4">
                     <router-link :to="{name: 'Passengers'}" class="btn btn-secondary">Cancel</router-link>
-                    <b-button type="submit" variant="primary" :disabled="isSubmitting">Create</b-button>
+                    <b-button type="submit" variant="primary" :disabled="isSubmitting">
+                      <i class="fa fa-spinner fa-spin" v-if="isSubmitting"></i> Create
+                    </b-button>
                   </div>
                 </b-form>
               </validation-observer>

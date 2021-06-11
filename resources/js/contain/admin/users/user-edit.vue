@@ -95,7 +95,9 @@
                   </div>
                   <div class="d-flex justify-content-between col-12 mt-4">
                     <router-link :to="{name: 'AdminUsers'}" class="btn btn-secondary">Cancel</router-link>
-                    <b-button type="submit" variant="primary">Update</b-button>
+                    <b-button type="submit" :disabled="isSubmitting" variant="primary">
+                      <i class="fa fa-spinner fa-spin" v-if="isSubmitting"></i> Update
+                    </b-button>
                   </div>
                 </b-form>
               </validation-observer>
@@ -152,6 +154,7 @@
         },
         error: null,
         isError: false,
+        isSubmitting: false,
       }
     },
     mounted() {
@@ -182,6 +185,7 @@
         // this will be called only after form is valid. You can do an api call here to register users
         // Reset the error if it existed.
         this.error = null;
+        this.isSubmitting = true;
         return (
           this.updateUser({
               id: this.$route.params.userId,
@@ -195,6 +199,7 @@
             })
             .then((res) => {
               this.isError = false;
+              this.isSubmitting = false;
               this.$notify({
                 message: 'Successfully Updated',
                 timeout: 5000,
@@ -208,6 +213,7 @@
             .catch((error) => {
               this.error = error ? error : "";
               this.isError = true;
+              this.isSubmitting = false;
             })
         );
       }

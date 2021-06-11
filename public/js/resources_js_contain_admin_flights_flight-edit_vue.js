@@ -193,6 +193,8 @@ var _components;
 //
 //
 //
+//
+//
 
 
 
@@ -7515,7 +7517,17 @@ var render = function() {
                                                 variant: "primary"
                                               }
                                             },
-                                            [_vm._v("Update")]
+                                            [
+                                              _vm.isSubmitting
+                                                ? _c("i", {
+                                                    staticClass:
+                                                      "fa fa-spinner fa-spin"
+                                                  })
+                                                : _vm._e(),
+                                              _vm._v(
+                                                " Update\n                  "
+                                              )
+                                            ]
                                           )
                                         ],
                                         1

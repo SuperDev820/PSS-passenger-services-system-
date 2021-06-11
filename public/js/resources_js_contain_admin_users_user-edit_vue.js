@@ -141,6 +141,8 @@ var _components;
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   page: {
@@ -176,7 +178,8 @@ var _components;
 
       },
       error: null,
-      isError: false
+      isError: false,
+      isSubmitting: false
     };
   },
   mounted: function mounted() {
@@ -199,6 +202,7 @@ var _components;
       // Reset the error if it existed.
 
       this.error = null;
+      this.isSubmitting = true;
       return this.updateUser({
         id: this.$route.params.userId,
         first_name: this.model.first_name,
@@ -210,6 +214,7 @@ var _components;
 
       }).then(function (res) {
         _this.isError = false;
+        _this.isSubmitting = false;
 
         _this.$notify({
           message: 'Successfully Updated',
@@ -224,6 +229,7 @@ var _components;
       })["catch"](function (error) {
         _this.error = error ? error : "";
         _this.isError = true;
+        _this.isSubmitting = false;
       });
     }
   })
@@ -4467,10 +4473,21 @@ var render = function() {
                                             {
                                               attrs: {
                                                 type: "submit",
+                                                disabled: _vm.isSubmitting,
                                                 variant: "primary"
                                               }
                                             },
-                                            [_vm._v("Update")]
+                                            [
+                                              _vm.isSubmitting
+                                                ? _c("i", {
+                                                    staticClass:
+                                                      "fa fa-spinner fa-spin"
+                                                  })
+                                                : _vm._e(),
+                                              _vm._v(
+                                                " Update\n                  "
+                                              )
+                                            ]
                                           )
                                         ],
                                         1

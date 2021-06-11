@@ -217,6 +217,8 @@ var _components;
 //
 //
 //
+//
+//
 
 
 
@@ -7538,7 +7540,17 @@ var render = function() {
                                                 disabled: _vm.isSubmitting
                                               }
                                             },
-                                            [_vm._v("Update")]
+                                            [
+                                              _vm.isSubmitting
+                                                ? _c("i", {
+                                                    staticClass:
+                                                      "fa fa-spinner fa-spin"
+                                                  })
+                                                : _vm._e(),
+                                              _vm._v(
+                                                " Update\n                  "
+                                              )
+                                            ]
                                           )
                                         ],
                                         1

@@ -176,6 +176,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   page: {
@@ -193,7 +195,8 @@ __webpack_require__.r(__webpack_exports__);
         rememberMe: false
       },
       authError: null,
-      isAuthError: false
+      isAuthError: false,
+      isSubmitting: false
     };
   },
   computed: (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)({}, (0,vuex__WEBPACK_IMPORTED_MODULE_1__.mapGetters)(['currentRole'])),
@@ -204,6 +207,7 @@ __webpack_require__.r(__webpack_exports__);
       // this will be called only after form is valid. You can do api call here to login
       // Reset the authError if it existed.
       this.authError = null;
+      this.isSubmitting = true;
       return this.$store.dispatch("login", {
         email: this.model.email,
         password: this.model.password
@@ -220,9 +224,11 @@ __webpack_require__.r(__webpack_exports__);
         }
 
         _this.isAuthError = false;
+        _this.isSubmitting = false;
       })["catch"](function (error) {
         _this.authError = error ? error : "";
         _this.isAuthError = true;
+        _this.isSubmitting = false;
       });
     }
   }
@@ -3738,10 +3744,21 @@ var render = function() {
                                                 staticClass: "mt-4",
                                                 attrs: {
                                                   type: "submit",
-                                                  variant: "primary"
+                                                  variant: "primary",
+                                                  disabled: _vm.isSubmitting
                                                 }
                                               },
-                                              [_vm._v("Sign in")]
+                                              [
+                                                _vm.isSubmitting
+                                                  ? _c("i", {
+                                                      staticClass:
+                                                        "fa fa-spinner fa-spin"
+                                                    })
+                                                  : _vm._e(),
+                                                _vm._v(
+                                                  " Sign in\n                  "
+                                                )
+                                              ]
                                             )
                                           ],
                                           1

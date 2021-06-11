@@ -66,7 +66,9 @@
 
                   <b-form-checkbox v-model="model.rememberMe">Remember me</b-form-checkbox>
                   <div class="text-center">
-                    <b-button type="submit" variant="primary" class="mt-4">Sign in</b-button>
+                    <b-button type="submit" variant="primary" class="mt-4" :disabled="isSubmitting">
+                      <i class="fa fa-spinner fa-spin" v-if="isSubmitting"></i> Sign in
+                    </b-button>
                   </div>
                 </b-form>
               </validation-observer>
@@ -101,7 +103,8 @@
           rememberMe: false
         },
         authError: null,
-        isAuthError: false
+        isAuthError: false,
+        isSubmitting: false,
       };
     },
     computed: {
@@ -114,6 +117,7 @@
         // this will be called only after form is valid. You can do api call here to login
         // Reset the authError if it existed.
         this.authError = null;
+        this.isSubmitting = true;
         return (
           this.$store
             .dispatch("login", {
@@ -128,10 +132,12 @@
                 this.$router.push({name: "Passenger"});
               }
               this.isAuthError = false;
+              this.isSubmitting = false;
             })
             .catch(error => {
               this.authError = error ? error : "";
               this.isAuthError = true;
+              this.isSubmitting = false;
             })
         );
       }

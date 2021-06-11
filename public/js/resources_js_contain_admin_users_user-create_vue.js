@@ -129,6 +129,8 @@ var _components;
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   page: {
@@ -156,7 +158,8 @@ var _components;
 
       },
       error: null,
-      isError: false
+      isError: false,
+      isSubmitting: false
     };
   },
   methods: (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)((0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)({}, (0,vuex__WEBPACK_IMPORTED_MODULE_8__.mapActions)(['createUser'])), {}, {
@@ -166,6 +169,7 @@ var _components;
       // this will be called only after form is valid. You can do an api call here to register users
       // Reset the error if it existed.
       this.error = null;
+      this.isSubmitting = true;
       return this.createUser({
         first_name: this.model.first_name,
         last_name: this.model.last_name,
@@ -175,6 +179,7 @@ var _components;
 
       }).then(function (res) {
         _this.isError = false;
+        _this.isSubmitting = false;
 
         _this.$notify({
           message: 'Successfully Created',
@@ -189,6 +194,7 @@ var _components;
       })["catch"](function (error) {
         _this.error = error ? error : "";
         _this.isError = true;
+        _this.isSubmitting = false;
       });
     }
   })
@@ -4391,10 +4397,21 @@ var render = function() {
                                             {
                                               attrs: {
                                                 type: "submit",
+                                                disabled: _vm.isSubmitting,
                                                 variant: "primary"
                                               }
                                             },
-                                            [_vm._v("Create")]
+                                            [
+                                              _vm.isSubmitting
+                                                ? _c("i", {
+                                                    staticClass:
+                                                      "fa fa-spinner fa-spin"
+                                                  })
+                                                : _vm._e(),
+                                              _vm._v(
+                                                " Create\n                  "
+                                              )
+                                            ]
                                           )
                                         ],
                                         1
