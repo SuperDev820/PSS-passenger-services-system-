@@ -304,19 +304,24 @@ class PassengerController extends Controller
                                                 {
                                                     $query->where('date', '>=', $current_date);
                                                 })->get();
-        foreach ($upcoming_flights as $upcoming_flight) {
-            $upcoming_flight->aircraftFlight->aircraft;
-            $upcoming_flight->aircraftFlight->flight;
+        if (count($upcoming_flights) > 0) {
+            foreach ($upcoming_flights as $upcoming_flight) {
+                $upcoming_flight->aircraftFlight->aircraft;
+                $upcoming_flight->aircraftFlight->flight;
+            }
         }
         $previous_flights = FlightPassenger::where('passenger_id', $passengerId)
                                                 ->whereHas('aircraftFlight', function ($query) use ($current_date)
                                                 {
                                                     $query->where('date', '<', $current_date);
                                                 })->get();
-        foreach ($previous_flights as $previous_flight) {
-            $previous_flights->aircraftFlight->aircraft;
-            $previous_flights->aircraftFlight->flight;
+        if (count($previous_flights) > 0) {
+            foreach ($previous_flights as $previous_flight) {
+                $previous_flight->aircraftFlight->aircraft;
+                $previous_flight->aircraftFlight->flight;
+            }
         }
+        
         return response()->json([
             'message' => 'success',
             'upcoming_flights' => $upcoming_flights,
