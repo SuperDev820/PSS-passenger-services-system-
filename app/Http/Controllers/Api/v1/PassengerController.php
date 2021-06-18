@@ -12,7 +12,6 @@ use Validator;
 use Carbon\Carbon;
 use DateTime;
 use DateTimeZone;
-use Twilio\Rest\Client;
 
 class PassengerController extends Controller
 {
@@ -330,40 +329,15 @@ class PassengerController extends Controller
         ], 200);
     }
 
-    public function passengerSeatBook(Request $request)
+    public function passengerSeatSave(Request $request)
     {
         $flight_passengers = FlightPassenger::where('aircraft_flight_id', $request->flightId)
                                             ->where('passenger_id', $request->passengerId)->get();
         if (count($flight_passengers) > 0) {
-            $book_reference = $this->generateRandomString(6);
             $flight_passenger = $flight_passengers[0];
             $flight_passenger -> update([
                 'seat' => $request->seat,
-                'book_reference' => $book_reference,
             ]);
-            
-            $flight = $flight_passenger->aircraftFlight->flight;
-            $receiver = str_replace("+", "", $flight_passenger->passenger->phone);
-            $sender = config('twillo.twilio_number');
-            $sid = config('twillo.twilio_sid');
-            $token = config('twillo.twilio_token');
-            // $sender = '17752389928';
-            // $sid = 'ACaf66ba19c5fd22aa450aab44eeabe06b';
-            // $token = '6c1903152896b93b919a2f6cc03b8846';
-            // $client = new Client($sid, $token);
-            // try {
-            //     $message = $client->messages->create(
-            //         $receiver, // Text this number
-            //         [
-            //             'from' => $sender, // From a valid Twilio number
-            //             'body' => 'You are booked on '.$flight->airline_code.$flight->flight_number.' '.$flight_passenger->aircraftFlight->date.' from '.$flight->origin_airport_code.' to '.$flight->destination_airport_code.'. Your booking reference is: '.$flight_passenger->book_reference.'. Web check-in is available via https://flightres.tech'
-            //         ]
-            //     );
-            // } catch (Exception $e) {
-            //     return response()->json([
-            //         'message' => 'twillo sms failed',
-            //     ], 300);
-            // }
         } else {
             return response()->json([
                 'message' => 'do not exist such passenger',
@@ -372,20 +346,7 @@ class PassengerController extends Controller
         
         return response()->json([
             'message' => 'success',
-            'sender' => $sender,
+            'flight_passenger' => $flight_passenger,
         ], 200);
-    }
-
-    public function generateRandomString($length) {
-        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-        $charactersLength = strlen($characters);
-        do {
-            $randomString = '';
-            for ($i = 0; $i < $length; $i++) {
-                $randomString .= $characters[rand(0, $charactersLength - 1)];
-            }
-            $flight_passengers = FlightPassenger::where('book_reference', $randomString)->get();
-        } while (count($flight_passengers) > 0);
-        return $randomString;
     }
 }

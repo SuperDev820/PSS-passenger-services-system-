@@ -291,7 +291,7 @@ var _components;
     return {
       seats: [],
       tableData: [],
-      isBooking: false
+      isSaving: false
     };
   },
   watch: {
@@ -322,11 +322,11 @@ var _components;
     this.getFlightPassengers(this.$route.params.flightId);
   },
   methods: (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_1__.default)((0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_1__.default)({}, (0,vuex__WEBPACK_IMPORTED_MODULE_20__.mapActions)([// 'getPassengerById',
-  'getFlightPassengerById', 'getFlightPassengers', 'passengerSeatBook'])), {}, {
-    book: function book() {
+  'getFlightPassengerById', 'getFlightPassengers', 'passengerSeatSave'])), {}, {
+    save: function save() {
       var _this = this;
 
-      this.isBooking = true;
+      this.isSaving = true;
       var passenger_seats = [];
 
       for (var _i = 0, _Object$entries = Object.entries(this.seats); _i < _Object$entries.length; _i++) {
@@ -341,25 +341,25 @@ var _components;
 
       if (passenger_seats.length == 1) {
         console.log(passenger_seats[0]);
-        this.passengerSeatBook({
+        this.passengerSeatSave({
           passengerId: this.$route.params.passengerId,
           flightId: this.$route.params.flightId,
           seat: passenger_seats[0]
         }).then(function (res) {
-          _this.isBooking = false;
+          _this.isSaving = false;
           _this.flightPassenger.seat = passenger_seats[0];
 
           _this.$notify({
-            message: 'Successfully Booked',
+            message: 'Successfully Saved',
             timeout: 5000,
             icon: 'ni ni-bell-55',
             type: 'success'
           });
         })["catch"](function (error) {
-          _this.isBooking = false;
+          _this.isSaving = false;
         });
       } else {
-        this.isBooking = false;
+        this.isSaving = false;
         this.$notify({
           message: 'You can select only one seat.',
           timeout: 5000,
@@ -14067,12 +14067,12 @@ var render = function() {
                     "base-button",
                     {
                       staticClass: "btn btn-neutral btn-sm",
-                      attrs: { disabled: _vm.isBooking },
-                      on: { click: _vm.book }
+                      attrs: { disabled: _vm.isSaving },
+                      on: { click: _vm.save }
                     },
                     [
-                      _c("i", { staticClass: "fas fa-feather" }),
-                      _vm._v(" Book\n        ")
+                      _c("i", { staticClass: "far fa-save" }),
+                      _vm._v(" Save Selection\n        ")
                     ]
                   )
                 ],

@@ -97,10 +97,10 @@ const actions = {
                 });
         });
     },
-    passengerSeatBook(context, data) {
+    passengerSeatSave(context, data) {
         ApiService.setHeader();
         return new Promise((resolve, reject) => {
-            ApiService.put("api/v1/admin/passenger/seat/book", data)
+            ApiService.put("api/v1/admin/passenger/seat/save", data)
                 .then((data) => {
                     resolve(data);
                 })

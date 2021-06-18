@@ -57,7 +57,7 @@ Route::group([ 'prefix' => 'v1', 'middleware' => 'api'], function(){
         /* Get a passenger's flights */
         Route::get('/passenger/{passengerId}/flights', 'App\Http\Controllers\Api\v1\PassengerController@getPassengerFlights');
         /* Book passenger's seat */
-        Route::put('/passenger/seat/book', 'App\Http\Controllers\Api\v1\PassengerController@passengerSeatBook');
+        Route::put('/passenger/seat/save', 'App\Http\Controllers\Api\v1\PassengerController@passengerSeatSave');
         /* delete passenger by id */
         Route::delete('/passenger/delete/{passengerId}', 'App\Http\Controllers\Api\v1\PassengerController@delete');
 
@@ -91,6 +91,10 @@ Route::group([ 'prefix' => 'v1', 'middleware' => 'api'], function(){
         Route::post('/schedule/save', 'App\Http\Controllers\Api\v1\AircraftFlightController@saveAircraftFlight');
         /* Get all flight_passengers*/
         Route::get('/schedule/flight_seat_map/{flightId}', 'App\Http\Controllers\Api\v1\AircraftFlightController@getFlightPassengers');
+        // /* Indivisual Ticketing */
+        Route::post('/schedule/indivisual-ticketing', 'App\Http\Controllers\Api\v1\AircraftFlightController@indivisualTicketing');
+        // /* Bulk Ticketing */
+        Route::post('/schedule/bulk-ticketing', 'App\Http\Controllers\Api\v1\AircraftFlightController@bulkTicketing');
     });
 
     Route::group(['middleware' => ['jwt.auth']], function() {

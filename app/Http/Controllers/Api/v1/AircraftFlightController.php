@@ -13,12 +13,16 @@ use App\Http\Controllers\Controller;
 use Validator;
 use DateTime;
 use Carbon\Carbon;
+use Twilio\Rest\Client;
+use App\Http\Helpers\Common;
 
 class AircraftFlightController extends Controller
 {
     //
     public function __construct() {
         $this->middleware('auth:api', ['except' => []]);
+
+        $this->helper = new Common();
     }
     /**
      * Response all data
@@ -102,4 +106,105 @@ class AircraftFlightController extends Controller
             'flight_passengers' => $flight_passengers,
         ], 200);
     }
+    public function indivisualTicketing(Request $request)
+    {
+        $flight_passenger = FlightPassenger::find($request->id);
+        if ($flight_passenger->book_reference == null || $flight_passenger->book_reference == '') {
+            $book_reference = $this->generateRandomString(6);
+            $flight_passenger -> update([
+                'book_reference' => $book_reference,
+            ]);
+        }
+        if ($flight_passenger->status == 'CLOSED') {
+            $flight = $flight_passenger->aircraftFlight->flight;
+            $receiver = str_replace("+", "", $flight_passenger->passenger->phone);
+            $sender = $this->helper->twillo_number;
+            $sid = $this->helper->twillo_sid;
+            $token = $this->helper->twillo_token;
+            $client = new Client($sid, $token);
+            try {
+                $message = $client->messages->create(
+                    $receiver, // Text this number
+                    [
+                        'from' => $sender, // From a valid Twilio number
+                        'body' => 'You are booked on '.$flight->airline_code.$flight->flight_number.' '.$flight_passenger->aircraftFlight->date->format('Y-m-d').' from '.$flight->origin_airport_code.' to '.$flight->destination_airport_code.'. Your booking reference is: '.$flight_passenger->book_reference.'. Web check-in is available via https://flightres.tech'
+                    ]
+                );
+            } catch (Exception $e) {
+                return response()->json([
+                    'message' => 'twillo sms failed',
+                ], 300);
+            }
+            $flight_passenger -> update([
+                'status' => 'SENDED',
+            ]);
+        } else {
+            return response()->json([
+                'message' => 'already sended',
+            ], 200);
+        }
+
+        return response()->json([
+            'message' => 'success',
+            'data' => $sid
+        ], 200);
+    }
+    public function bulkTicketing(Request $request)
+    {
+        $flight_passengers = FlightPassenger::where('aircraft_flight_id', $request->flightId)
+                                            ->where('status', 'CLOSED')->get();
+        if (count($flight_passengers) > 0) {
+            foreach ($flight_passengers as $flight_passenger) {
+                if ($flight_passenger->book_reference == null || $flight_passenger->book_reference == '') {
+                    $book_reference = $this->generateRandomString(6);
+                    $flight_passenger -> update([
+                        'book_reference' => $book_reference,
+                    ]);
+                }
+                $flight = $flight_passenger->aircraftFlight->flight;
+                $receiver = str_replace("+", "", $flight_passenger->passenger->phone);
+                $sender = $this->helper->twillo_number;
+                $sid = $this->helper->twillo_sid;
+                $token = $this->helper->twillo_token;
+                $client = new Client($sid, $token);
+                try {
+                    $message = $client->messages->create(
+                        $receiver, // Text this number
+                        [
+                            'from' => $sender, // From a valid Twilio number
+                            'body' => 'You are booked on '.$flight->airline_code.$flight->flight_number.' '.$flight_passenger->aircraftFlight->date->format('Y-m-d').' from '.$flight->origin_airport_code.' to '.$flight->destination_airport_code.'. Your booking reference is: '.$flight_passenger->book_reference.'. Web check-in is available via https://flightres.tech'
+                        ]
+                    );
+                } catch (Exception $e) {
+                    return response()->json([
+                        'message' => 'twillo sms failed',
+                    ], 300);
+                }
+                $flight_passenger -> update([
+                    'status' => 'SENDED',
+                ]);
+            }
+        } else {
+            return response()->json([
+                'message' => 'already sended',
+            ], 200);
+        }
+
+        return response()->json([
+            'message' => 'success',
+        ], 200);
+    }
+    public function generateRandomString($length) {
+        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $charactersLength = strlen($characters);
+        do {
+            $randomString = '';
+            for ($i = 0; $i < $length; $i++) {
+                $randomString .= $characters[rand(0, $charactersLength - 1)];
+            }
+            $flight_passengers = FlightPassenger::where('book_reference', $randomString)->get();
+        } while (count($flight_passengers) > 0);
+        return $randomString;
+    }
 }
+           

@@ -18055,7 +18055,6 @@ var _components;
 //
 //
 //
-//
 
 
 
@@ -35408,8 +35407,7 @@ var render = function() {
                                           attrs: {
                                             type: "primary",
                                             size: "sm",
-                                            icon: "",
-                                            disabled: row.aircraft == null
+                                            icon: ""
                                           },
                                           nativeOn: {
                                             click: function($event) {

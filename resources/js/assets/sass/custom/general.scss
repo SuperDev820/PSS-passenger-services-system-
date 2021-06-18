@@ -236,8 +236,11 @@
   justify-content: center;
 }
 .card .table td, .card .table th, .card .el-table td, .card .el-table th {
-  padding: 10px;
+  padding: 6px 10px !important;
   text-align: center;
+}
+div.el-table .el-table__row .cell, div.el-table .el-table__header .cell {
+  padding: 3px 0;
 }
 
 .fc .fc-toolbar.fc-header-toolbar {

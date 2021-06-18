@@ -179,7 +179,6 @@
                     type="primary"
                     size="sm"
                     icon
-                    :disabled="row.aircraft == null"
                   >
                     <i class="text-white ni ni-curved-next"></i>
                   </base-button>

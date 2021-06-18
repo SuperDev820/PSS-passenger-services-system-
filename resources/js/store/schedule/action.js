@@ -40,7 +40,33 @@ const actions = {
                     // context.commit(type.AUTH_LOGOUT);
                 });
         });
-    }
+    },
+    indivisualTicketing(context, data) {
+        ApiService.setHeader();
+        return new Promise((resolve, reject) => {
+            ApiService.post("api/v1/admin/schedule/indivisual-ticketing", data)
+                .then((data) => {
+                    resolve(data);
+                })
+                .catch(({response, status}) => {
+                    console.log(response);
+                    reject(response);
+                });
+        });
+    },
+    bulkTicketing(context, data) {
+        ApiService.setHeader();
+        return new Promise((resolve, reject) => {
+            ApiService.post("api/v1/admin/schedule/bulk-ticketing", data)
+                .then((data) => {
+                    resolve(data);
+                })
+                .catch(({response, status}) => {
+                    console.log(response);
+                    reject(response);
+                });
+        });
+    },
 };
 
 export default actions;

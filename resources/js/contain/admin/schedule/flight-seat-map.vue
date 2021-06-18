@@ -12,6 +12,9 @@
           <router-link :to="{name: 'Schedule'}" class="btn btn-neutral btn-sm">
             <i class="far fa-hand-point-left"></i> Go Back
           </router-link>
+          <button class="btn btn-neutral btn-sm" :disabled="isBulkTicketing" @click="totalTicketing()">
+            <i class="fas fa-ticket-alt"></i> Bulk Ticketing
+          </button>
         </b-col>
       </b-row>
     </base-header>
@@ -38,7 +41,8 @@
                               prop="aircraft"
                               min-width="120px">
                   <div slot-scope="{row}">
-                    {{row.aircraft.registration}}
+                    <span v-if="row.aircraft != null">{{row.aircraft.registration}}</span>
+                    <span v-else>Not assigned</span>
                   </div>
                 </el-table-column>
                 <el-table-column label="From"
@@ -118,7 +122,7 @@
                         @sort-change="sortChange">
                 <el-table-column label="First Name"
                               prop="first_name"
-                              min-width="140px"
+                              min-width="120px"
                               sortable>
                   <div slot-scope="{row}">
                     {{row.passenger.first_name}}
@@ -126,7 +130,7 @@
                 </el-table-column>
                 <el-table-column label="Last Name"
                               prop="last_name"
-                              min-width="140px"
+                              min-width="120px"
                               sortable>
                   <div slot-scope="{row}">
                     {{row.passenger.last_name}}
@@ -134,12 +138,19 @@
                 </el-table-column>
                 <el-table-column label="Seat"
                               prop="seat"
-                              min-width="120px"
+                              min-width="90px"
                               sortable>
                 </el-table-column>
                 <el-table-column label="Reference"
                               prop="book_reference"
-                              min-width="140px">
+                              min-width="100px">
+                </el-table-column>
+                <el-table-column min-width="90px" align="right" label="Action">
+                  <div slot-scope="{row}" class="d-flex justify-content-center">
+                    <button class="btn btn-neutral btn-sm" :disabled="isTicketing" @click="ticketing(row)">
+                      <i class="fas fa-feather"></i>
+                    </button>
+                  </div>
                 </el-table-column>
               </el-table>
               <b-col cols="12"
@@ -236,7 +247,9 @@ export default {
       propsToSearch: ['first_name', 'last_name'],
       tableData: [],
       flightTableData: [],
-      selectedRows: []
+      selectedRows: [],
+      isBulkTicketing: false,
+      isTicketing: false,
     };
   },
   watch: {
@@ -264,10 +277,73 @@ export default {
   methods: {
     ...mapActions([
       'getFlightPassengers',
+      'indivisualTicketing',
+      'bulkTicketing',
     ]),
 
     paginationChanged(page) {
       this.pagination.currentPage = page
+    },
+    ticketing(row) {
+      this.isTicketing = true
+      if (row.status == 'CLOSED') {
+        this.indivisualTicketing({id: row.id})
+          .then((res) => {
+            // console.log(res)
+            this.isTicketing = false
+            if (res.data.message == 'success') {
+              this.$notify({
+                message: 'Successfully ticketed',
+                timeout: 5000,
+                icon: 'ni ni-bell-55',
+                type: 'success'
+              });
+            } else {
+              this.$notify({
+                message: 'Already ticketed',
+                timeout: 5000,
+                icon: 'ni ni-bell-55',
+                type: 'warning'
+              });
+            }
+          })
+          .catch((error) => {
+            this.isTicketing = false;
+          })
+      } else {
+        this.isTicketing = false
+        this.$notify({
+          message: 'Already ticketed',
+          timeout: 5000,
+          icon: 'ni ni-bell-55',
+          type: 'warning'
+        });
+      }
+    },
+    totalTicketing() {
+      this.isBulkTicketing = true
+      this.bulkTicketing({flightId: this.$route.params.flightId})
+        .then((res) => {
+          this.isBulkTicketing = false
+          if (res.data.message == 'success') {
+            this.$notify({
+              message: 'Successfully ticketed',
+              timeout: 5000,
+              icon: 'ni ni-bell-55',
+              type: 'success'
+            });
+          } else {
+            this.$notify({
+              message: 'Already ticketed',
+              timeout: 5000,
+              icon: 'ni ni-bell-55',
+              type: 'warning'
+            });
+          }
+        })
+        .catch((error) => {
+          this.isBulkTicketing = false;
+        })
     },
   }
 };

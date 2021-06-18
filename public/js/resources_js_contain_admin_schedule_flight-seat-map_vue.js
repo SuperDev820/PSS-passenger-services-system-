@@ -261,6 +261,17 @@ var _components;
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -285,7 +296,9 @@ var _components;
       propsToSearch: ['first_name', 'last_name'],
       tableData: [],
       flightTableData: [],
-      selectedRows: []
+      selectedRows: [],
+      isBulkTicketing: false,
+      isTicketing: false
     };
   },
   watch: {
@@ -305,9 +318,77 @@ var _components;
   mounted: function mounted() {
     this.getFlightPassengers(this.$route.params.flightId);
   },
-  methods: (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)((0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)({}, (0,vuex__WEBPACK_IMPORTED_MODULE_17__.mapActions)(['getFlightPassengers'])), {}, {
+  methods: (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)((0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)({}, (0,vuex__WEBPACK_IMPORTED_MODULE_17__.mapActions)(['getFlightPassengers', 'indivisualTicketing', 'bulkTicketing'])), {}, {
     paginationChanged: function paginationChanged(page) {
       this.pagination.currentPage = page;
+    },
+    ticketing: function ticketing(row) {
+      var _this = this;
+
+      this.isTicketing = true;
+
+      if (row.status == 'CLOSED') {
+        this.indivisualTicketing({
+          id: row.id
+        }).then(function (res) {
+          // console.log(res)
+          _this.isTicketing = false;
+
+          if (res.data.message == 'success') {
+            _this.$notify({
+              message: 'Successfully ticketed',
+              timeout: 5000,
+              icon: 'ni ni-bell-55',
+              type: 'success'
+            });
+          } else {
+            _this.$notify({
+              message: 'Already ticketed',
+              timeout: 5000,
+              icon: 'ni ni-bell-55',
+              type: 'warning'
+            });
+          }
+        })["catch"](function (error) {
+          _this.isTicketing = false;
+        });
+      } else {
+        this.isTicketing = false;
+        this.$notify({
+          message: 'Already ticketed',
+          timeout: 5000,
+          icon: 'ni ni-bell-55',
+          type: 'warning'
+        });
+      }
+    },
+    totalTicketing: function totalTicketing() {
+      var _this2 = this;
+
+      this.isBulkTicketing = true;
+      this.bulkTicketing({
+        flightId: this.$route.params.flightId
+      }).then(function (res) {
+        _this2.isBulkTicketing = false;
+
+        if (res.data.message == 'success') {
+          _this2.$notify({
+            message: 'Successfully ticketed',
+            timeout: 5000,
+            icon: 'ni ni-bell-55',
+            type: 'success'
+          });
+        } else {
+          _this2.$notify({
+            message: 'Already ticketed',
+            timeout: 5000,
+            icon: 'ni ni-bell-55',
+            type: 'warning'
+          });
+        }
+      })["catch"](function (error) {
+        _this2.isBulkTicketing = false;
+      });
     }
   })
 });
@@ -13933,6 +14014,23 @@ var render = function() {
                       _c("i", { staticClass: "far fa-hand-point-left" }),
                       _vm._v(" Go Back\n        ")
                     ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-neutral btn-sm",
+                      attrs: { disabled: _vm.isBulkTicketing },
+                      on: {
+                        click: function($event) {
+                          return _vm.totalTicketing()
+                        }
+                      }
+                    },
+                    [
+                      _c("i", { staticClass: "fas fa-ticket-alt" }),
+                      _vm._v(" Bulk Ticketing\n        ")
+                    ]
                   )
                 ],
                 1
@@ -14020,11 +14118,13 @@ var render = function() {
                                   fn: function(ref) {
                                     var row = ref.row
                                     return _c("div", {}, [
-                                      _vm._v(
-                                        "\n                  " +
-                                          _vm._s(row.aircraft.registration) +
-                                          "\n                "
-                                      )
+                                      row.aircraft != null
+                                        ? _c("span", [
+                                            _vm._v(
+                                              _vm._s(row.aircraft.registration)
+                                            )
+                                          ])
+                                        : _c("span", [_vm._v("Not assigned")])
                                     ])
                                   }
                                 }
@@ -14268,7 +14368,7 @@ var render = function() {
                               attrs: {
                                 label: "First Name",
                                 prop: "first_name",
-                                "min-width": "140px",
+                                "min-width": "120px",
                                 sortable: ""
                               },
                               scopedSlots: _vm._u([
@@ -14292,7 +14392,7 @@ var render = function() {
                               attrs: {
                                 label: "Last Name",
                                 prop: "last_name",
-                                "min-width": "140px",
+                                "min-width": "120px",
                                 sortable: ""
                               },
                               scopedSlots: _vm._u([
@@ -14316,7 +14416,7 @@ var render = function() {
                               attrs: {
                                 label: "Seat",
                                 prop: "seat",
-                                "min-width": "120px",
+                                "min-width": "90px",
                                 sortable: ""
                               }
                             }),
@@ -14325,8 +14425,53 @@ var render = function() {
                               attrs: {
                                 label: "Reference",
                                 prop: "book_reference",
-                                "min-width": "140px"
+                                "min-width": "100px"
                               }
+                            }),
+                            _vm._v(" "),
+                            _c("el-table-column", {
+                              attrs: {
+                                "min-width": "90px",
+                                align: "right",
+                                label: "Action"
+                              },
+                              scopedSlots: _vm._u([
+                                {
+                                  key: "default",
+                                  fn: function(ref) {
+                                    var row = ref.row
+                                    return _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "d-flex justify-content-center"
+                                      },
+                                      [
+                                        _c(
+                                          "button",
+                                          {
+                                            staticClass:
+                                              "btn btn-neutral btn-sm",
+                                            attrs: {
+                                              disabled: _vm.isTicketing
+                                            },
+                                            on: {
+                                              click: function($event) {
+                                                return _vm.ticketing(row)
+                                              }
+                                            }
+                                          },
+                                          [
+                                            _c("i", {
+                                              staticClass: "fas fa-feather"
+                                            })
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  }
+                                }
+                              ])
                             })
                           ],
                           1

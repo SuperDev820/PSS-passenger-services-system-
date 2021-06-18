@@ -12,8 +12,8 @@
           <router-link :to="{name: 'PassengerFlights', params: { passengerId: this.$route.params.passengerId }}" class="btn btn-neutral btn-sm">
             <i class="far fa-hand-point-left"></i> Go Back
           </router-link>
-          <base-button class="btn btn-neutral btn-sm" :disabled="isBooking" @click="book">
-            <i class="fas fa-feather"></i> Book
+          <base-button class="btn btn-neutral btn-sm" :disabled="isSaving" @click="save">
+            <i class="far fa-save"></i> Save Selection
           </base-button>
         </b-col>
       </b-row>
@@ -134,7 +134,7 @@ export default {
     return {
       seats: [],
       tableData: [],
-      isBooking: false,
+      isSaving: false,
     };
   },
   watch: {
@@ -170,11 +170,11 @@ export default {
       // 'getPassengerById',
       'getFlightPassengerById',
       'getFlightPassengers',
-      'passengerSeatBook',
+      'passengerSeatSave',
     ]),
 
-    book() {
-      this.isBooking = true;
+    save() {
+      this.isSaving = true;
       let passenger_seats = [];
       for (const [key, value] of Object.entries(this.seats)) {
         if (value == true) {
@@ -183,26 +183,26 @@ export default {
       }
       if (passenger_seats.length == 1) {
         console.log(passenger_seats[0]);
-        this.passengerSeatBook({
+        this.passengerSeatSave({
             passengerId: this.$route.params.passengerId,
             flightId: this.$route.params.flightId,
             seat: passenger_seats[0]
           })
           .then((res) => {
-            this.isBooking = false;
+            this.isSaving = false;
             this.flightPassenger.seat = passenger_seats[0]
             this.$notify({
-                message: 'Successfully Booked',
+                message: 'Successfully Saved',
                 timeout: 5000,
                 icon: 'ni ni-bell-55',
                 type: 'success'
               });
           })
           .catch((error) => {
-            this.isBooking = false;
+            this.isSaving = false;
           })
       } else {
-        this.isBooking = false;
+        this.isSaving = false;
         this.$notify({
             message: 'You can select only one seat.',
             timeout: 5000,
