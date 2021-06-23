@@ -75,7 +75,7 @@ class AircraftFlightController extends Controller
                 'arrival_time' => $request->arrival_time,
                 'flight_time' => $flight_time,
                 'status' => 'CONFIRMED',
-                'phase' => 'OPEN',
+                // 'phase' => 'OPEN',
             ]);
             $aircraft_flights = AircraftFlight::where('date', $date)->get();
             foreach ($aircraft_flights as $aircraft_flight) {
@@ -110,7 +110,7 @@ class AircraftFlightController extends Controller
     {
         $flight_passenger = FlightPassenger::find($request->id);
         if ($flight_passenger->book_reference == null || $flight_passenger->book_reference == '') {
-            $book_reference = $this->generateRandomString(6);
+            $book_reference = $this->helper->generateRandomString(6);
             $flight_passenger -> update([
                 'book_reference' => $book_reference,
             ]);
@@ -151,12 +151,13 @@ class AircraftFlightController extends Controller
     }
     public function bulkTicketing(Request $request)
     {
+        $aircraft_flight = AircraftFlight::find($request->flightId);
         $flight_passengers = FlightPassenger::where('aircraft_flight_id', $request->flightId)
                                             ->where('status', 'CLOSED')->get();
         if (count($flight_passengers) > 0) {
             foreach ($flight_passengers as $flight_passenger) {
                 if ($flight_passenger->book_reference == null || $flight_passenger->book_reference == '') {
-                    $book_reference = $this->generateRandomString(6);
+                    $book_reference = $this->helper->generateRandomString(6);
                     $flight_passenger -> update([
                         'book_reference' => $book_reference,
                     ]);
@@ -184,7 +185,13 @@ class AircraftFlightController extends Controller
                     'status' => 'SENDED',
                 ]);
             }
+            $aircraft_flight -> update([
+                'phase' => 'OPEN',
+            ]);
         } else {
+            $aircraft_flight -> update([
+                'phase' => 'OPEN',
+            ]);
             return response()->json([
                 'message' => 'already sended',
             ], 200);
@@ -193,18 +200,6 @@ class AircraftFlightController extends Controller
         return response()->json([
             'message' => 'success',
         ], 200);
-    }
-    public function generateRandomString($length) {
-        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-        $charactersLength = strlen($characters);
-        do {
-            $randomString = '';
-            for ($i = 0; $i < $length; $i++) {
-                $randomString .= $characters[rand(0, $charactersLength - 1)];
-            }
-            $flight_passengers = FlightPassenger::where('book_reference', $randomString)->get();
-        } while (count($flight_passengers) > 0);
-        return $randomString;
     }
 }
            

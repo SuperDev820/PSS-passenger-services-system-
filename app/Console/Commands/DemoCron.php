@@ -38,8 +38,8 @@ class DemoCron extends Command
      */
     public function handle()
     {
-        $role = new Role;
-        $role->name = 'cron-job';
-        $role->save();
+        // $role = new Role;
+        // $role->name = 'cron-job';
+        // $role->save();
     }
 }

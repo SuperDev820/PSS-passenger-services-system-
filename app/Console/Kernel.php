@@ -15,6 +15,7 @@ class Kernel extends ConsoleKernel
     protected $commands = [
         //
         Commands\DemoCron::class,
+        Commands\AutoTicketing::class,
     ];
 
     /**
@@ -25,7 +26,9 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command('demo:cron')->everyMinute();
+        // $schedule->command('demo:cron')->everyMinute();
+        $schedule->command('auto-ticketing')->hourly();
+        $schedule->command('auto-year-plan')->yearly();
     }
 
     /**
