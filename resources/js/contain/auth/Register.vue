@@ -64,7 +64,7 @@
                               v-model="model.last_name">
                   </base-input>
 
-                  <base-input prepend-icon="fas fa-calendar" name="Birthday" :rules="{required: true}">
+                  <base-input prepend-icon="fas fa-calendar" name="Birthday">
                     <flat-picker slot-scope="{focus, blur}"
                                   @on-open="focus"
                                   @on-close="blur"
@@ -85,7 +85,6 @@
                               prepend-icon="fas fa-globe-americas"
                               placeholder="Company"
                               name="Company"
-                              :rules="{required: true}"
                               v-model="model.company">
                   </base-input>
 

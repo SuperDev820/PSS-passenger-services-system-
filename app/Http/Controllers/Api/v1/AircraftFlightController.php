@@ -52,8 +52,9 @@ class AircraftFlightController extends Controller
     }
 
     public function saveAircraftFlight(Request $request) {
-        $current_date = Carbon::now()->timezone('Australia/Sydney')->format('Y-m-d');
+        // $current_date = Carbon::now()->timezone('Australia/Sydney')->format('Y-m-d');
         $date = Carbon::create($request->date)->format('Y-m-d');
+        $flight = Flight::find($request->flight);
         $aircraft_flights = AircraftFlight::where('date', $date)
                                         ->where('flight_id', $request->flight)->get();
         if (count($aircraft_flights) > 0) {
@@ -77,6 +78,24 @@ class AircraftFlightController extends Controller
                 'status' => 'CONFIRMED',
                 // 'phase' => 'OPEN',
             ]);
+
+            $number = intval($flight->flight_number);
+            $string = str_replace($number,"",$flight->flight_number);
+            $return_flight_number = ($number + 1).$string;
+            $return_flights = Flight::where('airline_code', $flight->airline_code)
+                                    ->where('flight_number', $return_flight_number)->get();
+            if (count($return_flights) > 0) {
+                $return_aircraft_flights = AircraftFlight::where('date', $date)
+                                        ->where('flight_id', $return_flights[0]->id)->get();
+                if (count($return_aircraft_flights) > 0) {
+                    $return_aircraft_flight = $return_aircraft_flights[0];
+                    $return_aircraft_flight -> update([
+                        'aircraft_id' => $request->aircraft,
+                        'status' => 'CONFIRMED',
+                    ]);
+                }
+            }
+
             $aircraft_flights = AircraftFlight::where('date', $date)->get();
             foreach ($aircraft_flights as $aircraft_flight) {
                 $aircraft_flight->aircraft;
@@ -84,7 +103,7 @@ class AircraftFlightController extends Controller
             }
             return response()->json([
                 'message' => 'success',
-                'aircraft_flights' => $aircraft_flights
+                'aircraft_flights' => $aircraft_flights,
             ], 200);
         }
     }

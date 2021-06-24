@@ -46,7 +46,7 @@
                                 v-model="model.last_name">
                     </base-input>
 
-                    <base-input prepend-icon="fas fa-calendar" label="Birthday" name="Birthday" :rules="{required: true}">
+                    <base-input prepend-icon="fas fa-calendar" label="Birthday" name="Birthday">
                       <flat-picker slot-scope="{focus, blur}"
                                     @on-open="focus"
                                     @on-close="blur"
@@ -70,7 +70,6 @@
                                 label="Company"
                                 placeholder="Company"
                                 name="Company"
-                                :rules="{required: true}"
                                 v-model="model.company">
                     </base-input>
                   </div>
@@ -107,7 +106,7 @@
                                 v-mask="'#-#-#-#'">
                     </base-input>
 
-                    <base-input prepend-icon="fas fa-calendar" label="Start Date" name="StartDate">
+                    <base-input prepend-icon="fas fa-calendar" label="Start Date" name="StartDate" :rules="{required: true}">
                       <flat-picker slot-scope="{focus, blur}"
                                     @on-open="focus"
                                     @on-close="blur"
@@ -226,7 +225,7 @@
         // Reset the error if it existed.
         this.error = null;
         this.isSubmitting = true;
-        if (this.model.roster != '') {
+        if ((this.model.roster != '') && (this.model.roster != null)) {
           let roster = this.model.roster.split("-");
           let index = roster.findIndex(e => e == "")
           var roster_error = false;
@@ -240,7 +239,7 @@
               });
             roster_error = true;
           }
-          if ((roster_error) || (this.model.departed_flight == '') || (this.model.landed_flight == '') || (this.model.start_date == '')) {
+          if ((roster_error) || (this.model.departed_flight == '') || (this.model.departed_flight == null) || (this.model.landed_flight == '') || (this.model.landed_flight == null)) {
             this.isSubmitting = false;
             return ;
           }

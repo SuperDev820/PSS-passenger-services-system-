@@ -72,10 +72,9 @@ class PassengerController extends Controller
             'first_name' => 'required|string|between:1,100',
             'last_name' => 'required|string|between:1,100',
             'phone' => 'required|unique:users',
-            'birthday' => 'required',
-            'company' => 'required',
             'email' => 'required|string|email|max:100|unique:users',
             'password' => 'required|string|confirmed|min:6',
+            'start_date' => 'required'
         ]);
 
         if($validator->fails()){
@@ -88,7 +87,8 @@ class PassengerController extends Controller
                      'roster' => $request->roster,
                      'departed_flight' => $request->departed_flight,
                      'landed_flight' => $request->landed_flight,
-                     'start_date' => $request->start_date,
+                     'birthday' => $request->birthday,
+                     'company' => $request->company,
                     ]
                 ));
 
@@ -146,11 +146,10 @@ class PassengerController extends Controller
             'first_name' => 'required|string|between:1,100',
             'last_name' => 'required|string|between:1,100',
             'phone' => 'required',
-            'birthday' => 'required',
-            'company' => 'required',
             'status' => 'required',
             'email' => 'required|string|email|max:100',
             'password' => 'confirmed',
+            'start_date' => 'required'
         ]);
         
         $passenger = User::find($request->id);

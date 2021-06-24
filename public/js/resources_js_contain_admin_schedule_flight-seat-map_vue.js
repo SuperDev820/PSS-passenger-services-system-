@@ -1,5 +1,107 @@
 (self["webpackChunk"] = self["webpackChunk"] || []).push([["resources_js_contain_admin_schedule_flight-seat-map_vue"],{
 
+/***/ "./node_modules/@babel/runtime/helpers/esm/arrayWithHoles.js":
+/*!*******************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/arrayWithHoles.js ***!
+  \*******************************************************************/
+/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ _arrayWithHoles; }
+/* harmony export */ });
+function _arrayWithHoles(arr) {
+  if (Array.isArray(arr)) return arr;
+}
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/esm/iterableToArrayLimit.js":
+/*!*************************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/iterableToArrayLimit.js ***!
+  \*************************************************************************/
+/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ _iterableToArrayLimit; }
+/* harmony export */ });
+function _iterableToArrayLimit(arr, i) {
+  var _i = arr && (typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]);
+
+  if (_i == null) return;
+  var _arr = [];
+  var _n = true;
+  var _d = false;
+
+  var _s, _e;
+
+  try {
+    for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) {
+      _arr.push(_s.value);
+
+      if (i && _arr.length === i) break;
+    }
+  } catch (err) {
+    _d = true;
+    _e = err;
+  } finally {
+    try {
+      if (!_n && _i["return"] != null) _i["return"]();
+    } finally {
+      if (_d) throw _e;
+    }
+  }
+
+  return _arr;
+}
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/esm/nonIterableRest.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/nonIterableRest.js ***!
+  \********************************************************************/
+/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ _nonIterableRest; }
+/* harmony export */ });
+function _nonIterableRest() {
+  throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+}
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/esm/slicedToArray.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/slicedToArray.js ***!
+  \******************************************************************/
+/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ _slicedToArray; }
+/* harmony export */ });
+/* harmony import */ var _arrayWithHoles_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./arrayWithHoles.js */ "./node_modules/@babel/runtime/helpers/esm/arrayWithHoles.js");
+/* harmony import */ var _iterableToArrayLimit_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./iterableToArrayLimit.js */ "./node_modules/@babel/runtime/helpers/esm/iterableToArrayLimit.js");
+/* harmony import */ var _unsupportedIterableToArray_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./unsupportedIterableToArray.js */ "./node_modules/@babel/runtime/helpers/esm/unsupportedIterableToArray.js");
+/* harmony import */ var _nonIterableRest_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./nonIterableRest.js */ "./node_modules/@babel/runtime/helpers/esm/nonIterableRest.js");
+
+
+
+
+function _slicedToArray(arr, i) {
+  return (0,_arrayWithHoles_js__WEBPACK_IMPORTED_MODULE_0__.default)(arr) || (0,_iterableToArrayLimit_js__WEBPACK_IMPORTED_MODULE_1__.default)(arr, i) || (0,_unsupportedIterableToArray_js__WEBPACK_IMPORTED_MODULE_2__.default)(arr, i) || (0,_nonIterableRest_js__WEBPACK_IMPORTED_MODULE_3__.default)();
+}
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/contain/admin/schedule/flight-seat-map.vue?vue&type=script&lang=js&":
 /*!**********************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/contain/admin/schedule/flight-seat-map.vue?vue&type=script&lang=js& ***!
@@ -8,31 +110,35 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/objectSpread2 */ "./node_modules/@babel/runtime/helpers/esm/objectSpread2.js");
-/* harmony import */ var E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/defineProperty */ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js");
-/* harmony import */ var element_ui_lib_theme_chalk_table_column_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! element-ui/lib/theme-chalk/table-column.css */ "./node_modules/element-ui/lib/theme-chalk/table-column.css");
-/* harmony import */ var element_ui_lib_theme_chalk_base_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! element-ui/lib/theme-chalk/base.css */ "./node_modules/element-ui/lib/theme-chalk/base.css");
-/* harmony import */ var element_ui_lib_table_column__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! element-ui/lib/table-column */ "./node_modules/element-ui/lib/table-column.js");
-/* harmony import */ var element_ui_lib_table_column__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(element_ui_lib_table_column__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var element_ui_lib_theme_chalk_table_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! element-ui/lib/theme-chalk/table.css */ "./node_modules/element-ui/lib/theme-chalk/table.css");
-/* harmony import */ var element_ui_lib_table__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! element-ui/lib/table */ "./node_modules/element-ui/lib/table.js");
-/* harmony import */ var element_ui_lib_table__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(element_ui_lib_table__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var element_ui_lib_theme_chalk_option_css__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! element-ui/lib/theme-chalk/option.css */ "./node_modules/element-ui/lib/theme-chalk/option.css");
-/* harmony import */ var element_ui_lib_option__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! element-ui/lib/option */ "./node_modules/element-ui/lib/option.js");
-/* harmony import */ var element_ui_lib_option__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(element_ui_lib_option__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var element_ui_lib_theme_chalk_select_css__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! element-ui/lib/theme-chalk/select.css */ "./node_modules/element-ui/lib/theme-chalk/select.css");
-/* harmony import */ var element_ui_lib_select__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! element-ui/lib/select */ "./node_modules/element-ui/lib/select.js");
-/* harmony import */ var element_ui_lib_select__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(element_ui_lib_select__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! core-js/modules/es.function.name.js */ "./node_modules/core-js/modules/es.function.name.js");
-/* harmony import */ var core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_11__);
-/* harmony import */ var core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! core-js/modules/web.dom-collections.for-each.js */ "./node_modules/core-js/modules/web.dom-collections.for-each.js");
-/* harmony import */ var core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_12__);
-/* harmony import */ var _components_Breadcrumb_RouteBreadcrumb__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @/components/Breadcrumb/RouteBreadcrumb */ "./resources/js/components/Breadcrumb/RouteBreadcrumb.vue");
-/* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @/components */ "./resources/js/components/index.js");
-/* harmony import */ var _common_PaginatedTables_clientPaginationMixin__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @/common/PaginatedTables/clientPaginationMixin */ "./resources/js/common/PaginatedTables/clientPaginationMixin.js");
-/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! sweetalert2 */ "./node_modules/sweetalert2/dist/sweetalert2.all.js");
-/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_16___default = /*#__PURE__*/__webpack_require__.n(sweetalert2__WEBPACK_IMPORTED_MODULE_16__);
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.mjs");
+/* harmony import */ var E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/slicedToArray */ "./node_modules/@babel/runtime/helpers/esm/slicedToArray.js");
+/* harmony import */ var E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/objectSpread2 */ "./node_modules/@babel/runtime/helpers/esm/objectSpread2.js");
+/* harmony import */ var E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/defineProperty */ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js");
+/* harmony import */ var element_ui_lib_theme_chalk_table_column_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! element-ui/lib/theme-chalk/table-column.css */ "./node_modules/element-ui/lib/theme-chalk/table-column.css");
+/* harmony import */ var element_ui_lib_theme_chalk_base_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! element-ui/lib/theme-chalk/base.css */ "./node_modules/element-ui/lib/theme-chalk/base.css");
+/* harmony import */ var element_ui_lib_table_column__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! element-ui/lib/table-column */ "./node_modules/element-ui/lib/table-column.js");
+/* harmony import */ var element_ui_lib_table_column__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(element_ui_lib_table_column__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var element_ui_lib_theme_chalk_table_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! element-ui/lib/theme-chalk/table.css */ "./node_modules/element-ui/lib/theme-chalk/table.css");
+/* harmony import */ var element_ui_lib_table__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! element-ui/lib/table */ "./node_modules/element-ui/lib/table.js");
+/* harmony import */ var element_ui_lib_table__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(element_ui_lib_table__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var element_ui_lib_theme_chalk_option_css__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! element-ui/lib/theme-chalk/option.css */ "./node_modules/element-ui/lib/theme-chalk/option.css");
+/* harmony import */ var element_ui_lib_option__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! element-ui/lib/option */ "./node_modules/element-ui/lib/option.js");
+/* harmony import */ var element_ui_lib_option__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(element_ui_lib_option__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var element_ui_lib_theme_chalk_select_css__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! element-ui/lib/theme-chalk/select.css */ "./node_modules/element-ui/lib/theme-chalk/select.css");
+/* harmony import */ var element_ui_lib_select__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! element-ui/lib/select */ "./node_modules/element-ui/lib/select.js");
+/* harmony import */ var element_ui_lib_select__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(element_ui_lib_select__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! core-js/modules/es.function.name.js */ "./node_modules/core-js/modules/es.function.name.js");
+/* harmony import */ var core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! core-js/modules/web.dom-collections.for-each.js */ "./node_modules/core-js/modules/web.dom-collections.for-each.js");
+/* harmony import */ var core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_13__);
+/* harmony import */ var core_js_modules_es_object_entries_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! core-js/modules/es.object.entries.js */ "./node_modules/core-js/modules/es.object.entries.js");
+/* harmony import */ var core_js_modules_es_object_entries_js__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_object_entries_js__WEBPACK_IMPORTED_MODULE_14__);
+/* harmony import */ var _components_Breadcrumb_RouteBreadcrumb__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @/components/Breadcrumb/RouteBreadcrumb */ "./resources/js/components/Breadcrumb/RouteBreadcrumb.vue");
+/* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @/components */ "./resources/js/components/index.js");
+/* harmony import */ var _common_PaginatedTables_clientPaginationMixin__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @/common/PaginatedTables/clientPaginationMixin */ "./resources/js/common/PaginatedTables/clientPaginationMixin.js");
+/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! sweetalert2 */ "./node_modules/sweetalert2/dist/sweetalert2.all.js");
+/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_18___default = /*#__PURE__*/__webpack_require__.n(sweetalert2__WEBPACK_IMPORTED_MODULE_18__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.mjs");
+
 
 
 
@@ -52,6 +158,10 @@ var _components;
 
 
 
+
+//
+//
+//
 //
 //
 //
@@ -285,11 +395,11 @@ var _components;
       content: ""
     }]
   },
-  mixins: [_common_PaginatedTables_clientPaginationMixin__WEBPACK_IMPORTED_MODULE_15__.default],
+  mixins: [_common_PaginatedTables_clientPaginationMixin__WEBPACK_IMPORTED_MODULE_17__.default],
   components: (_components = {
-    BasePagination: _components__WEBPACK_IMPORTED_MODULE_14__.BasePagination,
-    RouteBreadCrumb: _components_Breadcrumb_RouteBreadcrumb__WEBPACK_IMPORTED_MODULE_13__.default
-  }, (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_components, (element_ui_lib_select__WEBPACK_IMPORTED_MODULE_10___default().name), (element_ui_lib_select__WEBPACK_IMPORTED_MODULE_10___default())), (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_components, (element_ui_lib_option__WEBPACK_IMPORTED_MODULE_8___default().name), (element_ui_lib_option__WEBPACK_IMPORTED_MODULE_8___default())), (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_components, (element_ui_lib_table__WEBPACK_IMPORTED_MODULE_6___default().name), (element_ui_lib_table__WEBPACK_IMPORTED_MODULE_6___default())), (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_components, (element_ui_lib_table_column__WEBPACK_IMPORTED_MODULE_4___default().name), (element_ui_lib_table_column__WEBPACK_IMPORTED_MODULE_4___default())), _components),
+    BasePagination: _components__WEBPACK_IMPORTED_MODULE_16__.BasePagination,
+    RouteBreadCrumb: _components_Breadcrumb_RouteBreadcrumb__WEBPACK_IMPORTED_MODULE_15__.default
+  }, (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__.default)(_components, (element_ui_lib_select__WEBPACK_IMPORTED_MODULE_11___default().name), (element_ui_lib_select__WEBPACK_IMPORTED_MODULE_11___default())), (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__.default)(_components, (element_ui_lib_option__WEBPACK_IMPORTED_MODULE_9___default().name), (element_ui_lib_option__WEBPACK_IMPORTED_MODULE_9___default())), (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__.default)(_components, (element_ui_lib_table__WEBPACK_IMPORTED_MODULE_7___default().name), (element_ui_lib_table__WEBPACK_IMPORTED_MODULE_7___default())), (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__.default)(_components, (element_ui_lib_table_column__WEBPACK_IMPORTED_MODULE_5___default().name), (element_ui_lib_table_column__WEBPACK_IMPORTED_MODULE_5___default())), _components),
   data: function data() {
     return {
       seats: [],
@@ -298,27 +408,30 @@ var _components;
       flightTableData: [],
       selectedRows: [],
       isBulkTicketing: false,
-      isTicketing: false
+      isTicketing: false,
+      isSaving: false
     };
   },
   watch: {
     flightPassengers: function flightPassengers() {
       this.tableData = this.flightPassengers;
+      this.seats = [];
       this.flightPassengers.forEach(function (item, index) {
-        if (item.seat != null) {
+        if (item.seat != null && item.seat != '') {
           document.getElementById(item.seat).disabled = true;
         }
       });
     },
     aircraftFlight: function aircraftFlight() {
+      this.flightTableData = [];
       this.flightTableData.push(this.aircraftFlight);
     }
   },
-  computed: (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)({}, (0,vuex__WEBPACK_IMPORTED_MODULE_17__.mapGetters)(['flightPassengers', 'aircraftFlight'])),
+  computed: (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_1__.default)({}, (0,vuex__WEBPACK_IMPORTED_MODULE_19__.mapGetters)(['flightPassengers', 'aircraftFlight'])),
   mounted: function mounted() {
     this.getFlightPassengers(this.$route.params.flightId);
   },
-  methods: (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)((0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)({}, (0,vuex__WEBPACK_IMPORTED_MODULE_17__.mapActions)(['getFlightPassengers', 'indivisualTicketing', 'bulkTicketing'])), {}, {
+  methods: (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_1__.default)((0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_1__.default)({}, (0,vuex__WEBPACK_IMPORTED_MODULE_19__.mapActions)(['getFlightPassengers', 'indivisualTicketing', 'bulkTicketing', 'passengerSeatSave'])), {}, {
     paginationChanged: function paginationChanged(page) {
       this.pagination.currentPage = page;
     },
@@ -341,6 +454,8 @@ var _components;
               icon: 'ni ni-bell-55',
               type: 'success'
             });
+
+            _this.getFlightPassengers(_this.$route.params.flightId);
           } else {
             _this.$notify({
               message: 'Already ticketed',
@@ -378,6 +493,8 @@ var _components;
             icon: 'ni ni-bell-55',
             type: 'success'
           });
+
+          _this2.getFlightPassengers(_this2.$route.params.flightId);
         } else {
           _this2.$notify({
             message: 'Already ticketed',
@@ -389,6 +506,55 @@ var _components;
       })["catch"](function (error) {
         _this2.isBulkTicketing = false;
       });
+    },
+    save: function save(row) {
+      var _this3 = this;
+
+      this.isSaving = true;
+      var passenger_seats = [];
+
+      for (var _i = 0, _Object$entries = Object.entries(this.seats); _i < _Object$entries.length; _i++) {
+        var _Object$entries$_i = (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__.default)(_Object$entries[_i], 2),
+            key = _Object$entries$_i[0],
+            value = _Object$entries$_i[1];
+
+        if (value == true) {
+          passenger_seats.push(key);
+        }
+      }
+
+      if (passenger_seats.length == 1) {
+        if (row.seat != null && row.seat != '') {
+          document.getElementById(row.seat).disabled = false;
+        }
+
+        this.passengerSeatSave({
+          passengerId: row.passenger_id,
+          flightId: row.aircraft_flight_id,
+          seat: passenger_seats[0]
+        }).then(function (res) {
+          _this3.isSaving = false;
+
+          _this3.$notify({
+            message: 'Successfully Saved',
+            timeout: 5000,
+            icon: 'ni ni-bell-55',
+            type: 'success'
+          });
+
+          _this3.getFlightPassengers(_this3.$route.params.flightId);
+        })["catch"](function (error) {
+          _this3.isSaving = false;
+        });
+      } else {
+        this.isSaving = false;
+        this.$notify({
+          message: 'You can select only one seat.',
+          timeout: 5000,
+          icon: 'ni ni-bell-55',
+          type: 'warning'
+        });
+      }
     }
   })
 });
@@ -512,6 +678,48 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/core-js/internals/object-to-array.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/core-js/internals/object-to-array.js ***!
+  \***********************************************************/
+/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+
+var DESCRIPTORS = __webpack_require__(/*! ../internals/descriptors */ "./node_modules/core-js/internals/descriptors.js");
+var objectKeys = __webpack_require__(/*! ../internals/object-keys */ "./node_modules/core-js/internals/object-keys.js");
+var toIndexedObject = __webpack_require__(/*! ../internals/to-indexed-object */ "./node_modules/core-js/internals/to-indexed-object.js");
+var propertyIsEnumerable = __webpack_require__(/*! ../internals/object-property-is-enumerable */ "./node_modules/core-js/internals/object-property-is-enumerable.js").f;
+
+// `Object.{ entries, values }` methods implementation
+var createMethod = function (TO_ENTRIES) {
+  return function (it) {
+    var O = toIndexedObject(it);
+    var keys = objectKeys(O);
+    var length = keys.length;
+    var i = 0;
+    var result = [];
+    var key;
+    while (length > i) {
+      key = keys[i++];
+      if (!DESCRIPTORS || propertyIsEnumerable.call(O, key)) {
+        result.push(TO_ENTRIES ? [key, O[key]] : O[key]);
+      }
+    }
+    return result;
+  };
+};
+
+module.exports = {
+  // `Object.entries` method
+  // https://tc39.es/ecma262/#sec-object.entries
+  entries: createMethod(true),
+  // `Object.values` method
+  // https://tc39.es/ecma262/#sec-object.values
+  values: createMethod(false)
+};
+
+
+/***/ }),
+
 /***/ "./node_modules/core-js/internals/same-value.js":
 /*!******************************************************!*\
   !*** ./node_modules/core-js/internals/same-value.js ***!
@@ -524,6 +732,26 @@ module.exports = Object.is || function is(x, y) {
   // eslint-disable-next-line no-self-compare
   return x === y ? x !== 0 || 1 / x === 1 / y : x != x && y != y;
 };
+
+
+/***/ }),
+
+/***/ "./node_modules/core-js/modules/es.object.entries.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/core-js/modules/es.object.entries.js ***!
+  \***********************************************************/
+/***/ (function(__unused_webpack_module, __unused_webpack_exports, __webpack_require__) {
+
+var $ = __webpack_require__(/*! ../internals/export */ "./node_modules/core-js/internals/export.js");
+var $entries = __webpack_require__(/*! ../internals/object-to-array */ "./node_modules/core-js/internals/object-to-array.js").entries;
+
+// `Object.entries` method
+// https://tc39.es/ecma262/#sec-object.entries
+$({ target: 'Object', stat: true }, {
+  entries: function entries(O) {
+    return $entries(O);
+  }
+});
 
 
 /***/ }),
@@ -14447,6 +14675,25 @@ var render = function() {
                                           "d-flex justify-content-center"
                                       },
                                       [
+                                        _c(
+                                          "button",
+                                          {
+                                            staticClass:
+                                              "btn btn-neutral btn-sm",
+                                            attrs: { disabled: _vm.isSaving },
+                                            on: {
+                                              click: function($event) {
+                                                return _vm.save(row)
+                                              }
+                                            }
+                                          },
+                                          [
+                                            _c("i", {
+                                              staticClass: "far fa-save"
+                                            })
+                                          ]
+                                        ),
+                                        _vm._v(" "),
                                         _c(
                                           "button",
                                           {

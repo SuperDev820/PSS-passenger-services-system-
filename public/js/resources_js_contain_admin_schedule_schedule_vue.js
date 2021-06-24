@@ -18224,8 +18224,8 @@ var today = date.toDateString();
       if (index !== -1) {
         this.model.origin = this.aircraftFlights[index].flight.origin_airport_name;
         this.model.destination = this.aircraftFlights[index].flight.destination_airport_name;
-        this.model.departure = this.aircraftFlights[index].flight.departure_time;
-        this.model.arrival = this.aircraftFlights[index].flight.arrival_time;
+        this.model.departure = this.aircraftFlights[index].departure_time;
+        this.model.arrival = this.aircraftFlights[index].arrival_time;
       }
     },
     saveEvent: function saveEvent() {
@@ -35671,8 +35671,7 @@ var render = function() {
                                     }
                                   },
                                   _vm._l(_vm.aircraftFlights, function(option) {
-                                    return option.status == "PLANNED" &&
-                                      option.flight.type == _vm.model.type
+                                    return option.flight.type == _vm.model.type
                                       ? _c("el-option", {
                                           key: option.flight_id,
                                           attrs: {

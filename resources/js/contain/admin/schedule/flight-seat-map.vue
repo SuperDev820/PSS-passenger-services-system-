@@ -147,6 +147,9 @@
                 </el-table-column>
                 <el-table-column min-width="90px" align="right" label="Action">
                   <div slot-scope="{row}" class="d-flex justify-content-center">
+                    <button class="btn btn-neutral btn-sm" :disabled="isSaving" @click="save(row)">
+                      <i class="far fa-save"></i>
+                    </button>
                     <button class="btn btn-neutral btn-sm" :disabled="isTicketing" @click="ticketing(row)">
                       <i class="fas fa-feather"></i>
                     </button>
@@ -250,18 +253,21 @@ export default {
       selectedRows: [],
       isBulkTicketing: false,
       isTicketing: false,
+      isSaving: false,
     };
   },
   watch: {
     flightPassengers: function() {
       this.tableData = this.flightPassengers;
+      this.seats = [];
       this.flightPassengers.forEach(function(item, index) {
-        if (item.seat != null) {
+        if ((item.seat != null) && (item.seat != '')) {
           document.getElementById(item.seat).disabled = true
         }
       });
     },
     aircraftFlight: function() {
+      this.flightTableData = [];
       this.flightTableData.push(this.aircraftFlight);
     },
   },
@@ -279,6 +285,7 @@ export default {
       'getFlightPassengers',
       'indivisualTicketing',
       'bulkTicketing',
+      'passengerSeatSave',
     ]),
 
     paginationChanged(page) {
@@ -298,6 +305,7 @@ export default {
                 icon: 'ni ni-bell-55',
                 type: 'success'
               });
+              this.getFlightPassengers(this.$route.params.flightId);
             } else {
               this.$notify({
                 message: 'Already ticketed',
@@ -332,6 +340,7 @@ export default {
               icon: 'ni ni-bell-55',
               type: 'success'
             });
+            this.getFlightPassengers(this.$route.params.flightId);
           } else {
             this.$notify({
               message: 'Already ticketed',
@@ -344,6 +353,46 @@ export default {
         .catch((error) => {
           this.isBulkTicketing = false;
         })
+    },
+    save(row) {
+      this.isSaving = true;
+      let passenger_seats = [];
+      for (const [key, value] of Object.entries(this.seats)) {
+        if (value == true) {
+          passenger_seats.push(key)
+        }
+      }
+      if (passenger_seats.length == 1) {
+        if ((row.seat != null) && (row.seat != '')) {
+          document.getElementById(row.seat).disabled = false
+        }
+        this.passengerSeatSave({
+            passengerId: row.passenger_id,
+            flightId: row.aircraft_flight_id,
+            seat: passenger_seats[0]
+          })
+          .then((res) => {
+            this.isSaving = false;
+            this.$notify({
+                message: 'Successfully Saved',
+                timeout: 5000,
+                icon: 'ni ni-bell-55',
+                type: 'success'
+              });
+            this.getFlightPassengers(this.$route.params.flightId);
+          })
+          .catch((error) => {
+            this.isSaving = false;
+          })
+      } else {
+        this.isSaving = false;
+        this.$notify({
+            message: 'You can select only one seat.',
+            timeout: 5000,
+            icon: 'ni ni-bell-55',
+            type: 'warning'
+          });
+      }
     },
   }
 };

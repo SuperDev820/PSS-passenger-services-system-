@@ -386,7 +386,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -4032,8 +4031,7 @@ var render = function() {
                                         _c("base-input", {
                                           attrs: {
                                             "prepend-icon": "fas fa-calendar",
-                                            name: "Birthday",
-                                            rules: { required: true }
+                                            name: "Birthday"
                                           },
                                           scopedSlots: _vm._u(
                                             [
@@ -4093,8 +4091,7 @@ var render = function() {
                                             "prepend-icon":
                                               "fas fa-globe-americas",
                                             placeholder: "Company",
-                                            name: "Company",
-                                            rules: { required: true }
+                                            name: "Company"
                                           },
                                           model: {
                                             value: _vm.model.company,

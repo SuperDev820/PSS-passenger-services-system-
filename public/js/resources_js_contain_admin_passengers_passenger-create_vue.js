@@ -205,7 +205,6 @@ var _components;
 //
 //
 //
-//
 
 
 
@@ -258,7 +257,7 @@ var _components;
       this.error = null;
       this.isSubmitting = true;
 
-      if (this.model.roster != '') {
+      if (this.model.roster != '' && this.model.roster != null) {
         var roster = this.model.roster.split("-");
         var index = roster.findIndex(function (e) {
           return e == "";
@@ -275,7 +274,7 @@ var _components;
           roster_error = true;
         }
 
-        if (roster_error || this.model.departed_flight == '' || this.model.landed_flight == '' || this.model.start_date == '') {
+        if (roster_error || this.model.departed_flight == '' || this.model.departed_flight == null || this.model.landed_flight == '' || this.model.landed_flight == null) {
           this.isSubmitting = false;
           return;
         }
@@ -7112,8 +7111,7 @@ var render = function() {
                                             attrs: {
                                               "prepend-icon": "fas fa-calendar",
                                               label: "Birthday",
-                                              name: "Birthday",
-                                              rules: { required: true }
+                                              name: "Birthday"
                                             },
                                             scopedSlots: _vm._u(
                                               [
@@ -7183,8 +7181,7 @@ var render = function() {
                                                 "fas fa-globe-americas",
                                               label: "Company",
                                               placeholder: "Company",
-                                              name: "Company",
-                                              rules: { required: true }
+                                              name: "Company"
                                             },
                                             model: {
                                               value: _vm.model.company,
@@ -7291,7 +7288,8 @@ var render = function() {
                                             attrs: {
                                               "prepend-icon": "fas fa-calendar",
                                               label: "Start Date",
-                                              name: "StartDate"
+                                              name: "StartDate",
+                                              rules: { required: true }
                                             },
                                             scopedSlots: _vm._u(
                                               [
