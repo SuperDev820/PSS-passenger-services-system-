@@ -95,6 +95,10 @@ Route::group([ 'prefix' => 'v1', 'middleware' => 'api'], function(){
         Route::post('/schedule/indivisual-ticketing', 'App\Http\Controllers\Api\v1\AircraftFlightController@indivisualTicketing');
         // /* Bulk Ticketing */
         Route::post('/schedule/bulk-ticketing', 'App\Http\Controllers\Api\v1\AircraftFlightController@bulkTicketing');
+        // /* Assign Passenger to Flight */
+        Route::post('/schedule/flight/assign-passenger', 'App\Http\Controllers\Api\v1\AircraftFlightController@assignPassengerToFlight');
+        /* remove passenger from flight */
+        Route::delete('schedule/flight/remove-passenger/{flightPassengerId}', 'App\Http\Controllers\Api\v1\AircraftFlightController@removePassengerFromFlight');
     });
 
     Route::group(['middleware' => ['jwt.auth']], function() {

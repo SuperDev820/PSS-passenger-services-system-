@@ -64,38 +64,6 @@
                               v-model="model.last_name">
                   </base-input>
 
-                  <base-input prepend-icon="fas fa-calendar" name="Birthday">
-                    <flat-picker slot-scope="{focus, blur}"
-                                  @on-open="focus"
-                                  @on-close="blur"
-                                  class="form-control datepicker"
-                                  v-model="model.birthday">
-                    </flat-picker>
-                  </base-input>
-
-                  <base-input prepend-icon="fas fa-phone"
-                              placeholder="Phone"
-                              name="Phone"
-                              :rules="{required: true}"
-                              v-model="model.phone">
-                  </base-input>
-
-                  <base-input alternative
-                              class="mb-3"
-                              prepend-icon="fas fa-globe-americas"
-                              placeholder="Company"
-                              name="Company"
-                              v-model="model.company">
-                  </base-input>
-
-                  <!-- <base-input alternative
-                              class="mb-3"
-                              prepend-icon="ni ni-hat-3"
-                              placeholder="Roster"
-                              name="Roster"
-                              v-model="model.roster">
-                  </base-input> -->
-
                   <base-input alternative
                               class="mb-3"
                               prepend-icon="ni ni-email-83"
@@ -138,8 +106,8 @@
   </div>
 </template>
 <script>
-  import flatPicker from "vue-flatpickr-component";
-  import "flatpickr/dist/flatpickr.css";
+  // import flatPicker from "vue-flatpickr-component";
+  // import "flatpickr/dist/flatpickr.css";
 
   export default {
     page: {
@@ -147,16 +115,12 @@
       meta: [{ name: "description", content: "" }]
     },
     components: {
-      flatPicker,
     },
     data() {
       return {
         model: {
           first_name: '',
           last_name: '',
-          phone: '',
-          company: '',
-          birthday: '',
           email: '',
           password: '',
           agree: false
@@ -176,9 +140,6 @@
             .dispatch("register", {
                 first_name: this.model.first_name,
                 last_name: this.model.last_name,
-                phone: this.model.phone,
-                company: this.model.company,
-                birthday: this.model.birthday,
                 email: this.model.email,
                 password: this.model.password,
                 password_confirmation: this.model.password

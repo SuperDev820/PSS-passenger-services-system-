@@ -132,12 +132,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_13__);
 /* harmony import */ var core_js_modules_es_object_entries_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! core-js/modules/es.object.entries.js */ "./node_modules/core-js/modules/es.object.entries.js");
 /* harmony import */ var core_js_modules_es_object_entries_js__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_object_entries_js__WEBPACK_IMPORTED_MODULE_14__);
-/* harmony import */ var _components_Breadcrumb_RouteBreadcrumb__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @/components/Breadcrumb/RouteBreadcrumb */ "./resources/js/components/Breadcrumb/RouteBreadcrumb.vue");
-/* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @/components */ "./resources/js/components/index.js");
-/* harmony import */ var _common_PaginatedTables_clientPaginationMixin__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @/common/PaginatedTables/clientPaginationMixin */ "./resources/js/common/PaginatedTables/clientPaginationMixin.js");
-/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! sweetalert2 */ "./node_modules/sweetalert2/dist/sweetalert2.all.js");
-/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_18___default = /*#__PURE__*/__webpack_require__.n(sweetalert2__WEBPACK_IMPORTED_MODULE_18__);
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.mjs");
+/* harmony import */ var core_js_modules_es_array_find_index_js__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! core-js/modules/es.array.find-index.js */ "./node_modules/core-js/modules/es.array.find-index.js");
+/* harmony import */ var core_js_modules_es_array_find_index_js__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_find_index_js__WEBPACK_IMPORTED_MODULE_15__);
+/* harmony import */ var _components_Breadcrumb_RouteBreadcrumb__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @/components/Breadcrumb/RouteBreadcrumb */ "./resources/js/components/Breadcrumb/RouteBreadcrumb.vue");
+/* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @/components */ "./resources/js/components/index.js");
+/* harmony import */ var _common_PaginatedTables_clientPaginationMixin__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @/common/PaginatedTables/clientPaginationMixin */ "./resources/js/common/PaginatedTables/clientPaginationMixin.js");
+/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! sweetalert2 */ "./node_modules/sweetalert2/dist/sweetalert2.all.js");
+/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_19___default = /*#__PURE__*/__webpack_require__.n(sweetalert2__WEBPACK_IMPORTED_MODULE_19__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.mjs");
 
 
 
@@ -159,6 +161,48 @@ var _components;
 
 
 
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -395,10 +439,10 @@ var _components;
       content: ""
     }]
   },
-  mixins: [_common_PaginatedTables_clientPaginationMixin__WEBPACK_IMPORTED_MODULE_17__.default],
+  mixins: [_common_PaginatedTables_clientPaginationMixin__WEBPACK_IMPORTED_MODULE_18__.default],
   components: (_components = {
-    BasePagination: _components__WEBPACK_IMPORTED_MODULE_16__.BasePagination,
-    RouteBreadCrumb: _components_Breadcrumb_RouteBreadcrumb__WEBPACK_IMPORTED_MODULE_15__.default
+    BasePagination: _components__WEBPACK_IMPORTED_MODULE_17__.BasePagination,
+    RouteBreadCrumb: _components_Breadcrumb_RouteBreadcrumb__WEBPACK_IMPORTED_MODULE_16__.default
   }, (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__.default)(_components, (element_ui_lib_select__WEBPACK_IMPORTED_MODULE_11___default().name), (element_ui_lib_select__WEBPACK_IMPORTED_MODULE_11___default())), (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__.default)(_components, (element_ui_lib_option__WEBPACK_IMPORTED_MODULE_9___default().name), (element_ui_lib_option__WEBPACK_IMPORTED_MODULE_9___default())), (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__.default)(_components, (element_ui_lib_table__WEBPACK_IMPORTED_MODULE_7___default().name), (element_ui_lib_table__WEBPACK_IMPORTED_MODULE_7___default())), (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__.default)(_components, (element_ui_lib_table_column__WEBPACK_IMPORTED_MODULE_5___default().name), (element_ui_lib_table_column__WEBPACK_IMPORTED_MODULE_5___default())), _components),
   data: function data() {
     return {
@@ -406,10 +450,18 @@ var _components;
       propsToSearch: ['first_name', 'last_name'],
       tableData: [],
       flightTableData: [],
-      selectedRows: [],
       isBulkTicketing: false,
       isTicketing: false,
-      isSaving: false
+      isSaving: false,
+      showAddModal: false,
+      model: {
+        passenger: '',
+        phone: '',
+        birthday: '',
+        company: '',
+        roster: ''
+      },
+      isError: false
     };
   },
   watch: {
@@ -427,11 +479,12 @@ var _components;
       this.flightTableData.push(this.aircraftFlight);
     }
   },
-  computed: (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_1__.default)({}, (0,vuex__WEBPACK_IMPORTED_MODULE_19__.mapGetters)(['flightPassengers', 'aircraftFlight'])),
+  computed: (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_1__.default)({}, (0,vuex__WEBPACK_IMPORTED_MODULE_20__.mapGetters)(['flightPassengers', 'aircraftFlight', 'passengers'])),
   mounted: function mounted() {
     this.getFlightPassengers(this.$route.params.flightId);
+    this.initPassengers();
   },
-  methods: (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_1__.default)((0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_1__.default)({}, (0,vuex__WEBPACK_IMPORTED_MODULE_19__.mapActions)(['getFlightPassengers', 'indivisualTicketing', 'bulkTicketing', 'passengerSeatSave'])), {}, {
+  methods: (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_1__.default)((0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_1__.default)({}, (0,vuex__WEBPACK_IMPORTED_MODULE_20__.mapActions)(['getFlightPassengers', 'indivisualTicketing', 'bulkTicketing', 'passengerSeatSave', 'initPassengers', 'assignPassengerToFlight', 'removePassengerFromFlight'])), {}, {
     paginationChanged: function paginationChanged(page) {
       this.pagination.currentPage = page;
     },
@@ -555,6 +608,64 @@ var _components;
           type: 'warning'
         });
       }
+    },
+    handlePassenger: function handlePassenger() {
+      var _this4 = this;
+
+      var index = this.passengers.findIndex(function (e) {
+        return e.id === _this4.model.passenger;
+      });
+
+      if (index !== -1) {
+        this.model.phone = this.passengers[index].phone;
+        this.model.birthday = this.passengers[index].birthday;
+        this.model.company = this.passengers[index].company;
+        this.model.roster = this.passengers[index].roster;
+      }
+    },
+    savePassengerToFlight: function savePassengerToFlight() {
+      var _this5 = this;
+
+      if (this.model.passenger == '' || this.model.passenger == null) {
+        return;
+      }
+
+      return this.assignPassengerToFlight({
+        aircraft_flight_id: this.$route.params.flightId,
+        passenger_id: this.model.passenger
+      }).then(function (res) {
+        _this5.isError = false;
+        _this5.showAddModal = false;
+
+        _this5.$store.commit('SET_FLIGHT_PASSENGERS', res.data);
+      })["catch"](function (error) {
+        _this5.isError = true;
+      });
+    },
+    handleDelete: function handleDelete(row) {
+      var _this6 = this;
+
+      sweetalert2__WEBPACK_IMPORTED_MODULE_19___default().fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        type: 'warning',
+        showCancelButton: true,
+        buttonsStyling: false,
+        confirmButtonClass: 'btn btn-warning',
+        cancelButtonClass: 'btn btn-secondary btn-fill',
+        icon: 'warning'
+      }).then(function (result) {
+        if (result.value) {
+          _this6.removePassengerFromFlight(row.id);
+
+          _this6.$notify({
+            message: 'Successfully Removed',
+            timeout: 5000,
+            icon: 'ni ni-bell-55',
+            type: 'success'
+          });
+        }
+      });
     }
   })
 });
@@ -14521,9 +14632,37 @@ var render = function() {
                       "b-col",
                       { attrs: { cols: "6" } },
                       [
-                        _c("h4", { staticClass: "px-4 mb-3" }, [
-                          _vm._v("Passenger Table")
-                        ]),
+                        _c(
+                          "div",
+                          {
+                            staticClass:
+                              "d-flex justify-content-between align-items-center px-3 mb-4"
+                          },
+                          [
+                            _c("h4", { staticClass: "mb-0" }, [
+                              _vm._v("Passenger Table")
+                            ]),
+                            _vm._v(" "),
+                            _c(
+                              "button",
+                              {
+                                staticClass: "btn btn-neutral btn-sm",
+                                attrs: {
+                                  disabled: _vm.flightPassengers.length >= 100
+                                },
+                                on: {
+                                  click: function($event) {
+                                    _vm.showAddModal = true
+                                  }
+                                }
+                              },
+                              [
+                                _c("i", { staticClass: "fas fa-plus" }),
+                                _vm._v(" Add\n              ")
+                              ]
+                            )
+                          ]
+                        ),
                         _vm._v(" "),
                         _c(
                           "b-col",
@@ -14659,7 +14798,7 @@ var render = function() {
                             _vm._v(" "),
                             _c("el-table-column", {
                               attrs: {
-                                "min-width": "90px",
+                                "min-width": "140px",
                                 align: "right",
                                 label: "Action"
                               },
@@ -14713,6 +14852,24 @@ var render = function() {
                                               staticClass: "fas fa-feather"
                                             })
                                           ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "button",
+                                          {
+                                            staticClass:
+                                              "btn btn-neutral btn-sm",
+                                            on: {
+                                              click: function($event) {
+                                                return _vm.handleDelete(row)
+                                              }
+                                            }
+                                          },
+                                          [
+                                            _c("i", {
+                                              staticClass: "fas fa-trash"
+                                            })
+                                          ]
                                         )
                                       ]
                                     )
@@ -14742,17 +14899,8 @@ var render = function() {
                                         _vm._s(_vm.to) +
                                         " of " +
                                         _vm._s(_vm.total) +
-                                        " entries\n\n                  "
-                                    ),
-                                    _vm.selectedRows.length
-                                      ? _c("span", [
-                                          _vm._v(
-                                            "\n                        " +
-                                              _vm._s(_vm.selectedRows.length) +
-                                              " rows selected\n                  "
-                                          )
-                                        ])
-                                      : _vm._e()
+                                        " passengers / 100 seats\n\n                  "
+                                    )
                                   ])
                                 : _vm._e()
                             ]),
@@ -15092,7 +15240,157 @@ var render = function() {
           ],
           1
         )
-      ])
+      ]),
+      _vm._v(" "),
+      _c(
+        "modal",
+        {
+          attrs: { show: _vm.showAddModal, "modal-classes": "modal-secondary" },
+          on: {
+            "update:show": function($event) {
+              _vm.showAddModal = $event
+            }
+          }
+        },
+        [
+          _vm.isError
+            ? _c("base-alert", { attrs: { dismissible: "", type: "danger" } }, [
+                _c("strong", [_vm._v("Failed!")])
+              ])
+            : _vm._e(),
+          _vm._v(" "),
+          _c("validation-observer", {
+            ref: "formValidator",
+            scopedSlots: _vm._u([
+              {
+                key: "default",
+                fn: function(ref) {
+                  var handleSubmit = ref.handleSubmit
+                  return [
+                    _c(
+                      "b-form",
+                      {
+                        staticClass: "new-event--form row",
+                        attrs: { role: "form" },
+                        on: {
+                          submit: function($event) {
+                            $event.preventDefault()
+                            return handleSubmit(_vm.savePassengerToFlight)
+                          }
+                        }
+                      },
+                      [
+                        _c(
+                          "div",
+                          { staticClass: "col-12" },
+                          [
+                            _c(
+                              "base-input",
+                              { attrs: { label: "Passenger" } },
+                              [
+                                _c(
+                                  "el-select",
+                                  {
+                                    attrs: {
+                                      filterable: "",
+                                      placeholder: "Passengers"
+                                    },
+                                    on: {
+                                      change: function($event) {
+                                        return _vm.handlePassenger()
+                                      }
+                                    },
+                                    model: {
+                                      value: _vm.model.passenger,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.model, "passenger", $$v)
+                                      },
+                                      expression: "model.passenger"
+                                    }
+                                  },
+                                  _vm._l(_vm.passengers, function(option) {
+                                    return option.status == 1
+                                      ? _c("el-option", {
+                                          key: option.id,
+                                          attrs: {
+                                            label:
+                                              option.first_name +
+                                              " " +
+                                              option.last_name,
+                                            value: option.id
+                                          }
+                                        })
+                                      : _vm._e()
+                                  }),
+                                  1
+                                )
+                              ],
+                              1
+                            )
+                          ],
+                          1
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-12" }, [
+                          _c("p", [
+                            _vm._v("Phone: " + _vm._s(_vm.model.phone))
+                          ]),
+                          _vm._v(" "),
+                          _c("p", [
+                            _vm._v("Birthday: " + _vm._s(_vm.model.birthday))
+                          ]),
+                          _vm._v(" "),
+                          _c("p", [
+                            _vm._v("Company: " + _vm._s(_vm.model.company))
+                          ]),
+                          _vm._v(" "),
+                          _c("p", [
+                            _vm._v("Roster: " + _vm._s(_vm.model.roster))
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          {
+                            staticClass:
+                              "col-12 d-flex justify-content-between mt-4"
+                          },
+                          [
+                            _c(
+                              "b-button",
+                              {
+                                staticClass: "new-event--add",
+                                attrs: { type: "submit", variant: "primary" }
+                              },
+                              [_vm._v("Add Passenger")]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "b-button",
+                              {
+                                staticClass: "ml-auto",
+                                attrs: { type: "button", variant: "link" },
+                                on: {
+                                  click: function($event) {
+                                    _vm.showAddModal = false
+                                  }
+                                }
+                              },
+                              [_vm._v("Close")]
+                            )
+                          ],
+                          1
+                        )
+                      ]
+                    )
+                  ]
+                }
+              }
+            ])
+          })
+        ],
+        1
+      )
     ],
     1
   )

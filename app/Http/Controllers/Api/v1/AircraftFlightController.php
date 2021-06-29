@@ -220,5 +220,50 @@ class AircraftFlightController extends Controller
             'message' => 'success',
         ], 200);
     }
+    public function assignPassengerToFlight(Request $request)
+    {
+        $flight_passenger = new FlightPassenger;
+        $flight_passenger->passenger_id = $request->passenger_id;
+        $flight_passenger->aircraft_flight_id = $request->aircraft_flight_id;
+        $flight_passenger->save();
+
+        $aircraft_flight = AircraftFlight::find($request->aircraft_flight_id);
+        $aircraft_flight->flight;
+        $aircraft_flight->aircraft;
+
+        $flight_passengers = FlightPassenger::where('aircraft_flight_id', $request->aircraft_flight_id)->get();
+        foreach ($flight_passengers as $flight_passenger) {
+            $flight_passenger->passenger;
+            $flight_passenger->aircraftFlight->flight;
+            $flight_passenger->aircraftFlight->aircraft;
+        }
+        return response()->json([
+            'message' => 'success',
+            'aircraft_flight' => $aircraft_flight,
+            'flight_passengers' => $flight_passengers,
+        ], 200);
+    }
+    public function removePassengerFromFlight($flightPassengerId)
+    {
+        $flight_passenger = FlightPassenger::find($flightPassengerId);
+        $flightId = $flight_passenger->aircraft_flight_id;
+        $flight_passenger->delete();
+
+        $aircraft_flight = AircraftFlight::find($flightId);
+        $aircraft_flight->flight;
+        $aircraft_flight->aircraft;
+
+        $flight_passengers = FlightPassenger::where('aircraft_flight_id', $flightId)->get();
+        foreach ($flight_passengers as $flight_passenger) {
+            $flight_passenger->passenger;
+            $flight_passenger->aircraftFlight->flight;
+            $flight_passenger->aircraftFlight->aircraft;
+        }
+        return response()->json([
+            'message' => 'success',
+            'aircraft_flight' => $aircraft_flight,
+            'flight_passengers' => $flight_passengers,
+        ], 200);
+    }
 }
            

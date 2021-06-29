@@ -46,15 +46,6 @@
                                 v-model="model.last_name">
                     </base-input>
 
-                    <base-input prepend-icon="fas fa-calendar" label="Birthday" name="Birthday">
-                      <flat-picker slot-scope="{focus, blur}"
-                                    @on-open="focus"
-                                    @on-close="blur"
-                                    class="form-control datepicker"
-                                    v-model="model.birthday">
-                      </flat-picker>
-                    </base-input>
-
                     <base-input prepend-icon="fas fa-phone"
                                 placeholder="Phone"
                                 label="Phone Number"
@@ -62,6 +53,15 @@
                                 type="tel"
                                 :rules="{required: true}"
                                 v-model="model.phone">
+                    </base-input>
+
+                    <base-input prepend-icon="fas fa-calendar" label="Birthday" name="Birthday">
+                      <flat-picker slot-scope="{focus, blur}"
+                                    @on-open="focus"
+                                    @on-close="blur"
+                                    class="form-control datepicker"
+                                    v-model="model.birthday">
+                      </flat-picker>
                     </base-input>
 
                     <base-input alternative
@@ -82,18 +82,8 @@
                                 label="Email"
                                 placeholder="Email"
                                 name="Email"
-                                :rules="{required: true, email: true}"
+                                :rules="{email: true}"
                                 v-model="model.email">
-                    </base-input>
-
-                    <base-input alternative
-                                class="mb-3"
-                                prepend-icon="ni ni-lock-circle-open"
-                                label="Password"
-                                placeholder="password"
-                                type="password"
-                                name="Password"
-                                v-model="model.password">
                     </base-input>
 
                     <base-input alternative
@@ -106,7 +96,7 @@
                                 v-mask="'#-#-#-#'">
                     </base-input>
 
-                    <base-input prepend-icon="fas fa-calendar" label="Start Date" name="StartDate" :rules="{required: true}">
+                    <base-input prepend-icon="fas fa-calendar" label="Start Date" name="StartDate">
                       <flat-picker slot-scope="{focus, blur}"
                                     @on-open="focus"
                                     @on-close="blur"
@@ -209,7 +199,6 @@
           roster: '',
           birthday: '',
           email: '',
-          password: '',
           status: 0,
           departed_flight: '',
           landed_flight: '',
@@ -291,8 +280,6 @@
               landed_flight: this.model.landed_flight,
               start_date: this.model.start_date,
               email: this.model.email,
-              password: this.model.password,
-              password_confirmation: this.model.password,
               status: this.model.status,
             })
             .then((res) => {
@@ -309,7 +296,7 @@
               );
             })
             .catch((error) => {
-              this.error = error ? error : "";
+              this.error = error ? error.data : "";
               this.isError = true;
               this.isSubmitting = false;
             })

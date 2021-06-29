@@ -198,17 +198,6 @@ var _components;
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -14028,9 +14017,9 @@ var render = function() {
                         _vm._v(" "),
                         _c("el-table-column", {
                           attrs: {
-                            label: "Email",
-                            prop: "email",
-                            "min-width": "160px"
+                            label: "Phone",
+                            prop: "phone",
+                            "min-width": "120px"
                           }
                         }),
                         _vm._v(" "),
@@ -14040,14 +14029,6 @@ var render = function() {
                             prop: "birthday",
                             "min-width": "120px",
                             sortable: ""
-                          }
-                        }),
-                        _vm._v(" "),
-                        _c("el-table-column", {
-                          attrs: {
-                            label: "Phone",
-                            prop: "phone",
-                            "min-width": "120px"
                           }
                         }),
                         _vm._v(" "),
@@ -14065,31 +14046,6 @@ var render = function() {
                             prop: "roster",
                             "min-width": "120px"
                           }
-                        }),
-                        _vm._v(" "),
-                        _c("el-table-column", {
-                          attrs: {
-                            prop: "role",
-                            label: "Role",
-                            "min-width": "100px"
-                          },
-                          scopedSlots: _vm._u([
-                            {
-                              key: "default",
-                              fn: function(ref) {
-                                return _c(
-                                  "div",
-                                  {},
-                                  [
-                                    _c("badge", { attrs: { type: "info" } }, [
-                                      _c("span", [_vm._v("Passenger")])
-                                    ])
-                                  ],
-                                  1
-                                )
-                              }
-                            }
-                          ])
                         }),
                         _vm._v(" "),
                         _c("el-table-column", {

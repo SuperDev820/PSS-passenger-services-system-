@@ -60,18 +60,14 @@
                              min-width="140px"
                              sortable>
               </el-table-column>
-              <el-table-column label="Email"
-                             prop="email"
-                             min-width="160px">
+              <el-table-column label="Phone"
+                             prop="phone"
+                             min-width="120px">
               </el-table-column>
               <el-table-column label="Birthday"
                              prop="birthday"
                              min-width="120px"
                              sortable>
-              </el-table-column>
-              <el-table-column label="Phone"
-                             prop="phone"
-                             min-width="120px">
               </el-table-column>
               <el-table-column label="Company"
                              prop="company"
@@ -80,13 +76,6 @@
               <el-table-column label="Roster"
                              prop="roster"
                              min-width="120px">
-              </el-table-column>
-              <el-table-column prop="role" label="Role" min-width="100px">
-                <div slot-scope="{}">
-                  <badge class="" type="info">
-                    <span>Passenger</span>
-                  </badge>
-                </div>
               </el-table-column>
               <el-table-column prop="status" label="Status" min-width="100px">
                 <div slot-scope="{row}">

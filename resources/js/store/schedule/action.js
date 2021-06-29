@@ -67,6 +67,32 @@ const actions = {
                 });
         });
     },
+    assignPassengerToFlight(context, data) {
+        ApiService.setHeader();
+        return new Promise((resolve, reject) => {
+            ApiService.post("api/v1/admin/schedule/flight/assign-passenger", data)
+                .then((data) => {
+                    resolve(data);
+                })
+                .catch(({response, status}) => {
+                    console.log(response);
+                    reject(response);
+                });
+        });
+    },
+    removePassengerFromFlight(context, flightPassengerId) {
+        ApiService.setHeader();
+        return new Promise((resolve, reject) =>{
+            ApiService.delete("api/v1/admin/schedule/flight/remove-passenger/" + flightPassengerId)
+                .then(({data}) => {
+                    context.commit(type.SET_FLIGHT_PASSENGERS, data)
+                })
+                .catch(({ response }) => {
+                    console.log(response);
+                    reject(response);
+                });
+        });
+    },
 };
 
 export default actions;

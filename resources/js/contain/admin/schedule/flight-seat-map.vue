@@ -91,7 +91,12 @@
               </el-table>
             </b-col>
             <b-col cols="6" class="">
-              <h4 class="px-4 mb-3">Passenger Table</h4>
+              <div class="d-flex justify-content-between align-items-center px-3 mb-4">
+                <h4 class="mb-0">Passenger Table</h4>
+                <button class="btn btn-neutral btn-sm" :disabled="flightPassengers.length>=100" @click="showAddModal = true">
+                  <i class="fas fa-plus"></i> Add
+                </button>
+              </div>
               <b-col cols="12" class="d-flex justify-content-center justify-content-sm-between flex-wrap"
               >
                 <el-select
@@ -145,13 +150,16 @@
                               prop="book_reference"
                               min-width="100px">
                 </el-table-column>
-                <el-table-column min-width="90px" align="right" label="Action">
+                <el-table-column min-width="140px" align="right" label="Action">
                   <div slot-scope="{row}" class="d-flex justify-content-center">
                     <button class="btn btn-neutral btn-sm" :disabled="isSaving" @click="save(row)">
                       <i class="far fa-save"></i>
                     </button>
                     <button class="btn btn-neutral btn-sm" :disabled="isTicketing" @click="ticketing(row)">
                       <i class="fas fa-feather"></i>
+                    </button>
+                    <button class="btn btn-neutral btn-sm" @click="handleDelete(row)">
+                      <i class="fas fa-trash"></i>
                     </button>
                   </div>
                 </el-table-column>
@@ -161,11 +169,11 @@
               >
                 <div class="">
                   <p class="card-category" v-if="total != 0">
-                    Showing {{ from + 1 }} to {{ to }} of {{ total }} entries
+                    Showing {{ from + 1 }} to {{ to }} of {{ total }} passengers / 100 seats
 
-                    <span v-if="selectedRows.length">
-                      &nbsp; &nbsp; {{selectedRows.length}} rows selected
-                    </span>
+                    <!-- <span>
+                      &nbsp; &nbsp; {{total}}/100
+                    </span> -->
                   </p>
                 </div>
                 <base-pagination
@@ -219,7 +227,40 @@
         </card>
       </div>
     </b-container>
-    </div>
+    <modal :show.sync="showAddModal" modal-classes="modal-secondary">
+      <base-alert v-if="isError" dismissible type="danger">
+        <strong>Failed!</strong>
+      </base-alert>
+      <validation-observer v-slot="{handleSubmit}" ref="formValidator">
+        <b-form role="form" class="new-event--form row" @submit.prevent="handleSubmit(savePassengerToFlight)">
+          <div class="col-12">
+            <base-input label="Passenger">
+              <el-select v-model="model.passenger"
+                          filterable
+                          placeholder="Passengers"
+                          @change="handlePassenger()">
+                <el-option v-for="option in passengers" v-if="option.status == 1"
+                            :key="option.id"
+                            :label="option.first_name + ' ' + option.last_name"
+                            :value="option.id">
+                </el-option>
+              </el-select>
+            </base-input>
+          </div>
+          <div class="col-12">
+            <p>Phone: {{ model.phone }}</p>
+            <p>Birthday: {{ model.birthday }}</p>
+            <p>Company: {{ model.company }}</p>
+            <p>Roster: {{ model.roster }}</p>
+          </div>
+          <div class="col-12 d-flex justify-content-between mt-4">
+            <b-button type="submit" variant="primary" class="new-event--add">Add Passenger</b-button>
+            <b-button type="button" variant="link" class="ml-auto" @click="showAddModal = false">Close</b-button>
+          </div>
+        </b-form>
+      </validation-observer>
+    </modal>
+  </div>
 </template>
 <script>
 import { Table, TableColumn, Select, Option } from 'element-ui';
@@ -250,10 +291,18 @@ export default {
       propsToSearch: ['first_name', 'last_name'],
       tableData: [],
       flightTableData: [],
-      selectedRows: [],
       isBulkTicketing: false,
       isTicketing: false,
       isSaving: false,
+      showAddModal: false,
+      model: {
+        passenger: '',
+        phone: '',
+        birthday: '',
+        company: '',
+        roster: '',
+      },
+      isError: false,
     };
   },
   watch: {
@@ -275,10 +324,12 @@ export default {
     ...mapGetters([
       'flightPassengers',
       'aircraftFlight',
+      'passengers',
     ]),
   },
   mounted() {
     this.getFlightPassengers(this.$route.params.flightId);
+    this.initPassengers();
   },
   methods: {
     ...mapActions([
@@ -286,6 +337,9 @@ export default {
       'indivisualTicketing',
       'bulkTicketing',
       'passengerSeatSave',
+      'initPassengers',
+      'assignPassengerToFlight',
+      'removePassengerFromFlight',
     ]),
 
     paginationChanged(page) {
@@ -393,6 +447,56 @@ export default {
             type: 'warning'
           });
       }
+    },
+    handlePassenger() {
+      let index = this.passengers.findIndex(e => e.id === this.model.passenger)
+      if (index !== -1) {
+        this.model.phone = this.passengers[index].phone
+        this.model.birthday = this.passengers[index].birthday
+        this.model.company = this.passengers[index].company
+        this.model.roster = this.passengers[index].roster
+      }
+    },
+    savePassengerToFlight() {
+      if ((this.model.passenger == '') || (this.model.passenger == null)) {
+        return ;
+      }
+      return (
+        this.assignPassengerToFlight({
+            aircraft_flight_id: this.$route.params.flightId,
+            passenger_id: this.model.passenger,
+          })
+          .then((res) => {
+            this.isError = false;
+            this.showAddModal = false;
+            this.$store.commit('SET_FLIGHT_PASSENGERS', res.data)
+          })
+          .catch((error) => {
+            this.isError = true;
+          })
+      );
+    },
+    handleDelete(row) {
+      swal.fire({
+        title: `Are you sure?`,
+        text: "You won't be able to revert this!",
+        type: 'warning',
+        showCancelButton: true,
+        buttonsStyling: false,
+        confirmButtonClass: 'btn btn-warning',
+        cancelButtonClass: 'btn btn-secondary btn-fill',
+        icon: 'warning'
+      }).then(result => {
+        if (result.value) {
+          this.removePassengerFromFlight(row.id);
+          this.$notify({
+            message: 'Successfully Removed',
+            timeout: 5000,
+            icon: 'ni ni-bell-55',
+            type: 'success'
+          });
+        }
+      });
     },
   }
 };

@@ -194,17 +194,6 @@ var _components;
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -234,7 +223,6 @@ var _components;
         birthday: '',
         roster: '',
         email: '',
-        password: '',
         departed_flight: '',
         landed_flight: '',
         start_date: ''
@@ -290,9 +278,7 @@ var _components;
         departed_flight: this.model.departed_flight,
         landed_flight: this.model.landed_flight,
         start_date: this.model.start_date,
-        email: this.model.email,
-        password: this.model.password,
-        password_confirmation: this.model.password
+        email: this.model.email
       }).then(function (res) {
         _this.isError = false;
         _this.isSubmitting = false;
@@ -317,7 +303,7 @@ var _components;
           name: "Passengers"
         });
       })["catch"](function (error) {
-        _this.error = error ? error : "";
+        _this.error = error ? error.data : "";
         _this.isError = true;
         _this.isSubmitting = false;
       });
@@ -7109,6 +7095,28 @@ var render = function() {
                                           _vm._v(" "),
                                           _c("base-input", {
                                             attrs: {
+                                              "prepend-icon": "fas fa-phone",
+                                              label: "Phone Number",
+                                              placeholder: "Phone",
+                                              name: "Phone",
+                                              type: "tel",
+                                              rules: { required: true }
+                                            },
+                                            model: {
+                                              value: _vm.model.phone,
+                                              callback: function($$v) {
+                                                _vm.$set(
+                                                  _vm.model,
+                                                  "phone",
+                                                  $$v
+                                                )
+                                              },
+                                              expression: "model.phone"
+                                            }
+                                          }),
+                                          _vm._v(" "),
+                                          _c("base-input", {
+                                            attrs: {
                                               "prepend-icon": "fas fa-calendar",
                                               label: "Birthday",
                                               name: "Birthday"
@@ -7152,28 +7160,6 @@ var render = function() {
                                           }),
                                           _vm._v(" "),
                                           _c("base-input", {
-                                            attrs: {
-                                              "prepend-icon": "fas fa-phone",
-                                              label: "Phone Number",
-                                              placeholder: "Phone",
-                                              name: "Phone",
-                                              type: "tel",
-                                              rules: { required: true }
-                                            },
-                                            model: {
-                                              value: _vm.model.phone,
-                                              callback: function($$v) {
-                                                _vm.$set(
-                                                  _vm.model,
-                                                  "phone",
-                                                  $$v
-                                                )
-                                              },
-                                              expression: "model.phone"
-                                            }
-                                          }),
-                                          _vm._v(" "),
-                                          _c("base-input", {
                                             staticClass: "mb-3",
                                             attrs: {
                                               alternative: "",
@@ -7211,10 +7197,7 @@ var render = function() {
                                               label: "Email",
                                               placeholder: "Email",
                                               name: "Email",
-                                              rules: {
-                                                required: true,
-                                                email: true
-                                              }
+                                              rules: { email: true }
                                             },
                                             model: {
                                               value: _vm.model.email,
@@ -7226,31 +7209,6 @@ var render = function() {
                                                 )
                                               },
                                               expression: "model.email"
-                                            }
-                                          }),
-                                          _vm._v(" "),
-                                          _c("base-input", {
-                                            staticClass: "mb-3",
-                                            attrs: {
-                                              alternative: "",
-                                              "prepend-icon":
-                                                "ni ni-lock-circle-open",
-                                              label: "Password",
-                                              placeholder: "password",
-                                              type: "password",
-                                              name: "Password",
-                                              rules: { required: true, min: 6 }
-                                            },
-                                            model: {
-                                              value: _vm.model.password,
-                                              callback: function($$v) {
-                                                _vm.$set(
-                                                  _vm.model,
-                                                  "password",
-                                                  $$v
-                                                )
-                                              },
-                                              expression: "model.password"
                                             }
                                           }),
                                           _vm._v(" "),
@@ -7288,8 +7246,7 @@ var render = function() {
                                             attrs: {
                                               "prepend-icon": "fas fa-calendar",
                                               label: "Start Date",
-                                              name: "StartDate",
-                                              rules: { required: true }
+                                              name: "StartDate"
                                             },
                                             scopedSlots: _vm._u(
                                               [

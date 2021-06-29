@@ -20,13 +20,6 @@ class User extends Authenticatable implements JWTSubject
     protected $fillable = [
         'first_name',
         'last_name',
-        'birthday',
-        'phone',
-        'company',
-        'roster',
-        'departed_flight',
-        'landed_flight',
-        'start_date',
         'status',
         'email',
         'password',
@@ -49,8 +42,6 @@ class User extends Authenticatable implements JWTSubject
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
-        'birthday' => 'datetime:Y-m-d',
-        'start_date' => 'datetime:Y-m-d',
     ];
 
     /**
