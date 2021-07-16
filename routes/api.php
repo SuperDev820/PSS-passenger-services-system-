@@ -20,7 +20,8 @@ Route::group([ 'prefix' => 'v1', 'middleware' => 'api'], function(){
     Route::post('/user/register', 'App\Http\Controllers\Api\v1\AuthController@register');
 
     /* User login */
-    Route::post('/user/login', 'App\Http\Controllers\Api\v1\AuthController@login');
+    Route::post('/admin/login', 'App\Http\Controllers\Api\v1\AuthController@adminLogin');
+    Route::post('/passenger/login', 'App\Http\Controllers\Api\v1\AuthController@login');
 
     /* Refresh user's token */
     Route::get('/user/refresh', 'App\Http\Controllers\Api\v1\AuthController@token');
@@ -30,6 +31,9 @@ Route::group([ 'prefix' => 'v1', 'middleware' => 'api'], function(){
 
     // Get auth user
     Route::get('/token/validate', 'App\Http\Controllers\Api\v1\AuthController@auth');
+
+    /* User logout from system */
+    Route::get('/qrcode', 'App\Http\Controllers\Api\v1\QrcodeController@index');
 
     //Admin actions
     Route::group([ 'prefix' => 'admin', 'middleware' => 'isadmin' ], function(){

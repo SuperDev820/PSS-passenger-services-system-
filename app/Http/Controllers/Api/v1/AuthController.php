@@ -5,6 +5,8 @@ use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use App\Models\Passenger;
+use App\Models\FlightPassenger;
 use App\Models\Role;
 use Validator;
 use App\Http\Controllers\Controller;
@@ -25,7 +27,7 @@ class AuthController extends Controller
      *
      * @return \Illuminate\Http\JsonResponse
      */
-    public function login(Request $request){
+    public function adminLogin(Request $request){
     	$validator = Validator::make($request->all(), [
             'email' => 'required|email',
             'password' => 'required|string|min:6',
@@ -40,6 +42,34 @@ class AuthController extends Controller
         }
 
         return $this->createNewToken($token);
+    }
+
+    public function login(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'last_name' => 'required',
+            'reference' => 'required|min:6|max:6',
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json($validator->errors(), 422);
+        }
+
+        $flight_passengers = FlightPassenger::where('book_reference', $request->reference)->get();
+        if (count($flight_passengers) > 0) {
+            $flight_passenger = $flight_passengers[0];
+            if ($flight_passenger->passenger->last_name == $request->last_name) {
+                return response()->json([
+                    'access_token' => auth()->attempt($validator->validated()),
+                    'token_type' => 'bearer',
+                    'user' => auth()->user()
+                ]);
+            } else {
+                return response()->json(['error' => 'Name and Reference not matched'], 401);
+            }
+        } else {
+            return response()->json(['error' => 'Such Book Reference does not exist'], 401);
+        }
     }
 
     /**

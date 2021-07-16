@@ -4,6 +4,8 @@
 /storage/*.key
 /vendor
 /.vscode
+composer.lock
+package-lock.json
 .env
 .env.backup
 .phpunit.result.cache

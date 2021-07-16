@@ -28,7 +28,7 @@
           <b-col md="6">
             <div class="pr-md-5">
               <h1 class="text-light">Explore pages</h1>
-              <p class="text-light">If you want to get inspiration or just show something directly to your clients, you can jump start your development with our pre-built example pages.</p>
+              <p class="text-light"></p>
             </div>
           </b-col>
         </b-row>

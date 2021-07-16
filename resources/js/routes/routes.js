@@ -1,80 +1,88 @@
 import store from '../store'
 
-// import DashboardLayout from '@/views/Layout/DashboardLayout.vue';
-import AuthLayout from '@/contain/auth/AuthLayout.vue';
+import AdminAuthLayout from '@/contain/admin/auth/AuthLayout.vue';
 import AdminLayout from '@/contain/admin/Layout/Layout.vue';
+
+import AuthLayout from '@/contain/checkin/auth/AuthLayout.vue';
+import Layout from '@/contain/checkin/Layout/Layout.vue';
 // GeneralViews
 import NotFound from '@/contain/404/NotFoundPage.vue';
 
-// Calendar
-// const Calendar = () => import(/* webpackChunkName: "extra" */ '@/views/Calendar/Calendar.vue');
-// // Charts
-// const Charts = () => import(/* webpackChunkName: "dashboard" */ '@/views/Charts.vue');
-
 // Pages
-const Login = () => import(/* webpackChunkName: "pages" */ '@/contain/auth/Login.vue');
-// const Home = () => import(/* webpackChunkName: "pages" */ '@/views/Pages/Home.vue');
-const Register = () => import(/* webpackChunkName: "pages" */ '@/contain/auth/Register.vue');
-const Lock = () => import(/* webpackChunkName: "pages" */ '@/contain/auth/Lock.vue');
+const AdminLogin = () => import(/* webpackChunkName: "pages" */ '@/contain/admin/auth/Login.vue');
+const AdminRegister = () => import(/* webpackChunkName: "pages" */ '@/contain/admin/auth/Register.vue');
 
-// // TableList pages
-// const RegularTables = () => import(/* webpackChunkName: "tables" */ '@/views/Tables/RegularTables.vue');
-// const SortableTables = () => import(/* webpackChunkName: "tables" */ '@/views/Tables/SortableTables.vue');
-// const PaginatedTables = () => import(/* webpackChunkName: "tables" */ '@/views/Tables/PaginatedTables.vue');
-// let componentsMenu = {
-//   path: '/components',
-//   component: DashboardLayout,
-//   redirect: '/components/buttons',
-//   name: 'Components',
-//   children: [
-//     {
-//       path: 'buttons',
-//       name: 'Buttons',
-//       component: Buttons
-//     },
-//     {
-//       path: 'cards',
-//       name: 'Cards',
-//       component: Cards
-//     },
-//     {
-//       path: 'grid-system',
-//       name: 'Grid System',
-//       component: GridSystem
-//     },
-//     {
-//       path: 'notifications',
-//       name: 'Notifications',
-//       component: Notifications
-//     },
-//     {
-//       path: 'icons',
-//       name: 'Icons',
-//       component: Icons
-//     },
-//     {
-//       path: 'typography',
-//       name: 'Typography',
-//       component: Typography
-//     }
-//   ]
-// };
+const Login = () => import(/* webpackChunkName: "pages" */ '@/contain/checkin/auth/Login.vue');
+
+let adminAuthPages = {
+  path: '/admin',
+  component: AdminAuthLayout,
+  name: 'AdminAuthentication',
+  children: [
+    {
+      path: 'login',
+      name: 'AdminLogin',
+      component: AdminLogin,
+      meta: {
+        beforeResolve(routeTo, routeFrom, next) {
+            // If the user is already logged in
+            if (store.getters['isAuthenticated']) {
+                // Redirect to the home page instead
+                if (store.getters['currentRole'] == 'Admin') {
+                    next({ name: 'AdminUsers' })
+                } else {
+                    next({ name: 'AdminLogin' })
+                }
+            } else {
+                // Continue to the login page
+                next()
+            }
+        },
+      },
+    },
+    {
+      path: 'register',
+      name: 'AdminRegister',
+      component: AdminRegister,
+      meta: {
+        beforeResolve(routeTo, routeFrom, next) {
+            // If the user is already logged in
+            if (store.getters['isAuthenticated']) {
+                // Redirect to the home page instead
+                if (store.getters['currentRole'] == 'Admin') {
+                    next({ name: 'AdminUsers' })
+                } else {
+                    next({ name: 'AdminLogin' })
+                }
+            } else {
+                // Continue to the login page
+                next()
+            }
+        },
+      },
+    },
+    {
+      path: 'logout',
+      name: 'logout',
+      meta: {
+        authRequired: true,
+        beforeResolve(routeTo, routeFrom, next) {
+            store.dispatch('logout')
+            next({name: 'AdminLogin'});
+        },
+      },
+    },
+    { path: '*', component: NotFound }
+  ]
+};
 
 let authPages = {
   path: '/',
   component: AuthLayout,
   name: 'Authentication',
   children: [
-    // {
-    //   path: '/home',
-    //   name: 'Home',
-    //   component: Home,
-    //   meta: {
-    //     noBodyBackground: true
-    //   }
-    // },
     {
-      path: '/login',
+      path: 'login',
       name: 'Login',
       component: Login,
       meta: {
@@ -82,10 +90,10 @@ let authPages = {
             // If the user is already logged in
             if (store.getters['isAuthenticated']) {
                 // Redirect to the home page instead
-                if (store.getters['currentRole'] == 'Admin') {
-                    next({ name: 'AdminUsers' })
-                } else if (store.getters['currentRole'] == 'Passenger') {
-                    next({ name: 'Passenger' })
+                if (store.getters['currentRole'] == 'Passenger') {
+                    next({ name: 'SelectFlight' })
+                } else {
+                    next({ name: 'Login' })
                 }
             } else {
                 // Continue to the login page
@@ -95,43 +103,12 @@ let authPages = {
       },
     },
     {
-      path: '/register',
-      name: 'Register',
-      component: Register,
-      meta: {
-        beforeResolve(routeTo, routeFrom, next) {
-            // If the user is already logged in
-            if (store.getters['isAuthenticated']) {
-                // Redirect to the home page instead
-                if (store.getters['currentRole'] == 'Admin') {
-                    next({ name: 'AdminUsers' })
-                } else if (store.getters['currentRole'] == 'Passenger') {
-                    next({ name: 'Passenger' })
-                }
-            } else {
-                // Continue to the login page
-                next()
-            }
-        },
-      },
-    },
-    {
-      path: '/lock',
-      name: 'Lock',
-      component: Lock
-    },
-    {
-      path: '/logout',
+      path: 'logout',
       name: 'logout',
       meta: {
         authRequired: true,
         beforeResolve(routeTo, routeFrom, next) {
             store.dispatch('logout')
-            // const authRequiredOnPreviousRoute = routeFrom.matched.some(
-            //     (route) => route.push({ name: 'Login' })
-            // )
-            // // Navigate back to previous page, or home as a fallback
-            // next(authRequiredOnPreviousRoute ? { name: 'AdminUsers' } : { ...routeFrom })
             next({name: 'Login'});
         },
       },
@@ -151,7 +128,7 @@ const routes = [
           if (store.getters['currentRole'] == 'Admin') {
               next()
           } else {
-              next({ name: 'Login' })
+              next({ name: 'AdminLogin' })
           }
       },
     },
@@ -239,6 +216,34 @@ const routes = [
         path: 'flight/:flightId/seat-map',
         name: 'FlightSeatMap',
         component: () => import('../contain/admin/schedule/flight-seat-map.vue'),
+      },
+    ]
+  },
+  adminAuthPages,
+  {
+    path: '/',
+    component: Layout,
+    redirect: '/select-flight',
+    meta: {
+      authRequired: true,
+      beforeResolve(routeTo, routeFrom, next) {
+          if (store.getters['currentRole'] == 'Passenger') {
+              next()
+          } else {
+              next({ name: 'Login' })
+          }
+      },
+    },
+    children: [
+      {
+        path: 'select-flight',
+        name: 'SelectFlight',
+        component: () => import('../contain/checkin/select-flight.vue'),
+      },
+      {
+        path: 'select-seat',
+        name: 'SelectSeat',
+        component: () => import('../contain/checkin/select-seat.vue'),
       },
     ]
   },

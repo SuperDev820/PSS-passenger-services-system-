@@ -3,9 +3,9 @@ import JwtService from "@/common/jwt.service"
 import type from './type'
 
 const actions = {
-    login(context, credentials) {
+    adminLogin(context, credentials) {
         return new Promise((resolve, reject) => {
-            ApiService.post("api/v1/user/login", credentials)
+            ApiService.post("api/v1/admin/login", credentials)
                 .then(({data}) => {
                     context.commit(type.AUTH_CLEAR_ERRORS);
                     // console.log(data);
@@ -13,7 +13,32 @@ const actions = {
                     data.user.roles.forEach(function(currentRole) {
                         if (currentRole.name == 'Admin') {
                             role = 'Admin';
-                        } else if (currentRole.name == 'Passenger') {
+                        }
+                    });
+                    context.commit(
+                        type.AUTH_SET_USER, {userId: data.user.id, userRole: role, token: data.access_token}
+                    );
+                    resolve(data);
+                })
+                .catch((response) => {
+                    console.log(response)
+                    context.commit(
+                        type.AUTH_SET_ERROR,
+                        {target: 'login', message: response.data}
+                    );
+                    reject(response);
+                });
+        });
+    },
+    login(context, credentials) {
+        return new Promise((resolve, reject) => {
+            ApiService.post("api/v1/passenger/login", credentials)
+                .then(({data}) => {
+                    context.commit(type.AUTH_CLEAR_ERRORS);
+                    // console.log(data);
+                    var role = null;
+                    data.user.roles.forEach(function(currentRole) {
+                        if (currentRole.name == 'Passenger') {
                             role = 'Passenger';
                         }
                     });
