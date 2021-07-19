@@ -35,15 +35,8 @@ const actions = {
             ApiService.post("api/v1/passenger/login", credentials)
                 .then(({data}) => {
                     context.commit(type.AUTH_CLEAR_ERRORS);
-                    // console.log(data);
-                    var role = null;
-                    data.user.roles.forEach(function(currentRole) {
-                        if (currentRole.name == 'Passenger') {
-                            role = 'Passenger';
-                        }
-                    });
                     context.commit(
-                        type.AUTH_SET_USER, {userId: data.user.id, userRole: role, token: data.access_token}
+                        type.AUTH_SET_PASSENGER, {user: data.user}
                     );
                     resolve(data);
                 })

@@ -21,7 +21,6 @@ Route::group([ 'prefix' => 'v1', 'middleware' => 'api'], function(){
 
     /* User login */
     Route::post('/admin/login', 'App\Http\Controllers\Api\v1\AuthController@adminLogin');
-    Route::post('/passenger/login', 'App\Http\Controllers\Api\v1\AuthController@login');
 
     /* Refresh user's token */
     Route::get('/user/refresh', 'App\Http\Controllers\Api\v1\AuthController@token');
@@ -35,8 +34,13 @@ Route::group([ 'prefix' => 'v1', 'middleware' => 'api'], function(){
     /* User logout from system */
     Route::get('/qrcode', 'App\Http\Controllers\Api\v1\QrcodeController@index');
 
+    //Passenger actions
+    Route::group([ 'prefix' => 'passenger' ], function(){
+        Route::post('/login', 'App\Http\Controllers\Api\v1\AuthController@login');
+    });
+
     //Admin actions
-    Route::group([ 'prefix' => 'admin', 'middleware' => 'isadmin' ], function(){
+    Route::group([ 'prefix' => 'admin', 'middleware' => 'isAdmin' ], function(){
         /* Get all users details*/
         Route::get('/users', 'App\Http\Controllers\Api\v1\UserController@getAll');
         // /* Add a user */
@@ -104,9 +108,4 @@ Route::group([ 'prefix' => 'v1', 'middleware' => 'api'], function(){
         /* remove passenger from flight */
         Route::delete('schedule/flight/remove-passenger/{flightPassengerId}', 'App\Http\Controllers\Api\v1\AircraftFlightController@removePassengerFromFlight');
     });
-
-    Route::group(['middleware' => ['jwt.auth']], function() {
-
-    });
-
 });

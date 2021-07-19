@@ -86,31 +86,14 @@ let authPages = {
       name: 'Login',
       component: Login,
       meta: {
-        beforeResolve(routeTo, routeFrom, next) {
-            // If the user is already logged in
-            if (store.getters['isAuthenticated']) {
-                // Redirect to the home page instead
-                if (store.getters['currentRole'] == 'Passenger') {
-                    next({ name: 'SelectFlight' })
-                } else {
-                    next({ name: 'Login' })
-                }
-            } else {
-                // Continue to the login page
-                next()
-            }
-        },
-      },
-    },
-    {
-      path: 'logout',
-      name: 'logout',
-      meta: {
-        authRequired: true,
-        beforeResolve(routeTo, routeFrom, next) {
-            store.dispatch('logout')
-            next({name: 'Login'});
-        },
+        // beforeResolve(routeTo, routeFrom, next) {
+        //   // If the user is already logged in
+        //   if (store.getters['currentPassenger'].role == 'Passenger') {
+        //       next({ name: 'SelectFlight' })
+        //   } else {
+        //       next({name: 'Login'})
+        //   }
+        // },
       },
     },
     { path: '*', component: NotFound }
@@ -225,13 +208,12 @@ const routes = [
     component: Layout,
     redirect: '/select-flight',
     meta: {
-      authRequired: true,
       beforeResolve(routeTo, routeFrom, next) {
-          if (store.getters['currentRole'] == 'Passenger') {
-              next()
-          } else {
-              next({ name: 'Login' })
-          }
+        if (store.getters['currentPassenger'].role == 'Passenger') {
+            next()
+        } else {
+            next({ name: 'Login' })
+        }
       },
     },
     children: [

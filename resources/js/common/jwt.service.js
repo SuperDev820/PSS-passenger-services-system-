@@ -1,5 +1,6 @@
 const ID_API_TOKEN = 'id_api_token';
 const ROLE = 'role';
+const USER = 'user';
 
 const JwtService = {
     getToken() {
@@ -20,6 +21,16 @@ const JwtService = {
     },
     unsetRole() {
         window.localStorage.removeItem(ROLE);
+    },
+
+    getUser() {
+        return window.localStorage.getItem(USER)
+    },
+    setUser(user) {
+        window.localStorage.setItem(USER, user);
+    },
+    unsetUser() {
+        window.localStorage.removeItem(USER);
     },
 }
 

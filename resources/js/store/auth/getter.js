@@ -16,7 +16,10 @@ const getters = {
   },
   isAuthenticated(state){
       return state.isAuthenticated;
-  }
+  },
+  currentPassenger(state) {
+    return state.user;
+  },
 };
 
 export default getters;

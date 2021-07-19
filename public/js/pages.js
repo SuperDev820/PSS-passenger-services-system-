@@ -420,7 +420,7 @@ __webpack_require__.r(__webpack_exports__);
       isSubmitting: false
     };
   },
-  computed: (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)({}, (0,vuex__WEBPACK_IMPORTED_MODULE_1__.mapGetters)(['currentRole'])),
+  computed: (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_0__.default)({}, (0,vuex__WEBPACK_IMPORTED_MODULE_1__.mapGetters)(['currentPassenger'])),
   methods: {
     onSubmit: function onSubmit() {
       var _this = this;
@@ -433,8 +433,8 @@ __webpack_require__.r(__webpack_exports__);
         last_name: this.model.last_name,
         reference: this.model.reference
       }).then(function (res) {
-        // console.log(this.currentRole)
-        if (_this.currentRole == 'Passenger') {
+        // console.log(this.currentPassenger)
+        if (_this.currentPassenger.role == 'Passenger') {
           _this.$router.push({
             name: "SelectFlight"
           });
@@ -447,7 +447,7 @@ __webpack_require__.r(__webpack_exports__);
         _this.isAuthError = false;
         _this.isSubmitting = false;
       })["catch"](function (error) {
-        console.log(error);
+        // console.log(error)
         _this.authError = error ? error : "";
         _this.isAuthError = true;
         _this.isSubmitting = false;

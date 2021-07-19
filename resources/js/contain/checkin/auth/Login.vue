@@ -83,7 +83,7 @@
     },
     computed: {
       ...mapGetters([
-        'currentRole',
+        'currentPassenger',
       ]),
     },
     methods: {
@@ -99,8 +99,8 @@
               reference: this.model.reference
             })
             .then((res) => {
-              // console.log(this.currentRole)
-              if (this.currentRole == 'Passenger') {
+              // console.log(this.currentPassenger)
+              if (this.currentPassenger.role == 'Passenger') {
                 this.$router.push({name: "SelectFlight"});
               } else {
                 this.$router.push({name: "Login"});
@@ -109,7 +109,7 @@
               this.isSubmitting = false;
             })
             .catch(error => {
-              console.log(error)
+              // console.log(error)
               this.authError = error ? error : "";
               this.isAuthError = true;
               this.isSubmitting = false;

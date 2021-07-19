@@ -4,6 +4,7 @@ const type = {
     AUTH_SET_USER: 'AUTH_SET_USER',
     AUTH_LOGOUT: 'AUTH_LOGOUT',
     AUTH_RESET_STATE: 'AUTH_RESET_STATE',
+    AUTH_SET_PASSENGER: 'AUTH_SET_PASSENGER',
 }
 
 export default type;

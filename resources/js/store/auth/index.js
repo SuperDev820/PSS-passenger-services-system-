@@ -12,6 +12,7 @@ const defaultState = {
   userId: null,
   userRole: JwtService.getRole()? JwtService.getRole() : null,
   isAuthenticated: JwtService.getToken()? true : false,
+  user: JwtService.getUser()? JSON.parse(JwtService.getUser()) : null,
 };
 
 export default {

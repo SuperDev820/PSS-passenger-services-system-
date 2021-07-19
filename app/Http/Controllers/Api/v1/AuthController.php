@@ -8,6 +8,7 @@ use App\Models\User;
 use App\Models\Passenger;
 use App\Models\FlightPassenger;
 use App\Models\Role;
+use Carbon\Carbon;
 use Validator;
 use App\Http\Controllers\Controller;
 
@@ -19,7 +20,7 @@ class AuthController extends Controller
      * @return void
      */
     public function __construct() {
-        $this->middleware('auth:api', ['except' => ['login', 'register']]);
+        $this->middleware('auth:api', ['except' => ['adminLogin', 'login', 'register']]);
     }
 
     /**
@@ -58,12 +59,21 @@ class AuthController extends Controller
         $flight_passengers = FlightPassenger::where('book_reference', $request->reference)->get();
         if (count($flight_passengers) > 0) {
             $flight_passenger = $flight_passengers[0];
-            if ($flight_passenger->passenger->last_name == $request->last_name) {
-                return response()->json([
-                    'access_token' => auth()->attempt($validator->validated()),
-                    'token_type' => 'bearer',
-                    'user' => auth()->user()
-                ]);
+            $passenger = $flight_passenger->passenger;
+            if ($passenger->last_name == $request->last_name) {
+                $current_date = Carbon::now()->timezone('Australia/Sydney');
+                $aircraft_flight = $flight_passenger->aircraftFlight;
+                $departure_time  = new Carbon($aircraft_flight->date->format('Y-m-d').' '.$aircraft_flight->departure_time->format('H:i:s'));
+                $between = $current_date->diffInSeconds($departure_time);
+                if ($departure_time > $current_date) {
+                    $passenger->role = 'Passenger';
+                    $passenger->book_reference = $request->reference;
+                    return response()->json([
+                        'user' => $passenger,
+                    ], 200);
+                } else {
+                    return response()->json(['error' => 'The flight already departed.'], 401);
+                }
             } else {
                 return response()->json(['error' => 'Name and Reference not matched'], 401);
             }
