@@ -6,6 +6,7 @@ import passengerModule from './passenger';
 import aircraftModule from './fleet';
 import flightModule from './flight';
 import scheduleModule from './schedule';
+import checkinModule from './checkin';
 
 Vue.use(Vuex);
 
@@ -17,5 +18,6 @@ export default new Vuex.Store({
     aircraft: aircraftModule,
     flight: flightModule,
     schedule: scheduleModule,
+    checkin: checkinModule,
   },
 });

@@ -129,4 +129,8 @@
   .main-content .zoomOut {
     animation-name: zoomOut8;
   }
+
+  .navbar .navbar-toggler {
+    display: none;
+  }
 </style>

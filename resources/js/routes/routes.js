@@ -227,6 +227,16 @@ const routes = [
         name: 'SelectSeat',
         component: () => import('../contain/checkin/select-seat.vue'),
       },
+      {
+        path: 'confirm',
+        name: 'Confirm',
+        component: () => import('../contain/checkin/confirm.vue'),
+      },
+      {
+        path: 'print',
+        name: 'Print',
+        component: () => import('../contain/checkin/print.vue'),
+      },
     ]
   },
   authPages,

@@ -14,33 +14,32 @@
         </b-navbar-brand>
       </div>
 
-     <template>
-       <div class="navbar-collapse-header">
-         <b-row>
-           <b-col cols="6" class="collapse-brand">
-             <router-link to="/">
-               <img src="/img/brand/green.png">
-             </router-link>
-           </b-col>
-           <b-col cols="6" class="collapse-close">
-             <button type="button" class="navbar-toggler" @click="showMenu = false">
-               <span></span>
-               <span></span>
-             </button>
-           </b-col>
-         </b-row>
-       </div>
+      <template>
+        <div class="navbar-collapse-header">
+          <b-row>
+            <b-col cols="6" class="collapse-brand">
+              <router-link to="/">
+                <img src="/img/brand/green.png">
+              </router-link>
+            </b-col>
+            <b-col cols="6" class="collapse-close">
+              <button type="button" class="navbar-toggler" @click="showMenu = false">
+                <span></span>
+                <span></span>
+              </button>
+            </b-col>
+          </b-row>
+        </div>
 
-       <b-navbar-nav class="mr-auto">
-         <b-nav-item to="/admin/login">
-             <span class="nav-link-inner--text">Login</span>
-         </b-nav-item>
-         <b-nav-item to="/admin/register">
-             <span class="nav-link-inner--text">Register</span>
-         </b-nav-item>
-       </b-navbar-nav>
-       <hr class="d-lg-none">
-     </template>
+        <b-navbar-nav class="mr-auto">
+          <b-nav-item to="/admin/login">
+            <span class="nav-link-inner--text">Login</span>
+          </b-nav-item>
+          <b-nav-item to="/admin/register">
+            <span class="nav-link-inner--text">Register</span>
+          </b-nav-item>
+        </b-navbar-nav>
+      </template>
     </base-nav>
 
     <div class="main-content">
