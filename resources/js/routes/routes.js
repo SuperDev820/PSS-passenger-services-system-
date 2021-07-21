@@ -89,7 +89,7 @@ let authPages = {
         // beforeResolve(routeTo, routeFrom, next) {
         //   // If the user is already logged in
         //   if (store.getters['currentPassenger'].role == 'Passenger') {
-        //       next({ name: 'SelectFlight' })
+        //       next({ name: 'YourFlight' })
         //   } else {
         //       next({name: 'Login'})
         //   }
@@ -218,9 +218,9 @@ const routes = [
     },
     children: [
       {
-        path: 'select-flight',
-        name: 'SelectFlight',
-        component: () => import('../contain/checkin/select-flight.vue'),
+        path: 'your-flight',
+        name: 'YourFlight',
+        component: () => import('../contain/checkin/your-flight.vue'),
       },
       {
         path: 'select-seat',
@@ -233,9 +233,9 @@ const routes = [
         component: () => import('../contain/checkin/confirm.vue'),
       },
       {
-        path: 'print',
-        name: 'Print',
-        component: () => import('../contain/checkin/print.vue'),
+        path: 'boarding-pass',
+        name: 'BoardingPass',
+        component: () => import('../contain/checkin/boarding-pass.vue'),
       },
     ]
   },

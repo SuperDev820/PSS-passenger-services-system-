@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::group([ 'prefix' => 'v1', 'middleware' => 'api'], function(){
+Route::group([ 'prefix' => 'v1', 'middleware' => 'api'], function() {
 
     /* User register */
     Route::post('/user/register', 'App\Http\Controllers\Api\v1\AuthController@register');
@@ -35,12 +35,27 @@ Route::group([ 'prefix' => 'v1', 'middleware' => 'api'], function(){
     Route::get('/qrcode', 'App\Http\Controllers\Api\v1\QrcodeController@index');
 
     //Passenger actions
-    Route::group([ 'prefix' => 'passenger' ], function(){
+    Route::group([ 'prefix' => 'passenger' ], function() {
+        /* Passenger login */
         Route::post('/login', 'App\Http\Controllers\Api\v1\AuthController@login');
+
+        /* Init Passenger's web check in */
+        Route::get('/checkin/init/{reference}', 'App\Http\Controllers\Api\v1\CheckinController@initCheckin');
+        /* Save passenger's type */
+        Route::put('/type/save', 'App\Http\Controllers\Api\v1\CheckinController@passengerTypeSave');
+        /* Email passenger's boarding pass */
+        Route::post('/email', 'App\Http\Controllers\Api\v1\CheckinController@emailBoardingPass');
+        /* Get passenger's qrcode */
+        Route::get('/qrcode/{id}', 'App\Http\Controllers\Api\v1\CheckinController@getQrCode');
     });
 
+    /* Get all flight_passengers*/
+    Route::get('admin/schedule/flight_seat_map/{flightId}', 'App\Http\Controllers\Api\v1\AircraftFlightController@getFlightPassengers');
+    /* Book passenger's seat */
+    Route::put('admin/passenger/seat/save', 'App\Http\Controllers\Api\v1\PassengerController@passengerSeatSave');
+
     //Admin actions
-    Route::group([ 'prefix' => 'admin', 'middleware' => 'isAdmin' ], function(){
+    Route::group([ 'prefix' => 'admin', 'middleware' => 'isAdmin' ], function() {
         /* Get all users details*/
         Route::get('/users', 'App\Http\Controllers\Api\v1\UserController@getAll');
         // /* Add a user */
@@ -64,8 +79,6 @@ Route::group([ 'prefix' => 'v1', 'middleware' => 'api'], function(){
         Route::get('/passenger/{passengerId}/flight/{flightId}', 'App\Http\Controllers\Api\v1\PassengerController@getFlightPassengerById');
         /* Get a passenger's flights */
         Route::get('/passenger/{passengerId}/flights', 'App\Http\Controllers\Api\v1\PassengerController@getPassengerFlights');
-        /* Book passenger's seat */
-        Route::put('/passenger/seat/save', 'App\Http\Controllers\Api\v1\PassengerController@passengerSeatSave');
         /* delete passenger by id */
         Route::delete('/passenger/delete/{passengerId}', 'App\Http\Controllers\Api\v1\PassengerController@delete');
 
@@ -97,8 +110,6 @@ Route::group([ 'prefix' => 'v1', 'middleware' => 'api'], function(){
         Route::post('/schedule/aircraft_flights', 'App\Http\Controllers\Api\v1\AircraftFlightController@getAircraftFlightsByDate');
         // /* Add a flight */
         Route::post('/schedule/save', 'App\Http\Controllers\Api\v1\AircraftFlightController@saveAircraftFlight');
-        /* Get all flight_passengers*/
-        Route::get('/schedule/flight_seat_map/{flightId}', 'App\Http\Controllers\Api\v1\AircraftFlightController@getFlightPassengers');
         // /* Indivisual Ticketing */
         Route::post('/schedule/indivisual-ticketing', 'App\Http\Controllers\Api\v1\AircraftFlightController@indivisualTicketing');
         // /* Bulk Ticketing */

@@ -15,11 +15,11 @@ class CreateAircraftsTable extends Migration
     {
         Schema::create('aircrafts', function (Blueprint $table) {
             $table->id();
-            $table->string('registration');
-            $table->string('model');
-            $table->string('seat_config');
+            $table->string('registration', 50);
+            $table->string('model', 50);
+            $table->string('seat_config', 4);
             $table->integer('total_seat');
-            $table->string('status');
+            $table->string('status', 10);
             $table->timestamps();
         });
     }

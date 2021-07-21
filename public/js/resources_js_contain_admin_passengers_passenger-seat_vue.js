@@ -340,7 +340,6 @@ var _components;
       }
 
       if (passenger_seats.length == 1) {
-        console.log(passenger_seats[0]);
         this.passengerSeatSave({
           passengerId: this.$route.params.passengerId,
           flightId: this.$route.params.flightId,

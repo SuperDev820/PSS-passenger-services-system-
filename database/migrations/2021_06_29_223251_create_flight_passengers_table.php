@@ -17,9 +17,10 @@ class CreateFlightPassengersTable extends Migration
             $table->id();
             $table->foreignId('passenger_id')->nullable()->constrained('passengers')->onUpdate('cascade')->onDelete('cascade');
             $table->foreignId('aircraft_flight_id')->nullable()->constrained('aircraft_flights')->onUpdate('cascade')->onDelete('cascade');
-            $table->string('seat')->nullable();
-            $table->string('book_reference')->nullable();
-            $table->string('status')->default('CLOSED');
+            $table->string('seat', 4)->nullable();
+            $table->string('book_reference', 7)->nullable();
+            $table->string('passenger_type', 15)->nullable();
+            $table->string('status', 8)->default('CLOSED');
             $table->timestamps();
         });
     }

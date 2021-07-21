@@ -16,6 +16,7 @@ class FlightPassenger extends Model
         'aircraft_flight_id',
         'seat',
         'book_reference',
+        'passenger_type',
         'status',
     ];
 

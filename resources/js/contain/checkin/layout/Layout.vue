@@ -1,5 +1,6 @@
 <template>
   <div>
+    <notifications></notifications>
     <base-nav
       v-model="showMenu"
       type="light"
@@ -20,13 +21,13 @@
             <span class="nav-link-inner--text">Select Flight</span>
           </b-nav-item>
           <b-nav-item to="/select-seat" >
-              <span class="nav-link-inner--text">Select Seat</span>
+            <span class="nav-link-inner--text">Select Seat</span>
           </b-nav-item>
           <b-nav-item to="/confirm">
-              <span class="nav-link-inner--text">Confirm</span>
+            <span class="nav-link-inner--text">Confirm</span>
           </b-nav-item>
           <b-nav-item to="/print">
-              <span class="nav-link-inner--text">Print</span>
+            <span class="nav-link-inner--text">Print</span>
           </b-nav-item>
         </b-navbar-nav>
       </template>
@@ -41,7 +42,7 @@
       </zoom-center-transition>
     </div>
 
-    <footer class="py-5" id="footer-main">
+    <footer class="pb-4" id="footer-main">
       <b-container >
         <b-row align-v="center">
           <b-col xl="12">

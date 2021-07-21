@@ -436,7 +436,7 @@ __webpack_require__.r(__webpack_exports__);
         // console.log(this.currentPassenger)
         if (_this.currentPassenger.role == 'Passenger') {
           _this.$router.push({
-            name: "SelectFlight"
+            name: "YourFlight"
           });
         } else {
           _this.$router.push({

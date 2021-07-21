@@ -101,7 +101,7 @@
             .then((res) => {
               // console.log(this.currentPassenger)
               if (this.currentPassenger.role == 'Passenger') {
-                this.$router.push({name: "SelectFlight"});
+                this.$router.push({name: "YourFlight"});
               } else {
                 this.$router.push({name: "Login"});
               }

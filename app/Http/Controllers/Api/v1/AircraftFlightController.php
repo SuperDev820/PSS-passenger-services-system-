@@ -20,7 +20,7 @@ class AircraftFlightController extends Controller
 {
     //
     public function __construct() {
-        $this->middleware('auth:api', ['except' => []]);
+        $this->middleware('auth:api', ['except' => ['getFlightPassengers']]);
 
         $this->helper = new Common();
     }

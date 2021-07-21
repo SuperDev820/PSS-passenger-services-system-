@@ -2,83 +2,54 @@ import ApiService from "@/api/api.service";
 import type from './type';
 
 const actions = {
-    initAircrafts(context) {
+    initCheckin(context, reference) {
         ApiService.setHeader();
-        return new Promise((resolve) =>{
-            ApiService.get("api/v1/admin/aircrafts")
-                .then(({data}) => {
-                    console.log(data);
-                    context.commit(type.SET_ALL_AIRCRAFTS, data)
+        return new Promise((resolve, reject) =>{
+            ApiService.get("api/v1/passenger/checkin/init/" + reference)
+                .then(({ data }) => {
+                    context.commit(type.SET_ALL_INFO, data)
                 })
                 .catch(({ response }) => {
-                    // context.commit(type.AUTH_LOGOUT);
+                    reject(response)
                 });
         });
     },
-    getAircraftById(context, aircraftId) {
+    passengerTypeSave(context, data) {
         ApiService.setHeader();
-        return new Promise((resolve) =>{
-            ApiService.get("api/v1/admin/aircraft/" + aircraftId)
-                .then(({data}) => {
-                    console.log(data);
-                    context.commit(type.SET_AIRCRAFT, data)
+        return new Promise((resolve, reject) =>{
+            ApiService.put("api/v1/passenger/type/save", data)
+                .then(({ data }) => {
+                    resolve(data)
                 })
                 .catch(({ response }) => {
-                    // context.commit(type.AUTH_LOGOUT);
+                    reject(response)
                 });
         });
     },
-    createAircraft(context, aircraftInfo) {
+    emailBoardingPass(context, data) {
         ApiService.setHeader();
-        return new Promise((resolve, reject) => {
-            ApiService.post("api/v1/admin/aircraft/create", aircraftInfo)
-                .then((data) => {
-                    resolve(data);
-                })
-                .catch(({response, status}) => {
-                    console.log(response);
-                    reject(response);
-                });
-        });
-    },
-    updateAircraft(context, aircraftInfo) {
-        ApiService.setHeader();
-        return new Promise((resolve, reject) => {
-            ApiService.put("api/v1/admin/aircraft/update", aircraftInfo)
-                .then((data) => {
-                    resolve(data);
-                })
-                .catch(({response, status}) => {
-                    console.log(response);
-                    reject(response);
-                });
-        });
-    },
-    deleteAircraft(context, aircraftId) {
-        ApiService.setHeader();
-        return new Promise((resolve) =>{
-            ApiService.delete("api/v1/admin/aircraft/delete/" + aircraftId)
-                .then(({data}) => {
-                    context.commit(type.SET_ALL_AIRCRAFTS, data)
+        return new Promise((resolve, reject) =>{
+            ApiService.post("api/v1/passenger/email", data)
+                .then(({ data }) => {
+                    resolve(data)
                 })
                 .catch(({ response }) => {
-                    // context.commit(type.AUTH_LOGOUT);
+                    reject(response)
                 });
         });
     },
-    getAircraftOptions(context) {
+    getQrCode(context, id) {
         ApiService.setHeader();
-        return new Promise((resolve) =>{
-            ApiService.get("api/v1/admin/aircraft/options")
-                .then(({data}) => {
-                    console.log(data);
-                    context.commit(type.SET_AIRCRAFT_OPTIONS, data)
+        return new Promise((resolve, reject) =>{
+            ApiService.get("api/v1/passenger/qrcode/" + id)
+                .then(({ data }) => {
+                    resolve(data)
                 })
                 .catch(({ response }) => {
-                    // context.commit(type.AUTH_LOGOUT);
+                    reject(response)
                 });
         });
-    },
+    }
 };
 
 export default actions;

@@ -18,10 +18,10 @@ class CreatePassengersTable extends Migration
             $table->string('first_name');
             $table->string('last_name');
             $table->date('birthday')->nullable();
-            $table->string('phone');
+            $table->string('phone', 50);
             $table->string('email')->nullable();
             $table->string('company')->nullable();
-            $table->string('roster')->nullable();
+            $table->string('roster', 8)->nullable();
             $table->integer('departed_flight')->nullable();
             $table->integer('landed_flight')->nullable();
             $table->date('start_date')->nullable();

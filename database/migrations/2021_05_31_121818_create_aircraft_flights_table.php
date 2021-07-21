@@ -20,9 +20,9 @@ class CreateAircraftFlightsTable extends Migration
             $table->date('date')->nullable();
             $table->time('departure_time');
             $table->time('arrival_time');
-            $table->string('flight_time');
-            $table->string('status')->default('PLANNED');
-            $table->string('phase')->default('CLOSED');
+            $table->string('flight_time', 20);
+            $table->string('status', 10)->default('PLANNED');
+            $table->string('phase', 20)->default('CLOSED');
             $table->timestamps();
         });
     }

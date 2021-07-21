@@ -64,7 +64,6 @@ class AuthController extends Controller
                 $current_date = Carbon::now()->timezone('Australia/Sydney');
                 $aircraft_flight = $flight_passenger->aircraftFlight;
                 $departure_time  = new Carbon($aircraft_flight->date->format('Y-m-d').' '.$aircraft_flight->departure_time->format('H:i:s'));
-                $between = $current_date->diffInSeconds($departure_time);
                 if ($departure_time > $current_date) {
                     $passenger->role = 'Passenger';
                     $passenger->book_reference = $request->reference;

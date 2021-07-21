@@ -1,7 +1,5 @@
 const type = {
-    SET_ALL_AIRCRAFTS: 'SET_ALL_AIRCRAFTS',
-    SET_AIRCRAFT: 'SET_AIRCRAFT',
-    SET_AIRCRAFT_OPTIONS: 'SET_AIRCRAFT_OPTIONS',
+    SET_ALL_INFO: 'SET_ALL_INFO',
 }
 
 export default type;

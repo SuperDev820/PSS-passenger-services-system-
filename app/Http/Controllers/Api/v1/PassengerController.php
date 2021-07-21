@@ -17,7 +17,7 @@ class PassengerController extends Controller
 {
     //
     public function __construct() {
-        $this->middleware('auth:api', ['except' => []]);
+        $this->middleware('auth:api', ['except' => ['passengerSeatSave']]);
     }
     /**
      * Response all data
@@ -285,6 +285,11 @@ class PassengerController extends Controller
             $flight_passenger -> update([
                 'seat' => $request->seat,
             ]);
+            if ($request->statusFlag) {
+                $flight_passenger -> update([
+                    'status' => 'CHECKED',
+                ]);
+            }
         } else {
             return response()->json([
                 'message' => 'do not exist such passenger',
