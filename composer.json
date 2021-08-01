@@ -16,6 +16,7 @@
         "laravel/passport": "^10.1",
         "laravel/tinker": "^2.5",
         "laravel/ui": "^3.2",
+        "sendgrid/sendgrid": "^7.9",
         "simplesoftwareio/simple-qrcode": "^4.2",
         "twilio/sdk": "^6.25",
         "tymon/jwt-auth": "^1.0"

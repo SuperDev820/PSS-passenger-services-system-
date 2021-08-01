@@ -22,7 +22,9 @@ class CreateAircraftFlightsTable extends Migration
             $table->time('arrival_time');
             $table->string('flight_time', 20);
             $table->string('status', 10)->default('PLANNED');
+            // PLANNED, CONFIRMED, DELAYED, CANCELLED
             $table->string('phase', 20)->default('CLOSED');
+            // CLOSED, OPEN FOR CHECK IN, BOARDING, DEPARTED, LANDED
             $table->timestamps();
         });
     }

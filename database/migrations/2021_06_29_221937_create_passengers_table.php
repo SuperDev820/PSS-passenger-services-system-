@@ -26,6 +26,7 @@ class CreatePassengersTable extends Migration
             $table->integer('landed_flight')->nullable();
             $table->date('start_date')->nullable();
             $table->boolean('status')->default(1)->nullable();
+            // 1: ACTIVE, 2: DEACTIVE
             $table->timestamps();
         });
     }

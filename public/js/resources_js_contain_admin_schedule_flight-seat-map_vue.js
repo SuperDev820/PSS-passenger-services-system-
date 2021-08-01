@@ -130,10 +130,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_12__);
 /* harmony import */ var core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! core-js/modules/web.dom-collections.for-each.js */ "./node_modules/core-js/modules/web.dom-collections.for-each.js");
 /* harmony import */ var core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_13__);
-/* harmony import */ var core_js_modules_es_object_entries_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! core-js/modules/es.object.entries.js */ "./node_modules/core-js/modules/es.object.entries.js");
-/* harmony import */ var core_js_modules_es_object_entries_js__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_object_entries_js__WEBPACK_IMPORTED_MODULE_14__);
-/* harmony import */ var core_js_modules_es_array_find_index_js__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! core-js/modules/es.array.find-index.js */ "./node_modules/core-js/modules/es.array.find-index.js");
-/* harmony import */ var core_js_modules_es_array_find_index_js__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_find_index_js__WEBPACK_IMPORTED_MODULE_15__);
+/* harmony import */ var core_js_modules_es_array_find_index_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! core-js/modules/es.array.find-index.js */ "./node_modules/core-js/modules/es.array.find-index.js");
+/* harmony import */ var core_js_modules_es_array_find_index_js__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_find_index_js__WEBPACK_IMPORTED_MODULE_14__);
+/* harmony import */ var core_js_modules_es_object_entries_js__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! core-js/modules/es.object.entries.js */ "./node_modules/core-js/modules/es.object.entries.js");
+/* harmony import */ var core_js_modules_es_object_entries_js__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_object_entries_js__WEBPACK_IMPORTED_MODULE_15__);
 /* harmony import */ var _components_Breadcrumb_RouteBreadcrumb__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @/components/Breadcrumb/RouteBreadcrumb */ "./resources/js/components/Breadcrumb/RouteBreadcrumb.vue");
 /* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @/components */ "./resources/js/components/index.js");
 /* harmony import */ var _common_PaginatedTables_clientPaginationMixin__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @/common/PaginatedTables/clientPaginationMixin */ "./resources/js/common/PaginatedTables/clientPaginationMixin.js");
@@ -450,6 +450,7 @@ var _components;
       propsToSearch: ['first_name', 'last_name'],
       tableData: [],
       flightTableData: [],
+      passengerOptions: [],
       isBulkTicketing: false,
       isTicketing: false,
       isSaving: false,
@@ -473,16 +474,28 @@ var _components;
           document.getElementById(item.seat).disabled = true;
         }
       });
+      this.initPassengers();
     },
     aircraftFlight: function aircraftFlight() {
       this.flightTableData = [];
       this.flightTableData.push(this.aircraftFlight);
+    },
+    passengers: function passengers() {
+      var that = this;
+      this.passengers.forEach(function (item) {
+        var index = that.flightPassengers.findIndex(function (e) {
+          return e.passenger_id === item.id;
+        });
+
+        if (index == -1) {
+          that.passengerOptions.push(item);
+        }
+      });
     }
   },
   computed: (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_1__.default)({}, (0,vuex__WEBPACK_IMPORTED_MODULE_20__.mapGetters)(['flightPassengers', 'aircraftFlight', 'passengers'])),
   mounted: function mounted() {
     this.getFlightPassengers(this.$route.params.flightId);
-    this.initPassengers();
   },
   methods: (0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_1__.default)((0,E_Hayden_PSS_PSS_passenger_services_system_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_1__.default)({}, (0,vuex__WEBPACK_IMPORTED_MODULE_20__.mapActions)(['getFlightPassengers', 'indivisualTicketing', 'bulkTicketing', 'passengerSeatSave', 'initPassengers', 'assignPassengerToFlight', 'removePassengerFromFlight'])), {}, {
     paginationChanged: function paginationChanged(page) {
@@ -15308,7 +15321,9 @@ var render = function() {
                                       expression: "model.passenger"
                                     }
                                   },
-                                  _vm._l(_vm.passengers, function(option) {
+                                  _vm._l(_vm.passengerOptions, function(
+                                    option
+                                  ) {
                                     return option.status == 1
                                       ? _c("el-option", {
                                           key: option.id,

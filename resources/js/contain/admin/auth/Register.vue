@@ -157,7 +157,7 @@
               this.registerSuccess = true;
               if (this.registerSuccess) {
                 this.$router.push(
-                  { name: "Login" }
+                  { name: "AdminLogin" }
                 );
               }
             })

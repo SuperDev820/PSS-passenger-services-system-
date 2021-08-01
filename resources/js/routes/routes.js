@@ -206,7 +206,7 @@ const routes = [
   {
     path: '/',
     component: Layout,
-    redirect: '/select-flight',
+    redirect: '/login',
     meta: {
       beforeResolve(routeTo, routeFrom, next) {
         if (store.getters['currentPassenger'].role == 'Passenger') {

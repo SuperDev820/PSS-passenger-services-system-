@@ -17,8 +17,8 @@
 
       <template>
         <b-navbar-nav class="mr-auto">
-          <b-nav-item to="/select-flight">
-            <span class="nav-link-inner--text">Select Flight</span>
+          <b-nav-item to="/your-flight">
+            <span class="nav-link-inner--text">Your Flight</span>
           </b-nav-item>
           <b-nav-item to="/select-seat" >
             <span class="nav-link-inner--text">Select Seat</span>
@@ -26,8 +26,8 @@
           <b-nav-item to="/confirm">
             <span class="nav-link-inner--text">Confirm</span>
           </b-nav-item>
-          <b-nav-item to="/print">
-            <span class="nav-link-inner--text">Print</span>
+          <b-nav-item to="/boarding-pass">
+            <span class="nav-link-inner--text">Boarding Pass</span>
           </b-nav-item>
         </b-navbar-nav>
       </template>

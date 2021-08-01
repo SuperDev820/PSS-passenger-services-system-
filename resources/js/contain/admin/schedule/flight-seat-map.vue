@@ -239,7 +239,7 @@
                           filterable
                           placeholder="Passengers"
                           @change="handlePassenger()">
-                <el-option v-for="option in passengers" v-if="option.status == 1"
+                <el-option v-for="option in passengerOptions" v-if="option.status == 1"
                             :key="option.id"
                             :label="option.first_name + ' ' + option.last_name"
                             :value="option.id">
@@ -291,6 +291,7 @@ export default {
       propsToSearch: ['first_name', 'last_name'],
       tableData: [],
       flightTableData: [],
+      passengerOptions: [],
       isBulkTicketing: false,
       isTicketing: false,
       isSaving: false,
@@ -314,10 +315,20 @@ export default {
           document.getElementById(item.seat).disabled = true
         }
       });
+      this.initPassengers();
     },
     aircraftFlight: function() {
       this.flightTableData = [];
       this.flightTableData.push(this.aircraftFlight);
+    },
+    passengers: function() {
+      var that = this;
+      this.passengers.forEach(function(item) {
+        let index = that.flightPassengers.findIndex(e => e.passenger_id === item.id)
+        if (index == -1) {
+          that.passengerOptions.push(item);
+        }
+      });
     },
   },
   computed: {
@@ -329,7 +340,6 @@ export default {
   },
   mounted() {
     this.getFlightPassengers(this.$route.params.flightId);
-    this.initPassengers();
   },
   methods: {
     ...mapActions([

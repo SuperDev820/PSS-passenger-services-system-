@@ -26,6 +26,7 @@ class CreateFlightsTable extends Migration
             $table->string('flight_time', 20);
             $table->json('operation_days')->nullable();
             $table->string('type', 10)->default('REGULAR');
+            // REGULAR, CHARTER
             $table->timestamps();
         });
     }

@@ -21,6 +21,7 @@ class CreateFlightPassengersTable extends Migration
             $table->string('book_reference', 7)->nullable();
             $table->string('passenger_type', 15)->nullable();
             $table->string('status', 8)->default('CLOSED');
+            //  CLOSED, SENDED, CHECKED
             $table->timestamps();
         });
     }
